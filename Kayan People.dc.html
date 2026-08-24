@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>كيان — فريق كيان والتدريب الداخلي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F4EEDD;font-family:'IBM Plex Sans Arabic','Instrument Sans',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8F7218;text-decoration:none}a:hover{color:#C9A227}
+button{font-family:inherit}
+@keyframes kIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+[data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1)}
+[data-reveal].on{opacity:1;transform:none}
+a{transition:color .15s ease}
+button:active,a[data-card]:active{transform:scale(.98)}
+a:focus-visible,button:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
+[data-card]{transition:transform .35s cubic-bezier(.23,1,.32,1),box-shadow .35s cubic-bezier(.23,1,.32,1)}
+@media (hover:hover) and (pointer:fine){[data-card]:hover{transform:translateY(-3px);box-shadow:0 18px 40px -18px rgba(5,46,43,.3)}}
+[data-sheen]{position:relative;overflow:hidden}
+[data-sheen]::after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(130px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.28),transparent 62%);opacity:0;transition:opacity .3s ease;pointer-events:none}
+@media (hover:hover) and (pointer:fine){[data-sheen]:hover::after{opacity:1}}
+@media (prefers-reduced-motion:reduce){[data-sheen]::after{display:none}}
+[data-arc]{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+[data-arc]>div{border-inline-start:1px solid rgba(233,201,107,.22)}
+[data-arc]>div:first-child{border-inline-start:none;padding-inline-start:0}
+@media (max-width:860px){[data-arc]{grid-template-columns:1fr;gap:20px}[data-arc]>div{border-inline-start:none;padding-inline-start:0;padding-block-start:16px;border-block-start:1px solid rgba(233,201,107,.22)}[data-arc]>div:first-child{border-block-start:none;padding-block-start:0}[data-arc]>div>span:first-child{inset-inline-start:0;top:-4px}}
+[data-en]{display:none;}
+[data-lang="en"] [data-en]{display:revert;}
+[data-lang="en"] [data-ar]{display:none;}
+[data-lang="en"]{direction:ltr;}
+[data-lang="ar"]{direction:rtl;}
+[data-lang="en"] label{text-align:left;}
+[data-langbtn]{cursor:pointer;transition:background .2s ease,color .2s ease;}
+[data-lang="ar"] [data-langbtn="ar"],[data-lang="en"] [data-langbtn="en"]{background:#C9A227 !important;color:#03201D !important;font-weight:600;}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}[data-reveal]{opacity:1;transform:none}}
+@keyframes regSpin{to{transform:rotate(360deg)}}
+@keyframes regShimmer{to{background-position:200% 0}}
+@keyframes kPopIn{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+[data-regdeco]{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:inherit;}
+[data-regline]{position:absolute;inset:0;background:repeating-linear-gradient(180deg,rgba(233,201,107,.055) 0 1px,transparent 1px 34px);}
+[data-regstamp]{position:absolute;inset-inline-end:-34px;top:-34px;width:150px;height:150px;border:1.5px dashed rgba(233,201,107,.16);border-radius:50%;animation:regSpin 60s linear infinite;}
+[data-regform]{display:grid;grid-template-columns:minmax(200px,260px) 1fr;gap:20px;align-items:start;}
+@media (max-width:760px){[data-regform]{grid-template-columns:1fr;}}
+[data-doorcard]{transition:transform .28s cubic-bezier(.16,1,.3,1),border-color .25s ease,background-color .25s ease;}
+@media (hover:hover){[data-doorcard]:hover{transform:translateY(-2px);border-color:#E9C96B;}}
+</style>
+</helmet>
+<div data-lang="{{ langCode }}" dir="rtl" style="background:#F4EEDD;min-height:100vh;">
+<header style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px clamp(16px,4vw,44px);border-bottom:1px solid #E0D6BD;position:sticky;top:0;background:rgba(244,238,221,.92);backdrop-filter:blur(10px);z-index:5;">
+  <a href="Kayan Home.dc.html"><img src="assets/kayan-logo-gold.png" alt="{{ tMarkAlt }}" style="height:38px;display:block;"></a>
+  <nav style="display:flex;align-items:center;gap:16px;font-size:13px;flex-wrap:wrap;">
+    <a href="#culture"><span data-ar="">بيئة العمل</span><span data-en="">Culture</span></a>
+    <a href="#intern"><span data-ar="">التدريب الداخلي</span><span data-en="">Internship</span></a>
+    <a href="#jobs"><span data-ar="">الشواغر</span><span data-en="">Jobs</span></a>
+    <a href="#ledger"><span data-ar="">دفتر الناس</span><span data-en="">People ledger</span></a>
+    <a href="#contact"><span data-ar="">تواصل</span><span data-en="">Contact</span></a>
+    <a href="Kayan Planet.dc.html"><span data-ar="">البيئة</span><span data-en="">Planet</span></a>
+    <div style="display:inline-flex;align-items:center;gap:3px;background:#FAF6EC;border:1px solid #E0D6BD;border-radius:99px;padding:3px;">
+      <button type="button" data-langbtn="ar" onClick="{{ setLangAr }}" lang="ar" style="background:transparent;border:0;border-radius:99px;padding:5px 11px;cursor:pointer;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:11.5px;color:#8F7218;">عربي</button>
+      <button type="button" data-langbtn="en" onClick="{{ setLangEn }}" lang="en" style="background:transparent;border:0;border-radius:99px;padding:5px 11px;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:#8F7218;">EN</button>
+    </div>
+    <a href="Kayan Access.dc.html" style="border:1.5px solid #C9A227;border-radius:999px;padding:8px 18px;font-weight:700;color:#8F7218;"><span data-ar="">الدخول</span><span data-en="">Access</span></a>
+  </nav>
+</header>
+<section style="max-width:1160px;margin:0 auto;padding:clamp(40px,7vw,90px) clamp(16px,4vw,44px) clamp(24px,4vw,50px);">
+  <div style="animation:kIn .8s ease both;max-width:72ch;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;color:#8F7218;">KAYAN PEOPLE · فريق كيان</div>
+    <h1 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:200;font-size:clamp(34px,5.4vw,62px);line-height:1.32;color:#052E2B;"><span data-ar="">النظام يديره <b style="font-weight:800;color:#8F7218;">ناسه.</b></span><span data-en="">The system is run by <b style="font-weight:800;color:#8F7218;">its people.</b></span></h1>
+    <p style="margin:16px 0 0;max-width:56ch;font-size:15px;line-height:2.15;color:#4A6B64;">
+      <span data-ar="">تبنى الثقة داخل الدار قبل أن تعرض خارجها. هنا من يشغل آلة كيان: عقد مكتوب، وأجر معلن النطاق، وقرار مسبب، وسقف تظلله كهرباء الشمس. وما وعدنا به عملاءنا، فلفريقنا أولًا.</span>
+      <span data-en="">Trust is built inside the house before it is shown outside it. These are the people who run the Kayan machine: a written contract, a published pay range, a reasoned decision, and a roof shaded by solar power. What we promise our clients, we owe our own team first.</span>
+    </p>
+    <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="#intern" data-card="" data-sheen="" style="border-radius:14px;padding:14px 28px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:14.5px;color:#052E2B;background:linear-gradient(135deg,#C9A227,#E9C96B);box-shadow:0 12px 26px -12px rgba(201,162,39,.7);"><span data-ar="">برنامج التدريب الداخلي</span><span data-en="">Internship programme</span></a>
+      <a href="#jobs" data-card="" data-sheen="" style="border-radius:14px;padding:14px 28px;font-weight:700;font-size:14px;color:#052E2B;border:1.5px solid #C9A227;background:#FAF6EC;"><span data-ar="">الشواغر المفتوحة</span><span data-en="">Open positions</span></a>
+    </div>
+  </div>
+</section>
+<section id="culture" style="background:#052E2B;padding:clamp(40px,6vw,80px) clamp(16px,4vw,44px);">
+  <div style="max-width:1160px;margin:0 auto;">
+    <div data-reveal="">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#E9C96B;">WORK CHARTER · ميثاق بيئة العمل</div>
+      <h2 style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(26px,4vw,42px);color:#FAF6EC;"><span data-ar="">خمس قواعد لا <b style="font-weight:700;color:#E9C96B;">تساوم.</b></span><span data-en="">Five rules that do not <b style="font-weight:700;color:#E9C96B;">compromise.</b></span></h2>
+      <p style="margin:12px 0 0;max-width:62ch;font-size:14px;line-height:2.1;color:rgba(250,246,236,.7);">
+        <span data-ar="">تكتب القواعد، وتنشر داخليًا، وتراجع كل سنة؛ وما خالفها من عرف بطل. هذا إثراء العمل عندنا: لا شعار يعلق، بل نظام يعاش.</span>
+        <span data-en="">The rules are written down, published internally, and reviewed every year; any custom that conflicts with them is void. This is what workplace enrichment means here: not a slogan on the wall, but a system people actually live by.</span>
+      </p>
+    </div>
+    <div style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px;">
+      <sc-for list="{{ charter }}" as="c" hint-placeholder-count="6">
+        <div data-card="" data-reveal="" style="background:#0A3A34;border:1px solid #0E4A44;border-radius:20px;padding:22px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16.5px;color:#FAF6EC;">{{ c.t }}</div>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#E9C96B;">{{ c.n }}</span>
+          </div>
+          <p style="margin:10px 0 0;font-size:13px;line-height:2.05;color:rgba(250,246,236,.75);">{{ c.x }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <div data-reveal="" style="margin-top:22px;background:rgba(233,201,107,.08);border:1px solid rgba(233,201,107,.3);border-radius:18px;padding:18px 22px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+      <p style="margin:0;flex:1;min-width:240px;font-size:13px;line-height:2;color:rgba(250,246,236,.85);">
+        <span data-ar="">ولكل موظف <b style="color:#E9C96B;">أربع ساعات مدنية شهرية مدفوعة</b> يؤديها عبر كيان لليمن — تحسب في بطاقته كما تحسب لأي متطوع.</span>
+        <span data-en="">Every employee also receives <b style="color:#E9C96B;">four paid civic hours a month</b>, served through Kayan for Yemen — logged on their record exactly as it would be for any volunteer.</span>
+      </p>
+    </div>
+  </div>
+</section>
+<section id="intern" style="max-width:1160px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(16px,4vw,44px);">
+  <div data-reveal="">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#8F7218;">INTERNSHIP · التدريب الداخلي</div>
+    <h2 style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(26px,4vw,42px);color:#052E2B;"><span data-ar="">اثنا عشر أسبوعًا داخل <b style="font-weight:700;color:#8F7218;">الآلة نفسها.</b></span><span data-en="">Twelve weeks inside <b style="font-weight:700;color:#8F7218;">the machine itself.</b></span></h2>
+    <p style="margin:12px 0 0;max-width:64ch;font-size:14px;line-height:2.1;color:#4A6B64;">
+      <span data-ar="">لا تدريب على الورق: يلحق المتدرب بفريق قائم لتكليف حقيقي، تحت إشراف مثبت، وباسمه بند يسلم. من أتم البرنامج خرج بسجل موقع لا بشهادة حضور.</span>
+      <span data-en="">No training on paper: the intern joins a live team for a real assignment, supervised by a permanent staff member, with a line item delivered under their own name. Whoever completes the programme leaves with a signed record, not an attendance certificate.</span>
+    </p>
+  </div>
+  <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px;">
+    <sc-for list="{{ internFacts }}" as="f" hint-placeholder-count="4">
+      <div data-card="" data-reveal="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:20px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:800;font-size:22px;color:#8F7218;">{{ f.v }}</div>
+        <div style="margin-top:6px;font-weight:700;font-size:13.5px;color:#052E2B;">{{ f.k }}</div>
+        <div style="margin-top:6px;font-size:12px;line-height:1.95;color:#4A6B64;">{{ f.x }}</div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px;">
+    <div data-reveal="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:22px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;color:#052E2B;"><span data-ar="">المسارات الأربعة</span><span data-en="">The four tracks</span></div>
+      <div style="margin-top:12px;display:grid;gap:9px;">
+        <sc-for list="{{ tracks }}" as="t" hint-placeholder-count="4">
+          <div style="display:flex;gap:10px;align-items:center;background:#F4EEDD;border-radius:12px;padding:11px 14px;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#8F7218;letter-spacing:.14em;">{{ t.c }}</span>
+            <span style="font-size:13px;font-weight:600;color:#052E2B;">{{ t.n }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div data-reveal="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:22px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;color:#052E2B;"><span data-ar="">شروط القبول ومساره</span><span data-en="">Admission requirements and process</span></div>
+      <ul style="margin:12px 0 0;padding-inline-start:20px;display:grid;gap:9px;font-size:13px;line-height:1.95;color:#33544D;">
+        <li><span data-ar="">سنة أخيرة أو تخرج حديث، من أي محافظة؛ والحضور من عدن أو عن بعد بحسب المسار.</span><span data-en="">Final-year student or recent graduate, from any governorate; attendance in Aden or remote, depending on the track.</span></li>
+        <li><span data-ar="">يقدم الطلب من محطة التسجيل نفسها ويعلم بأنه للتدريب الداخلي.</span><span data-en="">Applications are filed through the same registration station, marked as being for the internship.</span></li>
+        <li><span data-ar="">مقابلة واحدة وتمرين قصير؛ ويبلغ القرار مسببًا خلال أسبوعين، وله تظلم واحد.</span><span data-en="">One interview and a short exercise; the decision is communicated with reasons within two weeks, with one right of appeal.</span></li>
+        <li><span data-ar="">تصرف مكافأة شهرية <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8F7218;">PH-INT-STIPEND</span> وتحتسب المدة خبرة موثقة.</span><span data-en="">A monthly stipend (<span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8F7218;">PH-INT-STIPEND</span>) is paid, and the period counts as documented experience.</span></li>
+      </ul>
+      <a href="Kayan Apply.dc.html" data-card="" style="margin-top:16px;display:inline-block;border-radius:12px;padding:12px 26px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:13.5px;color:#052E2B;background:linear-gradient(135deg,#C9A227,#E9C96B);"><span data-ar="">التقديم للدفعة القادمة</span><span data-en="">Apply for the next cohort</span></a>
+    </div>
+  </div>
+  <div data-reveal="" style="margin-top:22px;background:#052E2B;border-radius:22px;padding:clamp(20px,3vw,28px);color:#FAF6EC;">
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;color:#E9C96B;"><span data-ar="">مسار الأسابيع الاثني عشر</span><span data-en="">The twelve-week path</span></div>
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;color:rgba(250,246,236,.5);">W01 → W12</span>
+    </div>
+    <div data-arc="" style="margin-top:18px;">
+      <sc-for list="{{ arc }}" as="a" hint-placeholder-count="4">
+        <div style="position:relative;padding-inline:16px;">
+          <span dir="ltr" style="position:absolute;inset-inline-start:-4px;top:5px;width:7px;height:7px;border-radius:99px;background:#E9C96B;"></span>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#E9C96B;">{{ a.w }}</div>
+          <div style="margin-top:8px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:14.5px;color:#FAF6EC;">{{ a.t }}</div>
+          <p style="margin:7px 0 0;font-size:12px;line-height:2;color:rgba(250,246,236,.7);">{{ a.x }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top:18px;border-top:1px solid rgba(233,201,107,.2);padding-top:13px;font-size:12px;line-height:2;color:rgba(250,246,236,.75);">
+      <span data-ar="">لا يمدد البرنامج ولا يقصر: من تعذر عليه إتمام أسبوع يعوضه في الدفعة نفسها، ولا يمنح سجل تسليم إلا لمن مر بندُه ببوابة جودة.</span>
+      <span data-en="">The programme is neither extended nor shortened: anyone who misses a week makes it up within the same cohort, and a delivery record is granted only once a line item has passed a quality gate.</span>
+    </div>
+  </div>
+</section>
+<section id="jobs" style="background:#EDE5D2;padding:clamp(40px,6vw,80px) clamp(16px,4vw,44px);">
+  <div style="max-width:1160px;margin:0 auto;">
+    <div data-reveal="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;">
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#8F7218;">OPEN POSITIONS · الشواغر</div>
+        <h2 style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(26px,4vw,40px);color:#052E2B;"><span data-ar="">مقاعد <b style="font-weight:700;color:#8F7218;">مفتوحة الآن.</b></span><span data-en="">Seats <b style="font-weight:700;color:#8F7218;">open now.</b></span></h2>
+      </div>
+      <div style="font-size:12.5px;color:#4A6B64;max-width:40ch;line-height:2;"><span data-ar="">يعلن كل شاغر بمدونة موقعه ونطاق أجره؛ ولا يغلق قبل أسبوعين من نشره.</span><span data-en="">Every vacancy is posted with its location and pay range, and stays open for at least two weeks after posting.</span></div>
+    </div>
+    <div style="margin-top:26px;display:grid;gap:12px;">
+      <sc-for list="{{ jobs }}" as="j" hint-placeholder-count="3">
+        <div data-card="" data-reveal="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:20px 22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;">
+          <div style="min-width:min(100%,340px);">
+            <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+              <span style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;color:#052E2B;">{{ j.t }}</span>
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.14em;color:#8F7218;background:#F4EEDD;border-radius:99px;padding:4px 10px;">{{ j.c }}</span>
+            </div>
+            <div style="margin-top:7px;font-size:12.5px;line-height:1.95;color:#4A6B64;">{{ j.x }}</div>
+            <div style="margin-top:7px;display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:#8F7218;font-weight:600;">
+              <span>{{ j.loc }}</span><span>{{ j.type }}</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;">{{ j.band }}</span>
+            </div>
+          </div>
+          <button type="button" onClick="{{ j.open }}" style="border:none;cursor:pointer;border-radius:12px;padding:12px 24px;font-weight:700;font-size:13px;color:#FAF6EC;background:#0E6E66;font-family:inherit;">{{ j.btn }}</button>
+        </div>
+      </sc-for>
+      <div data-reveal="" style="border:1.5px dashed #C9A227;border-radius:18px;padding:20px 22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;background:rgba(201,162,39,.05);">
+        <div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:15px;color:#052E2B;"><span data-ar="">لا شاغر يناسبك اليوم؟</span><span data-en="">No vacancy fits you today?</span></div>
+          <div style="margin-top:6px;font-size:12.5px;color:#4A6B64;line-height:1.95;"><span data-ar="">يحفظ ملفك في قائمة الجاهزية ويرجع إليه أول ما يفتح بابه.</span><span data-en="">Your file is kept on the readiness list and revisited as soon as a matching door opens.</span></div>
+        </div>
+        <button type="button" onClick="{{ openPool }}" style="border:1.5px solid #C9A227;cursor:pointer;border-radius:12px;padding:12px 24px;font-weight:700;font-size:13px;color:#052E2B;background:#FAF6EC;font-family:inherit;">{{ poolBtn }}</button>
+      </div>
+      <sc-if value="{{ hasFiled }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#FAF6EC;border:1px solid #C9A227;border-radius:18px;padding:18px 22px;">
+          <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:15px;color:#052E2B;"><span data-ar="">أرقام ترشحك</span><span data-en="">Your application numbers</span></div>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;color:#8F7218;">FILED · {{ filedCount }}</span>
+          </div>
+          <div style="margin-top:12px;display:grid;gap:8px;">
+            <sc-for list="{{ filed }}" as="r" hint-placeholder-count="1">
+              <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;background:#F4EEDD;border-radius:12px;padding:11px 15px;">
+                <span style="font-size:12.5px;font-weight:600;color:#052E2B;">{{ r.t }}</span>
+                <span style="display:flex;gap:14px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8F7218;">{{ r.id }}</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7A8B85;">{{ r.at }}</span></span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:11px;font-size:11.5px;line-height:1.95;color:#4A6B64;">
+            <span data-ar="">تحفظ الأرقام في هذا المتصفح وحده؛ وبها تسأل عن ملفك على <a href="mailto:people@kayanwork.com">people@kayanwork.com</a>.</span>
+            <span data-en="">These numbers are stored only in this browser; use them to ask about your file at <a href="mailto:people@kayanwork.com">people@kayanwork.com</a>.</span>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ formOn }}" hint-placeholder-val="{{ false }}">
+        <div id="apply-form" style="position:relative;overflow:hidden;background:#052E2B;border-radius:20px;color:#FAF6EC;animation:kIn .45s cubic-bezier(.23,1,.32,1) both;">
+          <div style="height:2px;background:linear-gradient(90deg,transparent,#C9A227,#E9C96B,#C9A227,transparent);background-size:200% 100%;animation:regShimmer 6s linear infinite;"></div>
+          <div style="padding:16px clamp(20px,3vw,28px);border-bottom:1px solid rgba(233,201,107,.16);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;"><span data-ar="">الترشح — </span><span data-en="">Application — </span>{{ formTitle }}</div>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#E9C96B;background:rgba(233,201,107,.1);border-radius:99px;padding:4px 10px;">{{ formCode }}</span>
+          </div>
+          <div style="padding:clamp(18px,2.6vw,26px) clamp(20px,3vw,28px) clamp(20px,3vw,28px);">
+          <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;animation:kIn .5s ease both;">
+              <label style="display:grid;gap:6px;"><span style="font-size:12px;font-weight:600;color:#E9C96B;"><span data-ar="">الاسم الكامل</span><span data-en="">Full name</span></span><input value="{{ fName }}" onInput="{{ setFName }}" placeholder="{{ fNamePh }}" style="border:1.5px solid rgba(233,201,107,.3);border-radius:12px;padding:12px 14px;font-size:13.5px;background:rgba(250,246,236,.06);color:#FAF6EC;font-family:inherit;"></label>
+              <label style="display:grid;gap:6px;"><span style="font-size:12px;font-weight:600;color:#E9C96B;"><span data-ar="">بريد أو واتساب</span><span data-en="">Email or WhatsApp</span></span><input value="{{ fContact }}" onInput="{{ setFContact }}" dir="ltr" placeholder="name@mail.com · +967…" style="border:1.5px solid rgba(233,201,107,.3);border-radius:12px;padding:12px 14px;font-size:13.5px;background:rgba(250,246,236,.06);color:#FAF6EC;text-align:left;font-family:inherit;"></label>
+            </div>
+            <label style="display:grid;gap:6px;margin-top:12px;animation:kIn .5s .06s ease both;"><span style="font-size:12px;font-weight:600;color:#E9C96B;"><span data-ar="">خلاصة الخبرة أو رابط الملف</span><span data-en="">Summary of experience or portfolio link</span></span><textarea value="{{ fNote }}" onInput="{{ setFNote }}" rows="3" placeholder="{{ fNotePh }}" style="border:1.5px solid rgba(233,201,107,.3);border-radius:12px;padding:12px 14px;font-size:13.5px;line-height:1.9;background:rgba(250,246,236,.06);color:#FAF6EC;resize:vertical;font-family:inherit;box-sizing:border-box;width:100%;"></textarea></label>
+            <sc-if value="{{ fErr }}" hint-placeholder-val="{{ false }}"><div role="alert" style="margin-top:10px;border:1px solid #C96B4A;background:rgba(201,107,74,.12);color:#F0B9A0;border-radius:12px;padding:10px 14px;font-size:12.5px;">{{ fErr }}</div></sc-if>
+            <div style="margin-top:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;animation:kIn .5s .12s ease both;">
+              <button type="button" onClick="{{ submitApp }}" style="border:none;cursor:pointer;border-radius:12px;padding:13px 28px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:14px;color:#052E2B;background:linear-gradient(135deg,#C9A227,#E9C96B);"><span data-ar="">إرسال الترشح</span><span data-en="">Submit application</span></button>
+              <a href="{{ formMail }}" style="font-size:12px;color:#E9C96B;"><span data-ar="">أو عبر البريد ←</span><span data-en="">Or by email →</span></a>
+              <span style="font-size:11.5px;color:rgba(250,246,236,.55);"><span data-ar="">يقرأ الملف كاملًا؛ ويبلغ القرار كتابة.</span><span data-en="">The full file is read; the decision is communicated in writing.</span></span>
+            </div>
+          </sc-if>
+          <sc-if value="{{ sentOk }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:rgba(126,224,184,.08);border:1px solid rgba(126,224,184,.35);border-radius:14px;padding:14px 18px;">
+              <span style="width:26px;height:26px;border-radius:99px;background:#0E6E66;color:#EAF7F0;display:grid;place-items:center;font-size:13px;animation:kPopIn .4s cubic-bezier(.34,1.56,.64,1) both;">✓</span>
+              <div style="flex:1;min-width:220px;font-size:13px;line-height:2;">
+                <span data-ar="">قيد ترشحك برقم <b dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#7CE0B8;">{{ sentId }}</b>. يقرأ ملفك إنسان، ويبلغ القرار كتابة مسببًا خلال أسبوعين من إغلاق الشاغر.</span>
+                <span data-en="">Your application is filed under <b dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#7CE0B8;">{{ sentId }}</b>. A person reads your file, and the decision is communicated in writing, with reasons, within two weeks of the vacancy closing.</span>
+              </div>
+            </div>
+          </sc-if>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+    <div data-reveal="" style="margin-top:26px;background:#052E2B;border-radius:20px;padding:22px 26px;color:#FAF6EC;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;color:#E9C96B;"><span data-ar="">كيف نعين</span><span data-en="">How we hire</span></div>
+      <div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px;">
+        <sc-for list="{{ hiring }}" as="h" hint-placeholder-count="4">
+          <div style="display:flex;gap:10px;align-items:flex-start;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#E9C96B;padding-top:3px;">{{ h.n }}</span>
+            <div><div style="font-weight:700;font-size:13.5px;">{{ h.t }}</div><div style="margin-top:4px;font-size:12px;line-height:1.9;color:rgba(250,246,236,.7);">{{ h.x }}</div></div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:16px;border-top:1px solid rgba(233,201,107,.25);padding-top:14px;font-size:12.5px;line-height:2;color:rgba(250,246,236,.8);">
+        <span data-ar="">وتسري هنا قاعدتنا نفسها: تمرر الآلة، ولا يرد إلا إنسان — كل اعتذار مسبب وباسم صاحبه، ولصاحبه تظلم واحد خلال ٢١ يومًا.</span>
+        <span data-en="">The same rule applies here: the process runs through the machine, but only a person replies — every rejection is reasoned and signed by name, with one right of appeal within 21 days.</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="ledger" style="background:#052E2B;padding:clamp(36px,5vw,64px) clamp(16px,4vw,44px);">
+  <div style="max-width:1160px;margin:0 auto;">
+    <div data-reveal="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;">
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#E9C96B;">PEOPLE LEDGER · دفتر الناس</div>
+        <h2 style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.6vw,38px);color:#FAF6EC;"><span data-ar="">ما يقال عن الثقافة <b style="font-weight:700;color:#E9C96B;">يقاس هنا.</b></span><span data-en="">What's said about culture <b style="font-weight:700;color:#E9C96B;">is measured here.</b></span></h2>
+      </div>
+      <div style="font-size:12px;color:rgba(250,246,236,.6);max-width:40ch;line-height:2;"><span data-ar="">قيم نموذج العرض؛ تحدث ربعيًا من دفتر الناس وتنشر كما تنشر أرقام الضمان.</span><span data-en="">Illustrative figures; updated quarterly from the people ledger and published the same way escrow figures are.</span></div>
+    </div>
+    <div style="margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px;">
+      <sc-for list="{{ ledger }}" as="l" hint-placeholder-count="4">
+        <div data-card="" data-reveal="" style="background:#0A3A34;border:1px solid #0E4A44;border-radius:18px;padding:20px;">
+          <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-family:'Alexandria',sans-serif;font-weight:800;font-size:28px;color:#E9C96B;" dir="ltr">{{ l.v }}</span><span style="font-size:11px;color:rgba(250,246,236,.55);">{{ l.u }}</span></div>
+          <div style="margin-top:8px;font-weight:700;font-size:13.5px;color:#FAF6EC;">{{ l.k }}</div>
+          <div style="margin-top:8px;font-size:11.5px;line-height:1.9;color:rgba(250,246,236,.6);">{{ l.x }}</div>
+          <div style="margin-top:14px;padding-top:11px;border-top:1px solid rgba(233,201,107,.18);display:flex;justify-content:space-between;gap:8px;align-items:baseline;">
+            <span style="font-size:10.5px;color:rgba(250,246,236,.48);">{{ l.src }}</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:#E9C96B;">{{ l.q }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+<section id="contact" style="max-width:1160px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(16px,4vw,44px);">
+  <div data-reveal="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:24px;padding:clamp(22px,3.4vw,34px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(18px,3vw,32px);">
+    <div>
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#8F7218;">CONTACT · تواصل</div>
+      <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(22px,3vw,30px);color:#052E2B;"><span data-ar="">بابنا على <b style="font-weight:700;color:#8F7218;">الكورنيش.</b></span><span data-en="">Our door is on <b style="font-weight:700;color:#8F7218;">the Corniche.</b></span></h2>
+      <p style="margin:10px 0 0;font-size:13px;line-height:2.05;color:#4A6B64;"><span data-ar="">خورمكسر، شارع الكورنيش، بجوار فندق ريلاكس، عدن. الدوام: السبت إلى الخميس، ٩ صباحًا – ٥ مساء.</span><span data-en="">Khormaksar, Corniche Street, next to the Relax Hotel, Aden. Open Saturday to Thursday, 9am–5pm.</span></p>
+    </div>
+    <div style="display:grid;gap:10px;align-content:start;">
+      <a href="tel:+9672236655" data-card="" style="display:flex;justify-content:space-between;gap:10px;align-items:center;background:#F4EEDD;border-radius:14px;padding:13px 16px;"><span style="font-size:12.5px;font-weight:600;color:#052E2B;"><span data-ar="">الهاتف الأول</span><span data-en="">Primary phone</span></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8F7218;">+967 2 236655</span></a>
+      <a href="tel:+9672232096" data-card="" style="display:flex;justify-content:space-between;gap:10px;align-items:center;background:#F4EEDD;border-radius:14px;padding:13px 16px;"><span style="font-size:12.5px;font-weight:600;color:#052E2B;"><span data-ar="">الهاتف الثاني</span><span data-en="">Secondary phone</span></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8F7218;">+967 2 232096</span></a>
+      <a href="mailto:people@kayanwork.com" data-card="" style="display:flex;justify-content:space-between;gap:10px;align-items:center;background:#F4EEDD;border-radius:14px;padding:13px 16px;"><span style="font-size:12.5px;font-weight:600;color:#052E2B;"><span data-ar="">شؤون الفريق والترشح</span><span data-en="">People &amp; careers</span></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8F7218;">people@kayanwork.com</span></a>
+    </div>
+    <div style="display:grid;gap:10px;align-content:start;">
+      <div style="font-size:12px;color:#8F7218;font-weight:600;"><span data-ar="">أيهما بابك؟</span><span data-en="">Which door is yours?</span></div>
+      <a href="Kayan Portal.dc.html" data-card="" style="background:#052E2B;border-radius:14px;padding:14px 16px;color:#FAF6EC;"><div style="font-weight:700;font-size:13.5px;"><span data-ar="">عميل يريد عملًا مضمونًا</span><span data-en="">A client wanting guaranteed work</span></div><div style="margin-top:4px;font-size:11.5px;color:#E9C96B;"><span data-ar="">بوابة كيان — طلب النطاق ←</span><span data-en="">Kayan Portal — request scope →</span></div></a>
+      <a href="Kayan Apply.dc.html" data-card="" style="background:#0A3A34;border-radius:14px;padding:14px 16px;color:#FAF6EC;"><div style="font-weight:700;font-size:13.5px;"><span data-ar="">كفاءة تريد التسجيل</span><span data-en="">Talent ready to register</span></div><div style="margin-top:4px;font-size:11.5px;color:#E9C96B;"><span data-ar="">محطة التسجيل — ١٤ محطة ←</span><span data-en="">Registration station — 14 stops →</span></div></a>
+    </div>
+  </div>
+  <div data-reveal="" style="position:relative;overflow:hidden;margin-top:14px;background:#052E2B;border-radius:24px;padding:clamp(22px,3.4vw,32px);color:#FAF6EC;">
+    <div data-regdeco="" aria-hidden="true">
+      <div data-regline=""></div>
+      <div data-regstamp=""></div>
+    </div>
+    <div style="position:relative;z-index:1;">
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:17px;"><span data-ar="">اكتب لنا — وتقيد رسالتك برقم.</span><span data-en="">Write to us — your message is logged with a number.</span></div>
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#E9C96B;">REGISTRY · مكتب الضبط</span>
+    </div>
+    <p style="margin:8px 0 0;font-size:12.5px;line-height:2;color:rgba(250,246,236,.7);max-width:64ch;">
+      <span data-ar="">لا تقع رسالتك في فراغ: يختار لها بابها، وتقيد برقم ضبط، ويسمى موعد الرد قبل الإرسال. رسالة بلا رقم لا تلزم أحدًا؛ ورقمك هنا حجتك.</span>
+      <span data-en="">Your message doesn't land in a void: a door is chosen for it, it's logged under a registry number, and a reply date is set before you send it. A message without a number binds no one; here, your number is your proof.</span>
+    </p>
+    <sc-if value="{{ cNotSent }}" hint-placeholder-val="{{ true }}">
+      <div data-regform="" style="margin-top:20px;">
+        <div style="display:grid;gap:8px;">
+          <sc-for list="{{ cDoors }}" as="d" hint-placeholder-count="4">
+            <button type="button" data-doorcard="" onClick="{{ d.tap }}" style="text-align:start;border:1.5px solid {{ d.bd }};background:{{ d.bg }};cursor:pointer;border-radius:14px;padding:11px 14px;font-family:inherit;">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <span style="width:6px;height:6px;border-radius:99px;background:{{ d.dot }};flex:none;"></span>
+                <span style="font-size:12.5px;font-weight:700;color:{{ d.fg }};">{{ d.t }}</span>
+              </div>
+              <div style="margin-top:5px;font-size:10.5px;line-height:1.7;color:rgba(250,246,236,.5);">{{ d.note }}</div>
+            </button>
+          </sc-for>
+        </div>
+        <div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;">
+            <label style="display:grid;gap:6px;"><span style="font-size:12px;font-weight:600;color:#E9C96B;"><span data-ar="">الاسم</span><span data-en="">Name</span></span><input value="{{ cName }}" onInput="{{ setCName }}" placeholder="{{ cNamePh }}" style="border:1.5px solid rgba(233,201,107,.3);border-radius:12px;padding:12px 14px;font-size:13.5px;background:rgba(250,246,236,.06);color:#FAF6EC;font-family:inherit;"></label>
+            <label style="display:grid;gap:6px;"><span style="font-size:12px;font-weight:600;color:#E9C96B;"><span data-ar="">بريد أو واتساب للرد</span><span data-en="">Email or WhatsApp for reply</span></span><input value="{{ cChan }}" onInput="{{ setCChan }}" dir="ltr" placeholder="name@mail.com · +967…" style="border:1.5px solid rgba(233,201,107,.3);border-radius:12px;padding:12px 14px;font-size:13.5px;background:rgba(250,246,236,.06);color:#FAF6EC;text-align:left;font-family:inherit;"></label>
+          </div>
+          <label style="display:grid;gap:6px;margin-top:12px;"><span style="font-size:12px;font-weight:600;color:#E9C96B;"><span data-ar="">الرسالة</span><span data-en="">Message</span></span><textarea value="{{ cMsg }}" onInput="{{ setCMsg }}" rows="4" placeholder="{{ cMsgPh }}" style="border:1.5px solid rgba(233,201,107,.3);border-radius:12px;padding:12px 14px;font-size:13.5px;line-height:1.9;background:rgba(250,246,236,.06);color:#FAF6EC;resize:vertical;font-family:inherit;box-sizing:border-box;width:100%;"></textarea></label>
+          <sc-if value="{{ cErr }}" hint-placeholder-val="{{ false }}"><div role="alert" style="margin-top:10px;border:1px solid #C96B4A;background:rgba(201,107,74,.12);color:#F0B9A0;border-radius:12px;padding:10px 14px;font-size:12.5px;">{{ cErr }}</div></sc-if>
+          <div style="margin-top:14px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+            <button type="button" onClick="{{ cSend }}" data-sheen="" style="border:none;cursor:pointer;border-radius:12px;padding:13px 30px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:14px;color:#052E2B;background:linear-gradient(135deg,#C9A227,#E9C96B);"><span data-ar="">قيد الرسالة</span><span data-en="">Log the message</span></button>
+            <span style="font-size:11.5px;color:rgba(250,246,236,.55);">{{ cSla }}</span>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ cSentOk }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;background:rgba(126,224,184,.08);border:1px solid rgba(126,224,184,.35);border-radius:16px;padding:18px 20px;">
+        <span style="width:46px;height:46px;border-radius:14px;background:#0E6E66;color:#EAF7F0;display:grid;place-items:center;font-size:20px;animation:kPopIn .4s cubic-bezier(.34,1.56,.64,1) both;">✓</span>
+        <div>
+          <div style="font-size:13.5px;font-weight:700;"><span data-ar="">قيدت رسالتك في مكتب الضبط.</span><span data-en="">Your message has been logged with the registry office.</span></div>
+          <div style="margin-top:6px;font-size:12.5px;line-height:2;color:rgba(250,246,236,.75);">
+            <span data-ar="">رقم الضبط <b dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#7CE0B8;">{{ cRcptId }}</b> · الباب: {{ cRcptDoor }} · يوافيك الرد قبل <b style="color:#7CE0B8;">{{ cRcptDue }}</b>. احتفظ بالرقم؛ به تسأل عنها.</span>
+            <span data-en="">Registry number <b dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#7CE0B8;">{{ cRcptId }}</b> · Door: {{ cRcptDoor }} · You'll hear back by <b style="color:#7CE0B8;">{{ cRcptDue }}</b>. Keep the number — it's how you follow up.</span>
+          </div>
+          <button type="button" onClick="{{ cAgain }}" style="margin-top:10px;border:1px solid rgba(233,201,107,.4);background:none;color:#E9C96B;cursor:pointer;border-radius:10px;padding:8px 16px;font-size:12px;font-weight:600;font-family:inherit;"><span data-ar="">رسالة أخرى</span><span data-en="">Send another message</span></button>
+        </div>
+      </div>
+    </sc-if>
+    </div>
+  </div>
+</section>
+<footer style="background:#03201D;padding:26px clamp(16px,4vw,44px);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+  <div style="display:flex;align-items:center;gap:12px;"><img src="assets/kayan-mark-cream.png" alt="" style="height:28px;"><span style="font-size:12.5px;color:rgba(250,246,236,.75);"><span data-ar="">خلف كل نجاح، كيان.</span><span data-en="">Behind every success, a Kayan.</span></span></div>
+  <nav style="display:flex;gap:16px;font-size:12px;flex-wrap:wrap;"><a href="Kayan Home.dc.html" style="color:#E9C96B;"><span data-ar="">الرئيسة</span><span data-en="">Home</span></a><a href="Kayan Planet.dc.html" style="color:#E9C96B;"><span data-ar="">البيئة</span><span data-en="">Planet</span></a><a href="Civic Wing - Kayan for Yemen.dc.html" style="color:#E9C96B;"><span data-ar="">كيان لليمن</span><span data-en="">Kayan for Yemen</span></a><a href="Kayan Legal.dc.html" style="color:#E9C96B;"><span data-ar="">الأحكام</span><span data-en="">Legal</span></a></nav>
+</footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    let apps=null;try{apps=JSON.parse(localStorage.getItem('kyn-people-apps-v1')||'null');}catch(e){}
+    let cbox=null;try{cbox=JSON.parse(localStorage.getItem('kyn-contact-v1')||'null');}catch(e){}
+    this.state={lang:this.readLang(),applyFor:null,fName:'',fContact:'',fNote:'',fErr:'',sent:(apps&&apps.v===1)?apps.sent:{},
+      cDoor:'people',cName:'',cChan:'',cMsg:'',cErr:'',cRcpt:(cbox&&cbox.v===1)?cbox.last:null};
+  }
+  // English leads on first visit; the site-wide key wins once a choice is made.
+  readLang(){
+    try{ const v=localStorage.getItem('kyn-lang'); if(v==='ar'||v==='en') return v; }catch(e){}
+    return 'en';
+  }
+  setLang(v){
+    try{ localStorage.setItem('kyn-lang', v); }catch(e){}
+    this.setState({lang:v});
+  }
+  isAr(){ return this.state.lang!=='en'; }
+  L(ar,en){ return this.isAr()?ar:en; }
+  cSend(){const {cDoor,cName,cChan,cMsg}=this.state;const ar=this.isAr();
+    if(cName.trim().length<3||cChan.trim().length<6||cMsg.trim().length<10){this.setState({cErr:this.L('تستكمل الحقول الثلاثة قبل القيد: الاسم، وقناة الرد، ورسالة من سطر فأكثر.','Complete all three fields before logging: name, reply channel, and a message of at least one line.')});return;}
+    const doors={people:{t:ar?'شؤون الفريق':'People affairs',days:3},intern:{t:ar?'التدريب الداخلي':'Internship',days:5},media:{t:ar?'الإعلام والشراكات':'Media & partnerships',days:5},other:{t:ar?'أمر آخر':'Something else',days:5}};
+    const d=doors[cDoor],due=new Date(Date.now()+d.days*864e5);
+    const rcpt={id:'REG-26-'+String(Date.now()).slice(-6),door:d.t,due:due.toLocaleDateString(ar?'ar-YE':'en-GB',{weekday:'long',month:'long',day:'numeric'}),at:new Date().toISOString()};
+    try{const prev=JSON.parse(localStorage.getItem('kyn-contact-v1')||'null');const list=(prev&&prev.v===1&&prev.list)||[];
+      list.unshift({...rcpt,name:cName.trim(),chan:cChan.trim(),msg:cMsg.trim(),doorKey:cDoor});
+      localStorage.setItem('kyn-contact-v1',JSON.stringify({v:1,last:rcpt,list}));}catch(e){}
+    this.setState({cRcpt:rcpt,cErr:''});}
+  persistSent(sent){try{localStorage.setItem('kyn-people-apps-v1',JSON.stringify({v:1,sent}));}catch(e){}}
+  openForm(code){this.setState({applyFor:code,fErr:''});
+    setTimeout(()=>{const el=document.getElementById('apply-form');if(el){const y=el.getBoundingClientRect().top+window.pageYOffset-80;window.scrollTo({top:y,behavior:'smooth'});}},80);}
+  submitApp(){const {applyFor,fName,fContact,fNote,sent}=this.state;
+    if(fName.trim().length<5||fContact.trim().length<6||fNote.trim().length<10){this.setState({fErr:this.L('تستكمل الحقول الثلاثة: الاسم الكامل، وقناة تواصل صحيحة، وخلاصة لا تقل عن سطر.','Complete all three fields: full name, a valid contact channel, and a summary of at least one line.')});return;}
+    const id='APP-'+applyFor+'-'+String(Date.now()).slice(-5);
+    const ns={...sent,[applyFor]:{id,name:fName.trim(),contact:fContact.trim(),note:fNote.trim(),at:new Date().toISOString().slice(0,10)}};
+    this.persistSent(ns);this.setState({sent:ns,fErr:''});}
+  renderVals(){
+    const st=this.state;
+    const ar=this.isAr();
+    const jobMeta={'POS-DEL-COOR':this.L('منسق تسليم','Delivery Coordinator'),'POS-FRG-OPS':this.L('مشرف تشغيل المصهر','Forge Operations Supervisor'),'POS-FIN-ESC':this.L('محاسب حساب الضمان','Escrow Accountant'),'GEN-POOL':this.L('قائمة الجاهزية','Readiness list')};
+    const cur=st.applyFor,curSent=cur?st.sent[cur]:null;
+    const filed=Object.keys(st.sent||{}).map(k=>({t:jobMeta[k]||k,id:st.sent[k].id,at:st.sent[k].at}));
+    return {
+      langCode: ar?'ar':'en',
+      setLangAr:()=>this.setLang('ar'), setLangEn:()=>this.setLang('en'),
+      tMarkAlt: this.L('كيان','Kayan'),
+      filed,hasFiled:filed.length>0,filedCount:String(filed.length).padStart(2,'0'),
+      openPool:()=>this.openForm('GEN-POOL'),
+      poolBtn:st.sent['GEN-POOL']?this.L('ملفك محفوظ ✓','Your file is on record ✓'):this.L('إيداع الملف','Submit your file'),
+      formOn:!!cur,formTitle:cur?jobMeta[cur]:'',formCode:cur||'',
+      formMail:'mailto:people@kayanwork.com?subject='+encodeURIComponent((cur?jobMeta[cur]:'')+' — '+(cur||'')),
+      notSent:!curSent,sentOk:!!curSent,sentId:curSent?curSent.id:'',
+      fNamePh:this.L('الاسم الرباعي','Your full name'),
+      fNotePh:this.L('سطران يكفيان: أين عملت، وما الذي تحسنه — أو رابط ملفك.','Two lines are enough: where you\'ve worked, what you\'re good at — or a link to your portfolio.'),
+      fName:st.fName,setFName:e=>this.setState({fName:e.target.value,fErr:''}),
+      fContact:st.fContact,setFContact:e=>this.setState({fContact:e.target.value,fErr:''}),
+      fNote:st.fNote,setFNote:e=>this.setState({fNote:e.target.value,fErr:''}),
+      fErr:st.fErr,submitApp:()=>this.submitApp(),
+      cDoors:(ar?[['people','شؤون الفريق','يجيب مسؤول شؤون الفريق خلال ثلاثة أيام عمل.'],['intern','التدريب الداخلي','يجيب مشرف المصهر والتدريب خلال خمسة أيام عمل.'],['media','الإعلام والشراكات','تجيب إدارة الاتصال خلال خمسة أيام عمل.'],['other','أمر آخر','يوجه إلى صاحب الشأن ويرد خلال خمسة أيام عمل.']]:[['people','People affairs','The people affairs officer replies within three business days.'],['intern','Internship','The Forge and training supervisor replies within five business days.'],['media','Media & partnerships','Communications management replies within five business days.'],['other','Something else','Routed to the right person, who replies within five business days.']]).map(([k,t,note])=>({t,note,tap:()=>this.setState({cDoor:k,cErr:''}),bd:st.cDoor===k?'#E9C96B':'rgba(233,201,107,.22)',bg:st.cDoor===k?'rgba(233,201,107,.14)':'rgba(250,246,236,.03)',fg:st.cDoor===k?'#FAF6EC':'rgba(250,246,236,.68)',dot:st.cDoor===k?'#E9C96B':'rgba(250,246,236,.25)'})),
+      cSla:(ar?{people:'الرد كتابة خلال ٣ أيام عمل',intern:'الرد كتابة خلال ٥ أيام عمل',media:'الرد كتابة خلال ٥ أيام عمل',other:'الرد كتابة خلال ٥ أيام عمل'}:{people:'Written reply within 3 business days',intern:'Written reply within 5 business days',media:'Written reply within 5 business days',other:'Written reply within 5 business days'})[st.cDoor],
+      cNamePh:this.L('اسمك الكامل','Your full name'),
+      cMsgPh:this.L('قل حاجتك بلا مقدمات — تصل إلى صاحب الشأن لا إلى صندوق عام.','Say what you need, no preamble — it reaches the right person, not a general inbox.'),
+      cName:st.cName,setCName:e=>this.setState({cName:e.target.value,cErr:''}),
+      cChan:st.cChan,setCChan:e=>this.setState({cChan:e.target.value,cErr:''}),
+      cMsg:st.cMsg,setCMsg:e=>this.setState({cMsg:e.target.value,cErr:''}),
+      cErr:st.cErr,cSend:()=>this.cSend(),
+      cNotSent:!st.cRcpt,cSentOk:!!st.cRcpt,
+      cRcptId:st.cRcpt?st.cRcpt.id:'',cRcptDoor:st.cRcpt?st.cRcpt.door:'',cRcptDue:st.cRcpt?st.cRcpt.due:'',
+      cAgain:()=>this.setState({cRcpt:null,cMsg:'',cErr:''}),
+      ledger: ar?[
+        {v:'100%',u:'من العقود',k:'عقود مكتوبة',src:'دفتر العقود',q:'Q2 2026',x:'لا يعمل أحد بتكليف شفهي؛ العقد قبل اليوم الأول.'},
+        {v:'4',u:'ساعات أسبوعيًا',k:'تعلم محمي داخل الدوام',src:'جدول الدوام',q:'Q2 2026',x:'محجوزة لكل فرد ولا تصادرها المواعيد.'},
+        {v:'14',u:'يومًا حدًا أقصى',k:'قرارات التعيين مسببة',src:'سجل التعيين',q:'Q2 2026',x:'من المقابلة إلى القرار المكتوب؛ والصمت ليس قرارًا.'},
+        {v:'4',u:'ساعات شهريًا',k:'ساعات مدنية مدفوعة',src:'بطاقة الموظف',q:'Q2 2026',x:'يؤديها كل موظف عبر كيان لليمن وتحسب في بطاقته.'}
+      ]:[
+        {v:'100%',u:'of contracts',k:'Written contracts',src:'Contracts ledger',q:'Q2 2026',x:'No one works on a verbal assignment; the contract comes before day one.'},
+        {v:'4',u:'hours a week',k:'Protected learning time',src:'Duty roster',q:'Q2 2026',x:'Reserved for every person; no deadline can claim it.'},
+        {v:'14',u:'days, maximum',k:'Reasoned hiring decisions',src:'Hiring record',q:'Q2 2026',x:'From interview to written decision; silence is not a decision.'},
+        {v:'4',u:'hours a month',k:'Paid civic hours',src:'Employee record',q:'Q2 2026',x:'Served by every employee through Kayan for Yemen and logged on their record.'}
+      ],
+      arc: ar?[
+        {w:'W01 – W02',t:'الالتحاق والقراءة',x:'يقرأ المتدرب معايير التسليم وبوابات الجودة، ويسلم ملخصًا مكتوبًا يوقعه مشرفه.'},
+        {w:'W03 – W06',t:'اليد الثانية',x:'يلحق بتكليف قائم مساعدًا: يحضر المحاضر، ويحرر الملاحظات، ويتابع البنود المفتوحة.'},
+        {w:'W07 – W10',t:'بند باسمه',x:'يسند إليه بند من نطاق العمل يمر ببوابة جودة باسمه، لا باسم مشرفه.'},
+        {w:'W11 – W12',t:'المحضر والقرار',x:'يرفع المشرف تقييمًا مسببًا موقعًا، ويعرض مقعد ثابت أو تزكية مكتوبة.'}
+      ]:[
+        {w:'W01 – W02',t:'Onboarding and reading',x:'The intern reads the delivery standards and quality gates, and submits a written summary signed by their supervisor.'},
+        {w:'W03 – W06',t:'Second hand',x:'Joins a live assignment as an assistant: attending minutes, drafting notes, and tracking open items.'},
+        {w:'W07 – W10',t:'A line item of their own',x:'Assigned a line item from the scope of work that passes a quality gate under their own name, not their supervisor\'s.'},
+        {w:'W11 – W12',t:'Record and decision',x:'The supervisor files a signed, reasoned evaluation, and either a permanent seat or a written reference is offered.'}
+      ],
+      charter: ar?[
+        {n:'01',t:'عقد مكتوب لكل يد',x:'لا يبدأ عمل إلا بعقد مكتوب يبين الأجر والمهام والإجازة؛ والتكليف الشفهي لا ينشئ حقًا ولا يسقطه.'},
+        {n:'02',t:'نطاق أجر معلن',x:'تنشر نطاقات الأجور داخليًا لكل موقع؛ ويعلل كل موضع داخل النطاق كتابة عند التعيين والترقية.'},
+        {n:'03',t:'قرارات مسببة',x:'كل قرار يمس شخصًا — تعيينًا أو تقييمًا أو إنهاء — يصدر مكتوبًا مسببًا باسم صاحبه، ولصاحب الشأن تظلم واحد.'},
+        {n:'04',t:'طاقة الشمس وراحة العقل',x:'يعمل المقر بكهرباء شمسية لا تنقطع؛ وساعات العمل تحترم الصلاة والراحة، والسهر المزمن عيب تشغيل لا بطولة.'},
+        {n:'05',t:'تعلم له وقت محجوز',x:'لكل فرد أربع ساعات تعلم أسبوعية محمية داخل الدوام، ومقعد في دورات المصهر بلا رسوم.'}
+      ]:[
+        {n:'01',t:'A written contract for every hire',x:'No one starts work without a written contract stating pay, duties, and leave; a verbal assignment creates no right and voids none.'},
+        {n:'02',t:'A published pay range',x:'Pay ranges are published internally for every role; where an offer lands within the range is justified in writing at hire and at promotion.'},
+        {n:'03',t:'Reasoned decisions',x:'Every decision that affects a person — hiring, evaluation, or termination — is issued in writing, reasoned, and signed by name; the person concerned has one right of appeal.'},
+        {n:'04',t:'Solar power and a rested mind',x:'The office runs on uninterrupted solar power; working hours respect prayer and rest, and chronic overwork is treated as an operating fault, not a badge of honour.'},
+        {n:'05',t:'Learning with protected time',x:'Every person gets four protected learning hours a week within working hours, plus a free seat in Forge courses.'}
+      ],
+      internFacts: ar?[
+        {v:'١٢',k:'أسبوعًا',x:'ثلاثة أشهر كاملة داخل فرق قائمة، لا في قاعة منفصلة.'},
+        {v:'١ : ١',k:'مشرف لكل متدرب',x:'مثبت من درجة T3 فأعلى يرافق المتدرب ويوقع تقييمه.'},
+        {v:'بند',k:'يسلم باسمه',x:'يخرج المتدرب وفي سجله بند حقيقي مر ببوابة جودة.'},
+        {v:'٤',k:'مسارات',x:'إدارة التسليم، التصميم، الهندسة، والمجتمع والمصهر.'}
+      ]:[
+        {v:'12',k:'weeks',x:'Three full months inside live teams, not a separate classroom.'},
+        {v:'1 : 1',k:'supervisor per intern',x:'A permanent staff member at grade T3 or above accompanies the intern and signs their evaluation.'},
+        {v:'Line item',k:'delivered under their name',x:'The intern leaves with a real line item on their record that passed a quality gate.'},
+        {v:'4',k:'tracks',x:'Delivery management, design, engineering, and community & Forge.'}
+      ],
+      tracks: ar?[
+        {c:'TR-DEL',n:'إدارة التسليم — تنسيق الفرق والبوابات والمحاضر'},
+        {c:'TR-DSG',n:'التصميم — هوية وواجهات ومطبوعات تحت مراجعة مثبت'},
+        {c:'TR-ENG',n:'الهندسة — مواقع ومتاجر وأنظمة صغيرة بمعايير التسليم'},
+        {c:'TR-COM',n:'المجتمع والمصهر — تشغيل الدفعات والفعاليات والرعاة'}
+      ]:[
+        {c:'TR-DEL',n:'Delivery management — coordinating teams, gates, and minutes'},
+        {c:'TR-DSG',n:'Design — identity, interfaces, and print, reviewed by a permanent staff member'},
+        {c:'TR-ENG',n:'Engineering — sites, stores, and small systems, built to delivery standard'},
+        {c:'TR-COM',n:'Community & Forge — running cohorts, events, and sponsors'}
+      ],
+      jobs:(ar?[
+        {c:'POS-DEL-COOR',t:'منسق تسليم',x:'يدير يوميات ثلاثة تكليفات متوازية: البوابات والمحاضر وقنوات العملاء؛ عين اللوحة وأذن الفريق.',loc:'عدن — المقر',type:'دوام كامل',band:'BAND-B2'},
+        {c:'POS-FRG-OPS',t:'مشرف تشغيل المصهر',x:'يشغل دفعات التدريب: الجداول والقاعات والعتاد وتقارير الرعاة؛ ويحرس معيار «لا شهادة بلا بند مسلم».',loc:'عدن — المقر',type:'دوام كامل',band:'BAND-B1'},
+        {c:'POS-FIN-ESC',t:'محاسب حساب الضمان',x:'يمسك دفاتر الضمان: الإيداع والصرف بمحاضر الاستلام والمطابقة الشهرية؛ دقة لا تقبل التقريب.',loc:'عدن — هجين',type:'دوام كامل',band:'BAND-B2'}
+      ]:[
+        {c:'POS-DEL-COOR',t:'Delivery Coordinator',x:'Runs the daily rhythm of three parallel assignments — gates, minutes, and client channels: the eyes on the board and the ears of the team.',loc:'Aden — HQ',type:'Full-time',band:'BAND-B2'},
+        {c:'POS-FRG-OPS',t:'Forge Operations Supervisor',x:'Runs training cohorts: schedules, rooms, equipment, and sponsor reports — guarding the standard of “no certificate without a delivered line item.”',loc:'Aden — HQ',type:'Full-time',band:'BAND-B1'},
+        {c:'POS-FIN-ESC',t:'Escrow Accountant',x:'Keeps the escrow books: deposits and releases against acceptance certificates, with monthly reconciliation — precision with no rounding.',loc:'Aden — Hybrid',type:'Full-time',band:'BAND-B2'}
+      ]).map(j=>({...j,open:()=>this.openForm(j.c),btn:st.sent[j.c]?this.L('رشحت ✓','Applied ✓'):this.L('تقدم للشاغر','Apply for role')})),
+      hiring: ar?[
+        {n:'01',t:'ملف يقرأ كاملًا',x:'يقرأ إنسان كل ملف؛ لا فرز آليًا يسقط أحدًا.'},
+        {n:'02',t:'تمرين من صميم العمل',x:'ساعتان على مهمة حقيقية مأجورة الأثر إن استخدمت.'},
+        {n:'03',t:'مقابلة واحدة عميقة',x:'مع المدير المباشر وزميل مستقبلي؛ بلا جولات استنزاف.'},
+        {n:'04',t:'قرار خلال أسبوعين',x:'يبلغ كتابة مسببًا؛ والصمت ليس قرارًا عندنا.'}
+      ]:[
+        {n:'01',t:'A file read in full',x:'A person reads every file; no automated filter screens anyone out.'},
+        {n:'02',t:'A real-work exercise',x:'Two hours on a genuine task, paid if its output is used.'},
+        {n:'03',t:'One in-depth interview',x:'With the direct manager and a future colleague — no attrition rounds.'},
+        {n:'04',t:'A decision within two weeks',x:'Communicated in writing, with reasons — silence is not a decision here.'}
+      ]
+    };
+  }
+  componentDidMount(){
+    const io='IntersectionObserver'in window?new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target);}}),{threshold:.1}):null;
+    document.querySelectorAll('[data-reveal]').forEach(el=>io?io.observe(el):el.classList.add('on'));
+    setTimeout(()=>document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('on')),2600);
+    this._sheen=e=>{const t=e.target.closest&&e.target.closest('[data-sheen]');if(!t)return;
+      const r=t.getBoundingClientRect();t.style.setProperty('--mx',(e.clientX-r.left)+'px');t.style.setProperty('--my',(e.clientY-r.top)+'px');};
+    document.addEventListener('pointermove',this._sheen,{passive:true});
+  }
+  componentWillUnmount(){document.removeEventListener('pointermove',this._sheen);}
+}
+</script>
+</body>
+</html>

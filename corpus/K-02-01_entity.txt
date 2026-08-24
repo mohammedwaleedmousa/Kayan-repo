@@ -1,0 +1,424 @@
+KAYAN INNOVATION, ENTREPRENEURSHIP & WORK ENVIRONMENTS LLC
+Aden, Republic of Yemen
+
+Entity, Identity and Relationship Architecture
+The records Kayan keeps, the numbers it issues, the pods it forms, and the pages where every relationship lives
+This document defines the objects Kayan keeps records about, how each is identified, how they relate, where their relationship is held, and which events update them automatically. It is the specification a developer builds from and the map an operator navigates.
+Document code
+K-02-01
+Version
+v1.0
+Status
+Founding draft — for founder ratification
+Date
+5 August 2026
+Owner
+Founder / Chief Executive
+Classification
+INTERNAL — CONFIDENTIAL
+Supersedes
+All prior registry, database and platform schema drafts
+Derives from
+K-00-01 The Kayan Business Constitution
+Unlocks
+K-02-02 Micro-Specialisation Taxonomy · K-03-01 Registration Architecture · all platform build
+No form may be designed, and no page built, before this is settled.
+
+Contents
+TOC \h \o "1-3"
+
+1. Why this document exists
+Every operational failure in a company of this kind traces back to the same root: the same person, organisation or piece of work exists in several places under several names, and nobody can say which is true. Reporting decays, money goes to the wrong account, and trust — the actual product — becomes unverifiable.
+This document prevents that by settling four things before anything is built: what objects exist, how each is uniquely and permanently identified, how they relate to each other, and what happens automatically when something changes.
+It follows a single design law, stated once and applied throughout: one real-world thing, one record, one identifier, one page. Everything else is a view.
+2. The entity map
+Kayan keeps records about nine objects. Nothing else is an entity; everything else is an attribute, a document or an event attached to one of these.
+Code
+Entity
+Definition
+Created when
+TAL
+Talent
+A professional who has registered with Kayan. One human being, one record, for life.
+Registration account is created
+CLI
+Client
+An organisation or individual that commissions work. The contracting counterparty.
+Client account or intake is created
+POD
+Pod
+A named group of professionals that delivers work together.
+A pod is registered, assembled or composed
+ENG
+Engagement
+A contracted piece of work between Kayan and a Client, delivered by a Pod under a Scope of Work.
+Scope of Work is issued
+SPO
+Sponsor
+An organisation or individual funding Forge cohorts or Kayan for Yemen programmes.
+Sponsor record is opened
+PRG
+Programme
+A funded cohort or civic programme with defined outcomes and a reporting obligation.
+Programme is approved
+MEM
+Member
+A person or organisation holding a Hub membership. May also be a Talent — the records are linked, not merged.
+Membership is issued
+VER
+Verification
+A single, dated assessment or check producing a result. Many per Talent.
+Any check or assessment is completed
+PAY
+Payment Event
+A movement of money in or out, with its evidence.
+Funds are received, held, released or paid
+2.1 How they relate
+Relationship
+Cardinality
+Rule
+Talent → Pod
+Many to many
+A person may belong to several pods simultaneously, in different roles.
+Pod → Engagement
+One to many
+A pod may deliver several engagements. An engagement has exactly one delivering pod.
+Client → Engagement
+One to many
+All engagement history rolls up to the client record.
+Talent → Verification
+One to many
+A person accumulates verifications over time. None is ever deleted; superseded ones are marked.
+Talent → Micro-specialisation
+One to many
+One primary, up to four secondary. Each carries its own verification state.
+Sponsor → Programme
+Many to many
+A programme may have several sponsors; a sponsor may fund several programmes.
+Programme → Talent
+One to many
+Participation is recorded on the person&apos;s record and drives the Absorption Ratio.
+Engagement → Payment Event
+One to many
+Escrow funding, milestone releases and payouts all attach to the engagement.
+Talent ↔ Member
+One to one, optional
+A professional who takes a Hub desk has both records, linked. They are never merged — one may end without the other.
+The Talent–Member separation is deliberate and frequently got wrong. A membership is a commercial contract that can lapse; a professional record is permanent. Merging them means cancelling a desk deletes a verification history. [JUDGEMENT]
+
+3. The identity and numbering standard
+3.1 Design requirements
+An identifier in this operating environment must satisfy conditions that a simple database key does not. It will be written by hand, read over a poor phone line, typed into a bank transfer form, and quoted in a contract. It must therefore be:
+Short enough to be said aloud and written without error
+Self-validating, so that a single mistyped character is detected immediately rather than creating a wrong payment
+Non-sequential in appearance to a casual observer, so it does not disclose volume to competitors or clients
+Permanent — never reissued, never reused, never changed when a person&apos;s details change
+Human-readable as to type, so that anyone can see at a glance whether they are looking at a person, an organisation or a piece of work
+3.2 The format
+KY-<TYPE>-<YY>-<SEQ>-<C>
+Segment
+Meaning
+Rule
+KY
+Institution prefix
+Fixed. Distinguishes a Kayan identifier from any other reference in a document.
+TYPE
+Entity type
+T Talent · C Client · P Pod · E Engagement · S Sponsor · G Programme · M Member
+YY
+Year of issue
+Two digits of the calendar year of first issue. Never changes thereafter.
+SEQ
+Sequence
+Five digits, zero-padded, allocated in order within type and year. Resets each year.
+C
+Check character
+Calculated. Detects any single-character error and most transpositions.
+Examples: KY-T-26-00148-9 (a professional), KY-C-26-00037-7 (a client organisation), KY-P-26-00012-1 (a pod), KY-E-26-00205-1 (an engagement). Each check character below is the true value produced by the algorithm in 3.3 and may be verified by hand.
+3.3 The check character
+Calculated on the seven digits formed by YY followed by SEQ, using a modulus-11 weighted sum. This is deliberately simple enough to be verified by hand at a bank counter and strong enough to catch the errors that actually occur.
+Take the seven digits left to right and multiply them by the weights 8, 7, 6, 5, 4, 3, 2 respectively.
+Add the seven products together.
+Divide the total by 11 and take the remainder.
+Subtract the remainder from 11. If the result is 11, the check character is 0. If the result is 10, the check character is X. Otherwise it is the result itself.
+Worked example for year 26, sequence 00148: digits 2 6 0 0 1 4 8; products 16, 42, 0, 0, 4, 12, 16; sum 90; 90 modulo 11 is 2; 11 minus 2 is 9. The identifier is KY-T-26-00148-9.
+Any system accepting a Kayan identifier must validate the check character before accepting the entry. An identifier that fails validation is rejected at the point of entry, never stored and corrected later. [RULE]
+3.4 The public verification reference
+The internal identifier is an operational key and is not published. Where a professional&apos;s verified status is shown publicly or shared with a client, a separate reference is used, derived from the same sequence but carrying no year and no internal meaning: KVR-00148.
+The two are linked one to one and never interchanged. This separation allows the public reference to be displayed, shared and eventually recognised externally without exposing internal volumes, sequencing or record structure. [DECISION]
+Whether the public reference is issued at launch or held until a delivery record exists is open question Q-01 in the Constitution.
+3.5 Issuance and lifecycle rules
+Rule
+Detail
+Issued once
+At the moment the record is created, before any verification. A person at tier T0 already has a permanent identifier.
+Never reused
+A withdrawn, duplicated or fraudulent record retains its identifier permanently in a closed state. The number is never given to anyone else.
+Never changed
+Name changes, tier changes, specialisation changes and status changes do not alter the identifier.
+Duplicate handling
+Where two records are found to be the same person, one is designated primary; the other is marked merged, retains its number, and permanently redirects to the primary.
+Quoted everywhere
+The identifier appears on every contract, payment instruction, assessment result, reference request and delivery note relating to that entity.
+
+4. The pod model
+A pod is the unit of delivery. Kayan does not sell individuals; it sells a team with a named accountable lead. The pod is what makes the fee defensible and what makes delivery survivable when one person becomes unavailable — which, in this operating environment, is a certainty rather than a risk.
+4.1 The three formation types
+All three are valid, all three receive a pod identifier and a pod page, and all three deliver under the same standard. They differ in origin and in how the internal split is agreed.
+Type
+Name
+How it forms
+Who leads
+Internal split
+A
+Project-formed
+Kayan assembles a team for a specific Scope of Work from available verified professionals.
+Appointed by Kayan
+Set per role in the engagement, disclosed to each member before acceptance
+B
+Registered
+An existing team registers with Kayan together, retaining its own name and internal arrangements.
+The team&apos;s own declared lead, confirmed by Kayan
+Governed by the team&apos;s own written internal agreement, which must be disclosed to Kayan
+C
+Kayan-composed
+Kayan builds a team by drawing individuals who belong to no pod together with members released from registered pods.
+Appointed by Kayan
+Set per role, with the releasing pod&apos;s consent recorded where a member is drawn from a registered pod
+A registered pod does not gain preferential access to work. Formation type is an administrative fact, not a status. Work allocation follows the same rule as verification: fit, availability and client requirement. [RULE — extends Constitution R2]
+4.2 Roles within a pod
+Role
+Accountability
+Requirement
+Pod Lead
+Delivery of the engagement, client communication, milestone submission, escalation
+Must hold the tier stated in the engagement requirements and have a delivery record
+Contributor
+Assigned deliverables to the accepted standard and timeline
+Verified in the relevant micro-specialisation
+Reviewer
+Independent quality check before submission to the client
+Verified at a tier at or above the contributor being reviewed
+Apprentice
+Supervised contribution, learning position, counted for absorption
+Any tier including newly verified; output always passes through a reviewer
+The apprentice role is structural, not charitable. It is the mechanism by which newly verified professionals accumulate a real delivery record without exposing a client to risk, and it is what makes the Absorption Ratio move. Every pod above a stated size should carry one. [JUDGEMENT]
+4.3 Pod rules
+A person may belong to several pods and hold different roles in each.
+A pod has exactly one lead at any time. A change of lead is an event on the pod record.
+A pod cannot deliver an engagement unless every member is verified in the specialisations that engagement requires.
+Where a member is drawn from a registered pod into a Kayan-composed pod, the releasing pod&apos;s consent is recorded before assignment.
+A pod that completes an engagement retains its record and its history whether or not it delivers again.
+Pod quality is measured at pod level and at member level. A weak pod does not conceal a strong member, and a strong pod does not launder a weak one.
+
+5. Relationship pages
+A relationship page is the single place where everything Kayan knows about one entity is held and where its relationship with Kayan visibly accumulates. It is not a profile and not a form output. It is the institutional memory of that relationship, and it is what allows a new staff member to pick up a five-year-old relationship in ten minutes.
+Every page shares four structural properties: it is generated automatically at record creation, it is updated by events rather than by manual editing, it separates what the entity can see from what only Kayan can see, and it carries a complete chronological timeline that is never edited or deleted.
+5.1 The Talent page
+Panel
+Contents
+Visibility
+Identity
+Kayan identifier, public verification reference, legal name, preferred name, photograph, contact, location, languages
+Person sees all; client sees a curated subset only when presented for an engagement
+Trust position
+Current tier, date attained, expiry date, full tier history including any downgrade with reason
+Person sees all; internal sees all
+Specialisations
+Primary and secondary micro-specialisations, each with verification state, assessment score band and date
+Person and internal
+Assessment record
+Every instrument taken, date, result band, retake history, integrity flags
+Person sees results; integrity flags are internal only
+References
+Referees provided, request status, returned responses, verification outcome
+Person sees status only, never the content of a reference
+Delivery record
+Every engagement, role held, pod, acceptance outcome, client satisfaction, disputes
+Person and internal
+Earnings
+Payments received through Kayan, dates, engagements, evidence references
+Person and internal finance only
+Development
+Current position on the ladder, the specific evidence required to advance, Forge participation, mentoring given or received
+Person and internal
+Documents
+Identity documents, certificates, portfolio, signed agreements and consents with dates and versions
+Internal, with retention rules applied
+Internal assessment
+Staff observations, conduct notes, flags, restrictions
+Internal only, access-controlled, never visible to the person or any client
+Timeline
+Every event affecting this record in order, with actor and timestamp
+Internal; a filtered version visible to the person
+5.2 The Client page
+Panel
+Contents
+Organisation
+Kayan identifier, legal name, registration or licence number, country, sector, size, website
+People
+Authorised representatives, evidence of authority, contacts and roles, signatory register
+Compliance
+Screening status and date, risk rating, documents held, next refresh due
+Engagements
+Every scope of work, value, pod, milestones, acceptance outcomes, current status
+Money
+Escrow funded and released by engagement, invoices, ageing, net fee earned, margin
+Relationship
+Satisfaction scores, repeat rate, referrals given, complaints and resolutions, account owner
+Commercial intelligence
+Stated needs, pipeline, budget cycle, procurement route, decision makers, renewal dates
+Risk
+Concentration contribution to total revenue, payment behaviour, flags
+Timeline
+Every interaction, document, payment and decision in order
+The commercial intelligence panel is what turns a client list into an asset. A company that records only transactions loses the relationship when the account owner leaves. [JUDGEMENT]
+5.3 The Pod page
+Composition and roles; formation type; capability map showing the pod&apos;s combined micro-specialisation coverage and its gaps; engagements delivered with acceptance outcomes; quality metrics including on-time rate, revision rate and dispute rate; internal split arrangement where applicable; availability; and the full timeline.
+5.4 The Sponsor page
+Organisation and contacts; agreements and their obligations; programmes funded; funds committed, received and applied; outcomes attributable to that funding including absorption figures; reporting calendar with due dates and submissions made; due diligence documents held; and the full timeline.
+5.5 The Engagement page
+The operational heart of delivery: client, pod, scope of work, milestones with dates and status, escrow position, submissions and acceptances, change requests, communications, risks raised, delivery notes, acceptance certificates, payouts made, and the complete timeline. This is the page that a dispute is resolved from, and it must therefore be complete without reference to anyone&apos;s memory.
+
+6. The event model
+This is the specification that makes the system survive scale. Rule R6 of the Constitution states that a human touches a record only at a genuine judgement gate. The following table is how that rule is implemented: every event, what triggers it, what the system does without being asked, and where a human is genuinely required.
+Event
+Trigger
+Automatic system action
+Human gate
+E01 Account created
+Registration begun
+Issue identifier, create record and page, send orientation, open a draft application
+None
+E02 Contact confirmed
+Code entered for mobile and email
+Mark contactable, unlock next stage
+None
+E03 Identity submitted
+Documents and photograph uploaded
+Validate file type, size, resolution and blur; detect a face; check image and document number against existing records for duplicates; queue for review
+None
+E04 Identity decided
+Reviewer decision
+Set tier T1 or return with a specific reason; notify; unlock assessment
+Yes — verification officer
+E05 Specialisations declared
+Selection confirmed
+Map to taxonomy codes, assign the matching assessment set, schedule any practical task
+None
+E06 Assessment completed
+Submission or timer expiry
+Score objective instruments, record bands, route practical tasks to an assessor, apply integrity checks
+Yes — for practical tasks only
+E07 Referees provided
+Referee details submitted
+Validate eligibility rules, send tokenised bilingual request, start the reminder schedule
+None
+E08 Reference returned
+Referee submits form
+Score, attach to record, flag anomalies, close the request
+None unless flagged
+E09 Tier decision
+All inputs present
+Compute eligibility against published criteria, present the evidence pack for decision, then set tier, set expiry, notify, update page
+Yes — dual approval at T3 and T4
+E10 Pod formed
+Assembly, registration or composition
+Issue pod identifier, create page, link members, record roles and consents
+Yes — pod lead appointment
+E11 Engagement created
+Scope of work issued
+Issue engagement identifier, create page, set milestones, raise the escrow expectation
+Yes — commercial approval
+E12 Escrow funded
+Bank confirmation matched
+Record against engagement, unlock delivery, notify pod
+Yes — finance verifies proof
+E13 Milestone submitted
+Pod lead submits
+Timestamp, notify client, start the acceptance clock, store the deliverable
+None
+E14 Milestone accepted
+Client accepts, or the clock expires under the agreed terms
+Record acceptance, authorise release, write to the delivery record of every contributor, recompute Absorption Ratio
+Yes — release authorisation
+E15 Payout released
+Release authorised
+Generate the instruction, capture the proof of payment, write earnings to each contributor, reduce the escrow liability
+Yes — dual approval on payment
+E16 Feedback received
+Client submits
+Update satisfaction on client, pod and contributor records
+None
+E17 Dispute raised
+Either party raises
+Freeze the affected release, notify, open a case with a deadline, escalate
+Yes — immediately
+E18 Maintenance due
+Tier or specialisation approaching expiry
+Notify at ninety, thirty and seven days with the specific action required
+None until lapse
+E19 Verification lapsed
+Expiry reached without action
+Downgrade tier, mark specialisation dormant, remove from available capacity, notify
+None
+E20 Compliance refresh due
+Client screening interval reached
+Notify account owner, restrict new engagements until refreshed
+Yes — compliance officer
+6.1 What this buys
+Of twenty events, thirteen require no human at all and four require a human only at the moment of genuine judgement — verifying an identity, awarding a tier, authorising money, or resolving a dispute. Registration, testing, reference collection, reminders, expiry, record-writing and page updates are all machine work.
+The consequence is direct and measurable. At one hundred registrations the difference between this design and a manual process is convenience. At one thousand it is the difference between a functioning institution and a backlog that destroys the credibility of the verification asset. The design assumption is ten thousand. [JUDGEMENT]
+Volume
+Human hours per month under this design
+Human hours if registration and references are handled manually
+100 registrations
+Identity review and tier decisions only — roughly one working week
+Roughly four to five working weeks
+1,000 registrations
+Scales roughly linearly at the judgement gates, and is absorbed by adding assessors
+Fails. The queue grows faster than it is cleared.
+10,000 registrations
+Requires assessor capacity and sampling-based quality control, not more administrators
+Not attemptable
+Figures above are illustrative of the shape of the problem, not measured. They are stated to make the design consequence visible and should be replaced with observed data once the first hundred registrations are processed. [ASSUMPTION — validate at first cohort]
+7. Data quality rules
+#
+Rule
+DQ1
+A record is never created without a validated identifier.
+DQ2
+Free text is not used where a controlled list can be used. Controlled lists are held centrally and referenced, never retyped.
+DQ3
+A field is captured once, at the point where the person who knows the answer is present, and never re-asked.
+DQ4
+Every record carries created-by, created-on, last-changed-by and last-changed-on. No exceptions.
+DQ5
+Nothing is deleted. Records are closed, merged or superseded, with a reason and a date.
+DQ6
+Every personal data field has a stated purpose, a retention period and a specific consent recorded against it.
+DQ7
+Identity documents are retained only as long as needed to complete verification; thereafter the verification result and a document hash are retained, not the image, unless a specific legal obligation requires otherwise.
+DQ8
+Any figure appearing in a report traces to a record. No figure is entered directly into a report.
+8. What this document decides
+ID
+Decision
+D-11
+Nine entities only. Anything else is an attribute, document or event.
+D-12
+Identifier format KY-<TYPE>-<YY>-<SEQ>-<C> with a modulus-11 check character, validated at every point of entry.
+D-13
+A separate public verification reference (KVR-nnnnn), linked one to one and never interchanged with the internal identifier.
+D-14
+Talent and Member records are linked, never merged.
+D-15
+Three pod formation types, all equal in standing; formation type never affects work allocation.
+D-16
+The apprentice role is a standing structural position in pods, and is the mechanism of absorption.
+D-17
+Relationship pages are event-driven and are never maintained by manual editing.
+D-18
+Identity document images are not retained after verification; the result and a hash are.
+
+End of document. Amendments only by recorded decision in K-00-02.

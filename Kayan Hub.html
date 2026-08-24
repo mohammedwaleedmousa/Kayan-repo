@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Hub · Aden — where work stays up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+  :root{--paper:#FAF6EC;--ink:#2A1D0C;--body:#4A6B64;--muted:#6E675A;--rule:#EFE4CC;--rule2:#E9DFC6;--teal:#A8710F;--accent:#FFB627;--gold:#C87A0E;--alarm:#B23A31;--deep:#34250F;--sand:#F2E8D2;}
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--paper);overflow-x:hidden;}
+  body{font-family:'Instrument Sans','IBM Plex Sans Arabic',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
+  a{color:var(--teal);text-decoration:none;}a:hover{color:var(--accent);}
+  ::selection{background:var(--accent);color:var(--ink);}
+  h1,h2,h3{font-family:'Alexandria',sans-serif;font-weight:600;margin:0;text-wrap:balance;}
+  p{margin:0;text-wrap:pretty;}
+  .wrap{max-width:1180px;margin:0 auto;}
+  section{padding:80px clamp(20px,4vw,48px);}
+  .kicker{font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:var(--teal);font-weight:500;}
+  .kicker bdi{letter-spacing:normal;}
+  .lead{font-size:16px;line-height:2;color:var(--body);margin-top:12px;max-width:60ch;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .lat{font-family:'Instrument Sans',sans-serif;}
+  .grid{display:grid;gap:20px;}
+  .card{border:1px solid var(--rule);border-radius:18px;background:#fff;padding:22px;min-width:0;}
+  .bar{width:18px;height:3px;border-radius:2px;flex-shrink:0;}
+  #street{height:clamp(420px,64vh,620px);width:100%;border-radius:20px;overflow:hidden;border:1px solid var(--rule2);}
+  .leaflet-container{font-family:'Instrument Sans',sans-serif;background:#EDE5D2;}
+  .pin{width:22px;height:22px;border-radius:99px;background:var(--accent);border:3px solid var(--ink);box-shadow:0 0 0 6px rgba(255,182,39,.24);}
+  .lbl{font-size:12.5px;color:var(--body);}
+  button{font-family:inherit;-webkit-tap-highlight-color:transparent;}
+  button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  select{font-family:inherit;font-size:14.5px;color:var(--ink);background:var(--paper);border:1px solid var(--rule2);border-radius:10px;padding:11px 12px;min-height:44px;}
+  table{width:100%;border-collapse:collapse;}
+  th,td{text-align:left;padding:13px 14px;border-top:1px solid var(--rule);font-size:14px;}
+  th{font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:var(--muted);border-top:none;background:var(--paper);}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+#condSec [data-cond]{opacity:0;transform:translateY(18px);filter:blur(3px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1),filter .7s ease,border-color .3s ease,background .3s ease,box-shadow .35s ease;transition-delay:calc(var(--i,0) * 120ms)}
+#condSec.on [data-cond]{opacity:1;transform:none;filter:none}
+@media (hover:hover) and (pointer:fine){
+  #condSec.on [data-cond]:hover{transform:translateY(-4px);border-color:rgba(224,145,20,.55);background:rgba(250,246,236,.075);box-shadow:0 20px 44px rgba(0,0,0,.28);transition-delay:0s}
+  #condSec [data-cond] .bar{transition:height .3s cubic-bezier(.23,1,.32,1)}
+  #condSec.on [data-cond]:hover .bar{height:22px}
+}
+#neurons line{stroke:rgba(224,145,20,.5);stroke-width:.7}
+#neurons circle{fill:rgba(250,246,236,.5)}
+#neurons .glow{fill:#E09114}
+@media (prefers-reduced-motion:reduce){#condSec [data-cond]{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}#neurons .glow{display:none}}
+@media (max-width:1100px){[data-rulesrow]{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media (max-width:640px){[data-rulesrow]{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+[data-rulesrow] .card{padding:18px 16px}
+[data-rulesrow] h3{font-size:15px!important;line-height:1.35}
+[data-rulesrow] p{font-size:13px!important;line-height:1.8!important}
+#rulesSec [data-rule]{position:relative;opacity:0;transform:translateY(16px);filter:blur(3px);border-top:3px solid var(--tone);transition:opacity .5s cubic-bezier(.2,.7,.2,1),transform .5s cubic-bezier(.2,.7,.2,1),filter .5s ease,border-color .3s ease,box-shadow .35s ease,background .3s ease;transition-delay:calc(var(--i,0) * 100ms)}
+#rulesSec.on [data-rule]{opacity:1;transform:none;filter:none}
+@media (hover:hover) and (pointer:fine){#rulesSec.on [data-rule]:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(42,29,12,.12);transition-delay:0s}}
+@media (prefers-reduced-motion:reduce){#rulesSec [data-rule]{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}}
+#distSec tbody tr{cursor:default}
+#distSec tbody td{transition:background .2s ease,color .2s ease}
+#distSec tbody tr:hover td{background:rgba(224,145,20,.09)}
+#distSec tbody tr:hover td:first-child{box-shadow:inset 3px 0 0 #E09114;color:#2A1D0C}
+#distSec [data-dr]{opacity:0;transform:translateY(16px);filter:blur(3px);transition:opacity .72s cubic-bezier(.2,.7,.2,1),transform .72s cubic-bezier(.2,.7,.2,1),filter .72s ease;transition-delay:calc(var(--i,0) * 110ms)}
+#distSec.on [data-dr]{opacity:1;transform:none;filter:none}
+#distSec .kicker[data-dr]{letter-spacing:.34em;transition:opacity .72s cubic-bezier(.2,.7,.2,1),transform .72s cubic-bezier(.2,.7,.2,1),filter .72s ease,letter-spacing .9s cubic-bezier(.2,.7,.2,1)}
+#distSec.on .kicker[data-dr]{letter-spacing:.22em}
+#distSec tbody tr{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+#distSec.on tbody tr{opacity:1;transform:none}
+#distSec.on tbody tr:nth-child(1){transition-delay:.62s}
+#distSec.on tbody tr:nth-child(2){transition-delay:.72s}
+#distSec.on tbody tr:nth-child(3){transition-delay:.82s}
+#distSec.on tbody tr:nth-child(4){transition-delay:.92s}
+#distSec.on tbody tr:nth-child(n+5){transition-delay:1.02s}
+@media (prefers-reduced-motion:reduce){#distSec [data-dr],#distSec tbody tr{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<section style="background:var(--deep);color:var(--paper);min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-bottom:64px;">
+  <div class="wrap" style="width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(28px,4vw,60px);align-items:center;">
+    <div style="min-width:0;">
+    <a href="Line II - The Hub and Cafe EN.dc.html" class="lat" style="display:inline-flex;align-items:center;gap:9px;font-size:12.5px;color:rgba(250,246,236,.72);border:1px solid rgba(250,246,236,.28);border-radius:99px;padding:9px 16px;margin-bottom:30px;transition:background .2s ease,border-color .2s ease,color .2s ease;" onmouseover="this.style.color='#FFB627';this.style.borderColor='#FFB627'" onmouseout="this.style.color='rgba(250,246,236,.72)';this.style.borderColor='rgba(250,246,236,.28)'"><span style="font-size:15px;">←</span><span>Back to The Hub &amp; Café</span></a>
+    <div class="lat" style="font-size:11px;letter-spacing:.22em;color:var(--accent);">KYN-HUB-01 · THE PLACE</div>
+    <h1 style="margin-top:14px;font-size:clamp(30px,4.6vw,54px);line-height:1.16;color:var(--paper);max-width:18ch;">The Hub — where work stays up in Aden</h1>
+    <p style="font-size:16.5px;line-height:2.05;color:rgba(250,246,236,.78);margin-top:16px;max-width:60ch;">A working floor on the Abyan coast in Khormaksar. Uninterrupted solar power, connectivity paid for in advance, a safe space for women, and an entrance a wheelchair can use. The café is an amenity serving the floor, not a line of business.</p>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;margin-top:32px;">
+      <div><div class="lat" style="font-size:10px;letter-spacing:.18em;color:rgba(250,246,236,.45);">DISTRICT</div><div style="font-size:17px;margin-top:5px;">Khormaksar · Abyan coast</div></div>
+      <div><div class="lat" style="font-size:10px;letter-spacing:.18em;color:rgba(250,246,236,.45);">CITY</div><div style="font-size:17px;margin-top:5px;">Aden, Republic of Yemen</div></div>
+      <div><div class="lat" style="font-size:10px;letter-spacing:.18em;color:rgba(250,246,236,.45);">LANDMARK</div><div style="font-size:17px;margin-top:5px;">By the Relax Hotel</div></div>
+    </div>
+    </div>
+      <div style="min-width:0;">
+        <div id="street" role="region" aria-label="Map of Khormaksar, Aden"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px;">
+          <button id="btnHub" style="min-height:44px;font-size:13.5px;color:var(--deep);background:var(--accent);border:none;border-radius:11px;padding:12px 16px;cursor:pointer;font-weight:600;">The Hub</button>
+          <button id="btnAden" style="min-height:44px;font-size:13.5px;color:rgba(250,246,236,.82);background:transparent;border:1px solid rgba(250,246,236,.3);border-radius:11px;padding:12px 16px;cursor:pointer;">All of Aden</button>
+          <span class="lat" style="flex:1 1 200px;min-width:0;line-height:1.8;font-size:11.5px;color:rgba(250,246,236,.5);">Map tiles from the open OpenStreetMap project.</span>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section style="background:var(--paper);padding-top:clamp(48px,6vw,72px);">
+  <div class="wrap">
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(24px,3.4vw,48px);align-items:start;">
+      <div style="min-width:0;">
+        <div class="kicker">The site · WHERE IT SITS</div>
+        <h2 style="margin-top:14px;font-size:clamp(26px,3.4vw,42px);line-height:1.28;max-width:24ch;">Aden is a city on a volcanic headland, and the Hub sits on its neck</h2>
+        <p class="lead">Khormaksar is the isthmus joining the Aden peninsula to the mainland. Anyone who has passed through Aden has passed through it, and anyone who has worked in Aden has crossed it. The map below is real geographic data, not an illustration, and it can be panned and zoomed.</p>
+
+        <div class="card" style="margin-top:26px;">
+          <div style="display:flex;align-items:center;gap:8px;"><span class="bar" style="background:var(--alarm);"></span><span class="lat" style="font-size:10.5px;letter-spacing:.16em;color:var(--body);">COORDINATES · PENDING</span></div>
+          <p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:10px;">The pin sits mid-way along the Abyan coast in Khormaksar — an approximate district position. The building's final coordinates are approved by the owner and recorded in governance before publication. No map is published on an unapproved position.</p>
+          <div class="mono" style="font-size:12.5px;color:var(--ink);margin-top:12px;border-bottom:1px dotted #B0A48A;display:inline-block;padding-bottom:3px;">PH-GEO-HUB · lat, lng</div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--sand);">
+  <div class="wrap" id="distSec">
+    <div class="kicker" data-dr="" style="--i:0">Distances · DISTANCE</div>
+    <h2 data-dr="" style="--i:1;margin-top:14px;font-size:clamp(26px,3.4vw,42px);line-height:1.28;max-width:26ch;">How far the Hub is from where you are</h2>
+    <p class="lead" data-dr="" style="--i:2">Distance is measured straight-line from real coordinates, not estimated. The drive is longer, because Aden is built around bays.</p>
+
+    <div id="distWrap" data-dr="" style="--i:3;margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(18px,3vw,40px);align-items:center;">
+      <div>
+        <label style="display:flex;flex-direction:column;gap:6px;max-width:320px;">
+          <span style="font-size:12.5px;color:var(--muted);">From</span>
+          <select id="from" aria-label="Choose a starting point"></select>
+        </label>
+        <div style="margin-top:22px;display:flex;align-items:flex-end;gap:12px;">
+          <span class="mono" id="dist" dir="ltr" style="font-size:clamp(44px,7vw,78px);line-height:.92;color:var(--ink);font-variant-numeric:tabular-nums;">—</span>
+          <span style="font-size:13px;line-height:1.7;color:var(--body);padding-bottom:8px;">kilometres,<br>straight line</span>
+        </div>
+        <div id="distMeter" aria-hidden="true" style="margin-top:16px;height:2px;background:var(--rule);border-radius:2px;overflow:hidden;max-width:360px;">
+          <i style="display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),#E09114);transition:width 1.1s cubic-bezier(.23,1,.32,1);"></i>
+        </div>
+        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
+          <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule2);border-radius:99px;padding:7px 14px;background:var(--paper);">
+            <span class="mono" style="font-size:10px;letter-spacing:.16em;color:var(--muted);">BEARING</span>
+            <span class="mono" id="distBearing" dir="ltr" style="font-size:13px;color:var(--ink);font-variant-numeric:tabular-nums;">—</span>
+          </span>
+          <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule2);border-radius:99px;padding:7px 14px;background:var(--paper);">
+            <span class="mono" style="font-size:10px;letter-spacing:.16em;color:var(--muted);">COORDINATES</span>
+            <span class="mono" id="distFromCo" dir="ltr" style="font-size:12.5px;color:var(--ink);font-variant-numeric:tabular-nums;">—</span>
+          </span>
+        </div>
+      </div>
+      <div style="justify-self:center;width:100%;max-width:340px;">
+        <svg id="dial" viewBox="0 0 300 300" role="img" aria-label="Compass dial: the Hub at the centre, the needle pointing to the chosen starting point" style="width:100%;height:auto;display:block;overflow:visible;">
+          <g id="dialRings"></g>
+          <g id="dialTicks"></g>
+          <circle cx="150" cy="150" r="128" fill="none" stroke="var(--rule2)" stroke-width="1"></circle>
+          <line id="dialNeedle" x1="150" y1="150" x2="150" y2="34" stroke="#E09114" stroke-width="2" stroke-linecap="round" style="transform-box:fill-box;transform-origin:50% 100%;transition:transform 1.1s cubic-bezier(.23,1,.32,1);"></line>
+          <circle id="dialTarget" cx="150" cy="34" r="4.5" fill="#2A1D0C" style="transition:cx 1.1s cubic-bezier(.23,1,.32,1),cy 1.1s cubic-bezier(.23,1,.32,1);"></circle>
+          <circle cx="150" cy="150" r="18" fill="var(--paper)" stroke="var(--rule2)"></circle>
+          <circle id="dialPulse" cx="150" cy="150" r="18" fill="none" stroke="#E09114" stroke-width="1" opacity=".55"></circle>
+          <circle cx="150" cy="150" r="4" fill="#A8710F"></circle>
+          <text x="150" y="14" text-anchor="middle" class="mono" font-size="10" letter-spacing="2" fill="var(--muted)">N</text>
+          <text x="286" y="154" text-anchor="middle" class="mono" font-size="10" letter-spacing="2" fill="var(--muted)">E</text>
+          <text x="150" y="296" text-anchor="middle" class="mono" font-size="10" letter-spacing="2" fill="var(--muted)">S</text>
+          <text x="14" y="154" text-anchor="middle" class="mono" font-size="10" letter-spacing="2" fill="var(--muted)">W</text>
+          <text x="150" y="186" text-anchor="middle" class="mono" font-size="9.5" letter-spacing="2" fill="var(--muted)">THE HUB</text>
+        </svg>
+      </div>
+    </div>
+
+    <div data-dr="" style="--i:4;margin-top:28px;border:1px solid var(--rule);border-radius:18px;overflow:hidden;">
+      <table>
+        <thead><tr><th>MARKER</th><th>LAT</th><th>LNG</th><th>PRECISION</th></tr></thead>
+        <tbody id="coords"></tbody>
+      </table>
+    </div>
+    <p data-dr="" style="--i:5;font-size:13px;line-height:1.9;color:var(--muted);margin-top:14px;">The coordinates of Aden International Airport are published and well known. Anything marked “approximate district centre” is for orientation, not navigation.</p>
+  </div>
+</section>
+
+<section id="condSec" style="position:relative;overflow:hidden;background:var(--deep);color:var(--paper);">
+  <svg id="neurons" aria-hidden="true" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.5;"></svg>
+  <div class="wrap" style="position:relative;">
+    <div class="kicker" style="color:var(--accent);">Conditions · CONDITIONS</div>
+    <h2 style="margin-top:14px;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:var(--paper);max-width:26ch;">Conditions are published as they are, outages included</h2>
+    <p style="font-size:16px;line-height:2;color:rgba(250,246,236,.76);margin-top:12px;max-width:60ch;">Power and connectivity are not givens in Aden. Anyone claiming they never fail is either lying or has not worked here. This panel shows the actual state from the operations source, and a field stays empty until the number arrives.</p>
+
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:34px;">
+      <div data-cond="" style="--i:0;border:1px solid rgba(250,246,236,.16);border-radius:18px;padding:22px;background:rgba(250,246,236,.04);">
+        <div style="display:flex;align-items:center;gap:8px;"><span class="bar" style="background:var(--accent);"></span><span class="lat" style="font-size:10.5px;letter-spacing:.16em;color:rgba(250,246,236,.6);">POWER</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;margin-top:12px;">Solar with batteries</div>
+        <p style="font-size:13.5px;line-height:1.9;color:rgba(250,246,236,.66);margin-top:8px;">The floor runs on the sun first; the public grid is backup. Remaining reserve hours are published live.</p>
+        <div class="mono" dir="ltr" style="font-size:12px;color:rgba(250,246,236,.5);margin-top:12px;border-bottom:1px dotted rgba(250,246,236,.3);display:inline-block;">PH-OPS-BATTERY-H</div>
+      </div>
+      <div data-cond="" style="--i:1;border:1px solid rgba(250,246,236,.16);border-radius:18px;padding:22px;background:rgba(250,246,236,.04);">
+        <div style="display:flex;align-items:center;gap:8px;"><span class="bar" style="background:#E09114;"></span><span class="lat" style="font-size:10.5px;letter-spacing:.16em;color:rgba(250,246,236,.6);">CONNECTIVITY</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;margin-top:12px;">Two lines, two providers</div>
+        <p style="font-size:13.5px;line-height:1.9;color:rgba(250,246,236,.66);margin-top:8px;">A primary line and an alternate from a different provider. If one drops, the floor switches over automatically, and the outage is recorded.</p>
+        <div class="mono" dir="ltr" style="font-size:12px;color:rgba(250,246,236,.5);margin-top:12px;border-bottom:1px dotted rgba(250,246,236,.3);display:inline-block;">PH-OPS-UPTIME-30D</div>
+      </div>
+      <div data-cond="" style="--i:2;border:1px solid rgba(250,246,236,.16);border-radius:18px;padding:22px;background:rgba(250,246,236,.04);">
+        <div style="display:flex;align-items:center;gap:8px;"><span class="bar" style="background:#FFB627;"></span><span class="lat" style="font-size:10.5px;letter-spacing:.16em;color:rgba(250,246,236,.6);">SEATS</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;margin-top:12px;">Fixed and reserved seats</div>
+        <p style="font-size:13.5px;line-height:1.9;color:rgba(250,246,236,.66);margin-top:8px;">An open section, a closed section for meetings, and a women's section no one else passes through. Booking is free for practitioners on assignment.</p>
+        <div class="mono" dir="ltr" style="font-size:12px;color:rgba(250,246,236,.5);margin-top:12px;border-bottom:1px dotted rgba(250,246,236,.3);display:inline-block;">PH-OPS-SEATS</div>
+      </div>
+      <div data-cond="" style="--i:3;border:1px solid rgba(250,246,236,.16);border-radius:18px;padding:22px;background:rgba(250,246,236,.04);">
+        <div style="display:flex;align-items:center;gap:8px;"><span class="bar" style="background:#C87A0E;"></span><span class="lat" style="font-size:10.5px;letter-spacing:.16em;color:rgba(250,246,236,.6);">ACCESS</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;margin-top:12px;">A step-free entrance</div>
+        <p style="font-size:13.5px;line-height:1.9;color:rgba(250,246,236,.66);margin-top:8px;">A ramp at the entrance, an accessible washroom, and circulation wide enough for a wheelchair. Access is a design line item, not a sign.</p>
+        <div class="mono" dir="ltr" style="font-size:12px;color:rgba(250,246,236,.5);margin-top:12px;border-bottom:1px dotted rgba(250,246,236,.3);display:inline-block;">PH-OPS-ACCESS-AUDIT</div>
+      </div>
+    </div>
+
+    <div style="margin-top:26px;padding:18px 22px;border:1px solid rgba(255,182,39,.36);border-radius:16px;background:rgba(255,182,39,.09);display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;">
+      <span class="bar" style="background:var(--accent);margin-top:9px;"></span>
+      <p style="flex:1 1 260px;min-width:0;font-size:14px;line-height:1.9;color:rgba(250,246,236,.88);">Fields coded <span class="mono">PH-OPS-…</span> are filled from the operations system once the place is running. No estimated figure is put there to make it look ready.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper);padding-bottom:96px;">
+  <div class="wrap" id="rulesSec">
+    <div class="kicker">The rules · HOUSE RULES</div>
+    <h2 style="margin-top:14px;font-size:clamp(26px,3.4vw,42px);line-height:1.28;max-width:24ch;">A place governed by rules written on its door</h2>
+    <div class="grid" data-rulesrow="" style="grid-template-columns:repeat(6,minmax(0,1fr));margin-top:32px;">
+      <div class="card" data-rule="" style="--i:0;--tone:var(--teal);"><div class="mono" dir="ltr" style="font-size:11px;color:var(--teal);">01</div><h3 style="font-size:16.5px;margin-top:8px;">Entry by card</h3><p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:7px;">Tier one and above. A visitor enters on an invitation recorded in the name of whoever invited them.</p></div>
+      <div class="card" data-rule="" style="--i:1;--tone:var(--accent);"><div class="mono" dir="ltr" style="font-size:11px;color:var(--accent);">02</div><h3 style="font-size:16.5px;margin-top:8px;">The women's section is closed</h3><p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:7px;">No one passes through it and no route crosses it. This is an operating condition, not an added service.</p></div>
+      <div class="card" data-rule="" style="--i:2;--tone:var(--gold);"><div class="mono" dir="ltr" style="font-size:11px;color:var(--gold);">03</div><h3 style="font-size:16.5px;margin-top:8px;">No photography on the floor</h3><p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:7px;">Only with written consent from everyone in frame. No one's image is published for marketing.</p></div>
+      <div class="card" data-rule="" style="--i:3;--tone:#E09114;"><div class="mono" dir="ltr" style="font-size:11px;color:#E09114;">04</div><h3 style="font-size:16.5px;margin-top:8px;">The café is an amenity</h3><p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:7px;">It serves the floor and is not accounted for as a line of business; the Hub's success is not measured by its sales.</p></div>
+      <div class="card" data-rule="" style="--i:4;--tone:#B23A31;"><div class="mono" dir="ltr" style="font-size:11px;color:#B23A31;">05</div><h3 style="font-size:16.5px;margin-top:8px;">No partisan activity</h3><p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:7px;">And no event for a party to a conflict. The place is neutral by its regulation, not by intention.</p></div>
+      <div class="card" data-rule="" style="--i:5;--tone:#A8710F;"><div class="mono" dir="ltr" style="font-size:11px;color:#A8710F;">06</div><h3 style="font-size:16.5px;margin-top:8px;">Hours are published</h3><p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:7px;">On the door and on this page, and every unplanned closure is recorded with its cause.</p></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var HUB = [12.8065, 45.0415];
+  var PTS = [
+    { ar: 'The Hub — Abyan coast, Khormaksar', lat: 12.8065, lng: 45.0415, p: 'Approximate district centre', hub: true },
+    { ar: 'Aden International Airport', lat: 12.8295, lng: 45.0288, p: 'Published coordinates' },
+    { ar: 'Crater — old Aden', lat: 12.7794, lng: 45.0367, p: 'Approximate district centre' },
+    { ar: 'Al-Mualla', lat: 12.7861, lng: 45.0206, p: 'Approximate district centre' },
+    { ar: 'Al-Tawahi', lat: 12.7889, lng: 44.9944, p: 'Approximate district centre' }
+  ];
+
+  // ---- street map ----
+  var map = L.map('street', { scrollWheelZoom: false, attributionControl: true }).setView(HUB, 15);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19, attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  L.marker(HUB, { icon: L.divIcon({ className: '', html: '<div class="pin"></div>', iconSize: [22, 22], iconAnchor: [11, 11] }) })
+    .addTo(map)
+    .bindPopup('<div style="font-family:\'Instrument Sans\',sans-serif;font-size:13.5px;line-height:1.7;"><b>The Hub</b><br>Abyan coast, Khormaksar<br><span style="color:#8E2F27;">Approximate position — coordinates approved by the owner</span></div>');
+
+  L.circle(HUB, { radius: 420, color: '#A8710F', weight: 1.5, fillColor: '#E09114', fillOpacity: 0.12 }).addTo(map);
+
+  PTS.slice(1).forEach(function (p) {
+    L.circleMarker([p.lat, p.lng], { radius: 5, color: '#2A1D0C', weight: 2, fillColor: '#FAF6EC', fillOpacity: 1 })
+      .addTo(map).bindTooltip(p.ar, { direction: 'top' });
+  });
+
+  document.getElementById('btnHub').onclick = function () { map.setView(HUB, 15); };
+  document.getElementById('btnAden').onclick = function () {
+    map.fitBounds(L.latLngBounds(PTS.map(function (p) { return [p.lat, p.lng]; })).pad(0.25));
+  };
+
+  // ---- distance ----
+  function km(a, b) {
+    var R = 6371, t = Math.PI / 180;
+    var dLat = (b[0] - a[0]) * t, dLng = (b[1] - a[1]) * t;
+    var x = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(a[0] * t) * Math.cos(b[0] * t) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1 - x));
+  }
+  var sel = document.getElementById('from'), out = document.getElementById('dist');
+  PTS.slice(1).forEach(function (p, i) {
+    var o = document.createElement('option'); o.value = i + 1; o.textContent = p.ar; sel.appendChild(o);
+  });
+  function bearing(a, b) {
+    var t = Math.PI / 180, y = Math.sin((b[1] - a[1]) * t) * Math.cos(b[0] * t);
+    var x = Math.cos(a[0] * t) * Math.sin(b[0] * t) - Math.sin(a[0] * t) * Math.cos(b[0] * t) * Math.cos((b[1] - a[1]) * t);
+    return (Math.atan2(y, x) / t + 360) % 360;
+  }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var needle = document.getElementById('dialNeedle'), target = document.getElementById('dialTarget');
+  var bear = document.getElementById('distBearing'), fromCo = document.getElementById('distFromCo');
+  var meterFill = document.querySelector('#distMeter i'), rings = document.getElementById('dialRings');
+  var ticks = document.getElementById('dialTicks'), pulse = document.getElementById('dialPulse');
+  var MAXKM = 24, NS = 'http://www.w3.org/2000/svg';
+
+  // distance rings, drawn once, dashed like a survey plate
+  [44, 86, 128].forEach(function (r, i) {
+    var c = document.createElementNS(NS, 'circle');
+    c.setAttribute('cx', 150); c.setAttribute('cy', 150); c.setAttribute('r', r);
+    c.setAttribute('fill', 'none'); c.setAttribute('stroke', 'var(--rule)');
+    c.setAttribute('stroke-dasharray', '2 6'); c.setAttribute('opacity', reduce ? '1' : '0');
+    if (!reduce) { c.style.transition = 'opacity .7s ease ' + (i * 140 + 120) + 'ms'; }
+    rings.appendChild(c);
+  });
+  for (var d = 0; d < 360; d += 15) {
+    var long = d % 90 === 0, ln = document.createElementNS(NS, 'line');
+    var rad = d * Math.PI / 180, r1 = long ? 116 : 122;
+    ln.setAttribute('x1', 150 + Math.sin(rad) * r1); ln.setAttribute('y1', 150 - Math.cos(rad) * r1);
+    ln.setAttribute('x2', 150 + Math.sin(rad) * 128); ln.setAttribute('y2', 150 - Math.cos(rad) * 128);
+    ln.setAttribute('stroke', long ? '#A8710F' : 'var(--rule2)'); ln.setAttribute('stroke-width', long ? 1.4 : 1);
+    ticks.appendChild(ln);
+  }
+
+  var raf = 0, shown = 0;
+  function countTo(v) {
+    if (reduce) { out.textContent = v.toFixed(1); return; }
+    cancelAnimationFrame(raf);
+    var from = shown, t0 = performance.now(), dur = 900;
+    (function step(now) {
+      var p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      out.textContent = (from + (v - from) * e).toFixed(1);
+      if (p < 1) raf = requestAnimationFrame(step); else shown = v;
+    })(t0);
+    shown = v;
+  }
+  function upd() {
+    var p = PTS[+sel.value], v = km([p.lat, p.lng], HUB), b = bearing(HUB, [p.lat, p.lng]);
+    countTo(v);
+    var rad = b * Math.PI / 180, r = 34 + Math.min(1, v / MAXKM) * 94;
+    needle.style.transform = 'rotate(' + b.toFixed(1) + 'deg)';
+    needle.setAttribute('y2', 150 - r);
+    target.setAttribute('cx', (150 + Math.sin(rad) * r).toFixed(1));
+    target.setAttribute('cy', (150 - Math.cos(rad) * r).toFixed(1));
+    bear.textContent = b.toFixed(0) + '°';
+    fromCo.textContent = p.lat.toFixed(4) + ', ' + p.lng.toFixed(4);
+    meterFill.style.width = Math.max(6, Math.min(100, v / MAXKM * 100)).toFixed(1) + '%';
+    if (!reduce) { pulse.setAttribute('r', 18); pulse.style.transition = 'none'; pulse.style.opacity = '.55';
+      requestAnimationFrame(function () { pulse.style.transition = 'r 1.2s cubic-bezier(.23,1,.32,1),opacity 1.2s ease'; pulse.setAttribute('r', r); pulse.style.opacity = '0'; }); }
+  }
+  sel.onchange = upd;
+
+  // the dial settles once, when the section is first seen
+  var wrap = document.getElementById('distWrap'), sec = document.getElementById('distSec');
+  function play() {
+    sec.classList.add('on');
+    Array.prototype.forEach.call(rings.children, function (c) { c.setAttribute('opacity', '1'); });
+    upd();
+  }
+  if (reduce || !('IntersectionObserver' in window)) { play(); }
+  else {
+    needle.style.transform = 'rotate(0deg)';
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { io.disconnect(); setTimeout(play, 200); } });
+    }, { threshold: 0.3 });
+    io.observe(wrap);
+    setTimeout(function () { if (!sec.classList.contains('on')) play(); }, 2200);
+    out.textContent = '0.0';
+  }
+
+  var tb = document.getElementById('coords');
+  PTS.forEach(function (p) {
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td style="color:' + (p.hub ? '#2A1D0C' : '#4A6B64') + ';font-weight:' + (p.hub ? '500' : '400') + '">' + p.ar + '</td>' +
+      '<td class="mono" style="font-size:13px;">' + p.lat.toFixed(4) + '</td>' +
+      '<td class="mono" style="font-size:13px;">' + p.lng.toFixed(4) + '</td>' +
+      '<td style="color:' + (p.p.indexOf('Approximate') > -1 ? '#B23A31' : '#A8710F') + ';font-size:13px;">' + p.p + '</td>';
+    tb.appendChild(tr);
+  });
+
+  // ---- house rules: staged reveal, one card after another ----
+  (function () {
+    var rs = document.getElementById('rulesSec');
+    if (!rs) return;
+    var noMo = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (noMo || !('IntersectionObserver' in window)) { rs.classList.add('on'); return; }
+    var rio = new IntersectionObserver(function (es) {
+      es.forEach(function (x) { if (x.isIntersecting) { rio.disconnect(); rs.classList.add('on'); } });
+    }, { threshold: 0.01, rootMargin: '0px 0px -10% 0px' });
+    rio.observe(rs);
+    setTimeout(function () { rs.classList.add('on'); }, 2000);
+  })();
+
+  // ---- conditions: neuron lattice + card reveal ----
+  (function () {
+    var svg = document.getElementById('neurons'), cs = document.getElementById('condSec');
+    if (!cs) return;
+    var noMo = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reveal = function () { cs.classList.add('on'); };
+    if (noMo || !('IntersectionObserver' in window)) reveal();
+    else {
+      var cio = new IntersectionObserver(function (es) {
+        es.forEach(function (x) { if (x.isIntersecting) { cio.disconnect(); reveal(); } });
+      }, { threshold: 0.01, rootMargin: '0px 0px -10% 0px' });
+      cio.observe(cs);
+      setTimeout(reveal, 2000);
+    }
+    if (!svg) return;
+    var reduce = noMo;
+    var NSS = 'http://www.w3.org/2000/svg', W = 1200, H = 620, N = 34, pts = [], i, j;
+    var rnd = (function (seed) { return function () { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; }; })(7);
+    for (i = 0; i < N; i++) pts.push([40 + rnd() * (W - 80), 40 + rnd() * (H - 80)]);
+    var edges = [];
+    for (i = 0; i < N; i++) for (j = i + 1; j < N; j++) {
+      var dx = pts[i][0] - pts[j][0], dy = pts[i][1] - pts[j][1];
+      if (Math.sqrt(dx * dx + dy * dy) < 190) edges.push([i, j]);
+    }
+    var gl = document.createElementNS(NSS, 'g'); svg.appendChild(gl);
+    edges.forEach(function (e) {
+      var l = document.createElementNS(NSS, 'line');
+      l.setAttribute('x1', pts[e[0]][0].toFixed(1)); l.setAttribute('y1', pts[e[0]][1].toFixed(1));
+      l.setAttribute('x2', pts[e[1]][0].toFixed(1)); l.setAttribute('y2', pts[e[1]][1].toFixed(1));
+      l.setAttribute('opacity', '.55'); gl.appendChild(l);
+    });
+    pts.forEach(function (p) {
+      var c = document.createElementNS(NSS, 'circle');
+      c.setAttribute('cx', p[0].toFixed(1)); c.setAttribute('cy', p[1].toFixed(1));
+      c.setAttribute('r', 1.6); c.setAttribute('opacity', '.5'); svg.appendChild(c);
+    });
+    if (!reduce && edges.length) {
+      for (var k = 0; k < 3; k++) {
+        var e = edges[(k * 7 + 3) % edges.length];
+        var d = document.createElementNS(NSS, 'circle');
+        d.setAttribute('class', 'glow'); d.setAttribute('r', 2.4); d.setAttribute('opacity', '.75');
+        svg.appendChild(d);
+        (function (dot, a, b, delay) {
+          var t0 = performance.now() + delay, dur = 4200;
+          (function step(now) {
+            if (now > t0) {
+              var p = ((now - t0) % dur) / dur, q = p < .5 ? p * 2 : (1 - p) * 2;
+              dot.setAttribute('cx', (a[0] + (b[0] - a[0]) * q).toFixed(1));
+              dot.setAttribute('cy', (a[1] + (b[1] - a[1]) * q).toFixed(1));
+            }
+            requestAnimationFrame(step);
+          })(performance.now());
+        })(d, pts[e[0]], pts[e[1]], k * 1200);
+      }
+    }
+  })();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الميثاق — من نحن، وبأي المواد نحكم · كيان</title>
+<meta name="description" content="ميثاق كيان: من نحن، ومهمتنا ورؤيتنا، والمواد الأربع النافذة التي يحكم بها كل تعامل — نص يقرأ كما تقرأ اللوائح. The Kayan Charter: who we are, mission, vision, and four articles in force.">
+<meta property="og:title" content="الميثاق · The Kayan Charter">
+<meta property="og:description" content="مؤسسة لا خدمة، وطبقة ثقة لا سوق وساطة. أربع مواد، ولا استثناء.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_YE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"The Kayan Charter","inLanguage":["ar","en"],"about":{"@type":"Organization","name":"Kayan Innovation, Entrepreneurship & Work Environments LLC","alternateName":"كيان","address":{"@type":"PostalAddress","addressLocality":"Aden","addressCountry":"YE"},"slogan":"خلف كل نجاح، كيان"}}</script>
+<style>
+html,body{margin:0;padding:0;background:#03201D;overflow-x:hidden;}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+a{color:#C9A227;text-decoration:none;}
+a:hover{color:#E9C96B;}
+::selection{background:#C9A227;color:#03201D;}
+p{text-wrap:pretty;}
+h1,h2,h3{text-wrap:balance;}
+button{font-family:inherit;-webkit-tap-highlight-color:transparent;}
+a:focus-visible,button:focus-visible{outline:2px solid #C9A227;outline-offset:3px;border-radius:4px;}
+[data-mo] [data-reveal]{opacity:0;transform:translateY(15px);transition:opacity .6s cubic-bezier(.23,1,.32,1),transform .6s cubic-bezier(.23,1,.32,1);}
+[data-mo] [data-reveal][data-on]{opacity:1;transform:none;}
+[data-wipeline]{position:relative;display:block;width:fit-content;max-width:100%;overflow:hidden;padding:3px 10px;margin:3px -10px;}
+[data-wipeline] i{position:absolute;inset:0;border-radius:3px;background:linear-gradient(100deg,#C9A227,#E9C96B 55%,#C9A227);transform:translateX(0);transition:transform 1.05s cubic-bezier(.77,0,.175,1);}
+[data-reveal][data-on] [data-wipeline] i{transform:translateX(-102%);}
+[data-reveal][data-on] [dir="ltr"] [data-wipeline] i{transform:translateX(102%);}
+[data-card]{transition:transform .2s cubic-bezier(.23,1,.32,1),box-shadow .2s ease;}
+@media (hover:hover){[data-card]:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(5,46,43,.12);}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}[data-mo] [data-reveal]{opacity:1;transform:none}[data-wipeline] i{display:none}}
+</style>
+<script src="./kayan-compass.js"></script>
+<script src="./kayan-mark.js"></script>
+</helmet>
+
+<div ref="{{ rootRef }}" dir="{{ dirVal }}" style="font-family:'IBM Plex Sans Arabic','Instrument Sans',sans-serif;color:#FAF6EC;background:#03201D;min-height:100vh;">
+
+<header style="position:sticky;top:0;z-index:90;background:rgba(3,32,29,.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(201,162,39,.22);">
+  <div style="height:2px;background:linear-gradient(90deg,transparent,#C9A227 30%,#E9C96B 50%,#C9A227 70%,transparent);"></div>
+  <div style="max-width:1360px;margin:0 auto;padding:0 clamp(14px,3vw,36px);display:flex;align-items:center;gap:clamp(8px,1.6vw,20px);height:68px;">
+    <a href="Kayan Home.dc.html" title="العودة إلى الدار" style="display:flex;align-items:center;gap:11px;flex-shrink:0;">
+      <img src="assets/kayan-logo-gold.png" alt="كيان — Kayan" style="height:clamp(40px,5.6vw,52px);width:auto;display:block;">
+      <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#FAF6EC;">{{ tPage }}</span>
+    </a>
+    <nav style="flex:1;min-width:0;display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;justify-content:flex-end;">
+      <a href="Kayan Home.dc.html#lines" style="white-space:nowrap;color:rgba(250,246,236,.68);font-size:13px;padding:9px 12px;">{{ tLines }}</a>
+      <a href="Kayan Journey.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.68);font-size:13px;padding:9px 12px;">{{ tJourney }}</a>
+      <a href="Kayan Apply.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.68);font-size:13px;padding:9px 12px;">{{ tApply }}</a>
+      <a href="Kayan Portal.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.68);font-size:13px;padding:9px 12px;">{{ tPortal }}</a>
+    </nav>
+    <button type="button" onClick="{{ toggleLang }}" title="Switch language" style="border:1px solid rgba(201,162,39,.45);cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;padding:8px 14px;border-radius:99px;background:transparent;color:#E9C96B;flex-shrink:0;">{{ langBtn }}</button>
+  </div>
+</header>
+
+<section data-screen-label="الميثاق · المدخل" style="position:relative;background:radial-gradient(1100px 620px at 82% -18%,#0A3B36,transparent 60%),#03201D;padding:clamp(52px,9vh,100px) clamp(20px,4vw,40px) clamp(28px,5vh,52px);overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;top:-6%;inset-inline-start:-2%;font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(200px,30vw,460px);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(201,162,39,.08);pointer-events:none;user-select:none;">كيان</div>
+  <div style="position:relative;max-width:1360px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+    <div style="min-width:0;max-width:760px;">
+      <div data-reveal="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;color:#E9C96B;">KYN-CH-01 · THE KAYAN CHARTER · IN FORCE</div>
+      <h1 data-reveal="" style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(34px,5.4vw,66px);line-height:1.22;color:#FAF6EC;">{{ heroT1 }} <b style="font-weight:700;color:#E9C96B;">{{ heroT2 }}</b></h1>
+      <p data-reveal="" style="margin:16px 0 0;font-size:clamp(14.5px,1.5vw,17px);line-height:2.05;color:rgba(250,246,236,.72);max-width:58ch;">{{ heroSub }}</p>
+    </div>
+    <kayan-mark data-reveal="" line="gold" motion="glide" aria-hidden="true" style="width:calc(1.175 * clamp(90px,12vw,150px));flex-shrink:0;filter:drop-shadow(0 24px 50px rgba(201,162,39,.28));"></kayan-mark>
+  </div>
+</section>
+
+<section id="who" data-screen-label="الميثاق · من نحن" style="background:#EDE5D2;color:#143C37;padding:clamp(56px,9vh,110px) clamp(20px,4vw,40px);">
+  <div style="max-width:1360px;margin:0 auto;">
+    <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+      <div data-reveal="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;color:#8F7218;">WHO WE ARE · ARTICLE 0</div>
+      <h2 data-reveal="" style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(30px,4.6vw,58px);line-height:1.25;color:#052E2B;max-width:22ch;">من نحن؟ اسمنا يجيب: <b style="font-weight:700;color:#8F7218;">كيان</b></h2>
+      <div data-reveal="" style="margin-top:clamp(22px,4vh,36px);">
+        <p style="margin:0;font-size:clamp(14.5px,1.4vw,16.5px);line-height:2.15;color:#3E5A54;max-width:58ch;">اخترنا الاسم على مسماه: الكيان هو الجهة التي يتماسك فيها ما يتبعثر خارجها. وهذا عملنا حرفيا — <b style="color:#052E2B;">تتماسك فيه الموهبة والعمل والثقة</b> حتى يخرج منجزا يوقع عليه محضر استلام.</p>
+        <p style="margin:14px 0 0;font-size:clamp(14.5px,1.4vw,16.5px);line-height:2.15;color:#3E5A54;max-width:58ch;">شركة يمنية محدودة المسؤولية، مقرها عدن، تدير مقرا مجهزا بطابق أرضي على كورنيش خورمكسر: طاقة شمسية لا تنقطع، وإنترنت فضائي، واثنا عشر مكتبا مخصصا، وقاعات اجتماعات، وقاعة تدريب، ومقهى للمجتمع. <b style="color:#052E2B;">غير أن المقر واجهة النظام لا النظام:</b> خلفه محرك تسليم مدار يصل الكفاءات اليمنية الموثقة بعملائها في اليمن والخليج وما وراءهما — ببوابات جودة، ومدفوعات محمية بضمان، وسلم ثقة يحول المسيرة المهنية إلى سمعة تتراكم لا أعمالا تتناثر.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px;margin-top:24px;">
+          <div data-card="" style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:18px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#8F7218;">A · WE ARE</div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">مؤسسة، لا خدمة</div>
+            <p style="margin:8px 0 0;font-size:13px;line-height:2;color:#4A6B64;">بنيت لتبقى بعد مؤسسيها: يحكمها ميثاق، وتراجع حساباتها شهريا، وملكيتها يمنية خالصة.</p>
+          </div>
+          <div data-card="" style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:18px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#8F7218;">B · WE ARE</div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">طبقة ثقة، لا سوق وساطة</div>
+            <p style="margin:8px 0 0;font-size:13px;line-height:2;color:#4A6B64;">تثبت كل كفاءة على ست خطوات، ويمول ضمان كل عمل قبل أن يبدأ، ويقيد كل صرف قيدا يراجع.</p>
+          </div>
+          <div data-card="" style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:18px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#8F7218;">C · WE ARE</div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">عدن أولا، والأطراف دائما</div>
+            <p style="margin:8px 0 0;font-size:13px;line-height:2;color:#4A6B64;">نبدأ من المدينة التي أسقطها حساب العالم، ونصمم كل نظام ليمتد إلى أي سوق كفاءات منسية.</p>
+          </div>
+          <div data-card="" style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:18px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#8F7218;">D · WE ARE</div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">ربح بالتصميم، ومبدأ بالانضباط</div>
+            <p style="margin:8px 0 0;font-size:13px;line-height:2;color:#4A6B64;">يتولد الإيراد من الآليات نفسها التي تحمي الناس: الضمان، والتحقق، والتسليم المدار. وبعد سنوات جعلت الكفاءة غير مرئية، يقام لكل قدرة سجل يرى ويثبت ويوفى.</p>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;">
+        <div data-reveal="" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;color:#8F7218;">WHO WE ARE · ARTICLE 0</div>
+        <h2 data-reveal="" style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(30px,4.6vw,58px);line-height:1.2;color:#052E2B;max-width:24ch;">The name answers first: <b style="font-weight:700;color:#8F7218;">Kayan</b></h2>
+        <div data-reveal="" style="margin-top:clamp(22px,4vh,36px);">
+          <p style="margin:0;font-size:15.5px;line-height:1.95;color:#3E5A54;max-width:60ch;">Kayan (كيان) is Arabic for "entity" — a coherent being. We chose it because that is precisely what we build: the entity through which <b style="color:#052E2B;">talent, work and trust hold together.</b></p>
+          <p style="margin:13px 0 0;font-size:15.5px;line-height:1.95;color:#3E5A54;max-width:60ch;">A wholly Yemeni private limited company headquartered in Aden, operating a purpose-built ground-floor facility on the Khormaksar Corniche — solar power, satellite internet, twelve dedicated desks, meeting rooms, a training hall, a community café. But the hub is the visible surface of a deeper system: a managed delivery engine connecting verified Yemeni professionals to clients in Yemen, the Gulf and beyond — with quality gates, escrow-protected payments, and a Trust Ladder that turns careers into compounding reputation, not one-off gigs.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px;margin-top:24px;">
+            <div data-card="" style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:18px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#8F7218;">A · WE ARE</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">An institution, not a service</div><p style="margin:8px 0 0;font-size:13px;line-height:1.85;color:#4A6B64;">Built to outlast its founders. Governed by a charter, audited monthly, wholly Yemeni-owned.</p></div>
+            <div data-card="" style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:18px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#8F7218;">B · WE ARE</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">A trust layer, not a marketplace</div><p style="margin:8px 0 0;font-size:13px;line-height:1.85;color:#4A6B64;">Every talent verified across six steps. Every project escrowed before work begins. Every payment auditable.</p></div>
+            <div data-card="" style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:18px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#8F7218;">C · WE ARE</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">Aden first, frontier always</div><p style="margin:8px 0 0;font-size:13px;line-height:1.85;color:#4A6B64;">We start in the city the world counts out — and design every system to scale to any underserved talent market.</p></div>
+            <div data-card="" style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:18px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#8F7218;">D · WE ARE</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">Profitable by design, principled by discipline</div><p style="margin:8px 0 0;font-size:13px;line-height:1.85;color:#4A6B64;">The escrow model, verification ladder and managed delivery engine generate revenue precisely because they protect people — and every engagement builds a record that makes overlooked capability visible again.</p></div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<section id="vision" data-screen-label="الميثاق · المهمة والرؤية" style="position:relative;background:linear-gradient(180deg,#052E2B,#03201D);padding:clamp(64px,10vh,128px) clamp(20px,4vw,40px);overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;top:-4%;inset-inline-end:-3%;font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(180px,28vw,420px);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(201,162,39,.07);pointer-events:none;user-select:none;">ميثاق</div>
+  <div style="position:relative;max-width:1360px;margin:0 auto;">
+    <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+      <div data-reveal=""><bdi style="font-family:'Alexandria',sans-serif;font-size:13.5px;font-weight:500;color:#E9C96B;">المهمة والرؤية</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:rgba(250,246,236,.4);">· MISSION &amp; VISION</span></div>
+    </sc-if>
+    <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+      <div data-reveal="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;color:#E9C96B;">MISSION &amp; VISION</div>
+    </sc-if>
+    <div data-reveal="" style="margin-top:clamp(36px,6vh,60px);max-width:960px;">
+      <div style="display:flex;align-items:center;gap:16px;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;color:#E9C96B;">01 · OUR MISSION</span>
+        <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,162,39,.4),transparent);"></span>
+      </div>
+      <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top:22px;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(23px,3.4vw,44px);line-height:1.85;color:#FAF6EC;">
+          <span data-wipeline=""><i aria-hidden="true"></i>تقام من عدن البنية المهنية لاقتصاد يعمل تحت الضغط،</span>
+          <span data-wipeline=""><i aria-hidden="true" style="transition-delay:.22s;"></i>فتصير الكفاءة المحاصرة بظرفها <strong style="font-weight:600;color:#E9C96B;">مرئية</strong>، <strong style="font-weight:600;color:#E9C96B;">مثبتة بالدليل</strong>، <strong style="font-weight:600;color:#E9C96B;">موفاة القيمة</strong>.</span>
+          <span data-wipeline=""><i aria-hidden="true" style="transition-delay:.44s;"></i>من عدن يبدأ البناء، وإلى كل سوق محرومة يمتد.</span>
+        </div>
+        <p dir="ltr" style="margin:22px 0 0;font-family:'Instrument Sans',sans-serif;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.5);max-width:56ch;">To build the professional infrastructure of the frontier economy — making the world's most constrained talent visible, verifiable and valued, starting in Aden and scaling to every underserved talent market on earth.</p>
+      </sc-if>
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <div dir="ltr" style="margin-top:22px;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(21px,3.1vw,41px);line-height:1.5;color:#FAF6EC;">
+          <span data-wipeline=""><i aria-hidden="true"></i>The professional infrastructure of the frontier economy,</span>
+          <span data-wipeline=""><i aria-hidden="true" style="transition-delay:.22s;"></i>where constrained talent becomes <strong style="font-weight:600;color:#E9C96B;">visible</strong>, <strong style="font-weight:600;color:#E9C96B;">verifiable</strong>, and <strong style="font-weight:600;color:#E9C96B;">valued</strong>.</span>
+          <span data-wipeline=""><i aria-hidden="true" style="transition-delay:.44s;"></i>It starts in Aden. It scales to every underserved market on earth.</span>
+        </div>
+        <p dir="rtl" style="margin:22px 0 0;font-size:14px;line-height:2;color:rgba(250,246,236,.5);max-width:56ch;">تقام من عدن البنية المهنية لاقتصاد يعمل تحت الضغط: كفاءة مرئية، مثبتة بالدليل، موفاة القيمة.</p>
+      </sc-if>
+    </div>
+    <div data-reveal="" style="margin-top:clamp(48px,8vh,88px);max-width:960px;margin-inline-start:auto;">
+      <div style="display:flex;align-items:center;gap:16px;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;color:#E9C96B;">02 · OUR VISION</span>
+        <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,162,39,.4),transparent);"></span>
+      </div>
+      <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top:22px;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(23px,3.4vw,44px);line-height:1.85;color:#FAF6EC;">
+          <span data-wipeline=""><i aria-hidden="true"></i>عالم لا تكون فيه الجغرافيا قدرا.</span>
+          <span data-wipeline=""><i aria-hidden="true" style="transition-delay:.22s;"></i>مطور في <strong style="font-weight:600;color:#E9C96B;">عدن</strong>، ومصممة في <strong style="font-weight:600;color:#E9C96B;">صنعاء</strong>، وباحث في <strong style="font-weight:600;color:#E9C96B;">تعز</strong>، يسلمون لعملاء في لندن والرياض ونيويورك،</span>
+          <span data-wipeline=""><i aria-hidden="true" style="transition-delay:.44s;"></i>بالحماية ذاتها، وبالكرامة ذاتها، وبالباب المفتوح ذاته.</span>
+        </div>
+        <p dir="ltr" style="margin:22px 0 0;font-family:'Instrument Sans',sans-serif;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.5);max-width:56ch;">A world where geography is not destiny — where a developer in Aden, a designer in Sana'a or a researcher in Taiz delivers outcomes to clients in London, Riyadh or New York with the same protections, dignity and access as any professional anywhere.</p>
+      </sc-if>
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <div dir="ltr" style="margin-top:22px;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(21px,3.1vw,41px);line-height:1.5;color:#FAF6EC;">
+          <span data-wipeline=""><i aria-hidden="true"></i>Geography is not destiny.</span>
+          <span data-wipeline=""><i aria-hidden="true" style="transition-delay:.22s;"></i>A developer in <strong style="font-weight:600;color:#E9C96B;">Aden</strong>, a designer in <strong style="font-weight:600;color:#E9C96B;">Sana'a</strong>, a researcher in <strong style="font-weight:600;color:#E9C96B;">Taiz</strong> — delivering to London, Riyadh, New York,</span>
+          <span data-wipeline=""><i aria-hidden="true" style="transition-delay:.44s;"></i>with the same protections, the same dignity, the same open door.</span>
+        </div>
+        <p dir="rtl" style="margin:22px 0 0;font-size:14px;line-height:2;color:rgba(250,246,236,.5);max-width:56ch;">عالم لا تكون فيه الجغرافيا قدرا، ولا يغلق فيه باب دون كفاءة أثبتت نفسها.</p>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<section id="values" data-screen-label="الميثاق · المواد" style="background:#03201D;padding:clamp(56px,9vh,110px) clamp(20px,4vw,40px);">
+  <div style="max-width:1360px;margin:0 auto;">
+    <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+      <div data-reveal=""><bdi style="font-family:'Alexandria',sans-serif;font-size:13.5px;font-weight:500;color:#E9C96B;">مواد الميثاق</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:rgba(250,246,236,.4);">· ARTICLES IN FORCE</span></div>
+      <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.8vw,50px);line-height:1.26;color:#FAF6EC;">أربع مواد، ولا استثناء</h2>
+      <p data-reveal="" style="margin:14px 0 0;max-width:58ch;font-size:15.5px;line-height:2;color:rgba(250,246,236,.65);">تقرأ كما تقرأ اللوائح: نصا نافذا، لا شعارا.</p>
+    </sc-if>
+    <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+      <div dir="ltr">
+        <div data-reveal="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;color:#E9C96B;">ARTICLES IN FORCE</div>
+        <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.8vw,50px);line-height:1.18;color:#FAF6EC;">Four articles. No exceptions.</h2>
+        <p data-reveal="" style="margin:14px 0 0;max-width:58ch;font-family:'Instrument Sans',sans-serif;font-size:15.5px;line-height:1.75;color:rgba(250,246,236,.65);">Read them as regulation in force, not as slogans.</p>
+      </div>
+    </sc-if>
+    <div data-reveal="" style="margin-top:clamp(28px,5vh,44px);background:#FAF6EC;border-radius:26px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.4);">
+      <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:18px clamp(20px,3vw,30px);border-bottom:1px solid #E3D9C2;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <kayan-mark line="gold" tone="mid" aria-hidden="true" style="width:calc(1.175 * 30px);flex-shrink:0;"></kayan-mark>
+            <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">وثيقة القيم</span>
+          </div>
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#8F7218;">KYN-CH-01 · ADEN · IN FORCE</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1px;background:#E3D9C2;">
+          <article style="background:#FAF6EC;padding:clamp(24px,3vw,36px);">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="width:46px;height:46px;border-radius:50%;border:1.5px solid #C9A227;display:inline-flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8F7218;flex:none;">I</span>
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#B0A48A;">ARTICLE I</span>
+            </div>
+            <h3 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:20px;color:#052E2B;">الثقة قبل التعامل</h3>
+            <p style="margin:10px 0 0;font-size:14.5px;line-height:2.05;color:#33544E;">لا عقد، لا ضمان، لا عمل. ليست وصية معلقة على جدار، بل قاعدة يفرضها النظام فرضا، ولا استثناء.</p>
+            <div style="height:1px;background:#E3D9C2;margin:16px 0 12px;"></div>
+            <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;line-height:1.7;color:#6E675A;"><strong style="color:#052E2B;font-weight:600;">Trust before transaction.</strong> No SOW, no escrow, no work — a platform-enforced rule without exception.</div>
+          </article>
+          <article style="background:#FAF6EC;padding:clamp(24px,3vw,36px);">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="width:46px;height:46px;border-radius:50%;border:1.5px solid #C9A227;display:inline-flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8F7218;flex:none;">II</span>
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#B0A48A;">ARTICLE II</span>
+            </div>
+            <h3 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:20px;color:#052E2B;">الدليل قبل الادعاء</h3>
+            <p style="margin:10px 0 0;font-size:14.5px;line-height:2.05;color:#33544E;">الادعاء لا يكفي. كل مهارة تقاس قبل أن تصدق، وكل نتيجة توثق قبل أن تعتمد.</p>
+            <div style="height:1px;background:#E3D9C2;margin:16px 0 12px;"></div>
+            <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;line-height:1.7;color:#6E675A;"><strong style="color:#052E2B;font-weight:600;">Evidence over assertion.</strong> Every skill claim demands proof; every outcome demands documentation.</div>
+          </article>
+          <article style="background:linear-gradient(160deg,#F7ECCB,#FAF6EC 70%);padding:clamp(24px,3vw,36px);">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="width:46px;height:46px;border-radius:50%;background:#C9A227;display:inline-flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#241B04;flex:none;">III</span>
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#8F7218;">ARTICLE III</span>
+            </div>
+            <h3 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:20px;color:#052E2B;">نعمل حيث يشتد الضغط</h3>
+            <p style="margin:10px 0 0;font-size:14.5px;line-height:2.05;color:#33544E;">الإنجاز في الرخاء لا يثبت شيئا. ما بنيت كيان للظرف المثالي، بل لتصنع النتيجة حين يغيب. حيث يتوقف غيرنا، ننفذ.</p>
+            <div style="height:1px;background:rgba(201,162,39,.4);margin:16px 0 12px;"></div>
+            <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;line-height:1.7;color:#6E675A;"><strong style="color:#052E2B;font-weight:600;">Pressure is where we live.</strong> Anyone can deliver when conditions are perfect; we were built for when they are not. Where others pause, we execute.</div>
+          </article>
+          <article style="background:#FAF6EC;padding:clamp(24px,3vw,36px);">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="width:46px;height:46px;border-radius:50%;border:1.5px solid #C9A227;display:inline-flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8F7218;flex:none;">IV</span>
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#B0A48A;">ARTICLE IV</span>
+            </div>
+            <h3 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:20px;color:#052E2B;">الكرامة في كل تكليف</h3>
+            <p style="margin:10px 0 0;font-size:14.5px;line-height:2.05;color:#33544E;">الكفاءة رأس مال، لا بند في جدول التكاليف. الأتعاب عادلة، والمدفوعات في موعدها، والخلاف يحسم بالدليل لا بالصوت.</p>
+            <div style="height:1px;background:#E3D9C2;margin:16px 0 12px;"></div>
+            <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;line-height:1.7;color:#6E675A;"><strong style="color:#052E2B;font-weight:600;">Dignity in every engagement.</strong> Talent is human capital, not a cost line. Rates are fair; payments are on time.</div>
+          </article>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:16px clamp(20px,3vw,30px);border-top:1px solid #E3D9C2;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:16px;color:#052E2B;">خلف كل نجاح، كيان</span>
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#B0A48A;">ENFORCED BY DESIGN, NOT BY GOODWILL</span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <div dir="ltr">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:18px clamp(20px,3vw,30px);border-bottom:1px solid #E3D9C2;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <kayan-mark line="gold" tone="mid" aria-hidden="true" style="width:calc(1.175 * 30px);flex-shrink:0;"></kayan-mark>
+              <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">The Book of Values</span>
+            </div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#8F7218;">KYN-CH-01 · ADEN · IN FORCE</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1px;background:#E3D9C2;">
+            <article style="background:#FAF6EC;padding:clamp(24px,3vw,36px);">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <span style="width:46px;height:46px;border-radius:50%;border:1.5px solid #C9A227;display:inline-flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8F7218;flex:none;">I</span>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#B0A48A;">ARTICLE I</span>
+              </div>
+              <h3 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;">Trust Before Transaction</h3>
+              <p style="margin:10px 0 0;font-family:'Instrument Sans',sans-serif;font-size:14.5px;line-height:1.75;color:#33544E;">No SOW. No escrow. No work. Not a guideline — a platform-enforced rule without exception.</p>
+              <div style="height:1px;background:#E3D9C2;margin:16px 0 12px;"></div>
+              <div dir="rtl" style="font-size:13px;line-height:1.95;color:#6E675A;">لا عقد، لا ضمان، لا عمل.</div>
+            </article>
+            <article style="background:#FAF6EC;padding:clamp(24px,3vw,36px);">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <span style="width:46px;height:46px;border-radius:50%;border:1.5px solid #C9A227;display:inline-flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8F7218;flex:none;">II</span>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#B0A48A;">ARTICLE II</span>
+              </div>
+              <h3 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;">Evidence Over Assertion</h3>
+              <p style="margin:10px 0 0;font-family:'Instrument Sans',sans-serif;font-size:14.5px;line-height:1.75;color:#33544E;">Every skill claim demands proof. Every outcome demands documentation.</p>
+              <div style="height:1px;background:#E3D9C2;margin:16px 0 12px;"></div>
+              <div dir="rtl" style="font-size:13px;line-height:1.95;color:#6E675A;">كل مهارة تقاس، وكل نتيجة توثق.</div>
+            </article>
+            <article style="background:linear-gradient(160deg,#F7ECCB,#FAF6EC 70%);padding:clamp(24px,3vw,36px);">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <span style="width:46px;height:46px;border-radius:50%;background:#C9A227;display:inline-flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#241B04;flex:none;">III</span>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#8F7218;">ARTICLE III</span>
+              </div>
+              <h3 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;">Pressure Is Where We Live</h3>
+              <p style="margin:10px 0 0;font-family:'Instrument Sans',sans-serif;font-size:14.5px;line-height:1.75;color:#33544E;">Anyone can deliver when conditions are perfect. We were built for when they are not. Where others pause, we execute.</p>
+              <div style="height:1px;background:rgba(201,162,39,.4);margin:16px 0 12px;"></div>
+              <div dir="rtl" style="font-size:13px;line-height:1.95;color:#6E675A;">حيث يتوقف غيرنا، ننفذ.</div>
+            </article>
+            <article style="background:#FAF6EC;padding:clamp(24px,3vw,36px);">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <span style="width:46px;height:46px;border-radius:50%;border:1.5px solid #C9A227;display:inline-flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8F7218;flex:none;">IV</span>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#B0A48A;">ARTICLE IV</span>
+              </div>
+              <h3 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;">Dignity in Every Engagement</h3>
+              <p style="margin:10px 0 0;font-family:'Instrument Sans',sans-serif;font-size:14.5px;line-height:1.75;color:#33544E;">Talent is human capital, not a cost line. Rates are fair. Payments are on time.</p>
+              <div style="height:1px;background:#E3D9C2;margin:16px 0 12px;"></div>
+              <div dir="rtl" style="font-size:13px;line-height:1.95;color:#6E675A;">الأتعاب عادلة، والمدفوعات في موعدها.</div>
+            </article>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:16px clamp(20px,3vw,30px);border-top:1px solid #E3D9C2;">
+            <span style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#052E2B;">Behind every success, a Kayan.</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#B0A48A;">ENFORCED BY DESIGN, NOT BY GOODWILL</span>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="الميثاق · الأبواب التالية" style="background:#FAF6EC;color:#143C37;padding:clamp(44px,7vh,80px) clamp(20px,4vw,40px);">
+  <div style="max-width:1360px;margin:0 auto;">
+    <div data-reveal="" style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+      <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(22px,3vw,34px);color:#052E2B;">{{ nextT }}</h2>
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#8F7218;">WHERE TO NEXT</span>
+    </div>
+    <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px;margin-top:20px;">
+      <sc-for list="{{ nextDoors }}" as="d" hint-placeholder-count="3">
+        <a href="{{ d.href }}" data-card="" style="display:flex;flex-direction:column;gap:8px;background:#FFFFFF;border:1.5px solid #E0D6BD;border-radius:18px;padding:20px;color:#143C37;">
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#8F7218;">{{ d.tag }}</span>
+          <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">{{ d.t }}</span>
+          <span style="font-size:13px;line-height:1.95;color:#4A6B64;">{{ d.b }}</span>
+          <span style="margin-top:4px;font-weight:700;color:#8F7218;">{{ d.cta }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#02150F;color:rgba(250,246,236,.65);padding:26px clamp(16px,3vw,32px);">
+  <div style="max-width:1360px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;">
+    <div style="display:flex;align-items:center;gap:10px;"><kayan-mark line="cream" tone="bright" aria-hidden="true" style="width:calc(1.175 * 26px);flex-shrink:0;opacity:.9;"></kayan-mark><span>{{ footLine }}</span></div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <a href="Kayan Home.dc.html" style="color:rgba(250,246,236,.65);">{{ tHome }}</a>
+      <a href="Kayan for Clients.dc.html" style="color:rgba(250,246,236,.65);">{{ tClients }}</a>
+      <a href="Kayan for Talent.dc.html" style="color:rgba(250,246,236,.65);">{{ tTalent }}</a>
+      <a href="Kayan Apply.dc.html" style="color:rgba(250,246,236,.65);">{{ tApply }}</a>
+    </div>
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;">KHORMAKSAR · CORNICHE ST · ADEN</div>
+  </div>
+</footer>
+</div>
+<kayan-compass current="charter"></kayan-compass>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.root = React.createRef();
+    let lang = null;
+    try { lang = localStorage.getItem('kyn-lang'); } catch(e) {}
+    if (lang !== 'ar' && lang !== 'en') lang = 'ar';
+    this.state = { lang };
+  }
+  componentDidMount(){
+    const el = this.root.current; if (!el) return;
+    this._initReveals();
+    el.setAttribute('data-mo','');
+    this._failsafe = setTimeout(()=>this._revealAll(), 2600);
+  }
+  componentDidUpdate(){ this._initReveals(); }
+  componentWillUnmount(){ if(this._io) this._io.disconnect(); clearTimeout(this._failsafe); }
+  _initReveals(){
+    const el = this.root.current; if (!el) return;
+    if (!('IntersectionObserver' in window)) { this._revealAll(); return; }
+    if (!this._io) this._io = new IntersectionObserver((ents)=>{
+      ents.forEach((en)=>{ if(en.isIntersecting){ en.target.setAttribute('data-on',''); this._io.unobserve(en.target); } });
+    }, { threshold: 0.1 });
+    el.querySelectorAll('[data-reveal]:not([data-on])').forEach((n)=>this._io.observe(n));
+  }
+  _revealAll(){
+    const el = this.root.current; if (!el) return;
+    el.querySelectorAll('[data-reveal]').forEach((n)=>n.setAttribute('data-on',''));
+  }
+  renderVals(){
+    const s = this.state, ar = s.lang !== 'en', en = !ar;
+    const t = (a,e)=> ar ? a : e;
+    return {
+      rootRef: this.root, ar, en, dirVal: ar ? 'rtl' : 'ltr',
+      langBtn: ar ? 'EN' : 'ع',
+      toggleLang: ()=>{ const l = ar ? 'en' : 'ar'; try{ localStorage.setItem('kyn-lang', l); }catch(e){} this.setState({lang:l}, ()=>{ this._revealAll(); }); },
+      tPage: t('الميثاق','The Charter'),
+      tLines: t('الخطوط','The lines'), tJourney: t('الرحلة','The journey'), tApply: t('التسجيل','Registration'), tPortal: t('البوابة','The portal'),
+      tHome: t('الدار','Home'), tClients: t('للعملاء','For clients'), tTalent: t('للكفاءات','For talent'),
+      heroT1: t('نص واحد يحكم','One text governs'),
+      heroT2: t('كل تعامل','every engagement'),
+      heroSub: t('من نحن، وما مهمتنا ورؤيتنا، وبأي المواد نحكم — جمعت في وثيقة واحدة تقرأ في دقائق، ويحتكم إليها في كل خلاف.','Who we are, our mission and vision, and the four articles we govern by — one document, read in minutes, ruling in every dispute.'),
+      nextT: t('قرأت الميثاق. أين بعده؟','You have read the Charter. Where next?'),
+      footLine: t('خلف كل نجاح، كيان','Behind every success, a Kayan.'),
+      nextDoors: [
+        { tag:'THE JOURNEY', t: t('الرحلة','The journey'), b: t('كيف يمضي التكليف من أول رسالة إلى محضر الاستلام.','How an engagement travels from first message to acceptance.'), cta: t('اتبع الرحلة ←','Follow it →'), href:'Kayan Journey.dc.html' },
+        { tag:'REGISTRATION', t: t('التسجيل','Registration'), b: t('عشر محطات تقيم بها حضورك وتقيم على قدرتك دليلا.','Ten stations that put your capability on the record.'), cta: t('ابدأ التسجيل ←','Begin →'), href:'Kayan Apply.dc.html' },
+        { tag:'THE PORTAL', t: t('البوابة','The portal'), b: t('حيث تدار العلاقة بعد التسجيل: ملف، وتكليفات، وسجل.','Where the relationship lives after sign-up: file, engagements, record.'), cta: t('ادخل البوابة ←','Enter →'), href:'Kayan Portal.dc.html' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

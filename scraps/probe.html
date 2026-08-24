@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>cross-page anchor audit</title>
+<style>body{margin:0;font:12px ui-monospace,monospace;background:#0d1117;color:#d8dee9}
+#stage{position:absolute;left:-99999px;top:0;width:1400px;height:900px}
+iframe{width:1400px;height:900px;border:0}
+pre{padding:14px;white-space:pre-wrap;line-height:1.6}</style></head>
+<body><div id="stage"></div><pre id="out">idle</pre>
+<script>
+const PAGES = [
+  'Kayan Home.dc.html','Line I - Managed Delivery.dc.html','Line I - Managed Delivery EN.dc.html',
+  'Line I - Ready Products.dc.html','Line II - The Hub and Cafe.dc.html','Line II - The Hub and Cafe EN.dc.html',
+  'Line III - The Forge.dc.html','Line III - The Forge EN.dc.html','Civic Wing - Kayan for Yemen.dc.html',
+  'Kayan Apply.dc.html','Kayan Portal.dc.html','Kayan Record.dc.html','Kayan for Clients.dc.html',
+  'Kayan for Talent.dc.html','Kayan Client Profile.dc.html','Kayan Talent Profile.dc.html',
+  'Kayan Legal.dc.html','Kayan Master.dc.html','Kayan Charter.dc.html','Kayan Toolkit - Scoping Form.dc.html'
+];
+const stage = document.getElementById('stage');
+function load(src, wait) {
+  return new Promise(res => {
+    const f = document.createElement('iframe'); let done = false;
+    const fin = () => { if (!done) { done = true; res(f); } };
+    f.addEventListener('load', () => setTimeout(fin, wait || 1200));
+    setTimeout(fin, 8000); f.src = src; stage.appendChild(f);
+  });
+}
+// pass 1: harvest every cross-page fragment link + collect each page's own ids
+window.__pass1 = async function (from, to) {
+  window.__want = window.__want || {};   // targetFile -> Set of frags (with source)
+  window.__have = window.__have || {};   // file -> [ids]
+  window.__birds = window.__birds || [];
+  const out = document.getElementById('out');
+  for (const p of PAGES.slice(from, to)) {
+    out.textContent = 'pass1 ' + p;
+    const f = await load(p);
+    try {
+      const d = f.contentDocument;
+      window.__have[p] = [...d.querySelectorAll('[id]')].map(e => e.id);
+      for (const a of d.querySelectorAll('a[href*="#"]')) {
+        const h = a.getAttribute('href');
+        if (!h || /^(https?:|mailto:|tel:)/.test(h) || h.startsWith('#')) continue;
+        const [file, frag] = h.split('#');
+        if (!file || !frag) continue;
+        (window.__want[file] = window.__want[file] || []).push(frag + '  ←' + p);
+      }
+      if (p === 'Kayan Home.dc.html') {
+        for (const el of d.querySelectorAll('[style*="url("]')) {
+          const m = (el.getAttribute('style')||'').match(/url\('([^']+)'\)/);
+          if (m && m[1].includes('assets/')) window.__birds.push(m[1]);
+        }
+      }
+    } catch (e) { out.textContent += ' ERR ' + e; }
+    f.remove();
+  }
+  return 'pass1 done ' + from + '..' + to;
+};
+// pass 2: for each target file, load once and verify every wanted fragment exists
+window.__pass2 = async function () {
+  const out = document.getElementById('out');
+  const missing = [];
+  const targets = Object.keys(window.__want);
+  for (const t of targets) {
+    out.textContent = 'pass2 ' + t;
+    let ids = window.__have[t];
+    if (!ids) {
+      const f = await load(t);
+      try { ids = [...f.contentDocument.querySelectorAll('[id]')].map(e => e.id); }
+      catch (e) { ids = null; }
+      f.remove();
+      window.__have[t] = ids || [];
+    }
+    const set = new Set(ids || []);
+    const seen = new Set();
+    for (const entry of window.__want[t]) {
+      const frag = decodeURIComponent(entry.split('  ←')[0]);
+      if (seen.has(entry)) continue; seen.add(entry);
+      if (frag.startsWith('/')) continue;                 // hash-router routes, not ids
+      if (!set.has(frag)) missing.push(t + ' #' + entry);
+    }
+  }
+  const uniq = [...new Set(missing)];
+  const res = (uniq.length ? uniq : ['— no broken cross-page anchors —']);
+  const birdLine = 'HOME BIRD PLATES: ' + (window.__birds || []).join(', ');
+  out.textContent = res.join('\n') + '\n\n' + birdLine;
+  return { missing: uniq, birds: window.__birds };
+};
+</script></body></html>

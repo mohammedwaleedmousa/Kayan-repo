@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khormaksar · Aden</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+html,body{margin:0;height:100%;background:#F2E8D2;font-family:'IBM Plex Mono',ui-monospace,monospace}
+#map{position:absolute;inset:0;background:#F2E8D2}
+/* warm the tiles into the Hub's paper palette — no colour is invented, only graded */
+.leaflet-tile-pane{filter:sepia(.34) saturate(.72) contrast(.96) brightness(1.04)}
+.leaflet-container{background:#E7DCC2}
+.leaflet-control-attribution{font-size:9px;background:rgba(250,246,236,.78);color:#6E675A}
+.leaflet-control-attribution a{color:#A8710F}
+.leaflet-bar a{color:#2A1D0C;border-bottom-color:#E9DFC6}
+.pin{position:relative;width:14px;height:14px}
+.pin i{position:absolute;inset:0;border-radius:50%;background:#E09114;box-shadow:0 0 0 3px rgba(250,246,236,.9),0 2px 8px rgba(42,29,12,.35);display:block}
+.pin span{position:absolute;inset:-9px;border-radius:50%;border:1px solid rgba(224,145,20,.85);animation:ring 5s cubic-bezier(.23,1,.32,1) infinite}
+@keyframes ring{0%{transform:scale(.45);opacity:.9}70%{transform:scale(1.9);opacity:0}100%{transform:scale(1.9);opacity:0}}
+.tag{font-size:10px;letter-spacing:.16em;color:#2A1D0C;background:rgba(250,246,236,.86);border:1px solid #E9DFC6;border-radius:3px;padding:3px 7px;white-space:nowrap;box-shadow:0 2px 8px rgba(42,29,12,.1)}
+.sea{font-size:10.5px;letter-spacing:.24em;color:rgba(42,29,12,.5);text-transform:uppercase;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){.pin span{animation:none}}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+(function () {
+  var HUB = [12.8167, 45.0333];          // Khormaksar, Corniche Road, Aden
+  var map = L.map('map', {
+    center: [12.806, 45.028], zoom: 11, zoomControl: true,
+    scrollWheelZoom: false, zoomSnap: 0.25, attributionControl: true
+  });
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors', maxZoom: 18
+  }).addTo(map);
+
+  L.marker(HUB, {
+    icon: L.divIcon({ className: '', html: '<div class="pin"><span></span><i></i></div>', iconSize: [14, 14], iconAnchor: [7, 7] }),
+    keyboard: false, title: 'The Hub & Café — Khormaksar'
+  }).addTo(map);
+
+  function label(latlng, html, cls) {
+    L.marker(latlng, {
+      interactive: false, keyboard: false,
+      icon: L.divIcon({ className: '', html: '<div class="' + (cls || 'tag') + '">' + html + '</div>', iconSize: [0, 0] })
+    }).addTo(map);
+  }
+  label(HUB, 'THE HUB &amp; CAFÉ');
+  label([12.7833, 45.0], 'ADEN · CRATER');
+  label([12.848, 45.036], 'KHORMAKSAR');
+  label([12.74, 45.09], 'GULF OF ADEN', 'sea');
+
+  // one slow settle onto the site — motion once, then still
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) { map.setView(HUB, 13.5); }
+  else {
+    setTimeout(function () { map.flyTo(HUB, 13.5, { duration: 3.4, easeLinearity: 0.22 }); }, 700);
+  }
+})();
+</script>
+</body>
+</html>

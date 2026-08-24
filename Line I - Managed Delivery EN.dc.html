@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kayan · Managed Delivery — Front (EN)</title>
+<meta name="description" content="Line I — Managed Delivery: buy the outcome, not the hours. A written price, funded escrow, a pod Kayan assembles and carries, and acceptance only you sign.">
+<meta property="og:title" content="Managed Delivery — Kayan Line I">
+<meta property="og:description" content="No SOW, no escrow, no work — and the risk sits with us, not you.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Managed Delivery — Kayan Line I","provider":{"@type":"Organization","name":"Kayan","address":{"@type":"PostalAddress","addressLocality":"Aden","addressCountry":"YE"}},"areaServed":["YE","GCC"],"inLanguage":"en"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#FAF6EC;overflow-x:hidden;}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+a{color:#1E63A8;text-decoration:none;}
+a:hover{color:#3E9EEA;}
+::selection{background:#3E9EEA;color:#06202F;}
+img{max-width:100%;}
+p{text-wrap:pretty;}
+h1,h2,h3{text-wrap:balance;}
+[data-nav]::-webkit-scrollbar{display:none;}
+@keyframes kGlide{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-12px,0)}100%{transform:translate3d(0,0,0)}}
+@keyframes kDraw{from{stroke-dashoffset:900}to{stroke-dashoffset:0}}
+@keyframes kHalo{0%,100%{opacity:.5}50%{opacity:.85}}
+[data-mo] [data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .66s cubic-bezier(.23,1,.32,1),transform .66s cubic-bezier(.23,1,.32,1);}
+[data-mo] [data-reveal][data-on]{opacity:1;transform:none;}
+[data-mo] [data-glide]{animation:kGlide 9s ease-in-out infinite;}
+[data-mo] [data-halo]{animation:kHalo 9s ease-in-out infinite;}
+[data-mo] [data-rail]{stroke-dasharray:900;animation:kDraw 2.4s cubic-bezier(.23,1,.32,1) .2s both;}
+@media (prefers-reduced-motion:reduce){*{animation:none !important}[data-mo] [data-reveal]{transform:none !important}a,[data-reveal]{transition-property:opacity,background-color,color,border-color !important}}
+@keyframes kWrite{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes kSeal{0%{opacity:0;transform:scale(1.9) rotate(-16deg)}55%{opacity:1;transform:scale(.96) rotate(-7deg)}72%{transform:scale(1.04) rotate(-9deg)}100%{opacity:.5;transform:scale(1) rotate(-8deg)}}
+@keyframes kInk{from{stroke-dashoffset:70}to{stroke-dashoffset:0}}
+@keyframes kPaper{0%{transform:translateX(-120%) skewX(-14deg);opacity:0}18%{opacity:1}100%{transform:translateX(240%) skewX(-14deg);opacity:0}}
+[data-mo] [data-contract] [data-term]{opacity:0}
+[data-mo] [data-contract][data-on] [data-term]{opacity:1;animation:kWrite .62s cubic-bezier(.23,1,.32,1) both;animation-delay:calc(.18s + var(--i,0) * .16s)}
+[data-mo] [data-contract] [data-seal]{opacity:0;transform-origin:50% 50%}
+[data-mo] [data-contract][data-on] [data-seal]{animation:kSeal .85s cubic-bezier(.34,1.2,.4,1) .96s both}
+[data-mo] [data-contract] [data-tick]{stroke-dasharray:70;stroke-dashoffset:70}
+[data-mo] [data-contract][data-on] [data-tick]{animation:kInk .7s cubic-bezier(.23,1,.32,1) 1.42s both}
+[data-mo] [data-contract] [data-paper]{position:absolute;top:0;bottom:0;left:0;width:34%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(46,124,188,.10),transparent);opacity:0}
+[data-mo] [data-contract][data-on] [data-paper]{animation:kPaper 2.4s cubic-bezier(.33,0,.25,1) .3s 1 both}
+[data-mo] [data-plate]{opacity:0;transform:perspective(700px) rotateX(-42deg) translateY(12px);transform-origin:50% 100%;transition:opacity .55s cubic-bezier(.23,1,.32,1),transform .62s cubic-bezier(.23,1,.32,1),background .3s ease;transition-delay:calc(var(--i,0) * .12s)}
+[data-mo] [data-plate][data-on]{opacity:1;transform:none}
+@media (hover:hover) and (pointer:fine){[data-plate]:hover{background:#DDEBFA!important}[data-contract] [data-term]{transition:background .2s ease}[data-contract] [data-term]:hover{background:#F4F9FF!important}}
+@media (prefers-reduced-motion:reduce){[data-mo] [data-contract] [data-term],[data-mo] [data-contract] [data-seal],[data-mo] [data-plate]{opacity:1!important;transform:none!important;animation:none!important}[data-mo] [data-contract] [data-tick]{stroke-dashoffset:0!important}}
+@keyframes kNeuron{0%{opacity:0}100%{opacity:.6}}
+[data-neurons] line{stroke:rgba(126,192,244,.42);stroke-width:.7;opacity:0;animation:kNeuron .9s ease forwards}
+[data-neurons] circle{fill:rgba(250,246,236,.45)}
+[data-neurons] .np{fill:#3E9EEA}
+@media (prefers-reduced-motion:reduce){[data-neurons] line{opacity:.6;animation:none}[data-neurons] .np{display:none}}
+@keyframes kPop{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
+@keyframes kRipple{0%{r:6;opacity:.7}100%{r:16;opacity:0}}
+[data-gate]{cursor:pointer}
+[data-gate] .gp{transform-box:fill-box;transform-origin:50% 50%;transition:transform .28s cubic-bezier(.23,1,.32,1)}
+[data-mo] [data-gate] .gp{opacity:0}
+[data-mo] [data-reveal][data-on] [data-gate] .gp{animation:kPop .5s cubic-bezier(.34,1.3,.4,1) both;animation-delay:calc(.5s + var(--i,0) * .085s)}
+[data-gate] .gd,[data-gate] .gr{transition:opacity .22s ease}
+[data-gate] .gl{transition:fill .22s ease,font-weight .22s ease}
+[data-gate]:hover .gd{opacity:.85}
+[data-gate]:hover .gr{opacity:.9;animation:kRipple 1s cubic-bezier(.23,1,.32,1) infinite}
+[data-gate]:hover .gp{transform:scale(1.55)}
+[data-gate]:hover .gl{fill:#06202F;font-weight:600}
+[data-mo] [data-area]{opacity:0;transition:opacity 1.1s ease .35s}
+[data-mo] [data-reveal][data-on] [data-area]{opacity:1}
+[data-leg]{border-radius:10px;padding:4px 8px;margin:-4px -8px;transition:background .22s ease}
+[data-leg][data-hot]{background:rgba(46,124,188,.09)}
+[data-mo] [data-reveal][data-on] [data-gate] .gp,[data-gate][data-wired] .gp:not([style*="--i"]){opacity:1}
+@media (prefers-reduced-motion:reduce){[data-runner]{display:none}[data-mo] [data-gate] .gp{opacity:1!important;animation:none!important}[data-mo] [data-area]{opacity:1!important}[data-gate]:hover .gr{animation:none}}
+[data-hov]{transition:transform .34s cubic-bezier(.23,1,.32,1),box-shadow .34s ease,border-color .28s ease,background-color .28s ease;}
+[data-tag]{transition:letter-spacing .34s ease,color .28s ease;}
+@media (hover:hover) and (pointer:fine){
+  [data-hov]:hover{transform:translateY(-4px);}
+  [data-hov="lt"]:hover{box-shadow:0 20px 44px rgba(6,32,47,.13);background:#F7FBFF !important;border-color:#BFD9F2 !important;}
+  [data-hov="dk"]:hover{box-shadow:0 22px 48px rgba(0,0,0,.36);border-color:rgba(124,192,244,.5) !important;background:rgba(124,192,244,.08) !important;}
+  [data-hov="deep"]:hover{box-shadow:0 26px 54px rgba(0,0,0,.4);border-color:#7CC0F4 !important;transform:translateY(-6px) scale(1.012);}
+  [data-hov]:hover [data-tag]{letter-spacing:.22em;}
+  [data-grow]{transition:background-color .22s ease,padding-inline-start .26s cubic-bezier(.23,1,.32,1),box-shadow .22s ease;}
+  [data-grow]:hover{background:rgba(124,192,244,.14) !important;padding-inline-start:28px;box-shadow:inset 3px 0 0 #7CC0F4;}
+  [data-lift]{transition:transform .34s cubic-bezier(.23,1,.32,1),box-shadow .34s ease;}
+  [data-lift]:hover{transform:translateY(-6px) scale(1.012);box-shadow:0 26px 54px rgba(6,32,47,.16);}
+  [data-rulehov]{transition:border-color .26s ease,transform .26s cubic-bezier(.23,1,.32,1);}
+  [data-rulehov]:hover{border-color:#7CC0F4 !important;transform:translateY(-3px);}
+}
+[data-mo] [data-seq]>[data-reveal]:nth-child(1){transition-delay:0s}
+[data-mo] [data-seq]>[data-reveal]:nth-child(2){transition-delay:.09s}
+[data-mo] [data-seq]>[data-reveal]:nth-child(3){transition-delay:.18s}
+[data-mo] [data-seq]>[data-reveal]:nth-child(4){transition-delay:.27s}
+[data-mo] [data-seq]>[data-reveal]:nth-child(5){transition-delay:.36s}
+[data-mo] [data-seq]>[data-reveal]:nth-child(n+6){transition-delay:.45s}
+@media (max-width:1180px){[data-navlabel]{display:none}}
+@media (max-width:1000px){[data-signin]{display:none}}
+[data-neu]{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity 1.2s ease .2s;}
+[data-neu][data-on]{opacity:1;}
+[data-neu] line{stroke:rgba(124,192,244,.26);stroke-width:.5;}
+[data-neu] circle{fill:rgba(124,192,244,.45);}
+[data-neu] .glow{fill:#7CC0F4;}
+@media (prefers-reduced-motion:reduce){[data-neu] .glow{display:none}[data-neu]{opacity:1}}
+a:focus-visible,button:focus-visible{outline:2px solid #3E9EEA;outline-offset:3px;border-radius:3px;}
+</style>
+<script src="./kayan-compass.js"></script>
+<script src="./kayan-line-audio.js"></script>
+<script src="./kayan-mark.js"></script>
+</helmet>
+
+<div ref="{{ rootRef }}" dir="ltr" style="font-family:'Instrument Sans','IBM Plex Sans Arabic',sans-serif;color:#143C37;background:#FAF6EC;min-height:100vh;">
+
+<!-- ===== MASTHEAD ===== -->
+<header ref="{{ hdrRef }}" style="position:fixed;top:0;left:0;right:0;z-index:60;background:transparent;border-bottom:1px solid transparent;transition:background .32s ease,border-color .32s ease;">
+  <div style="max-width:1360px;margin:0 auto;padding:0 clamp(14px,3vw,36px);display:flex;align-items:center;gap:clamp(8px,1.6vw,20px);height:clamp(66px,7.4vh,86px);">
+    <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:11px;flex-shrink:0;color:#FFFFFF;">
+      <kayan-mark line="cream" tone="bright" aria-hidden="true" style="width:calc(1.175 * clamp(34px,4vw,44px));flex-shrink:0;"></kayan-mark>
+      <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(17px,1.7vw,20px);letter-spacing:-.005em;line-height:1;">Kayan</span>
+    </a>
+    <span aria-hidden="true" style="width:1px;height:22px;background:rgba(255,255,255,.24);flex-shrink:0;"></span>
+    <nav data-nav="" style="min-width:0;display:flex;align-items:center;gap:2px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;">
+      <a href="#risks" style="white-space:nowrap;color:rgba(255,255,255,.78);font-size:13.5px;padding:9px 12px;" style-hover="color:#FFFFFF">Risks</a>
+      <a href="#gates" style="white-space:nowrap;color:rgba(255,255,255,.78);font-size:13.5px;padding:9px 12px;" style-hover="color:#FFFFFF">Gates</a>
+      <a href="#tiers" style="white-space:nowrap;color:rgba(255,255,255,.78);font-size:13.5px;padding:9px 12px;" style-hover="color:#FFFFFF">Tiers</a>
+      <a href="#money" style="white-space:nowrap;color:rgba(255,255,255,.78);font-size:13.5px;padding:9px 12px;" style-hover="color:#FFFFFF">Money path</a>
+    </nav>
+    <div style="margin-inline-start:auto;flex-shrink:0;display:flex;align-items:center;gap:9px;">
+      <span data-navlabel="" style="flex:none;font-size:12.5px;color:rgba(255,255,255,.72);white-space:nowrap;">Managed Delivery</span>
+      <span data-navlabel="" aria-hidden="true" style="width:1px;height:22px;background:rgba(255,255,255,.24);flex-shrink:0;margin-inline-end:2px;"></span>
+      <a href="Line I - Managed Delivery.dc.html" dir="rtl" style="flex-shrink:0;white-space:nowrap;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12.5px;color:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:6px 13px;transition:background .2s ease,color .2s ease;" style-hover="background:rgba(255,255,255,.16);color:#FFFFFF">عربي</a>
+      <a href="Kayan Portal.dc.html" data-signin="" style="flex-shrink:0;white-space:nowrap;color:rgba(255,255,255,.78);font-size:13px;border:1px solid rgba(255,255,255,.28);border-radius:99px;padding:9px 16px;transition:color .2s ease,border-color .2s ease;" style-hover="color:#7CC0F4;border-color:#7CC0F4">Sign in</a>
+      <a href="#start" style="flex-shrink:0;white-space:nowrap;background:#3E9EEA;color:#06202F;font-size:13px;font-weight:600;padding:10px 20px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#7CC0F4" style-active="transform:scale(.97)">Request a scope</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO + PLATE STRIP (one surface, the bird straddles the seam) ===== -->
+<section data-hero="" data-screen-label="Managed Delivery · Front" style="position:relative;background:#FAF6EC;">
+
+  <div style="position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(180deg,#2A76B8 0%,#2F83C6 42%,#2470AF 74%,#1A5F97 100%);">
+    <div style="position:absolute;inset:0;background:radial-gradient(880px 620px at 26% 48%,rgba(255,255,255,.3),transparent 66%),radial-gradient(900px 460px at 76% -16%,rgba(6,32,47,.26),transparent 64%),radial-gradient(700px 480px at 4% 108%,rgba(6,32,47,.22),transparent 62%);pointer-events:none;"></div>
+    <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:calc(clamp(66px,7.4vh,86px) + clamp(26px,4.4vh,58px)) clamp(20px,4vw,44px) clamp(20px,3vh,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(18px,2.4vw,36px);align-items:center;">
+
+      <div style="min-width:0;">
+        <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-weight:400;font-size:clamp(16px,1.66vw,22px);letter-spacing:.02em;color:#D3E8FA;">Managed Delivery <span style="color:rgba(255,255,255,.5);">/</span></div>
+        <h1 data-reveal="" style="margin:clamp(10px,1.4vh,16px) 0 0;font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(34px,4.75vw,64px);line-height:1.08;letter-spacing:-.025em;color:#FFFFFF;max-width:15ch;">One contract. One party answerable for the result.</h1>
+        <sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}">
+          <div data-reveal="" dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:clamp(15px,1.5vw,18px);line-height:1.62;color:rgba(255,255,255,.66);margin-top:16px;max-width:34ch;">عقد واحد، وجهة واحدة تسأل عن النتيجة.</div>
+        </sc-if>
+
+        <div data-reveal="" style="margin:clamp(24px,3.2vh,32px) 0 0;display:flex;align-items:center;gap:11px;flex-wrap:wrap;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.2em;font-weight:500;color:#EAF4FE;">THE DELIVERY COURIER</span>
+          <span aria-hidden="true" style="width:22px;height:1px;background:rgba(255,255,255,.32);"></span>
+          <span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12.5px;color:rgba(255,255,255,.6);">حامل الأمانة</span>
+        </div>
+
+        <div data-reveal="" style="margin-top:clamp(20px,2.6vh,28px);">
+          <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+            <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(14px,1.32vw,17px);letter-spacing:.04em;color:#CFE7FA;">The contracting counterparty</span>
+            <sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}"><sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:13px;color:inherit;opacity:.9;">الطرف المتعاقد</span></sc-if></sc-if>
+          </div>
+          <p style="margin:10px 0 0;font-size:clamp(15px,1.42vw,17.5px);line-height:1.65;color:rgba(255,255,255,.9);max-width:34ch;">Kayan holds the engagement from award to close. Work is executed in Yemen and delivered to a standard an international buyer will accept. Hours are not sold. Effort is not sold. What is sold is an accepted result, on the record.</p>
+        </div>
+
+        <div data-reveal="" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:clamp(24px,3.2vh,34px);">
+          <a href="#start" style="background:#06202F;color:#FFFFFF;font-size:14.5px;font-weight:600;padding:14px 26px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#0C3049" style-active="transform:scale(.97)">Request a scope of work</a>
+          <a href="#gates" style="border:1px solid rgba(255,255,255,.5);color:#FFFFFF;font-size:14.5px;font-weight:500;padding:14px 26px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:rgba(255,255,255,.14)" style-active="transform:scale(.97)">The gate path</a>
+        </div>
+      </div>
+
+      <div data-reveal="" dir="ltr" style="position:relative;z-index:3;min-width:0;align-self:end;top:clamp(34px,5.4vw,80px);margin-inline-end:0;">
+        <div style="position:relative;width:clamp(300px,40vw,600px);max-width:none;margin-inline-start:calc(100% - clamp(300px,40vw,600px));">
+          <kayan-mark line="cream" motion="glide" glow="" entrance="settle" role="img" aria-label="The delivery courier — the Managed Delivery mark in flight" style="width:100%;filter:drop-shadow(0 44px 64px rgba(6,32,47,.44)) drop-shadow(0 8px 16px rgba(6,32,47,.22));"></kayan-mark>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- plate strip -->
+  <div style="position:relative;z-index:1;background:#FAF6EC;padding:clamp(92px,13vw,208px) clamp(20px,4vw,44px) clamp(44px,6vh,72px);">
+    <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(22px,3vw,44px);align-items:start;">
+
+      <div style="min-width:0;">
+        <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>Before you pay</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· IN WRITING FIRST</span></div>
+        <div data-reveal="" data-contract="" style="position:relative;overflow:hidden;margin-top:16px;background:#fff;border:1px solid #E3D9C2;border-radius:18px;padding:22px 24px 18px;">
+          <i data-paper="" aria-hidden="true"></i>
+          <svg data-seal="" aria-hidden="true" viewBox="0 0 100 100" style="position:absolute;right:14px;bottom:12px;width:58px;height:58px;pointer-events:none;z-index:0;opacity:.5;">
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#2E7CBC" stroke-width="2" opacity=".5"></circle>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#2E7CBC" stroke-width="1" stroke-dasharray="3 5" opacity=".45"></circle>
+            <path data-tick="" d="M33 51 L45 63 L69 38" fill="none" stroke="#2E7CBC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <div style="position:relative;display:grid;gap:1px;background:#EDE5D2;border:1px solid #EDE5D2;border-radius:12px;overflow:hidden;">
+            <div data-term="" style="--i:0;background:#fff;padding:13px 16px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;"><span style="font-size:13px;color:#8A8272;">A signed scope</span><span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:14px;color:#052E2B;">Counted and specified, not described</span></div>
+            <div data-term="" style="--i:1;background:#fff;padding:13px 16px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;"><span style="font-size:13px;color:#8A8272;">A fixed price</span><span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:14px;color:#052E2B;">It moves only if the scope moves</span></div>
+            <div data-term="" style="--i:2;background:#fff;padding:13px 16px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;"><span style="font-size:13px;color:#8A8272;">A delivery date</span><span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:14px;color:#052E2B;">Counted from your last input</span></div>
+            <div data-term="" style="--i:3;background:#fff;padding:13px 16px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;"><span style="font-size:13px;color:#8A8272;">An acceptance window</span><span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:14px;color:#052E2B;">Five days after delivery</span></div>
+          </div>
+          <p style="position:relative;z-index:1;margin:12px 0 0;padding-inline-end:74px;font-size:13.5px;line-height:1.68;color:#4A6B64;">Your money is deposited in escrow before work starts, and released only against a signed acceptance — or when the acceptance window closes.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:16px;overflow:hidden;margin-top:16px;">
+          <div data-reveal="" data-plate="" style="--i:0;background:#EAF3FC;padding:18px 18px 20px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#06202F;">Scope design</div><sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}"><sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12.5px;color:inherit;opacity:.9;">تصميم النطاق</span></sc-if></sc-if></div>
+          <div data-reveal="" data-plate="" style="--i:1;background:#EAF3FC;padding:18px 18px 20px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#06202F;">Team assembly</div><sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}"><sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12.5px;color:inherit;opacity:.9;">تأليف الفريق</span></sc-if></sc-if></div>
+          <div data-reveal="" data-plate="" style="--i:2;background:#EAF3FC;padding:18px 18px 20px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#06202F;">Local execution</div><sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}"><sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12.5px;color:inherit;opacity:.9;">تنفيذ محلي</span></sc-if></sc-if></div>
+          <div data-reveal="" data-plate="" style="--i:3;background:#06202F;padding:18px 18px 20px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#FFFFFF;">Guaranteed delivery</div><sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}"><sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12.5px;color:inherit;opacity:.9;">تسليم مضمون</span></sc-if></sc-if></div>
+        </div>
+      </div>
+
+      <div style="min-width:0;">
+        <div data-reveal="" style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+          <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>Delivery path</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;white-space:nowrap;">· G0 → G9</span></div>
+          <a href="#gates" style="font-size:13px;white-space:nowrap;">Open the gate table →</a>
+        </div>
+        <div data-reveal="" style="margin-top:16px;background:#fff;border:1px solid #E3D9C2;border-radius:18px;padding:20px 22px 16px;">
+          <svg viewBox="0 0 640 210" role="img" aria-label="The ten-gate path, from qualification to close" style="display:block;width:100%;height:auto;">
+            <defs><linearGradient id="kmdFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3E9EEA" stop-opacity=".28"></stop><stop offset="100%" stop-color="#3E9EEA" stop-opacity="0"></stop></linearGradient></defs>
+            <g stroke="#EDE5D2" stroke-width="1"><line x1="24" y1="176" x2="616" y2="176"></line><line x1="24" y1="128" x2="616" y2="128"></line><line x1="24" y1="80" x2="616" y2="80"></line><line x1="24" y1="32" x2="616" y2="32"></line></g>
+            <path data-area="" d="M40 168 L102 158 L164 150 L226 118 L288 108 L350 94 L412 82 L474 54 L536 42 L598 28 L598 176 L40 176 Z" fill="url(#kmdFill)"></path>
+            <path id="kmdRail" data-rail="" d="M40 168 L102 158 L164 150 L226 118 L288 108 L350 94 L412 82 L474 54 L536 42 L598 28" fill="none" stroke="#1E63A8" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"></path>
+            <line x1="226" y1="18" x2="226" y2="176" stroke="#C9A227" stroke-width="1.2" stroke-dasharray="4 4"></line>
+            <line x1="474" y1="18" x2="474" y2="176" stroke="#D9432F" stroke-width="1.2" stroke-dasharray="4 4"></line>
+            <circle data-runner="" r="3.4" fill="#3E9EEA" opacity=".85">
+              <animateMotion dur="7s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.62;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1"><mpath href="#kmdRail"></mpath></animateMotion>
+            </circle>
+            <g dir="ltr" font-family="IBM Plex Mono, monospace" font-size="10">
+            <g data-gate="" data-g="0">
+              <line class="gd" x1="40" y1="18" x2="40" y2="176" stroke="#1E63A8" stroke-width="1" stroke-dasharray="3 5" opacity="0"></line>
+              <circle class="gh" cx="40" cy="168" r="13" fill="transparent"></circle>
+              <circle class="gr" cx="40" cy="168" r="6" fill="none" stroke="#1E63A8" stroke-width="1.2" opacity="0"></circle>
+              <circle class="gp" cx="40" cy="168" r="4" fill="#FFFFFF" stroke="#1E63A8" stroke-width="2" style="--i:0"></circle>
+              <text class="gl" x="40" y="196" text-anchor="middle" fill="#8A8272">G0</text>
+            </g>
+            <g data-gate="" data-g="1">
+              <line class="gd" x1="102" y1="18" x2="102" y2="176" stroke="#1E63A8" stroke-width="1" stroke-dasharray="3 5" opacity="0"></line>
+              <circle class="gh" cx="102" cy="158" r="13" fill="transparent"></circle>
+              <circle class="gr" cx="102" cy="158" r="6" fill="none" stroke="#1E63A8" stroke-width="1.2" opacity="0"></circle>
+              <circle class="gp" cx="102" cy="158" r="4" fill="#FFFFFF" stroke="#1E63A8" stroke-width="2" style="--i:1"></circle>
+              <text class="gl" x="102" y="196" text-anchor="middle" fill="#8A8272">G1</text>
+            </g>
+            <g data-gate="" data-g="2">
+              <line class="gd" x1="164" y1="18" x2="164" y2="176" stroke="#1E63A8" stroke-width="1" stroke-dasharray="3 5" opacity="0"></line>
+              <circle class="gh" cx="164" cy="150" r="13" fill="transparent"></circle>
+              <circle class="gr" cx="164" cy="150" r="6" fill="none" stroke="#1E63A8" stroke-width="1.2" opacity="0"></circle>
+              <circle class="gp" cx="164" cy="150" r="4" fill="#FFFFFF" stroke="#1E63A8" stroke-width="2" style="--i:2"></circle>
+              <text class="gl" x="164" y="196" text-anchor="middle" fill="#8A8272">G2</text>
+            </g>
+            <g data-gate="" data-g="3">
+              <line class="gd" x1="226" y1="18" x2="226" y2="176" stroke="#C9A227" stroke-width="1" stroke-dasharray="3 5" opacity="0"></line>
+              <circle class="gh" cx="226" cy="118" r="13" fill="transparent"></circle>
+              <circle class="gr" cx="226" cy="118" r="6" fill="none" stroke="#C9A227" stroke-width="1.2" opacity="0"></circle>
+              <circle class="gp" cx="226" cy="118" r="6" fill="#C9A227" stroke="#C9A227" stroke-width="0" style="--i:3"></circle>
+              <text class="gl" x="226" y="196" text-anchor="middle" fill="#B8891A">G3</text>
+            </g>
+            <g data-gate="" data-g="4">
+              <line class="gd" x1="288" y1="18" x2="288" y2="176" stroke="#1E63A8" stroke-width="1" stroke-dasharray="3 5" opacity="0"></line>
+              <circle class="gh" cx="288" cy="108" r="13" fill="transparent"></circle>
+              <circle class="gr" cx="288" cy="108" r="6" fill="none" stroke="#1E63A8" stroke-width="1.2" opacity="0"></circle>
+              <circle class="gp" cx="288" cy="108" r="4" fill="#FFFFFF" stroke="#1E63A8" stroke-width="2" style="--i:4"></circle>
+              <text class="gl" x="288" y="196" text-anchor="middle" fill="#8A8272">G4</text>
+            </g>
+            <g data-gate="" data-g="5">
+              <line class="gd" x1="350" y1="18" x2="350" y2="176" stroke="#1E63A8" stroke-width="1" stroke-dasharray="3 5" opacity="0"></line>
+              <circle class="gh" cx="350" cy="94" r="13" fill="transparent"></circle>
+              <circle class="gr" cx="350" cy="94" r="6" fill="none" stroke="#1E63A8" stroke-width="1.2" opacity="0"></circle>
+              <circle class="gp" cx="350" cy="94" r="4" fill="#FFFFFF" stroke="#1E63A8" stroke-width="2" style="--i:5"></circle>
+              <text class="gl" x="350" y="196" text-anchor="middle" fill="#8A8272">G5</text>
+            </g>
+            <g data-gate="" data-g="6">
+              <line class="gd" x1="412" y1="18" x2="412" y2="176" stroke="#1E63A8" stroke-width="1" stroke-dasharray="3 5" opacity="0"></line>
+              <circle class="gh" cx="412" cy="82" r="13" fill="transparent"></circle>
+              <circle class="gr" cx="412" cy="82" r="6" fill="none" stroke="#1E63A8" stroke-width="1.2" opacity="0"></circle>
+              <circle class="gp" cx="412" cy="82" r="4" fill="#FFFFFF" stroke="#1E63A8" stroke-width="2" style="--i:6"></circle>
+              <text class="gl" x="412" y="196" text-anchor="middle" fill="#8A8272">G6</text>
+            </g>
+            <g data-gate="" data-g="7">
+              <line class="gd" x1="474" y1="18" x2="474" y2="176" stroke="#D9432F" stroke-width="1" stroke-dasharray="3 5" opacity="0"></line>
+              <circle class="gh" cx="474" cy="54" r="13" fill="transparent"></circle>
+              <circle class="gr" cx="474" cy="54" r="6" fill="none" stroke="#D9432F" stroke-width="1.2" opacity="0"></circle>
+              <circle class="gp" cx="474" cy="54" r="6" fill="#D9432F" stroke="#D9432F" stroke-width="0" style="--i:7"></circle>
+              <text class="gl" x="474" y="196" text-anchor="middle" fill="#B23A31">G7</text>
+            </g>
+            <g data-gate="" data-g="8">
+              <line class="gd" x1="536" y1="18" x2="536" y2="176" stroke="#1E63A8" stroke-width="1" stroke-dasharray="3 5" opacity="0"></line>
+              <circle class="gh" cx="536" cy="42" r="13" fill="transparent"></circle>
+              <circle class="gr" cx="536" cy="42" r="6" fill="none" stroke="#1E63A8" stroke-width="1.2" opacity="0"></circle>
+              <circle class="gp" cx="536" cy="42" r="4" fill="#FFFFFF" stroke="#1E63A8" stroke-width="2" style="--i:8"></circle>
+              <text class="gl" x="536" y="196" text-anchor="middle" fill="#8A8272">G8</text>
+            </g>
+            <g data-gate="" data-g="9">
+              <line class="gd" x1="598" y1="18" x2="598" y2="176" stroke="#1E63A8" stroke-width="1" stroke-dasharray="3 5" opacity="0"></line>
+              <circle class="gh" cx="598" cy="28" r="13" fill="transparent"></circle>
+              <circle class="gr" cx="598" cy="28" r="6" fill="none" stroke="#1E63A8" stroke-width="1.2" opacity="0"></circle>
+              <circle class="gp" cx="598" cy="28" r="6.5" fill="#1E63A8" stroke="#1E63A8" stroke-width="0" style="--i:9"></circle>
+              <text class="gl" x="598" y="196" text-anchor="middle" fill="#1E63A8">G9</text>
+            </g>
+            </g>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:8px;padding-top:14px;border-top:1px solid #EDE5D2;">
+            <div data-leg="3" style="display:flex;gap:9px;align-items:flex-start;"><span style="width:9px;height:9px;border-radius:50%;background:#C9A227;flex:none;margin-top:6px;"></span><span style="font-size:13px;line-height:1.62;color:#4A6B64;"><b style="color:#06202F;">G2 Escrow funding.</b> No work begins before the scope is signed and the account is funded.</span></div>
+            <div data-leg="7" style="display:flex;gap:9px;align-items:flex-start;"><span style="width:9px;height:9px;border-radius:50%;background:#D9432F;flex:none;margin-top:6px;"></span><span style="font-size:13px;line-height:1.62;color:#4A6B64;"><b style="color:#06202F;">G7 Independent review.</b> No deliverable reaches the client before it clears.</span></div>
+          </div>
+          <p style="margin:12px 0 0;font-size:12.5px;line-height:1.65;color:#8A8272;">The chart shows the gate sequence and the commitment that accumulates across it. It is not performance data. No figure is published that is not recorded in the register.</p>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1320px;margin:clamp(26px,3.4vw,42px) auto 0;border-top:1px solid #E3D9C2;display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));">
+      <div style="padding:20px 20px 4px;border-inline-end:1px solid #E3D9C2;"><div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#1E63A8;">103</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">ready products on the shelf</div></div>
+      <div style="padding:20px 20px 4px;border-inline-end:1px solid #E3D9C2;"><div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#1E63A8;">48h</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">fastest published delivery</div></div>
+      <div style="padding:20px 20px 4px;border-inline-end:1px solid #E3D9C2;"><div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#B8891A;">5 days</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">to accept, after delivery</div></div>
+      <div style="padding:20px 20px 4px;"><div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#052E2B;">100%</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">independently reviewed first</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 01 FIVE RISKS ===== -->
+<section id="risks" data-screen-label="Five risks" style="background:#F1EAD9;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>What the client buys</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· FIVE RISKS REMOVED</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.13;color:#052E2B;max-width:26ch;">Nobody buys work. What is bought is five risks removed.</h2>
+    <div data-seq="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:18px;overflow:hidden;margin-top:32px;">
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:24px 22px 28px;"><div data-tag="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">01 · IDENTITY</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">Identity</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.65;color:#4A6B64;">Who works is known by name and by document, and verified before award, not after.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:24px 22px 28px;"><div data-tag="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">02 · COMPETENCE</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">Competence</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.65;color:#4A6B64;">Skill is measured by a practical task and a reviewer's judgement, not by a claim in a CV.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:24px 22px 28px;"><div data-tag="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">03 · CONTRACT</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">Contract</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.65;color:#4A6B64;">A framework agreement, a numbered scope of work and a written acceptance standard, all signed before the first hour.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:24px 22px 28px;"><div data-tag="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">04 · PAYMENT</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">Payment</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.65;color:#4A6B64;">Funds are held in escrow and released only against a signed certificate and dual authorisation.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:24px 22px 28px;"><div data-tag="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">05 · ACCOUNTABILITY</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">Accountability</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.65;color:#4A6B64;">One party answers and the decision issues from it. The client is never passed between individuals.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 02 GATES ===== -->
+<section id="gates" data-screen-label="Ten gates" style="background:#06202F;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 90% -10%,rgba(62,158,234,.22),transparent 62%);pointer-events:none;"></div>
+  <svg data-neu="" data-gatesneu="" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#7CC0F4;font-weight:500;"><bdi>The gates</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· TEN GATES, THREE PHASES</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.13;color:#FAF6EC;max-width:24ch;">Ten gates. Each one has a deliverable and a named owner.</h2>
+    <p data-reveal="" style="margin:14px 0 0;max-width:62ch;font-size:15.5px;line-height:1.72;color:rgba(250,246,236,.72);">No gate opens before the one before it closes. Every gate decision is recorded with its owner, its date and its reason, and appears in the client's engagement file exactly as the institution sees it.</p>
+
+    <div data-seq="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:34px;">
+      <div data-reveal="" data-hov="dk" style="border:1px solid rgba(250,246,236,.16);border-radius:18px;overflow:hidden;">
+        <div style="background:rgba(201,162,39,.16);padding:14px 20px;border-bottom:1px solid rgba(250,246,236,.14);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#E9C86A;">PHASE 1 · ACCESS</span><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#FAF6EC;margin-top:5px;">Access</div></div>
+        <div style="padding:6px 0;">
+          <div data-grow="" style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E9C86A;flex-shrink:0;">G0</span><span style="font-size:14.5px;color:#FAF6EC;">Qualification</span></div>
+          <div data-grow="" style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E9C86A;flex-shrink:0;">G1</span><span style="font-size:14.5px;color:#FAF6EC;">Scope</span></div>
+          <div data-grow="" style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;background:rgba(201,162,39,.1);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E9C86A;flex-shrink:0;">G2</span><span style="font-size:14.5px;color:#FAF6EC;">Escrow funding</span></div>
+          <div data-grow="" style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E9C86A;flex-shrink:0;">G3</span><span style="font-size:14.5px;color:#FAF6EC;">Team formation</span></div>
+        </div>
+      </div>
+      <div data-reveal="" data-hov="dk" style="border:1px solid rgba(250,246,236,.16);border-radius:18px;overflow:hidden;">
+        <div style="background:rgba(62,158,234,.2);padding:14px 20px;border-bottom:1px solid rgba(250,246,236,.14);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#7CC0F4;">PHASE 2 · VALIDATION</span><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#FAF6EC;margin-top:5px;">Validation</div></div>
+        <div style="padding:6px 0;">
+          <div data-grow="" style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7CC0F4;flex-shrink:0;">G4</span><span style="font-size:14.5px;color:#FAF6EC;">Kick-off</span></div>
+          <div data-grow="" style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7CC0F4;flex-shrink:0;">G5</span><span style="font-size:14.5px;color:#FAF6EC;">Execution and checkpoints</span></div>
+          <div data-grow="" style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7CC0F4;flex-shrink:0;">G6</span><span style="font-size:14.5px;color:#FAF6EC;">Mid-point review</span></div>
+        </div>
+      </div>
+      <div data-reveal="" data-hov="dk" style="border:1px solid rgba(62,158,234,.42);border-radius:18px;overflow:hidden;background:rgba(62,158,234,.07);">
+        <div style="background:rgba(62,158,234,.24);padding:14px 20px;border-bottom:1px solid rgba(250,246,236,.14);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#BFE0FA;">PHASE 3 · DELIVERY</span><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#FAF6EC;margin-top:5px;">Delivery</div></div>
+        <div style="padding:6px 0;">
+          <div data-grow="" style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;background:rgba(217,67,47,.14);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#F2A79C;flex-shrink:0;">G7</span><span style="font-size:14.5px;color:#FAF6EC;">Independent quality review</span></div>
+          <div data-grow="" style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#BFE0FA;flex-shrink:0;">G8</span><span style="font-size:14.5px;color:#FAF6EC;">Delivery, acceptance and release</span></div>
+          <div data-grow="" style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#BFE0FA;flex-shrink:0;">G9</span><span style="font-size:14.5px;color:#FAF6EC;">Close, documentation and rating</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" data-hov="dk" style="margin-top:18px;background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.14);border-radius:16px;padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;">
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#FAF6EC;">Three review layers</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.65;color:rgba(250,246,236,.68);">The executor, then a peer who did not execute, then an independent reviewer. The three never meet in one person.</p></div>
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#FAF6EC;">Deemed acceptance</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.65;color:rgba(250,246,236,.68);">Five working days of client silence after delivery counts as acceptance, and is recorded as such in the certificate.</p></div>
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#FAF6EC;">Escalation</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.65;color:rgba(250,246,236,.68);">If a milestone drifts at the mid-point review, a Tier 4 lead is assigned to the team before the delivery gate.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 SERVICE TIERS ===== -->
+<section id="tiers" data-screen-label="Service tiers" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>Service tiers</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· S1 · S2 · S3</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.13;color:#052E2B;max-width:28ch;">No single rate across every engagement. The tier is fixed before signature.</h2>
+    <div data-seq="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(276px,1fr));gap:16px;margin-top:32px;align-items:start;">
+
+      <div data-reveal="" data-lift="" data-hov="lt" style="background:#fff;border:1px solid #E3D9C2;border-radius:20px;overflow:hidden;">
+        <sc-if value="{{ isS1 }}" hint-placeholder-val="{{ false }}"><div style="height:5px;background:#3E9EEA;"></div></sc-if>
+        <div style="padding:28px;">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E675A;">S1 · ESSENTIAL</span>
+            <sc-if value="{{ isS1 }}" hint-placeholder-val="{{ false }}"><span style="background:#3E9EEA;color:#06202F;font-size:11.5px;font-weight:600;padding:3px 11px;border-radius:99px;">Default</span></sc-if>
+          </div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;margin-top:10px;">Essential</div>
+          <p style="margin:10px 0 0;font-size:14px;line-height:1.65;color:#4A6B64;">Verified people, a written scope, an escrow account and one coordinator. Not offered first. Offered when a client insists.</p>
+          <div style="margin-top:18px;padding-top:16px;border-top:1px solid #EDE5D2;font-size:13.5px;color:#6E675A;line-height:1.68;">Institution fee <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;color:#B8891A;">25–30%</span></div>
+        </div>
+      </div>
+
+      <div data-reveal="" data-lift="" data-hov="lt" style="background:#fff;border:1px solid #E3D9C2;border-radius:20px;overflow:hidden;">
+        <sc-if value="{{ isS2 }}" hint-placeholder-val="{{ true }}"><div style="height:5px;background:#3E9EEA;"></div></sc-if>
+        <div style="padding:28px;">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">S2 · ASSURED</span>
+            <sc-if value="{{ isS2 }}" hint-placeholder-val="{{ true }}"><span style="background:#3E9EEA;color:#06202F;font-size:11.5px;font-weight:600;padding:3px 11px;border-radius:99px;">Default</span></sc-if>
+          </div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;margin-top:10px;">Assured</div>
+          <p style="margin:10px 0 0;font-size:14px;line-height:1.65;color:#4A6B64;">Adds a named team lead, an independent quality review, and a written acceptance test both sides are held to.</p>
+          <div style="margin-top:18px;padding-top:16px;border-top:1px solid #EDE5D2;font-size:13.5px;color:#6E675A;line-height:1.68;">Institution fee <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;color:#B8891A;">35–42%</span></div>
+        </div>
+      </div>
+
+      <div data-reveal="" data-hov="deep" style="background:#06202F;border:1px solid #06202F;border-radius:20px;overflow:hidden;color:#FAF6EC;">
+        <sc-if value="{{ isS3 }}" hint-placeholder-val="{{ false }}"><div style="height:5px;background:#3E9EEA;"></div></sc-if>
+        <div style="padding:28px;">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#7CC0F4;">S3 · GUARANTEED</span>
+            <sc-if value="{{ isS3 }}" hint-placeholder-val="{{ false }}"><span style="background:#3E9EEA;color:#06202F;font-size:11.5px;font-weight:600;padding:3px 11px;border-radius:99px;">Default</span></sc-if>
+          </div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;margin-top:10px;">Guaranteed</div>
+          <p style="margin:10px 0 0;font-size:14px;line-height:1.65;color:rgba(250,246,236,.78);">Fixed price, a date binding in the contract, executor replacement at the institution's cost, and defects liability after acceptance.</p>
+          <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(250,246,236,.16);font-size:13.5px;color:rgba(250,246,236,.64);line-height:1.68;">Institution fee <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;color:#E9C86A;">45–55%</span></div>
+        </div>
+      </div>
+    </div>
+    <div data-reveal="" style="margin-top:16px;background:#fff;border:1px solid #E3D9C2;border-radius:16px;padding:20px 24px;font-size:14px;line-height:1.72;color:#4A6B64;">
+      <span style="font-family:'Alexandria',sans-serif;font-weight:500;color:#052E2B;">The margin on the guaranteed tier</span> comes from the warranty reserve when it is released unclaimed. The economics of this tier rest on verification actually working, not on verification being promised. The percentages above are planning ranges from the economic architecture; the final price issues from the approved price card.
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03b OUTCOME MODEL ===== -->
+<section id="outcome" data-screen-label="The outcome model" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;">
+      <div style="min-width:0;max-width:760px;">
+        <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>The outcome model</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· BUY THE RESULT</span></div>
+        <h2 style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.13;color:#052E2B;max-width:26ch;">You buy the outcome, not the hours.</h2>
+        <p style="margin:12px 0 0;font-size:15px;line-height:1.8;color:#4A6B64;max-width:58ch;">The client names the result and its date, and signs its acceptance at the end. Everything between those two signatures — the pod, the quality, the risk — is Kayan's to carry, alone.</p>
+      </div>
+      <kayan-mark line="md" tone="mid" aria-hidden="true" style="width:calc(1.175 * clamp(84px,10vw,128px));flex-shrink:0;filter:drop-shadow(0 18px 36px rgba(46,124,188,.25));"></kayan-mark>
+    </div>
+    <div data-reveal="" style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:20px;overflow:hidden;">
+      <div data-hov="lt" style="background:#FFFFFF;padding:clamp(20px,2.6vw,28px);">
+        <div data-tag="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">THE CLIENT HOLDS</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;">What the client holds</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">A written price that does not move, a named date, an acceptance gate only the client signs, and a thirty-day warranty after handover. Funds sit in escrow, untouched until acceptance.</p>
+      </div>
+      <div data-hov="lt" style="background:linear-gradient(160deg,#F2F7FC,#FFFFFF 70%);padding:clamp(20px,2.6vw,28px);">
+        <div data-tag="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">KAYAN CARRIES</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;">What Kayan carries</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">An executor falters — replaced at Kayan's cost, not the client's. An estimate proves wrong — Kayan absorbs the difference; the price is never reopened. Independent review runs before the client ever sees the work. That is the model: risk is eaten here, not passed along.</p>
+      </div>
+      <div data-hov="lt" style="background:#FFFFFF;padding:clamp(20px,2.6vw,28px);">
+        <div data-tag="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">THE TALENT RECEIVES</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;">What the talent receives</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">A rate set independently of the client's price, a named role on the acceptance record, payout on acceptance — not when cash flow allows — and a ledger entry that compounds reputation, engagement after engagement.</p>
+      </div>
+    </div>
+    <div data-reveal="" style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:12px;">
+      <a href="Kayan Portal.dc.html" data-hov="deep" style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:#0A2434;color:#FAF6EC;border-radius:16px;padding:18px 22px;border:1px solid rgba(124,192,244,.2);">
+        <span style="display:flex;flex-direction:column;gap:4px;"><b style="font-family:'Alexandria',sans-serif;font-size:15.5px;">A client? Name your outcome</b><span style="font-size:12.5px;color:rgba(250,246,236,.65);">Scope requests open from the client portal</span></span>
+        <span style="color:#7CC0F4;font-size:18px;">→</span>
+      </a>
+      <a href="Kayan Apply.dc.html" data-hov="lt" style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:#FFFFFF;border:1.5px solid #E3D9C2;color:#052E2B;border-radius:16px;padding:18px 22px;">
+        <span style="display:flex;flex-direction:column;gap:4px;"><b style="font-family:'Alexandria',sans-serif;font-size:15.5px;">Talent? Put your capability on record</b><span style="font-size:12.5px;color:#6E675A;">Registration is always open</span></span>
+        <span style="color:#8F7218;font-size:18px;">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 PRICE FLOOR ===== -->
+<section id="floor" data-screen-label="Price floor" style="background:#0A2434;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 12% 0%,rgba(62,158,234,.18),transparent 60%);pointer-events:none;"></div>
+  <svg data-neurons="" aria-hidden="true" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.55;"></svg>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#7CC0F4;font-weight:500;"><bdi>The price and its floor</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· ONE QUOTE · ONE FLOOR</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.13;color:#FAF6EC;max-width:26ch;">One written quote. One honest floor — held even when it costs us the request.</h2>
+    <div data-reveal="" style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:16px;">
+      <div data-hov="dk" style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:20px;padding:clamp(20px,2.6vw,28px);">
+        <div data-tag="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#7CC0F4;">01 · THE QUOTE</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#FAF6EC;margin-top:10px;">One written quote</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:1.7;color:rgba(250,246,236,.74);">The full scope is priced before the first hour of work and funded into escrow. No hourly meter, no line that appears after signature.</p>
+      </div>
+      <div data-hov="dk" style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:20px;padding:clamp(20px,2.6vw,28px);">
+        <div data-tag="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#7CC0F4;">02 · WHAT IT BUYS</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#FAF6EC;margin-top:10px;">What the price buys</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:1.7;color:rgba(250,246,236,.74);">A verified pod with named roles, independent review by someone who did not execute, two revision rounds included, a 2% warranty held for thirty days, and a complete documentation pack.</p>
+      </div>
+      <div data-hov="dk" style="background:rgba(250,246,236,.05);border:1px solid rgba(233,200,106,.35);border-radius:20px;padding:clamp(20px,2.6vw,28px);">
+        <div data-tag="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#E9C86A;">03 · WHY A FLOOR</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#FAF6EC;margin-top:10px;">Why a floor at all</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:1.7;color:rgba(250,246,236,.74);">Below the floor the work does not get cheaper — someone pays the difference: an executor short-paid, or a review cut. Requests below it are declined with a reasoned decision, and a smaller scope at an honest price is always offered instead.</p>
+      </div>
+    </div>
+    <div data-reveal="" style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+      <div data-rulehov="" style="border-top:2px solid rgba(250,246,236,.22);padding-top:14px;font-size:13.5px;line-height:1.68;color:rgba(250,246,236,.72);"><span style="color:#FAF6EC;font-weight:500;">The sector is recorded at qualification.</span> It is fixed in the file and is not revised later to justify a price.</div>
+      <div data-rulehov="" style="border-top:2px solid rgba(250,246,236,.22);padding-top:14px;font-size:13.5px;line-height:1.68;color:rgba(250,246,236,.72);"><span style="color:#FAF6EC;font-weight:500;">Cross-subsidy is declared.</span> Small Yemeni firms are served at a lower coefficient. The difference is carried by the higher sectors, and published monthly.</div>
+      <div data-rulehov="" style="border-top:2px solid rgba(250,246,236,.22);padding-top:14px;font-size:13.5px;line-height:1.68;color:rgba(250,246,236,.72);"><span style="color:#FAF6EC;font-weight:500;">The executor's fee is independent.</span> It is not derived from the client price, and it is disclosed to both sides.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05 THE POD ===== -->
+<section id="pod" data-screen-label="The pod" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>The pod</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· THREE POD TYPES · FOUR ROLES</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.13;color:#052E2B;max-width:26ch;">Three kinds of team. None ranks above another.</h2>
+    <div data-seq="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px;margin-top:30px;align-items:stretch;">
+      <div data-reveal="" data-lift="" data-hov="lt" style="display:flex;flex-direction:column;background:#fff;border:1px solid #EDE5D2;border-radius:18px;padding:24px;"><div data-tag="" dir="ltr" style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;"><span>TYPE A</span><span aria-hidden="true" style="flex:1;height:1px;background:#E3D9C2;"></span></div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:9px;">Assembled for the engagement</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.65;color:#4A6B64;">Drawn from the register for this engagement, and dissolved at close.</p></div>
+      <div data-reveal="" data-lift="" data-hov="lt" style="display:flex;flex-direction:column;background:#fff;border:1px solid #EDE5D2;border-radius:18px;padding:24px;"><div data-tag="" dir="ltr" style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;"><span>TYPE B</span><span aria-hidden="true" style="flex:1;height:1px;background:#E3D9C2;"></span></div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:9px;">Pre-registered team</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.65;color:#4A6B64;">Two to six verified professionals bound to one another before the work. They register under their own name, keep their own shares, and are held to account as one unit.</p></div>
+      <div data-reveal="" data-lift="" data-hov="lt" style="display:flex;flex-direction:column;background:#fff;border:1px solid #EDE5D2;border-radius:18px;padding:24px;"><div data-tag="" dir="ltr" style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;"><span>TYPE C</span><span aria-hidden="true" style="flex:1;height:1px;background:#E3D9C2;"></span></div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:9px;">Composed by the institution</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.65;color:#4A6B64;">Kayan composes it from the register when no standing team matches the request.</p></div>
+    </div>
+    <div data-seq="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:18px;overflow:hidden;margin-top:16px;">
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:22px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;letter-spacing:-.01em;">Lead</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.65;color:#4A6B64;">One, and no more. Holds the decision inside the scope, signs milestone deliverables, and answers for delay by name.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:22px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;letter-spacing:-.01em;">Executor</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.65;color:#4A6B64;">Executes within their discipline. Deliverables are recorded under their name in the register.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:22px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;letter-spacing:-.01em;">Reviewer</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.65;color:#4A6B64;">Did not execute what they review. Execution and review never sit with the same person.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:22px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;letter-spacing:-.01em;">Trainee</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.65;color:#4A6B64;">The trainee seat is the declared absorption mechanism. It is how a newcomer crosses into paid, documented work rather than observation.</p></div>
+    </div>
+    <div data-reveal="" data-seq="" style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,268px),1fr));gap:16px;align-items:stretch;">
+      <div data-hov="lt" style="background:#F1EAD9;border:1px solid #E3D9C2;border-top:2px solid #2E7CBC;border-radius:16px;padding:20px 22px;font-size:13.5px;line-height:1.68;color:#4A6B64;"><span style="color:#052E2B;font-weight:500;">Team bonus, 2%.</span> Paid from the institution fee on a close with no reservation and no warranty claim, split on the same team shares.</div>
+      <div data-hov="lt" style="background:#F1EAD9;border:1px solid #E3D9C2;border-top:2px solid #2E7CBC;border-radius:16px;padding:20px 22px;font-size:13.5px;line-height:1.68;color:#4A6B64;"><span style="color:#052E2B;font-weight:500;">Documentation duty, 5%.</span> Held back from the final release until the documentation pack is complete, within seven days of the quality gate.</div>
+      <div data-hov="lt" style="background:#F1EAD9;border:1px solid #E3D9C2;border-top:2px solid #2E7CBC;border-radius:16px;padding:20px 22px;font-size:13.5px;line-height:1.68;color:#4A6B64;"><span style="color:#052E2B;font-weight:500;">Team disputes go to the lead.</span> Then to the delivery desk. An internal disagreement never reaches the client.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 MONEY PATH ===== -->
+<section id="money" data-screen-label="Money path" style="background:#F1EAD9;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>The money path</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· TWO RAILS · FOUR RELEASE CONDITIONS</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.13;color:#052E2B;max-width:26ch;">Collected on one rail. Distributed on another.</h2>
+    <div data-seq="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;margin-top:32px;align-items:start;">
+      <div data-reveal="" data-lift="" data-hov="lt" style="background:#fff;border:1px solid #E3D9C2;border-radius:20px;padding:28px;">
+        <div data-tag="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">RAIL A · COLLECTION</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;margin-top:10px;">Collection and holding</div>
+        <p style="margin:10px 0 0;font-size:14px;line-height:1.68;color:#4A6B64;">Client funds are collected and held outside Yemen, in a jurisdiction international bodies can pay into without friction. They are booked as a liability, not as revenue.</p>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid #EDE5D2;font-size:12.5px;line-height:1.62;color:#6E675A;">The jurisdiction and the transfer channel are an open decision, and a precondition to launch.</div>
+      </div>
+      <div data-reveal="" data-lift="" data-hov="lt" style="background:#fff;border:1px solid #E3D9C2;border-radius:20px;padding:28px;">
+        <div data-tag="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#0E6E66;">RAIL B · DISTRIBUTION</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;margin-top:10px;">Internal distribution</div>
+        <p style="margin:10px 0 0;font-size:14px;line-height:1.68;color:#4A6B64;">Executors inside Yemen are paid through Tadhamon International Islamic Bank in Aden and channels controlled with it. Cash is an exception, capped, and requires dual authorisation.</p>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid #EDE5D2;font-size:12.5px;line-height:1.62;color:#6E675A;">No informal transfer, no cryptocurrency, no personal accounts. The base currency is the dollar; reporting runs in rial at a rate fixed by date in each contract.</div>
+      </div>
+    </div>
+    <div data-reveal="" style="margin-top:20px;background:#06202F;border-radius:20px;padding:clamp(24px,3vw,34px);color:#FAF6EC;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;">The four release conditions</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:20px;">
+        <div data-grow="" style="border-radius:10px;padding:6px 8px;margin:-6px -8px;display:flex;gap:12px;align-items:flex-start;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7CC0F4;padding-top:3px;">01</span><span style="font-size:14px;line-height:1.65;color:rgba(250,246,236,.82);">Milestone deliverables submitted in full.</span></div>
+        <div data-grow="" style="border-radius:10px;padding:6px 8px;margin:-6px -8px;display:flex;gap:12px;align-items:flex-start;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7CC0F4;padding-top:3px;">02</span><span style="font-size:14px;line-height:1.65;color:rgba(250,246,236,.82);">Quality gate cleared, <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;">G7</span> at minimum.</span></div>
+        <div data-grow="" style="border-radius:10px;padding:6px 8px;margin:-6px -8px;display:flex;gap:12px;align-items:flex-start;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7CC0F4;padding-top:3px;">03</span><span style="font-size:14px;line-height:1.65;color:rgba(250,246,236,.82);">Client acceptance, or deemed acceptance after five working days.</span></div>
+        <div data-grow="" style="border-radius:10px;padding:6px 8px;margin:-6px -8px;display:flex;gap:12px;align-items:flex-start;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7CC0F4;padding-top:3px;">04</span><span style="font-size:14px;line-height:1.65;color:rgba(250,246,236,.82);">Dual authorisation from the executive and finance chairs.</span></div>
+      </div>
+      <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(250,246,236,.16);display:grid;grid-template-columns:repeat(auto-fit,minmax(226px,1fr));gap:16px;font-size:13px;line-height:1.65;color:rgba(250,246,236,.68);">
+        <div>2% is retained for thirty days after acceptance, then released automatically if no claim is filed.</div>
+        <div>The escrow account is reconciled daily. Any variance above one dollar is investigated within twenty-four hours.</div>
+        <div>The price includes two rounds of revision. Anything beyond that is handled by a priced change order.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 07 NEVER SOLD ===== -->
+<section id="never" data-screen-label="Never sold" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#B8891A;font-weight:500;"><bdi>Never sold</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· THE NEVER LIST</span></div>
+    <div style="display:flex;flex-direction:column;gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:18px;overflow:hidden;margin-top:24px;">
+      <div data-reveal="" data-grow="" style="background:#fff;padding:18px 22px;font-size:14.5px;line-height:1.65;color:#4A6B64;">Open hours with no defined deliverable and no acceptance standard.</div>
+      <div data-reveal="" data-grow="" style="background:#fff;padding:18px 22px;font-size:14.5px;line-height:1.65;color:#4A6B64;">Work started before the scope is signed or the escrow is funded.</div>
+      <div data-reveal="" data-grow="" style="background:#fff;padding:18px 22px;font-size:14.5px;line-height:1.65;color:#4A6B64;">A direct line between client and individual outside the institution, even where both sides ask for it.</div>
+      <div data-reveal="" data-grow="" style="background:#fff;padding:18px 22px;font-size:14.5px;line-height:1.65;color:#4A6B64;">Direct engagement with an executor during the work and for one year after. Breach is assessed at six months of fee.</div>
+      <div data-reveal="" data-grow="" style="background:#fff;padding:18px 22px;font-size:14.5px;line-height:1.65;color:#4A6B64;">Work for a party to a conflict, work that touches public safety, or a request that fails sanctions screening.</div>
+      <div data-reveal="" data-grow="" style="background:#fff;padding:18px 22px;font-size:14.5px;line-height:1.65;color:#4A6B64;">A discount that takes the price below its floor. The request is declined by reasoned decision instead.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 09 START ===== -->
+<section id="start" data-screen-label="Request a scope" style="position:relative;overflow:hidden;background:linear-gradient(178deg,#082B3E,#06202F 62%);color:#FAF6EC;padding:clamp(78px,10vh,110px) clamp(20px,4vw,44px) clamp(50px,7vh,70px);clip-path:polygon(0 14px,50% 30px,100% 6px,100% 100%,0 100%);margin-top:-6px;">
+  <div aria-hidden="true" style="position:absolute;inset-inline:0;top:0;height:34px;pointer-events:none;">
+    <svg viewBox="0 0 1000 34" preserveAspectRatio="none" style="width:100%;height:100%;display:block;">
+      <path d="M0 14 L500 30 L1000 6" fill="none" stroke="url(#mdEdge)" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+      <defs><linearGradient id="mdEdge" x1="0" x2="1"><stop offset="0" stop-color="#2E7CBC" stop-opacity=".2"></stop><stop offset=".5" stop-color="#7CC0F4"></stop><stop offset="1" stop-color="#2E7CBC" stop-opacity=".2"></stop></linearGradient></defs>
+    </svg>
+  </div>
+  <kayan-mark line="cream" tone="lift" aria-hidden="true" style="position:absolute;right:-6%;top:6%;width:clamp(280px,32vw,420px);opacity:.05;pointer-events:none;"></kayan-mark>
+  <div aria-hidden="true" style="position:absolute;left:20px;bottom:26px;width:118px;height:66px;opacity:.2;pointer-events:none;background-image:radial-gradient(rgba(124,192,244,.9) 1px,transparent 1px);background-size:16px 16px;"></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,9%,96px);align-items:start;">
+      <div data-reveal="">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:rgba(124,192,244,.85);">MANAGED DELIVERY · ADEN · YEMEN</div>
+        <div style="margin-top:18px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(25px,3.4vw,42px);line-height:1.12;letter-spacing:-.015em;color:#FAF6EC;max-width:22ch;">Request a scope of work. A named owner replies within one working day.</div>
+        <sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}">
+          <div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:15px;line-height:1.9;color:rgba(250,246,236,.58);margin-top:20px;">اطلب نطاق عمل، ويرد عليك مسؤول مسمى خلال يوم عمل.</div>
+        </sc-if>
+      </div>
+      <div data-reveal="" style="display:flex;flex-direction:column;gap:12px;">
+        <a href="Kayan Toolkit - Scoping Form.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:52px;background:#3E9EEA;color:#06202F;font-size:14.5px;font-weight:600;padding:14px 22px;border-radius:5px;transition:background .22s ease,transform 160ms cubic-bezier(.23,1,.32,1);" style-hover="background:#7CC0F4" style-active="transform:scale(.985)"><span>Request a scope of work</span><span aria-hidden="true" style="font-size:17px;">→</span></a>
+        <a href="Kayan Home.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:52px;border:1px solid rgba(124,192,244,.4);color:#FAF6EC;font-size:14.5px;font-weight:500;padding:14px 22px;border-radius:5px;transition:background .22s ease,border-color .22s ease,transform 160ms cubic-bezier(.23,1,.32,1);" style-hover="background:rgba(124,192,244,.1);border-color:rgba(124,192,244,.66)" style-active="transform:scale(.985)"><span>Or start from a ready product</span><span aria-hidden="true" style="font-size:17px;opacity:.6;">→</span></a>
+      </div>
+    </div>
+    <div data-reveal="" aria-hidden="true" style="margin-top:clamp(40px,6vh,50px);height:1px;background:linear-gradient(90deg,rgba(124,192,244,.55),rgba(124,192,244,.6) 70%,rgba(124,192,244,.12));"></div>
+    <div style="margin-top:clamp(30px,4.5vh,42px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));gap:clamp(26px,3.5vw,44px);align-items:start;">
+      <div data-reveal="">
+        <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:10px;color:#FAF6EC;">
+          <kayan-mark line="cream" tone="bright" aria-hidden="true" style="width:38px;flex:none;"></kayan-mark>
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16px;line-height:1;">Kayan</span>
+        </a>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#FAF6EC;margin-top:16px;">Behind every success, a <b style="font-weight:800;background:linear-gradient(135deg,#2E7CBC,#7CC0F4 55%,#2E7CBC);-webkit-background-clip:text;background-clip:text;color:transparent;">Kayan.</b></div>
+        <sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}">
+          <div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:14px;color:rgba(250,246,236,.5);margin-top:8px;">خلف كل نجاح، كيان</div>
+        </sc-if>
+      </div>
+      <div data-reveal="">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(124,192,244,.8);">ON THIS PAGE</div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-size:13.5px;">
+          <a href="#risks" style="color:rgba(250,246,236,.72);" style-hover="color:#7CC0F4">Five risks removed</a>
+          <a href="#gates" style="color:rgba(250,246,236,.72);" style-hover="color:#7CC0F4">Ten gates, three phases</a>
+          <a href="#tiers" style="color:rgba(250,246,236,.72);" style-hover="color:#7CC0F4">Service tiers · S1 · S2 · S3</a>
+          <a href="#outcome" style="color:rgba(250,246,236,.72);" style-hover="color:#7CC0F4">The outcome model</a>
+          <a href="#floor" style="color:rgba(250,246,236,.72);" style-hover="color:#7CC0F4">The price and its floor</a>
+          <a href="#money" style="color:rgba(250,246,236,.72);" style-hover="color:#7CC0F4">The money path</a>
+          <a href="#never" style="color:rgba(250,246,236,.72);" style-hover="color:#7CC0F4">Never sold</a>
+        </div>
+      </div>
+      <div data-reveal="">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(124,192,244,.8);">START HERE</div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-size:13.5px;">
+          <a href="Kayan Toolkit - Scoping Form.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#7CC0F4">The scoping form</a>
+          <a href="Kayan Portal.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#7CC0F4">Sign in to the portal</a>
+          <a href="Kayan Apply.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#7CC0F4">Talent? Put your capability on record</a>
+          <a href="Line I - Managed Delivery.dc.html" dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;color:rgba(250,246,236,.72);" style-hover="color:#7CC0F4">هذه الصفحة بالعربية</a>
+          <a href="Kayan Legal.dc.html#terms" style="color:rgba(250,246,236,.72);" style-hover="color:#7CC0F4">Terms &amp; conditions</a>
+          <a href="Kayan Legal.dc.html#privacy" style="color:rgba(250,246,236,.72);" style-hover="color:#7CC0F4">Privacy policy</a>
+        </div>
+      </div>
+      <div data-reveal="" style="text-align:end;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.26em;color:#7CC0F4;">MANAGED DELIVERY</div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.22em;color:rgba(250,246,236,.6);margin-top:9px;">ADEN · YEMEN</div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;margin-top:9px;color:rgba(124,192,244,.5);">12°47′N · 45°01′E</div>
+        <div style="display:flex;justify-content:flex-end;margin-top:16px;">
+          <kayan-line-audio inline="" motif="md" accent="#2E7CBC"></kayan-line-audio>
+        </div>
+      </div>
+    </div>
+    <div data-reveal="" style="margin-top:clamp(30px,4vh,40px);border-top:1px solid rgba(250,246,236,.1);padding-top:20px;display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;font-size:12px;color:rgba(250,246,236,.5);">
+      <span>Kayan · Aden</span>
+      <span dir="ltr" style="margin-inline-start:auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(250,246,236,.45);">CLOSING · KYN-LINE-I · KYN-L1-FRONT-EN · v1 · OWNER POS-DEL · ADEN · YEMEN · LLC</span>
+    </div>
+  </div>
+</section>
+
+</div>
+<kayan-compass current="line1"></kayan-compass>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showArabic&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Language&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;defaultTier&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;S1&quot;,&quot;S2&quot;,&quot;S3&quot;],&quot;default&quot;:&quot;S2&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Service tiers&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.root = React.createRef();
+    this.hdr = React.createRef();
+  }
+  componentDidMount() {
+    const el = this.root.current;
+    if (!el) return;
+    const hero = el.querySelector('[data-hero]');
+    const onScroll = () => {
+      const h = this.hdr.current;
+      if (!h) return;
+      const on = hero ? hero.getBoundingClientRect().top < -30 : false;
+      h.style.background = on ? 'rgba(7,32,48,.94)' : 'transparent';
+      h.style.borderBottomColor = on ? 'rgba(250,246,236,.14)' : 'transparent';
+      h.style.backdropFilter = on ? 'blur(16px)' : 'none';
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    this.onScroll = onScroll;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (this.props.motion === false || reduce) return;
+    el.setAttribute('data-mo', '');
+    this._sweep = () => {
+      if (this._raf) return;
+      this._raf = requestAnimationFrame(() => {
+        this._raf = 0;
+        const root = this.root.current;
+        if (!root) return;
+        const vh = window.innerHeight || 800;
+        root.querySelectorAll('[data-reveal]:not([data-on])').forEach((n) => {
+          const r = n.getBoundingClientRect();
+          if (r.top < vh * 0.94 && r.bottom > 0) n.setAttribute('data-on', '');
+        });
+        root.querySelectorAll('[data-gate]:not([data-wired])').forEach((g) => {
+          g.setAttribute('data-wired', '');
+          const leg = root.querySelector('[data-leg="' + g.getAttribute('data-g') + '"]');
+          if (!leg) return;
+          g.addEventListener('mouseenter', () => leg.setAttribute('data-hot', ''));
+          g.addEventListener('mouseleave', () => leg.removeAttribute('data-hot'));
+        });
+      });
+    };
+    this._neurons(el);
+    window.addEventListener('scroll', this._sweep, { passive: true, capture: true });
+    window.addEventListener('resize', this._sweep, { passive: true });
+    this._sweep();
+    this._tick = setInterval(this._sweep, 400);
+    this._lattice(el);
+  }
+  _lattice(root) {
+    const svg = root.querySelector('[data-gatesneu]');
+    if (!svg || svg.childNodes.length) return;
+    const NS = 'http://www.w3.org/2000/svg', W = 1200, H = 700, N = 78;
+    let seed = 11;
+    const rnd = () => { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; };
+    const pts = [];
+    for (let i = 0; i < N; i++) pts.push([40 + rnd() * (W - 80), 40 + rnd() * (H - 80)]);
+    const edges = [];
+    for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
+      const dx = pts[i][0] - pts[j][0], dy = pts[i][1] - pts[j][1];
+      if (Math.sqrt(dx * dx + dy * dy) < 108) edges.push([i, j]);
+    }
+    const g = document.createElementNS(NS, 'g');
+    edges.forEach((e) => {
+      const l = document.createElementNS(NS, 'line');
+      l.setAttribute('x1', pts[e[0]][0].toFixed(1)); l.setAttribute('y1', pts[e[0]][1].toFixed(1));
+      l.setAttribute('x2', pts[e[1]][0].toFixed(1)); l.setAttribute('y2', pts[e[1]][1].toFixed(1));
+      g.appendChild(l);
+    });
+    svg.appendChild(g);
+    pts.forEach((p) => {
+      const c = document.createElementNS(NS, 'circle');
+      c.setAttribute('cx', p[0].toFixed(1)); c.setAttribute('cy', p[1].toFixed(1)); c.setAttribute('r', 1.1);
+      svg.appendChild(c);
+    });
+    // three signals travelling the lattice, slow enough to read as circulation
+    if (edges.length) {
+      for (let k = 0; k < 3; k++) {
+        const e = edges[(k * 9 + 4) % edges.length];
+        const dot = document.createElementNS(NS, 'circle');
+        dot.setAttribute('class', 'glow'); dot.setAttribute('r', 1.8); dot.setAttribute('opacity', '.85');
+        svg.appendChild(dot);
+        const a = pts[e[0]], b = pts[e[1]], t0 = performance.now() + k * 1300, dur = 4400;
+        const step = (now) => {
+          if (!svg.isConnected) return;
+          if (now > t0) {
+            const p = ((now - t0) % dur) / dur, q = p < 0.5 ? p * 2 : (1 - p) * 2;
+            dot.setAttribute('cx', (a[0] + (b[0] - a[0]) * q).toFixed(1));
+            dot.setAttribute('cy', (a[1] + (b[1] - a[1]) * q).toFixed(1));
+          }
+          this._latRaf = requestAnimationFrame(step);
+        };
+        this._latRaf = requestAnimationFrame(step);
+      }
+    }
+    const on = () => svg.setAttribute('data-on', '');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((es) => es.forEach((x) => { if (x.isIntersecting) { io.disconnect(); on(); } }), { threshold: 0.01 });
+      io.observe(svg);
+      setTimeout(on, 2200);
+    } else on();
+  }
+  _neurons(el) {
+    const svg = el.querySelector('[data-neurons]');
+    if (!svg || svg.childElementCount) return;
+    const NS = 'http://www.w3.org/2000/svg', W = 1200, H = 620, N = 32, pts = [];
+    let seed = 11;
+    const rnd = () => { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; };
+    for (let i = 0; i < N; i++) pts.push([40 + rnd() * (W - 80), 40 + rnd() * (H - 80)]);
+    const edges = [];
+    for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
+      const dx = pts[i][0] - pts[j][0], dy = pts[i][1] - pts[j][1];
+      if (Math.hypot(dx, dy) < 200) edges.push([i, j]);
+    }
+    const g = document.createElementNS(NS, 'g');
+    svg.appendChild(g);
+    edges.forEach((e, k) => {
+      const l = document.createElementNS(NS, 'line');
+      l.setAttribute('x1', pts[e[0]][0].toFixed(1)); l.setAttribute('y1', pts[e[0]][1].toFixed(1));
+      l.setAttribute('x2', pts[e[1]][0].toFixed(1)); l.setAttribute('y2', pts[e[1]][1].toFixed(1));
+      l.style.animationDelay = (k * 26 + 200) + 'ms';
+      g.appendChild(l);
+    });
+    pts.forEach((p) => {
+      const c = document.createElementNS(NS, 'circle');
+      c.setAttribute('cx', p[0].toFixed(1)); c.setAttribute('cy', p[1].toFixed(1));
+      c.setAttribute('r', 1.7); c.setAttribute('opacity', '.45');
+      svg.appendChild(c);
+    });
+    if (!edges.length) return;
+    for (let k = 0; k < 3; k++) {
+      const e = edges[(k * 9 + 4) % edges.length], a = pts[e[0]], b = pts[e[1]];
+      const dot = document.createElementNS(NS, 'circle');
+      dot.setAttribute('class', 'np'); dot.setAttribute('r', 2.4); dot.setAttribute('opacity', '.7');
+      svg.appendChild(dot);
+      const t0 = performance.now() + k * 1300, dur = 4600;
+      const step = (now) => {
+        if (now > t0) {
+          const p = ((now - t0) % dur) / dur, q = p < .5 ? p * 2 : (1 - p) * 2;
+          dot.setAttribute('cx', (a[0] + (b[0] - a[0]) * q).toFixed(1));
+          dot.setAttribute('cy', (a[1] + (b[1] - a[1]) * q).toFixed(1));
+        }
+        this._nraf = requestAnimationFrame(step);
+      };
+      this._nraf = requestAnimationFrame(step);
+    }
+  }
+  componentDidUpdate() { if (this._sweep) this._sweep(); }
+  componentWillUnmount() {
+    if (this._sweep) {
+      window.removeEventListener('scroll', this._sweep, { capture: true });
+      window.removeEventListener('resize', this._sweep);
+    }
+    if (this._tick) clearInterval(this._tick);
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._nraf) cancelAnimationFrame(this._nraf);
+    if (this._latRaf) cancelAnimationFrame(this._latRaf);
+    if (this.onScroll) window.removeEventListener('scroll', this.onScroll, { capture: true });
+  }
+  renderVals() {
+    const tier = this.props.defaultTier || 'S2';
+    return {
+      rootRef: this.root,
+      hdrRef: this.hdr,
+      showArabic: this.props.showArabic !== false,
+      isS1: tier === 'S1',
+      isS2: tier === 'S2',
+      isS3: tier === 'S3'
+    };
+  }
+}
+</script>
+</body>
+</html>

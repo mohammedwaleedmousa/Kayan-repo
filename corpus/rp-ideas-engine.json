@@ -1,0 +1,2824 @@
+{
+ "00_README": [
+  {
+   "B": "KAYAN  ·  PRODUCTS & IDEAS ENGINE"
+  },
+  {
+   "B": "The living home for every Kayan product — what it is, who it is for, what it costs to build, and what each dollar buys."
+  },
+  {
+   "B": "35 products · 8 families · 144 verified skills · 12 stakeholder targets · 13 launch roles · KAY-CLT-006-ENGINE"
+  },
+  {
+   "B": "WHAT THIS WORKBOOK IS"
+  },
+  {
+   "B": "A single, living engine for Kayan's productised services — 35 products across 8 families, from a $280 voice-over to a $5,500 custom platform. It maps every product to the segments and pain points it solves, states value-for-money plainly, and gives staff a place to propose new products. It is the operating brain behind the client-facing Ready Products Catalogue."
+  },
+  {
+   "B": "THE 8 PRODUCT FAMILIES"
+  },
+  {
+   "B": "A Brand & Creative · B Web, Apps & Technology · C Marketing & Growth · D Content, Writing & Translation · E Research, Data & Evaluation · F Finance, Admin & Support · G Packages for New Businesses · H Enterprise & Hospitality Suites. Each family is colour-coded across the workbook and the catalogue."
+  },
+  {
+   "B": "HOW IT IS ORGANISED"
+  },
+  {
+   "B": "01 Product Master · 02 Segments & Pain Points · 03 Economics · 04 Bundles & Journeys · 05 Add-ons & Rush · 06 Ideas Bank · 07 Comparables · 08 Launch Roadmap · 09 Tiers · 10 Specializations (full taxonomy) · 11 Stakeholders & Targeting · 12 Launch Roles, KPIs & Tasks."
+  },
+  {
+   "B": "THE RULES BEHIND EVERY PRODUCT"
+  },
+  {
+   "B": "Fixed scope. Fixed price in USD. A named delivery day. A managed pod of verified talent. Three-layer QA. One free revision (extra at 20%). A 5-business-day acceptance window. 100% funded into escrow before any work begins — the founding rule, no exceptions. Kayan keeps a 20% net fee; talent receives 80%; a 2% holdback is kept 30 days."
+  },
+  {
+   "B": "HOW PRICES WORK"
+  },
+  {
+   "B": "Prices are anchored in USD and held firm. Payment in YER converts at the actual Aden market rate on the day (≈1,535 in May 2026), against the dated rate table — never a notional rate. Cost-to-build is a conservative estimate of talent payout at regional rates (Egypt entry $8–12/hr, experienced $18–25/hr); a planning assumption, refined with real pod data."
+  },
+  {
+   "B": "WHAT CHANGED IN THIS VERSION"
+  },
+  {
+   "B": "Expanded from 8 to 35 products: added mobile apps, custom platforms, IT/DevOps care, AI automation, bookkeeping, financial modelling, virtual assistant, customer-service desk, SEO, paid ads, voice-over; the tiered Startup-in-a-Box for new companies; and enterprise suites for big restaurants, larger hotels, and businessmen. Drawn from the Micro-Specialization Taxonomy, the earlier Offer Catalog (KAY-MKT-001), and live market research."
+  }
+ ],
+ "01_Product_Master": [
+  {
+   "A": "Product Master Catalogue"
+  },
+  {
+   "A": "All 35 products across 8 families. Prices in USD; cost-to-build is estimated talent payout. Retainers priced per month; Startup-in-a-Box is tiered."
+  },
+  {
+   "A": "Code",
+   "B": "Product",
+   "C": "Family",
+   "D": "Pod / team",
+   "E": "Delivery",
+   "F": "Price USD",
+   "G": "Kayan fee",
+   "H": "Cost to build",
+   "I": "Fee %",
+   "J": "What the client gets (specifics)",
+   "K": "Pain point solved",
+   "L": "What each dollar buys"
+  },
+  {
+   "A": "RP-001",
+   "B": "Brand Identity Pack",
+   "C": "Brand & Creative",
+   "D": "Designer T2+ · QA",
+   "E": "14 days",
+   "F": "500",
+   "G": "100",
+   "H": "120",
+   "I": "0.2",
+   "J": "Primary logo + 3 alternates (AI/PNG/SVG/PDF)  •  Brand guide — colour, type, usage rules  •  Stationery — card, letterhead, envelope, e-signature  •  Print + digital files  •  One free revision",
+   "K": "New ventures look improvised and untrustworthy",
+   "L": "A complete, ownable identity for less than one month of a junior hire"
+  },
+  {
+   "A": "RP-016",
+   "B": "Brand Refresh & Rebrand",
+   "C": "Brand & Creative",
+   "D": "Designer T3+ · Strategist · QA",
+   "E": "21 days",
+   "F": "950",
+   "G": "190",
+   "H": "290",
+   "I": "0.2",
+   "J": "Brand audit  •  Refreshed logo system  •  Expanded palette + type  •  Messaging lines (AR/EN)  •  Applied templates (social, docs, signage)  •  Rollout guide",
+   "K": "An ageing brand undercuts a growing business",
+   "L": "A modern, consistent brand that matches where the business is now"
+  },
+  {
+   "A": "RP-020",
+   "B": "Video & Motion Pack",
+   "C": "Brand & Creative",
+   "D": "Editor T2+ · Motion · Writer",
+   "E": "14 days",
+   "F": "650",
+   "G": "130",
+   "H": "200",
+   "I": "0.2",
+   "J": "1 brand/promo video (60–90s)  •  4 short vertical social cuts  •  Subtitles AR/EN  •  Motion logo sting  •  Licence-safe music",
+   "K": "Static posts are ignored; no video skills in-house",
+   "L": "Scroll-stopping video — the single highest-engagement format"
+  },
+  {
+   "A": "RP-031",
+   "B": "Voice-Over & Audio",
+   "C": "Brand & Creative",
+   "D": "Voice artist T2+ · Audio editor",
+   "E": "7 days",
+   "F": "280",
+   "G": "56",
+   "H": "90",
+   "I": "0.2",
+   "J": "Professional voice-over (AR/EN, up to 3 min)  •  Script polish  •  Clean mastered audio  •  Licence-safe music bed  •  2 formats; 1 revision",
+   "K": "Videos and ads need a professional voice; phone recordings sound cheap",
+   "L": "A broadcast-quality voice that makes content sound professional"
+  },
+  {
+   "A": "RP-002",
+   "B": "Professional Website",
+   "C": "Web, Apps & Technology",
+   "D": "Dev T2+ · UI · Writer · QA",
+   "E": "21 days",
+   "F": "1,200",
+   "G": "240",
+   "H": "360",
+   "I": "0.2",
+   "J": "Responsive 5–7 page bilingual site (AR-RTL/EN)  •  Custom design  •  Basic SEO  •  SSL + year-1 hosting  •  CMS training (1h)  •  Two revisions",
+   "K": "No credible online presence; clients/donors can't find or verify",
+   "L": "A bilingual, credible web presence — the price of one overseas mock-up"
+  },
+  {
+   "A": "RP-008",
+   "B": "MVP Web Application",
+   "C": "Web, Apps & Technology",
+   "D": "Full-stack T3+ · UI/UX · QA · PM",
+   "E": "30 days",
+   "F": "2,000",
+   "G": "400",
+   "H": "650",
+   "I": "0.2",
+   "J": "Responsive web app (5–8 screens)  •  Login + user management  •  Database + admin dashboard  •  Custom UI/UX  •  Testing + bug-fix  •  Technical docs + initial deployment",
+   "K": "An idea can't be tested or shown to investors without a working product",
+   "L": "A working, demoable product — a fraction of an overseas dev-shop quote"
+  },
+  {
+   "A": "RP-017",
+   "B": "E-commerce Storefront",
+   "C": "Web, Apps & Technology",
+   "D": "Dev T2+ · UI · Writer · QA",
+   "E": "25 days",
+   "F": "1,600",
+   "G": "320",
+   "H": "520",
+   "I": "0.2",
+   "J": "Online store (up to 30 products)  •  Local payment / COD + delivery options  •  Bilingual  •  Product photo editing (30)  •  Admin training  •  Launch promo set",
+   "K": "Sellers depend on WhatsApp orders; no real storefront, no scale",
+   "L": "A real online store that takes orders while the owner sleeps"
+  },
+  {
+   "A": "RP-021",
+   "B": "Mobile App (iOS & Android)",
+   "C": "Web, Apps & Technology",
+   "D": "Mobile dev T3+ · UI/UX · QA · PM",
+   "E": "45 days",
+   "F": "3,800",
+   "G": "760",
+   "H": "1500",
+   "I": "0.2",
+   "J": "Cross-platform app, iOS + Android (up to 10 screens)  •  User accounts + push notifications  •  Backend API + admin panel  •  App-store submission (both stores)  •  Bilingual  •  Testing + 30-day post-launch support",
+   "K": "An idea needs a real mobile app to reach customers; overseas quotes top $10k",
+   "L": "A published, store-ready app on both platforms — a fraction of a studio quote"
+  },
+  {
+   "A": "RP-022",
+   "B": "Custom Web Platform",
+   "C": "Web, Apps & Technology",
+   "D": "Full-stack T4 · UI/UX · QA · PM",
+   "E": "8–12 weeks",
+   "F": "5,500",
+   "G": "1100",
+   "H": "2200",
+   "I": "0.2",
+   "J": "Bespoke platform with custom workflows  •  Multi-role user management  •  Integrations (payment / SMS / maps)  •  Admin dashboard + reporting  •  Bilingual  •  Documentation + training  •  Deployment + 60-day support",
+   "K": "A growing organisation needs a real system built around its process",
+   "L": "A platform built around how you actually work — owned, not rented"
+  },
+  {
+   "A": "RP-023",
+   "B": "IT & DevOps Care (Retainer)",
+   "C": "Web, Apps & Technology",
+   "D": "DevOps T3+ · Support",
+   "E": "Monthly",
+   "F": "500 / mo",
+   "G": "100",
+   "H": "150",
+   "I": "0.2",
+   "J": "Hosting + domain management  •  Uptime monitoring  •  Weekly backups  •  Security updates  •  Bug-fix hours (up to 8/mo)  •  Monthly health report",
+   "K": "Sites and apps break and nobody maintains them; downtime loses revenue",
+   "L": "A site that stays up, secure, and current — peace of mind, monthly"
+  },
+  {
+   "A": "RP-024",
+   "B": "AI Automation & Chatbot",
+   "C": "Web, Apps & Technology",
+   "D": "Developer T2+ · Content · QA",
+   "E": "14 days",
+   "F": "750",
+   "G": "150",
+   "H": "230",
+   "I": "0.2",
+   "J": "WhatsApp or web chatbot (bilingual)  •  FAQ + lead-capture flows  •  1 workflow automation (e.g. orders/bookings to a sheet)  •  Handover-to-human  •  Setup + training",
+   "K": "Owners answer the same messages all day; leads slip at night",
+   "L": "A tireless assistant that answers and captures leads 24/7"
+  },
+  {
+   "A": "RP-003",
+   "B": "Launch Marketing Pack",
+   "C": "Marketing & Growth",
+   "D": "Marketer T2+ · Designer · Writer",
+   "E": "14 days",
+   "F": "750",
+   "G": "150",
+   "H": "200",
+   "I": "0.2",
+   "J": "10-page launch strategy  •  15 social posts (design+copy, AR/EN)  •  3-platform account setup  •  Email template + 3 drafts  •  Competitor analysis",
+   "K": "Launches land silently; no audience, wasted opening window",
+   "L": "A full launch campaign and a 3-platform presence ready on day one"
+  },
+  {
+   "A": "RP-004",
+   "B": "Monthly Content Pack (Retainer)",
+   "C": "Marketing & Growth",
+   "D": "Writer T2+ · Designer",
+   "E": "Monthly",
+   "F": "400 / mo",
+   "G": "80",
+   "H": "110",
+   "I": "0.2",
+   "J": "8 social posts (design+copy)  •  1 blog article (800–1,200w)  •  Monthly newsletter  •  Simple performance report  •  Next-month content calendar",
+   "K": "Brands go quiet after launch; no time to stay visible",
+   "L": "An always-on content team for a fraction of one part-time salary"
+  },
+  {
+   "A": "RP-009",
+   "B": "Social Media Management (Retainer)",
+   "C": "Marketing & Growth",
+   "D": "Marketer T2+ · Designer · Writer",
+   "E": "Monthly",
+   "F": "550 / mo",
+   "G": "110",
+   "H": "160",
+   "I": "0.2",
+   "J": "16 posts/mo (design+copy AR/EN)  •  2 platforms managed  •  Community-reply guidance  •  Monthly ads-ready creative set  •  1 boosted-post setup  •  Monthly report",
+   "K": "Owner runs social personally and inconsistently",
+   "L": "A managed social presence that actually grows followers and footfall"
+  },
+  {
+   "A": "RP-029",
+   "B": "SEO Launch & Optimization",
+   "C": "Marketing & Growth",
+   "D": "SEO specialist T2+ · Writer",
+   "E": "14 days",
+   "F": "550",
+   "G": "110",
+   "H": "170",
+   "I": "0.2",
+   "J": "Technical SEO audit + fixes  •  Keyword research (AR/EN)  •  On-page optimization (up to 10 pages)  •  Google Business + Maps  •  Analytics + Search Console  •  90-day action plan",
+   "K": "A site exists but nobody finds it; invisible on Google",
+   "L": "Found by the customers already searching for you"
+  },
+  {
+   "A": "RP-030",
+   "B": "Paid Ads Management (Retainer)",
+   "C": "Marketing & Growth",
+   "D": "Ads specialist T2+ · Designer",
+   "E": "Monthly",
+   "F": "500 / mo *",
+   "G": "100",
+   "H": "150",
+   "I": "0.2",
+   "J": "Campaign setup (Meta / Google)  •  4 ad creatives/mo  •  Audience targeting  •  Budget management  •  A/B testing  •  Monthly performance report",
+   "K": "Owners boost posts randomly and waste money",
+   "L": "Every ad dollar measured and optimised — not guessed (ad spend billed separately)"
+  },
+  {
+   "A": "RP-005",
+   "B": "Professional Translation",
+   "C": "Content, Writing & Translation",
+   "D": "Translator T2+ · Reviewer",
+   "E": "7 days",
+   "F": "300",
+   "G": "60",
+   "H": "90",
+   "I": "0.2",
+   "J": "Up to 10,000 words AR↔EN  •  Second-translator review  •  Final formatting (PDF+Word)  •  Client glossary  •  One free revision",
+   "K": "Reports/proposals fail in the other language",
+   "L": "Donor-grade bilingual documents, reviewed twice, in a week"
+  },
+  {
+   "A": "RP-007",
+   "B": "Corporate Documents Pack",
+   "C": "Content, Writing & Translation",
+   "D": "Writer T2+ · Designer · Reviewer",
+   "E": "10 days",
+   "F": "450",
+   "G": "90",
+   "H": "120",
+   "I": "0.2",
+   "J": "Company profile (AR+EN)  •  15–20 slide presentation  •  5 correspondence templates  •  3 report templates  •  Unified brand-aligned design",
+   "K": "Organisation can't present itself professionally",
+   "L": "A complete document kit that makes a small team look established"
+  },
+  {
+   "A": "RP-018",
+   "B": "Annual Report (Design + Write)",
+   "C": "Content, Writing & Translation",
+   "D": "Writer T3+ · Designer · Translator",
+   "E": "18 days",
+   "F": "1,100",
+   "G": "220",
+   "H": "340",
+   "I": "0.2",
+   "J": "Narrative writing/editing (up to 30 pages)  •  Data-visualisation  •  Bilingual layout  •  Print + digital  •  Executive summary  •  2 revisions",
+   "K": "Annual reports are rushed and ugly; a missed credibility moment",
+   "L": "A flagship report that makes the year's work look as good as it was"
+  },
+  {
+   "A": "RP-012",
+   "B": "NGO Report & Proposal Pack",
+   "C": "Content, Writing & Translation",
+   "D": "Writer T3+ · Designer · Translator · QA",
+   "E": "12 days",
+   "F": "900",
+   "G": "180",
+   "H": "280",
+   "I": "0.2",
+   "J": "Donor-ready report or proposal (up to 40 pages, AR/EN)  •  Data-visualisation of results  •  Branded layout to donor template  •  Executive summary  •  2 revisions",
+   "K": "Strong content in weak layout loses to better-presented bids",
+   "L": "A donor-grade document that competes on presentation, not just content"
+  },
+  {
+   "A": "RP-006",
+   "B": "Market Study",
+   "C": "Research, Data & Evaluation",
+   "D": "Researcher T3+ · Analyst · QA",
+   "E": "14 days",
+   "F": "600",
+   "G": "120",
+   "H": "180",
+   "I": "0.2",
+   "J": "20–30 page market analysis  •  5–10 competitor analysis  •  Target-audience analysis  •  Strategic recommendations  •  3-page executive summary  •  Findings presentation",
+   "K": "Founders commit capital on hunches; no evidence base",
+   "L": "An evidence base for a major decision — cheaper than one wrong hire"
+  },
+  {
+   "A": "RP-013",
+   "B": "Data Collection & Dashboard",
+   "C": "Research, Data & Evaluation",
+   "D": "Data analyst T3+ · Field lead · QA",
+   "E": "21 days",
+   "F": "1,400",
+   "G": "280",
+   "H": "460",
+   "I": "0.2",
+   "J": "KoBo/ODK form design  •  Enumerator training (1 day)  •  Supervised collection (sample up to 400)  •  Cleaned dataset  •  Live dashboard (PowerBI/Looker)  •  Findings brief",
+   "K": "MEAL teams lack surge capacity for collection + clean data + a dashboard",
+   "L": "Defensible field data and a live dashboard — TPM quality, locally delivered"
+  },
+  {
+   "A": "RP-014",
+   "B": "Monitoring & Evaluation Study",
+   "C": "Research, Data & Evaluation",
+   "D": "M&E lead T4 · Analyst · QA",
+   "E": "30 days",
+   "F": "2,400",
+   "G": "480",
+   "H": "820",
+   "I": "0.2",
+   "J": "Evaluation design (logframe-aligned)  •  Tools  •  Mixed-method data collection  •  Analysis  •  Full evaluation report (AR/EN)  •  Validation workshop  •  Presentation",
+   "K": "Donors require independent evaluation; few credible local providers",
+   "L": "An independent, donor-grade evaluation delivered from inside Yemen"
+  },
+  {
+   "A": "RP-015",
+   "B": "Pitch Deck & Investor Pack",
+   "C": "Research, Data & Evaluation",
+   "D": "Writer T3+ · Designer · Analyst",
+   "E": "12 days",
+   "F": "700",
+   "G": "140",
+   "H": "210",
+   "I": "0.2",
+   "J": "Investor pitch deck (12–16 slides, AR/EN)  •  1-page teaser  •  Simple 3-yr financial model  •  Data-room checklist  •  Rehearsal notes",
+   "K": "Founders can't translate a business into an investable story",
+   "L": "An investor-ready story and model — the difference between a meeting and a pass"
+  },
+  {
+   "A": "RP-025",
+   "B": "Bookkeeping & Accounting (Retainer)",
+   "C": "Finance, Admin & Support",
+   "D": "Bookkeeper T2+ · Reviewer",
+   "E": "Monthly",
+   "F": "400 / mo",
+   "G": "80",
+   "H": "130",
+   "I": "0.2",
+   "J": "Monthly books (up to 100 transactions)  •  Bank reconciliation  •  VAT-ready summaries  •  Simple P&L + cash report  •  Receipts organised  •  Year-end pack",
+   "K": "SMEs keep books in a drawer; no clarity, painful at tax time",
+   "L": "Clean, current books and a clear monthly picture of the business"
+  },
+  {
+   "A": "RP-026",
+   "B": "Financial Model & Projections",
+   "C": "Finance, Admin & Support",
+   "D": "Financial modeler T3+ · Analyst · QA",
+   "E": "14 days",
+   "F": "850",
+   "G": "170",
+   "H": "260",
+   "I": "0.2",
+   "J": "3-year financial model (revenue, costs, cash)  •  3 scenarios  •  Assumptions sheet  •  Break-even + key ratios  •  Investor-ready summary  •  Walkthrough",
+   "K": "Founders can't answer 'what are your numbers?'",
+   "L": "The numbers behind the story — ready for a bank or an investor"
+  },
+  {
+   "A": "RP-027",
+   "B": "Virtual Assistant (Retainer)",
+   "C": "Finance, Admin & Support",
+   "D": "VA T2+",
+   "E": "Monthly",
+   "F": "450 / mo",
+   "G": "90",
+   "H": "150",
+   "I": "0.2",
+   "J": "Up to 40 hours/mo remote admin  •  Inbox + calendar management  •  Data entry  •  Document formatting  •  Research  •  Weekly check-in",
+   "K": "Owners drown in admin instead of growing the business",
+   "L": "Forty hours of your time back, every month"
+  },
+  {
+   "A": "RP-028",
+   "B": "Customer Service Desk (Retainer)",
+   "C": "Finance, Admin & Support",
+   "D": "Support agents T2+ · Lead",
+   "E": "Monthly",
+   "F": "650 / mo",
+   "G": "130",
+   "H": "220",
+   "I": "0.2",
+   "J": "Managed WhatsApp/social/email support (business hours)  •  Response within SLA  •  Order/enquiry handling  •  Bilingual  •  Escalation rules  •  Monthly satisfaction report",
+   "K": "Messages go unanswered; customers feel ignored",
+   "L": "Every customer answered fast, bilingually — without hiring a team"
+  },
+  {
+   "A": "RP-019",
+   "B": "Training Workshop (Design + Deliver)",
+   "C": "Finance, Admin & Support",
+   "D": "Trainer T4 · Designer · Coordinator",
+   "E": "Per cohort",
+   "F": "1,300",
+   "G": "260",
+   "H": "430",
+   "I": "0.2",
+   "J": "Curriculum design  •  Bilingual materials + slides  •  2-day facilitated workshop (up to 20)  •  Workbooks  •  Certificates  •  Post-workshop report",
+   "K": "Teams need capability; external trainers fly in at high cost and leave nothing",
+   "L": "A capability your team keeps — designed and delivered locally"
+  },
+  {
+   "A": "RP-032",
+   "B": "Startup-in-a-Box",
+   "C": "Packages for New Businesses",
+   "D": "Multi-role pod · PM",
+   "E": "10–30 days",
+   "F": "500 / 1,200 / 2,500",
+   "G": "240",
+   "H": "360",
+   "I": "0.2",
+   "J": "ESSENTIALS ($500): logo + business card + 3-page website + social setup (2 platforms) + 1-month content calendar  •  PROFESSIONAL ($1,200): + full brand guidelines, 7-page website with CMS, email setup, letterhead + invoice templates, pitch deck, 3-month content plan  •  PREMIUM ($2,500): + marketing strategy, competitor analysis, CRM setup, 6-month social management, monthly reporting",
+   "K": "New founders must assemble a brand, site, and presence from scratch under pressure",
+   "L": "A business that looks established from its first day — in one decision"
+  },
+  {
+   "A": "RP-010",
+   "B": "Restaurant Launch Kit",
+   "C": "Enterprise & Hospitality",
+   "D": "Designer T2+ · Writer · Photographer*",
+   "E": "18 days",
+   "F": "680",
+   "G": "136",
+   "H": "200",
+   "I": "0.2",
+   "J": "Menu design (print + digital/QR, AR/EN)  •  30 food-photo edits  •  Table-talkers + signage  •  Delivery-app profile setup  •  Opening social pack (10 posts)",
+   "K": "New venues open with phone-photo menus and no delivery-app presence",
+   "L": "A fully branded, delivery-ready launch — everything a guest sees, done right"
+  },
+  {
+   "A": "RP-033",
+   "B": "Enterprise Restaurant Suite",
+   "C": "Enterprise & Hospitality",
+   "D": "Designer T3 · Dev · Photographer · Marketer · PM",
+   "E": "35 days",
+   "F": "3,500",
+   "G": "700",
+   "H": "1200",
+   "I": "0.2",
+   "J": "Full brand system (multi-branch ready)  •  Bilingual website with menu + reservations  •  60 professional food-photo edits  •  Delivery-app setup across platforms  •  QR + print menus  •  3-month social management  •  Signage system  •  Loyalty-card concept",
+   "K": "A serious or multi-branch restaurant needs a complete, consistent presence everywhere",
+   "L": "One coherent brand across every branch, platform, and plate"
+  },
+  {
+   "A": "RP-011",
+   "B": "Hotel Digital Presence",
+   "C": "Enterprise & Hospitality",
+   "D": "Dev T2+ · UI · Writer · Photographer*",
+   "E": "24 days",
+   "F": "1,500",
+   "G": "300",
+   "H": "470",
+   "I": "0.2",
+   "J": "Bilingual hotel site with room showcase + enquiry form  •  40 property-photo edits  •  Google Business Profile setup  •  3 OTA listing profiles (copy+photos)  •  Review-response playbook",
+   "K": "Hotels rely on walk-ins; invisible online; no direct-enquiry channel",
+   "L": "A direct booking channel and a credible presence where guests look"
+  },
+  {
+   "A": "RP-034",
+   "B": "Hotel Revenue Suite",
+   "C": "Enterprise & Hospitality",
+   "D": "Dev T3 · UI · Photographer · Marketer · PM",
+   "E": "35 days",
+   "F": "3,800",
+   "G": "760",
+   "H": "1300",
+   "I": "0.2",
+   "J": "Multilingual site with booking-request engine  •  60 property-photo edits  •  Google Business + 4 OTA listings managed  •  Review-management system  •  3-month social  •  Email-enquiry automation  •  Rate-display setup",
+   "K": "A larger hotel leaves money on the table with no direct channel and poor OTA presence",
+   "L": "A direct booking channel plus a managed presence everywhere guests look"
+  },
+  {
+   "A": "RP-035",
+   "B": "Executive & Personal Brand",
+   "C": "Enterprise & Hospitality",
+   "D": "Writer T3 · Designer · Marketer",
+   "E": "14 days",
+   "F": "900",
+   "G": "180",
+   "H": "280",
+   "I": "0.2",
+   "J": "Personal brand strategy  •  LinkedIn profile rewrite + banner  •  Professional bio (AR/EN, 3 lengths)  •  One-page media kit  •  Headshot direction  •  10 thought-leadership post drafts  •  Personal 1-page website",
+   "K": "A leader has no credible personal presence; invisible to partners and media",
+   "L": "A leader who looks the part online — to partners, press, and investors"
+  },
+  {
+   "A": "* Paid Ads retainer excludes ad spend (billed to client). Startup-in-a-Box price shows the three tiers; see 09_Tiers. Kayan fee = 20% of GMV (band 15–22%; 15% floor needs CEO approval). Cost-to-build (blue) = planning estimate of talent payout. * = specialist role drawn from the registry as available."
+  }
+ ],
+ "02_Segments_PainPoints": [
+  {
+   "A": "Segments & Pain Points"
+  },
+  {
+   "A": "Who buys, what hurts, and which products answer — built from the Yemen reality (97% micro/SME; UN/INGO relocating to Aden; rial stable since mid-2025)."
+  },
+  {
+   "A": "Client segment",
+   "B": "Who they are (Aden reality)",
+   "C": "Their sharpest pain",
+   "D": "Products that answer",
+   "E": "Entry product",
+   "F": "Upsell path"
+  },
+  {
+   "A": "New company founders",
+   "B": "People establishing a company now — need everything at once",
+   "C": "Must assemble brand, site, paperwork, presence from scratch under pressure",
+   "D": "RP-032, RP-001, RP-002, RP-026",
+   "E": "RP-032 Startup-in-a-Box",
+   "F": "Startup-in-a-Box → Website → Bookkeeping retainer"
+  },
+  {
+   "A": "Big / multi-branch restaurants",
+   "B": "Established venues and small chains competing on brand and delivery",
+   "C": "Inconsistent brand across branches; weak delivery-app + reservation presence",
+   "D": "RP-033, RP-009, RP-020, RP-024",
+   "E": "RP-033 Enterprise Restaurant Suite",
+   "F": "Suite → Social retainer → AI ordering bot"
+  },
+  {
+   "A": "Restaurants & cafés (single)",
+   "B": "Family-run venues on the Corniche",
+   "C": "Phone-photo menus, no delivery-app profile, losing covers",
+   "D": "RP-010, RP-009, RP-020",
+   "E": "RP-010 Restaurant Launch Kit",
+   "F": "Launch Kit → Social retainer → Video"
+  },
+  {
+   "A": "Hotels & guesthouses",
+   "B": "Reliant on walk-ins; UN/INGO staff arriving need rooms",
+   "C": "Invisible online; no direct-enquiry or booking channel",
+   "D": "RP-011, RP-034, RP-020",
+   "E": "RP-011 Hotel Digital Presence",
+   "F": "Digital Presence → Revenue Suite → Social retainer"
+  },
+  {
+   "A": "Businessmen & executives",
+   "B": "Owners and leaders who are invisible online",
+   "C": "No credible personal presence; not found by partners, press, investors",
+   "D": "RP-035, RP-015, RP-026",
+   "E": "RP-035 Executive & Personal Brand",
+   "F": "Personal brand → Pitch pack → Financial model"
+  },
+  {
+   "A": "SMEs & shops",
+   "B": "97% of the private sector; want credibility and sales",
+   "C": "No identity, no website, WhatsApp-only orders",
+   "D": "RP-001, RP-002, RP-017, RP-025",
+   "E": "RP-001 Brand Identity",
+   "F": "Brand → Website → E-commerce → Bookkeeping"
+  },
+  {
+   "A": "Startups & founders",
+   "B": "EU/WATHBA-backed ecosystem; test ideas and raise",
+   "C": "No MVP or app, no evidence base, no investable story",
+   "D": "RP-006, RP-015, RP-008, RP-021",
+   "E": "RP-006 Market Study",
+   "F": "Study → Pitch → MVP → Mobile app → raise"
+  },
+  {
+   "A": "NGOs & INGOs",
+   "B": "UN/INGO relocating to Aden; procurement-driven",
+   "C": "Surge gaps in translation, reports, data, evaluation",
+   "D": "RP-005, RP-012, RP-013, RP-014, RP-018",
+   "E": "RP-005 Translation",
+   "F": "Translation → Report → Data+Dashboard → Evaluation"
+  },
+  {
+   "A": "Government & semi-public",
+   "B": "MOPIC and line ministries rebuilding donor credibility",
+   "C": "Need professional docs, data, apps, capability without fly-in cost",
+   "D": "RP-013, RP-019, RP-022, RP-018",
+   "E": "RP-007 Corporate Docs",
+   "F": "Docs → Training → Data → Custom platform"
+  },
+  {
+   "A": "Retailers & producers",
+   "B": "Honey, coffee, crafts, shops — sellable goods, no route to market",
+   "C": "WhatsApp-only sales; no storefront; no reach; no support capacity",
+   "D": "RP-017, RP-028, RP-001, RP-030",
+   "E": "RP-001 Brand Identity",
+   "F": "Brand → E-commerce → Service desk → Paid ads"
+  },
+  {
+   "A": "Schools, clinics & services",
+   "B": "Private schools, clinics serving a paying middle class",
+   "C": "No brand, no bookings/online presence, unanswered messages",
+   "D": "RP-001, RP-002, RP-009, RP-024",
+   "E": "RP-001 Brand Identity",
+   "F": "Brand → Website → Social → AI booking bot"
+  },
+  {
+   "A": "Individuals & professionals",
+   "B": "Diaspora, jobseekers, consultants",
+   "C": "No CV/portfolio that travels; no personal brand; no English-grade docs",
+   "D": "RP-005, RP-035, RP-015",
+   "E": "RP-005 Translation",
+   "F": "Translation → Personal brand → Portfolio site"
+  }
+ ],
+ "03_Economics": [
+  {
+   "A": "Product Economics"
+  },
+  {
+   "A": "Client funds GMV into escrow; talent receives 80%; Kayan keeps the 20% net fee. Cost-to-build is the talent-payout estimate; 'buffer' is the slack left in the talent pool."
+  },
+  {
+   "A": "Code",
+   "B": "Product",
+   "C": "Price USD",
+   "D": "Talent 80%",
+   "E": "Cost to build",
+   "F": "Buffer in pool",
+   "G": "Kayan fee 20%",
+   "H": "Holdback 2%",
+   "I": "Fee % GMV",
+   "J": "Floor ≥15%"
+  },
+  {
+   "A": "RP-001",
+   "B": "Brand Identity Pack",
+   "C": "500",
+   "D": "400",
+   "E": "120",
+   "F": "280",
+   "G": "100",
+   "H": "10",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-016",
+   "B": "Brand Refresh & Rebrand",
+   "C": "950",
+   "D": "760",
+   "E": "290",
+   "F": "470",
+   "G": "190",
+   "H": "19",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-020",
+   "B": "Video & Motion Pack",
+   "C": "650",
+   "D": "520",
+   "E": "200",
+   "F": "320",
+   "G": "130",
+   "H": "13",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-031",
+   "B": "Voice-Over & Audio",
+   "C": "280",
+   "D": "224",
+   "E": "90",
+   "F": "134",
+   "G": "56",
+   "H": "6",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-002",
+   "B": "Professional Website",
+   "C": "1200",
+   "D": "960",
+   "E": "360",
+   "F": "600",
+   "G": "240",
+   "H": "24",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-008",
+   "B": "MVP Web Application",
+   "C": "2000",
+   "D": "1600",
+   "E": "650",
+   "F": "950",
+   "G": "400",
+   "H": "40",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-017",
+   "B": "E-commerce Storefront",
+   "C": "1600",
+   "D": "1280",
+   "E": "520",
+   "F": "760",
+   "G": "320",
+   "H": "32",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-021",
+   "B": "Mobile App (iOS & Android)",
+   "C": "3800",
+   "D": "3040",
+   "E": "1500",
+   "F": "1540",
+   "G": "760",
+   "H": "76",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-022",
+   "B": "Custom Web Platform",
+   "C": "5500",
+   "D": "4400",
+   "E": "2200",
+   "F": "2200",
+   "G": "1100",
+   "H": "110",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-023",
+   "B": "IT & DevOps Care (Retainer)",
+   "C": "500",
+   "D": "400",
+   "E": "150",
+   "F": "250",
+   "G": "100",
+   "H": "10",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-024",
+   "B": "AI Automation & Chatbot",
+   "C": "750",
+   "D": "600",
+   "E": "230",
+   "F": "370",
+   "G": "150",
+   "H": "15",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-003",
+   "B": "Launch Marketing Pack",
+   "C": "750",
+   "D": "600",
+   "E": "200",
+   "F": "400",
+   "G": "150",
+   "H": "15",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-004",
+   "B": "Monthly Content Pack (Retainer)",
+   "C": "400",
+   "D": "320",
+   "E": "110",
+   "F": "210",
+   "G": "80",
+   "H": "8",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-009",
+   "B": "Social Media Management (Retainer)",
+   "C": "550",
+   "D": "440",
+   "E": "160",
+   "F": "280",
+   "G": "110",
+   "H": "11",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-029",
+   "B": "SEO Launch & Optimization",
+   "C": "550",
+   "D": "440",
+   "E": "170",
+   "F": "270",
+   "G": "110",
+   "H": "11",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-030",
+   "B": "Paid Ads Management (Retainer)",
+   "C": "500",
+   "D": "400",
+   "E": "150",
+   "F": "250",
+   "G": "100",
+   "H": "10",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-005",
+   "B": "Professional Translation",
+   "C": "300",
+   "D": "240",
+   "E": "90",
+   "F": "150",
+   "G": "60",
+   "H": "6",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-007",
+   "B": "Corporate Documents Pack",
+   "C": "450",
+   "D": "360",
+   "E": "120",
+   "F": "240",
+   "G": "90",
+   "H": "9",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-018",
+   "B": "Annual Report (Design + Write)",
+   "C": "1100",
+   "D": "880",
+   "E": "340",
+   "F": "540",
+   "G": "220",
+   "H": "22",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-012",
+   "B": "NGO Report & Proposal Pack",
+   "C": "900",
+   "D": "720",
+   "E": "280",
+   "F": "440",
+   "G": "180",
+   "H": "18",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-006",
+   "B": "Market Study",
+   "C": "600",
+   "D": "480",
+   "E": "180",
+   "F": "300",
+   "G": "120",
+   "H": "12",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-013",
+   "B": "Data Collection & Dashboard",
+   "C": "1400",
+   "D": "1120",
+   "E": "460",
+   "F": "660",
+   "G": "280",
+   "H": "28",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-014",
+   "B": "Monitoring & Evaluation Study",
+   "C": "2400",
+   "D": "1920",
+   "E": "820",
+   "F": "1100",
+   "G": "480",
+   "H": "48",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-015",
+   "B": "Pitch Deck & Investor Pack",
+   "C": "700",
+   "D": "560",
+   "E": "210",
+   "F": "350",
+   "G": "140",
+   "H": "14",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-025",
+   "B": "Bookkeeping & Accounting (Retainer)",
+   "C": "400",
+   "D": "320",
+   "E": "130",
+   "F": "190",
+   "G": "80",
+   "H": "8",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-026",
+   "B": "Financial Model & Projections",
+   "C": "850",
+   "D": "680",
+   "E": "260",
+   "F": "420",
+   "G": "170",
+   "H": "17",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-027",
+   "B": "Virtual Assistant (Retainer)",
+   "C": "450",
+   "D": "360",
+   "E": "150",
+   "F": "210",
+   "G": "90",
+   "H": "9",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-028",
+   "B": "Customer Service Desk (Retainer)",
+   "C": "650",
+   "D": "520",
+   "E": "220",
+   "F": "300",
+   "G": "130",
+   "H": "13",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-019",
+   "B": "Training Workshop (Design + Deliver)",
+   "C": "1300",
+   "D": "1040",
+   "E": "430",
+   "F": "610",
+   "G": "260",
+   "H": "26",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-032",
+   "B": "Startup-in-a-Box",
+   "C": "1200",
+   "D": "960",
+   "E": "360",
+   "F": "600",
+   "G": "240",
+   "H": "24",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-010",
+   "B": "Restaurant Launch Kit",
+   "C": "680",
+   "D": "544",
+   "E": "200",
+   "F": "344",
+   "G": "136",
+   "H": "14",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-033",
+   "B": "Enterprise Restaurant Suite",
+   "C": "3500",
+   "D": "2800",
+   "E": "1200",
+   "F": "1600",
+   "G": "700",
+   "H": "70",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-011",
+   "B": "Hotel Digital Presence",
+   "C": "1500",
+   "D": "1200",
+   "E": "470",
+   "F": "730",
+   "G": "300",
+   "H": "30",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-034",
+   "B": "Hotel Revenue Suite",
+   "C": "3800",
+   "D": "3040",
+   "E": "1300",
+   "F": "1740",
+   "G": "760",
+   "H": "76",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "A": "RP-035",
+   "B": "Executive & Personal Brand",
+   "C": "900",
+   "D": "720",
+   "E": "280",
+   "F": "440",
+   "G": "180",
+   "H": "18",
+   "I": "0.2",
+   "J": "PASS"
+  },
+  {
+   "B": "PORTFOLIO (one of each)",
+   "C": "43560",
+   "G": "8712"
+  }
+ ],
+ "04_Bundles_Journeys": [
+  {
+   "A": "Bundles & Client Journeys"
+  },
+  {
+   "A": "Products are the start of a relationship, not the end of a transaction. Bundles raise value and basket size; journeys map the natural next step."
+  },
+  {
+   "A": "Bundle",
+   "B": "For",
+   "C": "Products included",
+   "D": "List USD",
+   "E": "Bundle USD",
+   "F": "Saves",
+   "G": "Why it works"
+  },
+  {
+   "A": "Business Starter",
+   "B": "New SMEs",
+   "C": "RP-032 Startup-in-a-Box (Pro) + RP-025 Bookkeeping (1 mo)",
+   "D": "1600",
+   "E": "1450",
+   "F": "150",
+   "G": "Open credibly and keep the books clean from month one"
+  },
+  {
+   "A": "Restaurant Opening",
+   "B": "Single venues",
+   "C": "RP-010 Launch Kit + RP-009 Social (1 mo) + RP-020 Video",
+   "D": "1880",
+   "E": "1650",
+   "F": "230",
+   "G": "A guest-ready brand, a managed presence, and video that fills tables"
+  },
+  {
+   "A": "Restaurant Group",
+   "B": "Big / multi-branch",
+   "C": "RP-033 Suite + RP-024 AI ordering bot + RP-030 Paid ads (1 mo)",
+   "D": "4750",
+   "E": "4300",
+   "F": "450",
+   "G": "One brand across branches, an ordering bot, and ads that drive covers"
+  },
+  {
+   "A": "Hotel Online",
+   "B": "Hotels",
+   "C": "RP-011 Digital Presence + RP-009 Social (1 mo) + RP-020 Video",
+   "D": "2700",
+   "E": "2400",
+   "F": "300",
+   "G": "A direct booking channel and the content to keep it full"
+  },
+  {
+   "A": "Hotel Revenue",
+   "B": "Larger hotels",
+   "C": "RP-034 Revenue Suite + RP-030 Paid ads (1 mo) + RP-028 Service desk (1 mo)",
+   "D": "4950",
+   "E": "4500",
+   "F": "450",
+   "G": "Direct bookings, paid demand, and guests answered around the clock"
+  },
+  {
+   "A": "Founder's Raise",
+   "B": "Startups",
+   "C": "RP-006 Market Study + RP-015 Pitch Pack + RP-008 MVP",
+   "D": "3300",
+   "E": "2950",
+   "F": "350",
+   "G": "From evidence, to story, to a working product an investor can see"
+  },
+  {
+   "A": "App Launch",
+   "B": "Funded ventures",
+   "C": "RP-021 Mobile App + RP-029 SEO + RP-030 Paid ads (1 mo)",
+   "D": "4850",
+   "E": "4400",
+   "F": "450",
+   "G": "A store-ready app and the demand engine to get it installed"
+  },
+  {
+   "A": "Donor-Ready NGO",
+   "B": "NGOs/INGOs",
+   "C": "RP-012 Report Pack + RP-013 Data+Dashboard + RP-005 Translation",
+   "D": "2600",
+   "E": "2300",
+   "F": "300",
+   "G": "Win and report on funding: data, document, and bilingual delivery"
+  },
+  {
+   "A": "Executive Launch",
+   "B": "Businessmen",
+   "C": "RP-035 Personal Brand + RP-015 Pitch Pack + RP-026 Financial Model",
+   "D": "2450",
+   "E": "2200",
+   "F": "250",
+   "G": "A credible leader, an investable story, and the numbers to back it"
+  },
+  {
+   "A": "Always-On Growth",
+   "B": "Any SME",
+   "C": "RP-004 Content + RP-009 Social + RP-030 Paid ads (per month)",
+   "D": "1450",
+   "E": "1300",
+   "F": "150",
+   "G": "A complete outsourced growth team on a monthly footing"
+  }
+ ],
+ "05_AddOns_Rush": [
+  {
+   "A": "Add-ons & Rush"
+  },
+  {
+   "A": "Controlled ways to extend scope without breaking the fixed-price promise — the discipline that protects margin and prevents scope creep."
+  },
+  {
+   "A": "Add-on",
+   "B": "Applies to",
+   "C": "What it adds",
+   "D": "Price",
+   "E": "Notes"
+  },
+  {
+   "A": "Extra revision",
+   "B": "All products",
+   "C": "One revision beyond what the product includes",
+   "D": "20% of GMV",
+   "E": "First revision always free; Website includes two"
+  },
+  {
+   "A": "Rush delivery",
+   "B": "Most products",
+   "C": "Compresses the timeline by adding pod capacity",
+   "D": "+10% of GMV",
+   "E": "Accelerates the pod — never skips a gate or QA"
+  },
+  {
+   "A": "Additional language",
+   "B": "Translation, content, docs",
+   "C": "A third language beyond AR/EN (e.g. French for donors)",
+   "D": "From $80",
+   "E": "Subject to verified talent availability"
+  },
+  {
+   "A": "Extra social posts",
+   "B": "RP-009, RP-004",
+   "C": "Block of 8 additional posts (design+copy)",
+   "D": "$120",
+   "E": "Keeps the retainer scope clean"
+  },
+  {
+   "A": "Extra web/app screens",
+   "B": "RP-002, RP-008, RP-021",
+   "C": "Each additional page/screen beyond the set",
+   "D": "$90–150",
+   "E": "Quoted before work begins"
+  },
+  {
+   "A": "Photography day",
+   "B": "Hospitality, e-commerce",
+   "C": "On-site shoot day (verified photographer)",
+   "D": "From $150",
+   "E": "Aden only; travel quoted separately"
+  },
+  {
+   "A": "Ad spend management",
+   "B": "RP-030",
+   "C": "Managing budgets above $1,000/mo",
+   "D": "+5% of spend",
+   "E": "Ad spend always billed to the client directly"
+  },
+  {
+   "A": "Print management",
+   "B": "Brand, docs, reports",
+   "C": "Manage print production with a local press",
+   "D": "Cost + 15%",
+   "E": "Kayan coordinates; client may pay the press directly"
+  },
+  {
+   "A": "Priority support",
+   "B": "Retainers",
+   "C": "Same-day reply window + monthly strategy call",
+   "D": "$60/mo",
+   "E": "For retainer clients"
+  }
+ ],
+ "06_Ideas_Bank": [
+  {
+   "A": "Ideas Bank"
+  },
+  {
+   "A": "Where the team proposes the next products. Anyone can add a row. The best graduate into the catalogue each quarter. Be specific — name the client, the pain, the deliverable."
+  },
+  {
+   "A": "#",
+   "B": "Proposed product",
+   "C": "Proposed by",
+   "D": "Date",
+   "E": "Target segment",
+   "F": "Pain it solves",
+   "G": "What the client would get",
+   "H": "Price USD",
+   "I": "Pod / skills",
+   "J": "Status",
+   "K": "CEO/Sales note"
+  },
+  {
+   "A": "1",
+   "B": "WhatsApp Catalogue Setup",
+   "C": "[seed]",
+   "D": "2026-06",
+   "E": "SMEs, producers",
+   "F": "No structured catalogue; orders chaotic",
+   "G": "WhatsApp Business catalogue + 20 products + auto-replies + ordering flow",
+   "H": "200",
+   "I": "Marketer T2 + designer",
+   "J": "Proposed",
+   "K": "Strong low-price entry; pairs with AI bot"
+  },
+  {
+   "A": "2",
+   "B": "Google Business Profile Setup",
+   "C": "[seed]",
+   "D": "2026-06",
+   "E": "Restaurants, hotels, clinics",
+   "F": "Invisible on Maps; no reviews strategy",
+   "G": "Profile claimed + photos + hours + posts + review playbook",
+   "H": "150",
+   "I": "Marketer T2",
+   "J": "Proposed",
+   "K": "High value-for-money; bundle with hospitality"
+  },
+  {
+   "A": "3",
+   "B": "CV & LinkedIn Pack (individuals)",
+   "C": "[seed]",
+   "D": "2026-06",
+   "E": "Individuals, diaspora",
+   "F": "No English-grade CV/profile that travels",
+   "G": "ATS CV (AR/EN) + LinkedIn rewrite + cover-letter template",
+   "H": "90",
+   "I": "Writer T2 + reviewer",
+   "J": "Proposed",
+   "K": "Opens the individual segment; feeds the Card"
+  },
+  {
+   "A": "4",
+   "B": "Podcast / Audio Series Setup",
+   "C": "[seed]",
+   "D": "2026-06",
+   "E": "NGOs, founders, media",
+   "F": "No way to produce credible audio",
+   "G": "Intro/outro + 4 episode edits + cover art + distribution",
+   "H": "350",
+   "I": "Audio editor T2 + designer",
+   "J": "Idea",
+   "K": "Check verified audio talent on the registry"
+  },
+  {
+   "A": "5",
+   "B": "Annual Social Photography Retainer",
+   "C": "[seed]",
+   "D": "2026-06",
+   "E": "Hotels, restaurants",
+   "F": "Content goes stale; no fresh photography",
+   "G": "Quarterly on-site shoot + 40 edited images/quarter",
+   "H": "300 / qtr",
+   "I": "Photographer T2",
+   "J": "Idea",
+   "K": "Recurring revenue; hospitality upsell"
+  },
+  {
+   "A": "6"
+  },
+  {
+   "A": "7"
+  },
+  {
+   "A": "8"
+  },
+  {
+   "A": "9"
+  },
+  {
+   "A": "10"
+  },
+  {
+   "A": "11"
+  },
+  {
+   "A": "12"
+  },
+  {
+   "A": "13"
+  },
+  {
+   "A": "14"
+  },
+  {
+   "A": "15"
+  },
+  {
+   "A": "16"
+  },
+  {
+   "A": "17"
+  },
+  {
+   "A": "18"
+  },
+  {
+   "A": "19"
+  },
+  {
+   "A": "20"
+  },
+  {
+   "A": "21"
+  },
+  {
+   "A": "22"
+  },
+  {
+   "A": "23"
+  },
+  {
+   "A": "24"
+  },
+  {
+   "A": "25"
+  },
+  {
+   "A": "26"
+  },
+  {
+   "A": "27"
+  }
+ ],
+ "07_Comparables": [
+  {
+   "A": "What We Learned — Regional & Global"
+  },
+  {
+   "A": "Productized-service models that inform Kayan's design. The pattern: fixed scope + price + turnaround, tiers, retainers, and add-ons to stop scope creep."
+  },
+  {
+   "A": "Model / source",
+   "B": "What they do",
+   "C": "The lesson for Kayan"
+  },
+  {
+   "A": "Designjoy (solo productized design)",
+   "B": "Monthly subscription (~$5k/mo), no calls, simple queue — ~$1.7M/yr",
+   "C": "A tightly productized offer with zero scope ambiguity scales without headcount; Kayan's pods do this with a team"
+  },
+  {
+   "A": "Productized-agency playbook",
+   "B": "Fixed price, fixed scope, set turnaround; 'avoid vague offerings'; intake portals; recurring retainers",
+   "C": "Name the deliverable, the days, the price precisely; sell retainers for stable revenue; intake form, not email threads"
+  },
+  {
+   "A": "Good/Better/Best tiering",
+   "B": "Three tiers let buyers self-select by budget; add-ons sold separately",
+   "C": "Kayan now offers Lite/Standard/Pro on top sellers (see 09_Tiers) without bespoke scoping"
+  },
+  {
+   "A": "Andela (verified talent + trust)",
+   "B": "Verified talent to global clients via a quality framework",
+   "C": "Validates RP-008/021/022 managed delivery to international clients; the gates are the quality framework"
+  },
+  {
+   "A": "MEAL Center (Yemen competitor)",
+   "B": "Registered Yemeni firm offering MEAL, third-party monitoring, dashboards",
+   "C": "A real, paid local market for RP-013/014; Kayan competes on verified talent + escrow trust"
+  },
+  {
+   "A": "NGO 3-quote procurement rule",
+   "B": "Purchases above a threshold need 3 written quotes; lowest credible bid wins",
+   "C": "Fixed-price products are quote-ready out of the box — a structural advantage in INGO buying"
+  },
+  {
+   "A": "Booming demand (2026)",
+   "B": "Mobile apps, e-commerce, short-form video, AI chatbots/automation, dashboards",
+   "C": "Drove the new products: RP-021 mobile, RP-024 AI automation, RP-017 e-commerce, RP-020 video, RP-013 dashboards"
+  },
+  {
+   "A": "Regional freelance rates",
+   "B": "Egypt entry $8–12/hr, experienced $18–25/hr; far below Western agencies",
+   "C": "Confirms cost-to-build leaves real margin while underpricing overseas agencies for clients"
+  }
+ ],
+ "08_Launch_Roadmap": [
+  {
+   "A": "Launch Roadmap"
+  },
+  {
+   "A": "Which products ship when — sequenced by demand, pod readiness, and the verified bench. Tier 1 launches with the doors on 30 June 2026."
+  },
+  {
+   "A": "Wave",
+   "B": "When",
+   "C": "Products",
+   "D": "Why now",
+   "E": "Depends on"
+  },
+  {
+   "A": "Tier 1",
+   "B": "Launch 30 Jun",
+   "C": "RP-001 Brand · RP-002 Website · RP-005 Translation · RP-007 Docs · RP-009 Social · RP-032 Startup-in-a-Box",
+   "D": "Broadest demand; pods staffable day one; new-company founders are the clearest first buyers",
+   "E": "Founding bench: designers, writers, devs, translators"
+  },
+  {
+   "A": "Tier 2",
+   "B": "Months 2–4",
+   "C": "RP-003 Marketing · RP-004 Content · RP-010 Restaurant Kit · RP-011 Hotel Presence · RP-020 Video · RP-029 SEO · RP-031 Voice-over",
+   "D": "Hospitality is Aden's clearest paying segment; video + voice are highest-engagement",
+   "E": "Photographer/editor/voice on the registry; first delivery records"
+  },
+  {
+   "A": "Tier 3",
+   "B": "Months 4–8",
+   "C": "RP-006 Study · RP-012 NGO Report · RP-013 Data+Dashboard · RP-015 Pitch · RP-017 E-commerce · RP-024 AI bot · RP-025 Bookkeeping · RP-035 Exec brand",
+   "D": "UN/INGO relocation demand; founders raising; finance/admin retainers add recurring revenue",
+   "E": "T3/T4 researchers, M&E, bookkeepers; first NGO references"
+  },
+  {
+   "A": "Tier 4",
+   "B": "Months 8–12",
+   "C": "RP-008 MVP · RP-014 Evaluation · RP-016 Rebrand · RP-018 Annual Report · RP-019 Training · RP-021 Mobile App · RP-022 Platform · RP-023 IT Care · RP-026 Model · RP-027 VA · RP-028 Service · RP-030 Ads · RP-033 Restaurant Suite · RP-034 Hotel Suite",
+   "D": "Higher-value, higher-complexity; enterprise suites sold on a proven record",
+   "E": "Senior pods; QA depth; track record from Tiers 1–3"
+  }
+ ],
+ "09_Tiers_GoodBetterBest": [
+  {
+   "A": "Tiers — Good / Better / Best"
+  },
+  {
+   "A": "Tiered versions of top sellers let a client self-select by budget without bespoke scoping. The Startup-in-a-Box tiers are the flagship for new companies."
+  },
+  {
+   "A": "Product",
+   "B": "Tier",
+   "C": "Price USD",
+   "D": "What's included",
+   "E": "Best for"
+  },
+  {
+   "A": "Website",
+   "B": "Lite",
+   "C": "700",
+   "D": "3-page template site, bilingual, contact form, mobile-ready",
+   "E": "A micro-business that just needs to exist online"
+  },
+  {
+   "B": "Standard",
+   "C": "1200",
+   "D": "5–7 custom pages, bilingual, basic SEO, SSL + hosting, CMS training",
+   "E": "A growing SME that needs credibility"
+  },
+  {
+   "B": "Pro",
+   "C": "2200",
+   "D": "10+ pages, advanced CMS, blog, integrations, performance tuning",
+   "E": "An established business or NGO"
+  },
+  {
+   "A": "Brand Identity",
+   "B": "Lite",
+   "C": "300",
+   "D": "Logo (2 concepts, 1 final) + business card",
+   "E": "A founder who needs a mark fast"
+  },
+  {
+   "B": "Standard",
+   "C": "500",
+   "D": "Full identity: logo system, guide, stationery",
+   "E": "A new venture that wants to look established"
+  },
+  {
+   "B": "Pro",
+   "C": "950",
+   "D": "Rebrand: audit, strategy, expanded system, rollout",
+   "E": "An established business that has outgrown its look"
+  },
+  {
+   "A": "Social Media",
+   "B": "Lite",
+   "C": "400",
+   "D": "8 posts/mo, 1 platform, monthly report",
+   "E": "A small shop testing social"
+  },
+  {
+   "B": "Standard",
+   "C": "550",
+   "D": "16 posts/mo, 2 platforms, ads-ready set, report",
+   "E": "A venue serious about presence"
+  },
+  {
+   "B": "Pro",
+   "C": "850",
+   "D": "24 posts/mo, 3 platforms, ads-ready, community mgmt",
+   "E": "A multi-branch or busy brand"
+  },
+  {
+   "A": "Startup-in-a-Box",
+   "B": "Essentials",
+   "C": "500",
+   "D": "Logo + card + 3-page site + social setup (2) + 1-mo content calendar",
+   "E": "Opening on a tight budget, fast"
+  },
+  {
+   "B": "Professional",
+   "C": "1200",
+   "D": "+ brand guidelines, 7-page CMS site, email, letterhead+invoice, pitch deck, 3-mo content",
+   "E": "A serious launch that needs the full kit"
+  },
+  {
+   "B": "Premium",
+   "C": "2500",
+   "D": "+ marketing strategy, competitor analysis, CRM, 6-mo social mgmt, monthly reporting",
+   "E": "A funded launch that wants momentum from day one"
+  },
+  {
+   "A": "Market Study",
+   "B": "Standard",
+   "C": "600",
+   "D": "Desk research, competitors, audience, recommendations",
+   "E": "A founder validating a decision"
+  },
+  {
+   "B": "Pro",
+   "C": "1200",
+   "D": "+ primary research (survey/interviews), deeper analysis",
+   "E": "An investor-facing or high-stakes decision"
+  }
+ ],
+ "10_Specializations": [
+  {
+   "A": "Specializations & Micro-Specializations"
+  },
+  {
+   "A": "The full skills map behind every product — 10 domains, 35 specialties, 144 verified skills. This is both the service menu and the verification spine (each skill has an assessment method and a required trust level)."
+  },
+  {
+   "A": "Domain",
+   "B": "Specialty",
+   "C": "Skill / Micro-specialization",
+   "D": "How it is verified (assessment)",
+   "E": "Min. trust level",
+   "F": "Maps to products"
+  },
+  {
+   "A": "D01 · Web Development",
+   "B": "Frontend Development",
+   "C": "HTML5 / CSS3 / Responsive Design",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-002, RP-008, RP-017, RP-021, RP-022, RP-023"
+  },
+  {
+   "C": "React / Next.js",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Vue.js / Nuxt.js",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Angular / TypeScript",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Tailwind CSS / Bootstrap",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "JavaScript / TypeScript",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Backend Development",
+   "C": "Node.js / Express / NestJS",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-002, RP-008, RP-017, RP-021, RP-022, RP-023"
+  },
+  {
+   "C": "Python / Django / Flask / FastAPI",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "PHP / Laravel",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Java / Spring Boot",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Database Design / SQL",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "API Design / REST / GraphQL",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Full-Stack Development",
+   "C": "MERN Stack (MongoDB/Express/React/Node)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-002, RP-008, RP-017, RP-021, RP-022, RP-023"
+  },
+  {
+   "C": "PERN Stack (PostgreSQL/Express/React/Node)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Next.js Full-Stack",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "WordPress Full-Stack",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "CMS & E-Commerce",
+   "C": "WordPress Development",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-002, RP-008, RP-017, RP-021, RP-022, RP-023"
+  },
+  {
+   "C": "Shopify / E-Commerce",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Webflow / No-Code",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Sanity / Strapi / Headless CMS",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Mobile & PWA",
+   "C": "React Native",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-002, RP-008, RP-017, RP-021, RP-022, RP-023"
+  },
+  {
+   "C": "Flutter / Dart",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Progressive Web Apps (PWA)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Mobile-Responsive Optimization",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "DevOps & Infrastructure",
+   "C": "Docker / Docker Compose",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-002, RP-008, RP-017, RP-021, RP-022, RP-023"
+  },
+  {
+   "C": "CI/CD / GitHub Actions",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Linux Server Administration",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Cloud Deployment (AWS/GCP/DO)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "A": "D02 · Design",
+   "B": "Brand Identity",
+   "C": "Logo Design",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-001, RP-016, RP-010"
+  },
+  {
+   "C": "Brand Guidelines / Style Guide",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Business Card & Stationery",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Brand Strategy & Naming",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "UI Design",
+   "C": "Web UI Design",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-001, RP-016, RP-010"
+  },
+  {
+   "C": "Mobile App UI Design",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Dashboard / Data UI",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Design System Creation",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "UX Design",
+   "C": "User Research & Personas",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-001, RP-016, RP-010"
+  },
+  {
+   "C": "Wireframing & Prototyping",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Usability Testing",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Information Architecture",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Print Design",
+   "C": "Brochure / Flyer / Poster",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-001, RP-016, RP-010"
+  },
+  {
+   "C": "Packaging Design",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Book / Magazine Layout",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Signage & Environmental",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Social Media Design",
+   "C": "Social Media Templates",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-001, RP-016, RP-010"
+  },
+  {
+   "C": "Story / Reel Design",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Ad Creative / Banner Design",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Content Graphics / Infographics",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Motion & Animation",
+   "C": "Motion Graphics (After Effects)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-001, RP-016, RP-010"
+  },
+  {
+   "C": "Lottie / Web Animations",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "2D Animation",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "3D Rendering (Blender)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "A": "D03 · Content & Writing",
+   "B": "Article & Blog Writing",
+   "C": "SEO Blog Posts (AR/EN)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-007, RP-012, RP-018, RP-004"
+  },
+  {
+   "C": "Thought Leadership / Opinion",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "News & Reporting",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Listicles & How-To Guides",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Technical Writing",
+   "C": "User Manuals / Documentation",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-007, RP-012, RP-018, RP-004"
+  },
+  {
+   "C": "SOP & Process Documentation",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Training Materials",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Proposal & Report Writing",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Copywriting",
+   "C": "Website Copy (AR/EN)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-007, RP-012, RP-018, RP-004"
+  },
+  {
+   "C": "Ad Copy / Campaign Writing",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Brand Voice & Messaging",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Email Marketing Copy",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Script & Narrative",
+   "C": "Video Scripts (Explainer/Promo)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-007, RP-012, RP-018, RP-004"
+  },
+  {
+   "C": "Podcast Scripts / Show Notes",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Presentation Scripts",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Social Media Captions",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "A": "D04 · Translation & Localization",
+   "B": "General Translation",
+   "C": "Arabic → English Translation",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-005"
+  },
+  {
+   "C": "English → Arabic Translation",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Proofreading & Editing (AR)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Proofreading & Editing (EN)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Specialized Translation",
+   "C": "Legal Translation (AR↔EN)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-005"
+  },
+  {
+   "C": "Medical Translation (AR↔EN)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Technical Translation (AR↔EN)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Financial Translation (AR↔EN)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Localization",
+   "C": "Website Localization (AR↔EN)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-005"
+  },
+  {
+   "C": "App Localization",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Marketing Localization",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Subtitling & Captioning",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "A": "D05 · Digital Marketing",
+   "B": "Social Media Management",
+   "C": "Content Calendar & Planning",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-003, RP-009, RP-029, RP-030, RP-024"
+  },
+  {
+   "C": "Community Management",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Social Listening & Analytics",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Platform Management (Multi)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Paid Advertising",
+   "C": "Google Ads (Search/Display)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-003, RP-009, RP-029, RP-030, RP-024"
+  },
+  {
+   "C": "Meta Ads (Facebook/Instagram)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "LinkedIn Advertising",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Campaign Analytics & Reporting",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "SEO",
+   "C": "On-Page SEO",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-003, RP-009, RP-029, RP-030, RP-024"
+  },
+  {
+   "C": "Technical SEO",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Content SEO Strategy",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Local SEO (Aden/Yemen)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Content Marketing",
+   "C": "Content Strategy Development",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-003, RP-009, RP-029, RP-030, RP-024"
+  },
+  {
+   "C": "Email Marketing",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Influencer Outreach",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Brand Storytelling",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "A": "D06 · Video & Audio",
+   "B": "Video Editing",
+   "C": "Corporate / Promo Video Editing",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-020, RP-031"
+  },
+  {
+   "C": "Social Media Video (Short-form)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Documentary / Long-form Editing",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Color Grading & Sound Design",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Photography & Videography",
+   "C": "Product Photography",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-020, RP-031"
+  },
+  {
+   "C": "Event Photography / Videography",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Drone Videography",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Photo Editing / Retouching",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Voice-Over & Audio",
+   "C": "Arabic Voice-Over (Male/Female)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-020, RP-031"
+  },
+  {
+   "C": "English Voice-Over",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Podcast Production",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Audio Transcription (AR/EN)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "A": "D07 · Research & Data",
+   "B": "Market Research",
+   "C": "Market Analysis & Sizing",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-006, RP-013, RP-014, RP-015"
+  },
+  {
+   "C": "Customer Research",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Competitive Intelligence",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Feasibility Studies",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Data Analysis",
+   "C": "Excel / Google Sheets Advanced",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-006, RP-013, RP-014, RP-015"
+  },
+  {
+   "C": "Python Data Analysis (Pandas)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Data Visualization (Tableau/Power BI)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Statistical Analysis",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Monitoring & Evaluation",
+   "C": "M&E Framework Design",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-006, RP-013, RP-014, RP-015"
+  },
+  {
+   "C": "Survey Design & Implementation",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Impact Assessment",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Donor Reporting",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "A": "D08 · Finance & Accounting",
+   "B": "Bookkeeping & Accounting",
+   "C": "Daily Bookkeeping",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-025, RP-026"
+  },
+  {
+   "C": "Financial Statement Preparation",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Tax Preparation (Yemen)",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Payroll Processing",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Financial Modeling",
+   "C": "Budget Development",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-025, RP-026"
+  },
+  {
+   "C": "Revenue Modeling",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Investor-Ready Financials",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Cash Flow Management",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "A": "D09 · Admin & Support",
+   "B": "Virtual Assistance",
+   "C": "Calendar & Email Management",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-027, RP-028"
+  },
+  {
+   "C": "Data Entry & Processing",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Document Preparation",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Travel & Event Coordination",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Customer Service",
+   "C": "Live Chat / Ticket Support",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-027, RP-028"
+  },
+  {
+   "C": "Phone / WhatsApp Support",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "CRM Data Management",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Process Documentation",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "A": "D10 · Training & Development",
+   "B": "Curriculum Design",
+   "C": "Course Development",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-019"
+  },
+  {
+   "C": "E-Learning Content",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Workshop Facilitation",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Assessment & Certification",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "B": "Corporate Training",
+   "C": "Digital Skills Training",
+   "D": "Portfolio + Practical Test",
+   "E": "T1",
+   "F": "RP-019"
+  },
+  {
+   "C": "Soft Skills Training",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Technical Training Delivery",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  },
+  {
+   "C": "Training Needs Assessment",
+   "D": "Portfolio + Practical Test",
+   "E": "T1"
+  }
+ ],
+ "11_Stakeholders_Targeting": [
+  {
+   "A": "Stakeholders, Targeting & Revenue Lines"
+  },
+  {
+   "A": "Who we approach, why they say yes, what we sell them, and when. The persuasive argument for each audience plus the revenue line it opens. Status is a dropdown; owner is named."
+  },
+  {
+   "A": "Stakeholder",
+   "B": "Their need / mandate",
+   "C": "What Kayan offers them",
+   "D": "The persuasive argument (why yes)",
+   "E": "Revenue line",
+   "F": "When to target",
+   "G": "Channel / entry point",
+   "H": "Owner",
+   "I": "Status"
+  },
+  {
+   "A": "UN agencies (UNDP, UNICEF, WFP, UN Women, IOM, FAO)",
+   "B": "Local execution capacity that is auditable, PSEA-compliant, and fast",
+   "C": "Surge pods for translation, data collection, MEAL, reports, dashboards — commissioned as outcomes, not headcount",
+   "D": "You get guaranteed outcomes with escrow protection and verification, at no operating cost to carry — you commission a result, we hold the risk; PSEA + AML controls already in place; quote-ready for your 3-quote rule",
+   "E": "INGO retainer (18%) + data/MEAL products",
+   "F": "Post-launch M1–M6",
+   "G": "Vendor registration + LinkedIn + warm intro",
+   "H": "Gov Rel / CEO",
+   "I": "Idea"
+  },
+  {
+   "A": "INGOs (NRC, DRC, Oxfam, Save, MercyCorps, CARE)",
+   "B": "Reliable local delivery without managing freelancers at scale",
+   "C": "Managed delivery pods + translation + reports + data; a single accountable counterpart",
+   "D": "One contract, one guarantee, verified talent, escrow — you stop chasing individual freelancers and carry no payroll; we deliver to your donor template",
+   "E": "INGO retainer (18%) + per-project fee (20%)",
+   "F": "Post-launch M1–M6",
+   "G": "Direct BD + service catalogue + referrals",
+   "H": "Gov Rel / CEO",
+   "I": "Idea"
+  },
+  {
+   "A": "Bilateral & multilateral donors (EU, KfW, WB/IDA, SDRPY/KSrelief)",
+   "B": "Convert programme funding into measurable, absorbed local outcomes",
+   "C": "The absorption layer: trained youth converted into income-earning, credentialled practitioners with published outcomes",
+   "D": "Kayan is the auditable mechanism that turns your money into engaged talent and verified results — value-for-money, youth & women economic empowerment, SDG-aligned, fiduciary-safe (escrow, verification, QA)",
+   "E": "Sponsor-a-cohort ($3–8k) + funded training + data",
+   "F": "M3–M12 (post first references)",
+   "G": "Concept notes + partnership meetings",
+   "H": "CEO / Gov Rel",
+   "I": "Idea"
+  },
+  {
+   "A": "MOPIC & line ministries",
+   "B": "Rebuild donor credibility; youth jobs; private-sector growth",
+   "C": "An auditable national delivery + absorption mechanism that needs no fiscal outlay",
+   "D": "Youth & women economic empowerment and private-sector job creation with zero fiscal burden and a fully auditable trail — the implementation safeguard donors ask for; aligns with the Minister's aid-absorption agenda",
+   "E": "Endorsement (unlocks INGO/donor) + gov training",
+   "F": "M2–M9",
+   "G": "Formal letter + in-person (Ali)",
+   "H": "Gov Rel (Ali)",
+   "I": "Idea"
+  },
+  {
+   "A": "Local authorities (Aden governorate, municipality)",
+   "B": "Visible youth employment and community impact",
+   "C": "Community programmes, events, local hiring, training cohorts",
+   "D": "Real, local, dignified jobs and visible impact in Aden — no cost to the authority; a private institution carrying the delivery",
+   "E": "Endorsement + event sponsorship",
+   "F": "Pre-launch + ongoing",
+   "G": "In-person + grand opening invite",
+   "H": "Gov Rel (Ali)",
+   "I": "Idea"
+  },
+  {
+   "A": "Aden Chamber of Commerce",
+   "B": "Member services; SME growth; jobs data",
+   "C": "Verified talent directory; SME products; joint events",
+   "D": "A professional-services backbone for Aden's SMEs and a youth-employment story for your reports — built, not promised",
+   "E": "Membership + SME product sales",
+   "F": "Pre-launch",
+   "G": "Visit (Maher + Ali)",
+   "H": "Gov Rel / CEO",
+   "I": "Idea"
+  },
+  {
+   "A": "University of Aden",
+   "B": "Student work experience; employability",
+   "C": "Internships, hackathons, student membership, talent pipeline",
+   "D": "A real pathway from classroom to paid, verified work for your graduates — and a campus partner that hires",
+   "E": "Talent pipeline + student memberships",
+   "F": "Pre-launch",
+   "G": "Deans of CS + Business",
+   "H": "Gov Rel",
+   "I": "Idea"
+  },
+  {
+   "A": "SMEs & businesses (Aden)",
+   "B": "Credibility, customers, capacity",
+   "C": "Brand, website, e-commerce, social, bookkeeping, AI bot",
+   "D": "Look established and win customers for the price of part-time help — fixed scope, fixed price, escrow-protected; no risk",
+   "E": "Productized fees (20%)",
+   "F": "Launch onward",
+   "G": "Walk-in + WhatsApp + social",
+   "H": "Sales / Hub",
+   "I": "Idea"
+  },
+  {
+   "A": "Big restaurants & hotels",
+   "B": "Brand consistency, direct bookings, delivery presence",
+   "C": "Enterprise Restaurant Suite; Hotel Revenue Suite; social",
+   "D": "One coherent brand and a direct revenue channel across every branch/platform — done once, done right",
+   "E": "Enterprise suites ($3.5–3.8k) + retainers",
+   "F": "M2 onward",
+   "G": "Direct BD + portfolio",
+   "H": "Sales",
+   "I": "Idea"
+  },
+  {
+   "A": "Startups & founders",
+   "B": "Validate, build, raise",
+   "C": "Market study, pitch pack, MVP, mobile app, model",
+   "D": "From evidence to an investable story to a working product — everything a raise needs, locally and affordably",
+   "E": "Productized + MVP/app fees",
+   "F": "Launch onward",
+   "G": "Ecosystem + events + LinkedIn",
+   "H": "Sales / CEO",
+   "I": "Idea"
+  },
+  {
+   "A": "Businessmen & executives",
+   "B": "Credible personal presence; investment readiness",
+   "C": "Executive & personal brand; pitch pack; financial model",
+   "D": "Be found and taken seriously by partners, press, and investors — a leader who looks the part",
+   "E": "Productized fees (20%)",
+   "F": "Launch onward",
+   "G": "Referral + LinkedIn",
+   "H": "Sales / CEO",
+   "I": "Idea"
+  },
+  {
+   "A": "Diaspora & Gulf businesses",
+   "B": "Trusted local execution; CSR impact",
+   "C": "Managed delivery; sponsor-a-desk/cohort; impact reports",
+   "D": "Execute in Yemen through an institution you can audit, and show measurable social impact for your CSR",
+   "E": "Managed delivery + sponsorship",
+   "F": "M3 onward",
+   "G": "Cairo presence + LinkedIn",
+   "H": "CEO",
+   "I": "Idea"
+  },
+  {
+   "A": "Banks & corporates (CSR)",
+   "B": "Visible, reportable social impact",
+   "C": "Sponsor-a-cohort/desk; co-branded training; impact reports",
+   "D": "Fund dignified youth employment with quarterly, photo-backed impact reporting — CSR that is real and auditable",
+   "E": "Sponsorship ($0.4–8k)",
+   "F": "M2 onward",
+   "G": "BD + proposals",
+   "H": "CEO / Gov Rel",
+   "I": "Idea"
+  }
+ ],
+ "12_Launch_Roles_KPIs": [
+  {
+   "A": "Launch Roles, Responsibilities, KPIs & Tasks"
+  },
+  {
+   "A": "Who does what to stand Kayan up and run the products — for the launch on 30 June 2026 and the run-up before it. Each role: responsibilities, KPIs, the value it creates, cost band, timeframe, and the forms/tools it uses. Status is a dropdown."
+  },
+  {
+   "A": "Role",
+   "B": "Owner / holder",
+   "C": "What they own (responsibilities)",
+   "D": "KPIs",
+   "E": "Value they create",
+   "F": "Cost band (USD/mo)",
+   "G": "Timeframe",
+   "H": "Forms / tools they use",
+   "I": "Launch-critical?",
+   "J": "Status"
+  },
+  {
+   "A": "CEO / Founder",
+   "B": "Maher Faisal Saeed Farea",
+   "C": "Strategy, governance, final QA gate, investor & donor relations, dual-approval signatory",
+   "D": "Revenue vs plan; partnerships won; gate-9 approvals on time",
+   "E": "Direction, trust, and the institutional guarantee",
+   "F": "Founder",
+   "G": "Now → ongoing",
+   "H": "Decision Log; DoA; QA scorecard",
+   "I": "Yes",
+   "J": "Active"
+  },
+  {
+   "A": "Finance & Admin Lead",
+   "B": "Tariq Ahmed Al-Mukhdari",
+   "C": "Escrow & books, 2nd signatory, compliance officer, payroll, FX at Aden rate, tax calendar",
+   "D": "Escrow reconciled 100%; books current; 0 compliance misses",
+   "E": "Money is safe, traceable, and auditable",
+   "F": "Co-founder (10%)",
+   "G": "Now → ongoing",
+   "H": "Finance SOP; escrow ledger; compliance calendar",
+   "I": "Yes",
+   "J": "Active"
+  },
+  {
+   "A": "Government Relations Lead",
+   "B": "Ali Qaed Ahmed",
+   "C": "Registration, ministry/authority relations, partnership outreach, endorsements",
+   "D": "Registration certificate; meetings held; endorsements secured",
+   "E": "Legitimacy and the door into UN/INGO/donor/gov",
+   "F": "Co-founder (2.5%)",
+   "G": "Now → ongoing",
+   "H": "Stakeholder tracker; outreach letters",
+   "I": "Yes",
+   "J": "Active"
+  },
+  {
+   "A": "Delivery / Pod Lead",
+   "B": "To hire (T3+)",
+   "C": "Scope projects, assemble pods, run gates G0–G9, manage milestones",
+   "D": "On-time delivery rate; QA pass rate; rework <5%",
+   "E": "Outcomes the client accepts and pays for",
+   "F": "800–1,200",
+   "G": "Hire by M1",
+   "H": "SOW; gate checklist; delivery note",
+   "I": "Yes",
+   "J": "To hire"
+  },
+  {
+   "A": "QA Reviewer (independent)",
+   "B": "To hire (T3+) / CEO",
+   "C": "Independent quality review before any deliverable is released (Layer 3)",
+   "D": "QA scores ≥4.0; defects caught pre-delivery",
+   "E": "The guarantee behind every product",
+   "F": "Per-project / part-time",
+   "G": "By launch",
+   "H": "5-dimension QA scorecard",
+   "I": "Yes",
+   "J": "To hire"
+  },
+  {
+   "A": "Marketing & Sales Lead",
+   "B": "To hire",
+   "C": "Catalogue selling, pipeline, pricing discipline, CRM, discount authority 0–5%",
+   "D": "Qualified leads; conversion; basket size; revenue",
+   "E": "Demand and signed, funded orders",
+   "F": "500–800",
+   "G": "Hire by M1",
+   "H": "Catalogue; CRM; intake form; discount matrix",
+   "I": "Yes",
+   "J": "To hire"
+  },
+  {
+   "A": "Content & Social Creator",
+   "B": "To hire / volunteer→paid",
+   "C": "Social posts, website content, product sell-copy, reels, community replies",
+   "D": "Followers; engagement >5%; content cadence; cost/registration <$2",
+   "E": "The voice that fills the pipeline",
+   "F": "300–500",
+   "G": "Hire by M1",
+   "H": "Content calendar; brand guide; post templates",
+   "I": "Yes",
+   "J": "To hire"
+  },
+  {
+   "A": "Tech / Web Lead",
+   "B": "To hire (T3+)",
+   "C": "Website, platform, hosting/devops, AI bot setups, product tech delivery",
+   "D": "Uptime; build on-time; tech QA pass",
+   "E": "The product Kayan ships and runs",
+   "F": "700–1,000",
+   "G": "Hire by M2",
+   "H": "Repo; deployment checklist; IT-care SOP",
+   "I": "Partly",
+   "J": "To hire"
+  },
+  {
+   "A": "Hub Coordinator / Reception",
+   "B": "To hire",
+   "C": "Front desk, bookings, member onboarding, café liaison, walk-in conversion",
+   "D": "Occupancy; bookings; walk-in→lead; member NPS",
+   "E": "The front door and the daily experience",
+   "F": "250–400",
+   "G": "Hire by launch",
+   "H": "Booking sheet; member form; visitor log",
+   "I": "Yes",
+   "J": "To hire"
+  },
+  {
+   "A": "Talent Verification Officer",
+   "B": "Pod Lead / part-time",
+   "C": "Run skill assessments, T0→T4 verification, registry & Card issuance",
+   "D": "Talent verified; pool depth per specialty; time-to-verify",
+   "E": "The verified bench every product depends on",
+   "F": "Part-time",
+   "G": "By launch",
+   "H": "Taxonomy; assessment rubric; registry",
+   "I": "Yes",
+   "J": "To hire"
+  },
+  {
+   "A": "Intern — Marketing/Content",
+   "B": "2–3 interns",
+   "C": "Assist content, scheduling, community, events, listening",
+   "D": "Posts assisted; events supported; hours logged",
+   "E": "Capacity + a paid-role pipeline",
+   "F": "Stipend / volunteer",
+   "G": "Pre-launch",
+   "H": "Volunteer agreement; content calendar",
+   "I": "No",
+   "J": "To recruit"
+  },
+  {
+   "A": "Intern — Delivery/Data",
+   "B": "2–3 interns",
+   "C": "Support pods, data entry/cleaning, QA assistance, documentation",
+   "D": "Tasks delivered; accuracy; hours logged",
+   "E": "Surge capacity + T1 pipeline",
+   "F": "Stipend / volunteer",
+   "G": "Pre-launch",
+   "H": "SOW; data tools; QA checklist",
+   "I": "No",
+   "J": "To recruit"
+  },
+  {
+   "A": "Intern — Admin/Front desk",
+   "B": "1–2 interns",
+   "C": "Reception support, filing, bookings, café support",
+   "D": "Shifts covered; visitor log accuracy",
+   "E": "Coverage + a paid-role pipeline",
+   "F": "Stipend / volunteer",
+   "G": "Pre-launch",
+   "H": "Visitor log; booking sheet",
+   "I": "No",
+   "J": "To recruit"
+  },
+  {
+   "A": "Executive Assistant Intern",
+   "B": "To recruit (now)",
+   "C": "Platform & account registration (per the Registration Playbook), CEO diary & inbox support, document filing, follow-ups, keeping the live registers current",
+   "D": "Platforms registered on time; register kept current; 0 missed renewals; follow-ups closed",
+   "E": "Gets Kayan registered, present, and findable everywhere — and frees the CEO",
+   "F": "Stipend / volunteer",
+   "G": "Recruit now (pre-launch)",
+   "H": "Registration Playbook (KAY-OPS-REG-001); password manager; live registers",
+   "I": "Yes",
+   "J": "To recruit"
+  }
+ ]
+}

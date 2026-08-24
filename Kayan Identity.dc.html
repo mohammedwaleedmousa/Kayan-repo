@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>كيان · الهوية النهائية — The Final Identity</title>
+<meta name="design_doc_mode" content="page">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#FAF6EC;}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+a{color:#0E6E66;text-decoration:none;border-bottom:1px solid rgba(14,110,102,.35);}
+a[href^="#"]{border-bottom:none;}
+a:hover{color:#12B5A4;border-bottom-color:#12B5A4;}
+::selection{background:#12B5A4;color:#052E2B;}
+@keyframes kDrift{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(-2%,1.4%,0)}100%{transform:translate3d(0,0,0)}}
+@keyframes kPulse{0%,100%{opacity:.35;transform:scale(.9)}50%{opacity:1;transform:scale(1)}}
+@keyframes kDraw{from{stroke-dashoffset:260}to{stroke-dashoffset:0}}
+@keyframes kBar{0%,100%{transform:scaleY(.25)}50%{transform:scaleY(1)}}
+@keyframes kRing{0%{transform:scale(.6);opacity:.7}100%{transform:scale(2.6);opacity:0}}
+</style>
+</helmet>
+<div dir="rtl" style="font-family:'IBM Plex Sans Arabic','Instrument Sans',sans-serif;color:#143C37;background:#FAF6EC;min-height:100vh;">
+
+<!-- ===================== COVER ===================== -->
+<section data-screen-label="الغلاف · Cover" style="position:relative;min-height:98vh;background:#052E2B;overflow:hidden;display:flex;flex-direction:column;">
+  <div style="position:absolute;inset:0;background:radial-gradient(1100px 640px at 82% -12%,rgba(18,181,164,.32),transparent 62%),radial-gradient(880px 560px at 6% 108%,rgba(201,162,39,.18),transparent 62%);animation:kDrift 34s ease-in-out infinite;"></div>
+  <div style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:30px clamp(20px,4vw,48px);border-bottom:1px solid rgba(250,246,236,.14);">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <svg viewBox="0 0 120 120" width="40" height="40" fill="none" aria-hidden="true" style="transform:scaleX(-1);"><g stroke="#C9A227" stroke-linecap="round" stroke-linejoin="round"><path d="M40 20V108" stroke-width="13"></path><path d="M40 68L76 34" stroke-width="13"></path><path d="M76 34L102 44" stroke-width="6.5"></path><path d="M40 68L84 108" stroke-width="13"></path></g><circle cx="72" cy="40" r="3.4" fill="#052E2B"></circle></svg>
+      <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:20px;color:#FAF6EC;">كيان</span>
+    </div>
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:rgba(250,246,236,.55);">KYN-ID-FINAL · v1.0 · AUG 2026</div>
+  </div>
+  <div style="position:relative;flex:1;display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(20px,3vw,34px);align-items:center;padding:clamp(40px,7vh,84px) clamp(20px,4vw,48px);">
+    <div style="grid-column:span 7;min-width:0;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:#12B5A4;">THE FINAL IDENTITY · الهوية النهائية</div>
+      
+      
+      <p style="margin:30px 0 0;max-width:52ch;font-size:clamp(15px,1.5vw,17.5px);line-height:1.9;color:rgba(250,246,236,.72);">يُقرّ هذا المستند العلامة النهائية، وهيكلها الهندسي، وطيور الخطوط وألوانها المشتقة من الريش، والنغمة المُقفلة، وحالات الرفض. ما يخالفه لا يُنشر.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:34px;">
+        <a href="#mark" style="background:#12B5A4;color:#052E2B;font-size:14px;font-weight:500;padding:12px 20px;border-radius:2px;">العلامة</a>
+        <a href="#aviary" style="border:1px solid rgba(250,246,236,.28);color:#FAF6EC;font-size:14px;font-weight:500;padding:12px 20px;border-radius:2px;">الطيور</a>
+        <a href="#sonic" style="border:1px solid rgba(250,246,236,.28);color:#FAF6EC;font-size:14px;font-weight:500;padding:12px 20px;border-radius:2px;">النغمة — تُسمع</a>
+        <a href="#film" style="border:1px solid rgba(250,246,236,.28);color:#FAF6EC;font-size:14px;font-weight:500;padding:12px 20px;border-radius:2px;">الفيلم</a>
+      </div>
+    </div>
+    <div style="grid-column:span 5;min-width:0;display:flex;justify-content:center;">
+      <div style="position:relative;width:min(100%,380px);aspect-ratio:1;display:flex;align-items:center;justify-content:center;">
+        <div style="position:absolute;inset:0;border-radius:50%;border:1px solid rgba(18,181,164,.22);"></div>
+        <div style="position:absolute;inset:14%;border-radius:50%;border:1px solid rgba(201,162,39,.2);"></div>
+        
+      </div>
+    </div>
+  </div>
+  <div style="position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;padding:24px clamp(20px,4vw,48px) 30px;border-top:1px solid rgba(250,246,236,.14);">
+    <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(15px,1.7vw,21px);color:#C9A227;">«خلف كل نجاح، كيان»</div>
+    <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-style:italic;font-size:14.5px;color:rgba(250,246,236,.55);">Behind every success, a Kayan.</div>
+  </div>
+</section>
+
+<!-- ===================== CORRECTIONS ===================== -->
+<section data-screen-label="٠٠ ما صُحِّح · Corrections" style="background:#FAF6EC;padding:clamp(56px,9vh,92px) clamp(20px,4vw,48px);">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#0E6E66;font-weight:500;"><bdi style="letter-spacing:normal">٠٠ ما صُحِّح</bdi> · CORRECTIONS LOG</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(27px,3.6vw,46px);line-height:1.28;color:#052E2B;max-width:22ch;">تُصحَّح المعلومة قبل أن تُطبع</h2>
+    <p style="margin:14px 0 0;max-width:60ch;font-size:16.5px;line-height:1.95;color:#4A6B64;">راجعت الفصل الثاني على المصادر العلمية. وُجد خطأ واحد جوهري، وبند يُعلَّق حتى التوثيق. يُثبت التصحيح في المستند نفسه، ولا يُحذف الخطأ بصمت.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:#EDE5D2;border:1px solid #EDE5D2;border-radius:20px;overflow:hidden;margin-top:34px;">
+      <div style="background:#fff;padding:26px 24px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#B23A31;">CORRECTED — 01</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:18.5px;color:#052E2B;margin-top:12px;">موضع النوع ليس اليمن</div>
+        <p style="margin:9px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;">ورد في الفصل الثاني أن الوروار الأخضر العربي وُصف من عيّنات جُمعت في اليمن. الموضع الموثّق للنوع جبال القنفذة في جنوب غرب السعودية، بوصف كابانيس وهاينه سنة ١٨٦٠. تُحذف العبارة، ويثبت بدلها ما يصحّ: مقيمٌ لا يهاجر، ومداه يشمل اليمن، ورُقّي إلى نوع مستقل سنة ٢٠٢١.</p>
+      </div>
+      <div style="background:#fff;padding:26px 24px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#B8891A;">HELD — 02</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:18.5px;color:#052E2B;margin-top:12px;">قرار الطائر الوطني يُعلَّق</div>
+        <p style="margin:9px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;">نُسب إلى الشِرقب ذهبي الجناح أنه أُقرّ طائرًا وطنيًا بقرار مجلس وزراء سنة ٢٠٠٨. لا يُنشر هذا البند قبل إرفاق رقم القرار وتاريخه. يبقى معلّقًا في السجل، ولا يُستعمل في مادة خارجية.</p>
+      </div>
+      <div style="background:#052E2B;padding:26px 24px;color:#FAF6EC;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#12B5A4;">CONFIRMED — 03</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:18.5px;margin-top:12px;">الوروار يبقى طائر الدار</div>
+        <p style="margin:9px 0 0;font-size:14.5px;line-height:1.85;color:rgba(250,246,236,.75);">الأساس المعتمد: أخضر في مجمله، قناع أسود، وجه وحلق أزرق كهربي، واسمه العلمي من حاجبه الأزرق. سلوكه يُطابق نموذج كيان: يجثم، ينطلق، يأخذ في الهواء، ويعود إلى المِجثم نفسه.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 01 THE MARK ===================== -->
+<section id="mark" data-screen-label="٠١ العلامة · The mark" style="background:#fff;padding:clamp(60px,10vh,100px) clamp(20px,4vw,48px);border-radius:clamp(24px,4vw,44px) clamp(24px,4vw,44px) 0 0;">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#0E6E66;font-weight:500;"><bdi style="letter-spacing:normal">٠١ العلامة</bdi> · THE MARK</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.9vw,50px);line-height:1.24;color:#052E2B;max-width:20ch;">هيكلٌ واحد يقرأ ثلاث مرات</h2>
+    <p style="margin:14px 0 0;max-width:62ch;font-size:16.5px;line-height:1.95;color:#4A6B64;">أربع ضربات على شبكةٍ واحدة: عمودٌ، ورقبةٌ صاعدة، ومنقارٌ، وذيلٌ هابط. تُقرأ الضربات كافًا في العربية، وكافًا لاتينية في الإنجليزية، ووروارًا واقفًا في كل حال. لا يُرسم شكلٌ ثانٍ للعلامة، ولا تُبنى إلا على هذه الشبكة.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:44px;">
+      <div style="border:1px solid #EDE5D2;border-radius:20px;overflow:hidden;background:#FAF6EC;">
+        <div style="height:230px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(0deg,#EFE9D9 0 1px,transparent 1px 20px),repeating-linear-gradient(90deg,#EFE9D9 0 1px,transparent 1px 20px);">
+          
+        </div>
+        <div style="padding:20px 22px;border-top:1px solid #EDE5D2;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:32px;color:#052E2B;line-height:1;">ك</div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#0E6E66;margin-top:14px;">READING 01 — ARABIC KĀF</div>
+          <p style="margin:7px 0 0;font-size:14px;line-height:1.85;color:#4A6B64;">الوجه العربي. العمود يمينًا، والطائر يواجه جهة القراءة.</p>
+        </div>
+      </div>
+      <div style="border:1px solid #EDE5D2;border-radius:20px;overflow:hidden;background:#FAF6EC;">
+        <div style="height:230px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(0deg,#EFE9D9 0 1px,transparent 1px 20px),repeating-linear-gradient(90deg,#EFE9D9 0 1px,transparent 1px 20px);">
+          
+        </div>
+        <div style="padding:20px 22px;border-top:1px solid #EDE5D2;">
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:32px;color:#052E2B;line-height:1;">K</div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#0E6E66;margin-top:14px;">READING 02 — LATIN K</div>
+          <p style="margin:7px 0 0;font-size:14px;line-height:1.85;color:#4A6B64;">الوجه اللاتيني. العمود يسارًا، والقطريان يخرجان من منتصفه.</p>
+        </div>
+      </div>
+      <div style="border:1px solid #EDE5D2;border-radius:20px;overflow:hidden;background:#052E2B;">
+        <div style="height:230px;display:flex;align-items:center;justify-content:center;position:relative;">
+          <div style="position:absolute;inset:0;background:radial-gradient(320px 220px at 60% 40%,rgba(18,181,164,.22),transparent 70%);"></div>
+          
+        </div>
+        <div style="padding:20px 22px;border-top:1px solid rgba(250,246,236,.14);">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:19px;color:#FAF6EC;">الوروار على مِجثمه</div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#12B5A4;margin-top:14px;">READING 03 — THE BIRD</div>
+          <p style="margin:7px 0 0;font-size:14px;line-height:1.85;color:rgba(250,246,236,.7);">العمود مِجثم، والرقبة صاعدة، والمنقار خنجر، والذيل خيط. الضربة نفسها.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin:64px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(21px,2.7vw,32px);line-height:1.4;color:#052E2B;">الشبكة: اثنتا عشرة وحدة، وأربع ضربات</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:24px;align-items:start;">
+      <div style="border:1px solid #EDE5D2;border-radius:20px;overflow:hidden;background:#fff;">
+        <div style="padding:26px;display:flex;align-items:center;justify-content:center;background:#FCFAF3;">
+          
+        </div>
+        <div style="padding:20px 24px;border-top:1px solid #EDE5D2;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#0E6E66;">CONSTRUCTION</div>
+          
+        </div>
+      </div>
+      <div style="display:grid;gap:16px;">
+        <div style="border:1px solid #EDE5D2;border-radius:20px;background:#FAF6EC;padding:24px 26px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#0E6E66;">A — THE PERCH · العمود</div>
+          <p style="margin:8px 0 0;font-size:14.5px;line-height:1.9;color:#4A6B64;">من ٢٠ إلى ١٠٨ على المحور الأربعين. يحمل الطائر ويصنع ظهر الحرف. لا يُقصّر ولا يُميل.</p>
+        </div>
+        <div style="border:1px solid #EDE5D2;border-radius:20px;background:#FAF6EC;padding:24px 26px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#0E6E66;">B — THE NECK · الرقبة</div>
+          <p style="margin:8px 0 0;font-size:14.5px;line-height:1.9;color:#4A6B64;">تخرج من العُقدة عند ٦٨ بزاوية ٤٣ درجة صاعدة. الزاوية ثابتة، وعليها يقوم التعرّف على العلامة.</p>
+        </div>
+        <div style="border:1px solid #EDE5D2;border-radius:20px;background:#FAF6EC;padding:24px 26px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#0E6E66;">C — THE BILL · المنقار</div>
+          <p style="margin:8px 0 0;font-size:14.5px;line-height:1.9;color:#4A6B64;">يمتد من رأس الرقبة هابطًا بزاوية ٢١ درجة. أنحف ضربة في العلامة، وهي التي تمنع قراءتها حرفًا فقط.</p>
+        </div>
+        <div style="border:1px solid #EDE5D2;border-radius:20px;background:#052E2B;padding:24px 26px;color:#FAF6EC;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#C9A227;">D — THE TAIL · الذيل &amp; THE EYE · العين</div>
+          <p style="margin:8px 0 0;font-size:14.5px;line-height:1.9;color:rgba(250,246,236,.78);">الذيل من العُقدة إلى ٨٤ / ١٠٨. والعين نقطة ذهبية واحدة قطرها ٠٫٦٨ وحدة. الذهب في العلامة محصور في العين، ولا يُصرف في غيرها.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 02 THE MIRROR RULE ===================== -->
+<section data-screen-label="٠٢ قاعدة المرآة · The mirror rule" style="background:#052E2B;padding:clamp(60px,10vh,100px) clamp(20px,4vw,48px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 14% -8%,rgba(18,181,164,.18),transparent 62%),radial-gradient(820px 500px at 92% 106%,rgba(201,162,39,.14),transparent 62%);"></div>
+  <div style="position:relative;max-width:1180px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#12B5A4;font-weight:500;"><bdi style="letter-spacing:normal">٠٢ قاعدة المرآة</bdi> · THE MIRROR RULE</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.9vw,50px);line-height:1.24;color:#FAF6EC;max-width:24ch;">يواجه الطائر جهة القراءة</h2>
+    <p style="margin:14px 0 0;max-width:62ch;font-size:16.5px;line-height:1.95;color:rgba(250,246,236,.72);">تُعكس العلامة أفقيًا بحسب لغة الصفحة: في العربية يواجه الطائر يسارًا فيسير مع العين من اليمين إلى اليسار، وفي الإنجليزية يواجه يمينًا. الهيكل واحد، والاتجاه يتبع القارئ. لا يُخالف هذا في أي وسيط، ولا يُخلط الوجهان في تصميم واحد.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:40px;">
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:20px;overflow:hidden;background:rgba(250,246,236,.04);">
+        <div style="padding:34px 26px;display:flex;align-items:center;justify-content:flex-end;gap:18px;">
+          <div style="text-align:right;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(30px,4vw,46px);line-height:1;color:#FAF6EC;">كيان</div>
+            <div style="font-size:13px;color:rgba(250,246,236,.5);margin-top:8px;">خلف كل نجاح، كيان</div>
+          </div>
+          <div style="width:1px;height:52px;background:rgba(250,246,236,.2);"></div>
+          
+        </div>
+        <div style="padding:18px 24px;border-top:1px solid rgba(250,246,236,.14);"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#12B5A4;">AR LOCKUP — MARK ON THE RIGHT, BIRD FACES LEFT</div></div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:20px;overflow:hidden;background:rgba(250,246,236,.04);">
+        <div dir="ltr" style="padding:34px 26px;display:flex;align-items:center;justify-content:flex-start;gap:18px;">
+          
+          <div style="width:1px;height:52px;background:rgba(250,246,236,.2);"></div>
+          <div>
+            <div style="font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,40px);letter-spacing:.1em;line-height:1;color:#FAF6EC;">KAYAN</div>
+            <div style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;color:rgba(250,246,236,.5);margin-top:8px;letter-spacing:.02em;">Behind every success, a Kayan.</div>
+          </div>
+        </div>
+        <div style="padding:18px 24px;border-top:1px solid rgba(250,246,236,.14);"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#12B5A4;">EN LOCKUP — MARK ON THE LEFT, BIRD FACES RIGHT</div></div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:16px;">
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.04);padding:22px 24px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(250,246,236,.5);">CLEAR SPACE</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;color:#FAF6EC;margin-top:10px;">نصف ارتفاع العلامة</div>
+        <p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.62);">فراغ لا يقل عن ٥٠٪ من ارتفاع العلامة من الجهات الأربع. لا يدخله نص ولا حد ولا صورة.</p>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.04);padding:22px 24px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(250,246,236,.5);">MINIMUM SIZE</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;color:#FAF6EC;margin-top:10px;">٢٤ بكسلا · ٧ ملليمترات</div>
+        <p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.62);">تحت هذا الحد يُسقَط المنقار وتُستعمل نسخة الضربات الثلاث وحدها.</p>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.04);padding:22px 24px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(250,246,236,.5);">FINISHES</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;color:#FAF6EC;margin-top:10px;">اثنتان فقط</div>
+        <p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.62);">حبر عدن على الفاتح، وذهب على الداكن. العين ذهبية في الأولى، ومفرَّغة في الثانية.</p>
+      </div>
+      <div style="border:1px solid rgba(201,162,39,.4);border-radius:18px;background:rgba(201,162,39,.08);padding:22px 24px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#C9A227;">THE EYE</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;color:#FAF6EC;margin-top:10px;">الذهب في العين وحدها</div>
+        <p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.62);">هذه هي كل حصة الذهب في العلامة. من أرادها أكثر، فليكسبها في مكان آخر.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 03 MISUSE ===================== -->
+
+
+<!-- ===================== 04 THE AVIARY ===================== -->
+<section data-screen-label="٠٣ ما يُرفض · Misuse" style="background:#fff;padding:clamp(56px,9vh,92px) clamp(20px,4vw,48px);">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#B23A31;font-weight:500;"><bdi style="letter-spacing:normal">٠٣ ما يُرفض</bdi> · MISUSE</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.5vw,44px);line-height:1.26;color:#052E2B;max-width:24ch;">ستُّ حالات تُردّ من غير مناقشة</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:34px;">
+      <div style="border:1px solid #EDE5D2;border-radius:18px;overflow:hidden;background:#fff;">
+        
+        <div style="padding:15px 18px;border-top:1px solid #EDE5D2;display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;color:#4A6B64;line-height:1.75;">مطّ الشبكة أو ضغطها</span></div>
+      </div>
+      <div style="border:1px solid #EDE5D2;border-radius:18px;overflow:hidden;background:#fff;">
+        <div style="height:120px;display:flex;align-items:center;justify-content:center;background:#FCFAF3;"></div>
+        <div style="padding:15px 18px;border-top:1px solid #EDE5D2;display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;color:#4A6B64;line-height:1.75;">إمالة العمود أو دورانه</span></div>
+      </div>
+      <div style="border:1px solid #EDE5D2;border-radius:18px;overflow:hidden;background:#fff;">
+        <div style="height:120px;display:flex;align-items:center;justify-content:center;background:#FCFAF3;"></div>
+        <div style="padding:15px 18px;border-top:1px solid #EDE5D2;display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;color:#4A6B64;line-height:1.75;">ظل أو بروز أو حد</span></div>
+      </div>
+      <div style="border:1px solid #EDE5D2;border-radius:18px;overflow:hidden;background:#fff;">
+        <div style="height:120px;display:flex;align-items:center;justify-content:center;background:linear-gradient(115deg,#FF6250,#FFB627 38%,#12B5A4 72%,#8A5CE6);"></div>
+        <div style="padding:15px 18px;border-top:1px solid #EDE5D2;display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;color:#4A6B64;line-height:1.75;">أرضية مزدحمة أو تدرّج</span></div>
+      </div>
+      <div style="border:1px solid #EDE5D2;border-radius:18px;overflow:hidden;background:#fff;">
+        <div style="height:120px;display:flex;align-items:center;justify-content:center;background:#FCFAF3;"></div>
+        <div style="padding:15px 18px;border-top:1px solid #EDE5D2;display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;color:#4A6B64;line-height:1.75;">تلوين العلامة بلون خط</span></div>
+      </div>
+      <div style="border:1px solid #EDE5D2;border-radius:18px;overflow:hidden;background:#fff;">
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 05 SONIC ===================== -->
+<section id="aviary" data-screen-label="٠٤ الطيور · The aviary" style="background:#FAF6EC;padding:clamp(60px,10vh,100px) clamp(20px,4vw,48px);">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#0E6E66;font-weight:500;"><bdi style="letter-spacing:normal">٠٤ الطيور</bdi> · THE AVIARY</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.9vw,50px);line-height:1.24;color:#052E2B;max-width:22ch;">لكل خطٍّ طائرٌ موثّق، ولونٌ من ريشه</h2>
+    <p style="margin:14px 0 0;max-width:64ch;font-size:16.5px;line-height:1.95;color:#4A6B64;">لا يُختار طائر لجماله. يُختار لسلوكٍ يُشبه ما يبيعه الخط، ويُشترط أن يكون له سجل مشاهدة في اليمن. لكل طائر لونان: <strong style="color:#052E2B;">لون النغم</strong> وهو لون الخط في النظام، و<strong style="color:#052E2B;">لوحة الريش</strong> وهي ألوانه الحقيقية التي تُبنى عليها الصور والرسوم والتظليل.</p>
+
+    <div style="margin-top:38px;border:1px solid #E3DAC5;border-radius:24px;overflow:hidden;background:#052E2B;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
+        <div style="padding:34px 32px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#C9A227;">HOUSE BIRD · طائر الدار</div>
+          <h3 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(23px,3vw,34px);line-height:1.32;color:#FAF6EC;">الوروار الأخضر العربي</h3>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#12B5A4;margin-top:8px;">Merops cyanophrys · وروار أخضر صغير</div>
+          <p style="margin:16px 0 0;font-size:15px;line-height:1.9;color:rgba(250,246,236,.78);">أخضر في مجمله، بقناعٍ أسود ووجهٍ وحلقٍ أزرق كهربي. اسمه العلمي مأخوذ من حاجبه الأزرق. مقيمٌ في مجمله لا يهاجر، ورُقّي إلى نوعٍ مستقل في قائمة الاتحاد الدولي للطيور سنة ٢٠٢١، ومداه يشمل اليمن.</p>
+          <p style="margin:14px 0 0;font-size:15px;line-height:1.9;color:#12B5A4;">يجثم، وينطلق، ويأخذ في الهواء، ويعود إلى المِجثم نفسه. هذا نموذج كيان مرسومًا في حيوان.</p>
+          <div style="display:flex;gap:0;margin-top:22px;border-radius:12px;overflow:hidden;height:44px;">
+            <div style="flex:1;background:#0E6E66;"></div><div style="flex:1;background:#3E9EEA;"></div><div style="flex:1;background:#C9A227;"></div><div style="flex:1;background:#052E2B;"></div>
+          </div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.08em;color:rgba(250,246,236,.45);margin-top:9px;">PLATE — mantle #0E6E66 · throat #12B5A4 · brow #3E9EEA · crown #C9A227 · mask #052E2B</div>
+        </div>
+        <div style="min-height:300px;position:relative;"><image-slot id="kyn-id-house-bird" shape="rect" placeholder="وروار أخضر عربي على مِجثم، ملف جانبي، خلفية نظيفة · Arabian Green Bee-eater in profile on a perch, clean background" style="width: 571px; height: 405px"></image-slot></div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:18px;">
+
+      <div style="border:1px solid #E3DAC5;border-top:5px solid #3E9EEA;border-radius:20px;overflow:hidden;background:#fff;">
+        <div style="height:190px;"><image-slot id="kyn-id-bird-l1" shape="rect" placeholder="صياد سمك رمادي الرأس، ظهر أزرق لازوردي · Grey-headed Kingfisher showing azure back"></image-slot></div>
+        <div style="padding:24px 24px 26px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#3E9EEA;">L1 · MANAGED DELIVERY · سماء عدن #3E9EEA</div>
+          
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#4A6B64;margin-top:5px;">Halcyon leucocephala</div>
+          <p style="margin:12px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;">ظهره وجناحه أزرق لازوردي صريح، وهو أصل لون الخط. يأخذ مِجثمًا عاليًا، ويرقب طويلًا، ثم ينقضّ مرّة واحدة. غوصةٌ واحدة، وصيدةٌ واحدة — وهذا تعريف التسليم المدار.</p>
+          <div style="display:flex;gap:0;margin-top:16px;border-radius:9px;overflow:hidden;height:30px;"><div style="flex:1.4;background:#3E9EEA;"></div><div style="flex:1;background:#1E63A8;"></div><div style="flex:1;background:#8C9AA6;"></div><div style="flex:.7;background:#D9432F;"></div></div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:8px;">PLATE — wing #3E9EEA · rump #1E63A8 · head #8C9AA6 · bill #D9432F</div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E3DAC5;border-top:5px solid #FFB627;border-radius:20px;overflow:hidden;background:#fff;">
+        <div style="height:190px;"><image-slot id="kyn-id-bird-l2" shape="rect" placeholder="حائك روبل ذكر أصفر ذهبي عند عشّه المنسوج · Male Rüppell's Weaver at woven nest"></image-slot></div>
+        <div style="padding:24px 24px 26px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#B8891A;">L2 · THE HUB · مانجو #FFB627</div>
+          
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#4A6B64;margin-top:5px;">Ploceus galbula</div>
+          <p style="margin:12px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;">الذكر أصفر ذهبي، وهذا أصل لون الخط. ينسج بيته بمنقاره، ويبني في مستعمرةٍ واحدة على شجرة واحدة: عشرات الأعشاش، وسقفٌ واحد. هذا هو الهب.</p>
+          <div style="display:flex;gap:0;margin-top:16px;border-radius:9px;overflow:hidden;height:30px;"><div style="flex:1.4;background:#FFB627;"></div><div style="flex:1;background:#C98A12;"></div><div style="flex:.8;background:#7A4A1C;"></div><div style="flex:.7;background:#E9DFC6;"></div></div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:8px;">PLATE — crown #FFB627 · mantle #C98A12 · mask #7A4A1C · straw #E9DFC6</div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E3DAC5;border-top:5px solid #FF6250;border-radius:20px;overflow:hidden;background:#fff;">
+        <div style="height:190px;"><image-slot id="kyn-id-bird-l3" shape="rect" placeholder="طائر الشمس اللامع، شريط قرمزي على الصدر وظهر أخضر معدني · Shining Sunbird showing crimson breast band"></image-slot></div>
+        <div style="padding:24px 24px 26px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#C8443A;">L3 · KAYAN FORGE · مرجان #FF6250</div>
+          
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#4A6B64;margin-top:5px;">Cinnyris habessinicus</div>
+          <p style="margin:12px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;">ظهره أخضر معدني، وعلى صدره شريط قرمزي عريض — جمرة تُلبَس على الصدر لا تُعلن. يعمل زهرةً زهرة، ولا يأخذ إلا ما يكفيه. والشريط علامةٌ تُكتسب، مثل فئة فورج.</p>
+          <div style="display:flex;gap:0;margin-top:16px;border-radius:9px;overflow:hidden;height:30px;"><div style="flex:1.4;background:#FF6250;"></div><div style="flex:1;background:#A8231C;"></div><div style="flex:1;background:#1E6E52;"></div><div style="flex:.7;background:#C9A227;"></div></div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:8px;">PLATE — band #FF6250 · deep band #A8231C · mantle #1E6E52 · gloss #C9A227</div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E3DAC5;border-top:5px solid #3FA75B;border-radius:20px;overflow:hidden;background:#fff;">
+        <div style="height:190px;"><image-slot id="kyn-id-bird-l4" shape="rect" placeholder="يمام أخضر على تينة، أخضر مصفر · Bruce's Green Pigeon feeding in a fig tree"></image-slot></div>
+        <div style="padding:24px 24px 26px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#2E7D46;">L4 · KAYAN FOR YEMEN · ورق #3FA75B</div>
+          <h4 style="margin:11px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">الأخضر</h4>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#4A6B64;margin-top:5px;">Treron waalia</div>
+          <p style="margin:12px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;">أخضرٌ مصفرّ، يعيش على التين. يأكل ثمرته وينقل بذرها، فيزرع الشجر الذي لن يجلس عليه هو. هذا ما يفعله «كيان لليمن»: ساعاتٌ تُبذل، وأثرٌ يظهر عند غيرك.</p>
+          <div style="display:flex;gap:0;margin-top:16px;border-radius:9px;overflow:hidden;height:30px;"><div style="flex:1.4;background:#3FA75B;"></div><div style="flex:1;background:#B6E22E;"></div><div style="flex:.8;background:#7A6A2C;"></div><div style="flex:.7;background:#E9BE4B;"></div></div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:8px;">PLATE — mantle #3FA75B · belly #B6E22E · vent #7A6A2C · shoulder #E9BE4B</div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E3DAC5;border-top:5px solid #12B5A4;border-radius:20px;overflow:hidden;background:#fff;">
+        <div style="height:190px;"><image-slot id="kyn-id-bird-l5" shape="rect" placeholder="وروار أخضر عربي، مقربة على الحلق الأزرق الفيروزي · Arabian Green Bee-eater, close-up on turquoise throat"></image-slot></div>
+        <div style="padding:24px 24px 26px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#0E8E80;">L5 · READY PRODUCTS · شعاب #12B5A4</div>
+          <h4 style="margin:11px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;"><br></h4>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#4A6B64;margin-top:5px;">Merops cyanophrys — the house bird, at the throat</div>
+          <p style="margin:12px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;">لا يُستعار طائر لهذا الخط، لأن المنتجات الجاهزة هي معيار الدار نفسه معروضًا بسعرٍ معلوم وموعدٍ معلوم. لونها من حلق الوروار، وهو أصل لون شعاب.</p>
+          <div style="display:flex;gap:0;margin-top:16px;border-radius:9px;overflow:hidden;height:30px;"><div style="flex:1.4;background:#12B5A4;"></div><div style="flex:1;background:#0E6E66;"></div><div style="flex:.8;background:#3E9EEA;"></div><div style="flex:.7;background:#052E2B;"></div></div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:8px;">PLATE — throat #12B5A4 · mantle #0E6E66 · brow #3E9EEA · mask #052E2B</div>
+        </div>
+      </div>
+
+      
+
+      <div style="border:1.5px dashed rgba(138,92,230,.55);border-radius:20px;overflow:hidden;background:#fff;">
+        <div style="height:190px;"><image-slot id="kyn-id-bird-vent" shape="rect" placeholder="زرزور بنفسجي الظهر، ذكر، لمعان بنفسجي · Male Violet-backed Starling, iridescent violet mantle"></image-slot></div>
+        <div style="padding:24px 24px 26px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#7B4BD8;">RESERVED · KAYAN VENTURES · أوركيد #8A5CE6</div>
+          <h4 style="margin:11px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">بنفسجي&nbsp;</h4>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#4A6B64;margin-top:5px;">Cinnyricinclus leucogaster · زائر صيفي</div>
+          <p style="margin:12px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;">ظهر الذكر بنفسجي لامع — صباغٌ نادر في الطيور، وهو أصل لون الأوركيد. زائرٌ صيفي لا مقيم، ولهذا يُحفظ للخط الذي يأتي في موسمه: رأس مالٌ صبور لمؤسسٍ يمني.</p>
+          <div style="display:flex;gap:0;margin-top:16px;border-radius:9px;overflow:hidden;height:30px;"><div style="flex:1.4;background:#8A5CE6;"></div><div style="flex:1;background:#5B2FA8;"></div><div style="flex:1;background:#FFFFFF;border:1px solid #EDE5D2;box-sizing:border-box;"></div><div style="flex:.6;background:#E9BE4B;"></div></div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:8px;">PLATE — mantle #8A5CE6 · deep #5B2FA8 · belly #FFFFFF · eye #E9BE4B</div>
+        </div>
+      </div>
+
+      <div style="border:1.5px dashed rgba(240,84,154,.55);border-radius:20px;overflow:hidden;background:#FCFAF3;display:flex;flex-direction:column;justify-content:center;padding:34px 26px;min-height:240px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#C9407E;">RESERVED · KAYAN STUDIO · لانتانا #F0549A</div>
+        <h4 style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">طائرٌ لم يُسمَّ بعد</h4>
+        <p style="margin:12px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;">لا يُسمّى طائر الستوديو قبل إرفاق سجلّ مشاهدة موثّق في عدن أو جوارها. يبقى اللون محفوظًا، ويبقى المِجثم فارغًا. لا يُملأ فراغٌ بطائرٍ غير موثّق.</p>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:18px;">
+            <span style="width:8px;height:8px;border-radius:50%;background:#F0549A;animation:kPulse 2s ease-in-out infinite;"></span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#C9407E;">AWAITING A CITED ADEN RECORD</span>
+          </div>
+      </div>
+    </div>
+
+    <div style="margin-top:22px;border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:22px 26px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">قاعدة القفص</div>
+      <p style="margin:8px 0 0;font-size:14.5px;line-height:1.9;color:#4A6B64;">لا يظهر طائران في تصميمٍ واحد إلا في هذا المستند. في مادة الخط يظهر طائره وحده، وفي مادة الدار يظهر الوروار وحده. ولا يُرسم أي طائر بخطٍّ يدوي أو رسمٍ توضيحي: تُستعمل صورةٌ فوتوغرافية مرخّصة، أو تُستعمل العلامة.</p>
+    </div>
+  </div>
+</section><section id="sonic" data-screen-label="٠٥ النغمة · Sonic" style="background:#07202C;padding:clamp(60px,10vh,100px) clamp(20px,4vw,48px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 88% -6%,rgba(18,181,164,.2),transparent 62%);"></div>
+  <div style="position:relative;max-width:1180px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#12B5A4;font-weight:500;"><bdi style="letter-spacing:normal">٠٥ النغمة</bdi> · THE SONIC LOCK</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.9vw,50px);line-height:1.24;color:#FAF6EC;max-width:24ch;">أربع نقرات، وآخرها يعود</h2>
+    <p style="margin:14px 0 0;max-width:62ch;font-size:16.5px;line-height:1.95;color:rgba(250,246,236,.72);">النغمة المُقفلة أربع نقرات على وترٍ منقور: صعودٌ بخمسةٍ تامة، ثم درجةٌ فوقها، ثم عودةٌ إلى النقرة الثانية نفسها. النقرة الرابعة هي «العودة إلى المِجثم»، ولا تُحذف. المدة ثانيةٌ وأربعة أعشار، ولا تُمَدّ.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;margin-top:40px;align-items:start;">
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:22px;background:rgba(250,246,236,.04);padding:30px 28px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#12B5A4;">THE LOCK · 1.4s · NIHAWAND</div>
+        <div dir="ltr" style="display:flex;align-items:flex-end;gap:6px;height:120px;margin-top:22px;">
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;"><div style="height:34%;background:#0E6E66;border-radius:3px;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:rgba(250,246,236,.5);text-align:center;">D4</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;"><div style="height:74%;background:#12B5A4;border-radius:3px;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:rgba(250,246,236,.5);text-align:center;">A4</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;"><div style="height:88%;background:#C9A227;border-radius:3px;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:rgba(250,246,236,.5);text-align:center;">B4</span></div>
+          <div style="flex:1.6;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;"><div style="height:74%;background:#12B5A4;border-radius:3px;opacity:.6;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#12B5A4;text-align:center;">A4 ↩</span></div>
+        </div>
+        <button type="button" onClick="{{ playHouse }}" style="margin-top:26px;width:100%;border:none;background:#12B5A4;color:#052E2B;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:15px;font-weight:600;padding:15px 20px;border-radius:3px;cursor:pointer;" style-hover="background:#5BD6C8;">استمع إلى النغمة المُقفلة</button>
+        <div style="display:flex;justify-content:space-between;gap:12px;margin-top:14px;">
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(250,246,236,.45);">PLUCKED STRING · NO REVERB TAIL &gt; 400ms</span>
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#12B5A4;">{{ nowPlaying }}</span>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:22px;background:rgba(250,246,236,.04);padding:30px 28px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#C9A227;">PER-LINE RULE · نغمة الخط</div>
+        <p style="margin:14px 0 0;font-size:14.5px;line-height:1.9;color:rgba(250,246,236,.72);">لا تتغيّر النقرات الأربع أبدًا. يتغيّر الجرس ودرجة الطبقة وحدهما، وتُضاف نقرةٌ زخرفية واحدة لا أكثر. من غيّر النغمات، خرج من الهوية.</p>
+        <div style="display:grid;gap:8px;margin-top:20px;">
+          <button type="button" onClick="{{ playL1 }}" style="display:flex;align-items:center;gap:12px;border:1px solid rgba(62,158,234,.4);background:rgba(62,158,234,.09);border-radius:12px;padding:13px 16px;cursor:pointer;text-align:start;font-family:inherit;" style-hover="background:rgba(62,158,234,.2)"><span style="width:10px;height:10px;border-radius:50%;background:#3E9EEA;flex-shrink:0;"></span><span style="font-size:14.5px;color:#FAF6EC;flex:1;">التسليم المدار</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(250,246,236,.5);">CLEAN · +0</span></button>
+          <button type="button" onClick="{{ playL2 }}" style="display:flex;align-items:center;gap:12px;border:1px solid rgba(255,182,39,.4);background:rgba(255,182,39,.09);border-radius:12px;padding:13px 16px;cursor:pointer;text-align:start;font-family:inherit;" style-hover="background:rgba(255,182,39,.2)"><span style="width:10px;height:10px;border-radius:50%;background:#FFB627;flex-shrink:0;"></span><span style="font-size:14.5px;color:#FAF6EC;flex:1;">الهب</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(250,246,236,.5);">WARM · +12</span></button>
+          <button type="button" onClick="{{ playL3 }}" style="display:flex;align-items:center;gap:12px;border:1px solid rgba(255,98,80,.4);background:rgba(255,98,80,.09);border-radius:12px;padding:13px 16px;cursor:pointer;text-align:start;font-family:inherit;" style-hover="background:rgba(255,98,80,.2)"><span style="width:10px;height:10px;border-radius:50%;background:#FF6250;flex-shrink:0;"></span><span style="font-size:14.5px;color:#FAF6EC;flex:1;">كيان فورج</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(250,246,236,.5);">STRUCK · GRACE</span></button>
+          <button type="button" onClick="{{ playL4 }}" style="display:flex;align-items:center;gap:12px;border:1px solid rgba(63,167,91,.4);background:rgba(63,167,91,.09);border-radius:12px;padding:13px 16px;cursor:pointer;text-align:start;font-family:inherit;" style-hover="background:rgba(63,167,91,.2)"><span style="width:10px;height:10px;border-radius:50%;background:#3FA75B;flex-shrink:0;"></span><span style="font-size:14.5px;color:#FAF6EC;flex:1;">كيان لليمن</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(250,246,236,.5);">SOFT · −12</span></button>
+          <button type="button" onClick="{{ playL5 }}" style="display:flex;align-items:center;gap:12px;border:1px solid rgba(18,181,164,.4);background:rgba(18,181,164,.09);border-radius:12px;padding:13px 16px;cursor:pointer;text-align:start;font-family:inherit;" style-hover="background:rgba(18,181,164,.2)"><span style="width:10px;height:10px;border-radius:50%;background:#12B5A4;flex-shrink:0;"></span><span style="font-size:14.5px;color:#FAF6EC;flex:1;">المنتجات الجاهزة</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(250,246,236,.5);">GLASS · TIGHT</span></button>
+          <button type="button" onClick="{{ playL6 }}" style="display:flex;align-items:center;gap:12px;border:1px solid rgba(182,226,46,.4);background:rgba(182,226,46,.09);border-radius:12px;padding:13px 16px;cursor:pointer;text-align:start;font-family:inherit;" style-hover="background:rgba(182,226,46,.2)"><span style="width:10px;height:10px;border-radius:50%;background:#B6E22E;flex-shrink:0;"></span><span style="font-size:14.5px;color:#FAF6EC;flex:1;">البث</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(250,246,236,.5);">BREATH · HOO·POE</span></button>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:22px;background:rgba(250,246,236,.04);padding:30px 28px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:rgba(250,246,236,.5);">WHERE IT PLAYS · مواضع الاستعمال</div>
+        <div style="display:grid;gap:1px;background:rgba(250,246,236,.14);border-radius:12px;overflow:hidden;margin-top:18px;">
+          <div style="background:#07202C;padding:15px 17px;"><div style="font-size:14.5px;color:#FAF6EC;">قبول محضر الاستلام</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#12B5A4;margin-top:4px;">FULL LOCK · ONCE</div></div>
+          <div style="background:#07202C;padding:15px 17px;"><div style="font-size:14.5px;color:#FAF6EC;">صرف المستحق</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#12B5A4;margin-top:4px;">FULL LOCK · ONCE</div></div>
+          <div style="background:#07202C;padding:15px 17px;"><div style="font-size:14.5px;color:#FAF6EC;">ترقية فئة في فورج</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#12B5A4;margin-top:4px;">LINE VARIANT</div></div>
+          <div style="background:#07202C;padding:15px 17px;"><div style="font-size:14.5px;color:#FAF6EC;">نهاية كل فيلم أو حلقة بث</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#12B5A4;margin-top:4px;">LAST TWO NOTES ONLY</div></div>
+          <div style="background:rgba(178,58,49,.15);padding:15px 17px;"><div style="font-size:14.5px;color:#FAF6EC;">لا تُستعمل في إشعارٍ أو خطأ أو تحميل</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FF8A6B;margin-top:4px;">NEVER — the lock marks proof, not activity</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 06 THE FILM ===================== -->
+<section id="film" data-screen-label="٠٦ الفيلم · The film" style="background:#FAF6EC;padding:clamp(60px,10vh,100px) clamp(20px,4vw,48px);">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#0E6E66;font-weight:500;"><bdi style="letter-spacing:normal">٠٦ الفيلم</bdi> · THE FILM · 24s</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.9vw,50px);line-height:1.24;color:#052E2B;max-width:24ch;">ستّ لقطات، ولا صوت غير النغمة</h2>
+    <p style="margin:14px 0 0;max-width:62ch;font-size:16.5px;line-height:1.95;color:#4A6B64;">الفيلم التعريفي مبنيٌّ على سلوك الطائر لا على مؤثّرات. يفتح ساكنًا، وينطلق مرّة واحدة، ويعود. الحركة محجوزة للانتقال بين اللقطات، والنغمة تُقفل عند اللقطة الأخيرة.</p>
+
+    <div style="margin-top:34px;border:1px solid #E3DAC5;border-radius:24px;overflow:hidden;background:#052E2B;">
+      <div style="position:relative;aspect-ratio:16/9;overflow:hidden;background:#052E2B;">
+        <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 70% 20%,rgba(18,181,164,.18),transparent 66%);"></div>
+
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .7s ease,transform 1.1s cubic-bezier(.22,1,.36,1);opacity:{{ f0o }};transform:{{ f0t }};">
+          <svg viewBox="0 0 120 120" width="15%" height="auto" fill="none" aria-hidden="true" style="transform:scaleX(-1);"><g stroke="rgba(250,246,236,.22)" stroke-linecap="round"><path d="M40 20V108" stroke-width="13"></path></g></svg>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:clamp(9px,1vw,11px);letter-spacing:.24em;color:rgba(250,246,236,.4);">01 — THE PERCH</div>
+        </div>
+
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .7s ease,transform 1.1s cubic-bezier(.22,1,.36,1);opacity:{{ f1o }};transform:{{ f1t }};">
+          <svg viewBox="0 0 120 120" width="22%" height="auto" fill="none" aria-hidden="true" style="transform:scaleX(-1);"><g stroke="#FAF6EC" stroke-linecap="round" stroke-linejoin="round"><path d="M40 20V108" stroke-width="13"></path><path d="M40 68L76 34" stroke-width="13"></path><path d="M76 34L102 44" stroke-width="6.5"></path><path d="M40 68L84 108" stroke-width="13"></path></g><circle cx="72" cy="40" r="3.6" fill="#C9A227"></circle></svg>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:clamp(9px,1vw,11px);letter-spacing:.24em;color:#12B5A4;">02 — IT SETTLES</div>
+        </div>
+
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity .7s ease,transform 1.1s cubic-bezier(.22,1,.36,1);opacity:{{ f2o }};transform:{{ f2t }};">
+          <div style="text-align:center;padding:0 6%;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(20px,4.4vw,58px);line-height:1.24;color:#FAF6EC;">يُدار العمل، ويُقام عليه دليل</div>
+            <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:clamp(11px,1.5vw,20px);color:rgba(250,246,236,.55);margin-top:14px;">Work is managed. Then it is proven.</div>
+          </div>
+        </div>
+
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:clamp(6px,1.4vw,18px);padding:0 6%;transition:opacity .7s ease,transform 1.1s cubic-bezier(.22,1,.36,1);opacity:{{ f3o }};transform:{{ f3t }};">
+          <div style="flex:1;height:clamp(60px,16vh,132px);background:#3E9EEA;border-radius:4px;"></div>
+          <div style="flex:1;height:clamp(60px,16vh,132px);background:#FFB627;border-radius:4px;"></div>
+          <div style="flex:1;height:clamp(60px,16vh,132px);background:#FF6250;border-radius:4px;"></div>
+          <div style="flex:1;height:clamp(60px,16vh,132px);background:#3FA75B;border-radius:4px;"></div>
+          <div style="flex:1;height:clamp(60px,16vh,132px);background:#12B5A4;border-radius:4px;"></div>
+          <div style="flex:1;height:clamp(60px,16vh,132px);background:#B6E22E;border-radius:4px;"></div>
+        </div>
+
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity .7s ease,transform 1.1s cubic-bezier(.22,1,.36,1);opacity:{{ f4o }};transform:{{ f4t }};">
+          <div style="text-align:center;padding:0 6%;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:clamp(9px,1vw,11px);letter-spacing:.24em;color:#C9A227;">05 — THE RETURN</div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(17px,3.2vw,42px);line-height:1.34;color:#FAF6EC;margin-top:16px;max-width:22ch;">ويعود إلى المِجثم نفسه</div>
+          </div>
+        </div>
+
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,2.4vw,26px);transition:opacity .7s ease,transform 1.1s cubic-bezier(.22,1,.36,1);opacity:{{ f5o }};transform:{{ f5t }};">
+          
+          <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(15px,2.6vw,34px);color:#FAF6EC;">«خلف كل نجاح، كيان»</div>
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-style:italic;font-size:clamp(10px,1.3vw,17px);color:rgba(250,246,236,.5);">Behind every success, a Kayan.</div>
+        </div>
+
+        <div style="position:absolute;inset-inline:0;bottom:0;height:3px;background:rgba(250,246,236,.14);">
+          <div style="height:100%;background:#12B5A4;transition:width .35s linear;width:{{ filmProgress }};"></div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 24px;border-top:1px solid rgba(250,246,236,.14);">
+        <div style="display:flex;gap:10px;align-items:center;">
+          <button type="button" onClick="{{ toggleFilm }}" style="border:none;background:#12B5A4;color:#052E2B;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:14px;font-weight:600;padding:11px 22px;border-radius:3px;cursor:pointer;">{{ filmLabel }}</button>
+          <button type="button" onClick="{{ restartFilm }}" style="border:1px solid rgba(250,246,236,.28);background:transparent;color:#FAF6EC;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:14px;padding:11px 18px;border-radius:3px;cursor:pointer;">من البداية</button>
+        </div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(250,246,236,.5);">SHOT {{ shotLabel }} · 4s EACH · SONIC LOCK ON SHOT 06</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:18px;">
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:22px 24px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#0E6E66;">EASING</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16.5px;color:#052E2B;margin-top:10px;">هبوطٌ لا ارتداد</div>
+        <p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">منحنى ٠٫٢٢ / ١ / ٠٫٣٦ / ١ في كل انتقال. لا ارتداد ولا مطاطية: الطائر يهبط، ولا يقفز.</p>
+      </div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:22px 24px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#0E6E66;">DURATION</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16.5px;color:#052E2B;margin-top:10px;">أربع ثوانٍ للقطة</div>
+        <p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">ستُّ لقطات، أربعٌ وعشرون ثانية. النسخة القصيرة تُقصّ عند اللقطة الثالثة، ولا تُسرَّع.</p>
+      </div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:22px 24px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#0E6E66;">COLOUR</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16.5px;color:#052E2B;margin-top:10px;">لقطةٌ واحدة للألوان</div>
+        <p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">ألوان الخطوط تظهر مرّة واحدة في اللقطة الرابعة، ولا تُوزَّع على بقية الفيلم.</p>
+      </div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#052E2B;padding:22px 24px;color:#FAF6EC;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#C9A227;">SOUND</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16.5px;margin-top:10px;">لا موسيقى خلفية</div>
+        <p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.72);">صمتٌ، ثم النغمة المُقفلة عند اللقطة السادسة. لا سردٌ صوتي، ولا مؤثّرات انتقال.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 07 SOURCES ===================== -->
+<section data-screen-label="٠٧ المصادر · Sources" style="background:#fff;padding:clamp(56px,9vh,88px) clamp(20px,4vw,48px);">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#0E6E66;font-weight:500;"><bdi style="letter-spacing:normal">٠٧ المصادر</bdi> · SOURCES</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(24px,3.2vw,40px);line-height:1.28;color:#052E2B;max-width:26ch;">كل معلومةٍ في هذا المستند لها مصدر</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:#EDE5D2;border:1px solid #EDE5D2;border-radius:20px;overflow:hidden;margin-top:30px;">
+      <div style="background:#fff;padding:22px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#0E6E66;">S-01 · TAXONOMY</div><p style="margin:9px 0 0;font-size:14px;line-height:1.85;color:#4A6B64;">Merops cyanophrys رُقّي إلى نوعٍ مستقل في قائمة الاتحاد الدولي للطيور سنة ٢٠٢١، بعد دراسةٍ سنة ٢٠٢٠ وجدت فروقًا في الشكل والصوت.</p><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8A8272;margin-top:9px;">IOC World Bird List 2021</div></div>
+      <div style="background:#fff;padding:22px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#0E6E66;">S-02 · TYPE LOCALITY</div><p style="margin:9px 0 0;font-size:14px;line-height:1.85;color:#4A6B64;">الوصف الأصلي: Philothrus cyanophrys, Cabanis &amp; Heine 1860، وموضع النوع جبال القنفذة. هذا ما صحّح البند السابق.</p><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8A8272;margin-top:9px;">Birds of the World (Cornell) — protonym</div></div>
+      <div style="background:#fff;padding:22px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#0E6E66;">S-03 · PLUMAGE</div><p style="margin:9px 0 0;font-size:14px;line-height:1.85;color:#4A6B64;">«أخضر في مجمله، بقناعٍ أسود رقيق على الوجه وشريطٍ على الحلق، ووجهٍ وحلقٍ أزرق كهربي» — التوصيف المعياري للنوع.</p><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8A8272;margin-top:9px;">eBird species account</div></div>
+      <div style="background:#fff;padding:22px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#0E6E66;">S-04 · YEMEN RECORDS</div><p style="margin:9px 0 0;font-size:14px;line-height:1.85;color:#4A6B64;">قائمة مشاهدة ميدانية في اليمن (حمّام جريف والأهجر، مايو ٢٠٠٩) تُثبت: حائك روبل، واليمام الأخضر، وطائر الشمس اللامع، والزرزور بنفسجي الظهر، وصيّاد السمك رمادي الرأس، والوروار الأخضر.</p><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8A8272;margin-top:9px;">Fagel &amp; Al-Sirhan, Yemen trip report, May 2009</div></div>
+      <div style="background:#fff;padding:22px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#0E6E66;">S-05 · MIGRATORY STATUS</div><p style="margin:9px 0 0;font-size:14px;line-height:1.85;color:#4A6B64;">الزرزور بنفسجي الظهر وصيّاد السمك رمادي الرأس زائران صيفيان من أفريقيا إلى جنوب غرب الجزيرة، لا مقيمان. أُثبت ذلك في وصف كل منهما.</p><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8A8272;margin-top:9px;">Birds of Saudi Arabia — Asir accounts</div></div>
+      <div style="background:#FAF6EC;padding:22px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#B8891A;">S-06 · SCRIPTURE</div><p style="margin:9px 0 0;font-size:14px;line-height:1.85;color:#4A6B64;">قصة الهدهد بين سليمان وسبأ في سورة النمل، الآيات ٢٠ إلى ٢٨.</p><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8A8272;margin-top:9px;">Qur'an 27:20–28 (An-Naml)</div></div>
+    </div>
+    <div style="margin-top:20px;border:1px solid #EDE5D2;border-radius:18px;background:#FCFAF3;padding:22px 26px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">قاعدة الإثبات</div>
+      <p style="margin:8px 0 0;font-size:14.5px;line-height:1.9;color:#4A6B64;">لا تُنشر عبارةٌ عن نوعٍ أو مؤسسةٍ أو تاريخٍ بغير مصدرٍ مُرفق. ما لم يُوثَّق، يبقى في سجل المعلّق — ولا يُدخل مادةً خارجية ولو كان صحيحًا في الظن.</p>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:36px;padding-top:26px;border-top:1px solid #EDE5D2;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <svg viewBox="0 0 120 120" width="30" height="30" fill="none" aria-hidden="true" style="transform:scaleX(-1);"><g stroke="#052E2B" stroke-linecap="round" stroke-linejoin="round"><path d="M40 20V108" stroke-width="13"></path><path d="M40 68L76 34" stroke-width="13"></path><path d="M76 34L102 44" stroke-width="6.5"></path><path d="M40 68L84 108" stroke-width="13"></path></g><circle cx="72" cy="40" r="3.4" fill="#C9A227"></circle></svg>
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#6E675A;">KYN-ID-FINAL · v1.0</span>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:13.5px;">
+        <a href="Kayan Home.dc.html">الموقع — واجهة الخطوط ←</a>
+        <a href="The master one.dc.html">الملف الأم ←</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { shot: 0, playing: false, nowPlaying: "—" };
+
+  componentDidMount() { this.start(); }
+  componentWillUnmount() { clearInterval(this.timer); if (this.actx) this.actx.close(); }
+
+  start() {
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      const next = (this.state.shot + 1) % 6;
+      this.setState({ shot: next });
+      if (next === 5) this.lock("house");
+    }, 4000);
+    this.setState({ playing: true });
+  }
+
+  ensure() {
+    if (!this.actx) {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return null;
+      this.actx = new AC();
+    }
+    if (this.actx.state === "suspended") this.actx.resume();
+    return this.actx;
+  }
+
+  // four notes, always: D4 → A4 → B4 → A4 (the return)
+  lock(key) {
+    const ctx = this.ensure();
+    if (!ctx) return;
+    const table = {
+      house: { wave: "triangle", shift: 0, decay: 0.9, grace: false, sub: true },
+      l1:    { wave: "triangle", shift: 0, decay: 0.8, grace: false, sub: true },
+      l2:    { wave: "sine", shift: 12, decay: 1.1, grace: false, sub: false },
+      l3:    { wave: "square", shift: 0, decay: 0.55, grace: true, sub: true },
+      l4:    { wave: "sine", shift: -12, decay: 1.5, grace: false, sub: false },
+      l5:    { wave: "triangle", shift: 7, decay: 0.4, grace: false, sub: false },
+      l6:    { wave: "sine", shift: 5, decay: 1.2, grace: true, sub: false }
+    };
+    const v = table[key] || table.house;
+    const t0 = ctx.currentTime + 0.04;
+    const sc = Math.pow(2, v.shift / 12);
+    const notes = [[293.66, 0, 0.28], [440, 0.22, 0.3], [493.88, 0.44, 0.3], [440, 0.7, v.decay]];
+    const bus = ctx.createGain();
+    bus.gain.value = 0.5;
+    bus.connect(ctx.destination);
+
+    notes.forEach(([f, at, dur], i) => {
+      const o = ctx.createOscillator();
+      const g = ctx.createGain();
+      const lp = ctx.createBiquadFilter();
+      lp.type = "lowpass";
+      lp.frequency.value = 3200;
+      o.type = v.wave;
+      o.frequency.value = f * sc;
+      const s = t0 + at;
+      g.gain.setValueAtTime(0, s);
+      g.gain.linearRampToValueAtTime(i === 3 ? 0.32 : 0.26, s + 0.008);
+      g.gain.exponentialRampToValueAtTime(0.0008, s + dur);
+      o.connect(lp); lp.connect(g); g.connect(bus);
+      o.start(s); o.stop(s + dur + 0.05);
+      if (v.sub) {
+        const o2 = ctx.createOscillator(); const g2 = ctx.createGain();
+        o2.type = "sine"; o2.frequency.value = f * sc * 0.5;
+        g2.gain.setValueAtTime(0, s);
+        g2.gain.linearRampToValueAtTime(0.09, s + 0.01);
+        g2.gain.exponentialRampToValueAtTime(0.0008, s + dur * 0.8);
+        o2.connect(g2); g2.connect(bus);
+        o2.start(s); o2.stop(s + dur);
+      }
+    });
+
+    if (v.grace) {
+      const o = ctx.createOscillator(); const g = ctx.createGain();
+      o.type = v.wave; o.frequency.value = 587.33 * sc;
+      const s = t0 + 0.6;
+      g.gain.setValueAtTime(0, s);
+      g.gain.linearRampToValueAtTime(0.12, s + 0.006);
+      g.gain.exponentialRampToValueAtTime(0.0008, s + 0.16);
+      o.connect(g); g.connect(bus);
+      o.start(s); o.stop(s + 0.2);
+    }
+
+    const names = { house: "النغمة المُقفلة", l1: "التسليم المدار", l2: "الهب", l3: "كيان فورج", l4: "كيان لليمن", l5: "المنتجات الجاهزة", l6: "البث" };
+    this.setState({ nowPlaying: names[key] || "—" });
+  }
+
+  renderVals() {
+    const shot = this.state.shot;
+    const o = {}, t = {};
+    for (let i = 0; i < 6; i++) {
+      const on = i === shot;
+      o["f" + i + "o"] = on ? "1" : "0";
+      t["f" + i + "t"] = on ? "translateY(0) scale(1)" : (i < shot ? "translateY(-14px) scale(.985)" : "translateY(14px) scale(.985)");
+    }
+    return Object.assign({}, o, t, {
+      filmProgress: Math.round(((shot + 1) / 6) * 100) + "%",
+      shotLabel: "0" + (shot + 1) + " / 06",
+      filmLabel: this.state.playing ? "إيقاف" : "تشغيل",
+      nowPlaying: this.state.nowPlaying,
+      playHouse: () => this.lock("house"),
+      playL1: () => this.lock("l1"),
+      playL2: () => this.lock("l2"),
+      playL3: () => this.lock("l3"),
+      playL4: () => this.lock("l4"),
+      playL5: () => this.lock("l5"),
+      playL6: () => this.lock("l6"),
+      toggleFilm: () => {
+        if (this.state.playing) { clearInterval(this.timer); this.setState({ playing: false }); }
+        else this.start();
+      },
+      restartFilm: () => { this.setState({ shot: 0 }); this.start(); }
+    });
+  }
+}
+</script>
+</body>
+</html>

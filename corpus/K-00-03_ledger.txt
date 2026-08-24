@@ -1,0 +1,230 @@
+KAYAN INNOVATION, ENTREPRENEURSHIP & WORK ENVIRONMENTS LLC
+Aden, Republic of Yemen
+
+Session Ledger and Standing Instructions
+What has been built, what governs the building, and what happens next
+This is the working memory of the Kayan build. It records the standing instructions that govern how work is produced, the state of the estate, what was completed in each session, and what is queued next in dependency order. It is read at the start of every session and updated at the end of every session.
+Document code
+K-00-03
+Version
+v1.0
+Status
+Live — updated at every session
+Date
+5 August 2026
+Owner
+Founder / Chief Executive
+Classification
+INTERNAL — CONFIDENTIAL
+Supersedes
+—
+Derives from
+Founder mandate
+Unlocks
+Continuity across sessions; prevents re-deriving settled positions
+If only one document survives between sessions, it should be this one.
+
+Contents
+TOC \h \o "1-3"
+
+1. Standing instructions
+These govern how every Kayan asset is produced. They are settled and are not re-derived at the start of each session.
+#
+Instruction
+SI-01
+Define before derive. Nothing downstream is built until the layer above it is settled. The order is: positioning, business lines, entities, identity, taxonomy, forms, workflow, pages, automation, procedure.
+SI-02
+Every deliverable ships as a complete unit: the definition, its forms, its controlled lists, its procedure and checklist, and its automation specification. A definition without its procedure is not finished.
+SI-03
+Automation-first, manual by exception. A human touches a record only at a genuine judgement gate. Any process needing routine manual handling is designed wrong.
+SI-04
+One real-world thing, one record, one identifier, one page. Everything else is a view.
+SI-05
+Every material claim is labelled FACT, JUDGEMENT, ASSUMPTION, RECOMMENDATION or OPEN. Nothing is asserted as settled that is not.
+SI-06
+No placeholders, no outlines, no generic templates. Every document is final-draft and operable by someone who was not present when it was written.
+SI-07
+Numbers live in controlled documents, never in foundational ones. Changing a price must never require reopening a constitution.
+SI-08
+Red-team every material recommendation before presenting it. State the residual risk where the counter is insufficient.
+SI-09
+Historical documents are evidence, never authority. Mine them for logic; never adopt them because they exist.
+SI-10
+Decisions are recorded in K-00-02 at the moment they are taken. An undocumented decision is not a decision.
+SI-11
+Work in bounded sessions. Each session states what it will build, builds it completely, verifies it, and records what is next.
+SI-12
+Verify before shipping. Render every document and look at it. Recalculate every workbook and check the values are right, not merely error-free.
+SI-13
+Formatting is deliberately plain until the identity system is agreed. Structure carries the meaning; decoration is added later, once.
+SI-14
+Lead. Where the founder is thinking aloud, extract the signal, choose the strongest defensible path, execute it, and record it as a decision for ratification.
+2. The estate
+2.1 What existed before this session
+Finding
+Detail
+Project mirror
+311 files, 100 MB. Not the 386 believed to exist — 75 files were never in the mirror and cannot be recovered from it.
+Exact duplicates
+Only 2 byte-identical pairs. 309 unique files.
+Version clusters
+29 documents existing as 65 files. This — not byte duplication — is the real fragmentation.
+Code collisions
+GOV-002, GOV-003, CON-005 and CON-006 were each assigned to two different documents. Must be resolved before any handover to counsel.
+OneDrive fragmentation
+Three competing Kayan structures exist: a 175-item folder, a mostly empty skeleton, and content mixed into the CauseWay estate.
+Backup produced
+All 311 files organised into 14 domains with 29 version-cluster folders, archived, with a full inventory workbook.
+2.2 The directory built this session
+A single authoritative structure, numbered so that the order of the folders is the order of the build. Nothing is authoritative unless it is here.
+Folder
+Holds
+State
+00_CANON
+Constitution, decision register, this ledger. The layer everything derives from.
+Founding documents complete
+01_STRATEGY
+Business model detail, economics, execution plan, roadmap
+Next
+02_ARCHITECTURE
+Entities, identity, taxonomy, relationship pages, event model
+Founding documents complete
+03_TALENT
+Registration, competencies, ladder, assessment, references
+Architecture complete; instruments next
+04_CLIENT
+Client journey, intake, compliance, engagement lifecycle
+Journey defined in K-03-01; detail next
+05_POD
+Formation, roles, governance, economics
+Model defined in K-02-01; detail next
+06_DELIVERY
+Managed Delivery line: scopes, milestones, acceptance, escrow flow
+Queued
+07_HUB
+Hub and Café: memberships, operations, café, events
+Queued
+08_FORGE
+Cohort design, curriculum, sponsorship, placement
+Queued
+09_K4Y
+Civic programmes, absorption measurement, reporting
+Queued
+10_SPONSOR
+Sponsor journey, due diligence, agreements, reporting
+Journey defined in K-03-01; detail next
+11_LEGAL
+Contracts, registrations, policies, compliance
+Queued — depends on 01 and 06
+12_FINANCE
+Escrow, controls, pricing, model, thresholds
+Queued — carries the launch-gating dependency
+13_PEOPLE
+Internal roles, position codes, organisation, hiring
+Queued
+14_PLATFORM
+Site, e-process, automation build specification
+Queued — reads from 02 and 03
+15_GOVERNANCE
+Policies, procedures, checklists, registers
+Built alongside each line, per SI-02
+16_MARKET
+Positioning, narrative, research, case studies
+Queued
+90_SOURCE_ARCHIVE
+The 311-file backup. Evidence only, never authority.
+Complete
+99_SUPERSEDED
+Retired versions, retained and never deleted
+Open
+3. Session log
+3.1 Session 1 — 5 August 2026
+Objective: settle the foundation layer so that everything downstream can be derived rather than invented.
+Produced
+Reference
+What it settles
+The Kayan Business Constitution
+K-00-01
+Category, beliefs, product, economic engine, business lines and their gates, revenue doctrine, defensible assets, operating rules, red team, launch definition
+Decision Register
+K-00-02
+35 decisions recorded; 10 open questions ranked by how much they block
+Session Ledger and Standing Instructions
+K-00-03
+This document
+Entity, Identity and Relationship Architecture
+K-02-01
+9 entities, the identifier standard with check character, the pod model, five relationship pages, and the 20-event automation model
+Micro-Specialisation Taxonomy and Coding Standard
+K-02-02
+Three-level coding, 20 families, navigation design, governance
+Taxonomy register
+K-02-02-W
+20 families, 79 groups, 483 nodes, with Arabic queue and change control
+Registration, Assessment and Verification Architecture
+K-03-01
+11-stage journey with full field specification, 6 competencies, the 5-tier ladder, 4 assessment instruments, the automated reference system, 13 consents, internal workflow, 8 quality checklists, and the client and sponsor journeys
+Source archive and inventory
+90_SOURCE_ARCHIVE
+311 files preserved, grouped by document identity, duplicates and collisions identified
+3.2 Material judgements taken in session 1
+The verification and trust layer is the core asset; managed delivery is how it is monetised. This reframes Kayan from a service company to an infrastructure company, and it is the single most consequential position taken.
+The taxonomy is widened from twelve digital-centric families to twenty covering all work. The earlier structure was defining who Kayan was for by omission.
+Verification is formally severed from work allocation, and this is stated to registrants twice. It is what makes honest registration rational.
+The payment and fund-protection mechanism is named as the only risk the red team could not answer, and is therefore the highest-priority build in the company.
+Technical integrity signals never auto-fail an assessment, because in this operating environment that punishes circumstance rather than conduct.
+4. What comes next, in dependency order
+Priority
+Build
+Why now
+Depends on
+1
+Payment, escrow and fund-protection mechanism
+The only unanswered existential risk, and it gates launch. Nothing else matters if money cannot move safely.
+K-00-01 §8; needs banking facts
+2
+Ratify Q-02, Q-01, Q-10
+Three answers unblock the entire platform and registration build
+Founder
+3
+Managed Delivery operating standard
+The revenue engine. Scope, milestones, acceptance, escrow flow, dispute route.
+Priority 1
+4
+Assessment instruments for the first launch specialisations
+Verification cannot operate without them; they gate T2 and therefore all capacity
+K-02-02 ratified
+5
+Contract set: master agreement, scope of work, escrow terms, acceptance certificate
+Cannot trade without it; a bad first contract sets a precedent
+Priorities 1 and 3
+6
+Financial model, pricing and thresholds
+Sets every number the controlled documents reference
+Priorities 1 and 3
+7
+Internal roles, position codes and hiring gates
+Launch condition L-08
+K-00-01 §12
+8
+Platform build specification
+Reads from the architecture already built
+K-02-01, K-03-01, priority 2
+9
+Hub, Forge and K4Y operating standards
+Lines 2, 3 and 4
+Priorities 1 and 6
+10
+Positioning, narrative and public presence
+Deliberately last: it expresses a settled institution rather than inventing one
+Everything above
+The ordering of priority 10 is deliberate and is a correction of the usual instinct. A public presence built before the institution is settled describes something that does not yet exist, and has to be rebuilt the moment it does. [JUDGEMENT]
+5. Session protocol
+Open by reading this ledger and the decision register. Do not re-derive settled positions.
+State the objective of the session and what will exist at the end of it.
+Build completely, to the standing instructions. No outlines.
+Verify: render every document, recalculate every workbook, check values are right rather than merely error-free.
+Record decisions in K-00-02 and update this ledger.
+File to the directory. Nothing is authoritative until it is filed.
+
+End of document. Updated at every session.

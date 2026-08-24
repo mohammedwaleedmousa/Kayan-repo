@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>المواد — كيان</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#FAF6EC;overflow-x:hidden;-webkit-tap-highlight-color:transparent;}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+a{color:#0E6E66;text-decoration:none;}
+a:hover{color:#052E2B;}
+::selection{background:rgba(18,181,164,.24);color:#052E2B;}
+button{font-family:inherit;transition:transform 140ms cubic-bezier(.2,0,.2,1),background 140ms cubic-bezier(.2,0,.2,1),border-color 140ms cubic-bezier(.2,0,.2,1);}
+button:active{transform:scale(.97);}
+:focus-visible{outline:2px solid #0E8C80;outline-offset:3px;border-radius:6px;}
+p,div{text-wrap:pretty;}
+@page{margin:14mm;}
+@media print{[data-noprint]{display:none !important;}html,body{background:#fff !important;}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;}}
+</style>
+</helmet>
+
+<div dir="rtl" style="min-height:100vh;background:#FAF6EC;color:#052E2B;font-family:'IBM Plex Sans Arabic',sans-serif;">
+<div style="max-width:920px;margin:0 auto;padding:26px clamp(18px,5vw,32px) 80px;">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;">
+    <img src="uploads/kayan_logo_forest.png" alt="كيان" style="height:22px;">
+    <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#33544D;white-space:nowrap;">BRAND MATERIALS · v1</span>
+  </div>
+  <div style="height:1px;background:#EDE5D2;margin:18px 0 34px;"></div>
+
+  <h1 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(30px,7vw,52px);line-height:1.24;letter-spacing:-.01em;">المواد</h1>
+  <div style="font-size:16px;line-height:2;color:#33544D;margin-top:12px;max-width:56ch;">يسلم هذا المستند المواد ولا يصفها. تنزل الرموز والألوان والمقاييس ملفات قابلة للاستعمال المباشر، فلا يبنى شيء باجتهاد قارئ.</div>
+  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;line-height:1.65;color:#33544D;margin-top:8px;max-width:66ch;">This sheet hands over the materials rather than describing them. Tokens, colour, scale and motion download as files the build consumes directly.</div>
+
+  <div data-noprint="" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:26px;">
+    <button onClick="{{ dlJson }}" style="white-space:nowrap;min-height:48px;padding:0 20px;border:0;border-radius:12px;background:#052E2B;color:#FAF6EC;font-size:15px;font-weight:500;cursor:pointer;" style-hover="background:#0B3F3A;">kayan.tokens.json</button>
+    <button onClick="{{ dlCss }}" style="white-space:nowrap;min-height:48px;padding:0 20px;border:1px solid #052E2B;border-radius:12px;background:transparent;color:#052E2B;font-size:15px;cursor:pointer;" style-hover="background:rgba(5,46,43,.06);">kayan.tokens.css</button>
+    <button onClick="{{ dlSwatch }}" style="white-space:nowrap;min-height:48px;padding:0 20px;border:1px solid #EDE5D2;border-radius:12px;background:transparent;color:#052E2B;font-size:15px;cursor:pointer;" style-hover="border-color:#052E2B;">ورقة الألوان PNG</button>
+    <button onClick="{{ dlBadges }}" style="white-space:nowrap;min-height:48px;padding:0 20px;border:1px solid #EDE5D2;border-radius:12px;background:transparent;color:#052E2B;font-size:15px;cursor:pointer;" style-hover="border-color:#052E2B;">شارات الفئات SVG</button>
+  </div>
+
+  <div style="height:1px;background:#EDE5D2;margin:44px 0 0;"></div>
+
+  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:34px;">
+    <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(21px,4vw,28px);line-height:1.4;">قانون النسبة</h2>
+    <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#33544D;white-space:nowrap;">RATIO LAW</span>
+  </div>
+  <div style="font-size:15px;line-height:2;color:#33544D;margin-top:10px;max-width:58ch;">تحسب النسبة على كل شاشة لا على النظام كله: ستون ورقا، خمسة وعشرون حبرا، عشرة بنية، وخمسة لونا دالا. ولا يجمع لونان دالان في شاشة واحدة.</div>
+
+  <div style="display:flex;height:20px;border-radius:6px;overflow:hidden;margin-top:20px;border:1px solid #EDE5D2;">
+    <div style="width:60%;background:#FAF6EC;"></div>
+    <div style="width:25%;background:#052E2B;"></div>
+    <div style="width:10%;background:#EDE5D2;"></div>
+    <div style="width:5%;background:#12B5A4;"></div>
+  </div>
+  <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:10px;font-size:12.5px;color:#33544D;">
+    <span>60 ورق</span><span>25 حبر</span><span>10 بنية</span><span>5 لون دال</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:26px;">
+    <div style="border:1px solid #EDE5D2;border-radius:16px;overflow:hidden;background:#fff;">
+      <div style="background:#FAF6EC;padding:18px;height:150px;box-sizing:border-box;">
+        <div style="height:9px;width:52%;background:#052E2B;border-radius:2px;"></div>
+        <div style="height:1px;background:#EDE5D2;margin:12px 0;"></div>
+        <div style="height:5px;width:88%;background:rgba(5,46,43,.34);border-radius:2px;margin-bottom:7px;"></div>
+        <div style="height:5px;width:76%;background:rgba(5,46,43,.34);border-radius:2px;margin-bottom:7px;"></div>
+        <div style="height:5px;width:82%;background:rgba(5,46,43,.34);border-radius:2px;"></div>
+        <div style="height:1px;background:#EDE5D2;margin:12px 0;"></div>
+        <div style="display:flex;align-items:center;gap:7px;"><span style="width:20px;height:3px;background:#12B5A4;border-radius:2px;"></span><span style="height:5px;width:38%;background:rgba(5,46,43,.34);border-radius:2px;"></span></div>
+      </div>
+      <div style="padding:12px 16px;font-size:13.5px;">مستند — عقد أو محضر</div>
+    </div>
+    <div style="border:1px solid #EDE5D2;border-radius:16px;overflow:hidden;background:#fff;">
+      <div style="background:#fff;padding:18px;height:150px;box-sizing:border-box;border-bottom:1px solid #EDE5D2;">
+        <div style="display:flex;align-items:center;justify-content:space-between;"><div style="height:8px;width:40%;background:#052E2B;border-radius:2px;"></div><span style="width:8px;height:8px;border-radius:50%;background:#12B5A4;"></span></div>
+        <div style="border:1px solid #EDE5D2;border-radius:9px;height:38px;margin-top:14px;"></div>
+        <div style="border:1px solid #EDE5D2;border-radius:9px;height:38px;margin-top:8px;"></div>
+        <div style="height:26px;width:44%;background:#052E2B;border-radius:8px;margin-top:12px;"></div>
+      </div>
+      <div style="padding:12px 16px;font-size:13.5px;">شاشة عمل</div>
+    </div>
+    <div style="border:1px solid #EDE5D2;border-radius:16px;overflow:hidden;background:#fff;">
+      <div style="background:#052E2B;padding:18px;height:150px;box-sizing:border-box;">
+        <div style="height:9px;width:46%;background:#FAF6EC;border-radius:2px;"></div>
+        <div style="height:1px;background:rgba(250,246,236,.2);margin:12px 0;"></div>
+        <div style="height:5px;width:80%;background:rgba(250,246,236,.4);border-radius:2px;margin-bottom:7px;"></div>
+        <div style="height:5px;width:64%;background:rgba(250,246,236,.4);border-radius:2px;"></div>
+        <div style="display:flex;align-items:center;gap:7px;margin-top:16px;"><span style="width:20px;height:3px;background:#12B5A4;border-radius:2px;"></span><span style="height:5px;width:34%;background:rgba(250,246,236,.4);border-radius:2px;"></span></div>
+      </div>
+      <div style="padding:12px 16px;font-size:13.5px;">سطح داكن — لحظة أثر</div>
+    </div>
+  </div>
+  <div style="font-size:13.5px;line-height:1.95;color:#33544D;margin-top:14px;">يستعمل الداكن للحظات الأثر: القبول، والترقية، والتوقيع، والهب، والطائر. وما عدا ذلك سطح عمل فاتح. ولا يستعمل الداكن للإيقاع البصري.</div>
+
+  <div style="height:1px;background:#EDE5D2;margin:44px 0 0;"></div>
+
+  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:34px;">
+    <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(21px,4vw,28px);line-height:1.4;">اللوحة</h2>
+    <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#33544D;white-space:nowrap;">PALETTE · TAP TO COPY</span>
+  </div>
+
+  <div style="margin-top:16px;">
+    <sc-for list="{{ palette }}" as="c" hint-placeholder-count="8">
+      <button onClick="{{ c.copy }}" style="{{ c.rowStyle }}">
+        <span style="{{ c.chipStyle }}"></span>
+        <span style="flex:1 1 130px;min-width:0;text-align:start;">
+          <span style="display:block;font-size:14.5px;color:#052E2B;">{{ c.ar }}</span>
+          <span style="display:block;font-size:12.5px;color:#33544D;line-height:1.7;margin-top:2px;">{{ c.use }}</span>
+        </span>
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#052E2B;white-space:nowrap;">{{ c.hex }}</span>
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11.5px;color:#33544D;white-space:nowrap;width:74px;text-align:end;">{{ c.ratio }}</span>
+      </button>
+    </sc-for>
+  </div>
+  <div style="font-size:13.5px;line-height:1.95;color:#33544D;margin-top:12px;">النسبة محسوبة على الورق <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;">#FAF6EC</span>. ما دون <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;">4.5:1</span> لا يستعمل نصا؛ يستعمل شريطا أو نقطة بجانب نص بلون الحبر.</div>
+
+  <div style="height:1px;background:#EDE5D2;margin:44px 0 0;"></div>
+
+  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:34px;">
+    <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(21px,4vw,28px);line-height:1.4;">الطبقات</h2>
+    <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#33544D;white-space:nowrap;">STRATA · RECORD DENSITY</span>
+  </div>
+  <div style="font-size:15px;line-height:2;color:#33544D;margin-top:10px;max-width:58ch;">النقش الأفقي هو السجل مجسما. تقل المسافة بين الخطوط كلما قبل تسليم، فتزداد الكثافة. ولا تخف الكثافة أبدا: السجل لا يكتب مرتين.</div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;margin-top:24px;">
+    <sc-for list="{{ strata }}" as="s" hint-placeholder-count="5">
+      <div style="border:1px solid #EDE5D2;border-radius:14px;background:#fff;padding:14px;">
+        <div style="{{ s.boxStyle }}">
+          <sc-for list="{{ s.lines }}" as="ln" hint-placeholder-count="10">
+            <div style="{{ ln }}"></div>
+          </sc-for>
+          <sc-if value="{{ s.struck }}" hint-placeholder-val="{{ false }}">
+            <span style="position:absolute;inset-inline:-4%;top:50%;height:2px;background:#B23A31;transform:rotate(-4deg);"></span>
+          </sc-if>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-top:12px;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;">{{ s.ar }}</span>
+          <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:#33544D;">{{ s.code }}</span>
+        </div>
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11.5px;color:#33544D;margin-top:4px;">{{ s.gap }}</div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="font-size:13.5px;line-height:1.95;color:#33544D;margin-top:14px;">عند الإلغاء يشطب النقش بخط واحد ولا يمحى، ويقيد الإلغاء قيدا لاحقا بتاريخه وسببه.</div>
+
+  <div style="height:1px;background:#EDE5D2;margin:44px 0 0;"></div>
+
+  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:34px;">
+    <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(21px,4vw,28px);line-height:1.4;">المقياس</h2>
+    <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#33544D;white-space:nowrap;">TYPE SCALE · 1.25 FROM 17</span>
+  </div>
+  <div style="margin-top:16px;border:1px solid #EDE5D2;border-radius:18px;background:#fff;padding:6px 20px;">
+    <sc-for list="{{ scale }}" as="s" hint-placeholder-count="7">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding:16px 0;border-bottom:1px solid #EDE5D2;">
+        <span style="{{ s.style }}">{{ s.sample }}</span>
+        <span dir="ltr" style="display:flex;gap:12px;flex-shrink:0;font-family:'Instrument Sans',sans-serif;font-size:11.5px;color:#33544D;"><span style="color:#0E6E66;">{{ s.code }}</span><span>{{ s.val }}</span></span>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:16px;">
+    <div style="border:1px solid #EDE5D2;border-radius:14px;background:#fff;padding:16px 18px;">
+      <div style="font-size:14px;line-height:1.9;color:#052E2B;">الهندية داخل السرد العربي</div>
+      <div style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:30px;color:#0E6E66;margin-top:8px;">٠١٢٣٤٥٦٧٨٩</div>
+    </div>
+    <div style="border:1px solid #EDE5D2;border-radius:14px;background:#fff;padding:16px 18px;">
+      <div style="font-size:14px;line-height:1.9;color:#052E2B;">الغربية للمعرفات والمبالغ وما يظهر باللغتين</div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:28px;color:#0E6E66;margin-top:8px;">0123456789</div>
+    </div>
+    <div style="border:1px solid #EDE5D2;border-radius:14px;background:#fff;padding:16px 18px;">
+      <div style="font-size:14px;line-height:1.9;color:#052E2B;">اللاتيني المرافق أصغر بنحو 12٪ وينزل بكسلا واحدا ليتساوى بصريا</div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;color:#33544D;margin-top:8px;">size × .88 · translateY(1px)</div>
+    </div>
+  </div>
+  <div style="font-size:13.5px;line-height:1.95;color:#33544D;margin-top:14px;">لا يبعثر العربي بتباعد الحروف، ولا يمال، ولا ينزل عن 12 بكسلا، ولا يضبط طرفاه على الشاشة.</div>
+
+  <div style="height:1px;background:#EDE5D2;margin:44px 0 0;"></div>
+
+  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:34px;">
+    <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(21px,4vw,28px);line-height:1.4;">الحركة</h2>
+    <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#33544D;white-space:nowrap;">MOTION · THREE CURVES</span>
+  </div>
+  <div style="margin-top:16px;border:1px solid #EDE5D2;border-radius:18px;background:#fff;padding:6px 20px;">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid #EDE5D2;flex-wrap:wrap;">
+      <span style="font-size:15px;">استقرار — للدخول</span>
+      <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12px;color:#33544D;">400ms · cubic-bezier(.16,1,.3,1)</span>
+    </div>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid #EDE5D2;flex-wrap:wrap;">
+      <span style="font-size:15px;">لمسة — لرد الفعل</span>
+      <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12px;color:#33544D;">140ms · cubic-bezier(.2,0,.2,1)</span>
+    </div>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:16px 0;flex-wrap:wrap;">
+      <span style="font-size:15px;">خروج — للمغادرة</span>
+      <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12px;color:#33544D;">220ms · cubic-bezier(.4,0,1,1)</span>
+    </div>
+  </div>
+  <div style="font-size:13.5px;line-height:1.95;color:#33544D;margin-top:14px;">يتحرك شيء واحد في الوقت الواحد، والدخول أبطأ من الخروج، والاتجاه يتبع القراءة. وتقطع الحركة عند تدخل المستعمل فتستقر فورا على حالتها النهائية.</div>
+  <div style="font-size:13.5px;line-height:1.95;color:#33544D;margin-top:6px;">ويمنع: التمرير المتوازي، وعدادات الأرقام، وأي حركة أثناء القراءة، ودوائر الانتظار، وتأثير التمرير الذي يزيح التخطيط.</div>
+
+  <div style="height:1px;background:#EDE5D2;margin:44px 0 0;"></div>
+
+  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:34px;">
+    <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(21px,4vw,28px);line-height:1.4;">عقد الوصول</h2>
+    <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#33544D;white-space:nowrap;">ACCESSIBILITY CONTRACT</span>
+  </div>
+  <div style="font-size:15px;line-height:2;color:#33544D;margin-top:10px;max-width:58ch;">يقرأ الموقع في عدن نهارا على هاتف متوسط بسطوع منخفض. لذلك ترفع العتبة فوق الحد المعتاد.</div>
+  <div style="margin-top:16px;border:1px solid #EDE5D2;border-radius:18px;background:#fff;padding:6px 20px;">
+    <sc-for list="{{ a11y }}" as="a" hint-placeholder-count="7">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid #EDE5D2;flex-wrap:wrap;">
+        <span style="font-size:14.5px;">{{ a.ar }}</span>
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12px;color:#33544D;white-space:nowrap;">{{ a.v }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="height:1px;background:#EDE5D2;margin:44px 0 22px;"></div>
+  <div style="font-size:13px;line-height:1.95;color:#33544D;">تصدر هذه المواد عن وثيقة الهوية ولا تعدل مستقلة عنها. أي تغيير في اللون أو المقياس يقيد في الوثيقة أولا ثم يعاد توليد الملفات.</div>
+  <div data-noprint="" style="font-size:13px;line-height:1.95;color:#33544D;margin-top:6px;">{{ status }}</div>
+
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  PALETTE = [
+    { key: 'paper', ar: 'الورق', use: 'خلفية كل سطح عمل', hex: '#FAF6EC', ratio: '—' },
+    { key: 'ink', ar: 'الحبر', use: 'كل النصوص والعناوين، وخلفية لحظات الأثر', hex: '#052E2B', ratio: '13.5:1' },
+    { key: 'body', ar: 'النص الثانوي', use: 'الشروح والملصقات', hex: '#33544D', ratio: '7.7:1' },
+    { key: 'rule', ar: 'البنية', use: 'الخطوط الشعرية وحدود الجداول', hex: '#EDE5D2', ratio: '1.1:1' },
+    { key: 'accentDeep', ar: 'الأخضر العميق', use: 'الروابط، وشريط الفئة T1', hex: '#0E6E66', ratio: '6.1:1' },
+    { key: 'accentTeal', ar: 'التركوازي', use: 'إشارات غير نصية: أشرطة، نقاط، حلقات التركيز', hex: '#12B5A4', ratio: '2.3:1' },
+    { key: 'gold', ar: 'الذهب', use: 'الفئة T4 واللحظات الوطنية. لا يستعمل زرا', hex: '#C9A227', ratio: '2.6:1' },
+    { key: 'alarm', ar: 'الإنذار', use: 'النزاع والإلغاء والرفض. إطار لا تعبئة', hex: '#B23A31', ratio: '5.5:1' }
+  ];
+  TIERS = [
+    { code: 'T0', ar: 'مسجل', gap: 26, c: '#B9B1A2' },
+    { code: 'T1', ar: 'معرف', gap: 19, c: '#0E6E66' },
+    { code: 'T2', ar: 'موثق', gap: 13, c: '#12B5A4' },
+    { code: 'T3', ar: 'مثبت', gap: 9, c: '#B8891A' },
+    { code: 'T4', ar: 'مؤتمن', gap: 6, c: '#C9A227' }
+  ];
+  SCALE = [
+    { code: 'D1', size: 46, lh: 1.18, w: 600, f: 'Alexandria', s: 'خلف كل نجاح' },
+    { code: 'D2', size: 34, lh: 1.28, w: 500, f: 'Alexandria', s: 'هوية تصدر عن سجل' },
+    { code: 'H1', size: 27, lh: 1.40, w: 500, f: 'Alexandria', s: 'قواعد الإصدار والمراجعة' },
+    { code: 'H2', size: 22, lh: 1.55, w: 500, f: 'Alexandria', s: 'الخامة والتنفيذ' },
+    { code: 'B1', size: 17, lh: 1.95, w: 400, f: 'IBM Plex Sans Arabic', s: 'يصرف المستحق خلال خمسة أيام عمل من تاريخ محضر الاستلام.' },
+    { code: 'B2', size: 14, lh: 1.90, w: 400, f: 'IBM Plex Sans Arabic', s: 'تراجع الفئة تلقائيا مع كل تحديث لسجل التسليم.' },
+    { code: 'C1', size: 12, lh: 1.80, w: 400, f: 'IBM Plex Sans Arabic', s: 'الحد الأدنى للنص العربي على الشاشة' }
+  ];
+  REAL = { D1: 64, D2: 44, H1: 33, H2: 25, B1: 17, B2: 14, C1: 12 };
+  A11Y = [
+    { ar: 'تباين النص الأساسي على الورق', v: '≥ 7:1' },
+    { ar: 'تباين النص الكبير وحواف عناصر التحكم', v: '≥ 3:1' },
+    { ar: 'أصغر هدف لمس', v: '48 × 48 px' },
+    { ar: 'حلقة التركيز', v: '2px #12B5A4 · offset 2px' },
+    { ar: 'الوصول بلوحة المفاتيح', v: 'كامل، بترتيب القراءة' },
+    { ar: 'أصغر مقاس عربي', v: '12px' },
+    { ar: 'تفضيل تقليل الحركة', v: 'يحترم دائما' },
+    { ar: 'وزن الصفحة على شبكة بطيئة', v: '≤ 120 KB' }
+  ];
+
+  state = { status: '' };
+
+  say(t) {
+    this.setState({ status: t });
+    clearTimeout(this._t); this._t = setTimeout(() => this.setState({ status: '' }), 2600);
+  }
+  componentWillUnmount() { clearTimeout(this._t); }
+
+  tokens() {
+    const colour = {};
+    this.PALETTE.forEach(c => { colour[c.key] = c.hex; });
+    const tier = {};
+    this.TIERS.forEach(t => { tier[t.code] = { name: t.ar, colour: t.c, strataGap: t.gap }; });
+    const type = {};
+    this.SCALE.forEach(s => { type[s.code] = { size: this.REAL[s.code], lineHeight: s.lh, weight: s.w, family: s.f }; });
+    return {
+      name: 'Kayan', version: '1.0.0', direction: 'rtl', updated: '2026-08-06',
+      colour: colour,
+      ratio: { paper: 60, ink: 25, structure: 10, accent: 5, scope: 'per screen', rule: 'one accent per screen' },
+      surface: { dark: 'consequence only — acceptance, tier, signature, hub, bird', light: 'all working surfaces' },
+      type: {
+        families: { display: 'Alexandria', body: 'IBM Plex Sans Arabic', latin: 'Instrument Sans' },
+        base: 17, ratio: 1.25, latinPairing: { scale: 0.88, offsetY: 1 },
+        lineHeight: { arabic: 1.9, latin: 1.6 }, minArabic: 12,
+        numerals: { narrativeArabic: 'arabic-indic', dataAndMoney: 'western' },
+        scale: type
+      },
+      tier: tier,
+      strata: { rule: 'density only ever increases', gaps: this.TIERS.map(t => t.gap), revocation: 'struck through, never erased' },
+      motion: {
+        settle: { duration: 400, easing: 'cubic-bezier(.16,1,.3,1)', use: 'entrances' },
+        micro: { duration: 140, easing: 'cubic-bezier(.2,0,.2,1)', use: 'touch response' },
+        exit: { duration: 220, easing: 'cubic-bezier(.4,0,1,1)', use: 'departures' },
+        rules: ['one thing moves at a time', 'entrances slower than exits', 'direction follows reading order', 'interruptible: resolve to end state', 'prefers-reduced-motion honoured']
+      },
+      a11y: { bodyContrast: 7, largeContrast: 3, touchTarget: 48, focusRing: '2px #12B5A4 offset 2px', minArabic: 12, pageBudgetKB: 120 },
+      sonic: { maqam: 'Rast on D', root: 587.33, neutralThirdCents: 347, loudness: '-18 LUFS / -1 dBTP', cues: ['logo', 'stamp', 'runeA', 'runeB', 'runeC', 'verify', 'tier', 'accept', 'halt'] },
+      radius: { card: 22, panel: 18, control: 12, chip: 99 },
+      tagline: { ar: 'خلف كل نجاح، كيان', en: 'Behind every success, a Kayan.' }
+    };
+  }
+
+  css() {
+    const t = this.tokens(), L = [];
+    L.push('/* Kayan design tokens — generated from the identity document. Do not edit by hand. */');
+    L.push(':root {');
+    Object.keys(t.colour).forEach(k => L.push('  --kyn-colour-' + k.replace(/[A-Z]/g, m => '-' + m.toLowerCase()) + ': ' + t.colour[k] + ';'));
+    Object.keys(t.tier).forEach(k => L.push('  --kyn-tier-' + k.toLowerCase() + ': ' + t.tier[k].colour + ';'));
+    Object.keys(t.tier).forEach(k => L.push('  --kyn-strata-gap-' + k.toLowerCase() + ': ' + t.tier[k].strataGap + 'px;'));
+    L.push('  --kyn-font-display: "Alexandria", sans-serif;');
+    L.push('  --kyn-font-body: "IBM Plex Sans Arabic", sans-serif;');
+    L.push('  --kyn-font-latin: "Instrument Sans", sans-serif;');
+    Object.keys(t.type.scale).forEach(k => {
+      L.push('  --kyn-size-' + k.toLowerCase() + ': ' + t.type.scale[k].size + 'px;');
+      L.push('  --kyn-leading-' + k.toLowerCase() + ': ' + t.type.scale[k].lineHeight + ';');
+    });
+    ['settle', 'micro', 'exit'].forEach(k => {
+      L.push('  --kyn-' + k + ': ' + t.motion[k].duration + 'ms ' + t.motion[k].easing + ';');
+      L.push('  --kyn-' + k + '-easing: ' + t.motion[k].easing + ';');
+    });
+    Object.keys(t.radius).forEach(k => L.push('  --kyn-radius-' + k + ': ' + t.radius[k] + 'px;'));
+    L.push('  --kyn-touch-target: 48px;');
+    L.push('}');
+    L.push('');
+    L.push('/* Ratio law per screen: 60 paper · 25 ink · 10 structure · 5 accent. One accent per screen. */');
+    L.push('/* Dark surfaces are for consequence only. Accent hexes are non-text cues. */');
+    L.push(':focus-visible { outline: 2px solid var(--kyn-colour-accent-teal); outline-offset: 2px; }');
+    L.push('@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }');
+    return L.join('\n');
+  }
+
+  save(blob, name) {
+    const u = URL.createObjectURL(blob), a = document.createElement('a');
+    a.href = u; a.download = name; document.body.appendChild(a); a.click();
+    document.body.removeChild(a); setTimeout(() => URL.revokeObjectURL(u), 4000);
+    this.say('نزل ' + name);
+  }
+
+  badges() {
+    let out = '<svg xmlns="http://www.w3.org/2000/svg" width="196" height="' + (this.TIERS.length * 54) + '" viewBox="0 0 196 ' + (this.TIERS.length * 54) + '">';
+    this.TIERS.forEach((t, i) => {
+      const y = i * 54;
+      out += '<g transform="translate(0,' + y + ')">' +
+        '<rect width="196" height="44" rx="10" fill="#052E2B"/>' +
+        '<rect x="16" y="20.5" width="26" height="3" rx="1.5" fill="' + t.c + '"/>' +
+        '<text x="180" y="27" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" fill="#FAF6EC" direction="rtl">' + t.ar + ' في كيان</text>' +
+        '<text x="52" y="27" font-family="ui-monospace,monospace" font-size="10" letter-spacing="1.6" fill="' + t.c + '">' + t.code + '</text></g>';
+    });
+    return out + '</svg>';
+  }
+
+  async swatchSheet() {
+    const rows = this.PALETTE.length + this.TIERS.length + 1;
+    const W = 1400, RH = 118, H = 200 + rows * RH;
+    const c = document.createElement('canvas'); c.width = W; c.height = H;
+    const x = c.getContext('2d');
+    try { await document.fonts.load("500 34px Alexandria"); await document.fonts.load("500 22px 'Instrument Sans'"); } catch (e) { }
+    x.fillStyle = '#FAF6EC'; x.fillRect(0, 0, W, H);
+    x.fillStyle = '#052E2B'; x.font = "500 40px Alexandria, sans-serif";
+    x.direction = 'rtl'; x.textAlign = 'right'; x.fillText('كيان — ورقة الألوان', W - 72, 96);
+    x.direction = 'ltr'; x.textAlign = 'left';
+    x.fillStyle = '#33544D'; x.font = "500 20px 'Instrument Sans', sans-serif";
+    x.fillText('KAYAN COLOUR SHEET · v1 · 2026-08-06', 72, 92);
+    x.strokeStyle = '#EDE5D2'; x.lineWidth = 2;
+    x.beginPath(); x.moveTo(72, 136); x.lineTo(W - 72, 136); x.stroke();
+    let y = 176;
+    const row = (hex, ar, meta) => {
+      x.fillStyle = hex; x.fillRect(72, y, 190, 84);
+      x.strokeStyle = '#EDE5D2'; x.lineWidth = 1; x.strokeRect(72.5, y + .5, 189, 83);
+      x.direction = 'ltr'; x.textAlign = 'left';
+      x.fillStyle = '#052E2B'; x.font = "500 26px 'Instrument Sans', sans-serif";
+      x.fillText(hex.toUpperCase(), 292, y + 40);
+      x.fillStyle = '#33544D'; x.font = "400 19px 'Instrument Sans', sans-serif";
+      x.fillText(meta, 292, y + 70);
+      x.direction = 'rtl'; x.textAlign = 'right';
+      x.fillStyle = '#052E2B'; x.font = "500 27px Alexandria, sans-serif";
+      x.fillText(ar, W - 72, y + 50);
+      y += RH;
+    };
+    this.PALETTE.forEach(p => row(p.hex, p.ar, 'contrast on paper ' + p.ratio));
+    x.strokeStyle = '#EDE5D2'; x.lineWidth = 2;
+    x.beginPath(); x.moveTo(72, y - 14); x.lineTo(W - 72, y - 14); x.stroke(); y += 14;
+    this.TIERS.forEach(t => row(t.c, t.ar, t.code + ' · strata gap ' + t.gap + 'px'));
+    return new Promise(res => c.toBlob(res, 'image/png'));
+  }
+
+  renderVals() {
+    const palette = this.PALETTE.map(c => ({
+      ar: c.ar, use: c.use, hex: c.hex, ratio: c.ratio,
+      rowStyle: {
+        display: 'flex', alignItems: 'center', gap: '14px', width: '100%', boxSizing: 'border-box',
+        padding: '12px 14px', minHeight: '56px', border: '1px solid #EDE5D2', borderRadius: '12px',
+        background: '#fff', cursor: 'pointer', marginBottom: '8px', textAlign: 'start',
+        fontFamily: "'IBM Plex Sans Arabic',sans-serif", flexWrap: 'wrap'
+      },
+      chipStyle: {
+        width: '34px', height: '34px', borderRadius: '9px', flexShrink: 0,
+        background: c.hex, border: '1px solid ' + (c.hex === '#FAF6EC' || c.hex === '#EDE5D2' ? '#DCD3BE' : 'transparent')
+      },
+      copy: () => {
+        try { navigator.clipboard.writeText(c.hex); } catch (e) { }
+        this.say('نسخ ' + c.hex);
+      }
+    }));
+
+    const strata = this.TIERS.map((t, i) => {
+      const H = 108, n = Math.max(3, Math.floor(H / t.gap));
+      return {
+        ar: t.ar, code: t.code, gap: 'gap ' + t.gap + 'px', struck: false,
+        boxStyle: { position: 'relative', height: H + 'px', overflow: 'hidden', background: '#FAF6EC', borderRadius: '8px' },
+        lines: Array.from({ length: n }, (_, j) => ({
+          position: 'absolute', insetInlineStart: '8px', insetInlineEnd: '8px', top: (j * t.gap) + 'px',
+          height: '1px', background: t.c, opacity: .92
+        }))
+      };
+    });
+    strata.push({
+      ar: 'ملغى', code: 'STRUCK', gap: 'gap 13px', struck: true,
+      boxStyle: { position: 'relative', height: '108px', overflow: 'hidden', background: '#FAF6EC', borderRadius: '8px' },
+      lines: Array.from({ length: 9 }, (_, j) => ({
+        position: 'absolute', insetInlineStart: '8px', insetInlineEnd: '8px', top: (j * 13) + 'px',
+        height: '1px', background: '#12B5A4', opacity: .34
+      }))
+    });
+
+    const scale = this.SCALE.map(s => ({
+      code: s.code, val: this.REAL[s.code] + '/' + s.lh.toFixed(2), sample: s.s,
+      style: {
+        fontFamily: "'" + s.f + "',sans-serif", fontWeight: s.w, fontSize: s.size + 'px',
+        lineHeight: s.lh, color: s.size >= 22 ? '#052E2B' : '#33544D', minWidth: 0
+      }
+    }));
+
+    return {
+      palette: palette, strata: strata, scale: scale, a11y: this.A11Y,
+      status: this.state.status,
+      dlJson: () => this.save(new Blob([JSON.stringify(this.tokens(), null, 2)], { type: 'application/json' }), 'kayan.tokens.json'),
+      dlCss: () => this.save(new Blob([this.css()], { type: 'text/css' }), 'kayan.tokens.css'),
+      dlBadges: () => this.save(new Blob([this.badges()], { type: 'image/svg+xml' }), 'kayan-tier-badges.svg'),
+      dlSwatch: async () => { const b = await this.swatchSheet(); if (b) this.save(b, 'kayan-colour-sheet.png'); }
+    };
+  }
+}
+</script>
+</body>
+</html>

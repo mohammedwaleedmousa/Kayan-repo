@@ -1,0 +1,198 @@
+KAYAN INNOVATION, ENTREPRENEURSHIP & WORK ENVIRONMENTS LLC
+Aden, Republic of Yemen
+
+Micro-Specialisation Taxonomy and Coding Standard
+The controlled vocabulary of what people do, how it is coded, how it is navigated, and how it grows
+The taxonomy is the vocabulary of the Kayan system. Registration reads from it, assessment routes on it, pods are mapped with it, clients search it and every report aggregates by it. This document defines its structure, its coding rules, how a person navigates it in under three steps, and how it is governed as it grows.
+Document code
+K-02-02
+Version
+v1.0
+Status
+Founding draft — for founder ratification
+Date
+5 August 2026
+Owner
+Founder / Chief Executive
+Classification
+INTERNAL — CONFIDENTIAL
+Supersedes
+Prior 12-family / 136-group / 441-node registry drafts (retained as evidence)
+Derives from
+K-00-01 Constitution · K-02-01 Entity and Identity Architecture
+Unlocks
+Registration selection · assessment routing · pod capability mapping · client search · all reporting
+The populated register is held in workbook K-02-02-W.
+
+Contents
+TOC \h \o "1-3"
+
+1. Why a taxonomy is a strategic asset
+A taxonomy looks like an administrative convenience. It is not. Whoever defines the categories in a market defines how everything in that market is compared, searched, priced and reported.
+For Kayan the taxonomy does five jobs simultaneously: it is how a professional describes themselves at registration; it is what routes them to the right assessment; it is how a pod&apos;s combined capability and its gaps are seen; it is how a client expresses what they need; and it is the axis on which every report about supply, demand and absorption is aggregated. A weak taxonomy degrades all five at once. [JUDGEMENT]
+2. Design principles
+Principle
+What it means
+What it rules out
+Inclusive of all work
+Digital work, professional services, engineering, health, agriculture, logistics, skilled trades, crafts and hospitality sit in one structure with equal standing
+A technology-centric taxonomy that quietly tells a tailor, a solar technician or a nurse that Kayan is not for them
+Describes work, not job titles
+A node is a kind of work someone does, not a position someone holds
+Nodes such as Senior Manager or Consultant, which describe seniority or employment, not capability
+Assessable by construction
+A node may only go active once a verification method and evidence type exist for it
+Nodes that sound impressive and cannot be verified — which would hollow out the trust asset
+Permanent codes
+A code is issued once, never reused, never re-pointed
+Renumbering, which silently invalidates every historical record and every issued verification
+Extensible without limit
+999 nodes per group, unlimited groups, unlimited families
+A fixed count such as 441, which becomes a ceiling the moment reality exceeds it
+Navigable in three steps
+Search, guided browse and plain-language entry, none more than three steps deep
+Presenting a person with a list of several hundred items and calling it choice
+Bilingual by requirement
+A node is not shown in the Arabic journey until it carries an approved Arabic label
+English-only categories in a market that works in Arabic
+3. Structure and coding
+Three levels: Family, Group, Node.
+FF-GG-NNN
+Level
+Code
+Meaning
+Example
+Family
+FF
+The broad domain of work. Twenty families.
+SW — Software and Engineering
+Group
+GG
+A coherent cluster within the family. The navigation layer.
+FE — Front-End and Web Interfaces
+Node
+NNN
+The specific kind of work that is declared, assessed and verified.
+003 — React application development
+Full code: SW-FE-003. This is what appears on a verification record, in a pod capability map, in a client search and in every report. It is never replaced by a text label in any system integration. [RULE]
+3.1 The twenty families
+Code
+Family
+Code
+Family
+SW
+Software and Engineering
+RS
+Research, Monitoring and Evaluation
+DA
+Data, AI and Analytics
+LN
+Language, Translation and Localisation
+DE
+Design and Creative
+EG
+Engineering, Construction and Built Environment
+CM
+Content, Media and Communication
+HS
+Health, Safety and Social Services
+MK
+Marketing, Growth and Sales
+AE
+Agriculture, Environment and Energy
+BS
+Business, Strategy and Consulting
+LO
+Logistics, Supply Chain and Procurement
+FN
+Finance, Accounting and Audit
+AD
+Administration, Customer and Business Support
+LG
+Legal, Governance and Compliance
+CR
+Craft, Trades and Technical Services
+PM
+Project, Programme and Operations Management
+HP
+Hospitality, Events and Experience
+HR
+People, Talent and Organisational Development
+
+(further families added by change control)
+Current population: 20 families, 79 groups, 483 nodes. [FACT — workbook K-02-02-W v1.0]
+This is a deliberate widening from the earlier 441-node structure, which concentrated on digital and professional work. Three families — skilled trades, hospitality, and agriculture and energy — were substantially absent. Their absence was not neutral: it silently defined who Kayan was for. [JUDGEMENT — this is a material change and requires founder ratification: open question Q-02]
+4. Navigation design
+No person browses 483 items. The registration interface therefore never presents the taxonomy as a list. Three entry routes are offered simultaneously, and every route reaches a node in at most three steps.
+Route
+How it works
+Who it serves
+Search first
+A single box searching node names, group names, common synonyms and tool names. Typing a tool name returns the node it belongs to.
+The majority, who know exactly what they do
+Guided browse
+Family, then group, then node. Each level shows a plain-language description and a count.
+People exploring, or unsure which family their work sits in
+Plain language
+Begins from how a person would describe themselves — I build websites, I fix air conditioners, I translate documents — and maps to the nodes behind it.
+People whose work has no formal name, and early-career registrants
+The plain-language route matters more than it appears. A skilled tailor does not think of her work as CR-AC-001. If the only way in is formal vocabulary, the taxonomy quietly excludes exactly the people the institution exists to include. [JUDGEMENT]
+4.1 Selection rules
+One primary node. This determines the craft assessment set.
+Up to four secondary nodes, each independently assessable, at any time.
+A synonym that resolves to a node is recorded as the search term used, so the synonym list improves from real behaviour.
+A person who cannot find their work may submit a proposal directly from the picker; it enters the change control process at step 1 and they are notified of the outcome.
+The last rule turns a dead end into an intelligence source. Every unmatched search is evidence of a gap in the taxonomy or in our language. [JUDGEMENT]
+5. What each node must carry
+Attribute
+Requirement
+Code
+Permanent, unique, never reused
+Name (English)
+Describes work, not seniority or employment
+Name (Arabic)
+Required before the node appears in the Arabic journey
+Definition
+One or two sentences: what a person doing this actually produces
+Typical deliverables
+What the output looks like, so that evidence can be recognised
+Verification method
+Which assessment instruments apply — knowledge, practical task, portfolio, or a combination
+Evidence types
+What counts as acceptable proof of prior work
+Adjacent nodes
+Related nodes, used for search suggestion and for pod gap analysis
+Status
+Active, Proposed, or Retired
+Version
+The taxonomy release in which the node was introduced or last changed
+Workbook K-02-02-W v1.0 carries code, names, family, group, status and version for all 483 nodes. Definitions, verification methods and evidence types are populated per family as each family&apos;s assessment set is built. A node without a verification method may be selected but cannot yet be verified, and is shown as such. [FACT — current state]
+6. Governance
+Eight steps, owned and recorded. The full procedure is in the workbook&apos;s Change Control sheet.
+Proposal — anyone may propose, with a reason and a real example of the work.
+Screening — checked for duplication and for whether it is genuinely distinct work rather than a tool or a job title.
+Assessment readiness — a verification method and evidence type must exist before the node can go active.
+Approval — approved, merged into an existing node, or declined with a stated reason.
+Coding — next available number in the group. Never reused.
+Arabic label — required before the node appears in the Arabic journey.
+Release — published in a dated version; anyone holding a merged node is re-pointed automatically and notified.
+Retirement — marked Retired, never deleted. Existing holders keep their verification; the node is hidden from new selection.
+The taxonomy is versioned as a whole and released on a fixed cycle rather than changed continuously, so that any report can state which version it was aggregated under.
+7. Decisions and open questions
+ID
+Decision
+D-31
+Three-level structure with permanent codes in the form FF-GG-NNN.
+D-32
+Twenty families covering all categories of work, including trades, crafts, hospitality, agriculture and health, with equal standing.
+D-33
+No fixed node count. Extensible without limit; a node number never reused.
+D-34
+A node may not go active until a verification method and evidence type exist.
+D-35
+Three navigation routes, none more than three steps deep, including a plain-language route.
+D-36
+Unmatched searches and node proposals are captured as intelligence, not discarded.
+Open: Q-02 — ratification of the widened twenty-family structure in place of the earlier twelve-family, 441-node registry. Everything downstream depends on this being settled first.
+
+End of document. Amendments only by recorded decision in K-00-02.

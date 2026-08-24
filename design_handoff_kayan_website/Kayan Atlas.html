@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>أطلس كيان — قرص عدن</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
+<style>
+html,body{margin:0;background:#03201D;color:#FAF6EC;font-family:'IBM Plex Sans Arabic',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#E9C96B;text-decoration:none;transition:color .15s ease}a:hover{color:#F3DE9C}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+header.site{position:sticky;top:0;z-index:9;background:rgba(3,32,29,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,162,39,.22)}
+header.site .bar{display:flex;align-items:center;justify-content:space-between;gap:14px;height:68px}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;color:#E9C96B}
+h1{margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:200;font-size:clamp(30px,5vw,56px);line-height:1.3;color:#FAF6EC}
+h1 b{font-weight:800;background:linear-gradient(100deg,#C9A227 10%,#F3DE9C 50%,#C9A227 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{margin:12px 0 0;max-width:66ch;font-size:14.5px;line-height:2.1;color:rgba(250,246,236,.72)}
+.grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(18px,3vw,36px);align-items:center;margin-top:clamp(18px,3vh,30px)}
+@media (max-width:980px){.grid{grid-template-columns:1fr}}
+.dial-shell{position:relative;background:radial-gradient(closest-side,rgba(201,162,39,.07),transparent 70%),#052E2B;border:1px solid rgba(201,162,39,.28);border-radius:28px;padding:clamp(14px,2.4vw,26px)}
+.dial-shell svg{display:block;width:100%;height:auto}
+.hud{position:absolute;top:16px;inset-inline-start:16px;display:flex;flex-direction:column;gap:8px;align-items:flex-start;z-index:2}
+.chip{display:inline-flex;align-items:center;gap:9px;background:rgba(3,32,29,.82);border:1px solid rgba(201,162,39,.42);border-radius:99px;padding:7px 14px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#F3DE9C;direction:ltr}
+.chip .dot{width:7px;height:7px;border-radius:50%;background:#E9C96B;box-shadow:0 0 10px #E9C96B;animation:pulse 2s infinite}
+.tip{position:absolute;pointer-events:none;z-index:3;background:rgba(3,32,29,.94);border:1px solid rgba(201,162,39,.55);border-radius:12px;padding:9px 13px;font-size:12.5px;line-height:1.8;transform:translate(-50%,-118%);opacity:0;transition:opacity .16s ease;white-space:nowrap}
+.tip .en{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#E9C96B;direction:ltr;display:block;text-align:left}
+.side .block{border-inline-start:2px solid rgba(201,162,39,.4);padding-inline-start:18px;margin-bottom:26px}
+.side .k{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#E9C96B}
+.side .v{margin-top:8px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:20px;line-height:1.6}
+.side .x{margin-top:7px;font-size:12.5px;line-height:2;color:rgba(250,246,236,.65)}
+.legend{display:flex;gap:10px 18px;flex-wrap:wrap;margin:16px 2px 60px;font-size:12px;color:rgba(250,246,236,.62)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:18px;height:0;border-top:2px solid;border-radius:2px}
+footer.site{border-top:1px solid rgba(201,162,39,.2);padding:22px 0;font-size:12px;color:rgba(250,246,236,.5)}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes spoke{to{stroke-dashoffset:0}}
+@keyframes ringIn{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
+.dialIn{transform-origin:50% 50%;animation:ringIn 1s cubic-bezier(.23,1,.32,1) both}
+@media (prefers-reduced-motion:reduce){.spoke{animation:none !important;stroke-dashoffset:0 !important}.dialIn{animation:none}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap bar">
+  <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:11px;"><img src="assets/kayan-logo-gold.png" alt="كيان" style="height:42px;display:block;"></a>
+  <nav style="display:flex;gap:16px;align-items:center;font-size:13px;">
+    <a href="Kayan Home.dc.html">الرئيسة</a><a href="Kayan Planet.dc.html">البيئة</a><a href="Kayan People.dc.html">فريق كيان</a>
+    <a href="Kayan Portal.dc.html" style="border:1.5px solid #C9A227;border-radius:99px;padding:8px 18px;font-weight:700;">البوابة</a>
+  </nav>
+</div></header>
+
+<main class="wrap" style="padding-top:clamp(30px,6vh,60px);">
+  <div class="kicker">KAYAN ATLAS · THE ADEN DIAL · AZIMUTHAL EQUIDISTANT</div>
+  <h1>قرص عدن: <b>العالم مقيسًا من مقرنا.</b></h1>
+  <p class="lead">إسقاط متساوي المسافات مركزه عدن: كل اتجاه وكل مسافة من نقطة المركز صحيحان هندسيًا، على مذهب أقراص القبلة في الأطالس الإسلامية. الجغرافيا من بيانات Natural Earth، وخط الليل يحسب من موقع الشمس هذه اللحظة — لا رسم بالخيال، ولا عقود ندعيها.</p>
+
+  <div class="grid">
+    <div class="dial-shell">
+      <div class="hud">
+        <span class="chip"><span class="dot"></span><span id="clockChip">ADEN --:--</span></span>
+        <span class="chip" style="border-color:rgba(124,192,244,.4);color:#BFE0F8;"><span class="dot" style="background:#7CC0F4;box-shadow:0 0 10px #7CC0F4;"></span><span id="sunChip">SUN …</span></span>
+      </div>
+      <div class="tip" id="tip"></div>
+      <div id="map" class="dialIn"></div>
+    </div>
+    <div class="side">
+      <div class="block"><div class="k">CENTER · المركز</div><div class="v">عدن <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:13px;color:#E9C96B;">12.79N 45.03E</span></div><div class="x">مقر كيان على الكورنيش. القرص كله يدور حول هذه النقطة؛ فمنها تدار البوابات ومنها يشحن العمل.</div></div>
+      <div class="block"><div class="k">TRUE DISTANCE · الحلقات</div><div class="v">حلقات المسافة صادقة</div><div class="x">كل حلقة ذهبية بعد حقيقي من عدن بالكيلومترات؛ خاصية هذا الإسقاط أن المسافة من مركزه لا تكذب.</div></div>
+      <div class="block"><div class="k">SUN · الشمس الآن</div><div class="v" id="sunFact">…</div><div class="x">الظل الأزرق نصف الأرض المظلم فعلًا هذه الدقيقة؛ يعاد حسابه كل دقيقة، والمقر يعمل بطاقة الشمس وتخزينها.</div></div>
+      <div class="block" style="margin-bottom:0;"><div class="k">SPOKES · الأشعة</div><div class="v">قنوات التسليم</div><div class="x">أشعة من عدن إلى عواصم العمل السبع؛ الشعاع في هذا الإسقاط خط الرحلة الحقيقي الأقصر. قدرة يفتحها النموذج، لا تعاقدات معلنة.</div></div>
+    </div>
+  </div>
+  <div class="legend">
+    <span><i style="border-color:#E9C96B;"></i>أشعة التسليم من المركز</span>
+    <span><i style="border-color:rgba(233,201,107,.45);border-top-style:dotted;"></i>حلقات المسافة 3–13 ألف كم</span>
+    <span><i style="border-color:rgba(124,192,244,.85);border-top-style:dashed;"></i>حد الليل والنهار — فلكي حي</span>
+    <span><i style="border-color:rgba(250,246,236,.35);"></i>اليابسة: Natural Earth</span>
+  </div>
+</main>
+
+<footer class="site"><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+  <span>خلف كل نجاح، كيان.</span>
+  <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#8F7218;" dir="ltr">PROJECTION: AZIMUTHAL EQUIDISTANT @ ADEN · NATURAL EARTH 110M</span>
+</div></footer>
+
+<script>
+(async function(){
+  const S=980, R=S/2-14, CX=S/2, CY=S/2;
+  const ADEN=[45.03,12.79];
+  const mount=d3.select('#map');
+  const svg=mount.append('svg').attr('viewBox','0 0 '+S+' '+S).attr('role','img')
+    .attr('aria-label','قرص عدن: إسقاط متساوي المسافات مركزه عدن، عليه حلقات المسافة الحقيقية وأشعة التسليم وحد الليل والنهار الفلكي');
+
+  const defs=svg.append('defs');
+  const ocean=defs.append('radialGradient').attr('id','ocean').attr('cx','50%').attr('cy','46%');
+  ocean.append('stop').attr('offset','0%').attr('stop-color','#0B3E36');
+  ocean.append('stop').attr('offset','62%').attr('stop-color','#062A25');
+  ocean.append('stop').attr('offset','100%').attr('stop-color','#031B17');
+  const goldSpoke=defs.append('linearGradient').attr('id','goldSpoke');
+  goldSpoke.append('stop').attr('offset','0%').attr('stop-color','#F3DE9C');
+  goldSpoke.append('stop').attr('offset','100%').attr('stop-color','rgba(201,162,39,.28)');
+  defs.append('clipPath').attr('id','disc').append('circle').attr('cx',CX).attr('cy',CY).attr('r',R);
+
+  let topo;
+  try{ topo=await (await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json')).json(); }
+  catch(e){ mount.append('div').style('padding','60px 20px').style('text-align','center').style('color','rgba(250,246,236,.6)').text('تعذر تحميل الجغرافيا — تعاد المحاولة عند عودة الاتصال.'); return; }
+  const land=topojson.feature(topo,topo.objects.countries);
+  const YEMEN='887';
+
+  const proj=d3.geoAzimuthalEquidistant().rotate([-ADEN[0],-ADEN[1]])
+    .clipAngle(150).translate([CX,CY]).scale(R/(150*Math.PI/180));
+  const path=d3.geoPath(proj);
+  const disc=svg.append('g').attr('clip-path','url(#disc)');
+
+  disc.append('circle').attr('cx',CX).attr('cy',CY).attr('r',R).attr('fill','url(#ocean)');
+  disc.append('path').attr('d',path(d3.geoGraticule10())).attr('fill','none').attr('stroke','rgba(233,201,107,.07)').attr('stroke-width',.7);
+
+  disc.append('g').selectAll('path').data(land.features).join('path')
+    .attr('d',path)
+    .attr('fill',d=>d.id===YEMEN?'#C9A227':'rgba(244,238,221,.13)')
+    .attr('stroke',d=>d.id===YEMEN?'#F3DE9C':'rgba(244,238,221,.30)')
+    .attr('stroke-width',d=>d.id===YEMEN?1.4:.55)
+    .attr('stroke-linejoin','round');
+
+  // True-distance rings from Aden (deg -> km via 111.19)
+  const rings=[{d:27,label:'3,000 KM'},{d:54,label:'6,000 KM'},{d:90,label:'10,000 KM'},{d:117,label:'13,000 KM'}];
+  const ringG=disc.append('g').attr('direction','ltr');
+  rings.forEach(rg=>{
+    ringG.append('path').attr('d',path(d3.geoCircle().center(ADEN).radius(rg.d)()))
+      .attr('fill','none').attr('stroke','rgba(233,201,107,.30)').attr('stroke-dasharray','1.5 5').attr('stroke-width',1);
+    const px=CX, py=CY-(rg.d*Math.PI/180)*(R/(150*Math.PI/180));
+    ringG.append('text').attr('x',px).attr('y',py-6).attr('text-anchor','middle').style('direction','ltr')
+      .attr('font-family','IBM Plex Mono,monospace').attr('font-size','11.5').attr('letter-spacing','.18em')
+      .attr('fill','rgba(233,201,107,.55)').text(rg.label);
+  });
+
+  // Live night hemisphere
+  const night=disc.append('path').attr('fill','rgba(8,26,48,.46)').attr('stroke','rgba(124,192,244,.55)').attr('stroke-dasharray','6 6').attr('stroke-width',1.2);
+  function subsolar(){
+    const now=new Date();
+    const N=(now.getTime()-Date.UTC(now.getUTCFullYear(),0,0))/864e5;
+    const decl=-23.44*Math.cos(2*Math.PI/365*(N+10));
+    const lon=180-(now.getUTCHours()+now.getUTCMinutes()/60)*15;
+    return [lon,decl];
+  }
+  function tick(){
+    const s=subsolar();
+    night.attr('d',path(d3.geoCircle().center([s[0]+180,-s[1]]).radius(90)()));
+    const aden=new Date(Date.now()+(180+new Date().getTimezoneOffset())*60000);
+    document.getElementById('clockChip').textContent='ADEN '+String(aden.getHours()).padStart(2,'0')+':'+String(aden.getMinutes()).padStart(2,'0');
+    document.getElementById('sunChip').textContent='SUN '+Math.abs(Math.round(s[0]))+'\u00B0'+(s[0]>=0?'E':'W')+' '+Math.abs(Math.round(s[1]))+'\u00B0'+(s[1]>=0?'N':'S');
+    document.getElementById('sunFact').textContent=(d3.geoDistance(ADEN,s)*180/Math.PI<90)?'فوق أفق عدن':'تحت أفق عدن — المقر على التخزين';
+  }
+  tick(); setInterval(tick,60000);
+
+  // Delivery spokes: straight true-bearing radii in this projection
+  const dests=[
+    {c:[46.72,24.63],ar:'الرياض',en:'RIYADH · 1,340 KM',lx:-34,ly:-4},
+    {c:[55.30,25.27],ar:'دبي',en:'DUBAI · 1,890 KM',lx:26,ly:-8},
+    {c:[31.24,30.05],ar:'القاهرة',en:'CAIRO · 2,430 KM'},
+    {c:[36.82,-1.29],ar:'نيروبي',en:'NAIROBI · 1,830 KM'},
+    {c:[8.68,50.11],ar:'فرانكفورت',en:'FRANKFURT · 5,430 KM',lx:-6,ly:24},
+    {c:[-0.13,51.51],ar:'لندن',en:'LONDON · 5,960 KM',ly:-14},
+    {c:[103.85,1.29],ar:'سنغافورة',en:'SINGAPORE · 6,570 KM'}
+  ];
+  const spokes=disc.append('g');
+  dests.forEach((d,i)=>{
+    const p=spokes.append('path').datum({type:'LineString',coordinates:[ADEN,d.c]})
+      .attr('class','spoke').attr('d',path).attr('fill','none')
+      .attr('stroke','url(#goldSpoke)').attr('stroke-width',1.6).attr('opacity',.9).attr('stroke-linecap','round');
+    const L=p.node().getTotalLength();
+    p.attr('stroke-dasharray',L+' '+L).attr('stroke-dashoffset',L)
+     .style('animation','spoke 1.6s cubic-bezier(.23,1,.32,1) '+(0.4+i*0.16)+'s forwards');
+  });
+
+  // Points + labels
+  const tip=document.getElementById('tip'),shell=document.querySelector('.dial-shell');
+  const show=(evt,ar,en)=>{const r=shell.getBoundingClientRect();tip.innerHTML=ar+'<span class="en">'+en+'</span>';tip.style.left=(evt.clientX-r.left)+'px';tip.style.top=(evt.clientY-r.top)+'px';tip.style.opacity=1;};
+  const hide=()=>tip.style.opacity=0;
+  const pts=disc.append('g');
+  dests.forEach(d=>{
+    const [x,y]=proj(d.c);
+    pts.append('circle').attr('cx',x).attr('cy',y).attr('r',4).attr('fill','#E9C96B').attr('stroke','#03201D').attr('stroke-width',1.4)
+      .style('cursor','pointer').on('pointerenter pointermove',e=>show(e,d.ar,d.en)).on('pointerleave',hide);
+    pts.append('text').attr('x',x+(d.lx||0)).attr('y',y-10+(d.ly||0)).attr('text-anchor','middle')
+      .attr('font-family','IBM Plex Sans Arabic,sans-serif').attr('font-size','15').attr('font-weight','600')
+      .attr('fill','#F3DE9C').attr('paint-order','stroke').attr('stroke','rgba(3,32,29,.85)').attr('stroke-width',4)
+      .text(d.ar);
+  });
+
+  // Aden: crosshair + pulse
+  const [ax,ay]=proj(ADEN);
+  const hq=disc.append('g');
+  hq.append('circle').attr('cx',ax).attr('cy',ay).attr('r',7).attr('fill','none').attr('stroke','#F3DE9C').attr('stroke-width',1.2)
+    .append('animate').attr('attributeName','r').attr('values','7;22').attr('dur','2.6s').attr('repeatCount','indefinite');
+  hq.select('circle').append('animate').attr('attributeName','opacity').attr('values','.8;0').attr('dur','2.6s').attr('repeatCount','indefinite');
+  hq.append('circle').attr('cx',ax).attr('cy',ay).attr('r',5).attr('fill','#F3DE9C').attr('stroke','#03201D').attr('stroke-width',1.6)
+    .style('cursor','pointer').on('pointerenter pointermove',e=>show(e,'عدن — مقر كيان','HQ · CENTER OF THE DIAL')).on('pointerleave',hide);
+  [[ax-16,ay,ax-9,ay],[ax+9,ay,ax+16,ay],[ax,ay-16,ax,ay-9],[ax,ay+9,ax,ay+16]].forEach(l=>{
+    hq.append('line').attr('x1',l[0]).attr('y1',l[1]).attr('x2',l[2]).attr('y2',l[3]).attr('stroke','#F3DE9C').attr('stroke-width',1.4);
+  });
+
+  // Instrument bezel
+  svg.append('circle').attr('cx',CX).attr('cy',CY).attr('r',R).attr('fill','none').attr('stroke','rgba(201,162,39,.75)').attr('stroke-width',2);
+  svg.append('circle').attr('cx',CX).attr('cy',CY).attr('r',R-7).attr('fill','none').attr('stroke','rgba(201,162,39,.22)').attr('stroke-width',1);
+  const ticks=svg.append('g');
+  for(let a=0;a<360;a+=10){
+    const rad=a*Math.PI/180, big=a%90===0;
+    ticks.append('line')
+      .attr('x1',CX+Math.sin(rad)*(R-(big?16:9))).attr('y1',CY-Math.cos(rad)*(R-(big?16:9)))
+      .attr('x2',CX+Math.sin(rad)*(R-2)).attr('y2',CY-Math.cos(rad)*(R-2))
+      .attr('stroke',big?'#E9C96B':'rgba(233,201,107,.35)').attr('stroke-width',big?2:1);
+  }
+  const compass=[['N',0],['E',90],['S',180],['W',270]];
+  compass.forEach(([t,a])=>{
+    const rad=a*Math.PI/180;
+    svg.append('text').attr('x',CX+Math.sin(rad)*(R-30)).attr('y',CY-Math.cos(rad)*(R-30)+5)
+      .attr('text-anchor','middle').attr('font-family','IBM Plex Mono,monospace').attr('font-size','13')
+      .attr('letter-spacing','.1em').attr('fill','rgba(233,201,107,.8)').text(t);
+  });
+})();
+</script>
+</body>
+</html>

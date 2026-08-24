@@ -1,0 +1,538 @@
+KAYAN INNOVATION, ENTREPRENEURSHIP & WORK ENVIRONMENTS LLC
+Aden, Republic of Yemen
+
+Kayan Build — Full Compaction and Handover Pack
+Everything required to continue this build without the person who started it
+This is the handover document. It carries the company facts, the mandate, every decision taken, every question open, everything built and where it sits, the research findings, the known gaps, and the exact next actions in dependency order. A competent operator or agent should be able to read this and continue the build without further briefing.
+Document code
+K-00-04
+Version
+v2.0
+Status
+Live — supersedes v1.0 at every session close
+Date
+5 August 2026
+Owner
+Founder / Chief Executive
+Classification
+INTERNAL — CONFIDENTIAL
+Supersedes
+K-00-04 v1.0
+Derives from
+Sessions 1 and 2
+Unlocks
+Continuation in any environment, by any operator or agent
+Read this first. Then K-00-01, then K-01-01.
+
+Contents
+TOC \h \o "1-3"
+
+1. Company facts
+These are the fixed identifiers. Where any document disagrees with this table, this table governs. Items marked TO CONFIRM have not been independently verified in this build and must be checked against the registration file before external use.
+Item
+Value
+Status
+Legal name (Arabic, governing)
+شركة كيان للابتكار وريادة الأعمال وبيئات العمل ذ.م.م
+FACT
+Legal name (English)
+Kayan Innovation, Entrepreneurship & Work Environments LLC
+FACT
+Jurisdiction
+Republic of Yemen — Aden
+FACT
+Legal form
+Yemen limited liability company
+FACT
+Registered capital
+10,000,000 YER
+TO CONFIRM against registration file
+Address (Arabic)
+خورمكسر، شارع الكورنيش، بجوار فندق ريلاكس، عدن، اليمن
+FACT
+Address (English)
+Khormaksar, Corniche Street, next to Relax Hotel, Aden, Yemen
+FACT
+Telephone
++967 2 236655 / +967 2 232096
+FACT
+Domestic bank
+Tadamon Islamic International Bank — Aden Main Branch
+FACT — but see K-01-01 §8, this cannot be the collection rail
+Domain
+kayanwork.com
+FACT
+Base currency
+USD, with functional tracking in YER
+DECISION
+Revenue recognition
+Agent basis — net fee only. Escrow balances are liabilities.
+DECISION D-06
+Fiscal year end
+Not decided
+OPEN — Q-04
+Launch date
+20 July 2026
+FACT — founder
+Commercial register number
+Not verified in this build
+TO CONFIRM
+Licence number
+Not verified in this build
+TO CONFIRM
+Ownership and cap table
+Not verified in this build; historical documents contain figures that were not independently checked
+TO CONFIRM — do not quote from historical documents
+Note on the last three rows. The historical estate contains specific registration numbers, licence numbers and shareholding percentages. None were verified in this build, and several documents disagree with each other. They are deliberately not repeated here, because repeating an unverified number in a handover document is how an error becomes a fact. [JUDGEMENT]
+2. The mandate
+The operator of this build acts as the founding institutional architect with authority to decide, not to ask. Founder input is treated as signal to be interpreted, not specification to be executed. The operating posture is: read the evidence, choose the strongest defensible path, execute it completely, record it as a decision for ratification, and say plainly where the reasoning is weak.
+2.1 Standing instructions
+#
+Instruction
+SI-01
+Define before derive. Positioning, then lines, then entities, then identity, then taxonomy, then forms, then workflow, then pages, then automation, then procedure.
+SI-02
+Every deliverable ships complete: the definition, its forms, its controlled lists, its procedure, its checklist, its automation specification.
+SI-03
+Automation first, manual by exception. A human touches a record only at a genuine judgement gate.
+SI-04
+One real-world thing, one record, one identifier, one page.
+SI-05
+Label every material claim: FACT, JUDGEMENT, ASSUMPTION, RESEARCH CLAIM, RECOMMENDATION, or OPEN.
+SI-06
+No placeholders, no outlines, no generic templates. Final draft or nothing.
+SI-07
+Numbers live in controlled documents, never in foundational ones.
+SI-08
+Red-team every material recommendation. State the residual risk where the counter is insufficient.
+SI-09
+Historical documents are evidence, never authority.
+SI-10
+Record decisions the moment they are taken. An undocumented decision is not a decision.
+SI-11
+Work in bounded sessions with a stated objective and a verified output.
+SI-12
+Verify before shipping. Render every document. Recalculate every workbook. Check values are right, not merely error-free.
+SI-13
+Formatting stays plain until the identity system is agreed.
+SI-14
+Lead. Where the founder is thinking aloud, extract the signal and decide.
+SI-15
+Research before asserting. Any competitive, market or benchmark claim must be searched and labelled, never assumed. Added after Session 1 shipped an untested take rate.
+SI-16
+State what was missed. Every session closes with an explicit gap list, not only a list of what was produced.
+
+3. What Kayan is — the settled position
+Kayan is impact sourcing for professional work, built in the hardest operating environment in the world.
+Expanded: Kayan is a verification institution monetised through managed delivery. It establishes, evidences and stands behind the competence of professionals in a constrained market, so that their work can be bought with confidence anywhere. The verification and delivery record is the compounding asset. Managed delivery is how that asset is built and paid for.
+It is not a marketplace, not an agency, not a training provider, not an NGO, and not a recruitment firm. Each of those confusions has a specific and predictable cost, set out in K-00-01 §3.2.
+3.1 The economic engine
+The Absorption Flywheel. Sponsor capital funds Forge cohorts and civic programmes. Those produce verified professionals who enter the registry at no acquisition cost to the commercial line. Managed Delivery sells that verified capacity and earns a fee. Delivery produces revenue and evidence. The evidence — accepted deliverables, earnings records, the Absorption Ratio — is what unlocks the next sponsor and convinces the next client. Each turn lowers acquisition cost and raises credential value. The Hub is the physical anchor of the loop and is itself a revenue line.
+3.2 Business lines and gates
+Phase
+Lines
+Gate
+Phase 1 — live 20 July 2026
+L1 Managed Delivery · L2 Hub and Café · L3 Kayan Forge · L4 Kayan for Yemen
+None. These four are the launch.
+Phase 2 — 2027
+L5 Open marketplace and client-formed pods · L6 E-working space · L7 Public credential at scale
+Stated volume, quality and stability thresholds in K-00-01 §7.2. Not before.
+Phase 3 — designed, not built
+Financial services on the payment flow · enterprise services · studio · ventures · geographic replication · licensing the verification standard
+Phase 2 stable
+Binding rule: no client-to-individual connection before Phase 2. All demand runs through managed delivery with Kayan as contracting counterparty.
+4. The complete decision register
+44 decisions. Those marked TAKEN were given by the founder or are structurally settled. Those marked PROPOSED are reasoned positions awaiting ratification. Full rationale for each is in K-00-02, K-00-01, K-01-01, K-02-01, K-02-02 and K-03-01.
+ID
+Decision
+State
+D-01
+Category: verification institution monetised through managed delivery
+PROPOSED
+D-02
+Phase 1 lines: Managed Delivery, Hub and Café, Forge, K4Y
+PROPOSED
+D-03
+Phase 2 and 3 designed and pre-sold but not built before their gate
+PROPOSED
+D-04
+No client-to-individual connection before Phase 2
+TAKEN
+D-05
+Numbers live in controlled documents, never the constitution
+TAKEN
+D-06
+Revenue is agent net fee only; escrow is a liability
+TAKEN
+D-07
+The term academy is retired; the line is Kayan Forge
+TAKEN
+D-08
+Verification never determines work allocation
+PROPOSED
+D-09
+Payment and fund protection is the highest-priority build and gates launch
+PROPOSED
+D-10
+Three pod formation types, equal standing
+TAKEN
+D-11
+Nine entities only: Talent, Client, Pod, Engagement, Sponsor, Programme, Member, Verification, Payment Event
+PROPOSED
+D-12
+Identifier KY-<TYPE>-<YY>-<SEQ>-<C>, modulus-11 check character, validated at entry
+PROPOSED
+D-13
+Separate public verification reference KVR-nnnnn
+PROPOSED
+D-14
+Talent and Member records linked, never merged
+PROPOSED
+D-15
+Pod formation type never affects work allocation
+PROPOSED
+D-16
+Apprentice is a standing structural pod role and the mechanism of absorption
+PROPOSED
+D-17
+Relationship pages are event-driven, never manually maintained
+PROPOSED
+D-18
+Identity document images deleted once verification is decided
+PROPOSED
+D-19
+Verification-does-not-allocate-work stated to every registrant twice
+PROPOSED
+D-20
+Eleven-stage registration journey with orientation and honesty compact first
+PROPOSED
+D-21
+Six core competencies on one five-point scale, used by assessors, referees and pod leads alike
+PROPOSED
+D-22
+Five-tier ladder, published criteria, validity periods, lapse, downgrade, one appeal
+PROPOSED
+D-23
+Four assessment instruments, reported as bands with written meaning
+PROPOSED
+D-24
+Integrity signals produce flags, never automatic failures
+PROPOSED
+D-25
+References automated, tokenised, eligibility-gated, never disclosed to the subject
+PROPOSED
+D-26
+Thirteen separate consents, versioned and dated
+PROPOSED
+D-27
+No outcome is called rejection
+PROPOSED
+D-28
+Client compliance before contract, never before conversation
+PROPOSED
+D-29
+Eight standing quality control checklists including a scheduled fairness review
+PROPOSED
+D-30
+Taxonomy structure FF-GG-NNN, three levels, permanent codes
+PROPOSED
+D-31
+Twenty families covering trades, crafts, hospitality, agriculture and health with equal standing
+PROPOSED — see Q-02
+D-32
+No fixed node count; codes never reused
+PROPOSED
+D-33
+A node may not go active until a verification method exists
+PROPOSED
+D-34
+Three navigation routes, none more than three steps deep, including plain language
+PROPOSED
+D-35
+Unmatched searches and node proposals captured as intelligence
+PROPOSED
+D-37
+No single take rate. Fee is a function of risk transferred, expressed as three service tiers
+PROPOSED
+D-38
+Client segment assigned at qualification, applied as a multiplier, cross-subsidy reported monthly
+PROPOSED
+D-39
+Collection and distribution separated into two rails; collection cannot sit inside Yemen
+PROPOSED — structurally forced
+D-40
+Launch pipeline from clients who can already pay into Yemen; GCC corporate after Rail A exists
+PROPOSED
+D-41
+Enter the established impact sourcing category and differentiate within it, rather than inventing one
+PROPOSED — reverses part of Session 1
+D-42
+Twelve Ready Products form the launch catalogue, offered at S2 by default
+PROPOSED
+D-43
+No engagement priced below the calculated floor without executive approval, recorded as investment
+PROPOSED
+D-44
+Contributor rates independent of client price, and disclosed
+PROPOSED
+
+5. Open questions, ranked by what they block
+Rank
+ID
+Question
+Recommendation
+1
+Q-11
+Where does Rail A sit, and what is the lawful bridge to Rail B?
+Counsel and banking enquiry immediately. This gates launch. Assess UAE, Oman, Jordan, Egypt and Türkiye.
+2
+Q-02
+Adopt the twenty-family taxonomy, or keep the earlier twelve-family, 441-node structure?
+Adopt twenty. The earlier structure excluded trades, hospitality and agriculture.
+3
+Q-13
+Contributor rate card by role, tier and specialisation.
+Build from observed local market rates, not from historical documents.
+4
+Q-12
+Target contribution margin per tier and the overhead allocation basis.
+Set provisionally, calibrate on the first twenty engagements.
+5
+Q-10
+Open registration at launch, or invitation-led first cohort?
+Invitation-led. A verification backlog is a reputational event.
+6
+Q-01
+Release the public credential at launch, or hold it?
+Hold. The mark earns meaning through delivery evidence.
+7
+Q-14
+Professional indemnity and liability position before S3 is sold.
+Resolve before selling any guarantee. Selling a guarantee uninsured is a bet, not a product.
+8
+Q-15
+Tax treatment: Yemen corporate tax, cross-border withholding, contributor status.
+Counsel. Affects pricing, contracts and the two-rail design.
+9
+Q-06
+Numeric thresholds for T3 and T4.
+Set provisionally, calibrate on the first hundred assessments.
+10
+Q-08
+Does Forge completion substitute for part of the T2 assessment?
+Evidence alongside, never substitution.
+11
+Q-16
+Pursue the impact sourcing standard and B Corporation certification?
+Yes, on a stated timeline. These are procurement keys.
+12
+Q-03
+Is the professional side ever a paying customer?
+Permanently free at entry.
+13
+Q-07
+Practical task required at T2 for all specialisations?
+Only where portfolio is inconclusive.
+14
+Q-05
+Client concentration threshold triggering mitigation.
+Set as a stated percentage of trailing twelve-month revenue.
+15
+Q-04
+Fiscal year end.
+Founder decision.
+16
+Q-09
+Cooling period between assessment attempts.
+Set a fixed interval, calibrate on observed behaviour.
+6. What has been built and where
+Reference
+Document
+Folder
+Pages
+K-00-00
+Directory manifest
+Root of KAYAN — THE ONE
+Text file, in OneDrive
+K-00-01
+The Kayan Business Constitution
+00_CANON
+11
+K-00-02
+Decision Register
+00_CANON
+6
+K-00-03
+Session Ledger and Standing Instructions
+00_CANON
+6
+K-00-04
+This compaction and handover pack
+00_CANON
+—
+K-01-01
+The Economic Architecture
+01_STRATEGY
+15
+K-02-01
+Entity, Identity and Relationship Architecture
+02_ARCHITECTURE
+10
+K-02-02
+Micro-Specialisation Taxonomy and Coding Standard
+02_ARCHITECTURE
+6
+K-02-02-W
+Taxonomy register — 20 families, 79 groups, 483 nodes
+02_ARCHITECTURE
+Workbook, 6 sheets
+K-03-01
+Registration, Assessment and Verification Architecture
+03_TALENT
+18
+—
+Source archive: 311 historical files, organised into 14 domains with 29 version-cluster folders
+90_SOURCE_ARCHIVE
+Archive
+—
+Source inventory workbook
+90_SOURCE_ARCHIVE
+Workbook, 7 sheets
+Directory location: OneDrive, folder KAYAN — THE ONE. Access is via the Cloud MCP connector with application authentication, site identifier root, and the drive identifier recorded in the founder&apos;s credential note. Folders 00 to 05 exist; 06 to 16, 90 and 99 remain to be created.
+6.1 The source estate — what is known about it
+Finding
+Detail
+Action required
+File count
+311 files, 100 MB, in the project mirror. The founder believed 386 existed. 75 are unaccounted for.
+Locate the missing 75 or accept the loss on the record
+Exact duplicates
+2 byte-identical pairs only. 309 unique files.
+None
+Version clusters
+29 documents existing as 65 separate files — the real fragmentation
+Resolve cluster by cluster as each domain is built
+Code collisions
+GOV-002, GOV-003, CON-005 and CON-006 each used for two different documents
+Must be resolved before any handover to counsel
+OneDrive fragmentation
+Three competing Kayan folder structures plus content mixed into a separate corporate estate
+KAYAN — THE ONE replaces all three
+Image-only PDFs
+Several of the most substantial strategy documents are rendered as images with no text layer
+Optical character recognition required before machine mining
+
+7. Research findings log
+Conducted 5 August 2026. All entries are RESEARCH CLAIMS from third-party sources and must be re-verified before any external use. They are recorded here so that future sessions do not repeat the search or, worse, proceed without it.
+Finding
+Source type
+Strategic consequence
+Impact sourcing is an established category with a recognised standard, an industry coalition, and dedicated funder attention
+Industry and academic sources
+Kayan enters this category rather than inventing one. Procurement doors and funder familiarity already exist.
+Impact sourcing is dominated by task and process work, and has been criticised for pay and conditions
+Technology press and academic critique
+Kayan&apos;s differentiation is professional work with disclosed fees and a published progression ladder. The criticism defines the gap to occupy.
+Andela reported roughly 56 per cent gross margin and net revenue retention near 112 to 115 per cent
+Third-party analyses
+A 20 per cent take rate is not a market rate for managed delivery. Corrected in K-01-01.
+Turing&apos;s service margin is reported at roughly 50 to 55 per cent inside the invoice
+Third-party analyses
+Clients pay for assurance and infrastructure, not for the worker&apos;s hour. This is Kayan&apos;s exact argument.
+Braintrust charges a flat platform fee historically publicised around 10 to 15 per cent with talent keeping their full rate
+Third-party analyses
+This is the correct benchmark for Phase 2 self-serve, not for managed delivery.
+Andela abandoned its campus-based training and placement model in 2020 to cut capital expenditure, cutting training programmes and staff
+Company history and analyses
+The single most important comparable. Kayan Forge survives only if sponsor-funded. Detailed in K-01-01 §9.
+Correspondent banking relationships with Yemeni institutions have been widely severed since the early 2010s
+Development research institutions
+International clients cannot reliably pay into Yemen. Forces the two-rail treasury architecture.
+Yemen&apos;s central bank split in 2016 into two rival authorities with parallel systems and dual exchange rates
+Development research institutions
+Every contract must state which exchange rate applies and when it is fixed.
+European banks continue to refuse interaction with Yemeni banks
+Regional policy research
+European clients are the hardest corridor. Do not build the launch pipeline on them.
+Informal transfer networks persist because formal channels are slow, costly or inaccessible
+Development research institutions
+Payouts inside Yemen partly rely on non-bank rails. These must be documented and controlled, not ignored.
+8. Known gaps — what does not yet exist
+Ordered by consequence. This list is the true state of the build and is more useful than the list of what has been produced.
+Gap
+Consequence if unresolved
+Priority
+The Rail A to Rail B bridge
+Launch cannot happen. Money cannot move.
+1 — gates everything
+Escrow operating procedure: what counts as proof, who verifies, dual approval, wrong-account handling
+Money moves without control
+1
+Contributor rate card
+No price can be calculated
+2
+Working capital analysis: escrow timing against payout timing
+The company can be profitable on paper and insolvent in practice
+2
+Managed Delivery operating standard: scope, milestones, acceptance, disputes
+The revenue engine has no procedure
+2
+Contract set: master agreement, scope of work, escrow terms, acceptance certificate
+Cannot trade
+3
+Professional indemnity and liability position
+Cannot sell the S3 guarantee
+3
+Tax position: corporate, cross-border withholding, contributor status
+Pricing and contracts are provisional until settled
+3
+Assessment instruments for launch specialisations
+Verification cannot operate; no T2 means no sellable capacity
+3
+Financial model with real numbers
+No break-even, no runway, no investor conversation
+4
+Cost of verifying one professional
+Cannot test whether Forge sponsorship covers supply acquisition
+4
+Internal roles, position codes, hiring gates
+Launch condition L-08 unmet
+4
+Hub, Forge and K4Y operating standards
+Three of four lines have no procedure
+5
+Platform build specification
+Nothing can be built
+5
+Competitor map for Aden and the diaspora corridor
+Positioning is untested locally
+5
+Insurance, security and business continuity plan
+Operating exposure in a conflict environment is unmanaged
+5
+Safeguarding and conduct framework
+Required by institutional clients before contracting
+5
+Public presence and narrative
+Deliberately last. It should express a settled institution, not invent one.
+6
+9. The next session
+Objective: make money movable. Nothing else in the queue matters until this is done.
+Establish the treasury architecture. Determine where Rail A sits, what the bridge is, and what it costs. This requires two external inputs: counsel on the entity question, and a banking enquiry in the candidate jurisdictions.
+Write the escrow operating procedure. What counts as proof of payment, who verifies it, what dual approval means in practice, what happens when funds arrive in the wrong account, how the escrow ledger reconciles to the bank, and how a daily cash close works at the Hub and café.
+Build the contributor rate card, from observed local rates, by role and tier and specialisation.
+Run the working capital analysis: when client money arrives, when contributors must be paid, and what the gap costs.
+Then, and only then, the Managed Delivery operating standard and the contract set.
+Everything else — platform, Hub, Forge, marketing, website — waits. This is not caution. It is the recognition that a company which cannot safely take money and pay people has no product, however good its documents are. [JUDGEMENT]
+10. Session protocol for whoever continues
+Read this document, then K-00-01 Constitution, then K-01-01 Economic Architecture. Do not re-derive settled positions.
+State the session objective and what will exist at the end of it.
+Research before asserting. Any market, competitor or benchmark claim is searched and labelled.
+Build completely to the standing instructions. No outlines, no placeholders.
+Verify: render every document and look at it; recalculate every workbook and check the values are right.
+Red-team the output before presenting it. State residual risk.
+Record decisions, update the register, update this compaction, and state explicitly what was missed.
+File to the directory. Nothing is authoritative until it is filed.
+
+End of handover. This document is reissued at the close of every session.

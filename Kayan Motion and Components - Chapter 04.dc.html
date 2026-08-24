@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>الحركة والمكونات · Motion &amp; Components — Chapter 04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#FAF6EC;}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+a{color:#0E6E66;text-decoration:none;border-bottom:1px solid rgba(14,110,102,.32);}
+a:hover{color:#12B5A4;border-bottom-color:#12B5A4;}
+::selection{background:#12B5A4;color:#04211F;}
+@keyframes kDrift{0%{transform:translate3d(0,0,0);}50%{transform:translate3d(-2%,1.4%,0);}100%{transform:translate3d(0,0,0);}}
+@keyframes kSweep{0%{transform:translateX(-100%);}100%{transform:translateX(400%);}}
+</style>
+</helmet>
+<div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;color:#143C37;background:#FAF6EC;">
+
+<!-- ===================== COVER ===================== -->
+<section data-screen-label="الغلاف · Cover" style="position:relative;min-height:100vh;overflow:hidden;background:#07202C;">
+  <div style="position:absolute;inset:0;background:radial-gradient(1000px 620px at 16% -8%,rgba(62,158,234,.24),transparent 62%),radial-gradient(860px 540px at 92% 104%,rgba(18,181,164,.22),transparent 62%);animation:kDrift 30s ease-in-out infinite;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:34px 44px 54px;min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;">
+    <header style="display:flex;justify-content:space-between;align-items:center;gap:18px;padding-bottom:20px;border-bottom:1px solid rgba(250,246,236,.16);">
+      <img src="uploads/kayan_logo_gold.png" alt="كيان Kayan" style="height:46px;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.16em;color:rgba(250,246,236,.62);">IDENTITY SYSTEM · LAYERS 06 + 09 · v1</div>
+    </header>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:52px 0;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#12B5A4;">04 — MOTION &amp; COMPONENTS</div>
+      <h1 style="margin:22px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(46px,7.4vw,110px);line-height:1.14;color:#FAF6EC;">الحركة<br>تشرح</h1>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:clamp(18px,2.2vw,29px);line-height:1.25;color:rgba(250,246,236,.7);margin-top:18px;">Motion explains. It does not entertain.</div>
+      <p style="margin:30px 0 0;max-width:54ch;font-size:clamp(15px,1.55vw,18.5px);line-height:1.95;color:rgba(250,246,236,.78);">كل حركة في كيان تجيب على سؤال واحد: من أين جاء هذا، وإلى أين ذهب. ما لا يجيب على هذا السؤال يحذف.</p>
+    </div>
+    <footer style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;padding-top:20px;border-top:1px solid rgba(250,246,236,.16);">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(15px,1.7vw,20px);color:#E9BE4B;">«خلف كل نجاح، كيان»</div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-style:italic;font-size:14.5px;color:rgba(250,246,236,.62);">Behind every success, a Kayan.</div>
+    </footer>
+  </div>
+</section>
+
+<!-- ===================== 04.01 PRINCIPLES ===================== -->
+<section data-screen-label="٠٤.٠١ المبادئ · Principles" style="background:#FFFFFF;">
+  <div style="max-width:1320px;margin:0 auto;padding:92px 44px;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;color:#0E6E66;">04.01 — PRINCIPLES</div>
+    <h2 data-reveal="" style="margin:16px 0 8px;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,48px);line-height:1.35;color:#04211F;">خمس قواعد، وما عداها اجتهاد</h2>
+    <p data-reveal="" style="margin:0;max-width:56ch;font-size:16.5px;line-height:1.95;color:#3A5C55;">الحركة عندنا وظيفة لا زينة. تشرح انتقالا، أو تؤكد استجابة، أو تدل على مكان. وما لا يفعل واحدة من هذه الثلاث يطفأ.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:#E2DAC8;border:1px solid #E2DAC8;margin-top:44px;">
+      <div data-reveal="" style="background:#fff;padding:26px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#64736A;">01</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#04211F;margin-top:12px;">شيء واحد يتحرك</div><p style="font-size:14.5px;line-height:1.9;color:#3A5C55;margin:8px 0 0;">لا يتحرك عنصران في وقت واحد على الشاشة نفسها. إن لزم اثنان، يتتابعان بفارق ثمانين جزءا من الألف.</p></div>
+      <div data-reveal="" style="background:#fff;padding:26px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#64736A;">02</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#04211F;margin-top:12px;">الدخول أبطأ من الخروج</div><p style="font-size:14.5px;line-height:1.9;color:#3A5C55;margin:8px 0 0;">ما يظهر يستقر على مهل، وما يختفي يمضي سريعا. لا ننتظر شيئا يغادر.</p></div>
+      <div data-reveal="" style="background:#fff;padding:26px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#64736A;">03</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#04211F;margin-top:12px;">الاتجاه يتبع القراءة</div><p style="font-size:14.5px;line-height:1.9;color:#3A5C55;margin:8px 0 0;">في الواجهة العربية يدخل الجديد من اليسار ويخرج القديم إلى اليمين. تنعكس القيم كلها مع اللغة.</p></div>
+      <div data-reveal="" style="background:#fff;padding:26px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#64736A;">04</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#04211F;margin-top:12px;">لا حركة بلا نية</div><p style="font-size:14.5px;line-height:1.9;color:#3A5C55;margin:8px 0 0;">تبدأ الحركة باللمس أو النقر أو الوصول. لا شيء يتحرك لمجرد وصول بيانات من الخادم.</p></div>
+      <div data-reveal="" style="background:#fff;padding:26px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#64736A;">05</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#04211F;margin-top:12px;">تقليل الحركة يحترم</div><p style="font-size:14.5px;line-height:1.9;color:#3A5C55;margin:8px 0 0;">عند تفعيل تقليل الحركة في الجهاز تبقى الشفافية وحدها. لا إزاحة ولا تكبير ولا دوران.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04.02 CURVES ===================== -->
+<section data-screen-label="٠٤.٠٢ المنحنيات · Curves" style="background:#FAF6EC;border-top:1px solid #E2DAC8;">
+  <div style="max-width:1320px;margin:0 auto;padding:92px 44px;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;color:#0E6E66;">04.02 — CURVES &amp; DURATIONS</div>
+    <h2 data-reveal="" style="margin:16px 0 8px;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,48px);line-height:1.35;color:#04211F;">ثلاثة منحنيات، أربع مدد</h2>
+    <p data-reveal="" style="margin:0 0 8px;max-width:56ch;font-size:16.5px;line-height:1.95;color:#3A5C55;">انقر أي بطاقة لتشغيل منحناها. لا شيء في كيان يتجاوز تسعمئة جزء من الألف.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:#E2DAC8;border:1px solid #E2DAC8;margin-top:36px;">
+      <div data-reveal="" data-curve="settle" data-ms="400" onClick="{{ runCurve }}" style="background:#fff;padding:26px 24px;cursor:pointer;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#04211F;">الاستقرار</div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5A6F66;">400ms</div>
+        </div>
+        <div data-track="" style="position:relative;height:34px;margin-top:16px;background:#F2EEE2;border-radius:99px;overflow:hidden;">
+          <div data-puck="" style="position:absolute;inset-block:5px;inset-inline-start:5px;width:24px;border-radius:50%;background:#0E6E66;"></div>
+        </div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#5A6F66;margin-top:12px;">cubic-bezier(.16, 1, .3, 1)</div>
+        <p style="font-size:14px;line-height:1.85;color:#3A5C55;margin:8px 0 0;">لكل ما يدخل الشاشة: البطاقات، اللوحات، النتائج. يبدأ سريعا ويستقر دون ارتداد.</p>
+      </div>
+
+      <div data-reveal="" data-curve="micro" data-ms="140" onClick="{{ runCurve }}" style="background:#fff;padding:26px 24px;cursor:pointer;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#04211F;">الاستجابة</div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5A6F66;">140ms</div>
+        </div>
+        <div data-track="" style="position:relative;height:34px;margin-top:16px;background:#F2EEE2;border-radius:99px;overflow:hidden;">
+          <div data-puck="" style="position:absolute;inset-block:5px;inset-inline-start:5px;width:24px;border-radius:50%;background:#12B5A4;"></div>
+        </div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#5A6F66;margin-top:12px;">cubic-bezier(.2, 0, .2, 1)</div>
+        <p style="font-size:14px;line-height:1.85;color:#3A5C55;margin:8px 0 0;">للمس والتمرير فوق العنصر وضغط الأزرار. أقصر من أن يلاحظ، وأطول من أن يغيب.</p>
+      </div>
+
+      <div data-reveal="" data-curve="exit" data-ms="220" onClick="{{ runCurve }}" style="background:#fff;padding:26px 24px;cursor:pointer;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#04211F;">المغادرة</div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5A6F66;">220ms</div>
+        </div>
+        <div data-track="" style="position:relative;height:34px;margin-top:16px;background:#F2EEE2;border-radius:99px;overflow:hidden;">
+          <div data-puck="" style="position:absolute;inset-block:5px;inset-inline-start:5px;width:24px;border-radius:50%;background:#6E675A;"></div>
+        </div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#5A6F66;margin-top:12px;">cubic-bezier(.4, 0, 1, 1)</div>
+        <p style="font-size:14px;line-height:1.85;color:#3A5C55;margin:8px 0 0;">لكل ما يغادر: الإشعارات، اللوحات المنبثقة، الصفوف المحذوفة. يتسارع ويختفي.</p>
+      </div>
+    </div>
+
+    <div data-reveal="" style="margin-top:24px;border:1px solid #E2DAC8;background:#fff;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+        <div style="padding:22px 24px;border-inline-end:1px solid #EDE5D2;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#5A6F66;">140ms</div><div style="font-size:15px;font-weight:600;color:#04211F;margin-top:6px;">لمسة وضغطة</div></div>
+        <div style="padding:22px 24px;border-inline-end:1px solid #EDE5D2;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#5A6F66;">220ms</div><div style="font-size:15px;font-weight:600;color:#04211F;margin-top:6px;">تغير حالة</div></div>
+        <div style="padding:22px 24px;border-inline-end:1px solid #EDE5D2;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#5A6F66;">400ms</div><div style="font-size:15px;font-weight:600;color:#04211F;margin-top:6px;">دخول عنصر</div></div>
+        <div style="padding:22px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#5A6F66;">700ms</div><div style="font-size:15px;font-weight:600;color:#04211F;margin-top:6px;">انتقال قسم</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04.03 COMPONENTS ===================== -->
+<section data-screen-label="٠٤.٠٣ المكونات · Components" style="background:#FFFFFF;border-top:1px solid #E2DAC8;">
+  <div style="max-width:1320px;margin:0 auto;padding:92px 44px;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;color:#0E6E66;">04.03 — COMPONENTS</div>
+    <h2 data-reveal="" style="margin:16px 0 8px;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,48px);line-height:1.35;color:#04211F;">مكونات تحمل معنى العمل</h2>
+    <p data-reveal="" style="margin:0;max-width:58ch;font-size:16.5px;line-height:1.95;color:#3A5C55;">ليست أزرارا عامة. كل مكون هنا يمثل حالة حقيقية في دورة التكليف: الضمان، والتحقق، والفئة، والتسليم.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:44px;">
+
+      <div data-reveal="" style="border:1px solid #E2DAC8;">
+        <div style="padding:14px 20px;border-bottom:1px solid #EDE5D2;background:#FCFBF7;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#5A6F66;">BUTTONS — الأزرار</span></div>
+        <div style="padding:26px 24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
+          <button style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:15.5px;font-weight:600;color:#fff;background:#0E6E66;border:none;border-radius:10px;padding:14px 26px;min-height:48px;cursor:pointer;transition:background 140ms cubic-bezier(.2,0,.2,1),transform 140ms cubic-bezier(.2,0,.2,1);" style-hover="background:#0A5C55;transform:translateY(-1px)" style-active="transform:translateY(1px)">اعتماد محضر الاستلام</button>
+          <button style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:15.5px;font-weight:600;color:#0E6E66;background:transparent;border:1.5px solid #0E6E66;border-radius:10px;padding:14px 26px;min-height:48px;cursor:pointer;transition:background 140ms cubic-bezier(.2,0,.2,1);" style-hover="background:#E6F2ED">طلب أمر تغيير</button>
+          <button style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:15.5px;font-weight:600;color:#B23A31;background:transparent;border:1.5px solid rgba(178,58,49,.4);border-radius:10px;padding:14px 26px;min-height:48px;cursor:pointer;transition:background 140ms cubic-bezier(.2,0,.2,1);" style-hover="background:#FBEDEC">فتح نزاع</button>
+          <div style="font-size:13.5px;color:#5A6F66;line-height:1.85;">ارتفاع لا يقل عن ثمانية وأربعين بكسلا لكل هدف لمس. والزر الخطر لا يملأ بلونه، بل يحد به.</div>
+        </div>
+      </div>
+
+      <div data-reveal="" data-escrow="" data-i="0" style="border:1px solid #E2DAC8;">
+        <div style="padding:14px 20px;border-bottom:1px solid #EDE5D2;background:#FCFBF7;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#5A6F66;">ESCROW STATE — حالة الضمان</span></div>
+        <div style="padding:26px 24px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#04211F;">عقد KYN·AD·0417</div>
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#04211F;">480,000 YER</div>
+          </div>
+          <div data-chip="" style="display:inline-flex;flex-direction:column;gap:2px;margin-top:16px;background:#FFF3D6;color:#7A5C0C;border-radius:8px;padding:10px 14px;">
+            <span data-chip-ar="" style="font-size:14.5px;font-weight:600;">محجوز في حساب الضمان</span>
+            <span data-chip-en="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;opacity:.85;">HELD IN ESCROW</span>
+          </div>
+          <div style="height:6px;border-radius:99px;background:#F2EEE2;margin-top:18px;overflow:hidden;">
+            <div data-bar="" style="height:100%;width:34%;background:#FFB627;border-radius:99px;transition:width 400ms cubic-bezier(.16,1,.3,1),background 400ms ease;"></div>
+          </div>
+          <button onClick="{{ advanceEscrow }}" style="margin-top:18px;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:14px;font-weight:600;color:#0E6E66;background:#E6F2ED;border:none;border-radius:8px;padding:11px 18px;min-height:44px;cursor:pointer;transition:background 140ms cubic-bezier(.2,0,.2,1);" style-hover="background:#D6EAE1">الحالة التالية</button>
+        </div>
+      </div>
+
+      <div data-reveal="" style="border:1px solid #E2DAC8;">
+        <div style="padding:14px 20px;border-bottom:1px solid #EDE5D2;background:#FCFBF7;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#5A6F66;">TIER CHIPS — شرائح الفئة</span></div>
+        <div style="padding:26px 24px;display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start;">
+          <span style="display:inline-flex;align-items:center;gap:8px;background:#F2EEE2;color:#4A453B;border-radius:99px;padding:8px 14px;font-size:13.5px;font-weight:600;"><span style="width:9px;height:9px;border-radius:50%;background:#8A8172;"></span>مسجل</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;background:#E6F2ED;color:#0A5C55;border-radius:99px;padding:8px 14px;font-size:13.5px;font-weight:600;"><span style="width:9px;height:9px;border-radius:50%;background:#0E6E66;"></span>معرف</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;background:#DDF4F0;color:#075A52;border-radius:99px;padding:8px 14px;font-size:13.5px;font-weight:600;"><span style="width:9px;height:9px;border-radius:50%;background:#12B5A4;"></span>موثق</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;background:#FBF0D2;color:#6B5309;border-radius:99px;padding:8px 14px;font-size:13.5px;font-weight:600;"><span style="width:9px;height:9px;border-radius:50%;background:#C9A227;"></span>مثبت</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;background:#04211F;color:#E9BE4B;border-radius:99px;padding:8px 14px;font-size:13.5px;font-weight:600;"><span style="width:9px;height:9px;border-radius:50%;background:#E9BE4B;"></span>مؤتمن</span>
+          <div style="font-size:13.5px;color:#5A6F66;line-height:1.85;">الشريحة تعرض الفئة ولا تسمح بتغييرها. النقر عليها يفتح السجل، لا قائمة خيارات.</div>
+        </div>
+      </div>
+
+      <div data-reveal="" style="border:1px solid #E2DAC8;">
+        <div style="padding:14px 20px;border-bottom:1px solid #EDE5D2;background:#FCFBF7;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#5A6F66;">VERIFY BADGE — شارة التحقق</span></div>
+        <div style="padding:26px 24px;">
+          <div onClick="{{ runVerify }}" data-busy="0" style="display:inline-flex;align-items:center;gap:10px;border:1.5px solid #C7BFA9;border-radius:99px;padding:11px 18px;min-height:44px;box-sizing:border-box;cursor:pointer;transition:border-color 220ms cubic-bezier(.2,0,.2,1);">
+            <span data-vdot="" style="width:10px;height:10px;border-radius:50%;background:#8A8172;transition:background 220ms ease;flex-shrink:0;"></span>
+            <span data-vlabel="" style="font-size:14.5px;font-weight:600;color:#04211F;">اضغط للتحقق</span>
+          </div>
+          <p style="font-size:13.5px;color:#5A6F66;line-height:1.85;margin:16px 0 0;">التحقق فعل، لا زينة. الشارة تتغير مرة واحدة عند النتيجة، ولا تنبض في الانتظار.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04.04 SYSTEM STATES ===================== -->
+<section data-screen-label="٠٤.٠٤ حالات النظام · States" style="background:#E6F2ED;border-top:1px solid #D3E4DC;">
+  <div style="max-width:1320px;margin:0 auto;padding:92px 44px;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;color:#0E6E66;">04.04 — SYSTEM STATES</div>
+    <h2 data-reveal="" style="margin:16px 0 8px;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,48px);line-height:1.35;color:#04211F;">النظام يتكلم حين لا يملك ما يعرضه</h2>
+    <p data-reveal="" style="margin:0;max-width:58ch;font-size:16.5px;line-height:1.95;color:#3A5C55;">الحالات الفارغة والأخطاء هي أصدق ما في المنتج. تكتب بالنبرة نفسها: تشرح ما حدث، ثم تعطي الخطوة التالية.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:#C9DED5;border:1px solid #C9DED5;margin-top:44px;">
+      <div data-reveal="" style="background:#fff;padding:28px 26px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#5A6F66;">EMPTY</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#04211F;margin-top:12px;">لا تكليفات بعد</div>
+        <p style="font-size:14.5px;line-height:1.9;color:#3A5C55;margin:8px 0 0;">يظهر هنا كل تكليف يصلك، ومعه النطاق والمدة والمستحق. أكمل توثيق ملفك ليصلك أول تكليف.</p>
+        <div style="font-size:13.5px;color:#0E6E66;font-weight:600;margin-top:14px;">إكمال التوثيق</div>
+      </div>
+      <div data-reveal="" style="background:#fff;padding:28px 26px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#5A6F66;">LOADING</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#04211F;margin-top:12px;">جاري تحميل السجل</div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;">
+          <div style="height:11px;border-radius:6px;background:#EFEADD;width:100%;"></div>
+          <div style="height:11px;border-radius:6px;background:#EFEADD;width:76%;"></div>
+          <div style="height:11px;border-radius:6px;background:#EFEADD;width:52%;"></div>
+        </div>
+        <p style="font-size:13.5px;line-height:1.85;color:#5A6F66;margin:14px 0 0;">هياكل ثابتة بلا وميض. الوميض يوحي بعطل، والانتظار عندنا هادئ.</p>
+      </div>
+      <div data-reveal="" style="background:#fff;padding:28px 26px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#B23A31;">ERROR</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#04211F;margin-top:12px;">تعذر حفظ محضر الاستلام</div>
+        <p style="font-size:14.5px;line-height:1.9;color:#3A5C55;margin:8px 0 0;">انقطع الاتصال أثناء الحفظ. المحضر محفوظ على جهازك، وسيرسل تلقائيا عند عودة الاتصال.</p>
+        <div style="font-size:13.5px;color:#0E6E66;font-weight:600;margin-top:14px;">إعادة المحاولة الآن</div>
+      </div>
+      <div data-reveal="" style="background:#04211F;padding:28px 26px;color:#FAF6EC;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#12B5A4;">SUCCESS</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;margin-top:12px;">قبل التسليم وصرف المستحق</div>
+        <p style="font-size:14.5px;line-height:1.9;color:rgba(250,246,236,.78);margin:8px 0 0;">يصل المبلغ خلال خمسة أيام عمل. أضيف هذا التسليم إلى سجلك، وارتفعت فئتك إلى موثق.</p>
+        <div style="font-size:13.5px;color:#E9BE4B;font-weight:600;margin-top:14px;">عرض البطاقة</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLOSE ===================== -->
+<section data-screen-label="الختام · Close" style="background:#07202C;">
+  <div style="max-width:1320px;margin:0 auto;padding:80px 44px;display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;">
+    <div style="min-width:0;">
+      <img src="uploads/kayan_logo_gold.png" alt="كيان" style="height:44px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(20px,2.4vw,30px);color:#E9BE4B;margin-top:22px;">«خلف كل نجاح، كيان»</div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-style:italic;font-size:16px;color:rgba(250,246,236,.65);margin-top:6px;">Behind every success, a Kayan.</div>
+    </div>
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;color:rgba(250,246,236,.62);line-height:2;text-align:left;">
+      CHAPTER 04 — MOTION &amp; COMPONENTS<br>
+      NEXT: 01 VERBAL · 10 ENVIRONMENT · 11 GOVERNANCE<br>
+      KAYANWORK.COM
+    </div>
+  </div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1320},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Experience&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (this.reduce || this.props.motion === false || !('IntersectionObserver' in window)) return;
+    const show = el => { el.style.opacity = '1'; el.style.transform = 'none'; };
+    const els = Array.from(document.querySelectorAll('[data-reveal]'))
+      .filter(el => el.getBoundingClientRect().top > window.innerHeight * 0.9);
+    els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(18px)'; el.style.transition = 'opacity .8s ease, transform .9s cubic-bezier(.16,1,.3,1)'; });
+    this._failsafe = setTimeout(() => els.forEach(show), 900);
+    let n = 0;
+    this._io = new IntersectionObserver(es => {
+      clearTimeout(this._failsafe);
+      es.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.style.transitionDelay = (n++ % 4) * 85 + 'ms';
+        show(e.target);
+        this._io.unobserve(e.target);
+        setTimeout(() => { n = Math.max(0, n - 1); }, 700);
+      });
+    }, { threshold: .12 });
+    els.forEach(el => this._io.observe(el));
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); if (this._failsafe) clearTimeout(this._failsafe); }
+
+  renderVals() {
+    const CURVES = {
+      settle: 'cubic-bezier(.16,1,.3,1)',
+      micro: 'cubic-bezier(.2,0,.2,1)',
+      exit: 'cubic-bezier(.4,0,1,1)'
+    };
+    return {
+      // Replays a curve demo: the puck travels the track and settles.
+      runCurve: (e) => {
+        const host = e.currentTarget, puck = host.querySelector('[data-puck]');
+        if (!puck) return;
+        const curve = CURVES[host.getAttribute('data-curve')] || CURVES.settle;
+        const ms = parseInt(host.getAttribute('data-ms'), 10) || 400;
+        if (this.reduce) { puck.style.opacity = '.3'; setTimeout(() => { puck.style.opacity = '1'; }, ms); return; }
+        puck.style.transition = 'none';
+        puck.style.transform = 'translateX(0)';
+        void puck.offsetWidth;
+        const travel = host.querySelector('[data-track]').clientWidth - puck.offsetWidth;
+        puck.style.transition = 'transform ' + ms + 'ms ' + curve;
+        puck.style.transform = 'translateX(' + travel + 'px)';
+        setTimeout(() => {
+          puck.style.transition = 'transform 260ms ' + CURVES.exit;
+          puck.style.transform = 'translateX(0)';
+        }, ms + 420);
+      },
+      // Escrow state machine: محجوز -> قيد المراجعة -> مفرج
+      advanceEscrow: (e) => {
+        const host = e.currentTarget.closest('[data-escrow]');
+        if (!host) return;
+        const steps = [
+          { key: 'held', ar: 'محجوز في حساب الضمان', en: 'HELD IN ESCROW', bg: '#FFF3D6', fg: '#7A5C0C', bar: '#FFB627', pct: 34 },
+          { key: 'review', ar: 'محضر الاستلام قيد المراجعة', en: 'ACCEPTANCE UNDER REVIEW', bg: '#E4F1FB', fg: '#1E5A87', bar: '#3E9EEA', pct: 68 },
+          { key: 'released', ar: 'صرف المستحق', en: 'RELEASED', bg: '#DFF3EA', fg: '#0A5C3E', bar: '#0E6E66', pct: 100 }
+        ];
+        const i = (parseInt(host.getAttribute('data-i'), 10) + 1) % 3;
+        host.setAttribute('data-i', i);
+        const s = steps[i];
+        const chip = host.querySelector('[data-chip]'), bar = host.querySelector('[data-bar]');
+        const arEl = host.querySelector('[data-chip-ar]'), enEl = host.querySelector('[data-chip-en]');
+        chip.style.background = s.bg; chip.style.color = s.fg;
+        arEl.textContent = s.ar; enEl.textContent = s.en;
+        bar.style.width = s.pct + '%'; bar.style.background = s.bar;
+        if (!this.reduce) {
+          chip.style.transition = 'none'; chip.style.transform = 'translateX(-8px)'; chip.style.opacity = '0';
+          void chip.offsetWidth;
+          chip.style.transition = 'transform 300ms ' + CURVES.settle + ', opacity 300ms ease, background 300ms ease, color 300ms ease';
+          chip.style.transform = 'translateX(0)'; chip.style.opacity = '1';
+        }
+      },
+      // Verify badge: idle -> checking -> verified
+      runVerify: (e) => {
+        const host = e.currentTarget, dot = host.querySelector('[data-vdot]'), label = host.querySelector('[data-vlabel]');
+        if (host.getAttribute('data-busy') === '1') return;
+        host.setAttribute('data-busy', '1');
+        label.textContent = 'يجري التحقق';
+        host.style.borderColor = '#3E9EEA'; dot.style.background = '#3E9EEA';
+        if (!this.reduce) dot.style.animation = 'kSweep 0s';
+        setTimeout(() => {
+          label.textContent = 'موثق';
+          host.style.borderColor = '#0E6E66'; dot.style.background = '#0E6E66';
+          host.setAttribute('data-busy', '0');
+        }, 900);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

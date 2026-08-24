@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الهب · عدن — أين يعمل العمل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
+<style>
+  :root{--paper:#FAF6EC;--ink:#052E2B;--body:#33544D;--muted:#6E675A;--rule:#EDE5D2;--rule2:#E2DAC8;--teal:#0E6E66;--accent:#12B5A4;--gold:#B8891A;--alarm:#B23A31;}
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--paper);overflow-x:hidden;}
+  body{font-family:'IBM Plex Sans Arabic',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
+  a{color:var(--teal);text-decoration:none;}a:hover{color:var(--accent);}
+  ::selection{background:var(--accent);color:var(--ink);}
+  h1,h2,h3{font-family:'Alexandria',sans-serif;font-weight:600;margin:0;text-wrap:balance;}
+  p{margin:0;text-wrap:pretty;}
+  .wrap{max-width:1180px;margin:0 auto;}
+  section{padding:80px clamp(20px,4vw,48px);}
+  .kicker{font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:var(--teal);font-weight:500;}
+  .kicker bdi{letter-spacing:normal;}
+  .lead{font-size:16px;line-height:2;color:var(--body);margin-top:12px;max-width:60ch;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .lat{font-family:'Instrument Sans',sans-serif;}
+  .grid{display:grid;gap:20px;}
+  .card{border:1px solid var(--rule);border-radius:18px;background:#fff;padding:22px;min-width:0;}
+  .bar{width:18px;height:3px;border-radius:2px;flex-shrink:0;}
+  #street{height:min(560px,70vh);width:100%;border-radius:20px;overflow:hidden;border:1px solid var(--rule2);}
+  .leaflet-container{font-family:'IBM Plex Sans Arabic',sans-serif;background:#EDE5D2;}
+  .pin{width:22px;height:22px;border-radius:99px;background:var(--accent);border:3px solid var(--ink);box-shadow:0 0 0 6px rgba(18,181,164,.22);}
+  .lbl{font-size:12.5px;color:var(--body);}
+  button{font-family:inherit;-webkit-tap-highlight-color:transparent;}
+  button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  select{font-family:inherit;font-size:14.5px;color:var(--ink);background:var(--paper);border:1px solid var(--rule2);border-radius:10px;padding:11px 12px;min-height:44px;}
+  table{width:100%;border-collapse:collapse;}
+  th,td{text-align:right;padding:13px 14px;border-top:1px solid var(--rule);font-size:14px;}
+  th{font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:var(--muted);border-top:none;background:var(--paper);}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+</style>
+</head>
+<body>
+
+<section style="background:var(--ink);color:var(--paper);padding-bottom:64px;">
+  <div class="wrap">
+    <div class="lat" style="font-size:11px;letter-spacing:.22em;color:var(--accent);">KYN-HUB-01 · THE PLACE</div>
+    <h1 style="margin-top:14px;font-size:clamp(30px,4.6vw,54px);line-height:1.16;color:var(--paper);max-width:18ch;">الهب — حيث يبقى العمل في عدن</h1>
+    <p style="font-size:16.5px;line-height:2.05;color:rgba(250,246,236,.78);margin-top:16px;max-width:60ch;">طابق عمل على ساحل أبين بخور مكسر. طاقة شمسية لا تنقطع، واتصال مدفوع مسبقا، ومكان آمن للنساء، ومدخل يصلح لكرسي متحرك. المقهى مرفق لخدمة الطابق، وليس خط عمل.</p>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;margin-top:32px;">
+      <div><div class="lat" style="font-size:10px;letter-spacing:.18em;color:rgba(250,246,236,.45);">DISTRICT</div><div style="font-size:17px;margin-top:5px;">خور مكسر · ساحل أبين</div></div>
+      <div><div class="lat" style="font-size:10px;letter-spacing:.18em;color:rgba(250,246,236,.45);">CITY</div><div style="font-size:17px;margin-top:5px;">عدن، الجمهورية اليمنية</div></div>
+      <div><div class="lat" style="font-size:10px;letter-spacing:.18em;color:rgba(250,246,236,.45);">LANDMARK</div><div style="font-size:17px;margin-top:5px;">بجوار فندق ريلاكس</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper);">
+  <div class="wrap">
+    <div class="kicker"><bdi>الموضع</bdi> · WHERE IT SITS</div>
+    <h2 style="margin-top:14px;font-size:clamp(26px,3.4vw,42px);line-height:1.28;max-width:24ch;">عدن مدينة على لسان بركاني، والهب على العنق منه</h2>
+    <p class="lead">خور مكسر هو البرزخ الذي يصل شبه جزيرة عدن بالبر. من مر بعدن مر به، ومن عمل في عدن عبره. الخريطة أدناه بيانات جغرافية حقيقية لا رسما تخيليا، ويمكن تحريكها وتقريبها.</p>
+
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:32px;align-items:start;">
+      <div style="min-width:0;">
+        <div id="street" role="region" aria-label="خريطة خور مكسر بعدن"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px;">
+          <button id="btnHub" style="min-height:44px;font-size:13.5px;color:var(--paper);background:var(--ink);border:none;border-radius:11px;padding:12px 16px;cursor:pointer;">الهب</button>
+          <button id="btnAden" style="min-height:44px;font-size:13.5px;color:var(--body);background:transparent;border:1px solid var(--rule2);border-radius:11px;padding:12px 16px;cursor:pointer;">عدن كاملة</button>
+          <span class="lbl" style="flex:1 1 200px;min-width:0;line-height:1.8;">بلاطات الخريطة من مشروع OpenStreetMap المفتوح.</span>
+        </div>
+      </div>
+
+      <div style="min-width:0;display:flex;flex-direction:column;gap:18px;">
+        <div class="card" style="padding:0;overflow:hidden;">
+          <div style="padding:14px 20px;border-bottom:1px solid var(--rule);background:var(--paper);font-size:13px;color:var(--body);">موضع عدن من اليمن</div>
+          <div id="locator" style="padding:16px;display:flex;justify-content:center;"></div>
+          <div style="padding:0 20px 18px;font-size:13px;line-height:1.9;color:var(--body);">حدود الدول من بيانات Natural Earth العامة. عدن على الساحل الجنوبي، عند مدخل باب المندب من الشرق.</div>
+        </div>
+
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:8px;"><span class="bar" style="background:var(--alarm);"></span><span class="lat" style="font-size:10.5px;letter-spacing:.16em;color:var(--body);">COORDINATES · PENDING</span></div>
+          <p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:10px;">الدبوس موضوع على وسط ساحل أبين بخور مكسر، وهو موضع تقريبي للحي. الإحداثيات النهائية للمبنى تقر من المالك وتقيد في الحوكمة قبل نشرها. ولا تنشر خريطة بموضع غير مقر.</p>
+          <div class="mono" style="font-size:12.5px;color:var(--ink);margin-top:12px;border-bottom:1px dotted #B0A48A;display:inline-block;padding-bottom:3px;" dir="ltr">PH-GEO-HUB · lat, lng</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;">
+  <div class="wrap">
+    <div class="kicker"><bdi>المسافات</bdi> · DISTANCE</div>
+    <h2 style="margin-top:14px;font-size:clamp(26px,3.4vw,42px);line-height:1.28;max-width:26ch;">كم يبعد الهب عن حيث أنت</h2>
+    <p class="lead">تحسب المسافة على الخط المستقيم من إحداثيات حقيقية، لا تقديرا. وطريق السيارة أطول لأن عدن مبنية على خلجان.</p>
+
+    <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:26px;">
+      <label style="display:flex;flex-direction:column;gap:6px;">
+        <span style="font-size:12.5px;color:var(--muted);">من</span>
+        <select id="from" aria-label="اختر نقطة البداية"></select>
+      </label>
+      <div style="align-self:flex-end;padding:11px 18px;border:1px solid var(--rule2);border-radius:12px;background:var(--paper);min-height:44px;display:flex;align-items:center;gap:12px;">
+        <span class="mono" id="dist" dir="ltr" style="font-size:20px;color:var(--ink);">—</span>
+        <span style="font-size:13px;color:var(--body);">كيلومترا على الخط المستقيم</span>
+      </div>
+    </div>
+
+    <div style="margin-top:28px;border:1px solid var(--rule);border-radius:18px;overflow:hidden;">
+      <table>
+        <thead><tr><th>MARKER · المعلم</th><th dir="ltr">LAT</th><th dir="ltr">LNG</th><th>PRECISION · الدقة</th></tr></thead>
+        <tbody id="coords"></tbody>
+      </table>
+    </div>
+    <p style="font-size:13px;line-height:1.9;color:var(--muted);margin-top:14px;">إحداثيات مطار عدن الدولي منشورة ومعروفة. وما وسم بـ«مركز حي تقريبي» يستعمل للاتجاه لا للملاحة.</p>
+  </div>
+</section>
+
+<section style="background:var(--ink);color:var(--paper);">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--accent);"><bdi>حالة المكان</bdi> · CONDITIONS</div>
+    <h2 style="margin-top:14px;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:var(--paper);max-width:26ch;">تنشر الحالة كما هي، بما فيها الانقطاع</h2>
+    <p style="font-size:16px;line-height:2;color:rgba(250,246,236,.76);margin-top:12px;max-width:60ch;">الطاقة والاتصال في عدن ليسا مسلمة. ومن ادعى أنهما دائمان فقد كذب أو لم يعمل هنا. تعرض هذه اللوحة الحالة الفعلية من مصدر التشغيل، وتظل الخانة فارغة حتى يصل الرقم.</p>
+
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:34px;">
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;padding:22px;background:rgba(250,246,236,.04);">
+        <div style="display:flex;align-items:center;gap:8px;"><span class="bar" style="background:var(--accent);"></span><span class="lat" style="font-size:10.5px;letter-spacing:.16em;color:rgba(250,246,236,.6);">POWER</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;margin-top:12px;">شمسية مع بطاريات</div>
+        <p style="font-size:13.5px;line-height:1.9;color:rgba(250,246,236,.66);margin-top:8px;">الطابق يعمل على الشمس أولا، والشبكة العامة احتياط. وساعات الاحتياط المتبقية تنشر لحظيا.</p>
+        <div class="mono" dir="ltr" style="font-size:12px;color:rgba(250,246,236,.5);margin-top:12px;border-bottom:1px dotted rgba(250,246,236,.3);display:inline-block;">PH-OPS-BATTERY-H</div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;padding:22px;background:rgba(250,246,236,.04);">
+        <div style="display:flex;align-items:center;gap:8px;"><span class="bar" style="background:#3E9EEA;"></span><span class="lat" style="font-size:10.5px;letter-spacing:.16em;color:rgba(250,246,236,.6);">CONNECTIVITY</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;margin-top:12px;">خطان من مزودين</div>
+        <p style="font-size:13.5px;line-height:1.9;color:rgba(250,246,236,.66);margin-top:8px;">خط رئيس وخط بديل من مزود آخر. ينقطع أحدهما فيتحول الطابق تلقائيا، ويقيد الانقطاع.</p>
+        <div class="mono" dir="ltr" style="font-size:12px;color:rgba(250,246,236,.5);margin-top:12px;border-bottom:1px dotted rgba(250,246,236,.3);display:inline-block;">PH-OPS-UPTIME-30D</div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;padding:22px;background:rgba(250,246,236,.04);">
+        <div style="display:flex;align-items:center;gap:8px;"><span class="bar" style="background:#FFB627;"></span><span class="lat" style="font-size:10.5px;letter-spacing:.16em;color:rgba(250,246,236,.6);">SEATS</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;margin-top:12px;">مقاعد ثابتة ومحجوزة</div>
+        <p style="font-size:13.5px;line-height:1.9;color:rgba(250,246,236,.66);margin-top:8px;">قسم مفتوح، وقسم مغلق للاجتماعات، وقسم للنساء لا يمر به غيرهن. والحجز مجاني للمنفذين المكلفين.</p>
+        <div class="mono" dir="ltr" style="font-size:12px;color:rgba(250,246,236,.5);margin-top:12px;border-bottom:1px dotted rgba(250,246,236,.3);display:inline-block;">PH-OPS-SEATS</div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;padding:22px;background:rgba(250,246,236,.04);">
+        <div style="display:flex;align-items:center;gap:8px;"><span class="bar" style="background:#3FA75B;"></span><span class="lat" style="font-size:10.5px;letter-spacing:.16em;color:rgba(250,246,236,.6);">ACCESS</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;margin-top:12px;">مدخل بلا درج</div>
+        <p style="font-size:13.5px;line-height:1.9;color:rgba(250,246,236,.66);margin-top:8px;">منحدر عند المدخل، ودورة مياه مهيأة، وممرات بعرض كرسي متحرك. الإتاحة بند تصميم لا لافتة.</p>
+        <div class="mono" dir="ltr" style="font-size:12px;color:rgba(250,246,236,.5);margin-top:12px;border-bottom:1px dotted rgba(250,246,236,.3);display:inline-block;">PH-OPS-ACCESS-AUDIT</div>
+      </div>
+    </div>
+
+    <div style="margin-top:26px;padding:18px 22px;border:1px solid rgba(18,181,164,.34);border-radius:16px;background:rgba(18,181,164,.08);display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;">
+      <span class="bar" style="background:var(--accent);margin-top:9px;"></span>
+      <p style="flex:1 1 260px;min-width:0;font-size:14px;line-height:1.9;color:rgba(250,246,236,.88);">الخانات المرمزة <span class="mono" dir="ltr">PH-OPS-…</span> تعبأ من نظام التشغيل عند التشغيل الفعلي. ولا يوضع فيها رقم تقديري ليبدو المكان جاهزا.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper);padding-bottom:96px;">
+  <div class="wrap">
+    <div class="kicker"><bdi>القواعد</bdi> · HOUSE RULES</div>
+    <h2 style="margin-top:14px;font-size:clamp(26px,3.4vw,42px);line-height:1.28;max-width:24ch;">مكان يحكم بقواعد مكتوبة على بابه</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:32px;">
+      <div class="card"><div class="mono" dir="ltr" style="font-size:11px;color:var(--teal);">01</div><h3 style="font-size:16.5px;margin-top:8px;">الدخول بالبطاقة</h3><p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:7px;">من الفئة الأولى فما فوق. والزائر يدخل بدعوة مقيدة باسم من دعاه.</p></div>
+      <div class="card"><div class="mono" dir="ltr" style="font-size:11px;color:var(--teal);">02</div><h3 style="font-size:16.5px;margin-top:8px;">قسم النساء مغلق</h3><p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:7px;">لا يمر به أحد ولا يعبر منه إلى غيره. وهذا شرط تشغيل لا خدمة إضافية.</p></div>
+      <div class="card"><div class="mono" dir="ltr" style="font-size:11px;color:var(--teal);">03</div><h3 style="font-size:16.5px;margin-top:8px;">لا تصوير في الطابق</h3><p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:7px;">إلا بإذن مكتوب من كل من يظهر. ولا تنشر صورة لأحد لأجل التسويق.</p></div>
+      <div class="card"><div class="mono" dir="ltr" style="font-size:11px;color:var(--teal);">04</div><h3 style="font-size:16.5px;margin-top:8px;">المقهى مرفق</h3><p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:7px;">يخدم الطابق ولا يحاسب كخط عمل، ولا يقاس نجاح الهب بمبيعاته.</p></div>
+      <div class="card"><div class="mono" dir="ltr" style="font-size:11px;color:var(--teal);">05</div><h3 style="font-size:16.5px;margin-top:8px;">لا نشاط حزبي</h3><p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:7px;">ولا فعالية لطرف في نزاع. المكان محايد بحكم لائحته لا بحكم النية.</p></div>
+      <div class="card"><div class="mono" dir="ltr" style="font-size:11px;color:var(--teal);">06</div><h3 style="font-size:16.5px;margin-top:8px;">الساعات معلنة</h3><p style="font-size:14px;line-height:1.95;color:var(--body);margin-top:7px;">تنشر على الباب وعلى هذه الصفحة، ويقيد كل إغلاق طارئ بسببه.</p></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var HUB = [12.8065, 45.0415];
+  var PTS = [
+    { ar: 'الهب — ساحل أبين، خور مكسر', lat: 12.8065, lng: 45.0415, p: 'مركز حي تقريبي', hub: true },
+    { ar: 'مطار عدن الدولي', lat: 12.8295, lng: 45.0288, p: 'إحداثيات منشورة' },
+    { ar: 'كريتر — عدن القديمة', lat: 12.7794, lng: 45.0367, p: 'مركز حي تقريبي' },
+    { ar: 'المعلا', lat: 12.7861, lng: 45.0206, p: 'مركز حي تقريبي' },
+    { ar: 'التواهي', lat: 12.7889, lng: 44.9944, p: 'مركز حي تقريبي' }
+  ];
+
+  // ---- street map ----
+  var map = L.map('street', { scrollWheelZoom: false, attributionControl: true }).setView(HUB, 15);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19, attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  L.marker(HUB, { icon: L.divIcon({ className: '', html: '<div class="pin"></div>', iconSize: [22, 22], iconAnchor: [11, 11] }) })
+    .addTo(map)
+    .bindPopup('<div style="font-family:\'IBM Plex Sans Arabic\',sans-serif;font-size:13.5px;line-height:1.8;direction:rtl;text-align:right;"><b>الهب</b><br>ساحل أبين، خور مكسر<br><span style="color:#8E2F27;">موضع تقريبي — الإحداثيات تقر من المالك</span></div>');
+
+  L.circle(HUB, { radius: 420, color: '#0E6E66', weight: 1.5, fillColor: '#12B5A4', fillOpacity: 0.10 }).addTo(map);
+
+  PTS.slice(1).forEach(function (p) {
+    L.circleMarker([p.lat, p.lng], { radius: 5, color: '#052E2B', weight: 2, fillColor: '#FAF6EC', fillOpacity: 1 })
+      .addTo(map).bindTooltip(p.ar, { direction: 'top' });
+  });
+
+  document.getElementById('btnHub').onclick = function () { map.setView(HUB, 15); };
+  document.getElementById('btnAden').onclick = function () {
+    map.fitBounds(L.latLngBounds(PTS.map(function (p) { return [p.lat, p.lng]; })).pad(0.25));
+  };
+
+  // ---- distance ----
+  function km(a, b) {
+    var R = 6371, t = Math.PI / 180;
+    var dLat = (b[0] - a[0]) * t, dLng = (b[1] - a[1]) * t;
+    var x = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(a[0] * t) * Math.cos(b[0] * t) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1 - x));
+  }
+  var sel = document.getElementById('from'), out = document.getElementById('dist');
+  PTS.slice(1).forEach(function (p, i) {
+    var o = document.createElement('option'); o.value = i + 1; o.textContent = p.ar; sel.appendChild(o);
+  });
+  function upd() { var p = PTS[+sel.value]; out.textContent = km([p.lat, p.lng], HUB).toFixed(1); }
+  sel.onchange = upd; upd();
+
+  var tb = document.getElementById('coords');
+  PTS.forEach(function (p) {
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td style="color:' + (p.hub ? '#052E2B' : '#33544D') + ';font-weight:' + (p.hub ? '500' : '400') + '">' + p.ar + '</td>' +
+      '<td dir="ltr" class="mono" style="font-size:13px;">' + p.lat.toFixed(4) + '</td>' +
+      '<td dir="ltr" class="mono" style="font-size:13px;">' + p.lng.toFixed(4) + '</td>' +
+      '<td style="color:' + (p.p.indexOf('تقريبي') > -1 ? '#8E2F27' : '#0E6E66') + ';font-size:13px;">' + p.p + '</td>';
+    tb.appendChild(tr);
+  });
+
+  // ---- locator: Yemen from real geometry ----
+  d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json').then(function (topo) {
+    var all = topojson.feature(topo, topo.objects.countries);
+    var yem = all.features.filter(function (f) { return f.properties.name === 'Yemen'; })[0];
+    if (!yem) return;
+    var W = 320, H = 210;
+    var proj = d3.geoMercator().fitExtent([[14, 14], [W - 14, H - 14]], yem);
+    var path = d3.geoPath(proj);
+    var svg = d3.select('#locator').append('svg')
+      .attr('viewBox', '0 0 ' + W + ' ' + H).attr('width', '100%')
+      .attr('role', 'img').attr('aria-label', 'اليمن وموضع عدن');
+    svg.append('g').selectAll('path').data(all.features).enter().append('path')
+      .attr('d', path).attr('fill', '#F1EAD9').attr('stroke', '#E2DAC8').attr('stroke-width', 0.6);
+    svg.append('path').datum(yem).attr('d', path).attr('fill', '#DCE9E4').attr('stroke', '#052E2B').attr('stroke-width', 1.1);
+    var xy = proj([HUB[1], HUB[0]]);
+    svg.append('circle').attr('cx', xy[0]).attr('cy', xy[1]).attr('r', 9).attr('fill', 'rgba(18,181,164,.25)');
+    svg.append('circle').attr('cx', xy[0]).attr('cy', xy[1]).attr('r', 3.6).attr('fill', '#052E2B');
+    svg.append('text').attr('x', xy[0]).attr('y', xy[1] + 20).attr('text-anchor', 'middle')
+      .attr('font-family', 'IBM Plex Sans Arabic, sans-serif').attr('font-size', 12).attr('fill', '#052E2B').text('عدن');
+  });
+})();
+</script>
+</body>
+</html>

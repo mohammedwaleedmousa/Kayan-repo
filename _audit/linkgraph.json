@@ -1,0 +1,630 @@
+{
+ "graph": {
+  "Canvas-2.dc.html": [],
+  "Canvas-3.dc.html": [],
+  "Canvas.dc.html": [],
+  "Civic Wing - Kayan for Yemen.dc.html": [
+   "Kayan for Clients.dc.html",
+   "Kayan Legal.dc.html#terms",
+   "Kayan Home.dc.html",
+   "Kayan Record.dc.html"
+  ],
+  "Kayan Access.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan Journey.dc.html",
+   "Kayan Pod Room.dc.html",
+   "Kayan Legal.dc.html",
+   "Kayan Apply.dc.html"
+  ],
+  "Kayan Admin.dc.html": [],
+  "Kayan Apply.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan for Talent.dc.html",
+   "Kayan Legal.dc.html#terms",
+   "Kayan Legal.dc.html#privacy",
+   "Kayan Legal.dc.html#data",
+   "Kayan for Talent.dc.html#card",
+   "Kayan Charter.dc.html",
+   "Kayan Legal.dc.html"
+  ],
+  "Kayan Atlas.html": [
+   "Kayan Home.dc.html",
+   "Kayan Planet.dc.html",
+   "Kayan People.dc.html",
+   "Kayan Portal.dc.html"
+  ],
+  "Kayan Bird - Chapter 02.dc.html": [],
+  "Kayan Charter.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan Home.dc.html#lines",
+   "Kayan Journey.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html"
+  ],
+  "Kayan Client Profile.dc.html": [
+   "Kayan for Clients.dc.html",
+   "Line I - Ready Products.dc.html",
+   "Kayan for Clients.dc.html#open",
+   "Kayan Toolkit - Scoping Form.dc.html"
+  ],
+  "Kayan Dimension.html": [
+   "Kayan Home.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan Access.dc.html",
+   "Kayan Atlas.html"
+  ],
+  "Kayan Dossier.dc.html": [
+   "The master one.dc.html",
+   "Kayan Standards.dc.html",
+   "Line I - Managed Delivery - Internal Dossier v2.dc.html"
+  ],
+  "Kayan Guide Print.dc.html": [],
+  "Kayan Handover.dc.html": [],
+  "Kayan Home.dc.html": [
+   "Kayan Charter.dc.html",
+   "Kayan People.dc.html",
+   "Kayan Planet.dc.html",
+   "Kayan Dimension.html",
+   "Kayan for Clients.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Atlas.html",
+   "Kayan Journey.dc.html",
+   "Kayan Charter.dc.html#values",
+   "Kayan for Talent.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan Record.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "Line II - The Hub and Cafe EN.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Line I - Ready Products.dc.html",
+   "Line III - The Forge.dc.html",
+   "Civic Wing - Kayan for Yemen.dc.html",
+   "Line I - Managed Delivery EN.dc.html",
+   "Line III - The Forge EN.dc.html",
+   "Kayan Access.dc.html",
+   "Kayan Legal.dc.html#terms",
+   "Kayan Legal.dc.html#privacy",
+   "Kayan Legal.dc.html#data",
+   "Kayan Seal.dc.html",
+   "Kayan Legal.dc.html"
+  ],
+  "Kayan Hub.html": [
+   "Line II - The Hub and Cafe EN.dc.html"
+  ],
+  "Kayan Identity.dc.html": [
+   "Kayan Home.dc.html",
+   "The master one.dc.html"
+  ],
+  "Kayan In Reality.dc.html": [],
+  "Kayan Journey.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan Apply.dc.html"
+  ],
+  "Kayan Legal.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan Charter.dc.html",
+   "Kayan Portal.dc.html"
+  ],
+  "Kayan Master.dc.html": [],
+  "Kayan Materials.dc.html": [],
+  "Kayan Motion and Components - Chapter 04.dc.html": [],
+  "Kayan Partner Deck.dc.html": [],
+  "Kayan People.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan Planet.dc.html",
+   "Kayan Access.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Portal.dc.html",
+   "Civic Wing - Kayan for Yemen.dc.html",
+   "Kayan Legal.dc.html"
+  ],
+  "Kayan Planet.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan People.dc.html",
+   "Kayan Access.dc.html",
+   "Line III - The Forge.dc.html",
+   "Civic Wing - Kayan for Yemen.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "Kayan Legal.dc.html"
+  ],
+  "Kayan Pod Room.dc.html": [
+   "Kayan Access.dc.html",
+   "Kayan Space - Talent.dc.html"
+  ],
+  "Kayan Portal.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan Charter.dc.html",
+   "Kayan Journey.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Access.dc.html",
+   "Kayan Space - Client.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html",
+   "Kayan Space - Talent.dc.html",
+   "Kayan Pod Room.dc.html"
+  ],
+  "Kayan Record.dc.html": [],
+  "Kayan Seal.dc.html": [],
+  "Kayan Social.dc.html": [],
+  "Kayan Sonic - Chapter 05.dc.html": [],
+  "Kayan Space - Client.dc.html": [
+   "Kayan Access.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan Journey.dc.html",
+   "Kayan Legal.dc.html",
+   "Kayan Planet.dc.html"
+  ],
+  "Kayan Space - Talent.dc.html": [
+   "Kayan Access.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan Pod Room.dc.html",
+   "Civic Wing - Kayan for Yemen.dc.html",
+   "Line III - The Forge.dc.html",
+   "Kayan People.dc.html",
+   "Kayan Legal.dc.html"
+  ],
+  "Kayan Standards.dc.html": [],
+  "Kayan Stationery.dc.html": [],
+  "Kayan Talent Profile.dc.html": [
+   "Kayan for Talent.dc.html",
+   "Kayan for Talent.dc.html#register",
+   "Line I - Ready Products.dc.html",
+   "Kayan Home.dc.html"
+  ],
+  "Kayan Toolkit - Scoping Form.dc.html": [
+   "Line I - Managed Delivery.dc.html"
+  ],
+  "Kayan Type and Mark - Chapter 03.dc.html": [],
+  "Kayan for Clients.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan Portal.dc.html",
+   "Line I - Ready Products.dc.html",
+   "Kayan Client Profile.dc.html",
+   "Kayan Legal.dc.html#terms",
+   "Kayan Legal.dc.html#privacy",
+   "Kayan Legal.dc.html#data",
+   "Line I - Managed Delivery.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "Line III - The Forge.dc.html",
+   "Civic Wing - Kayan for Yemen.dc.html",
+   "Line I - Managed Delivery EN.dc.html",
+   "Line II - The Hub and Cafe EN.dc.html",
+   "Line III - The Forge EN.dc.html",
+   "Kayan Toolkit - Scoping Form.dc.html",
+   "Kayan for Talent.dc.html"
+  ],
+  "Kayan for Talent.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Charter.dc.html",
+   "Kayan Legal.dc.html#terms",
+   "Kayan Legal.dc.html#privacy",
+   "Kayan Legal.dc.html#data",
+   "Line I - Managed Delivery.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "Line III - The Forge.dc.html",
+   "Civic Wing - Kayan for Yemen.dc.html",
+   "Line I - Managed Delivery EN.dc.html",
+   "Line II - The Hub and Cafe EN.dc.html",
+   "Line III - The Forge EN.dc.html",
+   "Kayan Talent Profile.dc.html",
+   "Kayan for Clients.dc.html",
+   "Line I - Ready Products.dc.html"
+  ],
+  "Line I - Managed Delivery - Internal Dossier v2.dc.html": [
+   "Kayan Dossier.dc.html",
+   "Kayan Toolkit - Scoping Form.dc.html"
+  ],
+  "Line I - Managed Delivery - Internal Dossier.dc.html": [
+   "Kayan Dossier.dc.html",
+   "The master one.dc.html"
+  ],
+  "Line I - Managed Delivery EN.dc.html": [
+   "Kayan Home.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Toolkit - Scoping Form.dc.html",
+   "Kayan Legal.dc.html#terms",
+   "Kayan Legal.dc.html#privacy"
+  ],
+  "Line I - Managed Delivery.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan Portal.dc.html",
+   "Line I - Managed Delivery EN.dc.html",
+   "Kayan Apply.dc.html",
+   "Line I - Ready Products.dc.html#RP-001",
+   "Line I - Ready Products.dc.html#RP-002",
+   "Line I - Ready Products.dc.html#RP-005",
+   "Line I - Ready Products.dc.html#RP-012",
+   "Line I - Ready Products.dc.html#RP-009",
+   "Line I - Ready Products.dc.html#RP-015",
+   "Line I - Ready Products.dc.html",
+   "Kayan Toolkit - Scoping Form.dc.html"
+  ],
+  "Line I - Ready Products.dc.html": [
+   "Line I - Managed Delivery.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html"
+  ],
+  "Line II - The Hub and Cafe EN.dc.html": [
+   "Kayan Home.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "Kayan Hub.html",
+   "Line I - Managed Delivery EN.dc.html"
+  ],
+  "Line II - The Hub and Cafe.dc.html": [
+   "Kayan Home.dc.html",
+   "Line II - The Hub and Cafe EN.dc.html",
+   "Kayan Hub.html",
+   "Kayan Legal.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Line I - Ready Products.dc.html",
+   "Line III - The Forge.dc.html",
+   "Civic Wing - Kayan for Yemen.dc.html",
+   "Kayan Legal.dc.html#terms",
+   "Kayan Legal.dc.html#privacy"
+  ],
+  "Line III - The Forge EN.dc.html": [
+   "Line III - The Forge.dc.html",
+   "Kayan Apply.dc.html",
+   "Line I - Managed Delivery EN.dc.html",
+   "Line II - The Hub and Cafe EN.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan Legal.dc.html#terms",
+   "Kayan Legal.dc.html#privacy"
+  ],
+  "Line III - The Forge.dc.html": [
+   "Line III - The Forge EN.dc.html",
+   "Kayan Apply.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "Kayan Home.dc.html"
+  ],
+  "The master one.dc.html": [
+   "Kayan Dossier.dc.html",
+   "Kayan Materials.dc.html",
+   "Kayan Record.dc.html",
+   "Kayan Stationery.dc.html",
+   "Kayan Social.dc.html",
+   "Kayan In Reality.dc.html",
+   "Kayan Handover.dc.html",
+   "Kayan Standards.dc.html",
+   "Kayan Seal.dc.html",
+   "Kayan Journey.dc.html",
+   "Kayan Hub.html",
+   "Kayan Partner Deck.dc.html",
+   "Kayan Type and Mark - Chapter 03.dc.html",
+   "Kayan Bird - Chapter 02.dc.html",
+   "Kayan Sonic - Chapter 05.dc.html",
+   "Kayan Motion and Components - Chapter 04.dc.html",
+   "Kayan Guide Print.dc.html"
+  ],
+  "hub-map-en.html": []
+ },
+ "targets": {
+  "Kayan for Clients.dc.html": [
+   "Civic Wing - Kayan for Yemen.dc.html",
+   "Kayan Charter.dc.html",
+   "Kayan Client Profile.dc.html",
+   "Kayan Client Profile.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan Journey.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan for Talent.dc.html",
+   "Line I - Ready Products.dc.html"
+  ],
+  "Kayan Legal.dc.html": [
+   "Civic Wing - Kayan for Yemen.dc.html",
+   "Kayan Access.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan People.dc.html",
+   "Kayan Planet.dc.html",
+   "Kayan Space - Client.dc.html",
+   "Kayan Space - Talent.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html",
+   "Kayan for Talent.dc.html",
+   "Kayan for Talent.dc.html",
+   "Line I - Managed Delivery EN.dc.html",
+   "Line I - Managed Delivery EN.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "Line III - The Forge EN.dc.html",
+   "Line III - The Forge EN.dc.html"
+  ],
+  "Kayan Home.dc.html": [
+   "Civic Wing - Kayan for Yemen.dc.html",
+   "Kayan Access.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Atlas.html",
+   "Kayan Charter.dc.html",
+   "Kayan Charter.dc.html",
+   "Kayan Dimension.html",
+   "Kayan Identity.dc.html",
+   "Kayan Journey.dc.html",
+   "Kayan Legal.dc.html",
+   "Kayan People.dc.html",
+   "Kayan Planet.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan Space - Client.dc.html",
+   "Kayan Space - Talent.dc.html",
+   "Kayan Talent Profile.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html",
+   "Line I - Managed Delivery EN.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Line II - The Hub and Cafe EN.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "Line III - The Forge EN.dc.html",
+   "Line III - The Forge.dc.html"
+  ],
+  "Kayan Record.dc.html": [
+   "Civic Wing - Kayan for Yemen.dc.html",
+   "Kayan Home.dc.html",
+   "The master one.dc.html"
+  ],
+  "Kayan Portal.dc.html": [
+   "Kayan Access.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Atlas.html",
+   "Kayan Charter.dc.html",
+   "Kayan Dimension.html",
+   "Kayan Home.dc.html",
+   "Kayan Journey.dc.html",
+   "Kayan Legal.dc.html",
+   "Kayan People.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html",
+   "Line I - Managed Delivery EN.dc.html",
+   "Line I - Managed Delivery.dc.html"
+  ],
+  "Kayan Journey.dc.html": [
+   "Kayan Access.dc.html",
+   "Kayan Charter.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan Space - Client.dc.html",
+   "The master one.dc.html"
+  ],
+  "Kayan Pod Room.dc.html": [
+   "Kayan Access.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan Space - Talent.dc.html"
+  ],
+  "Kayan Apply.dc.html": [
+   "Kayan Access.dc.html",
+   "Kayan Charter.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan Journey.dc.html",
+   "Kayan People.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan Space - Talent.dc.html",
+   "Kayan for Talent.dc.html",
+   "Line I - Managed Delivery EN.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Line III - The Forge EN.dc.html",
+   "Line III - The Forge.dc.html"
+  ],
+  "Kayan for Talent.dc.html": [
+   "Kayan Apply.dc.html",
+   "Kayan Apply.dc.html",
+   "Kayan Charter.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan Journey.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan Talent Profile.dc.html",
+   "Kayan Talent Profile.dc.html",
+   "Kayan for Clients.dc.html",
+   "Line I - Ready Products.dc.html"
+  ],
+  "Kayan Charter.dc.html": [
+   "Kayan Apply.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan Legal.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan for Talent.dc.html"
+  ],
+  "Kayan Planet.dc.html": [
+   "Kayan Atlas.html",
+   "Kayan Home.dc.html",
+   "Kayan People.dc.html",
+   "Kayan Space - Client.dc.html"
+  ],
+  "Kayan People.dc.html": [
+   "Kayan Atlas.html",
+   "Kayan Home.dc.html",
+   "Kayan Planet.dc.html",
+   "Kayan Space - Talent.dc.html"
+  ],
+  "Line I - Ready Products.dc.html": [
+   "Kayan Client Profile.dc.html",
+   "Kayan Home.dc.html",
+   "Kayan Talent Profile.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Line II - The Hub and Cafe.dc.html"
+  ],
+  "Kayan Toolkit - Scoping Form.dc.html": [
+   "Kayan Client Profile.dc.html",
+   "Kayan for Clients.dc.html",
+   "Line I - Managed Delivery - Internal Dossier v2.dc.html",
+   "Line I - Managed Delivery EN.dc.html",
+   "Line I - Managed Delivery.dc.html"
+  ],
+  "Kayan Access.dc.html": [
+   "Kayan Dimension.html",
+   "Kayan Home.dc.html",
+   "Kayan People.dc.html",
+   "Kayan Planet.dc.html",
+   "Kayan Pod Room.dc.html",
+   "Kayan Portal.dc.html",
+   "Kayan Space - Client.dc.html",
+   "Kayan Space - Talent.dc.html"
+  ],
+  "Kayan Atlas.html": [
+   "Kayan Dimension.html",
+   "Kayan Home.dc.html"
+  ],
+  "The master one.dc.html": [
+   "Kayan Dossier.dc.html",
+   "Kayan Identity.dc.html",
+   "Line I - Managed Delivery - Internal Dossier.dc.html"
+  ],
+  "Kayan Standards.dc.html": [
+   "Kayan Dossier.dc.html",
+   "The master one.dc.html"
+  ],
+  "Line I - Managed Delivery - Internal Dossier v2.dc.html": [
+   "Kayan Dossier.dc.html"
+  ],
+  "Kayan Dimension.html": [
+   "Kayan Home.dc.html"
+  ],
+  "Line II - The Hub and Cafe.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan Planet.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html",
+   "Line II - The Hub and Cafe EN.dc.html",
+   "Line III - The Forge.dc.html"
+  ],
+  "Line II - The Hub and Cafe EN.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan Hub.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "Line III - The Forge EN.dc.html"
+  ],
+  "Line I - Managed Delivery.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan Toolkit - Scoping Form.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html",
+   "Line I - Managed Delivery EN.dc.html",
+   "Line I - Ready Products.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "Line III - The Forge.dc.html"
+  ],
+  "Line III - The Forge.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan Planet.dc.html",
+   "Kayan Space - Talent.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "Line III - The Forge EN.dc.html"
+  ],
+  "Civic Wing - Kayan for Yemen.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan People.dc.html",
+   "Kayan Planet.dc.html",
+   "Kayan Space - Talent.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html",
+   "Line II - The Hub and Cafe.dc.html"
+  ],
+  "Line I - Managed Delivery EN.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html",
+   "Line I - Managed Delivery.dc.html",
+   "Line II - The Hub and Cafe EN.dc.html",
+   "Line III - The Forge EN.dc.html"
+  ],
+  "Line III - The Forge EN.dc.html": [
+   "Kayan Home.dc.html",
+   "Kayan for Clients.dc.html",
+   "Kayan for Talent.dc.html",
+   "Line III - The Forge.dc.html"
+  ],
+  "Kayan Seal.dc.html": [
+   "Kayan Home.dc.html",
+   "The master one.dc.html"
+  ],
+  "Kayan Space - Talent.dc.html": [
+   "Kayan Pod Room.dc.html",
+   "Kayan Portal.dc.html"
+  ],
+  "Kayan Space - Client.dc.html": [
+   "Kayan Portal.dc.html"
+  ],
+  "Kayan Client Profile.dc.html": [
+   "Kayan for Clients.dc.html"
+  ],
+  "Kayan Talent Profile.dc.html": [
+   "Kayan for Talent.dc.html"
+  ],
+  "Kayan Dossier.dc.html": [
+   "Line I - Managed Delivery - Internal Dossier v2.dc.html",
+   "Line I - Managed Delivery - Internal Dossier.dc.html",
+   "The master one.dc.html"
+  ],
+  "Kayan Hub.html": [
+   "Line II - The Hub and Cafe EN.dc.html",
+   "Line II - The Hub and Cafe.dc.html",
+   "The master one.dc.html"
+  ],
+  "Kayan Materials.dc.html": [
+   "The master one.dc.html"
+  ],
+  "Kayan Stationery.dc.html": [
+   "The master one.dc.html"
+  ],
+  "Kayan Social.dc.html": [
+   "The master one.dc.html"
+  ],
+  "Kayan In Reality.dc.html": [
+   "The master one.dc.html"
+  ],
+  "Kayan Handover.dc.html": [
+   "The master one.dc.html"
+  ],
+  "Kayan Partner Deck.dc.html": [
+   "The master one.dc.html"
+  ],
+  "Kayan Type and Mark - Chapter 03.dc.html": [
+   "The master one.dc.html"
+  ],
+  "Kayan Bird - Chapter 02.dc.html": [
+   "The master one.dc.html"
+  ],
+  "Kayan Sonic - Chapter 05.dc.html": [
+   "The master one.dc.html"
+  ],
+  "Kayan Motion and Components - Chapter 04.dc.html": [
+   "The master one.dc.html"
+  ],
+  "Kayan Guide Print.dc.html": [
+   "The master one.dc.html"
+  ]
+ }
+}

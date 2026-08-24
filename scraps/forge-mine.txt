@@ -1,0 +1,159 @@
+
+
+##### COVER #####
+KAYAN  ◆  LINE INTELLIGENCE & OPERATING WORKBOOK
+Kayan Forge
+Where capability is built — the talent factory that feeds the whole system
+Behind every success, a KAYAN
+Instrument | 5
+What it is | 7
+The accumulating idea | 9
+Numbers | 11
+Status | 13
+WHAT IS INSIDE
+00 · READ ME | 16
+01 · LINE ON A PAGE | 18
+02 · ECONOMICS & REVENUE | 20
+03 · ACCOUNTING TREATMENT | 22
+04 · ROLES · JD & KPIs | 24
+05 · PROCESS | 26
+06 · QA & CONTROLS | 28
+07 · AUTOMATION MAP | 30
+08 · CROSS-DOMAIN NOTES | 32
+09 · PAIN POINTS & IDEAS | 34
+
+
+##### 00 · READ ME #####
+HOW THIS WORKBOOK WORKS
+What a line workbook is | One workbook per business line, reasoned all the way through: what it sells and to whom, how it earns, how each transaction is booked, who runs it, the process and controls, and where it can be automated. The Forge is the talent factory — it builds the people the whole system depends on.
+The accumulating ledger | Building the Forge surfaces needs for other domains — how sponsor money is booked, roles to hire, the handoff Tech must build from graduate to verified talent, agreements Legal must write. Those land in tab 08 and accumulate.
+Numbers are placeholders | Every contested figure is an illustrative placeholder in a blue input cell, pending the finance session. The model computes so the logic is visible — no number is decided.
+The reader | Internal and candid about sponsor dependency and the hard part — turning training into real income. External language is handled in the brand; the Forge is never called an &apos;Academy&apos;.
+Where it connects | The Forge does not end at graduation. Graduates enter the verification pipeline and, when they pass, join the Verified Talent Map as T1 — and become available to Managed Delivery. Training that does not lead to work is not the goal; training that leads to verified, engaged talent is.
+
+
+##### 01 · LINE ON A PAGE #####
+Kayan Forge — the line on a page
+What it is | Structured capability-building: cohorts that take people from potential to verified, work-ready talent — and then connect them to actual work through the rest of Kayan.
+Who it is for | Aspiring and early-career talent who need real skills and a path to income. Sponsors and funders who want to build Yemeni capability with measurable results. And the market that needs skilled, verified people.
+The promise | Real skills, independently verified, with a genuine path to work — not a certificate that leads nowhere. You leave the Forge on the talent map, not just with a page.
+What it sells | Sponsored cohorts (the core, donor-aligned), enrolment where participants pay, and custom or corporate training commissioned by an organisation — plus multi-cohort sponsor programmes.
+The value flow | Recruit → enrol → deliver → assess → graduate → verify (the six-step pipeline) → join the talent map as T1 → be engaged through Managed Delivery. Sponsors fund it; graduates carry it into income; outcomes and stories prove it.
+Why it wins | It does not just train — it verifies and connects to work. Graduates enter the Verified Talent Map, and their income and stories become the proof a funder needs. It is the absorption layer that turns development funding into capability that lasts.
+Where it sits | The talent factory. It feeds Managed Delivery with verified people, gives the Hub cohorts to run, and gives Kayan for Yemen and its sponsors measurable impact — employment, income, and stories.
+
+
+##### 02 · ECONOMICS & REVENUE #####
+Economics & revenue
+The revenue lines and the unit economics. Blue cells are illustrative placeholders — the model computes so the logic is visible, but every number is set in the finance session.
+REVENUE LINES | 63
+Sponsored cohorts | 65
+Enrolment fees | 67
+Corporate / custom training | 69
+Multi-cohort sponsor programmes | 71
+Certification / premium tracks | 73
+UNIT ECONOMICS  (illustrative placeholders) | Value | Unit
+Cohorts per year | 6 | count | Placeholder
+Seats per cohort | 20 | count | Placeholder
+Sponsor value per cohort | 5000 | USD | Placeholder — typical sponsorship
+Enrolment fee per seat | 50 | USD | Placeholder — often subsidised or zero
+Cost per cohort | 4000 | USD | Placeholder — trainer, materials, space recharge
+Participants per year | 120 | count | People through the Forge
+Sponsor revenue per year | 30000 | USD | The donor-aligned core
+Enrolment revenue per year | 6000 | USD | Participant-paid share
+Total Forge revenue per year | 36000 | USD | Sponsor plus enrolment
+Contribution vs cost | 12000 | USD | Revenue less delivery cost
+Cost per seat | 200 | USD | Delivery cost per participant — the number sponsors ask about
+Sponsor money is often restricted — given for a specific cohort or outcome. It is recognised as the cohort is delivered, not when it arrives, and held as deferred income until then. The same discipline as protected funds in Managed Delivery, applied to grants: the money is honoured for what it was given for.
+
+
+##### 03 · ACCOUNTING TREATMENT #####
+Accounting treatment
+How sponsor funds and fees are coded. Restricted sponsor money is deferred until the cohort is delivered — it is not revenue on the day it arrives. Account codes are placeholders for the finance session.
+Event | Debit | Credit | Why / account note
+Sponsor commits to a cohort | — (memo / commitment) | — | Recorded as a commitment; not yet income.
+Sponsor funds received | Bank | Deferred cohort income (liability) | Restricted until delivered — held, not earned. «COA: 2xxx»
+Cohort delivered (over its run) | Deferred cohort income (liability) | Forge sponsor income (revenue) | Recognised as the cohort is delivered. «COA: 4xxx»
+Participant pays enrolment | Bank / cash | Forge enrolment income (revenue) | Recognised as the cohort is delivered. «COA: 4xxx»
+Trainer / mentor paid | Training delivery cost (expense) | Bank / payable | Arm&apos;s-length, on the roster. «COA: 5xxx»
+Materials & certification | Materials expense | Bank / payable | Cohort materials and certification. «COA: 5xxx»
+Space used (from the Hub) | Forge space cost (internal recharge) | Hub (internal) | The Forge uses Hub space — recharged internally, not double-counted.
+Sponsor reporting delivered | — | — | Triggers recognition of any outcome-linked tranche and the impact report.
+
+
+##### 04 · ROLES · JD & KPIs #####
+Roles · JD & KPIs
+Every position and intern that runs the Forge, in position codes. The Forge Lead is a partner role, operational within the Forge only — with a standing conflict-of-interest disclosure, no cross-approval on decisions outside the Forge, and arm&apos;s-length compensation.
+Code | Role | Purpose | Key responsibilities | KPIs | Reports to
+FRG-LEAD | Forge Lead | Own the Forge — cohorts, sponsors, and outcomes | Design the programme; secure and manage sponsors; run cohorts to standard; own graduate outcomes and the Forge P&L. Operational within the Forge only; COI disclosed; arm&apos;s-length terms | Cohorts delivered; graduation rate; graduates verified (T1); sponsor renewal; income impact | Chief Executive
+FRG-COORD | Cohort Coordinator | Run the cohort machine | Recruit and select participants; manage enrolment, attendance, and logistics; keep records and evidence; schedule trainers | Seats filled; attendance / completion; record accuracy; on-time delivery | FRG-LEAD
+FRG-TRAIN | Trainer / Mentor | Deliver the learning to standard | Teach the curriculum; mentor participants; assess fairly; feed back on readiness | Participant ratings; completion; assessment quality; readiness of graduates | FRG-LEAD
+FRG-SPON | Sponsor & Partnerships | Fund the Forge and place its graduates | Build the sponsor pipeline; steward sponsors; report outcomes; open employer pathways | Sponsor pipeline and value; reporting on time; renewal; graduate placements | FRG-LEAD
+FRG-INT | Forge Intern | Learn programme delivery while supporting | Assist coordination, documentation, and participant support; prepare materials | Tasks on time; reliability; readiness to progress | FRG-COORD
+
+
+##### 05 · PROCESS #####
+Process — the cohort lifecycle
+From designing a cohort to tracking a graduate&apos;s real outcomes. Each stage has an owner, a checklist, and what the platform automates — and it does not end at graduation.
+Stage | What happens | Owner | Checklist (key items) | Automation
+Design | The cohort and curriculum are designed to a real need | FRG-LEAD | Need confirmed; curriculum set; trainers lined up; sponsor aligned | Curriculum from standard; cohort record
+Recruit | Participants are found and applications taken | FRG-COORD | Outreach done; applications captured; criteria clear | EOI / enrolment form; applicant list
+Select | The right participants are chosen | FRG-COORD | Applications screened; selected fairly; places offered | Screening; selection record
+Enrol | Places confirmed and the cohort formed | FRG-COORD | Enrolment agreement; fee (if any); cohort roster set | Enrolment record; roster
+Deliver | The programme runs | FRG-TRAIN | Sessions delivered; attendance taken; mentoring; evidence kept | Attendance tracking; session log
+Assess | Participants are assessed against the standard | FRG-TRAIN | Assessment done; results recorded; feedback given | Assessment record; results
+Graduate | Those who pass complete the cohort | FRG-LEAD | Graduation confirmed; certificate issued; readiness noted | Graduation record; certificate
+Verify & transition | Graduates enter the six-step verification pipeline | FRG-LEAD → Talent | KYC, sanctions, skills, assessment, interview; tier set | Handoff to verification; talent record created
+Track outcomes | Graduates&apos; real outcomes are followed | FRG-SPON | Employment / engagement, income impact, story captured | Outcome tracker; sponsor report; impact data
+
+
+##### 06 · QA & CONTROLS #####
+Quality assurance & controls
+Curriculum standard | Every cohort runs to a written curriculum built for a real need, not a generic syllabus. It is what makes a Forge graduate worth verifying.
+Trainer quality | Trainers are on a roster with ratings; participants rate every cohort, and ratings decide who teaches again. Quality of teaching is measured, not assumed.
+Assessment integrity | Assessment is against a clear standard and recorded. A Forge pass has to mean something, because it feeds directly into verification.
+The verification handoff | Graduation is not the end. Graduates enter the six-step verification pipeline — identity, KYC, sanctions, skills, assessment, interview — and only those who pass join the talent map as T1. The Forge and the registry share one standard.
+Outcome tracking | What matters is what happens after: employment or engagement, income earned, and the story. These are tracked per graduate and per cohort — the real measure of the Forge, and the proof a sponsor needs.
+Safeguarding | A standing safeguarding and dignity standard for every participant — respectful, safe, and fair throughout.
+Attendance & completion | Attendance and completion are tracked; a cohort&apos;s value is in who finishes ready, not who enrols.
+
+
+##### 07 · AUTOMATION MAP #####
+Automation map
+What the platform automates and what stays a human judgement. Automate enrolment, attendance, and reporting; keep teaching, assessment, and mentoring human.
+Process step | Automated by the platform | Trigger | Human check (owner)
+Enrolment | Application and enrolment capture, roster | Applies / enrols | Selection decision (FRG-COORD)
+Attendance | Session attendance and completion tracking | Session held | Support those falling behind (FRG-TRAIN)
+Assessment | Record results against the standard | Assessed | The assessment itself (FRG-TRAIN)
+Graduate handoff | Push graduates into the verification pipeline | Graduation confirmed | The verification steps (Talent)
+Sponsor reporting | Compile cohort and outcome reports for sponsors | On cadence | Review and send (FRG-SPON)
+Outcome tracking | Track employment, income, and stories over time | Post-cohort | Gather and verify outcomes (FRG-SPON)
+Dashboard | Cohorts, graduation, verification, impact — live | Continuous | Review and steer (FRG-LEAD)
+
+
+##### 08 · CROSS-DOMAIN NOTES #####
+Cross-domain notes — the accumulating ledger
+What the Forge requires of every other domain, captured as it arises so nothing is rediscovered.
+Domain | Note / requirement surfaced while building this line | Action for that domain | Status
+Finance | Sponsor money is restricted and deferred until delivered; enrolment fees are income as delivered; the Forge recharges Hub space; sponsors ask for cost per seat and cost per graduate. | Open deferred-income and restricted-fund accounts; set the recognition and recharge rules. | NEEDS FORK
+People / HR | Five roles run the Forge; the Forge Lead is a partner, operational within the Forge only, with a standing COI disclosure and arm&apos;s-length terms; trainers are contracted arm&apos;s-length. | Write the JDs and the COI rule into the People OS and governance; contract trainers arm&apos;s-length. | STANDING
+Technology | The platform needs enrolment, attendance, assessment, the graduate-to-verification handoff, and sponsor reporting. | Build these into the platform; the handoff to the talent registry is the key link. | STANDING
+Legal | Needs sponsor agreements, participant enrolment agreements, a safeguarding standard, and clarity on who owns the training materials. | Draft these into the legal suite; safeguarding is a standing commitment. | STANDING
+Brand / external | The Forge is never called an &apos;Academy&apos;; the external story is transformation — from potential to verified, engaged talent, with real income and real stories. | Keep the naming and the transformation narrative; feature graduate stories. | STANDING
+Talent | Graduates enter the ladder at T0, pass the six-step verification, and join the map as T1; their outcomes feed the registry and the tier movement. | Wire the graduate handoff into the verification pipeline and the talent map. | STANDING
+Partnerships / K4Y | Sponsors, employers, and TEVT accreditation are the Forge&apos;s partnership plays; income impact and stories are the civic proof for Kayan for Yemen. | Build sponsor and employer partnerships; pursue accreditation; feed impact to K4Y. | OPEN
+
+
+##### 09 · PAIN POINTS & IDEAS #####
+Pain points & ideas
+What hurts and what could earn more. Candid, because it is internal.
+Type | Item | So what — the response | Priority
+Pain | Sponsor dependency — the core revenue rests on funders | Build a sponsor pipeline and multi-cohort programmes; add enrolment and corporate training so no single sponsor is load-bearing. | HIGH
+Pain | Graduate-to-work conversion — the hardest and most important part | The whole design answers it: verification plus Managed Delivery mean a graduate can enter real, paid work — and that outcome is tracked, not assumed. | HIGH
+Pain | Trainer availability and quality | A rated roster and mentoring model; ratings decide who returns; grow trainers from strong graduates. | MED
+Pain | Participant follow-through and completion | Selection for commitment, mentoring, and attendance tracking; a place is earned and supported. | MED
+Pain | Measuring real impact credibly | Outcome tracking — employment, income, stories — per graduate; this is what makes the Forge fundable and defensible. | MED
+Idea | Multi-cohort sponsor programmes | Move sponsors from one cohort to a series — steadier revenue and deeper impact. | IDEA
+Idea | TEVT accreditation | Recognised accreditation adds credibility, unlocks funding, and makes certificates count. | IDEA
+Idea | Employer pathway partnerships | Agreements where employers commit to hire or engage graduates — a guaranteed path to work. | IDEA
+Idea | Alumni network feeding the talent map | A living alumni network that keeps graduates engaged, mentoring the next cohort and returning as verified talent. | IDEA

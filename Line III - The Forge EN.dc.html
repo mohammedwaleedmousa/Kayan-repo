@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kayan Forge · Where capability is made</title>
+<meta name="description" content="Line III — The Forge: Kayan's talent foundry in Aden. Cohort-based professional formation with assessment gates, sponsor seats, and graduates who enter the register with evidence.">
+<meta property="og:title" content="The Forge — Kayan Line III">
+<meta property="og:description" content="Skills are formed, measured, and put on the record — cohort by cohort.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"The Kayan Forge","address":{"@type":"PostalAddress","addressLocality":"Aden","addressCountry":"YE"},"inLanguage":"en"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#FAF6EC;overflow-x:hidden;}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+a{color:#D0402F;text-decoration:none;}
+a:hover{color:#FF6250;}
+::selection{background:#FF6250;color:#2E0F0A;}
+img{max-width:100%;}
+p{text-wrap:pretty;}
+h1,h2,h3{text-wrap:balance;}
+button{font-family:inherit;}
+[data-nav]::-webkit-scrollbar{display:none;}
+[data-rail]::-webkit-scrollbar{display:none;}
+@keyframes kGlide{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-13px,0)}100%{transform:translate3d(0,0,0)}}
+@keyframes kEmber{0%,100%{opacity:.42}50%{opacity:.86}}
+@keyframes kIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+@keyframes kHit{0%,100%{transform:scaleY(.24)}50%{transform:scaleY(1)}}
+@keyframes kSpark{0%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}100%{opacity:.25;transform:scale(.7)}}
+[data-mo] [data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .66s cubic-bezier(.23,1,.32,1),transform .66s cubic-bezier(.23,1,.32,1);}
+[data-mo] [data-reveal][data-on]{opacity:1;transform:none;}
+[data-mo] [data-glide]{animation:kGlide 10s ease-in-out infinite;}
+[data-mo] [data-ember]{animation:kEmber 8s ease-in-out infinite;}
+[data-panel]{animation:kIn .34s cubic-bezier(.23,1,.32,1) both;}
+[data-strike="on"] [data-hit] i{animation:kHit .34s ease-in-out infinite;}
+[data-hit] i:nth-child(2){animation-delay:.05s}
+[data-hit] i:nth-child(3){animation-delay:.1s}
+[data-hit] i:nth-child(4){animation-delay:.15s}
+[data-hit] i:nth-child(5){animation-delay:.2s}
+[data-mo] [data-spark]{animation:kSpark 2.4s ease-in-out infinite;}
+[data-glow]{transition:opacity .5s ease;}
+[data-mo] [data-rule]{transform:scaleX(0);transform-origin:left center;transition:transform 1.05s cubic-bezier(.23,1,.32,1) .18s;}
+[data-mo] [data-reveal][data-on] [data-rule]{transform:none;}
+[data-flipwrap]{perspective:1400px;}
+[data-flip]{transition:transform .82s cubic-bezier(.62,.02,.24,1);transform-style:preserve-3d;}
+[data-face]{backface-visibility:hidden;-webkit-backface-visibility:hidden;min-height:0;}
+[data-face]>div:last-child{min-height:100%;}
+[data-idot]{transition:background .3s ease,transform .3s cubic-bezier(.23,1,.32,1);}
+[data-ilabel]{opacity:0;transform:translateX(6px);transition:opacity .24s ease,transform .24s cubic-bezier(.23,1,.32,1);}
+[data-idx] a:hover [data-ilabel]{opacity:1;transform:none;}
+[data-hlink]{position:relative;}
+[data-hlink]::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:currentColor;opacity:.85;transform:scaleX(0);transform-origin:left center;transition:transform .34s cubic-bezier(.23,1,.32,1);}
+[data-hlink]:hover::after{transform:scaleX(1);}
+[data-mag]{position:relative;overflow:hidden;transition:translate .17s cubic-bezier(.23,1,.32,1),transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;}
+[data-mag]::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(130px 130px at var(--sx,50%) var(--sy,50%),rgba(255,255,255,.34),transparent 60%);opacity:0;transition:opacity .28s ease;pointer-events:none;}
+[data-mag]:hover::after{opacity:1;}
+[data-glint]::before{content:"";position:absolute;top:-10%;left:-70%;width:38%;height:120%;background:linear-gradient(100deg,transparent,rgba(255,214,186,.16),transparent);transform:skewX(-14deg);transition:left 1.05s cubic-bezier(.23,1,.32,1);pointer-events:none;z-index:4;}
+[data-glint]:hover::before{left:130%;}
+[data-cur],[data-burst]{display:none!important;}
+[data-cur]{position:fixed;top:0;left:0;width:26px;height:26px;margin:-13px 0 0 -13px;border:1.5px solid rgba(255,98,80,.72);border-radius:50%;pointer-events:none;z-index:95;opacity:0;transition:opacity .3s ease,width .26s cubic-bezier(.23,1,.32,1),height .26s cubic-bezier(.23,1,.32,1),margin .26s cubic-bezier(.23,1,.32,1),background .26s ease,border-color .26s ease;will-change:transform;}
+[data-cur][data-hot]{width:46px;height:46px;margin:-23px 0 0 -23px;background:rgba(255,98,80,.14);border-color:rgba(255,98,80,.9);}
+[data-burst]{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:94;}
+@media (prefers-reduced-motion:reduce){*{animation:none !important}[data-mo] [data-reveal]{transform:none !important;transition-delay:0ms !important}}
+@keyframes kBreathe{0%,100%{opacity:.82}50%{opacity:1}}
+[data-mo] [data-breathe]{animation:kBreathe 11s ease-in-out infinite;}
+[data-hov]{transition:transform .34s cubic-bezier(.23,1,.32,1),box-shadow .34s ease,border-color .28s ease,background-color .28s ease;}
+[data-tag]{transition:letter-spacing .34s ease,color .28s ease;}
+@media (hover:hover) and (pointer:fine){
+  [data-hov]:hover{transform:translateY(-4px);}
+  [data-hov="lt"]:hover{box-shadow:0 20px 44px rgba(46,15,10,.14);background:#FFFDF8 !important;border-color:#FFC3B4 !important;}
+  [data-hov="dk"]:hover{box-shadow:0 22px 48px rgba(0,0,0,.36);border-color:rgba(255,138,107,.5) !important;background:rgba(255,98,80,.09) !important;}
+  [data-hov="deep"]:hover{box-shadow:0 26px 54px rgba(0,0,0,.4);border-color:#FF8A6B !important;transform:translateY(-5px);}
+  [data-hov]:hover [data-tag]{letter-spacing:.2em;}
+  [data-grow]{transition:background-color .22s ease,padding-inline-start .26s cubic-bezier(.23,1,.32,1),box-shadow .22s ease;}
+  [data-grow]:hover{background:#FFF6F1 !important;padding-inline-start:30px;box-shadow:inset 3px 0 0 #FF6250;}
+  [data-rowhov]{transition:background-color .24s ease,box-shadow .24s ease;}
+  [data-rowhov]:hover{background:#FFF6F1 !important;box-shadow:inset 3px 0 0 #FF6250;}
+}
+[data-mo] [data-seq]>[data-reveal]:nth-child(1){transition-delay:0s}
+[data-mo] [data-seq]>[data-reveal]:nth-child(2){transition-delay:.09s}
+[data-mo] [data-seq]>[data-reveal]:nth-child(3){transition-delay:.18s}
+[data-mo] [data-seq]>[data-reveal]:nth-child(4){transition-delay:.27s}
+[data-mo] [data-seq]>[data-reveal]:nth-child(5){transition-delay:.36s}
+[data-mo] [data-seq]>[data-reveal]:nth-child(n+6){transition-delay:.45s}
+[data-ledger] i{transform-origin:bottom center;animation:kLedger 7s ease-in-out infinite;}
+@keyframes kLedger{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+[data-ymap]{opacity:0;transition:opacity 1.6s ease .3s;}
+[data-ymap][data-on]{opacity:.14;}
+@media (max-width:1180px){[data-navlabel]{display:none}}
+@media (max-width:1120px){[data-six]{grid-template-columns:repeat(3,minmax(0,1fr)) !important}}
+@media (max-width:620px){[data-six]{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+[data-six]>div{padding-inline:16px !important}
+@media (prefers-reduced-motion:reduce){[data-ledger] i{animation:none}[data-ymap]{opacity:.12}}
+a:focus-visible,button:focus-visible{outline:2px solid #FF6250;outline-offset:3px;border-radius:4px;}
+</style>
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
+<script src="./kayan-compass.js"></script>
+<script src="./kayan-line-audio.js"></script>
+<script src="./kayan-mark.js"></script>
+</helmet>
+
+<div ref="{{ rootRef }}" dir="ltr" style="font-family:'Instrument Sans','IBM Plex Sans Arabic',sans-serif;color:#143C37;background:#FAF6EC;min-height:100vh;">
+
+<div ref="{{ progRef }}" aria-hidden="true" style="position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,#D0402F,#FF6250,#FF8A6B);z-index:80;pointer-events:none;"></div>
+
+
+<header ref="{{ hdrRef }}" style="position:fixed;top:0;left:0;right:0;z-index:70;background:transparent;border-bottom:1px solid transparent;transition:background .32s ease,border-color .32s ease;">
+  <div style="max-width:1360px;margin:0 auto;padding:0 clamp(14px,3vw,36px);display:flex;align-items:center;gap:clamp(8px,1.6vw,20px);height:clamp(66px,7.4vh,84px);">
+    <a href="#top" style="display:flex;align-items:center;gap:11px;flex-shrink:0;">
+      <kayan-mark line="forge" tone="mid" role="img" aria-label="Kayan" style="width:calc(1.175 * clamp(34px,4vw,44px));flex-shrink:0;"></kayan-mark>
+      <span ref="{{ brandRef }}" style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(16px,1.6vw,19px);letter-spacing:-.005em;line-height:1;color:#FAF6EC;">Kayan Forge</span>
+    </a>
+    <span aria-hidden="true" style="width:1px;height:22px;background:rgba(250,246,236,.24);flex-shrink:0;"></span>
+    <nav data-nav="" style="min-width:0;display:flex;align-items:center;gap:clamp(10px,1.7vw,24px);overflow-x:auto;overflow-y:hidden;scrollbar-width:none;">
+      <a href="#cohort" data-hlink="" style="white-space:nowrap;color:rgba(250,246,236,.72);font-size:14px;">The cohort</a>
+      <a href="#verify" data-hlink="" style="white-space:nowrap;color:rgba(250,246,236,.72);font-size:14px;">Verification</a>
+      <a href="#ladder" data-hlink="" style="white-space:nowrap;color:rgba(250,246,236,.72);font-size:14px;">The ladder</a>
+      <a href="#sponsors" data-hlink="" style="white-space:nowrap;color:rgba(250,246,236,.72);font-size:14px;">Sponsors</a>
+      <a href="#trainers" data-hlink="" style="white-space:nowrap;color:rgba(250,246,236,.72);font-size:14px;">Trainers</a>
+    </nav>
+    <div style="margin-inline-start:auto;flex-shrink:0;display:flex;align-items:center;gap:9px;">
+    <span data-navlabel="" style="flex:none;font-size:12.5px;color:rgba(250,246,236,.72);white-space:nowrap;">Line 04 · Kayan Forge</span>
+    <span data-navlabel="" aria-hidden="true" style="width:1px;height:22px;background:rgba(250,246,236,.24);flex-shrink:0;margin-inline-end:2px;"></span>
+    <a href="Line III - The Forge.dc.html" dir="rtl" data-hpill="" style="flex-shrink:0;white-space:nowrap;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:13px;color:rgba(250,246,236,.66);border:1px solid rgba(250,246,236,.32);border-radius:99px;padding:5px 13px;transition:background .2s ease,color .2s ease;" style-hover="background:rgba(255,98,80,.16);color:#FAF6EC">عربي</a>
+    <a href="#apply" data-mag="" style="flex-shrink:0;white-space:nowrap;background:#FF6250;color:#2E0F0A;font-size:13.5px;font-weight:600;padding:11px 22px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#FF8A6B" style-active="transform:scale(.97)">Apply to a cohort</a>
+    </div>
+  </div>
+</header>
+
+<section id="top" data-hero="" data-heat="" data-screen-label="Forge · Hero" style="position:relative;background:#2E0F0A;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(1000px 560px at 74% -14%,rgba(255,98,80,.34),transparent 64%),radial-gradient(760px 520px at 6% 108%,rgba(208,64,47,.26),transparent 62%);pointer-events:none;"></div>
+  <div data-breathe="" style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,138,107,.05) 0 2px,transparent 2px 12px);pointer-events:none;"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:url(assets/forge-grain.png);background-size:200px 200px;opacity:.16;mix-blend-mode:overlay;pointer-events:none;"></div>
+  <svg viewBox="0 0 120 120" aria-hidden="true" style="position:absolute;right:-3%;top:8%;width:min(46vw,560px);height:auto;opacity:.05;pointer-events:none;"><g stroke="#FF6250" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M40 20V108" stroke-width="13"></path><path d="M40 68L76 34" stroke-width="13"></path><path d="M76 34L102 44" stroke-width="6.5"></path><path d="M40 68L84 108" stroke-width="13"></path></g></svg>
+
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:calc(clamp(66px,7.4vh,84px) + clamp(30px,5vh,64px)) clamp(20px,4vw,44px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(18px,2.6vw,38px);align-items:center;">
+    <div style="min-width:0;">
+      <div data-reveal="" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <span data-ember="" style="width:10px;height:10px;border-radius:3px;background:#FF6250;flex:none;"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:#FF8A6B;">LINE 04 · KAYAN FORGE</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;border:1px solid {{ intakeBorder }};border-radius:99px;padding:4px 11px;">
+          <span data-spark="" style="width:7px;height:7px;border-radius:50%;background:{{ intakeDot }};"></span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:{{ intakeText }};">{{ intakeLabel }}</span>
+        </span>
+      </div>
+      <div data-reveal="" aria-hidden="true" style="margin-top:20px;"><span data-rule="" style="display:block;width:min(300px,44%);height:2px;background:linear-gradient(90deg,#FF6250,rgba(255,98,80,0));"></span></div>
+      <h1 data-reveal="" style="margin:clamp(14px,2vh,20px) 0 0;font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(32px,4.4vw,60px);line-height:1.12;letter-spacing:-.028em;color:#FAF6EC;max-width:16ch;">Where capability is made — not where certificates are hung.</h1>
+      <sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}">
+        <div data-reveal="" dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:clamp(15px,1.55vw,19px);line-height:1.6;color:rgba(255,138,107,.9);margin-top:15px;max-width:32ch;">حيث تصنع المهارة، لا حيث تعلق الشهادة</div>
+      </sc-if>
+      <div data-reveal="" style="margin:clamp(22px,3vh,30px) 0 0;display:flex;align-items:center;gap:11px;flex-wrap:wrap;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.2em;font-weight:500;color:#FFB39B;">THE FORGE SPARK</span>
+        <span aria-hidden="true" style="width:22px;height:1px;background:rgba(255,179,155,.36);"></span>
+        <span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12.5px;color:rgba(250,246,236,.6);">شرارة المسبك</span>
+      </div>
+      <p data-reveal="" style="margin:clamp(16px,2.2vh,22px) 0 0;font-size:clamp(15px,1.42vw,17.5px);line-height:1.85;color:rgba(250,246,236,.82);max-width:44ch;">The Forge takes people from potential to verified, work-ready talent — then puts them in front of real work. Cohorts are funded by sponsors, so a seat costs the trainee nothing. A graduate does not leave with a page for the wall. They leave on the register that Managed Delivery already staffs from.</p>
+      <div data-reveal="" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:clamp(22px,3vh,32px);">
+        <a href="#apply" data-mag="" style="background:#FF6250;color:#2E0F0A;font-size:14.5px;font-weight:600;padding:14px 26px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#FF8A6B" style-active="transform:scale(.97)">{{ applyLabel }}</a>
+        <a href="#sponsors" data-mag="" style="border:1px solid rgba(250,246,236,.34);color:#FAF6EC;font-size:14.5px;font-weight:500;padding:14px 26px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:rgba(250,246,236,.09)" style-active="transform:scale(.97)">Sponsor a cohort</a>
+      </div>
+      <div data-reveal="" data-strike="{{ strikeState }}" style="margin-top:clamp(20px,2.8vh,28px);display:inline-flex;align-items:center;gap:13px;flex-wrap:wrap;background:rgba(250,246,236,.07);border:1px solid rgba(250,246,236,.18);border-radius:99px;padding:7px 9px;">
+        <button type="button" onClick="{{ toggleStrike }}" style="display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 18px;border:none;border-radius:99px;background:#FAF6EC;color:#2E0F0A;font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#FFFFFF" style-active="transform:scale(.97)">
+          <svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true" style="display:block;"><polygon points="1,1 11,6 1,11" fill="#D0402F"></polygon></svg>
+          <span>{{ strikeLabel }}</span>
+        </button>
+        <span data-hit="" aria-hidden="true" style="display:flex;align-items:center;gap:3px;height:20px;">
+          <i style="display:block;width:3px;height:20px;border-radius:2px;background:rgba(250,246,236,.4);transform:scaleY(.24);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:rgba(255,138,107,.7);transform:scaleY(.5);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:#FF6250;transform:scaleY(1);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:rgba(255,138,107,.7);transform:scaleY(.46);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:rgba(250,246,236,.4);transform:scaleY(.22);transform-origin:center;"></i>
+        </span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(250,246,236,.6);white-space:nowrap;padding-inline-end:10px;">THE ANVIL · TWO STRIKES</span>
+      </div>
+    </div>
+
+    <div data-reveal="" style="position:relative;z-index:3;min-width:0;align-self:end;top:clamp(26px,4.4vw,68px);margin-inline-end:0;">
+      <div style="position:relative;width:clamp(300px,41vw,620px);max-width:none;margin-inline-start:calc(100% - clamp(300px,41vw,620px));">
+        <div data-ember="" style="position:absolute;inset:4% 4% 16% -2%;background:radial-gradient(closest-side,rgba(255,138,107,.42),rgba(208,64,47,.16) 52%,transparent 76%);pointer-events:none;"></div>
+        <div data-glide="" style="position:relative;">
+          <div data-bird="1" style="will-change:transform;">
+            <kayan-mark line="forge" motion="glide" glow="" entrance="settle" role="img" aria-label="The forge spark — the Forge mark in flight, lit like worked metal" style="width:100%;filter:drop-shadow(0 34px 54px rgba(0,0,0,.62)) drop-shadow(0 0 46px rgba(255,98,80,.34));"></kayan-mark>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative;border-top:1px solid rgba(250,246,236,.14);margin-top:clamp(26px,4vw,52px);">
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));">
+      <div data-reveal="" style="padding:24px 24px 28px;border-inline-start:1px solid rgba(250,246,236,.1);"><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16.5px;color:#FAF6EC;">Twenty seats, one named need</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.62);">Every cohort is designed against a specialisation the market is actually asking for — not a generic syllabus.</p></div>
+      <div data-reveal="" style="padding:24px 24px 28px;border-inline-start:1px solid rgba(250,246,236,.1);"><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16.5px;color:#FAF6EC;">Graded by someone who did not teach you</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.62);">Assessment sits outside the teaching, against a published standard, reasoned in writing, and appealable.</p></div>
+      <div data-reveal="" style="padding:24px 24px 28px;border-inline-start:1px solid rgba(250,246,236,.1);"><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16.5px;color:#FAF6EC;">The exit is a record, not a page</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.62);">Graduates enter verification and take a position on the trust ladder, where a buyer can check it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="The Forge rule" style="position:relative;overflow:hidden;background:linear-gradient(172deg,#3C1610,#2E0F0A 74%);padding:clamp(46px,7.5vh,84px) clamp(20px,4vw,44px);">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(760px 420px at 88% -20%,rgba(255,98,80,.2),transparent 64%);pointer-events:none;"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:url(assets/forge-grain.png);background-size:200px 200px;opacity:.12;mix-blend-mode:overlay;pointer-events:none;"></div>
+  <div aria-hidden="true" style="position:absolute;inset-inline:0;top:0;height:2px;background:linear-gradient(90deg,transparent,#D0402F 26%,#FF8A6B 50%,#D0402F 74%,transparent);"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(22px,4vw,64px);align-items:center;">
+    <div data-reveal="" style="min-width:0;">
+      <div style="display:flex;align-items:center;gap:11px;">
+        <span aria-hidden="true" style="width:8px;height:8px;border-radius:2px;background:#FF6250;flex:none;"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:#FF8A6B;">THE FORGE RULE</span>
+      </div>
+      <div aria-hidden="true" style="margin-top:16px;"><span data-rule="" style="display:block;width:min(220px,40%);height:2px;background:linear-gradient(90deg,#FF6250,rgba(255,98,80,0));"></span></div>
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(24px,3.4vw,44px);line-height:1.22;letter-spacing:-.02em;color:#FAF6EC;margin-top:18px;max-width:22ch;">Training is not the outcome. <span style="color:#FF8A6B;">Paid work is.</span></div>
+      <sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}">
+        <div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:clamp(14px,1.5vw,17px);line-height:1.9;color:rgba(250,246,236,.6);margin-top:16px;">لا يعد التدريب مخرجا حتى ينتهي بعمل مدفوع</div>
+      </sc-if>
+    </div>
+    <div data-reveal="" style="min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:1px;background:rgba(250,246,236,.14);border:1px solid rgba(250,246,236,.18);border-radius:18px;overflow:hidden;">
+      <div data-hov="dk" style="background:#2E0F0A;padding:20px 20px 24px;">
+        <div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#FF8A6B;">THE COURSE ENDS</div>
+        <div style="font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.74);margin-top:9px;">A certificate is issued and the record stops there.</div>
+      </div>
+      <div data-hov="dk" style="background:#2E0F0A;padding:20px 20px 24px;">
+        <div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#FF8A6B;">THE COHORT ENDS</div>
+        <div style="font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.74);margin-top:9px;">An assessment is written, a position is placed on the ladder.</div>
+      </div>
+      <div data-hov="dk" style="background:#2E0F0A;padding:20px 20px 24px;">
+        <div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#FF6250;">THE RULE HOLDS</div>
+        <div style="font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.74);margin-top:9px;">The Forge is measured on engagements and income that followed.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gap" data-screen-label="The gap" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#D0402F;font-weight:500;">Why it exists <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· ONE GAP, THREE LOSERS</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#052E2B;max-width:26ch;">Three people are failed by the same missing link</h2>
+    <div data-seq="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,268px),1fr));gap:16px;margin-top:32px;align-items:stretch;">
+      <div data-reveal="" data-hov="lt" style="background:#fff;border:1px solid #EDE5D2;border-top:4px solid #FF6250;border-radius:20px;padding:26px;">
+        <div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#D0402F;">01 · THE GRADUATE</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;margin-top:10px;">Trained, certified, still unhireable</div>
+        <p style="margin:10px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;">A course ends, a certificate is issued, and nothing on it tells an employer what this person can actually do. The training was real; the proof was not.</p>
+      </div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;border:1px solid #EDE5D2;border-top:4px solid #FF6250;border-radius:20px;padding:26px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#D0402F;">02 · THE EMPLOYER</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;margin-top:10px;">Willing to hire, unable to tell who is real</div>
+        <p style="margin:10px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;">Screening costs more than the role is worth, so the safe decision is to leave the seat empty or send the work abroad. Local capability loses to local uncertainty.</p>
+      </div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;border:1px solid #EDE5D2;border-top:4px solid #FF6250;border-radius:20px;padding:26px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#D0402F;">03 · THE FUNDER</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;margin-top:10px;">Money spent, impact unprovable
+</div>
+        <p style="margin:10px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;">Attendance sheets and a photograph are not results. A funder who cannot name what changed cannot defend the next round of funding — so the next round shrinks.</p>
+      </div>
+    </div>
+    <div data-reveal="" style="margin-top:16px;background:#F2E8D2;border:1px solid #E3D9C2;border-radius:18px;padding:22px 26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;align-items:center;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;max-width:22ch;">The Forge is built to close all three at once.</div>
+      <p style="margin:0;font-size:14px;line-height:1.85;color:#4A6B64;">One written standard, one independent assessment, one register a buyer can check — and one route from the classroom to a paid engagement, because the same institution runs both ends of it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="what" data-screen-label="What it is" style="background:#F2E8D2;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#D0402F;font-weight:500;">The line on a page <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· NOT AN ACADEMY</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#052E2B;max-width:24ch;">A talent factory, wired directly to the work</h2>
+    <p data-reveal="" style="margin:14px 0 0;max-width:64ch;font-size:15.5px;line-height:1.85;color:#4A6B64;">Five things separate a Forge cohort from a course. Each one is a rule the line runs on, not a promise in a brochure.</p>
+    <div data-seq="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(216px,1fr));gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:18px;overflow:hidden;margin-top:30px;">
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:24px 22px 28px;"><div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#D0402F;">01 · REAL WORK</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">Built from briefs that came through the door</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Exercises are drawn from work the institution has actually been asked to do, not invented cases with tidy answers.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:24px 22px 28px;"><div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#D0402F;">02 · WRITTEN CURRICULUM</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">A curriculum for a named need</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Each cohort runs to a written curriculum built for one specialisation. It is what makes a graduate worth verifying.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:24px 22px 28px;"><div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#D0402F;">03 · INDEPENDENT MEASURE</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">Teaching never grades itself</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">The assessment is taken by someone who did not deliver the sessions. The result is written, reasoned, and open to a single appeal.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:24px 22px 28px;"><div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#D0402F;">04 · VERIFIED, RECORDED</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">The output is a position, not a page</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Graduates go through the same six-step verification as anyone else who registers, and take their place on the trust ladder.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:24px 22px 28px;"><div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#0E6E66;">05 · CONNECTED</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">Visible where the work is staffed</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Verified graduates appear on the register that Managed Delivery builds its teams from — the shortest distance from cohort to first paid brief.</p></div>
+    </div>
+    <div data-reveal="" style="margin-top:16px;background:#F1EAD9;border:1px solid #E3D9C2;border-radius:16px;padding:20px 24px;font-size:14px;line-height:1.9;color:#4A6B64;">The Forge is not called an academy, and it does not sell certificates. The recognised output is a position on the trust ladder, and its reference is the register.</div>
+  </div>
+</section>
+
+<section id="cohort" data-heat="" data-screen-label="The cohort machine" style="position:relative;background:#2E0F0A;overflow:hidden;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div data-ymap="" aria-hidden="true" style="position:absolute;inset:-6% -8% -10% -8%;pointer-events:none;filter:sepia(.5) saturate(1.5) hue-rotate(-22deg) brightness(1.1);mix-blend-mode:screen;">
+    <x-import component-from-global-scope="yemen-map" from="./yemen-map.js" lang="en" hint-size="100%,100%"></x-import>
+  </div>
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 84% -12%,rgba(255,98,80,.24),transparent 62%);pointer-events:none;"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:url(assets/forge-grain.png);background-size:200px 200px;opacity:.14;mix-blend-mode:overlay;pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#FF8A6B;font-weight:500;">The cohort <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· NINE STAGES, ONE OWNER EACH</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#FAF6EC;max-width:24ch;">The cohort machine, stage by stage</h2>
+    <p data-reveal="" style="margin:14px 0 0;max-width:62ch;font-size:15.5px;line-height:1.85;color:rgba(250,246,236,.74);">A cohort is not an event. It is nine stages with a named owner, a checklist, and a record at each one — and it does not end at graduation. Pick a stage.</p>
+
+    <div data-reveal="" style="margin-top:26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:180px;height:3px;border-radius:2px;background:rgba(250,246,236,.14);overflow:hidden;">
+        <span style="display:block;height:100%;border-radius:2px;background:linear-gradient(90deg,#D0402F,#FF6250,#FF8A6B);transition:width .5s cubic-bezier(.23,1,.32,1);width:{{ stageProgress }};"></span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button type="button" onClick="{{ prevStage }}" aria-label="Previous stage" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(250,246,236,.24);background:transparent;color:#FAF6EC;cursor:pointer;font-size:15px;line-height:1;transition:background .2s ease,transform 160ms cubic-bezier(.23,1,.32,1);" style-hover="background:rgba(250,246,236,.1)" style-active="transform:scale(.94)">←</button>
+        <button type="button" onClick="{{ nextStage }}" aria-label="Next stage" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(250,246,236,.24);background:transparent;color:#FAF6EC;cursor:pointer;font-size:15px;line-height:1;transition:background .2s ease,transform 160ms cubic-bezier(.23,1,.32,1);" style-hover="background:rgba(250,246,236,.1)" style-active="transform:scale(.94)">→</button>
+      </div>
+    </div>
+
+    <div data-reveal="" data-rail="" role="tablist" aria-label="Cohort stages" style="display:flex;gap:8px;margin-top:14px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;">
+      <sc-for list="{{ stages }}" as="s" hint-placeholder-count="9">
+        <button type="button" role="tab" aria-selected="{{ s.sel }}" onClick="{{ s.pick }}" style="flex:none;display:flex;flex-direction:column;gap:6px;align-items:flex-start;min-width:118px;padding:12px 14px 13px;border-radius:12px;border:1px solid rgba(250,246,236,.16);background:rgba(250,246,236,.05);cursor:pointer;text-align:left;transition:background .22s ease,border-color .22s ease,transform 160ms cubic-bezier(.23,1,.32,1);background:{{ s.bg }};border-color:{{ s.bd }};" style-hover="transform:translateY(-2px)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:{{ s.num }};">{{ s.code }}</span>
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:14px;line-height:1.25;color:{{ s.fg }};">{{ s.name }}</span>
+        </button>
+      </sc-for>
+    </div>
+
+    <div data-reveal="" style="margin-top:16px;border:1px solid rgba(250,246,236,.18);border-radius:22px;overflow:hidden;background:rgba(250,246,236,.04);">
+      <div data-panel="" key="{{ stageKey }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:rgba(250,246,236,.14);">
+        <div style="background:#2E0F0A;padding:clamp(22px,3vw,34px);">
+          <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+            <span style="font-family:'Alexandria',sans-serif;font-weight:200;font-size:clamp(38px,5vw,62px);line-height:1;color:#FF6250;">{{ stageNum }}</span>
+            <div>
+              <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(19px,2.2vw,26px);color:#FAF6EC;">{{ stageName }}</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:rgba(250,246,236,.5);margin-top:5px;">{{ stagePhase }}</div>
+            </div>
+          </div>
+          <p style="margin:18px 0 0;font-size:15.5px;line-height:1.85;color:rgba(250,246,236,.82);">{{ stageWhat }}</p>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(250,246,236,.16);display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#FF8A6B;border:1px solid rgba(255,138,107,.4);border-radius:99px;padding:5px 11px;">{{ stageOwnerCode }}</span>
+            <span style="font-size:14px;color:rgba(250,246,236,.74);">{{ stageOwner }}</span>
+          </div>
+        </div>
+        <div style="background:#2E0F0A;padding:clamp(22px,3vw,34px);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#FF8A6B;">THE CHECKLIST</div>
+          <div style="display:flex;flex-direction:column;gap:11px;margin-top:16px;">
+            <sc-for list="{{ stageItems }}" as="it" hint-placeholder-count="4">
+              <div style="display:flex;gap:11px;align-items:flex-start;">
+                <span style="width:6px;height:6px;border-radius:50%;background:#FF6250;flex:none;margin-top:7px;"></span>
+                <span style="font-size:14px;line-height:1.7;color:rgba(250,246,236,.8);">{{ it }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(250,246,236,.16);">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:rgba(250,246,236,.5);">WHAT THE PLATFORM DOES</div>
+            <p style="margin:9px 0 0;font-size:14px;line-height:1.8;color:rgba(250,246,236,.72);">{{ stageAuto }}</p>
+          </div>
+        </div>
+      </div>
+      <div style="padding:15px 22px;border-top:1px solid rgba(250,246,236,.14);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">
+        <span style="font-size:13px;line-height:1.75;color:rgba(250,246,236,.6);">Teaching, assessment and mentoring stay human. Enrolment, attendance and reporting are the machine's work.</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(250,246,236,.42);white-space:nowrap;">KAY-FORGE-LINE-001 · STAGE {{ stageNum }} / 09</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="verify" data-screen-label="Verification" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#D0402F;font-weight:500;">Verification <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· SIX STEPS, ONE STANDARD</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#052E2B;max-width:26ch;">Graduation is not the finish line. It is the handoff.</h2>
+    <p data-reveal="" style="margin:14px 0 0;max-width:66ch;font-size:15.5px;line-height:1.85;color:#4A6B64;">The Forge and the register share one standard. A graduate goes through the same six steps as anyone else who registers with Kayan, and nothing is waived because they trained here. The assessment record travels with them into the capability decision — and that decision is taken by verification officers, not by the people who taught the cohort.</p>
+    <div data-seq="" data-six="" style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:18px;overflow:hidden;margin-top:30px;">
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:22px 20px 26px;"><div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#D0402F;">STEP 01</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:9px;">Identity</div><p style="margin:7px 0 0;font-size:13px;line-height:1.75;color:#4A6B64;">A real, contactable person, of legal age, who has accepted the terms.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:22px 20px 26px;"><div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#D0402F;">STEP 02</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:9px;">Documents</div><p style="margin:7px 0 0;font-size:13px;line-height:1.75;color:#4A6B64;">Identity and eligibility documents checked and held under the data policy.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:22px 20px 26px;"><div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#D0402F;">STEP 03</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:9px;">Screening</div><p style="margin:7px 0 0;font-size:13px;line-height:1.75;color:#4A6B64;">Sanctions screening, because clients ask and the answer has to be on file.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:22px 20px 26px;"><div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#D0402F;">STEP 04</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:9px;">Craft assessment</div><p style="margin:7px 0 0;font-size:13px;line-height:1.75;color:#4A6B64;">Competence in a named specialisation, scored against a rubric, not a marksheet.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:22px 20px 26px;"><div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#D0402F;">STEP 05</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:9px;">Practical task</div><p style="margin:7px 0 0;font-size:13px;line-height:1.75;color:#4A6B64;">A small, realistic deliverable, time-boxed and submitted through the platform.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;padding:22px 20px 26px;"><div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#0E6E66;">STEP 06</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:9px;">Interview</div><p style="margin:7px 0 0;font-size:13px;line-height:1.75;color:#4A6B64;">A conversation with a verification officer, then a reasoned decision on the record.</p></div>
+    </div>
+
+    <div data-reveal="" style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+      <div data-hov="deep" style="background:#3C1610;border:1px solid rgba(255,138,107,.2);border-radius:20px;padding:clamp(24px,3vw,34px);color:#FAF6EC;">
+        <div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#FF8A6B;">THE DECISION</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(19px,2.2vw,25px);line-height:1.35;margin-top:12px;">There is no outcome called rejected.</div>
+        <p style="margin:12px 0 0;font-size:14.5px;line-height:1.85;color:rgba(250,246,236,.78);">A person is verified at some position, asked for something specific, told exactly what is missing, or declined for a stated reason with one route of appeal. Two working days from complete evidence to a reasoned decision.</p>
+        <sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}">
+          <div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:14px;line-height:1.9;color:rgba(250,246,236,.56);margin-top:14px;">القرار مسبب، ولكل قرار حق تظلم واحد</div>
+        </sc-if>
+      </div>
+      <div data-hov="lt" style="background:#fff;border:1px solid #EDE5D2;border-radius:20px;padding:clamp(24px,3vw,34px);">
+        <div data-tag="" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#D0402F;">WHAT IT IS NOT</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(19px,2.2vw,25px);line-height:1.35;color:#052E2B;margin-top:12px;">Verification does not allocate work.</div>
+        <p style="margin:12px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;">A position records what has been evidenced about a person's capability. It is not a queue and not a guarantee. Work is assigned on fit to a specific engagement, availability, and what the client requires — and that is said to every registrant at the start and at the end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="record" data-screen-label="The record" style="background:#FAF6EC;padding:clamp(10px,2vh,20px) clamp(20px,4vw,44px) clamp(50px,8vh,88px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#D0402F;font-weight:500;">The artifact <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· WHAT A GRADUATE LEAVES WITH</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#052E2B;max-width:24ch;">Not a certificate. A record that answers questions.</h2>
+    <p data-reveal="" style="margin:14px 0 0;max-width:64ch;font-size:15.5px;line-height:1.85;color:#4A6B64;">This is the artifact the Forge produces: a record card carrying a reference a buyer can check, the specialisation it covers, the position on the ladder, and what happened next. Turn it over to see the terms on the back.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,3vw,40px);align-items:center;margin-top:32px;">
+      <div data-reveal="" data-flipwrap="" style="min-width:0;">
+        <div data-flip="" style="position:relative;display:grid;width:100%;max-width:520px;min-height:calc(520px / 1.62);transform:{{ flipT }};">
+          <div data-face="" data-glint="" style="grid-area:1/1;position:relative;border-radius:20px;overflow:hidden;background:#2E0F0A;border:1px solid rgba(255,138,107,.34);box-shadow:0 26px 60px rgba(46,15,10,.28);">
+            <div aria-hidden="true" style="position:absolute;inset:0;background-image:url(assets/forge-grain.png);background-size:200px 200px;opacity:.2;mix-blend-mode:overlay;pointer-events:none;"></div>
+            <div style="position:absolute;inset:0;background:radial-gradient(420px 240px at 84% -20%,rgba(255,98,80,.34),transparent 66%);pointer-events:none;"></div>
+            <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(18px,2.6vw,26px);">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px;">
+                <div>
+                  <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#FF8A6B;">KAYAN REGISTER · FORGE COHORT 01</div>
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(18px,2.2vw,24px);color:#FAF6EC;margin-top:9px;">Site Survey &amp; GIS Mapping</div>
+                  <div style="font-size:13px;color:rgba(250,246,236,.6);margin-top:4px;">Named specialisation · assessed, not attended</div>
+                </div>
+                <kayan-mark line="forge" tone="mid" aria-hidden="true" style="width:calc(1.175 * 34px);flex:none;opacity:.95;"></kayan-mark>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:14px;">
+                <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.45);">POSITION</div><div style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#FF6250;margin-top:5px;">T2</div><div style="font-size:11.5px;color:rgba(250,246,236,.6);margin-top:2px;">Capability assessed</div></div>
+                <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.45);">ASSESSED BY</div><div style="font-size:13px;color:#FAF6EC;margin-top:6px;">Independent assessor</div><div style="font-size:11.5px;color:rgba(250,246,236,.6);margin-top:2px;">Did not teach the cohort</div></div>
+                <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.45);">VALID TO</div><div style="font-size:13px;color:#FAF6EC;margin-top:6px;">18 months</div><div style="font-size:11.5px;color:rgba(250,246,236,.6);margin-top:2px;">Per specialisation</div></div>
+                <div style="display:flex;align-items:flex-end;justify-content:flex-end;"><img src="assets/qr-proof.svg" alt="Verification reference" style="width:52px;height:52px;display:block;background:#FAF6EC;border-radius:6px;padding:4px;"></div>
+              </div>
+            </div>
+          </div>
+          <div data-face="" style="grid-area:1/1;position:relative;border-radius:20px;overflow:hidden;background:#FFFFFF;border:1px solid #E3D9C2;box-shadow:0 26px 60px rgba(46,15,10,.16);transform:rotateY(180deg);">
+            <div style="height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(18px,2.6vw,26px);">
+              <div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#D0402F;">WHAT THIS CARD DOES NOT SAY</div>
+                <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;">
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:5px;height:5px;border-radius:50%;background:#FF6250;flex:none;margin-top:7px;"></span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">It does not entitle the holder to work, and it is not a queue.</span></div>
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:5px;height:5px;border-radius:50%;background:#FF6250;flex:none;margin-top:7px;"></span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">It asserts one specialisation, not general ability.</span></div>
+                  <div style="display:flex;gap:10px;align-items:flex-start;"><span style="width:5px;height:5px;border-radius:50%;background:#FF6250;flex:none;margin-top:7px;"></span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">It expires. Maintenance is the holder's, with reminders at 90, 30 and 7 days.</span></div>
+                </div>
+              </div>
+              <div style="border-top:1px solid #EDE5D2;padding-top:14px;display:flex;justify-content:space-between;gap:12px;align-items:flex-end;">
+                <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8A8272;">FIRST ENGAGEMENT</div><div style="font-size:13.5px;color:#052E2B;margin-top:5px;">Recorded with the client, the pod and the accepted deliverable.</div></div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8A8272;text-align:right;white-space:nowrap;">KYN · REG<br>ADEN</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" onClick="{{ toggleFlip }}" style="margin-top:16px;display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 20px;border:1px solid #E3D9C2;border-radius:99px;background:#fff;color:#052E2B;font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;transition:background .2s ease,transform 160ms cubic-bezier(.23,1,.32,1);" style-hover="background:#F2E8D2" style-active="transform:scale(.97)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#D0402F;">↻</span>
+          <span>{{ flipLabel }}</span>
+        </button>
+      </div>
+
+      <div style="min-width:0;">
+        <div data-reveal="" style="background:#fff;border:1px solid #EDE5D2;border-radius:20px;overflow:hidden;">
+          <div style="padding:22px 24px 6px;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">Four questions a certificate cannot answer</div>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <div style="padding:14px 24px;border-top:1px solid #F1EAD9;display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:14px;align-items:baseline;"><span style="font-size:14px;line-height:1.7;color:#4A6B64;">Who assessed this, and were they independent?</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#D0402F;text-align:right;">ON THE CARD</span></div>
+            <div style="padding:14px 24px;border-top:1px solid #F1EAD9;display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:14px;align-items:baseline;"><span style="font-size:14px;line-height:1.7;color:#4A6B64;">In which specialisation, and to what level?</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#D0402F;text-align:right;">ON THE CARD</span></div>
+            <div style="padding:14px 24px;border-top:1px solid #F1EAD9;display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:14px;align-items:baseline;"><span style="font-size:14px;line-height:1.7;color:#4A6B64;">Is it still current, and who says so?</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#D0402F;text-align:right;">ON THE CARD</span></div>
+            <div style="padding:14px 24px;border-top:1px solid #F1EAD9;display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:14px;align-items:baseline;"><span style="font-size:14px;line-height:1.7;color:#4A6B64;">What work has this person actually delivered since?</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#0E6E66;text-align:right;">IN THE REGISTER</span></div>
+          </div>
+          <div style="padding:16px 24px;border-top:1px solid #EDE5D2;background:#FBF8F0;font-size:13.5px;line-height:1.8;color:#4A6B64;">The card is a pointer. The register behind it is the evidence — and it is the register a client checks, not the paper in the holder's hand.</div>
+        </div>
+        <div data-reveal="" style="margin-top:14px;background:#F2E8D2;border:1px solid #E3D9C2;border-radius:18px;padding:20px 24px;display:flex;gap:14px;align-items:flex-start;">
+          <span style="width:20px;height:3px;border-radius:2px;background:#D0402F;flex:none;margin-top:10px;"></span>
+          <div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;">Illustrative card</div><p style="margin:6px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">Shown with a sample specialisation and position. Live cards carry the holder's reference and are issued only after a verification decision.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ladder" data-screen-label="The trust ladder" style="background:#F2E8D2;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#D0402F;font-weight:500;">The trust ladder <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· FIVE POSITIONS, PUBLISHED CRITERIA</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#052E2B;max-width:25ch;">What is asserted at each rung — and what is never implied</h2>
+    <p data-reveal="" style="margin:14px 0 0;max-width:66ch;font-size:15.5px;line-height:1.85;color:#4A6B64;">The ladder is built for ascent: nobody is turned away for being early. A person is placed where their evidence supports, and told specifically what would move them up. Open a rung to read its terms.</p>
+
+    <div data-reveal="" style="margin-top:30px;display:flex;flex-direction:column;gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:20px;overflow:hidden;">
+      <sc-for list="{{ tiers }}" as="t" hint-placeholder-count="5">
+        <div data-rowhov="" style="background:{{ t.bg }};transition:background .3s ease,box-shadow .24s ease;">
+          <button type="button" aria-expanded="{{ t.sel }}" onClick="{{ t.pick }}" style="width:100%;border:none;background:transparent;cursor:pointer;text-align:left;padding:18px clamp(18px,2.4vw,26px);display:grid;grid-template-columns:64px minmax(0,1fr) 26px;gap:clamp(12px,2vw,22px);align-items:center;font-family:inherit;">
+            <span style="display:flex;flex-direction:column;gap:5px;align-items:flex-start;">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;color:{{ t.code }};">{{ t.tier }}</span>
+              <span style="display:block;width:34px;height:3px;border-radius:2px;background:{{ t.bar }};"></span>
+            </span>
+            <span style="min-width:0;">
+              <span style="display:block;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(16px,1.8vw,19px);color:#052E2B;">{{ t.name }}</span>
+              <span style="display:block;font-size:14px;line-height:1.75;color:#4A6B64;margin-top:5px;">{{ t.asserts }}</span>
+            </span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#D0402F;text-align:right;">{{ t.glyph }}</span>
+          </button>
+          <sc-if value="{{ t.sel }}" hint-placeholder-val="{{ false }}">
+            <div data-panel="" style="padding:0 clamp(18px,2.4vw,26px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;">
+              <div style="border-top:1px solid #E3D9C2;padding-top:14px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A8272;">EVIDENCE REQUIRED</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">{{ t.evidence }}</p></div>
+              <div style="border-top:1px solid #E3D9C2;padding-top:14px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A8272;">WHO DECIDES · VALIDITY</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">{{ t.decision }}<br><span style="color:#6E675A;">{{ t.validity }}</span></p></div>
+              <div style="border-top:1px solid #E3D9C2;padding-top:14px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A8272;">WHAT IT UNLOCKS</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">{{ t.unlocks }}</p></div>
+              <div style="border-top:1px solid #FF6250;padding-top:14px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#D0402F;">STILL NOT IMPLIED</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">{{ t.not }}</p></div>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+
+    <div data-reveal="" style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;">
+      <div data-hov="lt" style="background:#fff;border:1px solid #E3D9C2;border-radius:18px;padding:22px 24px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">Where the Forge sits on it</div><p style="margin:8px 0 0;font-size:14px;line-height:1.85;color:#4A6B64;">A cohort carries a person from a record to identity verified, with an assessment record that goes into the capability decision. The rungs above are climbed on delivered work. The Forge opens the door; it does not skip the rungs.</p></div>
+      <div data-hov="lt" style="background:#fff;border:1px solid #E3D9C2;border-radius:18px;padding:22px 24px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">A position can lapse. It is not a punishment.</div><p style="margin:8px 0 0;font-size:14px;line-height:1.85;color:#4A6B64;">Reminders go out at ninety, thirty and seven days before expiry with the specific action required. If it lapses, the specialisation goes dormant and is reinstated by completing what was outstanding — no stigma, no re-application from zero.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="sponsors" data-heat="" data-screen-label="Sponsors" style="position:relative;background:#3C1610;overflow:hidden;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div data-ledger="" aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:62%;display:flex;align-items:flex-end;gap:clamp(6px,1.1vw,16px);padding:0 clamp(10px,3vw,40px);opacity:.11;pointer-events:none;">
+    <i style="flex:1;height:34%;background:linear-gradient(180deg,#FF8A6B,rgba(255,138,107,0));border-radius:3px 3px 0 0;animation-delay:0s;"></i>
+    <i style="flex:1;height:58%;background:linear-gradient(180deg,#FF6250,rgba(255,98,80,0));border-radius:3px 3px 0 0;animation-delay:.5s;"></i>
+    <i style="flex:1;height:44%;background:linear-gradient(180deg,#FF8A6B,rgba(255,138,107,0));border-radius:3px 3px 0 0;animation-delay:1s;"></i>
+    <i style="flex:1;height:76%;background:linear-gradient(180deg,#FF6250,rgba(255,98,80,0));border-radius:3px 3px 0 0;animation-delay:1.5s;"></i>
+    <i style="flex:1;height:52%;background:linear-gradient(180deg,#FF8A6B,rgba(255,138,107,0));border-radius:3px 3px 0 0;animation-delay:2s;"></i>
+    <i style="flex:1;height:88%;background:linear-gradient(180deg,#FF6250,rgba(255,98,80,0));border-radius:3px 3px 0 0;animation-delay:2.5s;"></i>
+    <i style="flex:1;height:40%;background:linear-gradient(180deg,#FF8A6B,rgba(255,138,107,0));border-radius:3px 3px 0 0;animation-delay:3s;"></i>
+    <i style="flex:1;height:66%;background:linear-gradient(180deg,#FF6250,rgba(255,98,80,0));border-radius:3px 3px 0 0;animation-delay:3.5s;"></i>
+  </div>
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;opacity:.06;background-image:linear-gradient(rgba(250,246,236,.9) 1px,transparent 1px);background-size:100% 74px;"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(880px 500px at 12% -10%,rgba(255,98,80,.24),transparent 62%);pointer-events:none;"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:url(assets/forge-grain.png);background-size:200px 200px;opacity:.14;mix-blend-mode:overlay;pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#FF8A6B;font-weight:500;">Sponsors <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· WHERE THE MONEY SITS</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#FAF6EC;max-width:24ch;">Restricted money, honoured as restricted</h2>
+    <p data-reveal="" style="margin:14px 0 0;max-width:66ch;font-size:15.5px;line-height:1.85;color:rgba(250,246,236,.76);">A sponsorship funds a named cohort. It is not income on the day it arrives — it is held, and recognised only as the cohort is delivered. The same discipline Kayan applies to client funds in escrow, applied to grants: the money is honoured for what it was given for.</p>
+
+    <div data-reveal="" style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:rgba(250,246,236,.14);border:1px solid rgba(250,246,236,.18);border-radius:20px;overflow:hidden;">
+      <div data-hov="dk" style="background:#3C1610;padding:24px 22px 28px;">
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#FF8A6B;">01 · COMMITTED</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#FAF6EC;margin-top:11px;">A commitment, not income</div>
+        <p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.68);">The sponsor commits to a named cohort. It is recorded as a commitment on the register and nothing is recognised yet.</p>
+      </div>
+      <div data-hov="dk" style="background:#3C1610;padding:24px 22px 28px;">
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#FF8A6B;">02 · HELD</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#FAF6EC;margin-top:11px;">Received into deferred income</div>
+        <p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.68);">Funds land as a liability, restricted to the cohort they were given for. They cannot be spent on anything else, including a different cohort.</p>
+      </div>
+      <div data-hov="dk" style="background:#3C1610;padding:24px 22px 28px;">
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#FF8A6B;">03 · RECOGNISED</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#FAF6EC;margin-top:11px;">Released as delivery happens</div>
+        <p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.68);">Income is recognised stage by stage as the cohort is actually delivered — never in advance of the work.</p>
+      </div>
+      <div data-hov="dk" style="background:#3C1610;padding:24px 22px 28px;">
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#12B5A4;">04 · REPORTED</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#FAF6EC;margin-top:11px;">Reported per graduate</div>
+        <p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.68);">Each graduate is named in the impact report with the position they reached and the engagement and income that followed.</p>
+      </div>
+    </div>
+
+    <div data-reveal="" style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:16px;">
+      <div data-hov="dk" style="background:rgba(250,246,236,.06);border:1px solid rgba(250,246,236,.16);border-radius:18px;padding:24px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#FAF6EC;">A cohort, fixed before it opens</div><p style="margin:9px 0 0;font-size:14px;line-height:1.8;color:rgba(250,246,236,.72);">Specialisation, seat count, dates and selection criteria are set and published before applications open. A sponsor knows exactly what is being bought.</p></div>
+      <div data-hov="dk" style="background:rgba(250,246,236,.06);border:1px solid rgba(250,246,236,.16);border-radius:18px;padding:24px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#FAF6EC;">Outcomes tracked, not assumed</div><p style="margin:9px 0 0;font-size:14px;line-height:1.8;color:rgba(250,246,236,.72);">Employment or engagement, income earned, and the story — followed per graduate after the cohort ends, with consent, and reported on a stated cadence.</p></div>
+      <div data-hov="dk" style="background:rgba(250,246,236,.06);border:1px solid rgba(250,246,236,.16);border-radius:18px;padding:24px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#FAF6EC;">Beyond one cohort</div><p style="margin:9px 0 0;font-size:14px;line-height:1.8;color:rgba(250,246,236,.72);">Multi-cohort programmes for sponsors who want a series, and commissioned cohorts for an organisation training its own team.</p></div>
+    </div>
+
+    <div data-reveal="" style="margin-top:16px;border:1px solid rgba(250,246,236,.18);border-radius:20px;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:rgba(250,246,236,.14);">
+        <div style="background:rgba(250,246,236,.05);padding:20px 22px;"><div style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:30px;color:#FF8A6B;" data-count="20">20</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:5px;">Seats in a cohort</div></div>
+        <div style="background:rgba(250,246,236,.05);padding:20px 22px;"><div style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:30px;color:#FF8A6B;" data-count="6">6</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:5px;">Cohorts a year at full running</div></div>
+        <div style="background:rgba(250,246,236,.05);padding:20px 22px;"><div style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:30px;color:#FF8A6B;" data-count="120">120</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:5px;">People through the Forge in a year</div></div>
+        <div style="background:rgba(250,246,236,.05);padding:20px 22px;"><div style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:30px;color:#FAF6EC;">Zero</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:5px;">Charged to a trainee on a sponsored seat</div></div>
+      </div>
+      <div style="padding:16px 22px;border-top:1px solid rgba(250,246,236,.14);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">
+        <span style="font-size:13px;line-height:1.75;color:rgba(250,246,236,.6);">Cost per seat and cost per graduate are the two numbers a sponsor asks for. Both are stated on the sponsorship card for the specific cohort, with the delivery cost behind them.</span>
+        <a href="#apply" style="color:#FF8A6B;font-size:13.5px;font-weight:600;white-space:nowrap;">Request the sponsorship card →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trainers" data-screen-label="Trainers and governance" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#D0402F;font-weight:500;">Trainers &amp; governance <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· WHO TEACHES, WHO DECIDES</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#052E2B;max-width:26ch;">Teaching is rated, and the rating decides who teaches again</h2>
+    <div data-seq="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px;margin-top:30px;align-items:stretch;">
+      <div data-reveal="" data-hov="lt" style="background:#fff;border:1px solid #EDE5D2;border-radius:18px;padding:24px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">A rated roster</div><p style="margin:9px 0 0;font-size:14px;line-height:1.8;color:#4A6B64;">Trainers sit on a roster with ratings. Participants rate every cohort, and the ratings decide who is invited back. Quality of teaching is measured, not assumed.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;border:1px solid #EDE5D2;border-radius:18px;padding:24px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">Safeguarding and dignity</div><p style="margin:9px 0 0;font-size:14px;line-height:1.8;color:#4A6B64;">A standing standard for every participant: respectful, safe and fair — with a route to raise a concern that does not run through the trainer.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;border:1px solid #EDE5D2;border-radius:18px;padding:24px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">Attendance and completion</div><p style="margin:9px 0 0;font-size:14px;line-height:1.8;color:#4A6B64;">Both are tracked, and support goes to whoever falls behind. A cohort's value is in who finishes ready, not who enrolled.</p></div>
+      <div data-reveal="" data-hov="lt" style="background:#fff;border:1px solid #EDE5D2;border-radius:18px;padding:24px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">Trainers grown from graduates</div><p style="margin:9px 0 0;font-size:14px;line-height:1.8;color:#4A6B64;">The strongest graduates are brought back as mentors and assessors. The roster deepens from inside the register rather than importing it.</p></div>
+    </div>
+
+    <div data-reveal="" style="margin-top:16px;background:linear-gradient(168deg,#3C1610,#2E0F0A 68%);border:1px solid rgba(255,138,107,.22);border-radius:20px;padding:clamp(24px,3vw,34px);color:#FAF6EC;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#FF8A6B;">GOVERNANCE · CONFLICT OF INTEREST</div>
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(18px,2.1vw,24px);line-height:1.4;margin-top:12px;max-width:34ch;">The Forge Lead is a partner, and the boundary is written down.</div>
+      <p style="margin:12px 0 0;max-width:70ch;font-size:14.5px;line-height:1.85;color:rgba(250,246,236,.76);">The role is operational within the Forge only: a standing conflict-of-interest disclosure, no cross-approval on decisions outside this line, and compensation set at arm's length. Trainers are contracted at arm's length on the same basis.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:12px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(250,246,236,.16);">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#FF8A6B;">FRG-LEAD</div><div style="font-size:13.5px;color:rgba(250,246,236,.8);margin-top:5px;">Forge Lead — cohorts, sponsors, outcomes</div></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#FF8A6B;">FRG-COORD</div><div style="font-size:13.5px;color:rgba(250,246,236,.8);margin-top:5px;">Cohort Coordinator — intake, records, logistics</div></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#FF8A6B;">FRG-TRAIN</div><div style="font-size:13.5px;color:rgba(250,246,236,.8);margin-top:5px;">Trainer / Mentor — delivery and assessment</div></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#FF8A6B;">FRG-SPON</div><div style="font-size:13.5px;color:rgba(250,246,236,.8);margin-top:5px;">Sponsor &amp; Partnerships — funding and placement</div></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#FF6250;">FRG-INT</div><div style="font-size:13.5px;color:rgba(250,246,236,.8);margin-top:5px;">Forge Intern — the First Rung desk</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="never" data-screen-label="The never list" style="background:#F2E8D2;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#D0402F;font-weight:500;">The never list <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· WRITTEN DOWN, NOT IMPLIED</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#052E2B;max-width:24ch;">Six things the Forge does not do</h2>
+    <div data-seq="" style="display:flex;flex-direction:column;gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:18px;overflow:hidden;margin-top:28px;">
+      <div data-reveal="" data-grow="" style="background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#D0402F;">01</span><span style="font-size:14.5px;line-height:1.8;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">It is never called an academy,</b> and it does not sell certificates. The output is a position on the ladder.</span></div>
+      <div data-reveal="" data-grow="" style="background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#D0402F;">02</span><span style="font-size:14.5px;line-height:1.8;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">A trainee is never charged for a sponsored seat.</b> Where a fee exists it is on the sponsorship card, not on the participant.</span></div>
+      <div data-reveal="" data-grow="" style="background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#D0402F;">03</span><span style="font-size:14.5px;line-height:1.8;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">Teaching never grades itself.</b> The assessment is taken by someone who did not deliver the sessions.</span></div>
+      <div data-reveal="" data-grow="" style="background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#D0402F;">04</span><span style="font-size:14.5px;line-height:1.8;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">Nothing is waived at verification</b> because a person trained here. The register holds one standard for everyone.</span></div>
+      <div data-reveal="" data-grow="" style="background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#D0402F;">05</span><span style="font-size:14.5px;line-height:1.8;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">No graduate is presented to a client as capable</b> before an assessment says so, in a named specialisation.</span></div>
+      <div data-reveal="" data-grow="" style="background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#D0402F;">06</span><span style="font-size:14.5px;line-height:1.8;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">No outcome is reported to a sponsor that has not been tracked</b> to a named graduate. An estimate is not an outcome.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="apply" data-screen-label="Apply" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="background:#2E0F0A;border-radius:22px;padding:clamp(26px,3.5vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;align-items:center;">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#FF8A6B;">{{ intakeLabel }}</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(20px,2.4vw,30px);line-height:1.34;color:#FAF6EC;margin-top:12px;">Applications open per cohort. The criteria are published before the intake opens, and a sponsored seat costs nothing.</div>
+        <sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}">
+          <div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:14px;color:rgba(250,246,236,.58);margin-top:12px;">تفتح الطلبات لكل فوج، ولا يحمل المتدرب رسما</div>
+        </sc-if>
+        <p style="margin:14px 0 0;max-width:56ch;font-size:14px;line-height:1.85;color:rgba(250,246,236,.7);">Interns enter through the First Rung: a documented desk, a named supervisor, and a route onto the ladder rather than an unpaid errand.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="Kayan Apply.dc.html" data-mag="" style="background:#FF6250;color:#2E0F0A;text-align:center;font-size:14.5px;font-weight:600;padding:14px 22px;border-radius:4px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#FF8A6B" style-active="transform:scale(.97)">{{ applyLabel }}</a>
+        <a href="#sponsors" data-mag="" style="border:1px solid rgba(250,246,236,.32);color:#FAF6EC;text-align:center;font-size:14.5px;font-weight:500;padding:14px 22px;border-radius:4px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:rgba(250,246,236,.1)" style-active="transform:scale(.97)">Sponsor a cohort</a>
+        <a href="#trainers" style="text-align:center;font-size:13.5px;color:#FF8A6B;padding-top:4px;">Teach or assess with the Forge →</a>
+      </div>
+    </div>
+    <div data-reveal="" style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+      <a href="Line I - Managed Delivery EN.dc.html" style="background:#fff;border:1px solid #EDE5D2;border-top:4px solid #3E9EEA;border-radius:18px;padding:22px 24px;color:inherit;transition:transform 160ms cubic-bezier(.23,1,.32,1),border-color .2s ease;" style-hover="transform:translateY(-3px)"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">LINE 01 · MANAGED DELIVERY</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:9px;">Where a verified graduate gets paid</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Client work delivered by documented teams, staffed from the register the Forge feeds.</p></a>
+      <a href="Line II - The Hub and Cafe EN.dc.html" style="background:#fff;border:1px solid #EDE5D2;border-top:4px solid #FFB627;border-radius:18px;padding:22px 24px;color:inherit;transition:transform 160ms cubic-bezier(.23,1,.32,1),border-color .2s ease;" style-hover="transform:translateY(-3px)"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#A8710F;">LINE 03 · THE HUB &amp; CAFÉ</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:9px;">Where the cohort actually sits</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Cohorts run on the floor in Khormaksar — and graduates keep working from it afterwards.</p></a>
+      <a href="Kayan Home.dc.html" style="background:#fff;border:1px solid #EDE5D2;border-top:4px solid #12B5A4;border-radius:18px;padding:22px 24px;color:inherit;transition:transform 160ms cubic-bezier(.23,1,.32,1),border-color .2s ease;" style-hover="transform:translateY(-3px)"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#0E8A7C;">THE INSTITUTION</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:9px;">How work is managed at Kayan</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Written scope, funded guarantee, independent review — the arc every line runs inside.</p></a>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Forge · Footer" style="position:relative;overflow:hidden;background:#2E0F0A;color:rgba(250,246,236,.72);padding:clamp(46px,6.5vh,72px) clamp(20px,4vw,44px) 28px;">
+  <div aria-hidden="true" style="position:absolute;inset-inline:0;top:0;height:2px;background:linear-gradient(90deg,transparent,#D0402F 30%,#FF8A6B 50%,#D0402F 70%,transparent);"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:url(assets/forge-grain.png);background-size:200px 200px;opacity:.1;mix-blend-mode:overlay;pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="margin-bottom:clamp(30px,5vh,52px);">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.26em;color:rgba(255,138,107,.65);">CLOSING · KAYAN FORGE · LINE 04</div>
+      <div style="margin-top:14px;font-family:'Alexandria',sans-serif;font-weight:200;font-size:clamp(28px,4.6vw,54px);line-height:1.2;color:#FAF6EC;letter-spacing:-.01em;">Behind every success, a <b style="font-weight:800;background:linear-gradient(135deg,#D0402F,#FF8A6B 55%,#FF6250);-webkit-background-clip:text;background-clip:text;color:transparent;">Kayan.</b></div>
+      <sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}">
+        <div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:13.5px;color:rgba(250,246,236,.45);margin-top:14px;">خلف كل نجاح، كيان</div>
+      </sc-if>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));gap:30px;align-items:start;">
+      <div>
+        <img src="assets/forge-logo-ember.png" alt="Kayan" style="height:72px;width:auto;display:block;">
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:16px;font-size:12.5px;">
+          <a href="Kayan Legal.dc.html#terms" style="color:rgba(255,138,107,.8);">Terms &amp; conditions</a>
+          <a href="Kayan Legal.dc.html#privacy" style="color:rgba(255,138,107,.8);">Privacy</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,138,107,.8);">ON THIS PAGE</div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-size:13.5px;">
+          <a href="#gap" style="color:rgba(250,246,236,.72);" style-hover="color:#FF8A6B">The gap · one gap, three losers</a>
+          <a href="#what" style="color:rgba(250,246,236,.72);" style-hover="color:#FF8A6B">What it is · not an academy</a>
+          <a href="#cohort" style="color:rgba(250,246,236,.72);" style-hover="color:#FF8A6B">The cohort machine</a>
+          <a href="#verify" style="color:rgba(250,246,236,.72);" style-hover="color:#FF8A6B">Verification · six steps</a>
+          <a href="#record" style="color:rgba(250,246,236,.72);" style-hover="color:#FF8A6B">The record a graduate leaves with</a>
+          <a href="#ladder" style="color:rgba(250,246,236,.72);" style-hover="color:#FF8A6B">The trust ladder</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,138,107,.8);">START HERE</div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-size:13.5px;">
+          <a href="Kayan Apply.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#FF8A6B">Apply to a cohort</a>
+          <a href="#sponsors" style="color:rgba(250,246,236,.72);" style-hover="color:#FF8A6B">Sponsor a cohort</a>
+          <a href="#trainers" style="color:rgba(250,246,236,.72);" style-hover="color:#FF8A6B">Teach or assess with the Forge</a>
+          <a href="#never" style="color:rgba(250,246,236,.72);" style-hover="color:#FF8A6B">The never list</a>
+          <a href="Line III - The Forge.dc.html" dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;color:rgba(250,246,236,.72);" style-hover="color:#FF8A6B">هذه الصفحة بالعربية</a>
+        </div>
+      </div>
+      <div style="text-align:end;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.26em;color:#FF8A6B;">KAYAN FORGE</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.22em;color:rgba(250,246,236,.6);margin-top:9px;">ADEN · YEMEN</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;margin-top:9px;color:rgba(255,138,107,.55);">LINE 04 · KAY-FORGE-LINE-001</div>
+        <div style="display:flex;justify-content:flex-end;margin-top:16px;">
+          <kayan-line-audio inline="" motif="forge" accent="#FF6250"></kayan-line-audio>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:36px;border-top:1px solid rgba(250,246,236,.1);padding-top:20px;display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;font-size:12px;color:rgba(250,246,236,.5);">
+      <span>Kayan · Aden</span>
+      <span style="margin-inline-start:auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(250,246,236,.45);">KAYAN FORGE · LINE 04 · ADEN · YEMEN</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+<kayan-compass current="line3"></kayan-compass>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showArabic&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Language&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;heat&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;intake&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Open&quot;,&quot;Closing soon&quot;,&quot;Closed&quot;],&quot;default&quot;:&quot;Open&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Intake&quot;}}">
+const STAGES = [
+  { code: '01', name: 'Design', phase: 'BEFORE THE INTAKE', owner: 'Forge Lead', ownerCode: 'FRG-LEAD',
+    what: 'The cohort and its curriculum are designed against a need the market has actually stated — a named specialisation, not a general subject. Nothing opens until a sponsor is aligned to it.',
+    items: ['Need confirmed with a buyer or a sponsor', 'Curriculum written to the standard', 'Trainers lined up and rated', 'Seat count, dates and criteria fixed'],
+    auto: 'The curriculum is drawn from the controlled standard and a cohort record is opened, so every later stage writes into one file.' },
+  { code: '02', name: 'Recruit', phase: 'THE INTAKE', owner: 'Cohort Coordinator', ownerCode: 'FRG-COORD',
+    what: 'Applications are opened and the intake is worked in the city — not left to whoever happens to see a post. The criteria are published with the call.',
+    items: ['Outreach done through partners and the Hub', 'Applications captured on one form', 'Criteria published, not private'],
+    auto: 'The enrolment form feeds a single applicant list with a timestamp on every application.' },
+  { code: '03', name: 'Select', phase: 'THE INTAKE', owner: 'Cohort Coordinator', ownerCode: 'FRG-COORD',
+    what: 'Participants are chosen against the published criteria, and the reason for each decision is written down. Selection weighs commitment as well as aptitude, because a place is supported and expected to be finished.',
+    items: ['Applications screened against criteria', 'Decision reasoned on the record', 'Places offered and confirmed'],
+    auto: 'Screening and the selection record, so a decision can be reviewed months later.' },
+  { code: '04', name: 'Enrol', phase: 'THE INTAKE', owner: 'Cohort Coordinator', ownerCode: 'FRG-COORD',
+    what: 'Places are confirmed and the cohort is formed. Each participant signs an enrolment agreement that states what the programme is, what is expected of them, and what happens at the end.',
+    items: ['Enrolment agreement signed', 'Fee position confirmed — zero on a sponsored seat', 'Roster set and closed'],
+    auto: 'Enrolment record and roster, which the attendance and assessment stages then run against.' },
+  { code: '05', name: 'Deliver', phase: 'DELIVERY', owner: 'Trainer / Mentor', ownerCode: 'FRG-TRAIN',
+    what: 'The programme runs. Sessions are delivered against the curriculum, mentoring runs alongside them, and the work each participant produces is kept as evidence — because it is what the assessment reads.',
+    items: ['Sessions delivered to the curriculum', 'Attendance taken every session', 'Mentoring logged', 'Participant work kept as evidence'],
+    auto: 'Attendance tracking and a session log; whoever falls behind is flagged to the trainer, not discovered at the end.' },
+  { code: '06', name: 'Assess', phase: 'DELIVERY', owner: 'Trainer / independent assessor', ownerCode: 'FRG-TRAIN',
+    what: 'Participants are assessed against the published standard by someone who did not deliver the sessions. Results are reported as bands with written meaning — never as raw marks — and every result is appealable once.',
+    items: ['Assessment completed against the standard', 'Result recorded with written reasoning', 'Feedback given to the participant', 'Appeal route stated'],
+    auto: 'The assessment record and results, written straight onto the person’s record.' },
+  { code: '07', name: 'Graduate', phase: 'THE EXIT', owner: 'Forge Lead', ownerCode: 'FRG-LEAD',
+    what: 'Those who pass complete the cohort. Completion is a fact on the record — the readiness note that goes with it is what matters to the next stage, not the ceremony.',
+    items: ['Graduation confirmed against the standard', 'Completion recorded on the register', 'Readiness noted per specialisation'],
+    auto: 'Graduation record and a completion document that points at the register rather than replacing it.' },
+  { code: '08', name: 'Verify', phase: 'THE HANDOFF', owner: 'Forge Lead → Verification', ownerCode: 'FRG-LEAD',
+    what: 'Graduates enter the same verification pipeline as anyone else who registers with Kayan. The Forge hands over the evidence; it does not decide the outcome.',
+    items: ['Identity and documents', 'Sanctions screening', 'Craft assessment and practical task', 'Interview, then a reasoned decision'],
+    auto: 'The handoff to verification and a talent record created, so nothing is retyped and nothing is lost between the two.' },
+  { code: '09', name: 'Track', phase: 'AFTER THE COHORT', owner: 'Sponsor & Partnerships', ownerCode: 'FRG-SPON',
+    what: 'What happened afterwards is followed: the engagement, the income, and — with consent — the story. This is the real measure of the line, and the only honest basis for a sponsor report.',
+    items: ['Engagement or employment recorded', 'Income impact captured', 'Story taken with consent', 'Sponsor report issued on cadence'],
+    auto: 'The outcome tracker and the sponsor report, compiled from records rather than reconstructed from memory.' }
+];
+
+const TIERS = [
+  { tier: 'T0', name: 'Registered', asserts: 'A record exists. Nothing is asserted.',
+    evidence: 'Registration completed and terms accepted.', decision: 'Automatic.', validity: 'Until superseded.',
+    unlocks: 'A record and a route — the specific steps that would move this person up.', not: 'Not visible to clients in any form.' },
+  { tier: 'T1', name: 'Identity Verified', asserts: 'This is a real, contactable person, of legal age, who has accepted our terms.',
+    evidence: 'Identity and eligibility documents checked, contact confirmed, sanctions screening clear.', decision: 'Verification officer.', validity: '24 months, then a document re-check.',
+    unlocks: 'Visible internally; may be considered for apprentice roles under supervision.', not: 'No capability is asserted to anyone.' },
+  { tier: 'T2', name: 'Capability Assessed', asserts: 'This person has demonstrated competence in at least one named specialisation.',
+    evidence: 'T1, plus a craft assessment passed in a specialisation, a core competency screen, and a portfolio or practical task.', decision: 'Verification officer with assessor input.', validity: '18 months per specialisation.',
+    unlocks: 'May be presented to clients within a pod; may hold contributor roles.', not: 'No entitlement to be selected.' },
+  { tier: 'T3', name: 'Delivery Proven', asserts: 'This person has delivered real work through Kayan, accepted by a client.',
+    evidence: 'T2, plus accepted engagements with no unresolved dispute, at least one verified reference, and a pod lead endorsement.', decision: 'Two approvers.', validity: '12 months rolling on delivery.',
+    unlocks: 'May hold reviewer roles and lead workstreams; may be named to clients as experienced.', not: 'No entitlement to lead a pod.' },
+  { tier: 'T4', name: 'Kayan Certified', asserts: 'Kayan places its own name behind this person.',
+    evidence: 'T3 sustained, plus a portfolio audit, leadership of delivered work, contribution to others through review or mentoring, and a clean conduct record.', decision: 'Two approvers, one at executive level.', validity: '12 months, annual review.',
+    unlocks: 'May lead pods and represent Kayan to clients.', not: 'Still no entitlement to work.' }
+];
+
+const INTAKE = {
+  'Open': { label: 'INTAKE OPEN · COHORT 01', dot: '#FF6250', border: 'rgba(255,98,80,.5)', text: '#FF8A6B', cta: 'Apply to a cohort' },
+  'Closing soon': { label: 'INTAKE CLOSING · COHORT 01', dot: '#FFB627', border: 'rgba(255,182,39,.5)', text: '#FFB627', cta: 'Apply before it closes' },
+  'Closed': { label: 'INTAKE CLOSED · NEXT COHORT ANNOUNCED HERE', dot: 'rgba(250,246,236,.55)', border: 'rgba(250,246,236,.28)', text: 'rgba(250,246,236,.7)', cta: 'Join the next intake list' }
+};
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.root = React.createRef();
+    this.hdr = React.createRef();
+    this.brand = React.createRef();
+    this.prog = React.createRef();
+    this.idx = React.createRef();
+    this.ember = React.createRef();
+    this.state = { stage: 0, tier: 2, playing: false, flipped: false };
+  }
+
+  initIndex() {
+    const el = this.root.current, nav = this.idx.current;
+    if (!el || !nav) return;
+    const items = Array.from(nav.querySelectorAll('[data-ifor]'));
+    const fit = () => { nav.style.display = window.innerWidth >= 1180 ? 'flex' : 'none'; };
+    fit();
+    window.addEventListener('resize', fit, { passive: true });
+    this.onFit = fit;
+    const set = (id) => {
+      items.forEach((a) => {
+        const on = a.getAttribute('data-ifor') === id;
+        const dot = a.querySelector('[data-idot]');
+        const lab = a.querySelector('[data-ilabel]');
+        if (dot) { dot.style.background = on ? '#FF6250' : '#DCCFB4'; dot.style.transform = on ? 'scale(1.5)' : 'none'; }
+        if (lab) { lab.style.opacity = on ? '1' : '0'; lab.style.transform = on ? 'none' : 'translateX(6px)'; lab.style.color = on ? '#D0402F' : '#8A8272'; }
+      });
+    };
+    const secs = items.map((a) => el.querySelector('#' + a.getAttribute('data-ifor'))).filter(Boolean);
+    this.idxIo = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) set(e.target.id); });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    secs.forEach((s) => this.idxIo.observe(s));
+    set('top');
+  }
+
+  initCounters() {
+    const el = this.root.current;
+    if (!el) return;
+    const nodes = Array.from(el.querySelectorAll('[data-count]'));
+    if (!nodes.length) return;
+    this.cntIo = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        this.cntIo.unobserve(e.target);
+        const to = parseInt(e.target.getAttribute('data-count'), 10) || 0;
+        const t0 = performance.now(), dur = 900 + Math.min(600, to * 4);
+        const step = (t) => {
+          const p = Math.min(1, (t - t0) / dur);
+          const eased = 1 - Math.pow(1 - p, 3);
+          e.target.textContent = String(Math.round(to * eased));
+          if (p < 1) requestAnimationFrame(step);
+        };
+        e.target.textContent = '0';
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.5 });
+    nodes.forEach((n) => this.cntIo.observe(n));
+  }
+
+  initMagnets() {
+    const el = this.root.current;
+    if (!el || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    const mags = Array.from(el.querySelectorAll('[data-mag]'));
+    if (!mags.length) return;
+    let pending = null, raf = 0;
+    const apply = () => {
+      raf = 0;
+      const e = pending;
+      if (!e) return;
+      for (let i = 0; i < mags.length; i++) {
+        const m = mags[i];
+        const r = m.getBoundingClientRect();
+        if (!r.width) continue;
+        const dx = e.x - (r.left + r.width / 2), dy = e.y - (r.top + r.height / 2);
+        if (Math.abs(dx) < r.width / 2 + 52 && Math.abs(dy) < r.height / 2 + 52) {
+          m.style.translate = (dx * 0.12).toFixed(1) + 'px ' + (dy * 0.17).toFixed(1) + 'px';
+          m.style.setProperty('--sx', (((e.x - r.left) / r.width) * 100).toFixed(1) + '%');
+          m.style.setProperty('--sy', (((e.y - r.top) / r.height) * 100).toFixed(1) + '%');
+        } else if (m.style.translate) {
+          m.style.translate = '';
+        }
+      }
+    };
+    const onMove = (ev) => {
+      pending = { x: ev.clientX, y: ev.clientY };
+      if (!raf) raf = requestAnimationFrame(apply);
+    };
+    window.addEventListener('pointermove', onMove, { passive: true });
+    this.magnets = { onMove: onMove, stop: () => { if (raf) cancelAnimationFrame(raf); } };
+  }
+
+  initCursor() {
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    const ring = document.createElement('div');
+    ring.setAttribute('data-cur', '');
+    ring.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(ring);
+    let x = -100, y = -100, tx = -100, ty = -100, raf = 0, shown = false;
+    const tick = () => {
+      x += (tx - x) * 0.2; y += (ty - y) * 0.2;
+      ring.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0)';
+      raf = (Math.abs(tx - x) > 0.3 || Math.abs(ty - y) > 0.3) ? requestAnimationFrame(tick) : 0;
+    };
+    const onMove = (e) => {
+      tx = e.clientX; ty = e.clientY;
+      if (!shown) { shown = true; x = tx; y = ty; ring.style.opacity = '1'; }
+      const hot = e.target && e.target.closest && e.target.closest('a,button,[role="tab"]');
+      if (hot) ring.setAttribute('data-hot', ''); else ring.removeAttribute('data-hot');
+      if (!raf) raf = requestAnimationFrame(tick);
+    };
+    const onOut = (e) => { if (!e.relatedTarget) { ring.style.opacity = '0'; shown = false; } };
+    window.addEventListener('pointermove', onMove, { passive: true });
+    window.addEventListener('pointerout', onOut, { passive: true });
+    this.cursor = { ring: ring, onMove: onMove, onOut: onOut, stop: () => { if (raf) cancelAnimationFrame(raf); } };
+  }
+
+  initBurst() {
+    const cv = document.createElement('canvas');
+    cv.setAttribute('data-burst', '');
+    cv.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(cv);
+    const ctx = cv.getContext('2d');
+    if (!ctx) { cv.remove(); return; }
+    let raf = 0;
+    const P = [];
+    const size = () => {
+      const dpr = Math.min(2, window.devicePixelRatio || 1);
+      cv.width = Math.round(window.innerWidth * dpr);
+      cv.height = Math.round(window.innerHeight * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    size();
+    const frame = () => {
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      ctx.globalCompositeOperation = 'lighter';
+      for (let i = P.length - 1; i >= 0; i--) {
+        const p = P[i];
+        p.vy += 0.05; p.vx *= 0.986; p.vy *= 0.986;
+        p.x += p.vx; p.y += p.vy; p.life -= 0.016;
+        if (p.life <= 0) { P.splice(i, 1); continue; }
+        const a = p.life * p.a, r = p.r * (0.6 + p.life * 0.8);
+        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 4);
+        g.addColorStop(0, 'rgba(255,' + p.g + ',' + p.b + ',' + a.toFixed(3) + ')');
+        g.addColorStop(1, 'rgba(255,' + p.g + ',' + p.b + ',0)');
+        ctx.fillStyle = g;
+        ctx.beginPath(); ctx.arc(p.x, p.y, r * 4, 0, 6.2832); ctx.fill();
+      }
+      ctx.globalCompositeOperation = 'source-over';
+      raf = P.length ? requestAnimationFrame(frame) : 0;
+    };
+    const spawn = (x, y, n) => {
+      for (let i = 0; i < n; i++) {
+        const a = Math.random() * 6.2832, s = 0.8 + Math.random() * 3.3, hot = Math.random() > 0.62;
+        P.push({ x: x, y: y, vx: Math.cos(a) * s, vy: Math.sin(a) * s - 1.15,
+          r: 0.6 + Math.random() * 1.5, life: 0.55 + Math.random() * 0.6,
+          a: 0.45 + Math.random() * 0.5, g: hot ? 208 : 112, b: hot ? 172 : 84 });
+      }
+      if (!raf) raf = requestAnimationFrame(frame);
+    };
+    const onDown = (e) => { if (e.isPrimary !== false) spawn(e.clientX, e.clientY, 15); };
+    window.addEventListener('pointerdown', onDown, { passive: true });
+    window.addEventListener('resize', size, { passive: true });
+    this.spawnBurst = spawn;
+    this.burst = { cv: cv, onDown: onDown, size: size, stop: () => { if (raf) cancelAnimationFrame(raf); } };
+  }
+
+  _scroller() {
+    const de = document.documentElement;
+    if (de.scrollHeight > window.innerHeight + 4) return null;
+    const cands = [];
+    let n = this.root.current;
+    while (n) { if (n.scrollHeight > n.clientHeight + 10) cands.push(n); n = n.parentElement; }
+    cands.push(document.body);
+    for (const c of cands) {
+      const y = c.scrollTop;
+      c.scrollTop = y + 1;
+      const moved = c.scrollTop !== y;
+      c.scrollTop = y;
+      if (moved) return c;
+    }
+    return null;
+  }
+
+  initSmoothScroll() {
+    const el = this.root.current;
+    if (!el) return;
+    const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    const onClick = (e) => {
+      if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+      const a = e.target && e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const id = a.getAttribute('href').slice(1);
+      const target = id && document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      const hdrH = this.hdr.current ? this.hdr.current.getBoundingClientRect().height : 74;
+      const sc = this._scroller();
+      const from = sc ? sc.scrollTop : window.scrollY;
+      const to = Math.max(0, from + target.getBoundingClientRect().top - (id === 'top' ? 0 : hdrH - 1));
+      const dist = Math.abs(to - from);
+      if (dist < 4) return;
+      const dur = Math.min(1150, Math.max(430, dist * 0.4));
+      const t0 = performance.now();
+      if (this.scrollRaf) cancelAnimationFrame(this.scrollRaf);
+      const step = (now) => {
+        const k = Math.min(1, (now - t0) / dur);
+        const y = from + (to - from) * ease(k);
+        if (sc) { sc.scrollTop = y; }
+        else {
+          window.scrollTo(0, y);
+          if (Math.abs(window.scrollY - y) > 2) { document.body.scrollTop = y; document.documentElement.scrollTop = y; }
+        }
+        if (k < 1) { this.scrollRaf = requestAnimationFrame(step); }
+        else { this.scrollRaf = 0; if (window.history && history.replaceState) history.replaceState(null, '', '#' + id); }
+      };
+      this.scrollRaf = requestAnimationFrame(step);
+    };
+    el.addEventListener('click', onClick);
+    this.smooth = { el: el, onClick: onClick };
+  }
+
+  initYmap() {
+    const el = this.root.current; if (!el) return;
+    const w = el.querySelector('[data-ymap]'); if (!w) return;
+    const on = () => w.setAttribute('data-on', '');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((es) => es.forEach((x) => { if (x.isIntersecting) { io.disconnect(); on(); } }), { threshold: 0.01 });
+      io.observe(w);
+      setTimeout(on, 2600);
+    } else on();
+  }
+
+  initEmbers() {
+    const cv = this.ember.current, el = this.root.current;
+    if (!cv || !el) return;
+    const ctx = cv.getContext('2d');
+    if (!ctx) return;
+    const hero = cv.parentElement;
+    let w = 0, h = 0, dpr = 1, raf = 0, running = false;
+    const pt = { x: -1, y: -1 };
+    let draft = 0, lastY = window.scrollY;
+    const N = window.innerWidth < 760 ? 34 : 68;
+    const P = [];
+    const seed = (p, first) => {
+      p.x = Math.random() * w;
+      p.y = first ? Math.random() * h : h + Math.random() * 40;
+      p.r = 0.5 + Math.random() * 1.7;
+      p.vy = -(0.16 + Math.random() * 0.42);
+      p.vx = (Math.random() - 0.5) * 0.22;
+      p.a = 0.16 + Math.random() * 0.5;
+      p.ph = Math.random() * 6.28;
+      p.hot = Math.random() > 0.72;
+    };
+    for (let i = 0; i < N; i++) { const p = {}; seed(p, true); P.push(p); }
+    const size = () => {
+      dpr = Math.min(2.5, window.devicePixelRatio || 1);
+      const r = hero.getBoundingClientRect();
+      w = Math.max(1, r.width); h = Math.max(1, r.height);
+      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    size();
+    const frame = (t) => {
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalCompositeOperation = 'lighter';
+      for (let i = 0; i < P.length; i++) {
+        const p = P[i];
+        p.ph += 0.03;
+        p.y += p.vy - draft * (0.4 + p.r * 0.5);
+        p.x += p.vx + Math.sin(p.ph) * 0.22;
+        if (pt.x >= 0) {
+          const dx = p.x - pt.x, dy = p.y - pt.y, d2 = dx * dx + dy * dy;
+          if (d2 < 26000) {
+            const f = (1 - d2 / 26000) * 0.5;
+            p.x += (dx / (Math.sqrt(d2) + 6)) * f * 2.6;
+            p.y -= f * 1.1;
+          }
+        }
+        if (p.y < -20 || p.x < -30 || p.x > w + 30) seed(p, false);
+        const flick = 0.72 + Math.sin(p.ph * 2.1) * 0.28;
+        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 5.2);
+        const col = p.hot ? '255,190,150' : '255,110,86';
+        g.addColorStop(0, 'rgba(' + col + ',' + (p.a * flick).toFixed(3) + ')');
+        g.addColorStop(1, 'rgba(' + col + ',0)');
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r * 5.2, 0, 6.2832);
+        ctx.fill();
+      }
+      ctx.globalCompositeOperation = 'source-over';
+      draft *= 0.9;
+      raf = running ? requestAnimationFrame(frame) : 0;
+    };
+    const start = () => { if (!running) { running = true; raf = requestAnimationFrame(frame); } };
+    const stop = () => { running = false; if (raf) cancelAnimationFrame(raf); raf = 0; };
+    this.emberIo = new IntersectionObserver(([e]) => { e.isIntersecting ? start() : stop(); }, { threshold: 0 });
+    this.emberIo.observe(hero);
+    const onResize = () => size();
+    window.addEventListener('resize', onResize, { passive: true });
+    const onPt = (e) => {
+      const r = hero.getBoundingClientRect();
+      if (e.clientY > r.top && e.clientY < r.bottom) { pt.x = e.clientX - r.left; pt.y = e.clientY - r.top; }
+      else { pt.x = -1; pt.y = -1; }
+    };
+    window.addEventListener('pointermove', onPt, { passive: true });
+    const onDraft = () => {
+      const y = window.scrollY;
+      draft = Math.max(-1.6, Math.min(1.6, draft + (y - lastY) * 0.014));
+      lastY = y;
+    };
+    window.addEventListener('scroll', onDraft, { passive: true });
+    this.stopEmbers = () => {
+      stop();
+      window.removeEventListener('resize', onResize);
+      window.removeEventListener('pointermove', onPt);
+      window.removeEventListener('scroll', onDraft);
+    };
+  }
+
+  componentDidMount() {
+    const el = this.root.current;
+    if (!el) return;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const setHdr = (on) => {
+      const h = this.hdr.current;
+      if (!h) return;
+      h.style.background = on ? 'rgba(250,246,236,.93)' : 'transparent';
+      h.style.borderBottomColor = on ? 'rgba(46,15,10,.14)' : 'transparent';
+      h.style.backdropFilter = on ? 'blur(16px)' : 'none';
+      if (this.brand.current) this.brand.current.style.color = on ? '#2E0F0A' : '#FAF6EC';
+      el.querySelectorAll('[data-hlink]').forEach((a) => { a.style.color = on ? 'rgba(46,15,10,.74)' : 'rgba(250,246,236,.72)'; });
+      const pill = el.querySelector('[data-hpill]');
+      if (pill) {
+        pill.style.color = on ? 'rgba(46,15,10,.66)' : 'rgba(250,246,236,.66)';
+        pill.style.borderColor = on ? 'rgba(46,15,10,.28)' : 'rgba(250,246,236,.32)';
+      }
+    };
+    setHdr(false);
+    const hero = el.querySelector('[data-hero]');
+    if (hero) {
+      const sentinel = document.createElement('div');
+      sentinel.style.cssText = 'position:absolute;top:40px;left:0;width:1px;height:1px;pointer-events:none;';
+      hero.appendChild(sentinel);
+      this.hdrIo = new IntersectionObserver(([e]) => setHdr(!e.isIntersecting), { threshold: 0 });
+      this.hdrIo.observe(sentinel);
+    }
+
+    const onScroll = () => {
+      const p = this.prog.current;
+      if (!p) return;
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      p.style.width = (h > 0 ? Math.min(100, Math.max(0, (window.scrollY / h) * 100)) : 0) + '%';
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    this.onScroll = onScroll;
+
+    this.initIndex();
+
+    const rail = el.querySelector('[data-rail]');
+    if (rail) {
+      const onKey = (e) => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        const d = e.key === 'ArrowRight' ? 1 : -1;
+        this.setState((s) => ({ stage: (s.stage + d + 9) % 9 }));
+      };
+      rail.addEventListener('keydown', onKey);
+      this.railKey = { rail: rail, fn: onKey };
+    }
+
+    if (this.props.motion === false || reduce) return;
+    el.setAttribute('data-mo', '');
+    this.initCounters();
+    this.initEmbers();
+    this.initYmap();
+    this.initSmoothScroll();
+    this.initMagnets();
+    /* custom cursor ring + click burst removed at the owner's request */
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.setAttribute('data-on', ''); this.io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+    this.scan();
+    this.initPointer();
+  }
+
+  initPointer() {
+    const el = this.root.current;
+    if (!el || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    const birds = Array.from(el.querySelectorAll('[data-bird]'));
+    const heat = this.props.heat === false ? [] : Array.from(el.querySelectorAll('[data-heat]')).map((sec) => ({
+      sec: sec, glow: sec.querySelector('[data-glow]'), x: 0, y: 0, tx: 0, ty: 0, on: false
+    })).filter((h) => h.glow);
+    if (!birds.length && !heat.length) return;
+
+    const st = birds.map(() => ({ x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0 }));
+    let raf = 0, idle = 0;
+    const tick = () => {
+      let live = false;
+      birds.forEach((b, i) => {
+        const s = st[i];
+        s.vx = (s.vx + (s.tx - s.x) * 0.11) * 0.74;
+        s.vy = (s.vy + (s.ty - s.y) * 0.11) * 0.74;
+        s.x += s.vx; s.y += s.vy;
+        if (Math.abs(s.tx - s.x) > 0.06 || Math.abs(s.vx) > 0.06) live = true;
+        b.style.transform = 'translate3d(' + s.x.toFixed(2) + 'px,' + s.y.toFixed(2) + 'px,0) rotate(' + (s.x * 0.085).toFixed(2) + 'deg)';
+      });
+      heat.forEach((h) => {
+        h.x += (h.tx - h.x) * 0.14;
+        h.y += (h.ty - h.y) * 0.14;
+        if (Math.abs(h.tx - h.x) > 0.4 || Math.abs(h.ty - h.y) > 0.4) live = true;
+        h.glow.style.transform = 'translate3d(' + h.x.toFixed(1) + 'px,' + h.y.toFixed(1) + 'px,0)';
+      });
+      idle = live ? 0 : idle + 1;
+      raf = idle < 40 ? requestAnimationFrame(tick) : 0;
+    };
+    const wake = () => { idle = 0; if (!raf) raf = requestAnimationFrame(tick); };
+
+    const onMove = (e) => {
+      const cx = window.innerWidth / 2, cy = window.innerHeight / 2;
+      const nx = (e.clientX - cx) / cx, ny = (e.clientY - cy) / cy;
+      birds.forEach((b, i) => {
+        const d = parseFloat(b.getAttribute('data-bird')) || 1;
+        st[i].tx = nx * 18 * d;
+        st[i].ty = ny * 12 * d;
+      });
+      heat.forEach((h) => {
+        const r = h.sec.getBoundingClientRect();
+        const inside = e.clientY > r.top - 120 && e.clientY < r.bottom + 120;
+        if (inside) {
+          h.tx = e.clientX - r.left;
+          h.ty = e.clientY - r.top;
+          if (!h.on) { h.on = true; h.glow.style.opacity = '1'; h.x = h.tx; h.y = h.ty; }
+        } else if (h.on) { h.on = false; h.glow.style.opacity = '0'; }
+      });
+      wake();
+    };
+    window.addEventListener('pointermove', onMove, { passive: true });
+    this.onMove = onMove;
+    this.stopRaf = () => { if (raf) cancelAnimationFrame(raf); raf = 0; };
+  }
+
+  scan() {
+    const el = this.root.current;
+    if (!el || !this.io) return;
+    el.querySelectorAll('[data-reveal]:not([data-on])').forEach((n) => {
+      if (n.getBoundingClientRect().top < window.innerHeight * 0.94) { n.setAttribute('data-on', ''); return; }
+      this.io.observe(n);
+    });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    this.scan();
+    if (prevState && prevState.stage !== this.state.stage) {
+      const rail = this.root.current && this.root.current.querySelector('[data-rail]');
+      const btn = rail && rail.children[this.state.stage];
+      if (rail && btn && rail.scrollWidth > rail.clientWidth) {
+        const target = btn.offsetLeft - (rail.clientWidth - btn.offsetWidth) / 2;
+        rail.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.idxIo) this.idxIo.disconnect();
+    if (this.cntIo) this.cntIo.disconnect();
+    if (this.emberIo) this.emberIo.disconnect();
+    if (this.stopEmbers) this.stopEmbers();
+    if (this.onFit) window.removeEventListener('resize', this.onFit);
+    if (this.railKey) this.railKey.rail.removeEventListener('keydown', this.railKey.fn);
+    if (this.hdrIo) this.hdrIo.disconnect();
+    if (this.onScroll) window.removeEventListener('scroll', this.onScroll);
+    if (this.onMove) window.removeEventListener('pointermove', this.onMove);
+    if (this.stopRaf) this.stopRaf();
+    if (this.magnets) { window.removeEventListener('pointermove', this.magnets.onMove); this.magnets.stop(); }
+    if (this.cursor) {
+      window.removeEventListener('pointermove', this.cursor.onMove);
+      window.removeEventListener('pointerout', this.cursor.onOut);
+      this.cursor.stop(); this.cursor.ring.remove();
+    }
+    if (this.burst) {
+      window.removeEventListener('pointerdown', this.burst.onDown);
+      window.removeEventListener('resize', this.burst.size);
+      this.burst.stop(); this.burst.cv.remove();
+    }
+    if (this.smooth) this.smooth.el.removeEventListener('click', this.smooth.onClick);
+    if (this.scrollRaf) cancelAnimationFrame(this.scrollRaf);
+    clearTimeout(this.stopT);
+    if (this.ctx && this.ctx.close) this.ctx.close();
+  }
+
+  playStrike() {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return 0;
+    if (!this.ctx) this.ctx = new AC();
+    const ctx = this.ctx;
+    if (ctx.state === 'suspended') ctx.resume();
+    const t0 = ctx.currentTime + 0.04;
+    const gap = 0.33;
+    const hit = (t, gainPeak) => {
+      const noise = ctx.createBuffer(1, Math.floor(ctx.sampleRate * 0.18), ctx.sampleRate);
+      const d = noise.getChannelData(0);
+      for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 3);
+      const src = ctx.createBufferSource();
+      src.buffer = noise;
+      const bp = ctx.createBiquadFilter();
+      bp.type = 'bandpass'; bp.frequency.value = 2400; bp.Q.value = 1.4;
+      const ng = ctx.createGain();
+      ng.gain.setValueAtTime(gainPeak * 0.5, t);
+      ng.gain.exponentialRampToValueAtTime(0.0001, t + 0.16);
+      src.connect(bp).connect(ng).connect(ctx.destination);
+      src.start(t);
+      [1840, 2760, 4130].forEach((f, k) => {
+        const osc = ctx.createOscillator();
+        const g = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.value = f;
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.exponentialRampToValueAtTime(gainPeak / (k + 1.6), t + 0.008);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + 0.42 - k * 0.08);
+        osc.connect(g).connect(ctx.destination);
+        osc.start(t);
+        osc.stop(t + 0.5);
+      });
+    };
+    hit(t0, 0.11);
+    hit(t0 + gap, 0.07);
+    return gap + 0.5;
+  }
+
+  renderVals() {
+    const si = this.state.stage;
+    const ti = this.state.tier;
+    const s = STAGES[si];
+    const intake = INTAKE[this.props.intake] || INTAKE['Open'];
+    return {
+      rootRef: this.root, hdrRef: this.hdr, brandRef: this.brand, progRef: this.prog,
+      idxRef: this.idx, emberRef: this.ember,
+      stageProgress: Math.round(((si + 1) / STAGES.length) * 100) + '%',
+      prevStage: () => this.setState((st) => ({ stage: (st.stage + STAGES.length - 1) % STAGES.length })),
+      nextStage: () => this.setState((st) => ({ stage: (st.stage + 1) % STAGES.length })),
+      flipT: this.state.flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+      flipLabel: this.state.flipped ? 'Show the face' : 'Turn the card over',
+      toggleFlip: () => this.setState((st) => ({ flipped: !st.flipped })),
+      showArabic: this.props.showArabic !== false,
+      intakeLabel: intake.label, intakeDot: intake.dot, intakeBorder: intake.border, intakeText: intake.text,
+      applyLabel: intake.cta,
+      stages: STAGES.map((st, i) => ({
+        code: st.code, name: st.name, sel: i === si,
+        bg: i === si ? 'rgba(255,98,80,.18)' : 'rgba(250,246,236,.05)',
+        bd: i === si ? '#FF6250' : 'rgba(250,246,236,.16)',
+        fg: i === si ? '#FAF6EC' : 'rgba(250,246,236,.8)',
+        num: i === si ? '#FF6250' : 'rgba(250,246,236,.45)',
+        pick: () => this.setState({ stage: i })
+      })),
+      stageKey: 'st' + si,
+      stageNum: s.code, stageName: s.name, stagePhase: s.phase, stageWhat: s.what,
+      stageOwner: s.owner, stageOwnerCode: s.ownerCode, stageItems: s.items, stageAuto: s.auto,
+      tiers: TIERS.map((t, i) => ({
+        tier: t.tier, name: t.name, asserts: t.asserts, evidence: t.evidence, decision: t.decision,
+        validity: t.validity, unlocks: t.unlocks, not: t.not,
+        sel: i === ti,
+        glyph: i === ti ? '–' : '+',
+        bg: i === ti ? '#FFFFFF' : '#FBF8F0',
+        bar: i <= ti ? '#FF6250' : '#DCCFB4',
+        code: i === ti ? '#D0402F' : '#8A8272',
+        pick: () => this.setState({ tier: i === ti ? -1 : i })
+      })),
+      strikeState: this.state.playing ? 'on' : 'off',
+      strikeLabel: this.state.playing ? 'Striking' : 'Hear the strike',
+      toggleStrike: (e) => {
+        if (this.state.playing) return;
+        const dur = this.playStrike();
+        if (!dur) return;
+        if (this.spawnBurst && e && e.currentTarget) {
+          const r = e.currentTarget.getBoundingClientRect();
+          const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+          this.spawnBurst(cx, cy, 20);
+          setTimeout(() => this.spawnBurst && this.spawnBurst(cx, cy, 14), 330);
+        }
+        this.setState({ playing: true });
+        clearTimeout(this.stopT);
+        this.stopT = setTimeout(() => this.setState({ playing: false }), dur * 1000);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
