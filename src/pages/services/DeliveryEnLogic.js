@@ -160,6 +160,10 @@ export default class DeliveryEnLogic extends DCLogic {
     if (this._raf) cancelAnimationFrame(this._raf);
     if (this._nraf) cancelAnimationFrame(this._nraf);
     if (this._latRaf) cancelAnimationFrame(this._latRaf);
+    this._tick = 0;
+    this._raf = 0;
+    this._nraf = 0;
+    this._latRaf = 0;
     if (this.onScroll) window.removeEventListener('scroll', this.onScroll, { capture: true });
   }
   renderVals() {
