@@ -1,0 +1,52 @@
+import NativeDcPage from '../../native/NativeDcPage.jsx';
+import ClientsLogic from './ClientsLogic.js';
+import TalentLogic from './TalentLogic.js';
+import DeliveryArLogic from './DeliveryArLogic.js';
+import DeliveryEnLogic from './DeliveryEnLogic.js';
+import ProductsLogic from './ProductsLogic.js';
+import HubArLogic from './HubArLogic.js';
+import HubEnLogic from './HubEnLogic.js';
+import ForgeArLogic from './ForgeArLogic.js';
+import ForgeEnLogic from './ForgeEnLogic.js';
+import K4yLogic from './K4yLogic.js';
+import clientsTemplate from './clients.template.html?raw';
+import talentTemplate from './talent.template.html?raw';
+import deliveryArTemplate from './delivery-ar.template.html?raw';
+import deliveryEnTemplate from './delivery-en.template.html?raw';
+import productsTemplate from './products.template.html?raw';
+import hubArTemplate from './hub-ar.template.html?raw';
+import hubEnTemplate from './hub-en.template.html?raw';
+import forgeArTemplate from './forge-ar.template.html?raw';
+import forgeEnTemplate from './forge-en.template.html?raw';
+import k4yTemplate from './k4y.template.html?raw';
+import clientsStyles from './clients.css?raw';
+import talentStyles from './talent.css?raw';
+import deliveryArStyles from './delivery-ar.css?raw';
+import deliveryEnStyles from './delivery-en.css?raw';
+import productsStyles from './products.css?raw';
+import hubArStyles from './hub-ar.css?raw';
+import hubEnStyles from './hub-en.css?raw';
+import forgeArStyles from './forge-ar.css?raw';
+import forgeEnStyles from './forge-en.css?raw';
+import k4yStyles from './k4y.css?raw';
+
+const COMPASS_MARK = ['/legacy/kayan-compass.js', '/legacy/kayan-mark.js'];
+const LINE = ['/legacy/image-slot.js', '/legacy/kayan-compass.js', '/legacy/kayan-line-audio.js', '/legacy/kayan-mark.js'];
+const RP = ['/legacy/rp-core.js', '/legacy/rp-fixed.js'];
+const FORGE = ['/legacy/kayan-compass.js', '/legacy/kayan-line-audio.js', '/legacy/kayan-mark.js'];
+const D3 = ['https://unpkg.com/d3@7.9.0/dist/d3.min.js', 'https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js', '/legacy/yemen-map.js'];
+
+const page = (Logic, template, styles, title, scripts = [], props) => function ServicePage() {
+  return <NativeDcPage Logic={Logic} template={template} styles={styles} title={title} scripts={scripts} props={props} />;
+};
+
+export const ClientsPage = page(ClientsLogic, clientsTemplate, clientsStyles, 'كيان · للعملاء', [...RP, ...COMPASS_MARK], { defaultLang: 'en' });
+export const TalentPage = page(TalentLogic, talentTemplate, talentStyles, 'كيان · للكفاءات', ['/legacy/kayan-card.js', ...COMPASS_MARK], { defaultLang: 'en' });
+export const DeliveryArPage = page(DeliveryArLogic, deliveryArTemplate, deliveryArStyles, 'كيان · التسليم المدار', LINE, { showLatin: true, motion: true, defaultTier: 'S2' });
+export const DeliveryEnPage = page(DeliveryEnLogic, deliveryEnTemplate, deliveryEnStyles, 'Kayan · Managed Delivery', LINE, { showArabic: true, motion: true, defaultTier: 'S2' });
+export const ProductsPage = page(ProductsLogic, productsTemplate, productsStyles, 'كيان · فهرس المنتجات الجاهزة', [...RP, '/legacy/rp-range.js', '/legacy/kayan-mark.js'], { defaultView: 'fam', defaultLang: 'en', density: 'comfortable' });
+export const HubArPage = page(HubArLogic, hubArTemplate, hubArStyles, 'كيان · المركز والمقهى', LINE);
+export const HubEnPage = page(HubEnLogic, hubEnTemplate, hubEnStyles, 'Kayan · The Hub & Café', LINE);
+export const ForgeArPage = page(ForgeArLogic, forgeArTemplate, forgeArStyles, 'مصنع كيان · حيث تصاغ القدرة', FORGE, { showLatin: true, intake: 'Open', heat: true, motion: true });
+export const ForgeEnPage = page(ForgeEnLogic, forgeEnTemplate, forgeEnStyles, 'Kayan Forge · Where capability is made', [...D3, ...FORGE], { showArabic: true, intake: 'Open', heat: true, motion: true });
+export const K4yPage = page(K4yLogic, k4yTemplate, k4yStyles, 'كيان لليمن · الحملات المدنية', LINE, { defaultRoute: 'k4y', motion: true });

@@ -1,0 +1,280 @@
+<div ref="{{ rootRef }}" dir="rtl" style="font-family:'IBM Plex Sans Arabic','Instrument Sans',sans-serif;color:#143C37;background:#FAF6EC;min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(6,40,43,.94);backdrop-filter:blur(16px) saturate(150%);border-bottom:1px solid rgba(168,229,221,.16)">
+    <div style="max-width:1360px;margin:0 auto;padding:0 clamp(16px,3.4vw,44px);display:flex;align-items:center;gap:clamp(10px,2vw,26px);height:clamp(64px,7vh,80px)">
+      <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:10px;flex-shrink:0;color:#FFFFFF">
+        <kayan-mark line="cream" tone="bright" aria-hidden="true" style="width:calc(1.175 * clamp(24px,2.4vw,30px));flex-shrink:0;"></kayan-mark>
+        <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(16px,1.6vw,19px);line-height:1">{{ tKayan }}</span>
+      </a>
+      <span style="width:1px;height:24px;background:rgba(250,246,236,.2);flex-shrink:0"></span>
+      <div style="min-width:0;display:flex;flex-direction:column;gap:2px">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#7CC0F4">LINE 01 · MANAGED DELIVERY</span>
+        <span style="font-size:12.5px;color:rgba(250,246,236,.82);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ tIndexName }}</span>
+      </div>
+      <nav data-rp-nav="" style="margin-inline-start:auto;min-width:0;flex-shrink:0;display:flex;align-items:center;gap:clamp(10px,1.6vw,22px);font-size:13.5px;overflow:hidden">
+        <a href="Kayan Home.dc.html" style="white-space:nowrap;color:rgba(255,255,255,.78)" style-hover="color:#FFFFFF">{{ tNavHome }}</a>
+        <a href="{{ hrefShelf }}" style="white-space:nowrap;color:rgba(255,255,255,.78)" style-hover="color:#FFFFFF">{{ tNavShelf }}</a>
+        <a href="{{ hrefGates }}" data-nav-opt="" style="white-space:nowrap;color:rgba(255,255,255,.78)" style-hover="color:#FFFFFF">{{ tNavGates }}</a>
+        <a href="Kayan for Clients.dc.html" style="white-space:nowrap;color:rgba(255,255,255,.78)" style-hover="color:#FFFFFF">{{ tNavClients }}</a>
+        <a href="Kayan for Talent.dc.html" style="white-space:nowrap;color:rgba(255,255,255,.78)" style-hover="color:#FFFFFF">{{ tNavTalent }}</a>
+        <a href="{{ hrefMoney }}" data-nav-opt="" style="white-space:nowrap;color:rgba(255,255,255,.78)" style-hover="color:#FFFFFF">{{ tNavMoney }}</a>
+      </nav>
+      <div dir="ltr" style="flex-shrink:0;display:flex;align-items:center;border:1px solid rgba(168,229,221,.34);border-radius:99px;overflow:hidden">
+        <button type="button" onClick="{{ toggleAr }}" aria-pressed="{{ isAr }}" style="border:none;cursor:pointer;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12px;font-weight:600;padding:7px 13px;background:{{ arBtnBg }};color:{{ arBtnFg }};transition:background .25s ease,color .25s ease">عربي</button>
+        <button type="button" onClick="{{ toggleEn }}" aria-pressed="{{ isEn }}" style="border:none;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;padding:8px 13px;background:{{ enBtnBg }};color:{{ enBtnFg }};transition:background .25s ease,color .25s ease">EN</button>
+      </div>
+      <a href="{{ hrefStart }}" style="flex-shrink:0;white-space:nowrap;background:#3E9EEA;color:#06202F;font-size:13px;font-weight:600;padding:10px 20px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease" style-hover="background:#7CC0F4" style-active="transform:scale(.97)">{{ tCta }}</a>
+    </div>
+  </header>
+
+  <section data-screen-label="{{ tScreenFront }}" style="background:linear-gradient(180deg,#18928E 0%,#14867F 44%,#0F7574 76%,#0A6265 100%);color:#FFFFFF;padding:clamp(32px,4.4vw,60px) clamp(16px,3.4vw,44px) clamp(26px,3.4vw,40px);position:relative;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(900px 560px at 22% 44%,rgba(214,246,240,.22),transparent 66%),radial-gradient(880px 460px at 82% -16%,rgba(4,44,44,.3),transparent 62%),radial-gradient(680px 420px at 2% 112%,rgba(4,44,44,.26),transparent 64%);pointer-events:none"></div>
+    <div style="position:relative;max-width:1360px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(14px,2.2vw,34px);align-items:center">
+      <div style="min-width:0">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span aria-hidden="true" style="width:clamp(20px,4vw,52px);height:1px;background:#A8E5DD"></span>
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;color:#A8E5DD;white-space:nowrap">THE SHELF · KAY-PRD-001</span>
+      </div>
+      <h1 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(28px,4.2vw,54px);line-height:1.18;letter-spacing:-.026em;color:#FFFFFF;max-width:20ch">{{ tH1 }}</h1>
+      <div style="margin:clamp(18px,2.4vw,26px) 0 0;display:flex;align-items:center;gap:11px;flex-wrap:wrap">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.2em;font-weight:500;color:#CFF3ED">THE REEF</span>
+        <span aria-hidden="true" style="width:22px;height:1px;background:rgba(207,243,237,.4)"></span>
+        <span style="font-family:{{ glossFont }};font-size:12.5px;color:rgba(255,255,255,.62)">{{ tReefGloss }}</span>
+      </div>
+      <p style="margin:14px 0 0;max-width:{{ leadWidth }};font-size:15px;line-height:{{ leadLh }};color:rgba(255,255,255,.86)">{{ tLead }}</p>
+      </div>
+
+      <div style="position:relative;z-index:1;min-width:0;align-self:end;margin-inline-end:0">
+        <div style="position:relative;width:clamp(280px,38vw,560px);max-width:none;margin-inline-start:calc(100% - clamp(280px,38vw,560px))">
+          <div aria-hidden="true" style="position:absolute;inset:6% 6% 14% 0%;background:radial-gradient(closest-side,rgba(214,246,240,.32),rgba(214,246,240,.1) 54%,transparent 76%);pointer-events:none"></div>
+          <kayan-mark line="cream" motion="glide" glow="" entrance="settle" role="img" aria-label="{{ tMarkAria }}" style="width:100%;filter:drop-shadow(0 34px 54px rgba(3,40,40,.46)) drop-shadow(0 6px 14px rgba(3,40,40,.24));"></kayan-mark>
+        </div>
+      </div>
+      </div>
+
+      <div style="margin-top:clamp(24px,3.4vw,40px);border:1px solid rgba(255,255,255,.16);border-radius:16px;background:rgba(255,255,255,.035);padding:clamp(14px,1.8vw,20px)">
+        <div style="display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between">
+          <span dir="ltr" style="flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:rgba(255,255,255,.5);white-space:nowrap">THE SHELF BY LEAD TIME</span>
+          <span style="flex:1 1 220px;min-width:0;text-align:start;font-size:12.5px;line-height:1.6;color:rgba(255,255,255,.66);min-height:1.6em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ readLine }}</span>
+        </div>
+        <div role="group" aria-label="{{ tShelfAria }}" style="margin-top:14px;display:flex;align-items:flex-end;gap:1px;height:clamp(56px,7vw,88px)">
+          <sc-for list="{{ ticks }}" as="t" hint-placeholder-count="60">
+            <button type="button" title="{{ t.aria }}" aria-label="{{ t.aria }}" onClick="{{ t.on }}" onMouseEnter="{{ t.read }}" onFocus="{{ t.read }}" style="all:unset;cursor:pointer;flex:1 1 0;min-width:2px;height:{{ t.h }};background:{{ t.bg }};border-radius:1.5px 1.5px 0 0;margin-inline-start:{{ t.gap }};transition:background .18s ease,transform .18s cubic-bezier(.23,1,.32,1);transform-origin:bottom" style-hover="background:#FFFFFF;transform:scaleY(1.08)"></button>
+          </sc-for>
+        </div>
+        <div style="margin-top:12px;padding-top:11px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center">
+          <sc-for list="{{ legend }}" as="g" hint-placeholder-count="5">
+            <span style="display:inline-flex;align-items:center;gap:7px;font-size:11.5px;color:rgba(255,255,255,.66)">
+              <i style="width:9px;height:9px;border-radius:2px;background:{{ g.c }};display:inline-block"></i>{{ g.t }}
+            </span>
+          </sc-for>
+          <span style="margin-inline-start:auto;font-size:11.5px;color:rgba(255,255,255,.44)">{{ shelfNote }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="max-width:1360px;margin:0 auto;padding:clamp(20px,2.6vw,34px) clamp(16px,3.4vw,44px) clamp(52px,7vw,100px);display:flex;flex-wrap:wrap;gap:clamp(18px,2.4vw,38px);align-items:flex-start">
+
+    <aside data-screen-label="{{ tScreenFilters }}" style="flex:0 1 246px;min-width:min(100%,246px);position:sticky;top:clamp(76px,8vh,92px);max-height:calc(100vh - clamp(96px,11vh,120px));overflow-y:auto;scrollbar-width:thin;display:flex;flex-direction:column;gap:20px;padding-inline-end:2px">
+      <div>
+        <input type="search" value="{{ q }}" onInput="{{ onSearch }}" placeholder="{{ tSearchPh }}" style="width:100%;box-sizing:border-box;background:#FFFFFF;border:1px solid #E3D9C2;border-radius:10px;padding:11px 14px;font-size:13.5px;color:#052E2B;outline:none">
+      </div>
+
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#A79F8E">THE BUYER</div>
+        <div style="display:flex;flex-direction:column;gap:1px;margin-top:10px">
+          <sc-for list="{{ buyerRows }}" as="b" hint-placeholder-count="8">
+            <button type="button" onClick="{{ b.on }}" aria-pressed="{{ b.sel }}" style="all:unset;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:8px 10px;border-radius:8px;background:{{ b.bg }};transition:background .18s ease" style-hover="background:#F1EAD8">
+              <span style="display:flex;align-items:baseline;gap:8px;width:100%;box-sizing:border-box">
+                <span style="flex:1 1 auto;min-width:0;font-size:12.5px;font-weight:{{ b.w }};color:{{ b.fg }};line-height:1.45">{{ b.label }}</span>
+                <span dir="ltr" style="flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#A79F8E">{{ b.n }}</span>
+              </span>
+              <span style="display:block;width:100%;height:2px;background:#EDE5D2;border-radius:2px;overflow:hidden"><i style="display:block;height:100%;width:{{ b.barW }};background:{{ b.barC }}"></i></span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#A79F8E">{{ tFamiliesLabel }}</div>
+        <div style="display:flex;flex-direction:column;gap:1px;margin-top:10px">
+          <sc-for list="{{ famRows }}" as="fm" hint-placeholder-count="16">
+            <button type="button" onClick="{{ fm.on }}" aria-pressed="{{ fm.sel }}" style="all:unset;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:8px 10px;border-radius:8px;background:{{ fm.bg }};transition:background .18s ease" style-hover="background:#F1EAD8">
+              <span style="display:flex;align-items:baseline;gap:8px;width:100%;box-sizing:border-box">
+                <span style="flex:1 1 auto;min-width:0;font-size:12.5px;font-weight:{{ fm.w }};color:{{ fm.fg }};line-height:1.45">{{ fm.label }}</span>
+                <span dir="ltr" style="flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#A79F8E">{{ fm.n }}</span>
+              </span>
+              <span style="display:block;width:100%;height:2px;background:#EDE5D2;border-radius:2px;overflow:hidden"><i style="display:block;height:100%;width:{{ fm.barW }};background:{{ fm.barC }}"></i></span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+
+      <button type="button" onClick="{{ reset }}" style="align-self:flex-start;background:transparent;border:none;cursor:pointer;font-size:12.5px;color:#2E7CBC;padding:2px" style-hover="color:#3E9EEA">{{ tReset }}</button>
+    </aside>
+
+    <main style="flex:1 1 460px;min-width:0">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid #E3D9C2">
+        <span style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;min-width:0">
+          <span style="font-size:13px;color:#6E675A">{{ resultLine }}</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:#6E675A;white-space:nowrap">
+            <span aria-hidden="true" style="display:flex;align-items:flex-end;gap:2px;height:10px">
+              <i style="width:5px;height:4px;background:#12B5A4;border-radius:1px 1px 0 0"></i>
+              <i style="width:5px;height:6px;background:#3E9EEA;border-radius:1px 1px 0 0"></i>
+              <i style="width:5px;height:8px;background:#2E7CBC;border-radius:1px 1px 0 0"></i>
+              <i style="width:5px;height:10px;background:#1A5F97;border-radius:1px 1px 0 0"></i>
+            </span>{{ tMeterKey }}
+          </span>
+        </span>
+        <span style="display:inline-flex;border:1px solid #E3D9C2;border-radius:99px;overflow:hidden;background:#FFFFFF">
+          <button type="button" onClick="{{ viewFam }}" aria-pressed="{{ isFamView }}" style="all:unset;cursor:pointer;padding:7px 14px;font-size:12px;background:{{ famViewBg }};color:{{ famViewFg }}">{{ tByFam }}</button>
+          <button type="button" onClick="{{ viewFast }}" aria-pressed="{{ isFastView }}" style="all:unset;cursor:pointer;padding:7px 14px;font-size:12px;background:{{ fastViewBg }};color:{{ fastViewFg }}">{{ tByFast }}</button>
+        </span>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:0">
+        <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+          <div id="{{ g.id }}" style="min-width:0;scroll-margin-top:150px">
+            <div data-rp-head="" style="position:sticky;top:calc(clamp(64px,7vh,80px) + 1px);z-index:20;background:#FAF6EC;margin-top:clamp(30px,3.4vw,50px);padding-top:9px;padding-bottom:13px">
+              <div style="display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;padding-bottom:9px;border-bottom:2px solid #052E2B">
+                <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(17px,2vw,23px);line-height:1.4;color:#052E2B">{{ g.ar }}</h2>
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#6E675A">{{ g.en }}</span>
+                <span aria-hidden="true" style="display:flex;align-items:flex-end;gap:2px;height:13px;padding-bottom:2px">
+                  <sc-for list="{{ g.headTicks }}" as="ht" hint-placeholder-count="7">
+                    <i style="flex:0 0 auto;width:3px;height:{{ ht.h }};background:{{ ht.c }};border-radius:1px 1px 0 0"></i>
+                  </sc-for>
+                </span>
+                <span style="margin-inline-start:auto;font-size:12px;color:#6E675A;white-space:nowrap">{{ g.count }}</span>
+              </div>
+            </div>
+            <p style="margin:0 0 12px;font-size:13px;line-height:1.85;color:#6E675A;max-width:74ch">{{ g.pos }}</p>
+            <sc-for list="{{ g.rows }}" as="l" hint-placeholder-count="7">
+              <button type="button" id="{{ l.code }}" data-rp-row="" data-code="{{ l.code }}" onClick="{{ l.on }}" style="all:unset;cursor:pointer;width:100%;box-sizing:border-box;display:grid;grid-template-columns:clamp(50px,6.2vw,64px) minmax(0,1fr) auto;column-gap:clamp(10px,1.6vw,20px);row-gap:4px;align-items:baseline;padding:{{ rowPad }};scroll-margin-top:150px;border-bottom:1px solid #EDE5D2;border-inline-start:2px solid {{ l.barC }};transition:background 200ms cubic-bezier(.2,0,.2,1)" style-hover="background:#FFFFFF">
+                <span dir="ltr" style="grid-row:1;grid-column:1;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#2E7CBC">{{ l.code }}</span>
+                <b style="grid-row:1;grid-column:2;min-width:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;line-height:1.5;color:#052E2B">{{ l.name }}</b>
+                <span dir="{{ l.priceDir }}" style="grid-row:1;grid-column:3;text-align:end;font-family:{{ l.priceFont }};font-size:14px;font-weight:500;color:{{ l.priceC }};white-space:nowrap">{{ l.price }}</span>
+                <span data-rp-meter="" role="img" aria-label="{{ l.bandLabel }}" title="{{ l.bandLabel }}" style="grid-row:2;grid-column:1;align-self:center;display:flex;align-items:flex-end;gap:2px;height:10px">
+                  <sc-for list="{{ l.segs }}" as="sg" hint-placeholder-count="4">
+                    <i style="flex:1 1 0;height:{{ sg.h }};background:{{ sg.c }};border-radius:1px 1px 0 0"></i>
+                  </sc-for>
+                </span>
+                <span style="grid-row:2;grid-column:2;min-width:0;font-size:12.5px;line-height:1.65;color:#7C7565">{{ l.out }}</span>
+                <span dir="auto" style="grid-row:2;grid-column:3;text-align:end;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#4A6B64;white-space:nowrap">{{ l.when }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center;padding:clamp(40px,6vw,80px) 20px;color:#6E675A;font-size:14.5px">{{ tEmpty }}</div>
+      </sc-if>
+    </main>
+  </div>
+
+  <sc-if value="{{ isOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ close }}" style="position:fixed;inset:0;z-index:80;background:rgba(6,32,47,.66);backdrop-filter:blur(5px);animation:kFade .3s ease both;display:flex;align-items:center;justify-content:center;padding:clamp(0px,3vh,28px) clamp(0px,3vw,26px)">
+      <div onClick="{{ stop }}" role="dialog" aria-modal="true" aria-label="{{ open.name }}" style="width:min(100%,900px);max-height:min(94vh,960px);display:flex;flex-direction:column;min-height:0;background:#FAF6EC;border-radius:clamp(0px,2vw,16px);overflow:hidden;box-shadow:0 40px 90px -30px rgba(3,22,20,.6);animation:kDlg .42s cubic-bezier(.16,1,.3,1) both">
+
+        <div style="position:relative;flex-shrink:0;overflow:hidden;background:#06202F;color:#FAF6EC;border-bottom:2px solid #3E9EEA;padding:clamp(20px,2.6vw,30px) clamp(20px,3vw,34px)">
+          <span aria-hidden="true" dir="ltr" style="position:absolute;top:50%;inset-inline-end:-6px;transform:translateY(-50%);font-family:'IBM Plex Mono',monospace;font-size:clamp(64px,11vw,116px);font-weight:500;letter-spacing:-.04em;line-height:1;color:rgba(124,192,244,.07);pointer-events:none;user-select:none;white-space:nowrap">{{ open.code }}</span>
+          <div style="position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+            <div style="min-width:0">
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#7CC0F4">{{ open.code }}</div>
+              <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(21px,2.6vw,30px);line-height:1.35;color:#FFFFFF">{{ open.name }}</h2>
+              <div style="margin-top:11px;display:flex;align-items:center;gap:11px;flex-wrap:wrap">
+                <span style="font-size:13px;color:rgba(250,246,236,.66)">{{ open.fam }}</span>
+                <span aria-hidden="true" style="width:1px;height:12px;background:rgba(250,246,236,.22)"></span>
+                <span role="img" aria-label="{{ open.bandLabel }}" style="display:flex;align-items:flex-end;gap:2px;height:11px">
+                  <sc-for list="{{ open.segs }}" as="sg" hint-placeholder-count="4">
+                    <i style="width:5px;height:{{ sg.h }};background:{{ sg.dc }};border-radius:1px 1px 0 0"></i>
+                  </sc-for>
+                </span>
+                <span style="font-size:12.5px;color:rgba(250,246,236,.5)">{{ open.bandLabel }}</span>
+              </div>
+            </div>
+            <button type="button" onClick="{{ close }}" aria-label="{{ tClose }}" style="flex-shrink:0;background:rgba(250,246,236,.12);border:none;color:#FAF6EC;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:17px;line-height:1;transition:background 200ms cubic-bezier(.2,0,.2,1)" style-hover="background:rgba(250,246,236,.26)">×</button>
+          </div>
+        </div>
+
+        <div style="flex:1 1 auto;min-height:0;overflow-y:auto;padding:clamp(20px,3vw,34px)">
+
+          <div style="background:#FFFFFF;border:1px solid #E3D9C2;border-radius:14px;overflow:hidden">
+            <div style="padding:18px 22px;border-bottom:1px solid #EDE5D2">
+              <div style="font-size:11.5px;color:#8B8375">{{ tSolvesLabel }}</div>
+              <p style="margin:9px 0 0;font-size:15px;line-height:1.95;color:#052E2B">{{ open.solves }}</p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,168px),1fr));gap:1px;background:#EDE5D2;border-bottom:1px solid #EDE5D2">
+              <div style="background:#fff;padding:18px 22px"><div style="font-size:11.5px;color:#8B8375">{{ tWhenLabel }}</div><div style="font-size:15px;color:#052E2B;margin-top:7px">{{ open.when }}</div></div>
+              <div style="background:#fff;padding:18px 22px"><div style="font-size:11.5px;color:#8B8375">{{ tPriceLabel }}</div><div dir="{{ open.priceDir }}" style="font-family:{{ open.priceFont }};font-size:15px;color:{{ open.priceC }};margin-top:7px;text-align:start">{{ open.price }}</div></div>
+              <div style="background:#fff;padding:18px 22px"><div style="font-size:11.5px;color:#8B8375">{{ tLiabilityLabel }}</div><div style="font-size:15px;color:#0A6F68;margin-top:7px">{{ tLiabilityVal }}</div></div>
+            </div>
+            <sc-if value="{{ open.hasPod }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:18px 22px;border-bottom:1px solid #EDE5D2;display:flex;flex-wrap:wrap;gap:10px 20px;align-items:baseline;justify-content:space-between">
+                <div style="min-width:0">
+                  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#A79F8E">THE NAMED POD</div>
+                  <div style="margin-top:8px;font-size:14.5px;line-height:1.8;color:#052E2B">{{ open.pod }}</div>
+                </div>
+                <span style="font-size:12px;color:#8B8375">{{ tPodNote }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ open.hasList }}" hint-placeholder-val="{{ true }}">
+              <div style="padding:18px 22px;border-bottom:1px solid #EDE5D2">
+                <div style="font-size:11.5px;color:#8B8375">{{ tRecLabel }}</div>
+                <div style="display:grid;gap:0;margin-top:12px">
+                  <sc-for list="{{ open.listN }}" as="li" hint-placeholder-count="5">
+                    <div style="display:flex;gap:13px;align-items:baseline;padding:9px 0;border-bottom:1px solid #F5EFE0">
+                      <span aria-hidden="true" dir="ltr" style="flex-shrink:0;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:#2E7CBC">{{ li.n }}</span>
+                      <span style="font-size:14px;line-height:1.75;color:#31403E">{{ li.t }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+            <div style="padding:18px 22px;background:#FBF7EC">
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#A79F8E">WHY IT IS WORTH IT</div>
+              <p style="margin:10px 0 0;font-size:15px;line-height:1.95;color:#31403E">{{ open.why }}</p>
+            </div>
+          </div>
+
+          <sc-if value="{{ open.hasBuyers }}" hint-placeholder-val="{{ true }}">
+            <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:7px;align-items:center">
+              <span style="font-size:12px;color:#8B8375;margin-inline-end:4px">{{ tBoughtBy }}</span>
+              <sc-for list="{{ open.buyerNames }}" as="bn" hint-placeholder-count="3">
+                <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;background:#fff">{{ bn }}</span>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ open.hasAlt }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:12px;font-size:11.5px;line-height:1.8;color:#8B8375">{{ tAlsoFiled }} <span dir="ltr" style="font-family:'IBM Plex Mono',monospace">{{ open.alt }}</span></div>
+          </sc-if>
+
+        </div>
+
+        <div style="flex-shrink:0;background:#F1EAD8;border-top:1px solid #E3D9C2;padding:clamp(15px,2vw,20px) clamp(20px,3vw,34px);display:flex;flex-wrap:wrap;gap:11px 16px;align-items:center;justify-content:space-between">
+          <p style="margin:0;font-size:12.5px;line-height:1.8;color:#6E675A;max-width:44ch">{{ tSheetNote }}</p>
+          <a href="{{ hrefStart }}" style="flex-shrink:0;background:#3E9EEA;color:#06202F;font-size:13.5px;font-weight:600;padding:12px 24px;border-radius:99px;transition:transform 160ms cubic-bezier(.2,.7,.25,1),background-color 200ms cubic-bezier(.2,0,.2,1),box-shadow 200ms ease;will-change:transform" style-hover="transform:translateY(-2px);background-color:#7CC0F4;box-shadow:0 12px 26px -12px rgba(62,158,234,.7)" style-active="transform:translateY(0)">{{ tOrderThis }}</a>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <footer style="background:#052E2B;padding:clamp(32px,5vh,50px) clamp(16px,3.4vw,44px);color:rgba(250,246,236,.72)">
+    <div style="max-width:1360px;margin:0 auto;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between">
+      <div>
+        <sc-if value="{{ isAr }}" hint-placeholder-val="{{ true }}">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;color:#FAF6EC">خلف كل نجاح، كيان</div>
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:rgba(250,246,236,.5);margin-top:6px">Behind every success, a Kayan.</div>
+        </sc-if>
+        <sc-if value="{{ isEn }}" hint-placeholder-val="{{ false }}">
+          <div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;color:#FAF6EC">Behind every success, a Kayan.</div>
+          <div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:13.5px;color:rgba(250,246,236,.5);margin-top:6px">خلف كل نجاح، كيان</div>
+        </sc-if>
+      </div>
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(250,246,236,.45);text-align:left">KYN-L1-READY-INDEX · v2<br>KAY-PRD-001 · KAY-CLT-006 v2.0</div>
+    </div>
+  </footer>
+</div>

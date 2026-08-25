@@ -63,7 +63,7 @@ export default function NativeDcPage({ Logic, template, styles, scripts = [], pr
     document.body.classList.add('home-native');
     if (title) document.title = title;
     scripts.reduce((chain, src) => chain.then(() => ensureScript(src)), Promise.resolve())
-      .then(() => bridgeShadowLinks(navigate)).catch(() => {});
+      .then(() => { bridgeShadowLinks(navigate); logic.forceUpdate?.(); }).catch(() => {});
     logic.componentDidMount?.();
     const onLink = (event) => {
       const anchor = event.target.closest?.('a[href]');

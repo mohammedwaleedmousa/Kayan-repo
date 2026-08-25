@@ -1,0 +1,23 @@
+
+html,body{margin:0;padding:0;background:#FAF6EC;overflow-x:hidden}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:#1E63A8;text-decoration:none}
+a:hover{color:#3E9EEA}
+::selection{background:#3E9EEA;color:#06202F}
+img{max-width:100%}
+p{text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
+input,select,button{font-family:inherit}
+input::placeholder{color:#A79F8E}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #3E9EEA;outline-offset:3px;border-radius:3px}
+@keyframes kFade{from{opacity:0}to{opacity:1}}
+@keyframes kSheet{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes kRise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes kRowIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+@keyframes kDlg{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+/* The nav must not shrink — the title block yields first and ellipsises.
+   Below 1000px the two secondary destinations drop rather than clip mid-word. */
+@media (max-width:1000px){[data-rp-nav] [data-nav-opt]{display:none}}
+[data-rp-row][data-rp-hide]{opacity:0}
+[data-rp-row][data-rp-seen]{animation:kRowIn 420ms cubic-bezier(.16,1,.3,1) both}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important}[data-rp-row][data-rp-hide]{opacity:1}}

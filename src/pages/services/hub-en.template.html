@@ -1,0 +1,427 @@
+<div ref="{{ rootRef }}" dir="ltr" style="font-family:'Instrument Sans','IBM Plex Sans Arabic',sans-serif;color:#143C37;background:#FAF6EC;min-height:100vh;">
+
+<header ref="{{ hdrRef }}" style="position:fixed;top:0;left:0;right:0;z-index:60;background:transparent;border-bottom:1px solid transparent;transition:background .32s ease,border-color .32s ease;">
+  <div aria-hidden="true" style="height:2px;background:linear-gradient(90deg,transparent,#C87A0E 30%,#FFB627 50%,#C87A0E 70%,transparent);"></div>
+  <div style="max-width:1360px;margin:0 auto;padding:0 clamp(14px,3vw,36px);display:flex;align-items:center;gap:clamp(8px,1.6vw,20px);height:72px;">
+    <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:11px;flex-shrink:0;color:#2A1D0C;">
+      <img src="assets/kayan-logo-gold.png" alt="Kayan" style="height:clamp(38px,5vw,48px);width:auto;display:block;filter:brightness(0);">
+    </a>
+    <nav data-nav="" style="flex:1;min-width:0;display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;">
+      <a href="#floor" style="white-space:nowrap;color:rgba(42,29,12,.74);font-size:13.5px;padding:9px 12px;" style-hover="color:#2A1D0C">The floor</a>
+      <a href="#members" style="white-space:nowrap;color:rgba(42,29,12,.74);font-size:13.5px;padding:9px 12px;" style-hover="color:#2A1D0C">Membership</a>
+      <span aria-hidden="true" style="flex:none;width:1px;height:20px;background:rgba(42,29,12,.22);margin:0 6px;"></span>
+      <a href="#cafe" style="white-space:nowrap;color:rgba(42,29,12,.6);font-size:12.5px;padding:9px 10px;" style-hover="color:#2A1D0C">Café</a>
+      <a href="#community" style="white-space:nowrap;color:rgba(42,29,12,.6);font-size:12.5px;padding:9px 10px;" style-hover="color:#2A1D0C">Community</a>
+    </nav>
+    <a href="Line II - The Hub and Cafe.dc.html" dir="rtl" style="flex-shrink:0;white-space:nowrap;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:13px;color:rgba(42,29,12,.62);border:1px solid rgba(42,29,12,.3);border-radius:99px;padding:6px 13px;transition:background .2s ease,color .2s ease;" style-hover="background:rgba(42,29,12,.1);color:#2A1D0C">عربي</a>
+    <a href="#start" style="flex-shrink:0;white-space:nowrap;background:linear-gradient(135deg,#2A1D0C,#8A5B08);color:#FFFFFF;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:linear-gradient(135deg,#412C11,#A8710F)" style-active="transform:scale(.97)">Reserve a seat</a>
+  </div>
+</header>
+
+<section data-hero="" data-screen-label="The Hub &amp; Café · Front" style="position:relative;background:#FAF6EC;">
+  <div style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#F8BE45 0%,#F2A81F 42%,#E09114 74%,#C87A0E 100%);">
+    <div style="position:absolute;inset:0;background:radial-gradient(880px 620px at 24% 46%,rgba(255,248,230,.42),transparent 66%),radial-gradient(900px 460px at 78% -18%,rgba(122,74,28,.28),transparent 64%),radial-gradient(700px 480px at 2% 110%,rgba(122,74,28,.24),transparent 62%);pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,252,240,.11) 0 2px,transparent 2px 10px),repeating-linear-gradient(-45deg,rgba(122,74,28,.09) 0 2px,transparent 2px 10px);pointer-events:none;"></div>
+    <div style="position:relative;max-width:1320px;margin:0 auto;padding:calc(clamp(66px,7.4vh,86px) + clamp(26px,4.4vh,58px)) clamp(20px,4vw,44px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(18px,2.4vw,36px);align-items:center;">
+      <div style="min-width:0;">
+        <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(15px,1.5vw,20px);letter-spacing:.07em;color:#2A1D0C;">THE HUB &amp; CAFÉ <span style="color:rgba(59,39,16,.5);">/</span></div>
+        <h1 data-reveal="" style="margin:clamp(10px,1.4vh,16px) 0 0;font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(34px,4.75vw,64px);line-height:1.14;letter-spacing:-.028em;color:#2A1D0C;max-width:14ch;">Where Aden works. The gathering of capability.</h1>
+        <sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}">
+          <div data-reveal="" dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:clamp(15px,1.55vw,19px);line-height:1.5;color:rgba(42,29,12,.62);margin-top:14px;max-width:30ch;">حيث تعمل عدن، وحيث تجتمع القدرة</div>
+        </sc-if>
+        <div data-reveal="" style="margin:clamp(22px,3vh,30px) 0 0;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.2em;font-weight:600;color:#2A1D0C;">THE GATHERING</div>
+        <p data-reveal="" style="margin:10px 0 0;font-size:clamp(15px,1.42vw,17.5px);line-height:1.8;color:rgba(42,29,12,.88);max-width:36ch;">A physical and digital place for skill to meet opportunity — Kayan's home on the Khormaksar corniche, and the door to everything else it does.</p>
+        <div data-reveal="" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:clamp(24px,3.2vh,34px);">
+          <a href="#members" style="background:#2A1D0C;color:#FFFFFF;font-size:14.5px;font-weight:600;padding:14px 26px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#412C11" style-active="transform:scale(.97)">Reserve a seat</a>
+          <a href="#cafe" style="border:1px solid rgba(42,29,12,.42);color:#2A1D0C;font-size:14.5px;font-weight:500;padding:14px 26px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:rgba(255,252,240,.34)" style-active="transform:scale(.97)">See the café menu</a>
+        </div>
+        <div data-reveal="" data-ring="{{ ringState }}" style="margin-top:clamp(22px,3vh,30px);display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;background:rgba(42,29,12,.1);border:1px solid rgba(42,29,12,.24);border-radius:99px;padding:7px 9px;">
+          <button type="button" onClick="{{ toggleSound }}" style="display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 18px;border:none;border-radius:99px;background:#2A1D0C;color:#FFFFFF;font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#412C11" style-active="transform:scale(.97)">
+            <svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true" style="display:block;"><polygon points="1,1 11,6 1,11" fill="#FFB627"></polygon></svg>
+            <span>{{ soundLabel }}</span>
+          </button>
+          <span data-tone="" aria-hidden="true" style="display:flex;align-items:center;gap:3px;height:20px;">
+            <i style="display:block;width:3px;height:20px;border-radius:2px;background:rgba(42,29,12,.5);transform:scaleY(.2);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:rgba(42,29,12,.62);transform:scaleY(.46);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:#7A4A1C;transform:scaleY(.76);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:#2A1D0C;transform:scaleY(1);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:#7A4A1C;transform:scaleY(.7);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:rgba(42,29,12,.62);transform:scaleY(.42);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:rgba(42,29,12,.5);transform:scaleY(.22);transform-origin:center;"></i>
+          </span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(42,29,12,.6);white-space:nowrap;padding-inline-end:10px;">DOOR CHIME · G3 → C4 → E4</span>
+        </div>
+      </div>
+
+      <div data-reveal="" style="position:relative;z-index:3;min-width:0;align-self:end;top:clamp(18px,2.8vw,40px);margin-inline-end:0;">
+        <div style="position:relative;width:clamp(300px,42vw,640px);max-width:none;margin-inline-start:calc(100% - clamp(300px,42vw,640px));">
+          <div data-halo="" style="position:absolute;inset:-2% 4% 4% 2%;background:radial-gradient(closest-side,rgba(255,251,238,.7),rgba(255,251,238,.32) 55%,transparent 78%);pointer-events:none;"></div>
+          <div data-bird="1" style="position:relative;">
+            <kayan-mark line="hub" ramp="dark" motion="glide" entrance="settle" role="img" aria-label="The gathering — the Hub mark above the Aden reef" style="width:100%;filter:drop-shadow(0 30px 50px rgba(90,55,5,.34)) drop-shadow(0 4px 10px rgba(90,55,5,.2));"></kayan-mark>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="floor" style="position:relative;z-index:1;background:#FAF6EC;padding:clamp(84px,11.5vw,178px) clamp(20px,4vw,44px) clamp(44px,6vh,72px);">
+    <div style="max-width:1320px;margin:0 auto;">
+      <div data-label="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;">The floor <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· ONE FLOOR</span></div>
+      <div data-reveal="" data-cycle="" style="margin-top:18px;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(24px,3.5vw,44px);line-height:1.3;color:#052E2B;min-height:2.6em;">One floor, with <b key="{{ cycleKey }}" style="color:#A8710F;">{{ cycleText }}</b></div>
+      <div data-rails="" style="display:flex;gap:6px;margin-top:6px;max-width:520px;">
+        <span style="flex:1;height:3px;border-radius:2px;background:{{ rail0 }};transition:background .4s ease;"></span>
+        <span style="flex:1;height:3px;border-radius:2px;background:{{ rail1 }};transition:background .4s ease;"></span>
+        <span style="flex:1;height:3px;border-radius:2px;background:{{ rail2 }};transition:background .4s ease;"></span>
+        <span style="flex:1;height:3px;border-radius:2px;background:{{ rail3 }};transition:background .4s ease;"></span>
+        <span style="flex:1;height:3px;border-radius:2px;background:{{ rail4 }};transition:background .4s ease;"></span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(22px,3vw,44px);align-items:start;margin-top:clamp(30px,4vw,48px);">
+        <div style="min-width:0;">
+          <div data-build="" style="--fill:#fff;background:#fff;border:1px solid #E9DFC6;border-radius:18px;padding:clamp(24px,2.6vw,30px) clamp(24px,2.8vw,32px);">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;line-height:1.42;letter-spacing:-.008em;color:#052E2B;">The commons is open. Everything past it is booked.</div>
+            <p style="margin:12px 0 0;font-size:14.5px;line-height:1.85;color:#4A6B64;max-width:52ch;">The shared floor is free for Kayan people and independents — a place to work and to meet others doing the same. Hot desks and the rooms that close are reserved, and billed to a membership.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:14px 20px;margin-top:22px;padding-top:18px;border-top:1px solid transparent;position:relative;">
+              <span data-rule="" aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:1px;background:#EFE4CC;"></span>
+              <div style="display:flex;gap:10px;align-items:flex-start;"><span data-dot="" style="width:9px;height:9px;border-radius:50%;background:#0E6E66;color:#0E6E66;flex:none;margin-top:6px;"></span><span style="font-size:13px;line-height:1.75;color:#4A6B64;">Open seating, no charge</span></div>
+              <div style="display:flex;gap:10px;align-items:flex-start;"><span data-dot="" style="width:9px;height:9px;border-radius:50%;background:#FFB627;color:#FFB627;flex:none;margin-top:6px;"></span><span style="font-size:13px;line-height:1.75;color:#4A6B64;">Desks and rooms, reserved</span></div>
+            </div>
+          </div>
+          <div data-build="" data-build-delay="150" style="--fill:#F2E8D2;margin-top:12px;background:#F2E8D2;border:1px solid #E9DFC6;border-top-left-radius:6px;border-top-right-radius:6px;border-bottom-left-radius:18px;border-bottom-right-radius:18px;padding:20px clamp(24px,2.8vw,32px);display:flex;gap:14px;align-items:flex-start;">
+            <span data-accentline="" style="width:20px;height:3px;border-radius:2px;background:#7A4A1C;flex:none;margin-top:10px;"></span>
+            <div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;">Everyone gets in</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;max-width:50ch;">Step-free entrance, an accessible washroom, and circulation wide enough for a wheelchair. Access is a design line item, not a sign on the wall.</p></div>
+          </div>
+        </div>
+
+        <div style="min-width:0;">
+          <div data-reveal="" style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+            <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;">Energy <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;white-space:nowrap;">· POWERED BY THE SUN</span></div>
+            <a href="Kayan Hub.html" style="font-size:13px;white-space:nowrap;">Location &amp; distances →</a>
+          </div>
+          <div data-build="" data-solar="" data-build-delay="90" style="--fill:#FFFFFF;--fillimg:linear-gradient(165deg,#FFF3D6,#FFFFFF 66%);position:relative;overflow:hidden;margin-top:16px;background:linear-gradient(165deg,#FFF3D6,#FFFFFF 66%);border:1px solid #E9DFC6;border-radius:18px;padding:clamp(24px,3vw,36px);">
+            <i data-sweep="" aria-hidden="true"></i>
+            <svg data-sunwrap="" aria-hidden="true" viewBox="0 0 200 200" style="position:absolute;top:-46px;inset-inline-end:-38px;width:clamp(150px,20vw,232px);height:auto;opacity:.55;pointer-events:none;">
+              <circle data-sunc="" cx="100" cy="100" r="21" fill="#FFB627" fill-opacity=".9"></circle>
+              <g fill="none" stroke="#E09114" stroke-width="1.3" stroke-linecap="round">
+                <circle data-ringc="1" cx="100" cy="100" r="38" stroke-opacity=".55"></circle>
+                <circle data-ringc="2" cx="100" cy="100" r="56" stroke-opacity=".34"></circle>
+                <circle data-ringc="3" cx="100" cy="100" r="76" stroke-opacity=".2"></circle>
+              </g>
+            </svg>
+            <div style="position:relative;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.22;color:#052E2B;max-width:16ch;">Kayan runs on <span style="color:#A8710F;">the sun</span></div>
+            <p style="position:relative;margin:14px 0 0;max-width:52ch;font-size:14.5px;line-height:1.85;color:#4A6B64;">An environmental commitment, not an operating convenience: energy is stored through the day, work carries on past sunset, and the public grid is backup, never the base.</p>
+          </div>
+        </div>
+      </div>
+
+      <div data-stats="" style="position:relative;margin-top:clamp(26px,3.4vw,42px);border-top:1px solid #E9DFC6;display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));">
+        <div style="position:relative;padding:20px 20px 4px;border-inline-end:1px solid #E9DFC6;"><div style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#0E6E66;">Free</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">The shared commons</div></div>
+        <div style="position:relative;padding:20px 20px 4px;border-inline-end:1px solid #E9DFC6;"><div data-count="" style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#A8710F;">$20</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">Monthly membership · YER 30,000</div></div>
+        <div style="position:relative;padding:20px 20px 4px;border-inline-end:1px solid #E9DFC6;"><div data-count="" style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#A8710F;">100%</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">Sun-powered working day</div></div>
+        <div style="position:relative;padding:20px 20px 4px;"><div style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#052E2B;">Two</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">Internet lines, separate providers</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" data-screen-label="Why here" style="background:#F2E8D2;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;">Why here <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· RELIABILITY IS THE PRODUCT</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#052E2B;max-width:26ch;">What the city struggles with daily, this floor delivers daily</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(216px,1fr));gap:1px;background:#E9DFC6;border:1px solid #E9DFC6;border-radius:18px;overflow:hidden;margin-top:32px;">
+      <div data-reveal="" data-hovercell="" style="background:#fff;padding:24px 22px 28px;"><div data-hk="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#A8710F;">01 · POWER</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">Power that holds</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Solar by day, batteries by night, grid as backup. A full working day, not a handful of hours.</p></div>
+      <div data-reveal="" data-hovercell="" style="background:#fff;padding:24px 22px 28px;"><div data-hk="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#A8710F;">02 · LINK</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">Internet that survives the call</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">A primary line and a second from a different provider, so the client call reaches its end.</p></div>
+      <div data-reveal="" data-hovercell="" style="background:#fff;padding:24px 22px 28px;"><div data-hk="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#A8710F;">03 · QUIET</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">Quiet when you need it</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">A door that closes for deep work or a client meeting: sound stays in, and the background holds up on camera.</p></div>
+      <div data-reveal="" data-hovercell="" style="background:#fff;padding:24px 22px 28px;"><div data-hk="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#A8710F;">04 · ADDRESS</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">An address you can put in a contract</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">A professional address that receives mail and a place a client can actually visit.</p></div>
+      <div data-reveal="" data-hovercell="" style="background:#fff;padding:24px 22px 28px;"><div data-hk="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#A8710F;">05 · PEOPLE</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">People building alongside you</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Working alone is how people stop. Here there are peers and collaborators — and first briefs come from the next table.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="sun" data-screen-label="Powered by the sun" style="background:linear-gradient(180deg,#FFF7E4,#FAF6EC);padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;top:-140px;inset-inline-end:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,182,39,.3),transparent 68%);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;">How we run <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· OPERATING COMMITMENTS</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;color:#052E2B;max-width:24ch;">We are powered by the sun — and that is policy, not decoration.</h2>
+    <p data-reveal="" style="margin:14px 0 0;max-width:66ch;font-size:15.5px;line-height:1.85;color:#4A6B64;">The array on the roof is the visible half of an operating policy: how this floor treats energy, waste, and — above all — who gets to work here. Three commitments, written the way we write everything: measurable, and audited like the accounts.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:1px;background:#E9DFC6;border:1px solid #E9DFC6;border-radius:20px;overflow:hidden;margin-top:30px;">
+      <div data-reveal="" style="background:#FFFFFF;padding:clamp(22px,2.8vw,30px);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#A8710F;">01 · ENVIRONMENT</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;">Sun first, waste last</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">The working day runs on solar; batteries carry the evening; the grid is backup, never the base. The café and floor are phasing out single-use plastic — glass, ceramic and refill by default — and paper is the exception: records live in the ledger, not the drawer.</p>
+      </div>
+      <div data-reveal="" style="background:linear-gradient(160deg,#FFF3D6,#FFFFFF 70%);padding:clamp(22px,2.8vw,30px);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#A8710F;">02 · WOMEN AT THE CENTRE</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;">A 60% floor, not a ceiling</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Kayan commits to a minimum of 60% women across its task force — measured monthly, published with the audit, and carried into every cohort and pod we form. Not a pledge for the brochure; a number on the books.</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;padding:clamp(22px,2.8vw,30px);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#A8710F;">03 · INCLUSION BY DESIGN</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;">Every ability, one door</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">A step-free ground floor was a choice, not a coincidence. People of all abilities are not accommodated here — they are expected: in the commons, in the cohorts, and on the payroll. Capability has no single body.</p>
+      </div>
+    </div>
+    <div data-reveal="" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#8A8272;">ALIGNED WITH</span>
+      <span style="border:1px solid #E9DFC6;background:#FFFFFF;border-radius:99px;padding:6px 12px;font-size:12px;color:#4A6B64;"><b style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#A8710F;">SDG 5</b> Gender equality</span>
+      <span style="border:1px solid #E9DFC6;background:#FFFFFF;border-radius:99px;padding:6px 12px;font-size:12px;color:#4A6B64;"><b style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#A8710F;">SDG 7</b> Affordable clean energy</span>
+      <span style="border:1px solid #E9DFC6;background:#FFFFFF;border-radius:99px;padding:6px 12px;font-size:12px;color:#4A6B64;"><b style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#A8710F;">SDG 8</b> Decent work</span>
+      <span style="border:1px solid #E9DFC6;background:#FFFFFF;border-radius:99px;padding:6px 12px;font-size:12px;color:#4A6B64;"><b style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#A8710F;">SDG 10</b> Reduced inequalities</span>
+      <span style="border:1px solid #E9DFC6;background:#FFFFFF;border-radius:99px;padding:6px 12px;font-size:12px;color:#4A6B64;"><b style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#A8710F;">SDG 12</b> Responsible consumption</span>
+      <span style="border:1px solid #E9DFC6;background:#FFFFFF;border-radius:99px;padding:6px 12px;font-size:12px;color:#4A6B64;"><b style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#A8710F;">SDG 13</b> Climate action</span>
+    </div>
+    <p data-reveal="" style="margin:14px 0 0;font-size:12.5px;line-height:1.8;color:#8A8272;max-width:76ch;">These commitments sit in Kayan's operating policy alongside the escrow and verification rules — same register, same monthly audit, same consequences when missed.</p>
+  </div>
+</section>
+
+<section id="community" data-screen-label="Community" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;">Community <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· A COMPANY BECOMES A PLACE</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#052E2B;max-width:26ch;">This floor is how a company becomes a place</h2>
+    <p data-reveal="" style="margin:14px 0 0;max-width:66ch;font-size:15.5px;line-height:1.85;color:#4A6B64;">The Hub isn't a perk at the edge of Kayan — it's the door people come through. Delivery teams meet their clients here, training cohorts run here, and independents find somewhere to belong between engagements.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:30px;">
+      <div data-reveal="" data-hovercard="" style="background:#fff;border:1px solid #E9DFC6;border-top:4px solid #3E9EEA;border-radius:18px;padding:24px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">L1 · MANAGED DELIVERY</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:9px;">A room worth meeting a client in</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Kickoffs and milestone reviews happen in a room an international buyer will accept.</p><a href="Line I - Managed Delivery EN.dc.html" style="display:inline-block;margin-top:12px;font-size:13px;">Managed Delivery →</a></div>
+      <div data-reveal="" data-hovercard="" style="background:#fff;border:1px solid #E9DFC6;border-top:4px solid #FF6250;border-radius:18px;padding:24px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#C8443A;">L3 · TALENT</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:9px;">A hall where cohorts run</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">A cohort forms here and then works from here. The distance from training to first brief is one floor.</p></div>
+      <div data-reveal="" data-hovercard="" style="background:#fff;border:1px solid #E9DFC6;border-top:4px solid #3FA75B;border-radius:18px;padding:24px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7D46;">L4 · CIVIC</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:9px;">A door open to the city</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Open sessions and community workshops are hosted in the hall, announced before they happen.</p></div>
+    </div>
+    <div data-reveal="" style="margin-top:16px;background:#F2E8D2;border:1px solid #E9DFC6;border-radius:18px;padding:22px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;">A calendar that keeps it alive</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Workshops, meetups and launches through the month, posted on the door and on this page in advance.</p></div>
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;">The hall books out</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Hourly or by the day, to anyone — under the same house rules: no partisan activity, no party to a conflict.</p></div>
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;">Neutral by its rules</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:#4A6B64;">Neutrality is written into the house rules rather than left to good intentions — which is why everyone is received on equal footing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="members" data-screen-label="Membership" style="background:#2A1D0C;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 88% -10%,rgba(255,182,39,.2),transparent 62%);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#FFB627;font-weight:500;">Membership <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· ONE OPEN DOOR</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#FAF6EC;max-width:26ch;">The commons is open. Everything else has a published price.</h2>
+    <p data-reveal="" style="margin:14px 0 0;max-width:64ch;font-size:15.5px;line-height:1.85;color:rgba(250,246,236,.72);">No negotiating at the door. Membership is a contract, and you know what you pay, what you get, and when it ends before you sign it.</p>
+
+    <div data-reveal="" style="margin-top:30px;border:1px solid rgba(14,110,102,.55);background:rgba(14,110,102,.16);border-radius:18px;padding:22px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;align-items:center;">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#FAF6EC;">The shared commons</span><span style="background:#0E6E66;color:#FFFFFF;font-size:11.5px;font-weight:600;padding:3px 12px;border-radius:99px;">Free</span></div>
+        <p style="margin:9px 0 0;font-size:14px;line-height:1.8;color:rgba(250,246,236,.8);max-width:54ch;">Open seating for Kayan people and independents: work, and meet people like you — the conversation at the next table is often how the first job starts. Entry by card, seats as available.</p>
+      </div>
+      <div style="font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.7);border-inline-start:1px solid rgba(250,246,236,.2);padding-inline-start:20px;">The commons doesn't include an assigned desk or a room that closes. Those are booked on the memberships below.</div>
+    </div>
+
+    <div data-reveal="" style="margin-top:16px;border:1px solid rgba(250,246,236,.16);border-radius:20px;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:13px 22px;background:rgba(250,246,236,.06);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(250,246,236,.55);"><span>MEMBERSHIP</span><span>MONTHLY · YER</span><span>INCLUDES</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:15px 22px;border-top:1px solid rgba(250,246,236,.12);align-items:baseline;" data-memrow="">
+        <span style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;"><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#FAF6EC;">Monthly</span><span style="background:#FFB627;color:#2A1D0C;font-size:11px;font-weight:600;padding:2px 10px;border-radius:99px;">Most popular</span></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FFB627;">$20<span style="display:block;font-size:11px;color:rgba(250,246,236,.55);margin-top:2px;">YER 30,000</span></span>
+        <span style="font-size:14px;line-height:1.75;color:rgba(250,246,236,.76);">Six days a month, any open desk, café included</span>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:15px 22px;border-top:1px solid rgba(250,246,236,.12);align-items:baseline;" data-memrow="">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#FAF6EC;">Night shift</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FFB627;">$12<span style="display:block;font-size:11px;color:rgba(250,246,236,.55);margin-top:2px;">YER 18,000</span></span>
+        <span style="font-size:14px;line-height:1.75;color:rgba(250,246,236,.76);">Evenings and weekends — for the freelancer whose daylight belongs to a day job</span>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:15px 22px;border-top:1px solid rgba(250,246,236,.12);align-items:baseline;" data-memrow="">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#FAF6EC;">Flexible</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FFB627;">$40<span style="display:block;font-size:11px;color:rgba(250,246,236,.55);margin-top:2px;">YER 60,000</span></span>
+        <span style="font-size:14px;line-height:1.75;color:rgba(250,246,236,.76);">Twelve days a month, plus ten meeting-room hours</span>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:15px 22px;border-top:1px solid rgba(250,246,236,.12);align-items:baseline;" data-memrow="">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#FAF6EC;">Resident</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FFB627;">$60<span style="display:block;font-size:11px;color:rgba(250,246,236,.55);margin-top:2px;">YER 90,000</span></span>
+        <span style="font-size:14px;line-height:1.75;color:rgba(250,246,236,.76);">Every working day, first light to close — a seat always held, no assigned desk needed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:15px 22px;border-top:1px solid rgba(250,246,236,.12);align-items:baseline;" data-memrow="">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#FAF6EC;">Pod room</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FFB627;">$100<span style="display:block;font-size:11px;color:rgba(250,246,236,.55);margin-top:2px;">YER 150,000</span></span>
+        <span style="font-size:14px;line-height:1.75;color:rgba(250,246,236,.76);">A closed room for an active team of up to five, by availability</span>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:15px 22px;border-top:1px solid rgba(250,246,236,.12);align-items:baseline;background:rgba(250,246,236,.05);">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#FAF6EC;">Remote</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FFB627;">$10<span style="display:block;font-size:11px;color:rgba(250,246,236,.55);margin-top:2px;">YER 15,000</span></span>
+        <span style="font-size:14px;line-height:1.75;color:rgba(250,246,236,.76);">Professional address, mail, and community access</span>
+      </div>
+    </div>
+
+    <div data-reveal="" style="margin-top:18px;background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.14);border-radius:16px;padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;">
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#FAF6EC;">Rooms are booked ahead</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.68);">By the hour or the day, for members and non-members, set up before you arrive.</p></div>
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#FAF6EC;">Payment at the start of the month</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.68);">Either side can end the contract on fifteen days' notice, with no penalty clause.</p></div>
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#FAF6EC;">On an active engagement, you sit free</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.68);">Anyone working a live engagement through Kayan holds a seat at no charge for its duration.</p></div>
+    </div>
+    <p data-reveal="" style="margin:14px 0 0;font-size:12.5px;line-height:1.85;color:rgba(250,246,236,.5);max-width:80ch;">Priced in dollars, payable in either currency at the house card rate — today $1 = YER 1,500 — posted at the door and on this page, updated openly.</p>
+  </div>
+</section>
+
+<section id="cafe" data-screen-label="Café &amp; menu" style="background:#34250F;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,182,39,.06) 0 2px,transparent 2px 11px),repeating-linear-gradient(-45deg,rgba(255,182,39,.05) 0 2px,transparent 2px 11px);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" data-cafehead="" style="position:relative;font-family:'Alexandria',sans-serif;font-size:13.5px;color:#FFB627;font-weight:500;"><i data-steam="" aria-hidden="true" style="inset-inline-start:-14px;"></i><i data-steam="" aria-hidden="true" style="inset-inline-start:-6px;"></i><i data-steam="" aria-hidden="true" style="inset-inline-start:2px;"></i>The café <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· THE CAFÉ</span></div>
+    <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.9vw,52px);line-height:1.2;color:#FAF6EC;max-width:22ch;">From the land of coffee, a cup that earns it</h2>
+    <p data-reveal="" style="margin:18px 0 0;max-width:64ch;font-size:16px;line-height:1.9;color:rgba(250,246,236,.78);">Yemen is coffee country, and the café here serves it properly: brewed in front of you, juice pressed to order, and light plates that don't weigh down a working day. Open to members and visitors on the same terms.</p>
+
+    <div data-reveal="" style="margin-top:32px;border:1px solid rgba(250,246,236,.18);border-radius:22px;overflow:hidden;background:rgba(250,246,236,.04);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(262px,1fr));gap:1px;background:rgba(250,246,236,.14);">
+        <div data-menucol="" data-reveal="" style="background:#34250F;padding:26px 24px 28px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#FFB627;">COFFEE</div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#FAF6EC;margin-top:9px;">Coffee</div>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Yemeni coffee with cardamom</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">Yemeni beans, brewed on the flame, poured from a dallah</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Qishr with ginger</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">From the coffee husk — hot and light</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Espresso &amp; macchiato</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">Single or double</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Latte &amp; cappuccino</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">Fresh milk, plant-based on request</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Iced coffee</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">For an Aden summer</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Adeni milk tea</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">With cardamom — better in the evening than the morning</div></div>
+          </div>
+        </div>
+        <div data-menucol="" data-reveal="" style="background:#34250F;padding:26px 24px 28px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#FFB627;">JUICE</div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#FAF6EC;margin-top:9px;">Fresh juice</div>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Mango</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">In season — and where this line's colour comes from</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Lemon &amp; mint</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">Chilled, no added sugar on request</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Guava</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">Heavy enough to replace a meal</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Orange</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">Pressed to order</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Avocado with honey</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">Yemeni honey — for before a long session</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Seasonal cocktail</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">Changes with the market</div></div>
+          </div>
+        </div>
+        <div data-menucol="" data-reveal="" style="background:#34250F;padding:26px 24px 28px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#FFB627;">KITCHEN</div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#FAF6EC;margin-top:9px;">Salads &amp; light plates</div>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Green salad</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">Seasonal leaves, lemon and olive oil</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Grilled chicken salad</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">A full plate — a working lunch</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Tuna salad</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">Yemeni tuna, onion and lemon</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Hummus with tahini</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">With warm bread</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Breakfast plate</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">Eggs, cheese, za'atar and bread</div></div>
+            <div data-item=""><div style="font-size:14.5px;color:#FAF6EC;">Pastry of the day</div><div style="font-size:12.5px;line-height:1.6;color:rgba(250,246,236,.6);margin-top:3px;">Baked in the morning, usually gone by noon</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:16px 24px;border-top:1px solid rgba(250,246,236,.14);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">
+        <span style="font-size:13px;line-height:1.75;color:rgba(250,246,236,.62);">The menu is seasonal, and anything sold out comes off the board that day. Prices are posted, and the bill is the same for members and visitors.</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(250,246,236,.45);white-space:nowrap;">MENU · KYN-HUB-CAFE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rules" data-screen-label="House rules" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;">House rules <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· WRITTEN ON THE DOOR</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#052E2B;max-width:26ch;">A place governed by rules written on its door</h2>
+    <div style="display:flex;flex-direction:column;gap:1px;background:#E9DFC6;border:1px solid #E9DFC6;border-radius:18px;overflow:hidden;margin-top:28px;">
+      <div data-reveal="" data-rulerow="" style="--tint:rgba(255,182,39,.12);background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#A8710F;">01</span><span style="font-size:14.5px;line-height:1.8;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">Entry by card.</b> Visitors come in on an invitation in a member's name.</span></div>
+      <div data-reveal="" data-rulerow="" style="--tint:rgba(62,158,234,.10);background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#A8710F;">02</span><span style="font-size:14.5px;line-height:1.8;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">No photography without consent.</b> No one's image is published for marketing.</span></div>
+      <div data-reveal="" data-rulerow="" style="--tint:rgba(63,167,91,.10);background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#A8710F;">03</span><span style="font-size:14.5px;line-height:1.8;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">Quiet is kept where it belongs.</b> The commons is for talking and working both; the rooms are for silence.</span></div>
+      <div data-reveal="" data-rulerow="" style="--tint:rgba(255,98,80,.09);background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#A8710F;">04</span><span style="font-size:14.5px;line-height:1.8;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">No partisan activity.</b> And no event for a party to a conflict. The place is neutral by rule.</span></div>
+      <div data-reveal="" data-rulerow="" style="--tint:rgba(168,113,15,.12);background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#A8710F;">05</span><span style="font-size:14.5px;line-height:1.8;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">Hours are published.</b> On the door and on this page, and any unplanned closure is announced as it happens.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="place" data-screen-label="Location" style="background:#F2E8D2;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;">Location <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· WHERE IT SITS</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.24;color:#052E2B;max-width:26ch;">On the Abyan coast, in the middle of Khormaksar</h2>
+    <div data-reveal="" data-place="" style="position:relative;margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(16px,2.2vw,28px);align-items:stretch;">
+
+      <div style="position:relative;min-width:0;display:flex;border:1px solid #E9DFC6;border-radius:20px;overflow:hidden;background:#E7DCC2;box-shadow:0 14px 34px rgba(42,29,12,.08);min-height:clamp(300px,42vh,430px);">
+        <iframe src="hub-map-en.html" title="Khormaksar, Aden — the Hub site on the map" loading="lazy" style="display:block;flex:1;width:100%;min-height:100%;border:0;"></iframe>
+        <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;border-radius:20px;box-shadow:inset 0 0 0 1px rgba(42,29,12,.08),inset 0 18px 40px -30px rgba(42,29,12,.5);"></div>
+        <div style="position:absolute;left:14px;top:14px;pointer-events:none;display:flex;align-items:center;gap:9px;background:rgba(250,246,236,.9);border:1px solid #E9DFC6;border-radius:3px;padding:7px 11px;">
+          <span data-pin="" aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#E09114;flex:none;display:block;"></span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#A8710F;">12°49′N · 45°02′E</span>
+        </div>
+      </div>
+
+      <div style="min-width:0;display:flex;flex-direction:column;gap:12px;">
+        <div style="display:grid;gap:1px;background:#EFE4CC;border:1px solid #E9DFC6;border-radius:20px;overflow:hidden;">
+          <div data-tile="" style="background:#fff;padding:18px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A8272;">DISTRICT</div><div style="font-size:15.5px;color:#052E2B;margin-top:6px;">Khormaksar · Abyan coast</div></div>
+          <div data-tile="" style="background:#fff;padding:18px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A8272;">CITY</div><div style="font-size:15.5px;color:#052E2B;margin-top:6px;">Aden, Republic of Yemen</div></div>
+          <div data-tile="" style="background:#fff;padding:18px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A8272;">HOURS</div><div style="font-size:15.5px;color:#052E2B;margin-top:6px;">Published on the door before opening</div></div>
+        </div>
+        <div style="background:#fff;border:1px solid #E9DFC6;border-radius:20px;padding:20px 22px;display:flex;flex-direction:column;gap:16px;flex:1;justify-content:space-between;">
+          <p style="margin:0;font-size:14px;line-height:1.8;color:#4A6B64;max-width:52ch;">The site faces the sea, a short drive from the airport and from the city centre. Detailed map and distances are on the location page.</p>
+          <a href="Kayan Hub.html" style="align-self:flex-start;background:#2A1D0C;color:#FFFFFF;font-size:13.5px;font-weight:600;padding:12px 22px;border-radius:99px;white-space:nowrap;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#412C11" style-active="transform:scale(.97)">Open the map</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="start" data-screen-label="Start" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-build="" data-closing="" style="--fill:#2A1D0C;position:relative;overflow:hidden;background:#2A1D0C;border-radius:24px;padding:clamp(30px,4vw,56px) clamp(26px,3.5vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(26px,3.4vw,52px);align-items:center;">
+      <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(620px 420px at 92% -20%,rgba(255,182,39,.22),transparent 66%),radial-gradient(420px 320px at 4% 112%,rgba(255,182,39,.08),transparent 64%);"></div>
+      <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;opacity:.05;background-image:linear-gradient(rgba(250,246,236,.9) 1px,transparent 1px),linear-gradient(90deg,rgba(250,246,236,.9) 1px,transparent 1px);background-size:100% 62px,62px 100%;"></div>
+      <i data-sweep="" aria-hidden="true"></i>
+      <div style="position:relative;min-width:0;">
+        <div data-label2="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;color:rgba(255,182,39,.85);">THE HUB &amp; CAFÉ · ADEN · YEMEN</div>
+        <div style="margin-top:16px;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(22px,2.9vw,36px);line-height:1.28;letter-spacing:-.015em;color:#FAF6EC;max-width:26ch;">Come in, or reserve a seat — the Hub manager replies within one working day.</div>
+        <sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}">
+          <div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:14.5px;line-height:1.9;color:rgba(250,246,236,.58);margin-top:14px;">تفضل بزيارتنا، أو احجز مقعدك</div>
+        </sc-if>
+        <span data-rule="" aria-hidden="true" style="display:block;height:1px;background:linear-gradient(90deg,rgba(255,182,39,.6),rgba(250,246,236,.08));margin-top:clamp(20px,2.6vw,30px);"></span>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;gap:12px;">
+        <a href="Kayan Hub.html" style="display:flex;align-items:center;justify-content:space-between;gap:14px;background:#FFB627;color:#2A1D0C;font-size:15px;font-weight:600;padding:17px 24px;border-radius:4px;box-shadow:0 16px 34px rgba(255,182,39,.22);transition:transform 180ms cubic-bezier(.23,1,.32,1),background .2s ease,box-shadow .3s ease;" style-hover="background:#FFC94F;transform:translateY(-2px);box-shadow:0 20px 42px rgba(255,182,39,.3)" style-active="transform:translateY(0) scale(.985)"><span>Reserve a seat</span><span aria-hidden="true" style="font-size:17px;">→</span></a>
+        <a href="Line I - Managed Delivery EN.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid rgba(250,246,236,.3);color:#FAF6EC;font-size:15px;font-weight:500;padding:17px 24px;border-radius:4px;transition:transform 180ms cubic-bezier(.23,1,.32,1),background .2s ease,border-color .2s ease;" style-hover="background:rgba(250,246,236,.09);border-color:rgba(250,246,236,.5);transform:translateY(-2px)" style-active="transform:translateY(0) scale(.985)"><span>Or see Managed Delivery</span><span aria-hidden="true" style="font-size:17px;opacity:.6;">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<kayan-line-audio motif="hub" accent="#B4571E"></kayan-line-audio>
+<kayan-compass current="line2"></kayan-compass>
+
+<footer data-screen-label="The Hub &amp; Café · Closing" style="position:relative;overflow:hidden;background:#2A1D0C;padding:clamp(48px,7vh,76px) clamp(20px,4vw,44px) 28px;color:rgba(250,246,236,.68);">
+  <div aria-hidden="true" style="position:absolute;inset-inline:0;top:0;height:2px;background:linear-gradient(90deg,transparent,#C87A0E 30%,#FFB627 50%,#C87A0E 70%,transparent);"></div>
+  <kayan-mark line="hub" tone="lift" aria-hidden="true" style="position:absolute;left:-5%;bottom:-18%;width:min(38%,420px);opacity:.06;pointer-events:none;"></kayan-mark>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="margin-bottom:clamp(30px,5vh,52px);">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.26em;color:rgba(255,182,39,.6);">CLOSING · KYN-LINE-II</div>
+      <div style="margin-top:14px;font-family:'Alexandria',sans-serif;font-weight:200;font-size:clamp(28px,4.8vw,56px);line-height:1.2;color:#FAF6EC;letter-spacing:-.01em;">Behind every success, a <b style="font-weight:800;background:linear-gradient(135deg,#C87A0E,#FFB627 55%,#C87A0E);-webkit-background-clip:text;background-clip:text;color:transparent;">Kayan.</b></div>
+      <sc-if value="{{ showArabic }}" hint-placeholder-val="{{ true }}">
+        <div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:13px;color:rgba(250,246,236,.42);margin-top:14px;">خلف كل نجاح، كيان</div>
+      </sc-if>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(24px,3vw,40px);align-items:start;">
+      <div>
+        <img src="assets/kayan-logo-gold.png" alt="Kayan" style="height:88px;width:auto;display:block;">
+        <div style="margin-top:16px;font-size:12.5px;line-height:2.05;color:rgba(250,246,236,.58);max-width:34ch;">A working floor on the Khormaksar corniche: uninterrupted power, guaranteed connectivity, and coffee from the land that first brewed it.</div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,182,39,.75);">THE FLOOR</div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-size:13.5px;">
+          <a href="#floor" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">The floor</a>
+          <a href="#why" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">Why here</a>
+          <a href="#members" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">Memberships</a>
+          <a href="#cafe" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">The café</a>
+          <a href="#rules" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">House rules</a>
+          <a href="#place" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">Location</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,182,39,.75);">BOOKING</div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-size:13.5px;">
+          <a href="#start" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">Reserve a seat</a>
+          <a href="Kayan Hub.html" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">Open the map</a>
+          <a href="#members" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">Monthly membership · $20</a>
+          <a href="#floor" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">The shared commons · Free</a>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,182,39,.75);margin-top:22px;">ALSO ON THIS FLOOR</div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-size:13.5px;">
+          <a href="Line I - Managed Delivery EN.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">Or see Managed Delivery</a>
+          <a href="Line II - The Hub and Cafe.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">هذه الصفحة بالعربية</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,182,39,.75);">ADEN · YEMEN</div>
+        <div style="font-size:13.5px;line-height:1.95;margin-top:14px;color:rgba(250,246,236,.72);">Khormaksar, Corniche Road,<br>by the Relax Hotel, Aden</div>
+        <a href="Kayan Hub.html" style="display:inline-block;margin-top:12px;font-size:13px;color:rgba(255,182,39,.85);" style-hover="color:#FFB627">Open the map</a>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;margin-top:12px;color:rgba(255,182,39,.55);">12°49′N · 45°02′E</div>
+      </div>
+    </div>
+    <div style="margin-top:40px;border-top:1px solid rgba(250,246,236,.1);padding-top:20px;display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;font-size:12px;color:rgba(250,246,236,.5);">
+      <span>Kayan · Aden</span>
+      <a href="Line II - The Hub and Cafe.dc.html" style="color:rgba(255,182,39,.8);">عربي</a>
+      <span style="margin-inline-start:auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(250,246,236,.45);">THE HUB &amp; CAFÉ · ADEN · YEMEN</span>
+    </div>
+  </div>
+</footer>
+
+</div>

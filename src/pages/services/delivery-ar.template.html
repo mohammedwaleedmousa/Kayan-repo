@@ -1,0 +1,553 @@
+<div ref="{{ rootRef }}" dir="rtl" style="font-family:'IBM Plex Sans Arabic','Instrument Sans',sans-serif;color:#143C37;background:#FAF6EC;min-height:100vh;">
+
+<!-- ===== MASTHEAD ===== -->
+<header ref="{{ hdrRef }}" style="position:fixed;top:0;left:0;right:0;z-index:60;background:transparent;border-bottom:1px solid transparent;transition:background .32s ease,border-color .32s ease;">
+  <div aria-hidden="true" style="height:2px;background:linear-gradient(90deg,transparent,#2E7CBC 30%,#7FC3F0 50%,#2E7CBC 70%,transparent);"></div>
+  <div style="max-width:1360px;margin:0 auto;padding:0 clamp(14px,3vw,36px);display:flex;align-items:center;gap:clamp(8px,1.6vw,20px);height:72px;">
+    <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:11px;flex-shrink:0;color:#FFFFFF;">
+      <kayan-mark line="cream" tone="bright" aria-hidden="true" style="width:calc(1.175 * clamp(38px,5vw,48px));flex-shrink:0;"></kayan-mark>
+      <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(17px,1.7vw,20px);letter-spacing:-.005em;line-height:1;">كيان</span>
+    </a>
+    <nav data-nav="" style="flex:1;min-width:0;display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;">
+      <a href="#risks" style="white-space:nowrap;color:rgba(255,255,255,.78);font-size:13.5px;padding:9px 12px;" style-hover="color:#FFFFFF">المخاطر</a>
+      <a href="#gates" style="white-space:nowrap;color:rgba(255,255,255,.78);font-size:13.5px;padding:9px 12px;" style-hover="color:#FFFFFF">البوابات</a>
+      <a href="#tiers" style="white-space:nowrap;color:rgba(255,255,255,.78);font-size:13.5px;padding:9px 12px;" style-hover="color:#FFFFFF">الطبقات</a>
+      <span aria-hidden="true" style="flex:none;width:1px;height:20px;background:rgba(255,255,255,.26);margin:0 6px;"></span>
+      <a href="#ready" style="white-space:nowrap;color:rgba(255,255,255,.6);font-size:12.5px;padding:9px 10px;" style-hover="color:#FFFFFF">الرف الجاهز</a>
+      <a href="#money" style="white-space:nowrap;color:rgba(255,255,255,.6);font-size:12.5px;padding:9px 10px;" style-hover="color:#FFFFFF">مسار المال</a>
+    </nav>
+    <a href="Kayan Portal.dc.html" style="flex-shrink:0;white-space:nowrap;color:rgba(255,255,255,.78);font-size:13.5px;" style-hover="color:#FFFFFF">دخول</a>
+    <a href="Line I - Managed Delivery EN.dc.html" dir="ltr" style="flex-shrink:0;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.28);border-radius:99px;padding:6px 12px;transition:background .2s ease,color .2s ease;" style-hover="background:rgba(255,255,255,.16);color:#FFFFFF">EN</a>
+    <a href="#start" style="flex-shrink:0;white-space:nowrap;background:linear-gradient(135deg,#06202F,#2E7CBC);color:#FFFFFF;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:linear-gradient(135deg,#0C3049,#3E92D6)" style-active="transform:scale(.97)">اطلب نطاق عمل</a>
+  </div>
+</header>
+
+<!-- ===== HERO + PLATE STRIP (one surface, the bird straddles the seam) ===== -->
+<section data-hero="" data-screen-label="التسليم المدار · الواجهة" style="position:relative;background:#FAF6EC;">
+
+  <div style="position:relative;background:linear-gradient(180deg,#2A76B8 0%,#2F83C6 42%,#2470AF 74%,#1A5F97 100%);">
+    <div style="position:absolute;inset:0;background:radial-gradient(880px 620px at 26% 48%,rgba(255,255,255,.3),transparent 66%),radial-gradient(900px 460px at 76% -16%,rgba(6,32,47,.26),transparent 64%),radial-gradient(700px 480px at 4% 108%,rgba(6,32,47,.22),transparent 62%);pointer-events:none;"></div>
+    <div style="position:relative;max-width:1320px;margin:0 auto;padding:calc(clamp(66px,7.4vh,86px) + clamp(26px,4.4vh,58px)) clamp(20px,4vw,44px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(18px,2.4vw,36px);align-items:center;">
+
+      <div style="min-width:0;">
+        <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-weight:400;font-size:clamp(16px,1.66vw,22px);letter-spacing:.02em;color:#D3E8FA;">التسليم المدار <span style="color:rgba(255,255,255,.5);">/</span></div>
+        <h1 data-reveal="" style="margin:clamp(10px,1.4vh,16px) 0 0;font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(34px,4.75vw,64px);line-height:1.17;letter-spacing:-.025em;color:#FFFFFF;max-width:15ch;">تطلب النتيجة. نضمن الجودة والموعد، ونحمل المخاطرة.</h1>
+        <sc-if value="{{ showLatin }}" hint-placeholder-val="{{ true }}">
+          <div data-reveal="" dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:clamp(15px,1.55vw,19px);line-height:1.42;color:rgba(255,255,255,.68);margin-top:14px;max-width:32ch;text-align:right;">You ask for an outcome. We guarantee quality and deadline — and carry the risk.</div>
+        </sc-if>
+
+        <div data-reveal="" style="margin:clamp(24px,3.2vh,32px) 0 0;display:flex;align-items:center;gap:11px;flex-wrap:wrap;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(14px,1.34vw,17px);letter-spacing:.01em;color:#EAF4FE;">حامل الأمانة</span>
+          <span aria-hidden="true" style="width:22px;height:1px;background:rgba(255,255,255,.32);"></span>
+          <sc-if value="{{ showLatin }}" hint-placeholder-val="{{ true }}"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:rgba(255,255,255,.55);">THE DELIVERY COURIER</span></sc-if>
+        </div>
+
+        <div data-reveal="" style="margin-top:clamp(20px,2.6vh,28px);">
+          <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+            <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(14px,1.32vw,17px);letter-spacing:.04em;color:#CFE7FA;">الطرف المتعاقد</span>
+            <sc-if value="{{ showLatin }}" hint-placeholder-val="{{ true }}"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:rgba(255,255,255,.55);">THE CONTRACTING COUNTERPARTY</span></sc-if>
+          </div>
+          <p style="margin:10px 0 0;font-size:clamp(15px,1.42vw,17.5px);line-height:1.85;color:rgba(255,255,255,.9);max-width:36ch;">عقد واحد مع كيان، وجهة واحدة تسأل عن النتيجة: تتولى العمل من التكليف إلى الإقفال، ينفذ في اليمن، ويسلم بمعيار يقبل به المشتري الدولي. لا تباع ساعات ولا جهد — تباع نتيجة مقبولة بمحضر. فإن رد التسليم في بوابة الجودة أو جاوز موعده، فالتصحيح على حساب كيان لا على حسابك.</p>
+        </div>
+
+        <div data-reveal="" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:clamp(24px,3.2vh,34px);">
+          <a href="#start" style="background:#06202F;color:#FFFFFF;font-size:14.5px;font-weight:600;padding:14px 26px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#0C3049" style-active="transform:scale(.97)">اطلب نطاق عمل</a>
+          <a href="#gates" style="border:1px solid rgba(255,255,255,.5);color:#FFFFFF;font-size:14.5px;font-weight:500;padding:14px 26px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:rgba(255,255,255,.14)" style-active="transform:scale(.97)">مسار البوابات</a>
+          <a href="Kayan Apply.dc.html" style="color:#D3E8FA;font-size:13.5px;padding:12px 6px;">كفاءة تنفذ لا عميل؟ سجل في فرق التنفيذ ←</a>
+        </div>
+      </div>
+
+      <div data-reveal="" style="position:relative;z-index:3;min-width:0;align-self:end;top:clamp(34px,5.4vw,80px);margin-inline-end:0;">
+        <div style="position:relative;width:clamp(300px,40vw,600px);max-width:none;margin-inline-start:calc(100% - clamp(300px,40vw,600px));">
+          <kayan-mark line="cream" motion="glide" glow="" entrance="settle" role="img" aria-label="حامل الأمانة — علامة التسليم المدار في الطيران" style="width:100%;filter:drop-shadow(0 44px 64px rgba(6,32,47,.44)) drop-shadow(0 8px 16px rgba(6,32,47,.22));"></kayan-mark>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- plate strip -->
+  <div style="position:relative;z-index:1;background:#FAF6EC;padding:clamp(92px,13vw,208px) clamp(20px,4vw,44px) clamp(44px,6vh,72px);">
+    <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(22px,3vw,44px);align-items:start;">
+
+      <div style="min-width:0;">
+        <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>قبل أن تدفع</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· IN WRITING FIRST</span></div>
+        <div data-reveal="" style="margin-top:16px;background:#fff;border:1px solid #E3D9C2;border-radius:18px;padding:22px 24px 18px;">
+          <div style="display:grid;gap:1px;background:#EDE5D2;border:1px solid #EDE5D2;border-radius:12px;overflow:hidden;">
+            <div style="background:#fff;padding:13px 16px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;"><span style="font-size:13px;color:#8A8272;">نطاق موقع</span><span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:14px;color:#052E2B;">بالعدد والصيغة، لا بالوصف</span></div>
+            <div style="background:#fff;padding:13px 16px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;"><span style="font-size:13px;color:#8A8272;">قيمة ثابتة</span><span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:14px;color:#052E2B;">لا تتغير ما لم يتغير النطاق</span></div>
+            <div style="background:#fff;padding:13px 16px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;"><span style="font-size:13px;color:#8A8272;">تاريخ تسليم</span><span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:14px;color:#052E2B;">يبدأ من اكتمال مدخلاتك</span></div>
+            <div style="background:#fff;padding:13px 16px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;"><span style="font-size:13px;color:#8A8272;">مهلة قبول</span><span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:14px;color:#052E2B;">خمسة أيام بعد التسليم</span></div>
+          </div>
+          <p style="margin:12px 0 0;font-size:13.5px;line-height:1.9;color:#4A6B64;">يودع المستحق في حساب الضمان قبل أن يبدأ العمل، ولا يفرج عنه إلا على محضر استلام موقع، أو بانقضاء مهلة القبول.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:16px;overflow:hidden;margin-top:16px;">
+          <div data-reveal="" style="background:#EAF3FC;padding:18px 18px 20px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#06202F;">تصميم النطاق</div><sc-if value="{{ showLatin }}" hint-placeholder-val="{{ true }}"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#2E7CBC;margin-top:6px;">SCOPE DESIGN</div></sc-if></div>
+          <div data-reveal="" style="background:#EAF3FC;padding:18px 18px 20px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#06202F;">تأليف الفريق</div><sc-if value="{{ showLatin }}" hint-placeholder-val="{{ true }}"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#2E7CBC;margin-top:6px;">TEAM ASSEMBLY</div></sc-if></div>
+          <div data-reveal="" style="background:#EAF3FC;padding:18px 18px 20px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#06202F;">تنفيذ محلي</div><sc-if value="{{ showLatin }}" hint-placeholder-val="{{ true }}"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#2E7CBC;margin-top:6px;">LOCAL EXECUTION</div></sc-if></div>
+          <div data-reveal="" style="background:#06202F;padding:18px 18px 20px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#FFFFFF;">تسليم مضمون</div><sc-if value="{{ showLatin }}" hint-placeholder-val="{{ true }}"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#7CC0F4;margin-top:6px;">GUARANTEED DELIVERY</div></sc-if></div>
+        </div>
+      </div>
+
+      <div style="min-width:0;">
+        <div data-reveal="" style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+          <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>مسار التسليم</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;white-space:nowrap;">· DELIVERY RAIL · G0 → G9</span></div>
+          <a href="#gates" style="font-size:13px;white-space:nowrap;">افتح جدول البوابات ←</a>
+        </div>
+        <div data-reveal="" style="margin-top:16px;background:#fff;border:1px solid #E3D9C2;border-radius:18px;padding:20px 22px 16px;">
+          <svg viewBox="0 0 640 210" role="img" aria-label="مسار البوابات العشر من التأهيل إلى الإقفال" style="display:block;width:100%;height:auto;">
+            <defs><linearGradient id="kmdFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3E9EEA" stop-opacity=".28"></stop><stop offset="100%" stop-color="#3E9EEA" stop-opacity="0"></stop></linearGradient></defs>
+            <g stroke="#EDE5D2" stroke-width="1"><line x1="24" y1="176" x2="616" y2="176"></line><line x1="24" y1="128" x2="616" y2="128"></line><line x1="24" y1="80" x2="616" y2="80"></line><line x1="24" y1="32" x2="616" y2="32"></line></g>
+            <path d="M40 168 L102 158 L164 150 L226 118 L288 108 L350 94 L412 82 L474 54 L536 42 L598 28 L598 176 L40 176 Z" fill="url(#kmdFill)"></path>
+            <path data-rail="" d="M40 168 L102 158 L164 150 L226 118 L288 108 L350 94 L412 82 L474 54 L536 42 L598 28" fill="none" stroke="#1E63A8" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"></path>
+            <line x1="226" y1="18" x2="226" y2="176" stroke="#C9A227" stroke-width="1.2" stroke-dasharray="4 4"></line>
+            <line x1="474" y1="18" x2="474" y2="176" stroke="#D9432F" stroke-width="1.2" stroke-dasharray="4 4"></line>
+            <g fill="#FFFFFF" stroke="#1E63A8" stroke-width="2"><circle cx="40" cy="168" r="4"></circle><circle cx="102" cy="158" r="4"></circle><circle cx="164" cy="150" r="4"></circle><circle cx="288" cy="108" r="4"></circle><circle cx="350" cy="94" r="4"></circle><circle cx="412" cy="82" r="4"></circle><circle cx="536" cy="42" r="4"></circle></g>
+            <circle cx="226" cy="118" r="6" fill="#C9A227"></circle>
+            <circle cx="474" cy="54" r="6" fill="#D9432F"></circle>
+            <circle cx="598" cy="28" r="6.5" fill="#1E63A8"></circle>
+            <g dir="ltr" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8A8272"><text x="40" y="196" text-anchor="middle">G0</text><text x="102" y="196" text-anchor="middle">G1</text><text x="164" y="196" text-anchor="middle">G2</text><text x="226" y="196" text-anchor="middle" fill="#B8891A">G3</text><text x="288" y="196" text-anchor="middle">G4</text><text x="350" y="196" text-anchor="middle">G5</text><text x="412" y="196" text-anchor="middle">G6</text><text x="474" y="196" text-anchor="middle" fill="#B23A31">G7</text><text x="536" y="196" text-anchor="middle">G8</text><text x="598" y="196" text-anchor="middle" fill="#1E63A8">G9</text></g>
+          </svg>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:8px;padding-top:14px;border-top:1px solid #EDE5D2;">
+            <div style="display:flex;gap:9px;align-items:flex-start;"><span style="width:9px;height:9px;border-radius:50%;background:#C9A227;flex:none;margin-top:6px;"></span><span style="font-size:13px;line-height:1.8;color:#4A6B64;"><b style="color:#06202F;">G2 تمويل الضمان.</b> لا يبدأ عمل قبل توقيع النطاق وتمويل الحساب.</span></div>
+            <div style="display:flex;gap:9px;align-items:flex-start;"><span style="width:9px;height:9px;border-radius:50%;background:#D9432F;flex:none;margin-top:6px;"></span><span style="font-size:13px;line-height:1.8;color:#4A6B64;"><b style="color:#06202F;">G7 المراجعة المستقلة.</b> لا يرى العميل مخرجا قبل اجتيازها.</span></div>
+          </div>
+          <p style="margin:12px 0 0;font-size:12.5px;line-height:1.85;color:#8A8272;">يمثل الرسم تسلسل البوابات وتصاعد الالتزام عندها، ولا يمثل بيانات أداء. ولا ينشر رقم لم يقيد في السجل.</p>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1320px;margin:clamp(26px,3.4vw,42px) auto 0;border-top:1px solid #E3D9C2;display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));">
+      <div style="padding:20px 20px 4px;border-inline-end:1px solid #E3D9C2;"><div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#1E63A8;">١٠٣</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">منتجا جاهزا على الرف</div></div>
+      <div style="padding:20px 20px 4px;border-inline-end:1px solid #E3D9C2;"><div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#1E63A8;">٤٨</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">ساعة، أسرع تسليم معلن</div></div>
+      <div style="padding:20px 20px 4px;border-inline-end:1px solid #E3D9C2;"><div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#B8891A;">٥</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">أيام مهلة القبول</div></div>
+      <div style="padding:20px 20px 4px;"><div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#052E2B;">٪١٠٠</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">يراجع مستقلا قبل أن يصلك</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 01 FIVE RISKS ===== -->
+<section id="risks" data-screen-label="المخاطر الخمسة" style="background:#F1EAD9;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>ما يشتريه العميل</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· FIVE RISKS REMOVED</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:26ch;">لا يشترى عمل، وإنما يشترى انتفاء خمسة مخاطر</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:18px;overflow:hidden;margin-top:32px;">
+      <div data-reveal="" style="background:#fff;padding:24px 22px 28px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">01 · IDENTITY</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">الهوية</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">من يعمل معلوم بالاسم والوثيقة، وموثق قبل التكليف لا بعده.</p></div>
+      <div data-reveal="" style="background:#fff;padding:24px 22px 28px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">02 · COMPETENCE</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">الكفاءة</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">تقاس المهارة بمهمة عملية ورأي مراجع، لا بادعاء في سيرة ذاتية.</p></div>
+      <div data-reveal="" style="background:#fff;padding:24px 22px 28px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">03 · CONTRACT</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">العقد</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">توقع اتفاقية إطارية ونطاق عمل مرقم ومعيار قبول مكتوب قبل أول ساعة عمل.</p></div>
+      <div data-reveal="" style="background:#fff;padding:24px 22px 28px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">04 · PAYMENT</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">الدفع</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">يودع المال في حساب ضمان، ولا يفرج عنه إلا بمحضر وتفويض مزدوج.</p></div>
+      <div data-reveal="" style="background:#fff;padding:24px 22px 28px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">05 · ACCOUNTABILITY</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">المسؤولية</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">جهة واحدة تسأل ويصدر عنها القرار، ولا يحال العميل على أفراد.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 02 GATES ===== -->
+<section id="gates" data-screen-label="البوابات العشر" style="background:#06202F;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 90% -10%,rgba(62,158,234,.22),transparent 62%);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#7CC0F4;font-weight:500;"><bdi>البوابات</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· TEN GATES, THREE PHASES</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#FAF6EC;max-width:24ch;">عشر بوابات، لكل بوابة مخرج ومسؤول مسمى</h2>
+    <p data-reveal="" style="margin:14px 0 0;max-width:62ch;font-size:15.5px;line-height:1.95;color:rgba(250,246,236,.72);">لا تفتح بوابة قبل إقفال سابقتها. ويقيد القرار عند كل بوابة باسم صاحبه وتاريخه وسببه، ويظهر للعميل في ملف العمل كما تراه المؤسسة.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:34px;">
+      <div data-reveal="" style="border:1px solid rgba(250,246,236,.16);border-radius:18px;overflow:hidden;">
+        <div style="background:rgba(201,162,39,.16);padding:14px 20px;border-bottom:1px solid rgba(250,246,236,.14);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#E9C86A;">PHASE 1 · ACCESS</span><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#FAF6EC;margin-top:5px;">الوصول</div></div>
+        <div style="padding:6px 0;">
+          <div style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E9C86A;flex-shrink:0;">G0</span><span style="font-size:14.5px;color:#FAF6EC;">التأهيل</span></div>
+          <div style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E9C86A;flex-shrink:0;">G1</span><span style="font-size:14.5px;color:#FAF6EC;">النطاق</span></div>
+          <div style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;background:rgba(201,162,39,.1);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E9C86A;flex-shrink:0;">G2</span><span style="font-size:14.5px;color:#FAF6EC;">تمويل الضمان</span></div>
+          <div style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E9C86A;flex-shrink:0;">G3</span><span style="font-size:14.5px;color:#FAF6EC;">تشكيل الفريق</span></div>
+        </div>
+      </div>
+      <div data-reveal="" style="border:1px solid rgba(250,246,236,.16);border-radius:18px;overflow:hidden;">
+        <div style="background:rgba(62,158,234,.2);padding:14px 20px;border-bottom:1px solid rgba(250,246,236,.14);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#7CC0F4;">PHASE 2 · VALIDATION</span><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#FAF6EC;margin-top:5px;">التحقق</div></div>
+        <div style="padding:6px 0;">
+          <div style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7CC0F4;flex-shrink:0;">G4</span><span style="font-size:14.5px;color:#FAF6EC;">الانطلاق</span></div>
+          <div style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7CC0F4;flex-shrink:0;">G5</span><span style="font-size:14.5px;color:#FAF6EC;">التنفيذ ونقاط الفحص</span></div>
+          <div style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7CC0F4;flex-shrink:0;">G6</span><span style="font-size:14.5px;color:#FAF6EC;">المراجعة الوسطية</span></div>
+        </div>
+      </div>
+      <div data-reveal="" style="border:1px solid rgba(62,158,234,.42);border-radius:18px;overflow:hidden;background:rgba(62,158,234,.07);">
+        <div style="background:rgba(62,158,234,.24);padding:14px 20px;border-bottom:1px solid rgba(250,246,236,.14);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#BFE0FA;">PHASE 3 · DELIVERY</span><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#FAF6EC;margin-top:5px;">التسليم</div></div>
+        <div style="padding:6px 0;">
+          <div style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;background:rgba(217,67,47,.14);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#F2A79C;flex-shrink:0;">G7</span><span style="font-size:14.5px;color:#FAF6EC;">مراجعة الجودة المستقلة</span></div>
+          <div style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#BFE0FA;flex-shrink:0;">G8</span><span style="font-size:14.5px;color:#FAF6EC;">التسليم والقبول والإفراج</span></div>
+          <div style="display:flex;gap:14px;padding:12px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#BFE0FA;flex-shrink:0;">G9</span><span style="font-size:14.5px;color:#FAF6EC;">الإقفال والتوثيق والتقييم</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="margin-top:18px;background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.14);border-radius:16px;padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;">
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#FAF6EC;">ثلاث طبقات مراجعة</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.85;color:rgba(250,246,236,.68);">المنفذ، ثم قرين لم ينفذ، ثم مراجع مستقل. ولا تجتمع الثلاث في شخص واحد.</p></div>
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#FAF6EC;">القبول المفترض</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.85;color:rgba(250,246,236,.68);">يعد سكوت العميل خمسة أيام عمل بعد التسليم قبولا، ويقيد كذلك في المحضر.</p></div>
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#FAF6EC;">تدخل الإسناد</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.85;color:rgba(250,246,236,.68);">إذا انحرف معلم عند المراجعة الوسطية، يسند إلى الفريق قائد من الفئة الرابعة قبل بلوغ بوابة التسليم.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 SERVICE TIERS ===== -->
+<section id="tiers" data-screen-label="طبقات الخدمة" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>طبقات الخدمة</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· S1 · S2 · S3</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:28ch;">لا نسبة واحدة على كل عمل. تحدد الطبقة قبل التوقيع.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(276px,1fr));gap:16px;margin-top:32px;align-items:start;">
+
+      <div data-reveal="" style="background:#fff;border:1px solid #E3D9C2;border-radius:20px;overflow:hidden;">
+        <sc-if value="{{ isS1 }}" hint-placeholder-val="{{ false }}"><div style="height:5px;background:#3E9EEA;"></div></sc-if>
+        <div style="padding:28px;">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E675A;">S1 · ESSENTIAL</span>
+            <sc-if value="{{ isS1 }}" hint-placeholder-val="{{ false }}"><span style="background:#3E9EEA;color:#06202F;font-size:11.5px;font-weight:600;padding:3px 11px;border-radius:99px;">الافتراضية</span></sc-if>
+          </div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;margin-top:10px;">الأساسية</div>
+          <p style="margin:10px 0 0;font-size:14px;line-height:1.85;color:#4A6B64;">أشخاص موثقون، ونطاق مكتوب، وحساب ضمان، ومنسق واحد. لا تعرض ابتداء، وتقدم عند إصرار العميل.</p>
+          <div style="margin-top:18px;padding-top:16px;border-top:1px solid #EDE5D2;font-size:13.5px;color:#6E675A;line-height:1.9;">أجر المؤسسة <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;color:#B8891A;">25–30%</span></div>
+        </div>
+      </div>
+
+      <div data-reveal="" style="background:#fff;border:1px solid #E3D9C2;border-radius:20px;overflow:hidden;">
+        <sc-if value="{{ isS2 }}" hint-placeholder-val="{{ true }}"><div style="height:5px;background:#3E9EEA;"></div></sc-if>
+        <div style="padding:28px;">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">S2 · ASSURED</span>
+            <sc-if value="{{ isS2 }}" hint-placeholder-val="{{ true }}"><span style="background:#3E9EEA;color:#06202F;font-size:11.5px;font-weight:600;padding:3px 11px;border-radius:99px;">الافتراضية</span></sc-if>
+          </div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;margin-top:10px;">المؤكدة</div>
+          <p style="margin:10px 0 0;font-size:14px;line-height:1.85;color:#4A6B64;">تضيف قائد فريق مسمى، ومراجعة جودة مستقلة، واختبار قبول مكتوب يحتكم إليه الطرفان.</p>
+          <div style="margin-top:18px;padding-top:16px;border-top:1px solid #EDE5D2;font-size:13.5px;color:#6E675A;line-height:1.9;">أجر المؤسسة <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;color:#B8891A;">35–42%</span></div>
+        </div>
+      </div>
+
+      <div data-reveal="" style="background:#06202F;border:1px solid #06202F;border-radius:20px;overflow:hidden;color:#FAF6EC;">
+        <sc-if value="{{ isS3 }}" hint-placeholder-val="{{ false }}"><div style="height:5px;background:#3E9EEA;"></div></sc-if>
+        <div style="padding:28px;">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#7CC0F4;">S3 · GUARANTEED</span>
+            <sc-if value="{{ isS3 }}" hint-placeholder-val="{{ false }}"><span style="background:#3E9EEA;color:#06202F;font-size:11.5px;font-weight:600;padding:3px 11px;border-radius:99px;">الافتراضية</span></sc-if>
+          </div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;margin-top:10px;">المضمونة</div>
+          <p style="margin:10px 0 0;font-size:14px;line-height:1.85;color:rgba(250,246,236,.78);">سعر ثابت، وموعد ملزم في العقد، وإحلال المنفذ على حساب المؤسسة، وضمان عيوب بعد القبول.</p>
+          <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(250,246,236,.16);font-size:13.5px;color:rgba(250,246,236,.64);line-height:1.9;">أجر المؤسسة <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;color:#E9C86A;">45–55%</span></div>
+        </div>
+      </div>
+    </div>
+    <div data-reveal="" style="margin-top:16px;background:#fff;border:1px solid #E3D9C2;border-radius:16px;padding:20px 24px;font-size:14px;line-height:1.95;color:#4A6B64;">
+      <span style="font-family:'Alexandria',sans-serif;font-weight:500;color:#052E2B;">ما تشتريه الطبقة المضمونة</span> أولوية في الجدولة، ومراجعة مستقلة قبل كل تسليم، ومهلة قبول خمسة أيام، واحتجاز جزء من القيمة بعد القبول يغطي أي إصلاح يظهر لاحقا. لا يعرض سعر قبل تحرير النطاق، ولا يبدأ عمل قبل الإيداع.
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03B READY PRODUCTS — THE SHELF INSIDE THE LINE ===== -->
+<section id="ready" data-screen-label="المنتجات الجاهزة" style="background:#F1EAD9;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset-inline-end:-4%;top:-14%;width:min(38%,420px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(18,181,164,.14),transparent 66%);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>المنتجات الجاهزة</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· READY PRODUCTS</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:26ch;">يشترى من الرف ما لا يحتاج أن يفصل على المقاس.</h2>
+    <p data-reveal="" style="margin:16px 0 0;max-width:64ch;font-size:15.5px;line-height:1.95;color:#4A6B64;">ليس كل عمل يحتاج عقدا يفصل. مئة وثلاثة مخرجات موصوفة تبرم كما هي: نطاق مكتوب، وميقات ملزم، وتنفيذ ببود متخصص، وتبعة على المؤسسة لا على العميل. وتمر على البوابات نفسها، ويحكمها مسار المال نفسه.</p>
+
+    <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:16px;overflow:hidden;margin-top:30px;">
+      <div style="background:#FAF6EC;padding:18px 20px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#12B5A4;line-height:1;">103</div><div style="font-size:13px;color:#6E675A;margin-top:7px;">مخرجا على الرف</div></div>
+      <div style="background:#FAF6EC;padding:18px 20px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#2E7CBC;line-height:1;">15</div><div style="font-size:13px;color:#6E675A;margin-top:7px;">عائلة</div></div>
+      <div style="background:#FAF6EC;padding:18px 20px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#2E7CBC;line-height:1;">7</div><div style="font-size:13px;color:#6E675A;margin-top:7px;">أنواع مشترين</div></div>
+      <div style="background:#FAF6EC;padding:18px 20px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#B8891A;line-height:1;">48h</div><div style="font-size:13px;color:#6E675A;margin-top:7px;">أسرع ميقات</div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin-top:16px;">
+
+      <a data-reveal="" href="Line I - Ready Products.dc.html#RP-001" style="display:block;background:#fff;border:1px solid #E3D9C2;border-radius:18px;padding:22px 24px;color:inherit;transition:transform .4s cubic-bezier(.23,1,.32,1),border-color .3s ease,box-shadow .4s ease;" style-hover="transform:translateY(-4px);border-color:#12B5A4;box-shadow:0 20px 40px rgba(5,46,43,.10)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">RP-001</span>
+          <span style="background:rgba(18,181,164,.14);color:#0A6F68;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;">مضمون</span>
+        </div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;margin-top:12px;line-height:1.4;">حزمة الهوية البصرية</div>
+        <div style="margin-top:14px;padding-top:13px;border-top:1px solid #EDE5D2;display:grid;gap:9px;">
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;flex-shrink:0;">المخرج</span><span style="font-size:13px;color:#052E2B;text-align:end;line-height:1.6;">شعار وبدائله، ودليل هوية، وقرطاسية</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;">الميقات</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#2E7CBC;">14 days</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;">التبعة</span><span style="font-size:13px;color:#052E2B;">على المؤسسة</span></div>
+        </div>
+      </a>
+
+      <a data-reveal="" href="Line I - Ready Products.dc.html#RP-002" style="display:block;background:#fff;border:1px solid #E3D9C2;border-radius:18px;padding:22px 24px;color:inherit;transition:transform .4s cubic-bezier(.23,1,.32,1),border-color .3s ease,box-shadow .4s ease;" style-hover="transform:translateY(-4px);border-color:#12B5A4;box-shadow:0 20px 40px rgba(5,46,43,.10)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">RP-002</span>
+          <span style="background:rgba(18,181,164,.14);color:#0A6F68;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;">مضمون</span>
+        </div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;margin-top:12px;line-height:1.4;">موقع إلكتروني احترافي</div>
+        <div style="margin-top:14px;padding-top:13px;border-top:1px solid #EDE5D2;display:grid;gap:9px;">
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;flex-shrink:0;">المخرج</span><span style="font-size:13px;color:#052E2B;text-align:end;line-height:1.6;">موقع ثنائي اللغة، من خمس إلى سبع صفحات</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;">الميقات</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#2E7CBC;">21 days</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;">التبعة</span><span style="font-size:13px;color:#052E2B;">على المؤسسة</span></div>
+        </div>
+      </a>
+
+      <a data-reveal="" href="Line I - Ready Products.dc.html#RP-005" style="display:block;background:#fff;border:1px solid #E3D9C2;border-radius:18px;padding:22px 24px;color:inherit;transition:transform .4s cubic-bezier(.23,1,.32,1),border-color .3s ease,box-shadow .4s ease;" style-hover="transform:translateY(-4px);border-color:#12B5A4;box-shadow:0 20px 40px rgba(5,46,43,.10)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">RP-005</span>
+          <span style="background:rgba(18,181,164,.14);color:#0A6F68;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;">مضمون</span>
+        </div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;margin-top:12px;line-height:1.4;">حزمة الترجمة الاحترافية</div>
+        <div style="margin-top:14px;padding-top:13px;border-top:1px solid #EDE5D2;display:grid;gap:9px;">
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;flex-shrink:0;">المخرج</span><span style="font-size:13px;color:#052E2B;text-align:end;line-height:1.6;">حتى عشرة آلاف كلمة، بمراجعة مترجم ثان</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;">الميقات</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#2E7CBC;">7 days</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;">التبعة</span><span style="font-size:13px;color:#052E2B;">على المؤسسة</span></div>
+        </div>
+      </a>
+
+      <a data-reveal="" href="Line I - Ready Products.dc.html#RP-012" style="display:block;background:#fff;border:1px solid #E3D9C2;border-radius:18px;padding:22px 24px;color:inherit;transition:transform .4s cubic-bezier(.23,1,.32,1),border-color .3s ease,box-shadow .4s ease;" style-hover="transform:translateY(-4px);border-color:#12B5A4;box-shadow:0 20px 40px rgba(5,46,43,.10)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">RP-012</span>
+          <span style="background:rgba(18,181,164,.14);color:#0A6F68;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;">مضمون</span>
+        </div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;margin-top:12px;line-height:1.4;">حزمة مقترحات المانحين وتقاريرهم</div>
+        <div style="margin-top:14px;padding-top:13px;border-top:1px solid #EDE5D2;display:grid;gap:9px;">
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;flex-shrink:0;">المخرج</span><span style="font-size:13px;color:#052E2B;text-align:end;line-height:1.6;">تقرير أو مقترح حتى أربعين صفحة</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;">الميقات</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#2E7CBC;">12 days</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;">التبعة</span><span style="font-size:13px;color:#052E2B;">على المؤسسة</span></div>
+        </div>
+      </a>
+
+      <a data-reveal="" href="Line I - Ready Products.dc.html#RP-009" style="display:block;background:#fff;border:1px solid #E3D9C2;border-radius:18px;padding:22px 24px;color:inherit;transition:transform .4s cubic-bezier(.23,1,.32,1),border-color .3s ease,box-shadow .4s ease;" style-hover="transform:translateY(-4px);border-color:#12B5A4;box-shadow:0 20px 40px rgba(5,46,43,.10)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">RP-009</span>
+          <span style="background:rgba(18,181,164,.14);color:#0A6F68;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;">متجدد</span>
+        </div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;margin-top:12px;line-height:1.4;">إدارة وسائل التواصل</div>
+        <div style="margin-top:14px;padding-top:13px;border-top:1px solid #EDE5D2;display:grid;gap:9px;">
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;flex-shrink:0;">المخرج</span><span style="font-size:13px;color:#052E2B;text-align:end;line-height:1.6;">ستة عشر منشورا شهريا على منصتين</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;">الميقات</span><span style="font-size:13px;color:#2E7CBC;">شهري متجدد</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:#8B8375;">التبعة</span><span style="font-size:13px;color:#052E2B;">على المؤسسة</span></div>
+        </div>
+      </a>
+
+      <a data-reveal="" href="Line I - Ready Products.dc.html#RP-015" style="display:block;background:#06202F;border:1px solid #06202F;border-radius:18px;padding:22px 24px;color:#FAF6EC;transition:transform .4s cubic-bezier(.23,1,.32,1),box-shadow .4s ease;" style-hover="transform:translateY(-4px);box-shadow:0 20px 40px rgba(5,46,43,.22)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#7CC0F4;">RP-015</span>
+          <span style="background:rgba(18,181,164,.22);color:#7FE3D6;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;">مضمون</span>
+        </div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;margin-top:12px;line-height:1.4;">عرض تقديمي للمستثمرين</div>
+        <div style="margin-top:14px;padding-top:13px;border-top:1px solid rgba(250,246,236,.16);display:grid;gap:9px;">
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:rgba(250,246,236,.55);flex-shrink:0;">المخرج</span><span style="font-size:13px;text-align:end;line-height:1.6;">عرض من اثنتي عشرة إلى ست عشرة شريحة، ونموذج مالي</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:rgba(250,246,236,.55);">الميقات</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#7CC0F4;">12 days</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;"><span style="font-size:12px;color:rgba(250,246,236,.55);">التبعة</span><span style="font-size:13px;">على المؤسسة</span></div>
+        </div>
+      </a>
+    </div>
+
+    <div data-reveal="" style="margin-top:16px;background:#fff;border:1px solid #E3D9C2;border-radius:16px;padding:22px 24px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#052E2B;">الرف مقسوم على خمس عشرة عائلة</div>
+      <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;">
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">الهوية والتصميم</span>
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">المواقع والتطوير الرقمي</span>
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">التسويق ووسائل التواصل</span>
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">المحتوى والصياغة</span>
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">الترجمة والوثائق</span>
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">البيانات وخدمات الذكاء الاصطناعي</span>
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">الإنتاج الإعلامي</span>
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">الأعمال والاستراتيجية</span>
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">القطاع التنموي</span>
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">المالية والإدارة والمساندة</span>
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">الفعاليات والتنظيم</span>
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">المسار المهني والتعليم</span>
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">الحزم المؤسسية والضيافة</span>
+        <span style="border:1px solid #E3D9C2;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#4A6B64;">حزم التأسيس</span>
+        <span style="border:1px solid rgba(184,137,26,.45);border-radius:99px;padding:6px 13px;font-size:12.5px;color:#8A6B1F;background:#FDF7E4;">مجموعة الوطن</span>
+      </div>
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid #EDE5D2;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;">
+        <p style="margin:0;font-size:13.5px;line-height:1.9;color:#6E675A;max-width:52ch;">تعرض الأسعار على النطاق بعد تحريره، ولا تذكر قبله. ولا يبدأ تنفيذ قبل إيداع في حساب الضمان.</p>
+        <a href="Line I - Ready Products.dc.html" style="flex-shrink:0;background:#06202F;color:#FFFFFF;font-size:13.5px;font-weight:600;padding:12px 24px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#0C3049" style-active="transform:scale(.97)">افتح فهرس المنتجات الجاهزة</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03b OUTCOME MODEL ===== -->
+<section id="outcome" data-screen-label="نموذج النتيجة" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;">
+      <div style="min-width:0;max-width:760px;">
+        <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>نموذج النتيجة</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· THE OUTCOME MODEL</span></div>
+        <h2 style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:26ch;">تشترى النتيجة، لا الساعات</h2>
+        <p style="margin:12px 0 0;font-size:15px;line-height:2.05;color:#4A6B64;max-width:58ch;">يسمي العميل النتيجة وموعدها، ويوقع على قبولها في الختام. وما بين التوقيعين — الفريق، والجودة، والمخاطر — عهدة كيان وحدها.</p>
+      </div>
+      <kayan-mark line="md" tone="mid" aria-hidden="true" style="width:calc(1.175 * clamp(84px,10vw,128px));flex-shrink:0;filter:drop-shadow(0 18px 36px rgba(46,124,188,.25));"></kayan-mark>
+    </div>
+    <div data-reveal="" style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:20px;overflow:hidden;">
+      <div style="background:#FFFFFF;padding:clamp(20px,2.6vw,28px);">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">THE CLIENT HOLDS</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;">ما يمسكه العميل</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:2;color:#4A6B64;">سعر مكتوب لا يتحرك، وموعد مسمى، وبوابة قبول لا يوقعها غيره، وضمان ثلاثين يوما بعد التسليم. ماله في حساب ضمان لا يمس قبل القبول.</p>
+      </div>
+      <div style="background:linear-gradient(160deg,#F2F7FC,#FFFFFF 70%);padding:clamp(20px,2.6vw,28px);">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">KAYAN CARRIES</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;">ما تحمله كيان</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:2;color:#4A6B64;">تعثر المنفذ — يستبدل على حسابها لا حساب العميل. وخطأ التقدير — تدفع فرقه ولا يعاد فتح السعر. والمراجعة المستقلة قبل أن يرى العميل العمل. هذا هو النموذج: تؤكل المخاطر هنا، لا تمرر.</p>
+      </div>
+      <div style="background:#FFFFFF;padding:clamp(20px,2.6vw,28px);">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">THE TALENT RECEIVES</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;">ما تناله الكفاءة</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:2;color:#4A6B64;">أجر مستقل لا يشتق من سعر العميل، ودور مسمى في محضر الاستلام، وصرف عند القبول لا عند تحسن السيولة، وقيد في السجل يبني السمعة عملا بعد عمل.</p>
+      </div>
+    </div>
+    <div data-reveal="" style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:12px;">
+      <a href="Kayan Portal.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:#0A2434;color:#FAF6EC;border-radius:16px;padding:18px 22px;">
+        <span style="display:flex;flex-direction:column;gap:4px;"><b style="font-family:'Alexandria',sans-serif;font-size:15.5px;">إن كنت عميلا — سم نتيجتك</b><span style="font-size:12.5px;color:rgba(250,246,236,.65);">يفتح طلب النطاق من بوابة العملاء</span></span>
+        <span style="color:#7CC0F4;font-size:18px;">←</span>
+      </a>
+      <a href="Kayan Apply.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:#FFFFFF;border:1.5px solid #E3D9C2;color:#052E2B;border-radius:16px;padding:18px 22px;">
+        <span style="display:flex;flex-direction:column;gap:4px;"><b style="font-family:'Alexandria',sans-serif;font-size:15.5px;">إن كنت كفاءة — أقم على قدرتك دليلا</b><span style="font-size:12.5px;color:#6E675A;">التسجيل في السجل مفتوح دائما</span></span>
+        <span style="color:#8F7218;font-size:18px;">←</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 PRICE FLOOR ===== -->
+<section id="floor" data-screen-label="أرضية السعر" style="background:#0A2434;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 12% 0%,rgba(62,158,234,.18),transparent 60%);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#7CC0F4;font-weight:500;"><bdi>السعر وأرضيته</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· ONE QUOTE · ONE FLOOR</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#FAF6EC;max-width:26ch;">سعر واحد مكتوب، وأرضية لا ننزل عنها — ولو فات الطلب</h2>
+    <div data-reveal="" style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:16px;">
+      <div style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:20px;padding:clamp(20px,2.6vw,28px);">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#7CC0F4;">01 · THE QUOTE</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#FAF6EC;margin-top:10px;">عرض واحد مكتوب</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:1.95;color:rgba(250,246,236,.74);">يسعر النطاق كاملا قبل أول ساعة عمل، ويمول في حساب الضمان. لا عداد ساعات، ولا بند يظهر بعد التوقيع.</p>
+      </div>
+      <div style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:20px;padding:clamp(20px,2.6vw,28px);">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#7CC0F4;">02 · WHAT IT BUYS</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#FAF6EC;margin-top:10px;">ماذا يشتري السعر؟</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:1.95;color:rgba(250,246,236,.74);">فريق موثق بأدواره، ومراجعة مستقلة لا يجريها من نفذ، وجولتا تعديل مشمولتان، وضمان يحتجز له ۲٪ ثلاثين يوما، وتوثيق يسلم كاملا.</p>
+      </div>
+      <div style="background:rgba(250,246,236,.05);border:1px solid rgba(233,200,106,.35);border-radius:20px;padding:clamp(20px,2.6vw,28px);">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#E9C86A;">03 · WHY A FLOOR</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#FAF6EC;margin-top:10px;">ولم الأرضية؟</div>
+        <p style="margin:9px 0 0;font-size:13.5px;line-height:1.95;color:rgba(250,246,236,.74);">تحت الأرضية لا يرخص العمل، بل يدفع الفرق منفذ ينقص أجره أو مراجعة تحذف. لذلك يرد الطلب الأدنى منها بقرار مسبب — ويعرض بدله نطاق أصغر بسعر سليم.</p>
+      </div>
+    </div>
+    <div data-reveal="" style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+      <div style="border-top:2px solid rgba(250,246,236,.22);padding-top:14px;font-size:13.5px;line-height:1.9;color:rgba(250,246,236,.72);"><span style="color:#FAF6EC;font-weight:500;">يقيد القطاع عند التأهيل.</span> ويثبت في الملف، ولا يعدل لاحقا لتبرير سعر.</div>
+      <div style="border-top:2px solid rgba(250,246,236,.22);padding-top:14px;font-size:13.5px;line-height:1.9;color:rgba(250,246,236,.72);"><span style="color:#FAF6EC;font-weight:500;">الدعم المتقاطع معلن.</span> تخدم المنشآت اليمنية الصغيرة بمعامل أدنى، ويرفع الفرق على القطاعات الأعلى، ويعلن شهريا.</div>
+      <div style="border-top:2px solid rgba(250,246,236,.22);padding-top:14px;font-size:13.5px;line-height:1.9;color:rgba(250,246,236,.72);"><span style="color:#FAF6EC;font-weight:500;">أجر المنفذ مستقل.</span> لا يشتق من سعر العميل، ويعلن للطرفين معا.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05 THE POD ===== -->
+<section id="pod" data-screen-label="الفريق" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>الفريق</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· THREE POD TYPES · FOUR ROLES</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:26ch;">ثلاثة أنواع من الفرق، ولا تفاضل بينها</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:30px;">
+      <div data-reveal="" style="background:#fff;border:1px solid #EDE5D2;border-radius:18px;padding:24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">TYPE A</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:9px;">فريق يشكل للعمل</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">يجمع من السجل لهذا العمل بعينه، ثم ينفض بعد الإقفال.</p></div>
+      <div data-reveal="" style="background:#fff;border:1px solid #EDE5D2;border-radius:18px;padding:24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">TYPE B</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:9px;">فريق مقيد مسبقا</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">من اثنين إلى ستة موثقين ارتبطوا فيما بينهم قبل العمل، يقيدون باسمهم ويحتفظون بحصصهم، ويحاسبون وحدة واحدة.</p></div>
+      <div data-reveal="" style="background:#fff;border:1px solid #EDE5D2;border-radius:18px;padding:24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">TYPE C</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:9px;">فريق تؤلفه المؤسسة</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">تؤلفه كيان من السجل حين لا يوجد فريق قائم يطابق الطلب.</p></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:18px;overflow:hidden;margin-top:16px;">
+      <div data-reveal="" style="background:#fff;padding:22px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">قائد</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">واحد لا غير. يملك القرار داخل النطاق، ويوقع مخرجات المعالم، ويجيب عن التأخير باسمه.</p></div>
+      <div data-reveal="" style="background:#fff;padding:22px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">منفذ</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">ينفذ في اختصاصه، وتقيد مخرجاته باسمه في السجل.</p></div>
+      <div data-reveal="" style="background:#fff;padding:22px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">مراجع</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">لم ينفذ ما يراجع. ولا تجتمع صفة التنفيذ والمراجعة في شخص.</p></div>
+      <div data-reveal="" style="background:#fff;padding:22px;"><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">متدرب</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">مقعده هو آلية الاستيعاب المعلنة، وبه يعبر الجديد إلى عمل مدفوع موثق، لا إلى مشاهدة.</p></div>
+    </div>
+    <div data-reveal="" style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:16px;">
+      <div style="background:#F1EAD9;border:1px solid #E3D9C2;border-radius:16px;padding:20px 22px;font-size:13.5px;line-height:1.9;color:#4A6B64;"><span style="color:#052E2B;font-weight:500;">مكافأة الفريق ٢٪.</span> تصرف من أجر المؤسسة عند إقفال بلا تحفظ ولا مطالبة ضمان، وتقسم بحصص الفريق نفسها.</div>
+      <div style="background:#F1EAD9;border:1px solid #E3D9C2;border-radius:16px;padding:20px 22px;font-size:13.5px;line-height:1.9;color:#4A6B64;"><span style="color:#052E2B;font-weight:500;">واجب التوثيق ٥٪.</span> يحجز من الإفراج الأخير حتى تكتمل حزمة التوثيق خلال سبعة أيام من بوابة الجودة.</div>
+      <div style="background:#F1EAD9;border:1px solid #E3D9C2;border-radius:16px;padding:20px 22px;font-size:13.5px;line-height:1.9;color:#4A6B64;"><span style="color:#052E2B;font-weight:500;">نزاع الفريق إلى القائد.</span> ثم إلى مكتب التسليم، ولا ينقل إلى العميل خلاف داخلي بحال.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 MONEY PATH ===== -->
+<section id="money" data-screen-label="مسار المال" style="background:#F1EAD9;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#2E7CBC;font-weight:500;"><bdi>مسار المال</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· TWO RAILS · FOUR RELEASE CONDITIONS</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:26ch;">يحصل المال على مسار، ويوزع على مسار آخر</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;margin-top:32px;align-items:start;">
+      <div data-reveal="" style="background:#fff;border:1px solid #E3D9C2;border-radius:20px;padding:28px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E7CBC;">RAIL A · COLLECTION</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;margin-top:10px;">التحصيل والاحتفاظ</div>
+        <p style="margin:10px 0 0;font-size:14px;line-height:1.9;color:#4A6B64;">يحصل مال العميل ويحتفظ به خارج اليمن، بولاية يسهل على الجهات الدولية الدفع إليها. ويقيد التزاما في الدفاتر، لا إيرادا.</p>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid #EDE5D2;font-size:12.5px;line-height:1.8;color:#6E675A;">الولاية القضائية وقناة التحويل قرار معلق لم يقفل بعد، وهو شرط سابق للإطلاق.</div>
+      </div>
+      <div data-reveal="" style="background:#fff;border:1px solid #E3D9C2;border-radius:20px;padding:28px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#0E6E66;">RAIL B · DISTRIBUTION</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;margin-top:10px;">التوزيع الداخلي</div>
+        <p style="margin:10px 0 0;font-size:14px;line-height:1.9;color:#4A6B64;">يصرف للمنفذين داخل اليمن عبر بنك التضامن الإسلامي الدولي في عدن وقنوات مضبوطة معه. والنقد استثناء مسقوف بتفويض مزدوج.</p>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid #EDE5D2;font-size:12.5px;line-height:1.8;color:#6E675A;">لا حوالة غير رسمية، ولا عملات مشفرة، ولا حسابات شخصية. الأساس بالدولار، والمتابعة بالريال بسعر مثبت بتاريخه في كل عقد.</div>
+      </div>
+    </div>
+    <div data-reveal="" style="margin-top:20px;background:#06202F;border-radius:20px;padding:clamp(24px,3vw,34px);color:#FAF6EC;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;">شروط الإفراج الأربعة</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:20px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7CC0F4;padding-top:3px;">01</span><span style="font-size:14px;line-height:1.85;color:rgba(250,246,236,.82);">تقديم مخرجات المعلم كاملة.</span></div>
+        <div style="display:flex;gap:12px;align-items:flex-start;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7CC0F4;padding-top:3px;">02</span><span style="font-size:14px;line-height:1.85;color:rgba(250,246,236,.82);">اجتياز بوابة الجودة، وحدها الأدنى <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;">G7</span>.</span></div>
+        <div style="display:flex;gap:12px;align-items:flex-start;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7CC0F4;padding-top:3px;">03</span><span style="font-size:14px;line-height:1.85;color:rgba(250,246,236,.82);">قبول العميل، أو القبول المفترض بمضي خمسة أيام عمل.</span></div>
+        <div style="display:flex;gap:12px;align-items:flex-start;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7CC0F4;padding-top:3px;">04</span><span style="font-size:14px;line-height:1.85;color:rgba(250,246,236,.82);">تفويض مزدوج من الرئاسة التنفيذية والمالية.</span></div>
+      </div>
+      <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(250,246,236,.16);display:grid;grid-template-columns:repeat(auto-fit,minmax(226px,1fr));gap:16px;font-size:13px;line-height:1.85;color:rgba(250,246,236,.68);">
+        <div>يحتجز ٢٪ ثلاثين يوما بعد القبول، ثم يفرج عنه آليا إن لم ترد مطالبة.</div>
+        <div>يطابق حساب الضمان يوميا، وأي فرق يجاوز دولارا واحدا يفحص خلال أربع وعشرين ساعة.</div>
+        <div>يشمل السعر جولتين من التعديل، وما زاد عليهما يعالج بأمر تغيير مسعر.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 07 NEVER SOLD ===== -->
+<section id="never" data-screen-label="ما لا يباع" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#B8891A;font-weight:500;"><bdi>ما لا يباع</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· THE NEVER LIST</span></div>
+    <div style="display:flex;flex-direction:column;gap:1px;background:#E3D9C2;border:1px solid #E3D9C2;border-radius:18px;overflow:hidden;margin-top:24px;">
+      <div data-reveal="" style="background:#fff;padding:18px 22px;font-size:14.5px;line-height:1.85;color:#4A6B64;">ساعات مفتوحة بلا مخرج معرف ولا معيار قبول.</div>
+      <div data-reveal="" style="background:#fff;padding:18px 22px;font-size:14.5px;line-height:1.85;color:#4A6B64;">عمل يبدأ قبل توقيع النطاق أو قبل تمويل الضمان.</div>
+      <div data-reveal="" style="background:#fff;padding:18px 22px;font-size:14.5px;line-height:1.85;color:#4A6B64;">وصل مباشر بين العميل والفرد خارج المؤسسة، ولو طلبه الطرفان.</div>
+      <div data-reveal="" style="background:#fff;padding:18px 22px;font-size:14.5px;line-height:1.85;color:#4A6B64;">تعاقد مباشر مع منفذ أثناء العمل وسنة بعده، وتقدر مخالفته بأجر ستة أشهر.</div>
+      <div data-reveal="" style="background:#fff;padding:18px 22px;font-size:14.5px;line-height:1.85;color:#4A6B64;">عمل لطرف في نزاع، أو عمل يمس سلامة الناس، أو طلب لا يجتاز فحص العقوبات.</div>
+      <div data-reveal="" style="background:#fff;padding:18px 22px;font-size:14.5px;line-height:1.85;color:#4A6B64;">خصم ينزل بالسعر تحت أرضيته، ويرد الطلب بقرار مسبب.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 09 START ===== -->
+<section id="start" data-screen-label="اطلب نطاق عمل" style="background:linear-gradient(90deg,transparent,#2E7CBC 26%,#7FC3F0 50%,#2E7CBC 74%,transparent);clip-path:polygon(0 14px,48.6% 14px,50% 34px,51.4% 14px,100% 14px,100% 100%,0 100%);margin-top:clamp(20px,4vh,40px);padding-top:2px;">
+  <div style="background:#06202F;clip-path:polygon(0 14px,48.6% 14px,50% 34px,51.4% 14px,100% 14px,100% 100%,0 100%);padding:clamp(58px,9vh,96px) clamp(20px,4vw,44px) clamp(26px,4vh,34px);position:relative;overflow:hidden;">
+    <kayan-mark line="cream" tone="lift" aria-hidden="true" style="position:absolute;inset-inline-end:-4%;bottom:-26%;width:min(34%,380px);opacity:.05;pointer-events:none;"></kayan-mark>
+    <div style="position:relative;max-width:1320px;margin:0 auto;">
+      <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,56px);align-items:center;">
+        <div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(22px,2.7vw,33px);line-height:1.42;color:#FAF6EC;">اطلب نطاق عمل، ويرد عليك <span style="color:#7FC3F0;">مسؤول مسمى خلال يوم عمل.</span></div>
+          <sc-if value="{{ showLatin }}" hint-placeholder-val="{{ true }}">
+            <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:rgba(250,246,236,.55);margin-top:12px;">One named owner. One working day.</div>
+          </sc-if>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="Kayan Toolkit - Scoping Form.dc.html" style="background:#3E9EEA;color:#06202F;text-align:center;font-size:14.5px;font-weight:600;padding:14px 22px;border-radius:3px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#7CC0F4" style-active="transform:scale(.97)">اطلب نطاق عمل</a>
+          <a href="Kayan Home.dc.html" style="border:1px solid rgba(250,246,236,.32);color:#FAF6EC;text-align:center;font-size:14.5px;font-weight:500;padding:14px 22px;border-radius:3px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:rgba(250,246,236,.1)" style-active="transform:scale(.97)">أو ابدأ من منتج جاهز</a>
+        </div>
+      </div>
+      <div style="margin-top:clamp(30px,5vh,52px);border-top:1px solid rgba(250,246,236,.14);padding-top:clamp(20px,3vh,28px);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px clamp(20px,4vw,48px);align-items:center;">
+        <div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;color:#FAF6EC;">خلف كل نجاح، كيان</div>
+          <sc-if value="{{ showLatin }}" hint-placeholder-val="{{ true }}">
+            <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:rgba(250,246,236,.5);margin-top:6px;">Behind every success, a Kayan.</div>
+          </sc-if>
+        </div>
+        <kayan-line-audio inline="" motif="md" accent="#7FC3F0" style="justify-self:center;"></kayan-line-audio>
+        <div dir="ltr" style="justify-self:end;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;line-height:1.9;color:rgba(127,195,240,.85);">MANAGED DELIVERY<br><span style="color:rgba(250,246,236,.45);">ADEN · YEMEN</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#06202F;padding:0 clamp(20px,4vw,44px) 26px;color:rgba(250,246,236,.72);">
+  <div style="max-width:1320px;margin:0 auto;display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;">
+    <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:10px;color:#FAF6EC;">
+      <kayan-mark line="cream" tone="bright" aria-hidden="true" style="width:30px;flex:none;"></kayan-mark>
+      <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:14.5px;line-height:1;">كيان</span>
+    </a>
+    <div dir="ltr" style="margin-inline-start:auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(250,246,236,.4);text-align:left;">KYN-L1-FRONT · v1 · OWNER POS-DEL<br>ADEN · YEMEN · LLC</div>
+  </div>
+</footer>
+
+</div>
+<kayan-compass current="line1"></kayan-compass>

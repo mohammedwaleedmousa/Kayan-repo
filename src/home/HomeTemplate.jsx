@@ -9,6 +9,7 @@ const EVENT_NAMES = {
   onsubmit: 'onSubmit',
   onmouseenter: 'onMouseEnter',
   onmouseleave: 'onMouseLeave',
+  onmousemove: 'onMouseMove',
   onfocus: 'onFocus',
   onblur: 'onBlur',
 };
@@ -31,6 +32,21 @@ const ATTRIBUTE_NAMES = {
   markerheight: 'markerHeight',
   'stroke-dasharray': 'strokeDasharray',
   'stroke-opacity': 'strokeOpacity',
+  'stroke-dashoffset': 'strokeDashoffset',
+  'stop-color': 'stopColor',
+  'stop-opacity': 'stopOpacity',
+  'text-anchor': 'textAnchor',
+  'font-family': 'fontFamily',
+  'font-size': 'fontSize',
+  'vector-effect': 'vectorEffect',
+  'fill-opacity': 'fillOpacity',
+  repeatcount: 'repeatCount',
+  keypoints: 'keyPoints',
+  keytimes: 'keyTimes',
+  calcmode: 'calcMode',
+  keysplines: 'keySplines',
+  preserveaspectratio: 'preserveAspectRatio',
+  pathlength: 'pathLength',
 };
 
 function readPath(expression, scope) {
@@ -115,7 +131,7 @@ function renderNode(node, scope, key) {
     const list = interpolate(node.getAttribute('list') || '', scope) || [];
     const alias = node.getAttribute('as') || 'item';
     return Array.from(list).map((item, index) => (
-      <React.Fragment key={`${key}-${item?.key || item?.code || item?.n || index}`}>
+      <React.Fragment key={`${key}-row-${index}`}>
         {renderChildren(node, { ...scope, [alias]: item }, `${key}-${index}`)}
       </React.Fragment>
     ));

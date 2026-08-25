@@ -1,0 +1,558 @@
+<div ref="{{ rootRef }}" dir="rtl" style="font-family:'IBM Plex Sans Arabic','Instrument Sans',sans-serif;color:#0C2A28;background:#F4EFE2;min-height:100vh">
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(4,42,39,.90);backdrop-filter:blur(18px);border-bottom:1px solid rgba(111,220,206,.18)">
+    <div style="max-width:1360px;margin:0 auto;padding:0 clamp(16px,3.4vw,44px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);height:clamp(62px,7vh,78px)">
+      <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:10px;flex-shrink:0;color:#F4EFE2">
+        <img src="assets/kayan-logo-gold.png" alt="كيان — Kayan" style="height:clamp(40px,5vw,50px);width:auto;display:block">
+      </a>
+      <span style="width:1px;height:22px;background:rgba(244,239,226,.2);flex-shrink:0"></span>
+      <nav data-navlinks="" style="min-width:0;display:flex;align-items:center;gap:clamp(9px,1.5vw,20px);font-size:13.5px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none">
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <a href="#doors" style="white-space:nowrap;color:rgba(244,239,226,.76)" style-hover="color:#FFFFFF">البابان</a>
+          <a href="#card" style="white-space:nowrap;color:rgba(244,239,226,.76)" style-hover="color:#FFFFFF">البطاقة</a>
+          <a href="#money" style="white-space:nowrap;color:rgba(244,239,226,.76)" style-hover="color:#FFFFFF">مسار المال</a>
+          <a href="#risk" style="white-space:nowrap;color:rgba(244,239,226,.76)" style-hover="color:#FFFFFF">ما تحتمله عنك</a>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <a href="#doors" dir="ltr" style="font-family:'Instrument Sans',sans-serif;white-space:nowrap;color:rgba(244,239,226,.76)" style-hover="color:#FFFFFF">The two doors</a>
+          <a href="#card" dir="ltr" style="font-family:'Instrument Sans',sans-serif;white-space:nowrap;color:rgba(244,239,226,.76)" style-hover="color:#FFFFFF">The card</a>
+          <a href="#money" dir="ltr" style="font-family:'Instrument Sans',sans-serif;white-space:nowrap;color:rgba(244,239,226,.76)" style-hover="color:#FFFFFF">The money trail</a>
+          <a href="#risk" dir="ltr" style="font-family:'Instrument Sans',sans-serif;white-space:nowrap;color:rgba(244,239,226,.76)" style-hover="color:#FFFFFF">What we carry</a>
+        </sc-if>
+      </nav>
+      <div style="margin-inline-start:auto;flex-shrink:0;display:flex;align-items:center;gap:9px">
+      <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}"><span data-navlabel="" style="flex:none;font-size:12.5px;color:rgba(244,239,226,.78);white-space:nowrap">للعملاء</span></sc-if>
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><span data-navlabel="" dir="ltr" style="flex:none;font-family:'Instrument Sans',sans-serif;font-size:12.5px;color:rgba(244,239,226,.78);white-space:nowrap">For clients</span></sc-if>
+      <span data-navlabel="" style="width:1px;height:22px;background:rgba(244,239,226,.2);flex-shrink:0;margin-inline-end:2px"></span>
+      <div dir="ltr" style="flex-shrink:0;display:flex;align-items:center;border:1px solid rgba(111,220,206,.3);border-radius:99px;overflow:hidden">
+        <button type="button" onClick="{{ toggleAr }}" style="border:none;cursor:pointer;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12px;font-weight:600;padding:7px 13px;background:{{ arBtnBg }};color:{{ arBtnFg }};transition:background .25s ease,color .25s ease">عربي</button>
+        <button type="button" onClick="{{ toggleEn }}" style="border:none;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;padding:8px 13px;background:{{ enBtnBg }};color:{{ enBtnFg }};transition:background .25s ease,color .25s ease">EN</button>
+      </div>
+      <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <a href="Kayan Portal.dc.html" data-signin="" style="flex-shrink:0;white-space:nowrap;color:rgba(244,239,226,.78);font-size:13px;border:1px solid rgba(244,239,226,.28);border-radius:99px;padding:9px 16px" style-hover="color:#6FDCCE;border-color:#6FDCCE">دخول</a>
+        <a href="#open" style="flex-shrink:0;white-space:nowrap;background:#12B5A4;color:#04302C;font-size:13px;font-weight:600;padding:10px 20px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease" style-hover="background:#6FDCCE" style-active="transform:scale(.97)">افتح حسابا</a>
+      </sc-if>
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <a href="Kayan Portal.dc.html" data-signin="" dir="ltr" style="font-family:'Instrument Sans',sans-serif;flex-shrink:0;white-space:nowrap;color:rgba(244,239,226,.78);font-size:13px;border:1px solid rgba(244,239,226,.28);border-radius:99px;padding:9px 16px" style-hover="color:#6FDCCE;border-color:#6FDCCE">Sign in</a>
+        <a href="#open" dir="ltr" style="font-family:'Instrument Sans',sans-serif;flex-shrink:0;white-space:nowrap;background:#12B5A4;color:#04302C;font-size:13px;font-weight:600;padding:10px 20px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease" style-hover="background:#6FDCCE" style-active="transform:scale(.97)">Open an account</a>
+      </sc-if>
+      </div>
+    </div>
+  </header>
+  <div aria-hidden="true" style="height:clamp(62px,7vh,78px)"></div>
+
+  <section style="position:relative;min-height:calc(100vh - clamp(62px,7vh,78px));display:flex;flex-direction:column;justify-content:center;background:#05312D;color:#F4EFE2;overflow:clip">
+    <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 90% 0%,rgba(18,181,164,.30),transparent 55%),radial-gradient(70% 70% at 8% 92%,rgba(221,149,32,.15),transparent 60%);pointer-events:none;animation:kBreath 9s ease-in-out infinite"></div>
+    <div style="position:absolute;inset:0;opacity:.26;background-image:linear-gradient(rgba(111,220,206,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(111,220,206,.10) 1px,transparent 1px);background-size:62px 62px;mask-image:radial-gradient(80% 70% at 50% 28%,#000,transparent);pointer-events:none"></div>
+    <kayan-mark line="rp" motion="glide" flock="3" aria-hidden="true" style="position:absolute;inset-inline-end:-6%;top:-8%;width:min(52vw,680px);opacity:.45;filter:drop-shadow(0 40px 70px rgba(0,0,0,.45));pointer-events:none;"></kayan-mark>
+    <div style="position:relative;width:90%;max-width:1360px;margin:auto;padding:clamp(40px,5.5vw,72px) clamp(16px,3.4vw,44px) clamp(34px,4.5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:clamp(28px,4.5vw,64px);align-items:center">
+      <div style="min-width:0">
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <div style="display:inline-flex;align-items:center;gap:11px;margin-bottom:22px;animation:kArrive .7s .05s cubic-bezier(.2,.7,.2,1) both">
+            <span style="width:7px;height:7px;border-radius:99px;background:#12B5A4;box-shadow:0 0 0 6px rgba(18,181,164,.18)"></span>
+            <span style="font-size:12px;letter-spacing:.28em;color:#6FDCCE">للعملاء</span>
+          </div>
+          <h1 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(32px,5vw,74px);line-height:1.06;font-weight:300;letter-spacing:-.025em;animation:kArrive .8s .14s cubic-bezier(.2,.7,.2,1) both">لا تشتري وقتا،<br><span style="font-weight:600;color:#6FDCCE">تشتري مخرجا موصوفا.</span></h1>
+          <p style="margin:22px 0 0;max-width:54ch;font-size:clamp(14.5px,1.3vw,18px);line-height:1.9;color:rgba(244,239,226,.82);font-weight:300;animation:kArrive .8s .26s cubic-bezier(.2,.7,.2,1) both">تتعاقد مع كيان، لا مع أفراد. تحرر النطاق قبل السعر، ويودع مالك في حساب ضمان، ولا يفرج عنه إلا على استلام موقع. وإن أخفق منفذ، فالتبعة على المؤسسة.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;animation:kArrive .8s .38s cubic-bezier(.2,.7,.2,1) both">
+            <a href="#doors" style="display:inline-flex;align-items:center;gap:11px;background:#12B5A4;color:#04302C;font-size:15px;font-weight:600;padding:14px 26px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease" style-hover="background:#6FDCCE;transform:translateY(-2px)">ابدأ من بابك<span style="font-size:17px">←</span></a>
+            <a href="Line I - Ready Products.dc.html" style="display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(111,220,206,.34);color:#F4EFE2;font-size:15px;padding:14px 24px;border-radius:99px;transition:border-color .2s ease,background .2s ease" style-hover="border-color:#6FDCCE;background:rgba(111,220,206,.08)">تصفح ١٠٣ منتجات جاهزة</a>
+          </div>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif">
+            <div style="display:inline-flex;align-items:center;gap:11px;margin-bottom:22px;animation:kArrive .7s .05s cubic-bezier(.2,.7,.2,1) both">
+              <span style="width:7px;height:7px;border-radius:99px;background:#12B5A4;box-shadow:0 0 0 6px rgba(18,181,164,.18)"></span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.28em;color:#6FDCCE">FOR CLIENTS</span>
+            </div>
+            <h1 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(30px,4.6vw,68px);line-height:1.06;font-weight:300;letter-spacing:-.025em;animation:kArrive .8s .14s cubic-bezier(.2,.7,.2,1) both">You don't buy time —<br><span style="font-weight:600;color:#6FDCCE">you buy a described outcome.</span></h1>
+            <p style="margin:22px 0 0;max-width:56ch;font-size:clamp(14.5px,1.2vw,17px);line-height:1.75;color:rgba(244,239,226,.82);animation:kArrive .8s .26s cubic-bezier(.2,.7,.2,1) both">You contract with Kayan, not with individuals. The scope is written before the price, your money rests in a dedicated escrow account, and nothing is released except against a signed acceptance. If a practitioner fails, the liability is the firm's.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;animation:kArrive .8s .38s cubic-bezier(.2,.7,.2,1) both">
+              <a href="#doors" style="display:inline-flex;align-items:center;gap:11px;background:#12B5A4;color:#04302C;font-size:15px;font-weight:600;padding:14px 26px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease" style-hover="background:#6FDCCE;transform:translateY(-2px)">Start from your door<span style="font-size:17px">→</span></a>
+              <a href="Line I - Ready Products.dc.html" style="display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(111,220,206,.34);color:#F4EFE2;font-size:15px;padding:14px 24px;border-radius:99px;transition:border-color .2s ease,background .2s ease" style-hover="border-color:#6FDCCE;background:rgba(111,220,206,.08)">Browse 103 ready products</a>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+
+      <!-- hidden per owner note (بطاقة المنتج التجريبية) — restore by removing display:none -->
+      <div style="display:none;min-width:0;position:relative;animation:kArrive .95s .1s cubic-bezier(.2,.7,.2,1) both">
+        <div style="position:absolute;inset-inline:13px;top:20px;height:100%;background:rgba(244,239,236,.07);border:1px solid rgba(111,220,206,.16);border-radius:20px;transform:rotate(2.2deg)"></div>
+        <div style="position:absolute;inset-inline:6px;top:10px;height:100%;background:rgba(244,239,226,.10);border:1px solid rgba(111,220,206,.2);border-radius:20px;transform:rotate(1deg)"></div>
+        <div style="position:relative;background:#FBF8F0;color:#071B1A;border-radius:20px;padding:24px 24px 20px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);overflow:hidden">
+          <div style="position:absolute;top:0;bottom:0;width:56px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);animation:kSheen 7s 1.6s ease-in-out infinite;pointer-events:none"></div>
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px">
+            <div style="min-width:0">
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#0A6F68">KAYAN CARD · {{ demo.code }}</div>
+              <div style="font-family:'Alexandria',sans-serif;font-size:21px;font-weight:500;margin-top:7px;letter-spacing:-.01em">{{ demo.name }}</div>
+            </div>
+            <div style="text-align:center;background:#05312D;color:#6FDCCE;border-radius:12px;padding:8px 13px;flex:none">
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;opacity:.75">FIXED</div>
+              <div dir="ltr" style="font-family:'Alexandria',sans-serif;font-size:23px;font-weight:600;line-height:1.15">{{ demo.price }}</div>
+            </div>
+          </div>
+          <div style="height:1px;background:rgba(7,27,26,.12);margin:18px 0 2px"></div>
+          <div style="display:grid;gap:0">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid rgba(7,27,26,.08);animation:kRow .55s .3s cubic-bezier(.2,.7,.2,1) both"><span style="font-size:12.5px;color:#4A5F5D">نطاق محدد</span><span style="font-size:13.5px;font-weight:500;text-align:start">{{ demo.scope }}</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid rgba(7,27,26,.08);animation:kRow .55s .42s cubic-bezier(.2,.7,.2,1) both"><span style="font-size:12.5px;color:#4A5F5D">سعر ثابت</span><span style="font-size:13.5px;font-weight:500">{{ demo.priceAr }}</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid rgba(7,27,26,.08);animation:kRow .55s .54s cubic-bezier(.2,.7,.2,1) both"><span style="font-size:12.5px;color:#4A5F5D">تاريخ ملزم</span><span style="font-size:13.5px;font-weight:500">{{ demo.days }}</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 0;animation:kRow .55s .66s cubic-bezier(.2,.7,.2,1) both"><span style="font-size:12.5px;color:#4A5F5D">فريق مسمى</span><span style="font-size:13.5px;font-weight:500">يقيد في أمر العمل</span></div>
+          </div>
+          <div style="margin-top:16px;display:flex;align-items:center;gap:9px;background:rgba(18,181,164,.10);border:1px solid rgba(18,181,164,.22);border-radius:11px;padding:10px 12px">
+            <span style="width:6px;height:6px;border-radius:99px;background:#12B5A4;animation:kPulse 2.6s ease-in-out infinite;flex:none"></span>
+            <span style="font-size:12px;color:#0A6F68;line-height:1.6">المستحق محتجز في حساب الضمان حتى محضر الاستلام</span>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:7px;flex-wrap:wrap">
+            <sc-for list="{{ demoChips }}" as="c" hint-placeholder-count="4">
+              <button type="button" data-k="{{ c.k }}" onClick="{{ pickDemo }}" style="{{ c.style }}">{{ c.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:relative;border-top:1px solid rgba(111,220,206,.16);background:rgba(4,40,37,.5)">
+      <div style="max-width:1360px;margin:0 auto;padding:18px clamp(16px,3.4vw,44px) 18px calc(clamp(16px,3.4vw,44px) + 66px);display:flex;flex-wrap:nowrap;justify-content:space-between;gap:clamp(10px,1.6vw,26px);align-items:center">
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;align-items:baseline;gap:8px;flex:0 1 auto;min-width:0;white-space:nowrap"><span style="font-family:'Alexandria',sans-serif;font-size:clamp(15px,1.6vw,24px);font-weight:600;flex:none;color:#6FDCCE">١٠٣</span><span style="font-size:clamp(10px,1.05vw,12.5px);color:rgba(244,239,226,.66);overflow:hidden;text-overflow:ellipsis">منتجات جاهزة، نطاقها مكتوب</span></div>
+          <div style="display:flex;align-items:baseline;gap:8px;flex:0 1 auto;min-width:0;white-space:nowrap"><span style="font-family:'Alexandria',sans-serif;font-size:clamp(15px,1.6vw,24px);font-weight:600;flex:none;color:#6FDCCE">٤٨</span><span style="font-size:clamp(10px,1.05vw,12.5px);color:rgba(244,239,226,.66);overflow:hidden;text-overflow:ellipsis">ساعة، أسرع تسليم معلن</span></div>
+          <div style="display:flex;align-items:baseline;gap:8px;flex:0 1 auto;min-width:0;white-space:nowrap"><span style="font-family:'Alexandria',sans-serif;font-size:clamp(15px,1.6vw,24px);font-weight:600;flex:none;color:#DD9520">٥</span><span style="font-size:clamp(10px,1.05vw,12.5px);color:rgba(244,239,226,.66);overflow:hidden;text-overflow:ellipsis">أيام، مهلة قبولك بعد التسليم</span></div>
+          <div style="display:flex;align-items:baseline;gap:8px;flex:0 1 auto;min-width:0;white-space:nowrap"><span style="font-family:'Alexandria',sans-serif;font-size:clamp(15px,1.6vw,24px);font-weight:600;flex:none;color:#6FDCCE">٪١٠٠</span><span style="font-size:clamp(10px,1.05vw,12.5px);color:rgba(244,239,226,.66);overflow:hidden;text-overflow:ellipsis">يراجع مستقلا قبل أن يصلك</span></div>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <div dir="ltr" style="display:flex;align-items:baseline;gap:8px;flex:0 1 auto;min-width:0;white-space:nowrap;font-family:'Instrument Sans',sans-serif"><span style="font-family:'Alexandria',sans-serif;font-size:clamp(15px,1.6vw,24px);font-weight:600;flex:none;color:#6FDCCE">103</span><span style="font-size:clamp(10px,1.05vw,12.5px);color:rgba(244,239,226,.66);overflow:hidden;text-overflow:ellipsis">ready products, scope in writing</span></div>
+          <div dir="ltr" style="display:flex;align-items:baseline;gap:8px;flex:0 1 auto;min-width:0;white-space:nowrap;font-family:'Instrument Sans',sans-serif"><span style="font-family:'Alexandria',sans-serif;font-size:clamp(15px,1.6vw,24px);font-weight:600;flex:none;color:#6FDCCE">48</span><span style="font-size:clamp(10px,1.05vw,12.5px);color:rgba(244,239,226,.66);overflow:hidden;text-overflow:ellipsis">hours — fastest published delivery</span></div>
+          <div dir="ltr" style="display:flex;align-items:baseline;gap:8px;flex:0 1 auto;min-width:0;white-space:nowrap;font-family:'Instrument Sans',sans-serif"><span style="font-family:'Alexandria',sans-serif;font-size:clamp(15px,1.6vw,24px);font-weight:600;flex:none;color:#DD9520">5</span><span style="font-size:clamp(10px,1.05vw,12.5px);color:rgba(244,239,226,.66);overflow:hidden;text-overflow:ellipsis">days — your acceptance window</span></div>
+          <div dir="ltr" style="display:flex;align-items:baseline;gap:8px;flex:0 1 auto;min-width:0;white-space:nowrap;font-family:'Instrument Sans',sans-serif"><span style="font-family:'Alexandria',sans-serif;font-size:clamp(15px,1.6vw,24px);font-weight:600;flex:none;color:#6FDCCE">100%</span><span style="font-size:clamp(10px,1.05vw,12.5px);color:rgba(244,239,226,.66);overflow:hidden;text-overflow:ellipsis">independently reviewed before it reaches you</span></div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section id="doors" style="max-width:1360px;margin:0 auto;padding:clamp(56px,7vw,104px) clamp(16px,3.4vw,44px)">
+    <div data-rev="" style="max-width:64ch">
+      <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <div style="font-size:11.5px;letter-spacing:.26em;color:#0A6F68;margin-bottom:18px">بابان لا ثالث لهما</div>
+        <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(26px,3.8vw,54px);line-height:1.12;font-weight:300;letter-spacing:-.025em">خذ من الرف،<br>أو سم النتيجة التي تريدها.</h2>
+        <p style="margin:18px 0 0;font-size:clamp(14.5px,1.2vw,17px);line-height:1.95;color:#3C514F;font-weight:300">إن كان ما تحتاجه معروفا وموصوفا، فهو على الرف بسعره وميقاته. وإن كان أكبر من ذلك أو أخص، فصف النتيجة، ويحرر لك نطاق ويسعر عليه.</p>
+      </sc-if>
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:#0A6F68;margin-bottom:18px">TWO DOORS · NO THIRD</div>
+          <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(26px,3.6vw,50px);line-height:1.1;font-weight:300;letter-spacing:-.025em">Take from the shelf,<br>or name the outcome you want.</h2>
+          <p style="margin:18px 0 0;font-size:clamp(14.5px,1.15vw,16.5px);line-height:1.8;color:#3C514F">If what you need is known and described, it is on the shelf with a price and a date. If it is larger or more particular, describe the outcome — a scope is drafted and priced against it.</p>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin-top:clamp(32px,4vw,52px)">
+      <a href="Line I - Ready Products.dc.html" data-door="" data-rev="" data-rev-delay="120" style="position:relative;overflow:hidden;background:linear-gradient(168deg,#FFFFFF,#FBF8F0 58%);border:1px solid rgba(7,27,26,.10);border-radius:20px;padding:clamp(26px,3.2vw,40px);color:inherit;display:flex;flex-direction:column;gap:14px;min-height:290px;box-shadow:0 1px 0 rgba(255,255,255,.9) inset;transition:transform .4s cubic-bezier(.23,1,.32,1),border-color .3s ease,box-shadow .4s ease" style-hover="border-color:#12B5A4;transform:translateY(-4px)">
+        <div aria-hidden="true" style="position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#12B5A4,rgba(18,181,164,0))"></div>
+        <div dir="ltr" style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#0A6F68"><span>DOOR 01 · THE SHELF</span><span data-doorrule="" style="flex:1;height:1px;background:rgba(7,27,26,.12)"></span></div>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(23px,2.6vw,34px);font-weight:400;letter-spacing:-.02em;line-height:1.25">الرف الجاهز</h3>
+          <p style="margin:0;font-size:15px;line-height:1.95;color:#3C514F;font-weight:300;max-width:42ch">مئة وثلاثة منتجات، لكل منها مخرج مكتوب بالعدد والصيغة وميقات معلن. خمسة وثلاثون منها بسعر ثابت منشور، لا يتغير ما لم يتغير النطاق.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:2px">
+            <span style="border:1px solid rgba(10,111,104,.28);border-radius:99px;padding:5px 12px;font-size:11.5px;color:#0A6F68">من ٢٨٠ دولارا</span>
+            <span style="border:1px solid rgba(10,111,104,.28);border-radius:99px;padding:5px 12px;font-size:11.5px;color:#0A6F68">تسليم من ٤٨ ساعة</span>
+            <span style="border:1px solid rgba(10,111,104,.28);border-radius:99px;padding:5px 12px;font-size:11.5px;color:#0A6F68">١٥ عائلة</span>
+          </div>
+          <span style="margin-top:auto;display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#0A6F68">افتح الرف<span data-doorarrow="" style="font-size:17px">←</span></span>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <h3 dir="ltr" style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(23px,2.6vw,34px);font-weight:400;letter-spacing:-.02em;line-height:1.2">The Ready Shelf</h3>
+          <p dir="ltr" style="margin:0;font-family:'Instrument Sans',sans-serif;font-size:14.5px;line-height:1.8;color:#3C514F;max-width:44ch">One hundred and three products, each with a written deliverable — count, format, and a published date. Thirty-five carry a fixed published price that does not move unless the scope moves.</p>
+          <div dir="ltr" style="display:flex;flex-wrap:wrap;gap:7px;margin-top:2px;font-family:'Instrument Sans',sans-serif">
+            <span style="border:1px solid rgba(10,111,104,.28);border-radius:99px;padding:5px 12px;font-size:11.5px;color:#0A6F68">From $280</span>
+            <span style="border:1px solid rgba(10,111,104,.28);border-radius:99px;padding:5px 12px;font-size:11.5px;color:#0A6F68">Delivery from 48h</span>
+            <span style="border:1px solid rgba(10,111,104,.28);border-radius:99px;padding:5px 12px;font-size:11.5px;color:#0A6F68">15 families</span>
+          </div>
+          <span dir="ltr" style="margin-top:auto;display:inline-flex;align-items:center;gap:10px;font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:600;color:#0A6F68">Open the shelf<span data-doorarrow="" style="font-size:17px">→</span></span>
+        </sc-if>
+      </a>
+
+      <div data-door2="" ref="{{ door2Ref }}" onMouseMove="{{ door2Move }}" onMouseLeave="{{ door2Leave }}" data-rev="" data-rev-delay="240" style="position:relative;overflow:hidden;background:#05312D;color:#F4EFE2;border:1px solid rgba(111,220,206,.2);border-radius:20px;padding:clamp(26px,3.2vw,40px);display:flex;flex-direction:column;gap:14px;min-height:290px">
+        <div style="position:absolute;inset:0;background:radial-gradient(80% 70% at 100% 100%,rgba(18,181,164,.22),transparent 60%);pointer-events:none"></div>
+        <div data-door2glow="" aria-hidden="true" style="position:absolute;inset:0;opacity:0;pointer-events:none;background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),rgba(111,220,206,.16),transparent 70%)"></div>
+        <div style="position:relative;display:flex;flex-direction:column;gap:14px;height:100%">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#6FDCCE">DOOR 02 · NAME THE OUTCOME</div>
+          <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+            <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(23px,2.6vw,34px);font-weight:400;letter-spacing:-.02em;line-height:1.25">سم النتيجة</h3>
+            <p style="margin:0;font-size:15px;line-height:1.95;color:rgba(244,239,226,.8);font-weight:300;max-width:42ch">اكتب النتيجة التي تريد بلوغها، لا الخدمة التي تظنها لازمة. يحرر النطاق على أساسها، ويعرض السعر بعده.</p>
+          </sc-if>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+            <h3 dir="ltr" style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(23px,2.6vw,34px);font-weight:400;letter-spacing:-.02em;line-height:1.2">Name the outcome</h3>
+            <p dir="ltr" style="margin:0;font-family:'Instrument Sans',sans-serif;font-size:14.5px;line-height:1.8;color:rgba(244,239,226,.8);max-width:44ch">Write the outcome you want to reach, not the service you assume you need. The scope is drafted against it; the price follows.</p>
+          </sc-if>
+          <div style="display:grid;gap:9px;margin-top:4px">
+            <input type="text" value="{{ outcome }}" onInput="{{ onOutcome }}" placeholder="{{ outcomePh }}" style="width:100%;background:rgba(244,239,226,.06);border:1px solid rgba(111,220,206,.24);border-radius:12px;padding:13px 15px;font-size:14px;color:#F4EFE2;outline:none">
+            <div style="display:flex;flex-wrap:wrap;gap:7px">
+              <sc-for list="{{ seeds }}" as="s" hint-placeholder-count="4">
+                <button type="button" data-t="{{ s }}" onClick="{{ pickSeed }}" style="all:unset;cursor:pointer;border:1px dashed rgba(111,220,206,.34);border-radius:99px;padding:6px 13px;font-size:11.5px;color:rgba(244,239,226,.72);transition:background .25s ease,border-color .25s ease" style-hover="border-color:#6FDCCE;background:rgba(111,220,206,.1)">{{ s }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <a href="{{ scopeHref }}" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:space-between;gap:12px;background:#12B5A4;color:#04302C;font-size:14.5px;font-weight:600;padding:13px 22px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease" style-hover="background:#6FDCCE;transform:translateY(-2px)"><span>{{ scopeLabel }}</span><span style="font-size:17px">{{ arrowChar }}</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="card" style="background:#FBF8F0;border-block:1px solid rgba(7,27,26,.10)">
+    <div style="max-width:1360px;margin:0 auto;padding:clamp(56px,7vw,104px) clamp(16px,3.4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(30px,4.5vw,64px);align-items:start">
+      <div data-rev="" style="min-width:0">
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <div style="font-size:11.5px;letter-spacing:.26em;color:#0A6F68;margin-bottom:18px">بطاقة كيان</div>
+          <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(25px,3.5vw,48px);line-height:1.14;font-weight:300;letter-spacing:-.025em">أربعة سطور،<br>وكل سطر تعهد.</h2>
+          <p style="margin:18px 0 28px;font-size:15px;line-height:1.95;color:#3C514F;font-weight:300;max-width:48ch">كل ما يباع في كيان يعرض في هذا الشكل. اضغط أي سطر لتعرف ما يترتب عليه.</p>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:#0A6F68;margin-bottom:18px">THE KAYAN CARD</div>
+            <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(25px,3.4vw,46px);line-height:1.1;font-weight:300;letter-spacing:-.025em">Four lines,<br>each one an undertaking.</h2>
+            <p style="margin:18px 0 28px;font-size:14.5px;line-height:1.8;color:#3C514F;max-width:50ch">Everything Kayan sells is presented in this form. Press any line to see what it binds.</p>
+          </div>
+        </sc-if>
+        <div style="display:grid;gap:9px;max-width:520px">
+          <sc-for list="{{ rows }}" as="r" hint-placeholder-count="4">
+            <button type="button" data-k="{{ r.k }}" onClick="{{ pickRow }}" style="{{ r.btn }}">
+              <span style="display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%">
+                <span style="display:flex;align-items:center;gap:12px"><span style="{{ r.dot }}"></span><span style="font-family:'Alexandria',sans-serif;font-size:16px;font-weight:500">{{ r.title }}</span></span>
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#0A6F68">{{ r.tag }}</span>
+              </span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+      <div data-cardpanel="" data-rev="" data-rev-delay="140" style="min-width:0;position:sticky;top:100px;background:#05312D;color:#F4EFE2;border-radius:22px;padding:clamp(26px,3vw,40px);min-height:320px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden">
+        <div style="position:absolute;inset:0;background:radial-gradient(90% 70% at 100% 0%,rgba(18,181,164,.24),transparent 60%);pointer-events:none"></div>
+        <div data-cardfade="" style="position:relative">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#6FDCCE">{{ row.tag }}</div>
+          <h3 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-size:clamp(22px,2.4vw,32px);font-weight:400;letter-spacing:-.02em;line-height:1.25">{{ row.title }}</h3>
+          <p style="margin:18px 0 0;font-size:16px;line-height:1.95;color:rgba(244,239,226,.82);font-weight:300">{{ row.body }}</p>
+        </div>
+        <div style="position:relative;margin-top:28px;padding-top:20px;border-top:1px solid rgba(111,220,206,.2);font-size:12.5px;color:#6FDCCE;line-height:1.8">{{ row.rule }}</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="money" style="position:relative;background:#05312D;color:#F4EFE2;overflow:clip">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(80% 70% at 0% 0%,rgba(18,181,164,.22),transparent 58%),radial-gradient(70% 60% at 100% 100%,rgba(221,149,32,.16),transparent 60%);pointer-events:none"></div>
+    <div style="position:relative;max-width:1360px;margin:0 auto;padding:clamp(56px,7vw,104px) clamp(16px,3.4vw,44px)">
+      <div style="max-width:58ch">
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <div style="font-size:11.5px;letter-spacing:.26em;color:#DD9520;margin-bottom:18px">مسار المال</div>
+          <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(25px,3.5vw,48px);line-height:1.14;font-weight:300;letter-spacing:-.025em">مالك لا يخرج من يدك<br><span style="color:#6FDCCE;font-weight:500">إلا على استلام.</span></h2>
+          <p style="margin:18px 0 0;font-size:15.5px;line-height:1.95;color:rgba(244,239,226,.82);font-weight:300">خمس محطات، لا سادسة. ولا محطة تتجاوز.</p>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:#DD9520;margin-bottom:18px">THE MONEY TRAIL</div>
+            <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(25px,3.4vw,46px);line-height:1.1;font-weight:300;letter-spacing:-.025em">Your money does not leave your hand<br><span style="color:#6FDCCE;font-weight:500">except against acceptance.</span></h2>
+            <p style="margin:18px 0 0;font-size:15px;line-height:1.8;color:rgba(244,239,226,.82)">Five stations. No sixth. None skipped.</p>
+          </div>
+        </sc-if>
+      </div>
+      <div data-stagger="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,205px),1fr));gap:12px;margin-top:clamp(30px,4vw,50px)">
+        <sc-for list="{{ rail }}" as="s" hint-placeholder-count="5">
+          <div data-station="" style="overflow:hidden;position:relative;background:rgba(244,239,226,.055);border:1px solid rgba(111,220,206,.18);border-radius:16px;padding:22px 20px;min-height:176px;display:flex;flex-direction:column;gap:10px">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#6FDCCE">{{ s.n }}</span>
+            <span style="font-family:'Alexandria',sans-serif;font-size:17.5px;font-weight:500;line-height:1.35">{{ s.t }}</span>
+            <span style="font-size:13.5px;line-height:1.85;color:rgba(244,239,226,.74);font-weight:300">{{ s.b }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:rgba(221,149,32,.10);border:1px solid rgba(221,149,32,.28);border-radius:14px;padding:16px 20px">
+        <span style="width:6px;height:6px;border-radius:99px;background:#DD9520;flex:none"></span>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}"><span style="font-size:14px;line-height:1.85;color:rgba(244,239,226,.86);font-weight:300">إن اعترضت داخل المهلة باعتراض مسبب، لا يفرج عن المستحق حتى يعالج الاعتراض أو يفصل فيه.</span></sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;line-height:1.75;color:rgba(244,239,226,.86)">If you object within the window, with cause, nothing is released until the objection is resolved or ruled on.</span></sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section id="risk" style="max-width:1360px;margin:0 auto;padding:clamp(56px,7vw,104px) clamp(16px,3.4vw,44px)">
+    <div data-rev="" style="max-width:62ch">
+      <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <div style="font-size:11.5px;letter-spacing:.26em;color:#0A6F68;margin-bottom:18px">ما تحتمله المؤسسة عنك</div>
+        <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(25px,3.5vw,48px);line-height:1.14;font-weight:300;letter-spacing:-.025em">أنت لا تشتري عملا،<br>تشتري زوال خمسة مخاطر.</h2>
+      </sc-if>
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:#0A6F68;margin-bottom:18px">WHAT THE FIRM CARRIES FOR YOU</div>
+          <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(25px,3.4vw,46px);line-height:1.1;font-weight:300;letter-spacing:-.025em">You are not buying work —<br>you are buying the removal of five risks.</h2>
+        </div>
+      </sc-if>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,232px),1fr));gap:1px;background:rgba(7,27,26,.10);border:1px solid rgba(7,27,26,.10);border-radius:20px;overflow:hidden;margin-top:clamp(30px,4vw,50px)">
+      <div data-riskcell="" data-rev="" style="background:#FBF8F0;padding:26px 22px 30px">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#0A6F68">01 · IDENTITY</div>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <h3 style="margin:13px 0 0;font-family:'Alexandria',sans-serif;font-size:17.5px;font-weight:500;line-height:1.45">من هذا الذي يعمل معي</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.9;color:#3C514F;font-weight:300">كل منفذ موثق الهوية ومقاس القدرة في تخصصه. لا مجهول يعمل على ملفك.</p>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <h3 dir="ltr" style="margin:13px 0 0;font-family:'Alexandria',sans-serif;font-size:17px;font-weight:500;line-height:1.4">Who is working on my file</h3>
+          <p dir="ltr" style="margin:10px 0 0;font-family:'Instrument Sans',sans-serif;font-size:13px;line-height:1.75;color:#3C514F">Every practitioner is identity-verified and measured in their specialty. No unknown touches your file.</p>
+        </sc-if>
+      </div>
+      <div data-riskcell="" data-rev="" data-rev-delay="90" style="background:#FBF8F0;padding:26px 22px 30px">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#0A6F68">02 · CAPABILITY</div>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <h3 style="margin:13px 0 0;font-family:'Alexandria',sans-serif;font-size:17.5px;font-weight:500;line-height:1.45">هل يحسن ما ادعاه</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.9;color:#3C514F;font-weight:300">القدرة تقاس قبل الإسناد، في التخصص الدقيق لا في المهنة العامة.</p>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <h3 dir="ltr" style="margin:13px 0 0;font-family:'Alexandria',sans-serif;font-size:17px;font-weight:500;line-height:1.4">Can they do what they claim</h3>
+          <p dir="ltr" style="margin:10px 0 0;font-family:'Instrument Sans',sans-serif;font-size:13px;line-height:1.75;color:#3C514F">Capability is measured before assignment — in the narrow specialty, not the general trade.</p>
+        </sc-if>
+      </div>
+      <div data-riskcell="" data-rev="" data-rev-delay="180" style="background:#FBF8F0;padding:26px 22px 30px">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#0A6F68">03 · COUNTERPARTY</div>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <h3 style="margin:13px 0 0;font-family:'Alexandria',sans-serif;font-size:17.5px;font-weight:500;line-height:1.45">من أطالب إن أخفق</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.9;color:#3C514F;font-weight:300">تطالب كيان. المؤسسة هي المتعاقد، وإخفاق المنفذ مشكلتها لا مشكلتك.</p>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <h3 dir="ltr" style="margin:13px 0 0;font-family:'Alexandria',sans-serif;font-size:17px;font-weight:500;line-height:1.4">Whom do I hold to account</h3>
+          <p dir="ltr" style="margin:10px 0 0;font-family:'Instrument Sans',sans-serif;font-size:13px;line-height:1.75;color:#3C514F">You hold Kayan. The firm is the contracting party; a practitioner's failure is its problem, not yours.</p>
+        </sc-if>
+      </div>
+      <div data-riskcell="" data-rev="" data-rev-delay="270" style="background:#FBF8F0;padding:26px 22px 30px">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#0A6F68">04 · MONEY</div>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <h3 style="margin:13px 0 0;font-family:'Alexandria',sans-serif;font-size:17.5px;font-weight:500;line-height:1.45">أين يذهب مالي</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.9;color:#3C514F;font-weight:300">إلى حساب ضمان مخصص، لا إلى حساب تشغيل. ولا يفرج عنه إلا على استلام.</p>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <h3 dir="ltr" style="margin:13px 0 0;font-family:'Alexandria',sans-serif;font-size:17px;font-weight:500;line-height:1.4">Where does my money go</h3>
+          <p dir="ltr" style="margin:10px 0 0;font-family:'Instrument Sans',sans-serif;font-size:13px;line-height:1.75;color:#3C514F">Into a dedicated escrow account, not an operating account — released only against acceptance.</p>
+        </sc-if>
+      </div>
+      <div data-riskcell="" data-rev="" data-rev-delay="360" style="background:#05312D;color:#F4EFE2;padding:26px 22px 30px">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#6FDCCE">05 · QUALITY</div>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <h3 style="margin:13px 0 0;font-family:'Alexandria',sans-serif;font-size:17.5px;font-weight:500;line-height:1.45">من يقرأ العمل قبلي</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.9;color:rgba(244,239,226,.78);font-weight:300">مراجعة مستقلة عن فريق التسليم، تجيز أو ترد قبل أن يصلك شيء.</p>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <h3 dir="ltr" style="margin:13px 0 0;font-family:'Alexandria',sans-serif;font-size:17px;font-weight:500;line-height:1.4">Who reads the work before me</h3>
+          <p dir="ltr" style="margin:10px 0 0;font-family:'Instrument Sans',sans-serif;font-size:13px;line-height:1.75;color:rgba(244,239,226,.78)">A review independent of the delivery team clears or returns the work before anything reaches you.</p>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section id="open" style="background:#FBF8F0;border-block:1px solid rgba(7,27,26,.10)">
+    <div style="max-width:1360px;margin:0 auto;padding:clamp(56px,7vw,104px) clamp(16px,3.4vw,44px)">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px">
+        <div data-rev="" style="max-width:52ch">
+          <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+            <div style="font-size:11.5px;letter-spacing:.26em;color:#0A6F68;margin-bottom:18px">فتح الحساب</div>
+            <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(25px,3.5vw,48px);line-height:1.14;font-weight:300;letter-spacing:-.025em">افتح حسابك في أربع خطوات.</h2>
+            <p style="margin:18px 0 0;font-size:15px;line-height:1.95;color:#3C514F;font-weight:300">يفتح الحساب أولا، ثم يحرر النطاق، ثم يعرض السعر. لا يطلب إيداع قبل توقيعك على النطاق. البيانات تحفظ في متصفحك في هذا النموذج التجريبي.</p>
+          </sc-if>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+            <div dir="ltr" style="font-family:'Instrument Sans',sans-serif">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:#0A6F68;margin-bottom:18px">OPENING AN ACCOUNT</div>
+              <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(25px,3.4vw,46px);line-height:1.1;font-weight:300;letter-spacing:-.025em">Open your account in four steps.</h2>
+              <p style="margin:18px 0 0;font-size:14.5px;line-height:1.8;color:#3C514F">The account opens first, then the scope is drafted, then the price is shown. No deposit is requested before you sign the scope. In this demo, data stays in your browser.</p>
+            </div>
+          </sc-if>
+        </div>
+        <div style="display:flex;align-items:center;gap:9px">
+          <sc-for list="{{ dots }}" as="d" hint-placeholder-count="4"><span style="{{ d.style }}"></span></sc-for>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(26px,3.4vw,40px);background:#F4EFE2;border:1px solid rgba(7,27,26,.10);border-radius:22px;overflow:hidden">
+        <div style="height:3px;background:rgba(7,27,26,.08)"><div style="height:100%;background:linear-gradient(90deg,#0A6F68,#12B5A4);width:{{ pct }};transition:width .5s cubic-bezier(.23,1,.32,1)"></div></div>
+
+        <sc-if value="{{ !done }}" hint-placeholder-val="{{ true }}">
+          <div data-stepbody="" key="{{ stepKey }}" ref="{{ cardRef }}" onMouseMove="{{ cardMove }}" onMouseLeave="{{ cardLeave }}" style="position:relative;padding:clamp(24px,3.2vw,42px)">
+            <div aria-hidden="true" data-cardglow="" style="position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .35s ease;background:radial-gradient(340px circle at var(--fx,50%) var(--fy,50%),rgba(18,181,164,.10),transparent 70%)"></div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px">
+              <div>
+                <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#0A6F68">{{ stepTag }}</div>
+                <h3 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-size:clamp(20px,2.2vw,28px);font-weight:500;letter-spacing:-.015em">{{ stepTitle }}</h3>
+              </div>
+              <div style="font-size:13px;color:#6E7C7A;max-width:42ch;line-height:1.8">{{ stepHint }}</div>
+            </div>
+
+            <div data-stagger="quick" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:26px">
+              <sc-for list="{{ fields }}" as="f" hint-placeholder-count="4">
+                <label style="{{ f.wrap }}">
+                  <span style="display:block;font-size:12.5px;color:#4A5F5D;margin-bottom:7px">{{ f.label }}</span>
+                  <sc-if value="{{ f.isSelect }}" hint-placeholder-val="{{ false }}">
+                    <div data-sel="" style="position:relative">
+                      <button type="button" data-k="{{ f.k }}" onClick="{{ toggleSel }}" style="{{ f.selBtn }}">
+                        <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ f.value }}</span>
+                        <span style="{{ f.caret }}"></span>
+                      </button>
+                      <div style="{{ f.panel }}">
+                        <sc-for list="{{ f.optionRows }}" as="o" hint-placeholder-count="4">
+                          <button type="button" data-k="{{ o.k }}" data-v="{{ o.v }}" onClick="{{ chooseOpt }}" style="{{ o.style }}">
+                            <span>{{ o.v }}</span>
+                            <span style="{{ o.tick }}">✓</span>
+                          </button>
+                        </sc-for>
+                      </div>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ f.isArea }}" hint-placeholder-val="{{ false }}">
+                    <textarea data-k="{{ f.k }}" value="{{ f.value }}" onInput="{{ onField }}" placeholder="{{ f.ph }}" rows="3" style="width:100%;background:#fff;border:1px solid #E0D8C6;border-radius:12px;font-size:14px;color:#0C2A28;outline:none;line-height:1.7"></textarea>
+                  </sc-if>
+                  <sc-if value="{{ f.isText }}" hint-placeholder-val="{{ true }}">
+                    <input type="text" data-k="{{ f.k }}" value="{{ f.value }}" onInput="{{ onField }}" placeholder="{{ f.ph }}" style="width:100%;background:#fff;border:1px solid #E0D8C6;border-radius:12px;font-size:14px;color:#0C2A28;outline:none">
+                  </sc-if>
+                  <span style="{{ f.errStyle }}">{{ f.err }}</span>
+                </label>
+              </sc-for>
+            </div>
+
+            <sc-if value="{{ isNeed }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:16px">
+                <div style="font-size:12.5px;color:#4A5F5D;margin-bottom:10px">{{ needPrompt }}</div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px">
+                  <sc-for list="{{ needs }}" as="n" hint-placeholder-count="8">
+                    <button type="button" data-k="{{ n.k }}" onClick="{{ toggleNeed }}" style="{{ n.style }}">{{ n.label }}</button>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+
+            <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-top:26px;padding-top:20px;border-top:1px solid rgba(7,27,26,.10)">
+              <button type="button" onClick="{{ back }}" style="{{ backStyle }}">{{ backLabel }}</button>
+              <div style="display:flex;align-items:center;gap:14px">
+                <span style="font-size:12.5px;color:#8A9694">{{ stepCount }}</span>
+                <button type="button" onClick="{{ next }}" style="background:#12B5A4;color:#04302C;border:none;font-size:14.5px;font-weight:600;padding:13px 26px;border-radius:99px;cursor:pointer;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease" style-hover="background:#6FDCCE" style-active="transform:scale(.97)">{{ nextLabel }}</button>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ done }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:clamp(28px,3.6vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(24px,3vw,44px);align-items:center">
+            <div>
+              <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(18,181,164,.12);border:1px solid rgba(18,181,164,.3);border-radius:99px;padding:7px 14px">
+                <span style="width:6px;height:6px;border-radius:99px;background:#12B5A4"></span>
+                <span style="font-size:12.5px;color:#0A6F68">{{ doneChip }}</span>
+              </div>
+              <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+                <h3 style="margin:18px 0 0;font-family:'Alexandria',sans-serif;font-size:clamp(22px,2.6vw,34px);font-weight:400;letter-spacing:-.02em;line-height:1.25">فتح حسابك، ورقمه {{ ref }}.</h3>
+                <p style="margin:16px 0 0;font-size:15px;line-height:1.95;color:#3C514F;font-weight:300;max-width:46ch">يتصل بك خلال يوم عمل لتحرير النطاق. لا يطلب إيداع قبل أن توقع عليه.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:11px;margin-top:26px">
+                  <a href="Kayan Portal.dc.html" style="display:inline-flex;align-items:center;gap:10px;background:#05312D;color:#F4EFE2;font-size:14.5px;font-weight:500;padding:13px 24px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease" style-hover="background:#0A6F68;transform:translateY(-2px)">ادخل بوابتك<span style="font-size:16px">←</span></a>
+                  <a href="Kayan Client Profile.dc.html" style="border:1px solid rgba(7,27,26,.18);color:#3C514F;font-size:14.5px;padding:13px 22px;border-radius:99px" style-hover="border-color:#12B5A4;color:#0A6F68">مثال صفحة عميل</a>
+                  <button type="button" onClick="{{ reset }}" style="background:transparent;border:1px solid rgba(7,27,26,.18);color:#3C514F;font-size:14.5px;padding:13px 22px;border-radius:99px;cursor:pointer" style-hover="border-color:#12B5A4;color:#0A6F68">افتح حسابا آخر</button>
+                </div>
+              </sc-if>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+                <h3 dir="ltr" style="margin:18px 0 0;font-family:'Alexandria',sans-serif;font-size:clamp(22px,2.5vw,32px);font-weight:400;letter-spacing:-.02em;line-height:1.2">Your account is open — its number is {{ ref }}.</h3>
+                <p dir="ltr" style="margin:16px 0 0;font-family:'Instrument Sans',sans-serif;font-size:14.5px;line-height:1.8;color:#3C514F;max-width:48ch">We call within one working day to draft the scope. No deposit is requested before you sign it.</p>
+                <div dir="ltr" style="display:flex;flex-wrap:wrap;gap:11px;margin-top:26px;font-family:'Instrument Sans',sans-serif">
+                  <a href="Kayan Portal.dc.html" style="display:inline-flex;align-items:center;gap:10px;background:#05312D;color:#F4EFE2;font-size:14.5px;font-weight:500;padding:13px 24px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease" style-hover="background:#0A6F68;transform:translateY(-2px)">Enter your portal<span style="font-size:16px">→</span></a>
+                  <a href="Kayan Client Profile.dc.html" style="border:1px solid rgba(7,27,26,.18);color:#3C514F;font-size:14.5px;padding:13px 22px;border-radius:99px" style-hover="border-color:#12B5A4;color:#0A6F68">Sample client page</a>
+                  <button type="button" onClick="{{ reset }}" style="background:transparent;border:1px solid rgba(7,27,26,.18);color:#3C514F;font-size:14.5px;padding:13px 22px;border-radius:99px;cursor:pointer" style-hover="border-color:#12B5A4;color:#0A6F68">Open another account</button>
+                </div>
+              </sc-if>
+            </div>
+            <div style="background:#05312D;color:#F4EFE2;border-radius:18px;padding:26px 24px">
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#6FDCCE">WHAT HAPPENS NEXT</div>
+              <div style="display:grid;gap:1px;background:rgba(111,220,206,.16);border-radius:12px;overflow:hidden;margin-top:16px">
+                <sc-for list="{{ nextSteps }}" as="n" hint-placeholder-count="4">
+                  <div style="background:#05312D;padding:13px 15px;display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+                    <span style="font-size:13.5px;color:rgba(244,239,226,.86);font-weight:300">{{ n.t }}</span>
+                    <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6FDCCE;flex:none">{{ n.w }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="position:relative;overflow:hidden;background:#071B1A;color:rgba(244,239,226,.62);padding-top:clamp(48px,7vh,76px)">
+    <div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#0A6F68 30%,#6FDCCE 50%,#0A6F68 70%,transparent)"></div>
+    <kayan-mark line="rp" tone="lift" aria-hidden="true" style="position:absolute;left:-5%;bottom:-18%;width:min(38%,420px);opacity:.07;pointer-events:none;"></kayan-mark>
+    <div style="position:relative;max-width:1360px;margin:0 auto;padding:0 clamp(16px,3.4vw,44px) 28px">
+      <div data-rev="" style="margin-bottom:clamp(30px,5vh,52px)">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.26em;color:rgba(111,220,206,.6)">CLOSING · KYN-CLIENTS</div>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:14px;font-family:'Alexandria',sans-serif;font-weight:200;font-size:clamp(30px,5vw,58px);line-height:1.34;color:#F4EFE2;letter-spacing:-.01em">خلف كل نجاح، <b style="font-weight:800;background:linear-gradient(135deg,#0A6F68,#6FDCCE 55%,#12B5A4);-webkit-background-clip:text;background-clip:text;color:transparent">كيان.</b></div>
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;letter-spacing:.05em;color:rgba(244,239,226,.42);margin-top:14px">Behind every success, a Kayan.</div>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <div dir="ltr" style="margin-top:14px;font-family:'Alexandria',sans-serif;font-weight:200;font-size:clamp(28px,4.6vw,54px);line-height:1.2;color:#F4EFE2;letter-spacing:-.01em">Behind every success, a <b style="font-weight:800;background:linear-gradient(135deg,#0A6F68,#6FDCCE 55%,#12B5A4);-webkit-background-clip:text;background-clip:text;color:transparent">Kayan.</b></div>
+          <div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:13px;color:rgba(244,239,226,.42);margin-top:14px">خلف كل نجاح، كيان.</div>
+        </sc-if>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:30px;align-items:start">
+        <div>
+          <img src="assets/kayan-logo-gold.png" alt="كيان — Kayan" style="height:84px;width:auto;display:block">
+          <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:16px;font-size:12.5px;">
+              <a href="Kayan Legal.dc.html#terms" style="color:rgba(111,220,206,.75);">الشروط والأحكام</a>
+              <a href="Kayan Legal.dc.html#privacy" style="color:rgba(111,220,206,.75);">الخصوصية</a>
+              <a href="Kayan Legal.dc.html#data" style="color:rgba(111,220,206,.75);">حماية البيانات</a>
+            </div>
+          </sc-if>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+            <div dir="ltr" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:16px;font-size:12.5px;font-family:'Instrument Sans',sans-serif">
+              <a href="Kayan Legal.dc.html#terms" style="color:rgba(111,220,206,.75);">Terms &amp; conditions</a>
+              <a href="Kayan Legal.dc.html#privacy" style="color:rgba(111,220,206,.75);">Privacy</a>
+              <a href="Kayan Legal.dc.html#data" style="color:rgba(111,220,206,.75);">Data protection</a>
+            </div>
+          </sc-if>
+        </div>
+        <div>
+          <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+            <div style="font-size:11px;letter-spacing:.2em;color:#6FDCCE;margin-bottom:14px">الخطوط</div>
+            <div style="display:grid;gap:8px;font-size:13.5px">
+              <a href="Line I - Managed Delivery.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">الخط الأول · التسليم المدار</a>
+              <a href="Line II - The Hub and Cafe.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">الخط الثاني · الملتقى والمقهى</a>
+              <a href="Line III - The Forge.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">الخط الثالث · التكوين المهني</a>
+              <a href="Civic Wing - Kayan for Yemen.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">الذراع المدنية · كيان لليمن</a>
+            </div>
+          </sc-if>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#6FDCCE;margin-bottom:14px">THE LINES</div>
+            <div dir="ltr" style="display:grid;gap:8px;font-size:13px;font-family:'Instrument Sans',sans-serif">
+              <a href="Line I - Managed Delivery EN.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">Line I · Managed Delivery</a>
+              <a href="Line II - The Hub and Cafe EN.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">Line II · The Hub &amp; Café</a>
+              <a href="Line III - The Forge EN.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">Line III · Kayan Forge</a>
+              <a href="Civic Wing - Kayan for Yemen.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">Civic Wing · Kayan for Yemen</a>
+            </div>
+          </sc-if>
+        </div>
+        <div>
+          <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+            <div style="font-size:11px;letter-spacing:.2em;color:#6FDCCE;margin-bottom:14px">ابدأ من هنا</div>
+            <div style="display:grid;gap:8px;font-size:13.5px">
+              <a href="Line I - Ready Products.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">المنتجات الجاهزة</a>
+              <a href="Kayan Toolkit - Scoping Form.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">تحرير النطاق</a>
+              <a href="Kayan Client Profile.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">حساب العميل</a>
+              <a href="Kayan for Talent.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">إن كنت منفذا</a>
+            </div>
+          </sc-if>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#6FDCCE;margin-bottom:14px">START HERE</div>
+            <div dir="ltr" style="display:grid;gap:8px;font-size:13px;font-family:'Instrument Sans',sans-serif">
+              <a href="Line I - Ready Products.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">Ready products</a>
+              <a href="Kayan Toolkit - Scoping Form.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">Scoping form</a>
+              <a href="Kayan Client Profile.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">Client account</a>
+              <a href="Kayan for Talent.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">If you deliver work</a>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+      <div style="margin-top:40px;border-top:1px solid rgba(244,239,226,.1);padding-top:20px;display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;font-size:12px;color:rgba(244,239,226,.42)">
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}"><span>كيان · عدن</span></sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><span dir="ltr" style="font-family:'Instrument Sans',sans-serif">Kayan · Aden</span></sc-if>
+        <span dir="ltr" style="margin-inline-start:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em">CLIENT GATEWAY · {{ gatewayTag }}</span>
+      </div>
+    </div>
+  </footer>
+</div>
+<kayan-compass current="clients"></kayan-compass>

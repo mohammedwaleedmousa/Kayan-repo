@@ -1,0 +1,431 @@
+<div ref="{{ rootRef }}" dir="rtl" style="font-family:'IBM Plex Sans Arabic','Instrument Sans',sans-serif;color:#143C37;background:#FAF6EC;min-height:100vh;">
+
+<header ref="{{ hdrRef }}" style="position:fixed;top:0;left:0;right:0;z-index:60;background:transparent;border-bottom:1px solid rgba(42,29,12,.18);transition:background .32s ease,border-color .32s ease;">
+  <div aria-hidden="true" style="height:2px;background:linear-gradient(90deg,transparent,#C87A0E 30%,#FFB627 50%,#C87A0E 70%,transparent);"></div>
+  <div style="max-width:1360px;margin:0 auto;padding:0 clamp(14px,3vw,36px);display:flex;align-items:center;gap:clamp(8px,1.6vw,20px);height:72px;">
+    <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:11px;flex-shrink:0;color:#2A1D0C;">
+      <img src="assets/kayan-logo-gold.png" alt="كيان" style="height:clamp(38px,5vw,48px);width:auto;display:block;filter:brightness(0);">
+    </a>
+    <nav data-nav="" style="flex:1;min-width:0;display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;">
+      <a href="#floor" style="white-space:nowrap;color:rgba(42,29,12,.74);font-size:13.5px;padding:9px 12px;" style-hover="color:#2A1D0C">الطابق</a>
+      <a href="#members" style="white-space:nowrap;color:rgba(42,29,12,.74);font-size:13.5px;padding:9px 12px;" style-hover="color:#2A1D0C">العضويات</a>
+      <span aria-hidden="true" style="flex:none;width:1px;height:20px;background:rgba(42,29,12,.22);margin:0 6px;"></span>
+      <a href="#cafe" style="white-space:nowrap;color:rgba(42,29,12,.6);font-size:12.5px;padding:9px 10px;" style-hover="color:#2A1D0C">المقهى</a>
+      <a href="#community" style="white-space:nowrap;color:rgba(42,29,12,.6);font-size:12.5px;padding:9px 10px;" style-hover="color:#2A1D0C">المجتمع</a>
+    </nav>
+    <a href="Line II - The Hub and Cafe EN.dc.html" dir="ltr" style="flex-shrink:0;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:rgba(42,29,12,.62);border:1px solid rgba(42,29,12,.3);border-radius:99px;padding:6px 12px;transition:background .2s ease,color .2s ease;" style-hover="background:rgba(42,29,12,.1);color:#2A1D0C">EN</a>
+    <a href="#start" style="flex-shrink:0;white-space:nowrap;background:linear-gradient(135deg,#2A1D0C,#8A5B08);color:#FFFFFF;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:linear-gradient(135deg,#412C11,#A8710F)" style-active="transform:scale(.97)">احجز مقعدك</a>
+  </div>
+</header>
+
+<section data-hero="" data-screen-label="المركز والمقهى · الواجهة" style="position:relative;background:#FAF6EC;">
+  <div style="position:relative;background:linear-gradient(180deg,#F8BE45 0%,#F2A81F 42%,#E09114 74%,#C87A0E 100%);">
+    <div style="position:absolute;inset:0;background:radial-gradient(880px 620px at 24% 46%,rgba(255,248,230,.42),transparent 66%),radial-gradient(900px 460px at 78% -18%,rgba(122,74,28,.28),transparent 64%),radial-gradient(700px 480px at 2% 110%,rgba(122,74,28,.24),transparent 62%);pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,252,240,.11) 0 2px,transparent 2px 10px),repeating-linear-gradient(-45deg,rgba(122,74,28,.09) 0 2px,transparent 2px 10px);pointer-events:none;"></div>
+    <div style="position:relative;max-width:1320px;margin:0 auto;padding:calc(clamp(66px,7.4vh,86px) + clamp(26px,4.4vh,58px)) clamp(20px,4vw,44px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(18px,2.4vw,36px);align-items:center;">
+      <div style="min-width:0;">
+        <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(15px,1.5vw,20px);letter-spacing:.04em;color:#2A1D0C;">الملتقى والمقهى <span style="color:rgba(59,39,16,.5);">/</span></div>
+        <h1 data-reveal="" style="margin:clamp(10px,1.4vh,16px) 0 0;font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(34px,4.75vw,64px);line-height:1.22;letter-spacing:-.02em;color:#2A1D0C;max-width:13ch;">هنا تعمل عدن. وهنا تجتمع القدرة.</h1>
+        <sc-if value="{{ showLatin }}" hint-placeholder-val="{{ true }}">
+          <div data-reveal="" dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:clamp(15px,1.55vw,19px);line-height:1.42;color:rgba(42,29,12,.62);margin-top:14px;max-width:32ch;text-align:right;">Where Aden works. The gathering of capability.</div>
+        </sc-if>
+        <div data-reveal="" style="margin:clamp(22px,3vh,30px) 0 0;display:flex;align-items:center;gap:11px;flex-wrap:wrap;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(14px,1.34vw,17px);letter-spacing:.01em;color:#2A1D0C;">الجامع</span>
+          <span aria-hidden="true" style="width:22px;height:1px;background:rgba(42,29,12,.34);"></span>
+          <sc-if value="{{ showLatin }}" hint-placeholder-val="{{ true }}"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:rgba(42,29,12,.62);">THE GATHERING</span></sc-if>
+        </div>
+        <p data-reveal="" style="margin:10px 0 0;font-size:clamp(15px,1.42vw,17.5px);line-height:1.95;color:rgba(42,29,12,.88);max-width:36ch;">مكان مادي ورقمي تلتقي فيه المهارة بالفرصة — دار كيان على كورنيش خورمكسر، ومنها يفتح الباب على بقية خطوطها.</p>
+        <div data-reveal="" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:clamp(24px,3.2vh,34px);">
+          <a href="#members" style="background:#2A1D0C;color:#FFFFFF;font-size:14.5px;font-weight:600;padding:14px 26px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#412C11" style-active="transform:scale(.97)">احجز مقعدك</a>
+          <a href="#cafe" style="border:1px solid rgba(42,29,12,.42);color:#2A1D0C;font-size:14.5px;font-weight:500;padding:14px 26px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:rgba(255,252,240,.34)" style-active="transform:scale(.97)">قائمة المقهى</a>
+        </div>
+        <div data-reveal="" data-ring="{{ ringState }}" style="margin-top:clamp(22px,3vh,30px);display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;background:rgba(42,29,12,.1);border:1px solid rgba(42,29,12,.24);border-radius:99px;padding:7px 9px;">
+          <button type="button" onClick="{{ toggleSound }}" style="display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 18px;border:none;border-radius:99px;background:#2A1D0C;color:#FFFFFF;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#412C11" style-active="transform:scale(.97)">
+            <svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true" style="display:block;transform:scaleX(-1);"><polygon points="1,1 11,6 1,11" fill="#FFB627"></polygon></svg>
+            <span>{{ soundLabel }}</span>
+          </button>
+          <span data-tone="" aria-hidden="true" style="display:flex;align-items:center;gap:3px;height:20px;">
+            <i style="display:block;width:3px;height:20px;border-radius:2px;background:rgba(42,29,12,.5);transform:scaleY(.2);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:rgba(42,29,12,.62);transform:scaleY(.46);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:#7A4A1C;transform:scaleY(.76);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:#2A1D0C;transform:scaleY(1);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:#7A4A1C;transform:scaleY(.7);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:rgba(42,29,12,.62);transform:scaleY(.42);transform-origin:center;"></i><i style="display:block;width:3px;height:20px;border-radius:2px;background:rgba(42,29,12,.5);transform:scaleY(.22);transform-origin:center;"></i>
+          </span>
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(42,29,12,.6);white-space:nowrap;padding-inline-end:10px;">DOOR CHIME · G3 → C4 → E4</span>
+        </div>
+      </div>
+
+      <div data-reveal="" style="position:relative;z-index:3;min-width:0;align-self:end;top:clamp(18px,2.8vw,40px);margin-inline-end:0;">
+        <div style="position:relative;width:clamp(300px,42vw,640px);max-width:none;margin-inline-start:calc(100% - clamp(300px,42vw,640px));">
+          <div data-halo="" style="position:absolute;inset:-6% 6% 4% 4%;background:radial-gradient(closest-side at 50% 44%,rgba(255,252,242,.78),rgba(255,238,196,.42) 42%,rgba(255,214,128,.16) 64%,transparent 80%);pointer-events:none;"></div>
+          <div data-bird="1" style="position:relative;">
+            <kayan-mark line="hub" ramp="dark" motion="glide" entrance="settle" role="img" aria-label="الجامع — علامة الملتقى فوق شعاب عدن" style="width:100%;filter:drop-shadow(0 30px 50px rgba(90,55,5,.34)) drop-shadow(0 4px 10px rgba(90,55,5,.2));"></kayan-mark>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="floor" style="position:relative;z-index:1;background:#FAF6EC;padding:clamp(78px,10.5vw,164px) clamp(20px,4vw,44px) clamp(44px,6vh,72px);">
+    <div style="max-width:1320px;margin:0 auto;">
+      <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;"><bdi>الطابق</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· ONE FLOOR</span></div>
+      <div data-reveal="" data-cycle="" style="margin-top:18px;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(24px,3.5vw,44px);line-height:1.34;color:#052E2B;min-height:2.7em;">طابق واحد، فيه <b key="{{ cycleKey }}" style="color:#A8710F;">{{ cycleText }}</b></div>
+      <div data-reveal="" style="display:flex;gap:6px;margin-top:6px;max-width:520px;">
+        <span style="flex:1;height:3px;border-radius:2px;background:{{ rail0 }};transition:background .4s ease;"></span>
+        <span style="flex:1;height:3px;border-radius:2px;background:{{ rail1 }};transition:background .4s ease;"></span>
+        <span style="flex:1;height:3px;border-radius:2px;background:{{ rail2 }};transition:background .4s ease;"></span>
+        <span style="flex:1;height:3px;border-radius:2px;background:{{ rail3 }};transition:background .4s ease;"></span>
+        <span style="flex:1;height:3px;border-radius:2px;background:{{ rail4 }};transition:background .4s ease;"></span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(22px,3vw,44px);align-items:start;margin-top:clamp(30px,4vw,48px);">
+        <div style="min-width:0;">
+          <div data-reveal="" style="background:#fff;border:1px solid #E9DFC6;border-radius:18px;padding:24px 26px;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;">المشترك مفتوح، وما وراءه يحجز</div>
+            <p style="margin:10px 0 0;font-size:14.5px;line-height:1.9;color:#4A6B64;">تفتح المساحة المشتركة لأهل كيان وللعاملين لحسابهم بلا مقابل: يعملون فيها، ويلتقون بمن يشبههم. أما المكاتب المرنة والغرف المغلقة فتحجز، وتحسب على العضوية.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid #EFE4CC;">
+              <div style="display:flex;gap:9px;align-items:flex-start;"><span style="width:9px;height:9px;border-radius:50%;background:#0E6E66;flex:none;margin-top:6px;"></span><span style="font-size:13px;line-height:1.8;color:#4A6B64;">جلوس مفتوح بلا مقابل</span></div>
+              <div style="display:flex;gap:9px;align-items:flex-start;"><span style="width:9px;height:9px;border-radius:50%;background:#FFB627;flex:none;margin-top:6px;"></span><span style="font-size:13px;line-height:1.8;color:#4A6B64;">مكتب أو غرفة بالحجز</span></div>
+            </div>
+          </div>
+          <div data-reveal="" style="margin-top:14px;background:#F2E8D2;border:1px solid #E9DFC6;border-radius:18px;padding:20px 24px;display:flex;gap:14px;align-items:flex-start;">
+            <span style="width:20px;height:3px;border-radius:2px;background:#7A4A1C;flex:none;margin-top:10px;"></span>
+            <div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;">الدخول للجميع</div><p style="margin:6px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">مدخل بلا درج، ودورة مياه مهيأة، وممرات تتسع لكرسي متحرك. الإتاحة بند تصميم، لا لافتة على الجدار.</p></div>
+          </div>
+        </div>
+
+        <div style="min-width:0;">
+          <div data-reveal="" style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+            <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;"><bdi>الطاقة</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;white-space:nowrap;">· POWERED BY THE SUN</span></div>
+            <a href="Kayan Hub.html" style="font-size:13px;white-space:nowrap;">الموضع والمسافات ←</a>
+          </div>
+          <div data-reveal="" style="position:relative;overflow:hidden;margin-top:16px;background:linear-gradient(165deg,#FFF3D6,#FFFFFF 66%);border:1px solid #E9DFC6;border-radius:18px;padding:clamp(24px,3vw,36px);">
+            <svg aria-hidden="true" viewBox="0 0 200 200" style="position:absolute;top:-46px;inset-inline-end:-38px;width:clamp(150px,20vw,232px);height:auto;opacity:.55;pointer-events:none;">
+              <circle cx="100" cy="100" r="21" fill="#FFB627" fill-opacity=".9"></circle>
+              <g fill="none" stroke="#E09114" stroke-width="1.3" stroke-linecap="round">
+                <circle cx="100" cy="100" r="38" stroke-opacity=".55"></circle>
+                <circle cx="100" cy="100" r="56" stroke-opacity=".34"></circle>
+                <circle cx="100" cy="100" r="76" stroke-opacity=".2"></circle>
+              </g>
+            </svg>
+            <div style="position:relative;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.3;color:#052E2B;max-width:15ch;">كيان تديره <span style="color:#A8710F;">الشمس</span></div>
+            <p style="position:relative;margin:14px 0 0;max-width:46ch;font-size:14.5px;line-height:1.95;color:#4A6B64;">التزاما بيئيا، يعمل المركز على نظام شمسي: تخزن الطاقة نهارا، ويستمر العمل بعد المغرب. والشبكة العامة احتياط لا أساس.</p>
+            <div dir="ltr" style="position:relative;margin-top:18px;padding-top:14px;border-top:1px solid #EFE4CC;font-family:'Instrument Sans',sans-serif;font-size:13px;line-height:1.7;color:#8A8272;">Kayan runs on the sun — an environmental commitment.</div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal="" style="margin-top:clamp(26px,3.4vw,42px);border-top:1px solid #E9DFC6;display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));">
+        <div style="padding:20px 20px 4px;border-inline-end:1px solid #E9DFC6;"><div style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#0E6E66;">بلا مقابل</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">المساحة المشتركة</div></div>
+        <div style="padding:20px 20px 4px;border-inline-end:1px solid #E9DFC6;"><div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#A8710F;">$20</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">العضوية الشهرية · 30,000 ريال</div></div>
+        <div style="padding:20px 20px 4px;border-inline-end:1px solid #E9DFC6;"><div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#A8710F;">100%</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">نهار عمل تديره الشمس</div></div>
+        <div style="padding:20px 20px 4px;"><div style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:28px;color:#052E2B;">خطان</div><div style="font-size:12.5px;color:#6E675A;margin-top:5px;">إنترنت من مزودين مختلفين</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" data-screen-label="لماذا هنا" style="background:#F2E8D2;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;"><bdi>لماذا هنا</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· RELIABILITY IS THE PRODUCT</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:26ch;">ما يشق على المدينة كل يوم، يسلمه هذا الطابق كل يوم</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(216px,1fr));gap:1px;background:#E9DFC6;border:1px solid #E9DFC6;border-radius:18px;overflow:hidden;margin-top:32px;">
+      <div data-reveal="" data-hovercell="" style="background:#fff;padding:24px 22px 28px;"><div data-hk="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#A8710F;">01 · POWER</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">كهرباء تصمد</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">شمس نهارا، وبطاريات ليلا، والشبكة العامة احتياط. يوم عمل كامل، لا ساعات متقطعة.</p></div>
+      <div data-reveal="" data-hovercell="" style="background:#fff;padding:24px 22px 28px;"><div data-hk="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#A8710F;">02 · LINK</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">إنترنت لا يخذلك</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">خط رئيس وخط بديل من مزود آخر، لتصمد مكالمتك مع العميل إلى آخرها.</p></div>
+      <div data-reveal="" data-hovercell="" style="background:#fff;padding:24px 22px 28px;"><div data-hk="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#A8710F;">03 · QUIET</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">هدوء حين تحتاجه</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">باب يغلق للعمل العميق وللقاء العميل: صوت لا يتسرب، وخلفية تصلح للكاميرا.</p></div>
+      <div data-reveal="" data-hovercell="" style="background:#fff;padding:24px 22px 28px;"><div data-hk="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#A8710F;">04 · ADDRESS</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">عنوان يكتب في العقد</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">عنوان مهني يستقبل عليه البريد، ومكان يزار، لمن لا مكتب له بعد.</p></div>
+      <div data-reveal="" data-hovercell="" style="background:#fff;padding:24px 22px 28px;"><div data-hk="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#A8710F;">05 · PEOPLE</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">ناس يبنون مثلك</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">من عمل وحده توقف وحده. هنا زملاء وشركاء، ومن الطاولة المجاورة يأتي التكليف الأول.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="sun" data-screen-label="تديرنا الشمس" style="background:linear-gradient(180deg,#FFF7E4,#FAF6EC);padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;top:-140px;inset-inline-start:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,182,39,.3),transparent 68%);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div style="min-width:0;">
+        <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;"><bdi>كيف ندار</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· OPERATING COMMITMENTS</span></div>
+        <h2 style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.28;color:#052E2B;max-width:22ch;">ثلاثة التزامات، <b style="font-weight:700;color:#A8710F;">تقاس شهريا</b></h2>
+      </div>
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#8A8272;border:1px solid #E9DFC6;background:#FFFFFF;border-radius:99px;padding:7px 13px;">MEASURED · PUBLISHED · AUDITED</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,258px),1fr));gap:1px;background:#E9DFC6;border:1px solid #E9DFC6;border-radius:20px;overflow:hidden;margin-top:clamp(24px,3.5vh,36px);">
+      <div data-reveal="" style="background:#FFFFFF;padding:clamp(22px,2.8vw,30px);display:flex;flex-direction:column;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#A8710F;">01 · ENERGY &amp; WASTE</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(40px,5vw,60px);line-height:1;color:#052E2B;margin-top:16px;">صفر</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#A8710F;margin-top:8px;">بلاستيك أحادي الاستخدام</div>
+        <p style="margin:12px 0 0;font-size:13.5px;line-height:1.95;color:#4A6B64;">نهار بالشمس، ومساء بالبطاريات، والشبكة احتياط لا أساس.</p>
+      </div>
+      <div data-reveal="" style="background:linear-gradient(160deg,#FFF3D6,#FFFFFF 72%);padding:clamp(22px,2.8vw,30px);display:flex;flex-direction:column;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#A8710F;">02 · WOMEN AT THE CENTRE</div>
+        <div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(40px,5vw,60px);line-height:1;color:#052E2B;margin-top:16px;text-align:start;">60%</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#A8710F;margin-top:8px;">حد أدنى، لا سقف</div>
+        <p style="margin:12px 0 0;font-size:13.5px;line-height:1.95;color:#4A6B64;">يسري على كل دفعة تدريب وكل فريق يشكل، وينشر مع المراجعة الشهرية.</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;padding:clamp(22px,2.8vw,30px);display:flex;flex-direction:column;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#A8710F;">03 · INCLUSION BY DESIGN</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(40px,5vw,60px);line-height:1;color:#052E2B;margin-top:16px;">بلا عتبات</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#A8710F;margin-top:8px;">طابق أرضي، بالتصميم</div>
+        <p style="margin:12px 0 0;font-size:13.5px;line-height:1.95;color:#4A6B64;">أصحاب الهمم يعملون هنا: في المساحة، وفي الدفعات، وعلى كشف الرواتب.</p>
+      </div>
+    </div>
+
+    <div data-reveal="" style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:18px;">
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#8A8272;">ALIGNED WITH</span>
+      <span style="border:1px solid #E9DFC6;background:#FFFFFF;border-radius:99px;padding:6px 12px;font-size:12px;color:#4A6B64;"><b dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#A8710F;">SDG 5</b> مساواة الجنسين</span>
+      <span style="border:1px solid #E9DFC6;background:#FFFFFF;border-radius:99px;padding:6px 12px;font-size:12px;color:#4A6B64;"><b dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#A8710F;">SDG 7</b> طاقة نظيفة</span>
+      <span style="border:1px solid #E9DFC6;background:#FFFFFF;border-radius:99px;padding:6px 12px;font-size:12px;color:#4A6B64;"><b dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#A8710F;">SDG 10</b> حد من اللامساواة</span>
+      <span style="border:1px solid #E9DFC6;background:#FFFFFF;border-radius:99px;padding:6px 12px;font-size:12px;color:#4A6B64;"><b dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#A8710F;">SDG 12</b> استهلاك مسؤول</span>
+      <a href="Kayan Legal.dc.html" style="font-size:12.5px;color:#A8710F;margin-inline-start:4px;">سياسة التشغيل ←</a>
+    </div>
+  </div>
+</section>
+
+<section id="community" data-screen-label="المجتمع" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;"><bdi>المجتمع</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· A COMPANY BECOMES A PLACE</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:26ch;">بهذا الطابق تصير الشركة مكانا</h2>
+    <p data-reveal="" style="margin:14px 0 0;max-width:64ch;font-size:15.5px;line-height:1.95;color:#4A6B64;">المركز ليس مرفقا على هامش كيان، بل هو الباب الذي يدخل منه الناس إليها. تلتقي فيه فرق التسليم المدار بعملائها، وتجري فيه أفواج التدريب، ويجد فيه المستقل مكانا ينتمي إليه بين تكليف وآخر.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:30px;">
+      <div data-reveal="" data-hovercard="" style="background:#fff;border:1px solid #E9DFC6;border-top:4px solid #3E9EEA;border-radius:18px;padding:24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7CBC;">L1 · MANAGED DELIVERY</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:9px;">مكان يليق بلقاء العميل</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">يعقد اجتماع الانطلاق ومراجعة المعالم في غرفة يقبل بها المشتري الدولي.</p><a href="Line I - Managed Delivery.dc.html" style="display:inline-block;margin-top:12px;font-size:13px;">خط التسليم المدار ←</a></div>
+      <div data-reveal="" data-hovercard="" style="background:#fff;border:1px solid #E9DFC6;border-top:4px solid #FF6250;border-radius:18px;padding:24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#C8443A;">L3 · TALENT</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:9px;">قاعة تجري فيها الأفواج</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">يتكون الفوج هنا ثم يعمل من هنا، فتصير المسافة بين التدريب وأول تكليف مسافة طابق واحد.</p></div>
+      <div data-reveal="" data-hovercard="" style="background:#fff;border:1px solid #E9DFC6;border-top:4px solid #3FA75B;border-radius:18px;padding:24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#2E7D46;">L4 · CIVIC</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:9px;">باب يفتح للمدينة</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">تستضاف اللقاءات المفتوحة والورش المجتمعية في القاعة، وتعلن مواعيدها قبل انعقادها.</p></div>
+    </div>
+    <div data-reveal="" style="margin-top:16px;background:#F2E8D2;border:1px solid #E9DFC6;border-radius:18px;padding:22px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;">تقويم يجعل المكان حيا</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">ورش ولقاءات وإطلاقات على مدار الشهر، تعلن على الباب وعلى هذه الصفحة قبل موعدها.</p></div>
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;">القاعة تحجز لمن أراد</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">تؤجر بالساعة أو باليوم، بشرط اللائحة نفسها: لا نشاط حزبي، ولا فعالية لطرف في نزاع.</p></div>
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;">مكان محايد بلائحته</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.85;color:#4A6B64;">حياد المكان مكتوب في قواعده لا موكول إلى النية، ولذلك يستقبل الجميع على قدم واحدة.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="members" data-screen-label="العضويات" style="background:#2A1D0C;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 88% -10%,rgba(255,182,39,.2),transparent 62%);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#FFB627;font-weight:500;"><bdi>العضويات</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· ONE OPEN DOOR</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#FAF6EC;max-width:24ch;">المشترك مفتوح، وما وراءه بسعر معلن</h2>
+    <p data-reveal="" style="margin:14px 0 0;max-width:62ch;font-size:15.5px;line-height:1.95;color:rgba(250,246,236,.72);">لا يساوم على السعر عند الباب. تحرر العضوية عقدا، ويعرف العضو قبل توقيعه ما يدفع وما يأخذ ومتى ينتهي.</p>
+
+    <div data-reveal="" style="margin-top:30px;border:1px solid rgba(14,110,102,.55);background:rgba(14,110,102,.16);border-radius:18px;padding:22px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;align-items:center;">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#FAF6EC;">المساحة المشتركة</span><span style="background:#0E6E66;color:#FFFFFF;font-size:11.5px;font-weight:600;padding:3px 12px;border-radius:99px;">بلا مقابل</span></div>
+        <p style="margin:9px 0 0;font-size:14px;line-height:1.9;color:rgba(250,246,236,.8);max-width:52ch;">تفتح مقاعد المشترك لأهل كيان وللعاملين لحسابهم: يعملون، ويلتقون بمن يشبههم، ومن الجلسة المجاورة يبدأ تعارف يصير عملا. الدخول بالبطاقة، والمقعد بحسب التوافر.</p>
+      </div>
+      <div style="font-size:13.5px;line-height:1.9;color:rgba(250,246,236,.7);border-inline-start:1px solid rgba(250,246,236,.2);padding-inline-start:20px;">لا يشمل المشترك مكتبا معينا ولا غرفة تغلق. تحجز هذه على العضويات أدناه.</div>
+    </div>
+
+    <div data-reveal="" style="margin-top:16px;border:1px solid rgba(250,246,236,.16);border-radius:20px;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:13px 22px;background:rgba(250,246,236,.06);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(250,246,236,.55);"><span>العضوية</span><span>شهريا · بالريال</span><span>تشمل</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:15px 22px;border-top:1px solid rgba(250,246,236,.12);align-items:baseline;">
+        <span style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;"><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#FAF6EC;">العضوية الشهرية</span><span style="background:#FFB627;color:#2A1D0C;font-size:11px;font-weight:600;padding:2px 10px;border-radius:99px;">الأكثر طلبا</span></span>
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FFB627;text-align:left;">$20<span style="display:block;font-size:11px;color:rgba(250,246,236,.55);margin-top:2px;">YER 30,000</span></span>
+        <span style="font-size:14px;line-height:1.85;color:rgba(250,246,236,.76);">ستة أيام في الشهر، على أي مكتب شاغر، والمقهى ضمنها</span>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:15px 22px;border-top:1px solid rgba(250,246,236,.12);align-items:baseline;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#FAF6EC;">وردية المساء</span>
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FFB627;text-align:left;">$12<span style="display:block;font-size:11px;color:rgba(250,246,236,.55);margin-top:2px;">YER 18,000</span></span>
+        <span style="font-size:14px;line-height:1.85;color:rgba(250,246,236,.76);">مساء وعطلات — لمن نهاره لوظيفة وليله لعمله الحر</span>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:15px 22px;border-top:1px solid rgba(250,246,236,.12);align-items:baseline;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#FAF6EC;">العضوية المرنة</span>
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FFB627;text-align:left;">$40<span style="display:block;font-size:11px;color:rgba(250,246,236,.55);margin-top:2px;">YER 60,000</span></span>
+        <span style="font-size:14px;line-height:1.85;color:rgba(250,246,236,.76);">اثنا عشر يوما في الشهر، وعشر ساعات لقاعات الاجتماعات</span>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:15px 22px;border-top:1px solid rgba(250,246,236,.12);align-items:baseline;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#FAF6EC;">العضوية المقيمة</span>
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FFB627;text-align:left;">$60<span style="display:block;font-size:11px;color:rgba(250,246,236,.55);margin-top:2px;">YER 90,000</span></span>
+        <span style="font-size:14px;line-height:1.85;color:rgba(250,246,236,.76);">كل أيام العمل، من أول النهار إلى الإغلاق — مقعد مضمون دائما</span>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:15px 22px;border-top:1px solid rgba(250,246,236,.12);align-items:baseline;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#FAF6EC;">غرفة الفريق</span>
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FFB627;text-align:left;">$100<span style="display:block;font-size:11px;color:rgba(250,246,236,.55);margin-top:2px;">YER 150,000</span></span>
+        <span style="font-size:14px;line-height:1.85;color:rgba(250,246,236,.76);">غرفة مغلقة لفريق عامل حتى خمسة أعضاء، بحسب التوافر</span>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.05fr) 150px minmax(0,1.5fr);gap:12px;padding:15px 22px;border-top:1px solid rgba(250,246,236,.12);align-items:baseline;background:rgba(250,246,236,.05);">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#FAF6EC;">عضوية عن بعد</span>
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FFB627;text-align:left;">$10<span style="display:block;font-size:11px;color:rgba(250,246,236,.55);margin-top:2px;">YER 15,000</span></span>
+        <span style="font-size:14px;line-height:1.85;color:rgba(250,246,236,.76);">عنوان مهني وبريد وانتماء للمجتمع</span>
+      </div>
+    </div>
+
+    <div data-reveal="" style="margin-top:18px;background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.14);border-radius:16px;padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;">
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#FAF6EC;">الغرف تحجز مسبقا</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.85;color:rgba(250,246,236,.68);">تحجز بالساعة أو باليوم، للأعضاء ولغيرهم، ويهيأ المكان قبل موعدك.</p></div>
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#FAF6EC;">الدفع أول الشهر</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.85;color:rgba(250,246,236,.68);">وينهى العقد بإشعار خمسة عشر يوما من الطرفين، دون شرط جزائي.</p></div>
+      <div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#FAF6EC;">المكلف بعمل يجلس مجانا</div><p style="margin:7px 0 0;font-size:13.5px;line-height:1.85;color:rgba(250,246,236,.68);">من كلف بعمل جار عبر كيان يحجز مقعده بلا مقابل مدة التكليف.</p></div>
+    </div>
+    <p data-reveal="" style="margin:14px 0 0;font-size:12.5px;line-height:1.9;color:rgba(250,246,236,.5);max-width:80ch;">تقوم الأسعار بالدولار، وتقبل بالعملتين على سعر بطاقة الدار — اليوم: الدولار بألف وخمسمئة ريال — تعلق البطاقة على الباب وفي هذه الصفحة، وتحدث علنا.</p>
+  </div>
+</section>
+
+<section id="cafe" data-screen-label="المقهى والقائمة" style="background:#34250F;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,182,39,.06) 0 2px,transparent 2px 11px),repeating-linear-gradient(-45deg,rgba(255,182,39,.05) 0 2px,transparent 2px 11px);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#FFB627;font-weight:500;"><bdi>المقهى</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· THE CAFÉ</span></div>
+    <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.9vw,52px);line-height:1.24;color:#FAF6EC;max-width:20ch;">من أرض البن، فنجان يليق بها</h2>
+    <p data-reveal="" style="margin:18px 0 0;max-width:62ch;font-size:16px;line-height:2;color:rgba(250,246,236,.78);">اليمن أرض البن، والمقهى هنا يقدمه كما يستحق: قهوة تحضر أمامك، وعصير يعصر عند الطلب، وطبق خفيف لا يثقل يوم العمل. يفتح للأعضاء وللزوار على قدم واحدة.</p>
+
+    <div data-reveal="" style="margin-top:32px;border:1px solid rgba(250,246,236,.18);border-radius:22px;overflow:hidden;background:rgba(250,246,236,.04);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(262px,1fr));gap:1px;background:rgba(250,246,236,.14);">
+        <div style="background:#34250F;padding:26px 24px 28px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#FFB627;">COFFEE</div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#FAF6EC;margin-top:9px;">القهوة</div>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
+            <div><div style="font-size:14.5px;color:#FAF6EC;">قهوة يمنية بالهيل</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">من بن يمني، تحضر على النار وتصب في دلة</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">قشر بالزنجبيل</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">من قشر البن، حار وخفيف</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">إسبريسو ومكياتو</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">فردي أو مزدوج</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">لاتيه وكابتشينو</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">حليب طازج، وبديل نباتي عند الطلب</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">قهوة مثلجة</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">لرطوبة عدن في الصيف</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">شاي عدني بالحليب</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">بالهيل، ومساؤه خير من صباحه</div></div>
+          </div>
+        </div>
+        <div style="background:#34250F;padding:26px 24px 28px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#FFB627;">JUICE</div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#FAF6EC;margin-top:9px;">العصائر الطازجة</div>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
+            <div><div style="font-size:14.5px;color:#FAF6EC;">مانجو</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">في موسمه، ومنه أخذ لون هذا الخط</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">ليمون بالنعناع</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">مبرد، ودون سكر مضاف عند الطلب</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">جوافة</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">ثقيل، ويغني عن وجبة</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">برتقال</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">يعصر عند الطلب</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">أفوكادو بالعسل</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">بعسل يمني، قبل جلسة طويلة</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">كوكتيل الموسم</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">يتبدل بتبدل السوق</div></div>
+          </div>
+        </div>
+        <div style="background:#34250F;padding:26px 24px 28px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#FFB627;">KITCHEN</div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#FAF6EC;margin-top:9px;">السلطات والأطباق الخفيفة</div>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
+            <div><div style="font-size:14.5px;color:#FAF6EC;">سلطة خضراء</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">ورق موسمي، بليمون وزيت زيتون</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">سلطة دجاج مشوي</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">طبق كامل، يصلح غداء عمل</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">سلطة تونة</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">تونة يمنية، ببصل وليمون</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">حمص بالطحينة</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">مع خبز دافئ</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">طبق الفطور</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">بيض وجبن وزعتر وخبز</div></div>
+            <div><div style="font-size:14.5px;color:#FAF6EC;">معجنات اليوم</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);margin-top:3px;">تخبز صباحا، وتنفد غالبا</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:16px 24px;border-top:1px solid rgba(250,246,236,.14);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">
+        <span style="font-size:13px;line-height:1.85;color:rgba(250,246,236,.62);">القائمة موسمية، وما نفد يرفع من اللوح في يومه. الأسعار معلنة عند الطلب، والحساب واحد للعضو والزائر.</span>
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(250,246,236,.45);white-space:nowrap;">MENU · KYN-HUB-CAFE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rules" data-screen-label="قواعد المكان" style="background:#FAF6EC;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;"><bdi>القواعد</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· WRITTEN ON THE DOOR</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:24ch;">مكان يحكم بقواعد مكتوبة على بابه</h2>
+    <div style="display:flex;flex-direction:column;gap:1px;background:#E9DFC6;border:1px solid #E9DFC6;border-radius:18px;overflow:hidden;margin-top:28px;">
+      <div data-reveal="" style="background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#A8710F;">01</span><span style="font-size:14.5px;line-height:1.85;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">الدخول بالبطاقة.</b> ويدخل الزائر بدعوة باسم من دعاه.</span></div>
+      <div data-reveal="" style="background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#A8710F;">02</span><span style="font-size:14.5px;line-height:1.85;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">لا تصوير دون إذن.</b> ولا تنشر صورة أحد لغرض التسويق.</span></div>
+      <div data-reveal="" style="background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#A8710F;">03</span><span style="font-size:14.5px;line-height:1.85;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">الهدوء يحترم في موضعه.</b> المشترك للحديث والعمل معا، والغرف لمن أراد الصمت.</span></div>
+      <div data-reveal="" style="background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#A8710F;">04</span><span style="font-size:14.5px;line-height:1.85;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">لا نشاط حزبي.</b> ولا فعالية لطرف في نزاع. المكان محايد بحكم لائحته.</span></div>
+      <div data-reveal="" style="background:#fff;padding:18px 22px;display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#A8710F;">05</span><span style="font-size:14.5px;line-height:1.85;color:#4A6B64;"><b style="color:#052E2B;font-weight:600;">الساعات معلنة.</b> تنشر على الباب وعلى هذه الصفحة، ويعلن كل إغلاق طارئ في حينه.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="place" data-screen-label="الموضع" style="background:#F2E8D2;padding:clamp(50px,8vh,88px) clamp(20px,4vw,44px);">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#A8710F;font-weight:500;"><bdi>الموضع</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;">· WHERE IT SITS</span></div>
+    <h2 data-reveal="" style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:26ch;">على ساحل أبين، في قلب خور مكسر</h2>
+    <div data-reveal="" style="background:#fff;border:1px solid #E9DFC6;border-radius:20px;overflow:hidden;margin-top:28px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#EFE4CC;">
+        <div style="background:#fff;padding:22px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A8272;">DISTRICT</div><div style="font-size:15.5px;color:#052E2B;margin-top:6px;">خور مكسر · ساحل أبين</div></div>
+        <div style="background:#fff;padding:22px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A8272;">CITY</div><div style="font-size:15.5px;color:#052E2B;margin-top:6px;">عدن، الجمهورية اليمنية</div></div>
+        <div style="background:#fff;padding:22px 24px;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A8272;">HOURS</div><div style="font-size:15.5px;color:#052E2B;margin-top:6px;">تعلن على الباب قبل الافتتاح</div></div>
+      </div>
+      <div style="padding:22px 24px;border-top:1px solid #EFE4CC;display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+        <p style="margin:0;font-size:14px;line-height:1.9;color:#4A6B64;max-width:58ch;">يطل الموقع على البحر، ويقع على مسافة قصيرة من المطار ومن مركز المدينة. تنشر الخريطة التفصيلية والمسافات في صفحة الموضع.</p>
+        <a href="Kayan Hub.html" style="background:#2A1D0C;color:#FFFFFF;font-size:13.5px;font-weight:600;padding:12px 22px;border-radius:99px;white-space:nowrap;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease;" style-hover="background:#412C11" style-active="transform:scale(.97)">افتح الخريطة</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="start" data-screen-label="المركز والمقهى · الخاتمة" style="position:relative;overflow:hidden;background:linear-gradient(178deg,#073632,#062F2C 62%);padding:clamp(74px,10vh,104px) clamp(20px,4vw,44px) 28px;color:rgba(250,246,236,.72);clip-path:polygon(0 14px,50% 30px,100% 6px,100% 100%,0 100%);margin-top:-6px;">
+  <div aria-hidden="true" data-goldedge="" style="position:absolute;inset-inline:0;top:0;height:34px;pointer-events:none;">
+    <svg viewBox="0 0 1000 34" preserveAspectRatio="none" style="width:100%;height:100%;display:block;">
+      <path d="M0 14 L500 30 L1000 6" fill="none" stroke="url(#hubEdge)" stroke-width="2" vector-effect="non-scaling-stroke" pathLength="1" style="stroke-dasharray:1;stroke-dashoffset:1;animation:hubDraw 1.1s .15s cubic-bezier(.2,.7,.2,1) forwards;"></path>
+      <defs><linearGradient id="hubEdge" x1="0" x2="1"><stop offset="0" stop-color="#C87A0E" stop-opacity=".2"></stop><stop offset=".5" stop-color="#FFB627"></stop><stop offset="1" stop-color="#C87A0E" stop-opacity=".2"></stop></linearGradient></defs>
+    </svg>
+  </div>
+  <kayan-mark line="ivory" tone="lift" aria-hidden="true" style="position:absolute;inset-inline-start:auto;right:-6%;top:8%;width:clamp(280px,32vw,420px);opacity:.05;pointer-events:none;"></kayan-mark>
+  <div aria-hidden="true" style="position:absolute;left:18px;bottom:26px;width:118px;height:66px;opacity:.16;pointer-events:none;background-image:radial-gradient(rgba(255,182,39,.9) 1px,transparent 1px);background-size:16px 16px;"></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;">
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,9%,96px);align-items:start;">
+      <div data-reveal="">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(25px,3.4vw,42px);line-height:1.12;letter-spacing:-.015em;color:#FAF6EC;max-width:22ch;">تفضل بزيارتنا، أو احجز مقعدك ويرد عليك مدير المركز خلال يوم عمل.</div>
+        <sc-if value="{{ showLatin }}" hint-placeholder-val="{{ true }}">
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:rgba(250,246,236,.58);margin-top:21px;max-width:44ch;">Come in, or reserve a seat. One working day to reply.</div>
+        </sc-if>
+      </div>
+      <div data-reveal="" style="display:flex;flex-direction:column;gap:12px;">
+        <a href="Kayan Hub.html" style="box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-height:52px;background:#F7B933;color:#2A1D0C;text-align:center;font-size:14.5px;font-weight:600;padding:14px 22px;border-radius:5px;transition:background .22s ease;" style-hover="background:#FFC94F">احجز مقعدك</a>
+        <a href="Line I - Managed Delivery.dc.html" style="box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-height:52px;border:1px solid rgba(255,182,39,.38);color:#FAF6EC;text-align:center;font-size:14.5px;font-weight:500;padding:14px 22px;border-radius:5px;transition:background .22s ease,border-color .22s ease;" style-hover="background:rgba(255,182,39,.09);border-color:rgba(255,182,39,.62)">أو تعرف على التسليم المدار</a>
+      </div>
+    </div>
+
+    <div data-reveal="" aria-hidden="true" style="margin-top:clamp(40px,6vh,50px);height:1px;background:linear-gradient(90deg,rgba(255,182,39,.55),rgba(255,182,39,.6) 70%,rgba(255,182,39,.12));"></div>
+
+    <div style="margin-top:clamp(30px,4.5vh,42px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(24px,3.5vw,44px);align-items:start;">
+      <div data-reveal="">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.26em;color:rgba(255,182,39,.6);">CLOSING · KYN-LINE-II</div>
+        <div style="margin-top:12px;font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;line-height:1.5;color:#FAF6EC;">خلف كل نجاح، <b style="font-weight:800;background:linear-gradient(135deg,#C87A0E,#FFB627 55%,#C87A0E);-webkit-background-clip:text;background-clip:text;color:transparent;">كيان.</b></div>
+        <sc-if value="{{ showLatin }}" hint-placeholder-val="{{ true }}">
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;letter-spacing:.04em;color:rgba(250,246,236,.5);margin-top:8px;">Behind every success, a Kayan.</div>
+        </sc-if>
+      </div>
+      <div data-reveal="" style="display:flex;align-items:center;justify-content:center;">
+        <kayan-line-audio inline="" motif="hub" accent="#FFB627"></kayan-line-audio>
+      </div>
+      <div data-reveal="" style="text-align:end;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.26em;color:#FFB627;">THE HUB &amp; CAFÉ</div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.22em;color:rgba(250,246,236,.6);margin-top:9px;">ADEN · YEMEN</div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;margin-top:9px;color:rgba(255,182,39,.5);">12°47′N · 45°01′E</div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="margin-top:clamp(34px,5vh,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(24px,3vw,40px);align-items:start;">
+      <div>
+        <img src="assets/kayan-logo-gold.png" alt="كيان — Kayan" style="height:92px;width:auto;display:block;">
+        <div style="margin-top:16px;font-size:12.5px;line-height:2.1;color:rgba(250,246,236,.6);max-width:34ch;">مكان مادي ورقمي تلتقي فيه المهارة بالعمل: كهرباء لا تنقطع، واتصال مضمون، ومقهى من أرض البن.</div>
+      </div>
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,182,39,.75);">THE FLOOR</div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-size:13.5px;">
+          <a href="#floor" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">الطابق</a>
+          <a href="#members" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">العضويات</a>
+          <a href="#cafe" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">المقهى</a>
+          <a href="#community" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">المجتمع</a>
+          <a href="#start" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">احجز مقعدك</a>
+        </div>
+      </div>
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,182,39,.75);">THE LINES</div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-size:13.5px;">
+          <a href="Line I - Managed Delivery.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">الخط الأول · التسليم المدار</a>
+          <a href="Line I - Ready Products.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">الرف الجاهز · المنتجات</a>
+          <a href="Line III - The Forge.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">الخط الثالث · كيان فورج</a>
+          <a href="Civic Wing - Kayan for Yemen.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">الذراع المدنية · كيان لليمن</a>
+        </div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,182,39,.75);margin-top:22px;">LEGAL · KYN-LG</div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-size:13.5px;">
+          <a href="Kayan Legal.dc.html#terms" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">الشروط والأحكام</a>
+          <a href="Kayan Legal.dc.html#privacy" style="color:rgba(250,246,236,.72);" style-hover="color:#FFB627">سياسة الخصوصية</a>
+        </div>
+      </div>
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,182,39,.75);">ADEN · YEMEN</div>
+        <div style="font-size:13.5px;line-height:2;margin-top:14px;color:rgba(250,246,236,.72);">خورمكسر، شارع الكورنيش،<br>بجوار فندق ريلاكس، عدن</div>
+        <a href="Kayan Hub.html" style="display:inline-block;margin-top:12px;font-size:13px;color:rgba(255,182,39,.85);" style-hover="color:#FFB627">افتح الخريطة</a>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;margin-top:12px;color:rgba(255,182,39,.55);">12°47′N · 45°01′E</div>
+      </div>
+    </div>
+    <div style="margin-top:36px;border-top:1px solid rgba(250,246,236,.1);padding-top:20px;display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;font-size:12px;color:rgba(250,246,236,.5);">
+      <span>كيان · عدن</span>
+      <span dir="ltr" style="margin-inline-start:auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(250,246,236,.45);">THE HUB &amp; CAFÉ · ADEN · YEMEN</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+<kayan-compass current="line2"></kayan-compass>
