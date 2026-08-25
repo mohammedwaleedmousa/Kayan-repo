@@ -2,6 +2,8 @@
 import * as THREE from 'three';
 
 export default function mountDimension() {
+const cleanups=[];
+const on=(target,type,handler,options)=>{target.addEventListener(type,handler,options);cleanups.push(()=>target.removeEventListener(type,handler,options));};
 const probe=document.createElement('canvas');
 if(!(probe.getContext('webgl2')||probe.getContext('webgl'))){
   document.getElementById('fallback').style.display='grid';
@@ -222,7 +224,7 @@ const rail=document.getElementById('rail');
 });
 const railBtns=[...rail.children];
 const progBar=document.querySelector('#prog i');
-addEventListener('keydown',e=>{
+on(window,'keydown',e=>{
   if(e.key!=='ArrowDown'&&e.key!=='PageDown'&&e.key!=='ArrowUp'&&e.key!=='PageUp')return;
   e.preventDefault();
   let cur=0,best=9;CH.forEach((c,i)=>{const m=(c.a+c.b)/2,d=Math.abs(prog-m);if(d<best){best=d;cur=i;}});
@@ -235,14 +237,16 @@ let gateIdx=-1;
 // Scroll engine (damped)
 let target=0,prog=0,pmx=0,pmy=0,mx=0,my=0;
 if(matchMedia('(pointer:fine)').matches&&!reduced){
-  addEventListener('pointermove',e=>{pmx=(e.clientX/innerWidth-.5)*2;pmy=(e.clientY/innerHeight-.5)*2;},{passive:true});
+  on(window,'pointermove',e=>{pmx=(e.clientX/innerWidth-.5)*2;pmy=(e.clientY/innerHeight-.5)*2;},{passive:true});
 }
-addEventListener('scroll',()=>{const total=document.body.scrollHeight-innerHeight;target=total>0?scrollY/total:0;},{passive:true});
-addEventListener('resize',()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+on(window,'scroll',()=>{const total=document.body.scrollHeight-innerHeight;target=total>0?scrollY/total:0;},{passive:true});
+on(window,'resize',()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
 
 const clockT={last:performance.now()/1000,t:0};
 let splashDone=false;
+let disposed=false,frameId=0;
 function frame(){
+  if(disposed)return;
   const _now=performance.now()/1000;
   const dt=Math.min(_now-clockT.last,.05);clockT.last=_now;clockT.t+=dt;
   const t=clockT.t,slow=reduced?.15:1;
@@ -298,9 +302,23 @@ function frame(){
 
   renderer.render(scene,cam);
   if(!splashDone){splashDone=true;const s=document.getElementById('splash');s.style.opacity=0;setTimeout(()=>s.remove(),900);}
-  requestAnimationFrame(frame);
+  frameId=requestAnimationFrame(frame);
 }
-requestAnimationFrame(frame);
+frameId=requestAnimationFrame(frame);
 
-return () => {};
+return () => {
+  disposed=true;
+  cancelAnimationFrame(frameId);
+  cleanups.splice(0).forEach((cleanup)=>cleanup());
+  scene.traverse((object)=>{
+    object.geometry?.dispose?.();
+    const materials=Array.isArray(object.material)?object.material:[object.material];
+    materials.filter(Boolean).forEach((material)=>{
+      Object.values(material).forEach((value)=>value?.isTexture&&value.dispose());
+      material.dispose?.();
+    });
+  });
+  renderer.dispose();
+  renderer.domElement.remove();
+};
 }

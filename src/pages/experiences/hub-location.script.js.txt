@@ -1,5 +1,9 @@
 
-(function () {
+return (function () {
+  var __rafs = new Set(), __timers = new Set(), __observers = [];
+  function __raf(fn) { var id = window.requestAnimationFrame(function (time) { __rafs.delete(id); fn(time); }); __rafs.add(id); return id; }
+  function __timer(fn, delay) { var id = window.setTimeout(function () { __timers.delete(id); fn(); }, delay); __timers.add(id); return id; }
+  function __observer(fn, options) { var observer = new IntersectionObserver(fn, options); __observers.push(observer); return observer; }
   var HUB = [12.8065, 45.0415];
   var PTS = [
     { ar: 'The Hub — Abyan coast, Khormaksar', lat: 12.8065, lng: 45.0415, p: 'Approximate district centre', hub: true },
@@ -81,7 +85,7 @@
     (function step(now) {
       var p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
       out.textContent = (from + (v - from) * e).toFixed(1);
-      if (p < 1) raf = requestAnimationFrame(step); else shown = v;
+      if (p < 1) raf = __raf(step); else shown = v;
     })(t0);
     shown = v;
   }
@@ -97,7 +101,7 @@
     fromCo.textContent = p.lat.toFixed(4) + ', ' + p.lng.toFixed(4);
     meterFill.style.width = Math.max(6, Math.min(100, v / MAXKM * 100)).toFixed(1) + '%';
     if (!reduce) { pulse.setAttribute('r', 18); pulse.style.transition = 'none'; pulse.style.opacity = '.55';
-      requestAnimationFrame(function () { pulse.style.transition = 'r 1.2s cubic-bezier(.23,1,.32,1),opacity 1.2s ease'; pulse.setAttribute('r', r); pulse.style.opacity = '0'; }); }
+      __raf(function () { pulse.style.transition = 'r 1.2s cubic-bezier(.23,1,.32,1),opacity 1.2s ease'; pulse.setAttribute('r', r); pulse.style.opacity = '0'; }); }
   }
   sel.onchange = upd;
 
@@ -111,11 +115,11 @@
   if (reduce || !('IntersectionObserver' in window)) { play(); }
   else {
     needle.style.transform = 'rotate(0deg)';
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { io.disconnect(); setTimeout(play, 200); } });
+    var io = __observer(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { io.disconnect(); __timer(play, 200); } });
     }, { threshold: 0.3 });
     io.observe(wrap);
-    setTimeout(function () { if (!sec.classList.contains('on')) play(); }, 2200);
+    __timer(function () { if (!sec.classList.contains('on')) play(); }, 2200);
     out.textContent = '0.0';
   }
 
@@ -135,11 +139,11 @@
     if (!rs) return;
     var noMo = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (noMo || !('IntersectionObserver' in window)) { rs.classList.add('on'); return; }
-    var rio = new IntersectionObserver(function (es) {
+    var rio = __observer(function (es) {
       es.forEach(function (x) { if (x.isIntersecting) { rio.disconnect(); rs.classList.add('on'); } });
     }, { threshold: 0.01, rootMargin: '0px 0px -10% 0px' });
     rio.observe(rs);
-    setTimeout(function () { rs.classList.add('on'); }, 2000);
+    __timer(function () { rs.classList.add('on'); }, 2000);
   })();
 
   // ---- conditions: neuron lattice + card reveal ----
@@ -150,11 +154,11 @@
     var reveal = function () { cs.classList.add('on'); };
     if (noMo || !('IntersectionObserver' in window)) reveal();
     else {
-      var cio = new IntersectionObserver(function (es) {
+      var cio = __observer(function (es) {
         es.forEach(function (x) { if (x.isIntersecting) { cio.disconnect(); reveal(); } });
       }, { threshold: 0.01, rootMargin: '0px 0px -10% 0px' });
       cio.observe(cs);
-      setTimeout(reveal, 2000);
+      __timer(reveal, 2000);
     }
     if (!svg) return;
     var reduce = noMo;
@@ -192,10 +196,17 @@
               dot.setAttribute('cx', (a[0] + (b[0] - a[0]) * q).toFixed(1));
               dot.setAttribute('cy', (a[1] + (b[1] - a[1]) * q).toFixed(1));
             }
-            requestAnimationFrame(step);
+            __raf(step);
           })(performance.now());
         })(d, pts[e[0]], pts[e[1]], k * 1200);
       }
     }
   })();
+  return function () {
+    __rafs.forEach(function (id) { cancelAnimationFrame(id); }); __rafs.clear();
+    __timers.forEach(function (id) { clearTimeout(id); }); __timers.clear();
+    __observers.forEach(function (observer) { observer.disconnect(); });
+    cancelAnimationFrame(raf);
+    map.remove();
+  };
 })();

@@ -1,4 +1,5 @@
 
+var __atlasDisposed=false,__atlasTimer=0;
 window.__langHooks=[];
 function __lang(){return document.documentElement.getAttribute('data-lang')==='en'?'en':'ar';}
 function __L(ar,en){return __lang()==='en'?en:ar;}
@@ -37,6 +38,7 @@ function __setLang(v){
     const setMsg=()=>msg.text(__L('تعذر تحميل الجغرافيا — تعاد المحاولة عند عودة الاتصال.','The geography could not be loaded. It will be retried when the connection returns.'));
     setMsg(); window.__langHooks.push(setMsg); return;
   }
+  if(__atlasDisposed)return;
   const land=topojson.feature(topo,topo.objects.countries);
   const YEMEN='887';
 
@@ -87,7 +89,7 @@ function __setLang(v){
       ?__L('فوق أفق عدن','Above the horizon of Aden')
       :__L('تحت أفق عدن — المقر على التخزين','Below the horizon of Aden, the headquarters on storage');
   }
-  tick(); setInterval(tick,60000); window.__langHooks.push(tick);
+  tick(); __atlasTimer=setInterval(tick,60000); window.__langHooks.push(tick);
 
   // Delivery spokes: straight true-bearing radii in this projection
   const dests=[
@@ -164,3 +166,8 @@ function __setLang(v){
       .attr('letter-spacing','.1em').attr('fill','rgba(233,201,107,.8)').text(t);
   });
 })();
+return function(){
+  __atlasDisposed=true;
+  if(__atlasTimer)clearInterval(__atlasTimer);
+  window.__langHooks=[];
+};

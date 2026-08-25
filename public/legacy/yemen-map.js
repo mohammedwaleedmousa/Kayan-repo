@@ -70,7 +70,7 @@
       var tries = 0;
       while (!(window.d3 && window.topojson)) { if (++tries > 120) return this._fail(); await new Promise(function (r) { setTimeout(r, 100); }); }
       var topo;
-      try { topo = await (await fetch((window.__resources && window.__resources.worldAtlas) || 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-50m.json')).json(); }
+      try { topo = await (await fetch((window.__resources && window.__resources.worldAtlas) || '/vendor/countries-50m.json')).json(); }
       catch (e) { return this._fail(); }
       try { this._build(topo); } catch (e) { this._fail(); }
     }
