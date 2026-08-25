@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import template from './home-template.html?raw';
+import template from './home-template.txt?raw';
 import { routeForHomeHref } from './homeRoutes.js';
 
 const EVENT_NAMES = {
