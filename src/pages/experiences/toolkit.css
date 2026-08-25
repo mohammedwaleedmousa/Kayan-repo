@@ -1,0 +1,6 @@
+
+html,body{margin:0;padding:0;background:#F1EAD9;}
+body{-webkit-font-smoothing:antialiased;}
+::selection{background:#3E9EEA;color:#052E2B;}
+a{color:#0E6E66;text-decoration:none;}a:hover{color:#3E9EEA;}
+select,input,textarea{font-family:'Instrument Sans',sans-serif;}

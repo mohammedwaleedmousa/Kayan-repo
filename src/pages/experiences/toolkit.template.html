@@ -1,0 +1,115 @@
+<div style="position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:12px clamp(14px,4vw,26px);background:#052E2B;color:#FAF6EC;font-family:'Instrument Sans',sans-serif;">
+  <span style="display:flex;align-items:center;gap:12px;">
+    <img src="uploads/kayan_logo_gold.png" alt="Kayan" style="height:20px;">
+    <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;"><span style="width:10px;height:10px;border-radius:3px;background:#3E9EEA;"></span>Line One Toolkit · Scoping Form</span>
+  </span>
+  <span style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <a href="Line I - Managed Delivery.dc.html" style="font-size:12px;color:#FAF6EC;background:rgba(250,246,236,.08);border:1px solid rgba(250,246,236,.2);border-radius:99px;padding:6px 12px;">خط التسليم المدار →</a>
+    <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:rgba(250,246,236,.6);">KAY-A07 · v1 · WORKING TOOL</span>
+  </span>
+</div>
+
+<section data-screen-label="Scoping form" style="padding:56px clamp(20px,4vw,48px) 90px;font-family:'Instrument Sans',sans-serif;">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:12.5px;letter-spacing:.2em;color:#0E6E66;font-weight:500;">TOOL 01 · BEFORE ANY SCOPE OF WORK</div>
+    <h1 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.25;color:#052E2B;max-width:26ch;">The scoping form — answer these, and the SOW writes itself</h1>
+    <div style="font-size:14.5px;line-height:1.9;color:#4A6B64;margin-top:10px;max-width:66ch;">Filled during the scoping call at gate G1. The composed summary on the right is the master text for the Scope of Work and the funding note — copy it into the engagement record. Prices come from the governed price card only; this tool deliberately carries none.</div>
+
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-top:28px;align-items:start;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:18px;padding:24px clamp(18px,2.4vw,30px);display:flex;flex-direction:column;gap:16px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <label style="display:block;">
+            <span style="display:block;font-size:11.5px;letter-spacing:.08em;color:#8A8271;margin-bottom:6px;">CLIENT NAME</span>
+            <input value="{{ client }}" onChange="{{ setClient }}" placeholder="Organisation or person" style="width:100%;box-sizing:border-box;border:1px solid #DCD3BE;border-radius:10px;padding:10px 12px;font-size:14px;color:#143C37;background:#FCFBF7;outline:none;">
+          </label>
+          <label style="display:block;">
+            <span style="display:block;font-size:11.5px;letter-spacing:.08em;color:#8A8271;margin-bottom:6px;">AUTHORISED REPRESENTATIVE</span>
+            <input value="{{ rep }}" onChange="{{ setRep }}" placeholder="One name, one approver" style="width:100%;box-sizing:border-box;border:1px solid #DCD3BE;border-radius:10px;padding:10px 12px;font-size:14px;color:#143C37;background:#FCFBF7;outline:none;">
+          </label>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <label style="display:block;">
+            <span style="display:block;font-size:11.5px;letter-spacing:.08em;color:#8A8271;margin-bottom:6px;">CLIENT SEGMENT</span>
+            <select value="{{ segment }}" onChange="{{ setSegment }}" style="width:100%;box-sizing:border-box;border:1px solid #DCD3BE;border-radius:10px;padding:10px 12px;font-size:14px;color:#143C37;background:#FCFBF7;outline:none;">
+              <option value="A — International institution">A — International institution</option>
+              <option value="B — Gulf / diaspora corporate">B — Gulf / diaspora corporate</option>
+              <option value="C — Diaspora individual">C — Diaspora individual</option>
+              <option value="D — Yemeni SME">D — Yemeni SME</option>
+              <option value="E — Local grant-funded NGO">E — Local grant-funded NGO</option>
+            </select>
+          </label>
+          <label style="display:block;">
+            <span style="display:block;font-size:11.5px;letter-spacing:.08em;color:#8A8271;margin-bottom:6px;">PROMISE LEVEL</span>
+            <select value="{{ tier }}" onChange="{{ setTier }}" style="width:100%;box-sizing:border-box;border:1px solid #DCD3BE;border-radius:10px;padding:10px 12px;font-size:14px;color:#143C37;background:#FCFBF7;outline:none;">
+              <option value="S2 — Assured (default)">S2 — Assured (default)</option>
+              <option value="S1 — Essential (client insisted)">S1 — Essential (client insisted)</option>
+              <option value="S3 — Guaranteed (blocked until insurance settles)">S3 — Guaranteed (blocked until insurance settles)</option>
+            </select>
+          </label>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <label style="display:block;">
+            <span style="display:block;font-size:11.5px;letter-spacing:.08em;color:#8A8271;margin-bottom:6px;">READY PRODUCT / SCOPE BASE</span>
+            <select value="{{ product }}" onChange="{{ setProduct }}" style="width:100%;box-sizing:border-box;border:1px solid #DCD3BE;border-radius:10px;padding:10px 12px;font-size:14px;color:#143C37;background:#FCFBF7;outline:none;">
+              <option value="Brand Starter · 10 days">Brand Starter · 10 days</option>
+              <option value="Bilingual Website Essential · 15 days">Bilingual Website Essential · 15 days</option>
+              <option value="Report Production · 10 days">Report Production · 10 days</option>
+              <option value="Translation Block · 7 days / 10k words">Translation Block · 7 days / 10k words</option>
+              <option value="Field Data Round · 20 days">Field Data Round · 20 days</option>
+              <option value="Social Media Retainer · monthly">Social Media Retainer · monthly</option>
+              <option value="Story Film · 20 days">Story Film · 20 days</option>
+              <option value="M&amp;E Framework · 15 days">M&amp;E Framework · 15 days</option>
+              <option value="Financial Model · 15 days">Financial Model · 15 days</option>
+              <option value="Digitisation Sprint · 15 days / 1k pages">Digitisation Sprint · 15 days / 1k pages</option>
+              <option value="Documentation Day · 5 days">Documentation Day · 5 days</option>
+              <option value="Proposal Sprint · 10 days">Proposal Sprint · 10 days</option>
+              <option value="Custom scope (three requests make a product)">Custom scope (three requests make a product)</option>
+            </select>
+          </label>
+          <label style="display:block;">
+            <span style="display:block;font-size:11.5px;letter-spacing:.08em;color:#8A8271;margin-bottom:6px;">MILESTONES</span>
+            <select value="{{ milestones }}" onChange="{{ setMilestones }}" style="width:100%;box-sizing:border-box;border:1px solid #DCD3BE;border-radius:10px;padding:10px 12px;font-size:14px;color:#143C37;background:#FCFBF7;outline:none;">
+              <option value="1">One — single delivery</option>
+              <option value="2">Two — midpoint + final</option>
+              <option value="3">Three — staged</option>
+            </select>
+          </label>
+        </div>
+        <label style="display:block;">
+          <span style="display:block;font-size:11.5px;letter-spacing:.08em;color:#8A8271;margin-bottom:6px;">DELIVERABLES — ONE PER LINE, EACH WITH ITS ACCEPTANCE TEST AFTER “→”</span>
+          <textarea value="{{ deliverables }}" onChange="{{ setDeliverables }}" rows="5" placeholder="Logo suite in both scripts → opens sharp at 8mm print&#10;Brand guide, 12pp → covers mark, palette, type, misuse" style="width:100%;box-sizing:border-box;border:1px solid #DCD3BE;border-radius:10px;padding:10px 12px;font-size:13.5px;line-height:1.8;color:#143C37;background:#FCFBF7;outline:none;resize:vertical;"></textarea>
+        </label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <label style="display:block;">
+            <span style="display:block;font-size:11.5px;letter-spacing:.08em;color:#8A8271;margin-bottom:6px;">DELIVERY WINDOW (WORKING DAYS)</span>
+            <input type="number" min="1" value="{{ windowDays }}" onChange="{{ setWindowDays }}" style="width:100%;box-sizing:border-box;border:1px solid #DCD3BE;border-radius:10px;padding:10px 12px;font-size:14px;color:#143C37;background:#FCFBF7;outline:none;">
+          </label>
+          <label style="display:block;">
+            <span style="display:block;font-size:11.5px;letter-spacing:.08em;color:#8A8271;margin-bottom:6px;">URGENCY</span>
+            <select value="{{ urgency }}" onChange="{{ setUrgency }}" style="width:100%;box-sizing:border-box;border:1px solid #DCD3BE;border-radius:10px;padding:10px 12px;font-size:14px;color:#143C37;background:#FCFBF7;outline:none;">
+              <option value="Standard window">Standard window</option>
+              <option value="Urgent — priced per the card, never past the floor">Urgent — priced per the card, never past the floor</option>
+            </select>
+          </label>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button onClick="{{ copySummary }}" style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:600;color:#052E2B;background:#E9BE4B;border:none;border-radius:99px;padding:11px 20px;cursor:pointer;">{{ copyLabel }}</button>
+          <button onClick="{{ resetForm }}" style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;color:#4A6B64;background:#fff;border:1px solid #DCD3BE;border-radius:99px;padding:11px 20px;cursor:pointer;">Clear</button>
+        </div>
+      </div>
+
+      <div style="background:#052E2B;border-radius:18px;padding:26px clamp(18px,2.4vw,30px);color:#FAF6EC;position:sticky;top:76px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;">
+          <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.22em;color:#3E9EEA;">COMPOSED SUMMARY · MASTER TEXT FOR THE SOW</span>
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(250,246,236,.5);">{{ refCode }}</span>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:2;color:rgba(250,246,236,.9);margin-top:14px;white-space:pre-wrap;">{{ summary }}</div>
+        <div style="margin-top:16px;border-top:1px solid rgba(250,246,236,.18);padding-top:14px;">
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.22em;color:#E9BE4B;">FUNDING NOTE · GOES OUT WITH THE SOW</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:2;color:rgba(250,246,236,.9);margin-top:10px;white-space:pre-wrap;">{{ fundingNote }}</div>
+        </div>
+        <div style="font-size:12px;line-height:1.85;color:rgba(250,246,236,.55);margin-top:14px;">{{ tierNote }}</div>
+      </div>
+    </div>
+  </div>
+</section>

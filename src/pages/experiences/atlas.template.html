@@ -1,0 +1,47 @@
+<header class="site"><div class="wrap bar">
+  <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:11px;"><img src="assets/kayan-logo-gold.png" alt="كيان" style="height:42px;display:block;"></a>
+  <nav style="display:flex;gap:16px;align-items:center;font-size:13px;flex-wrap:wrap;">
+    <a href="Kayan Home.dc.html"><span data-ar>الرئيسة</span><span data-en>Home</span></a>
+    <a href="Kayan Planet.dc.html"><span data-ar>البيئة</span><span data-en>Environment</span></a>
+    <a href="Kayan People.dc.html"><span data-ar>فريق كيان</span><span data-en>Kayan People</span></a>
+    <div class="langsw">
+      <button type="button" data-langbtn="ar" lang="ar" data-native-lang="ar">عربي</button>
+      <button type="button" data-langbtn="en" lang="en" data-native-lang="en">EN</button>
+    </div>
+    <a href="Kayan Portal.dc.html" style="border:1.5px solid #C9A227;border-radius:99px;padding:8px 18px;font-weight:700;"><span data-ar>البوابة</span><span data-en>Portal</span></a>
+  </nav>
+</div></header>
+
+<main class="wrap" style="padding-top:clamp(30px,6vh,60px);">
+  <div class="kicker">KAYAN ATLAS · THE ADEN DIAL · AZIMUTHAL EQUIDISTANT</div>
+  <h1><span data-ar>قرص عدن: <b>العالم مقيسًا من مقرنا.</b></span><span data-en>The Aden Dial: <b>the world measured from our headquarters.</b></span></h1>
+  <p class="lead"><span data-ar>إسقاط متساوي المسافات مركزه عدن: كل اتجاه وكل مسافة من نقطة المركز صحيحان هندسيًا، على مذهب أقراص القبلة في الأطالس الإسلامية. الجغرافيا من بيانات Natural Earth، وخط الليل يحسب من موقع الشمس هذه اللحظة — لا رسم بالخيال، ولا عقود ندعيها.</span><span data-en>An equidistant projection centred on Aden: every bearing and every distance from the centre point is geometrically true, in the manner of the qibla dials of the Islamic atlases. The geography comes from Natural Earth data, and the night line is computed from the position of the sun at this moment: nothing drawn from imagination, and no contracts we do not hold.</span></p>
+
+  <div class="grid">
+    <div class="dial-shell">
+      <div class="hud">
+        <span class="chip"><span class="dot"></span><span id="clockChip">ADEN --:--</span></span>
+        <span class="chip" style="border-color:rgba(124,192,244,.4);color:#BFE0F8;"><span class="dot" style="background:#7CC0F4;box-shadow:0 0 10px #7CC0F4;"></span><span id="sunChip">SUN …</span></span>
+      </div>
+      <div class="tip" id="tip"></div>
+      <div id="map" class="dialIn"></div>
+    </div>
+    <div class="side">
+      <div class="block"><div class="k">CENTER<span data-ar> · المركز</span></div><div class="v"><span data-ar>عدن</span><span data-en>Aden</span> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:13px;color:#E9C96B;">12.79N 45.03E</span></div><div class="x"><span data-ar>مقر كيان على الكورنيش. القرص كله يدور حول هذه النقطة؛ فمنها تدار البوابات ومنها يشحن العمل.</span><span data-en>Kayan's headquarters on the Corniche. The whole dial turns on this point; from it the gates are run, and from it the work is dispatched.</span></div></div>
+      <div class="block"><div class="k">TRUE DISTANCE<span data-ar> · الحلقات</span></div><div class="v"><span data-ar>حلقات المسافة صادقة</span><span data-en>The distance rings do not lie</span></div><div class="x"><span data-ar>كل حلقة ذهبية بعد حقيقي من عدن بالكيلومترات؛ خاصية هذا الإسقاط أن المسافة من مركزه لا تكذب.</span><span data-en>Every gold ring is a true distance from Aden in kilometres; the property of this projection is that distance measured from its centre does not lie.</span></div></div>
+      <div class="block"><div class="k">SUN<span data-ar> · الشمس الآن</span><span data-en> · NOW</span></div><div class="v" id="sunFact">…</div><div class="x"><span data-ar>الظل الأزرق نصف الأرض المظلم فعلًا هذه الدقيقة؛ يعاد حسابه كل دقيقة، والمقر يعمل بطاقة الشمس وتخزينها.</span><span data-en>The blue shadow is the half of the earth actually in darkness this minute; it is recomputed every minute, and the headquarters runs on solar power and its storage.</span></div></div>
+      <div class="block" style="margin-bottom:0;"><div class="k">SPOKES<span data-ar> · الأشعة</span></div><div class="v"><span data-ar>قنوات التسليم</span><span data-en>Delivery channels</span></div><div class="x"><span data-ar>أشعة من عدن إلى عواصم العمل السبع؛ الشعاع في هذا الإسقاط خط الرحلة الحقيقي الأقصر. قدرة يفتحها النموذج، لا تعاقدات معلنة.</span><span data-en>Rays from Aden to the seven working capitals; in this projection the ray is the true shortest route. A capacity the model opens, not declared contracts.</span></div></div>
+    </div>
+  </div>
+  <div class="legend">
+    <span><i style="border-color:#E9C96B;"></i><span data-ar>أشعة التسليم من المركز</span><span data-en>Delivery spokes from the centre</span></span>
+    <span><i style="border-color:rgba(233,201,107,.45);border-top-style:dotted;"></i><span data-ar>حلقات المسافة 3–13 ألف كم</span><span data-en>Distance rings, 3,000–13,000 km</span></span>
+    <span><i style="border-color:rgba(124,192,244,.85);border-top-style:dashed;"></i><span data-ar>حد الليل والنهار — فلكي حي</span><span data-en>Day and night terminator, live astronomical</span></span>
+    <span><i style="border-color:rgba(250,246,236,.35);"></i><span data-ar>اليابسة: Natural Earth</span><span data-en>Land: Natural Earth</span></span>
+  </div>
+</main>
+
+<footer class="site"><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+  <span><span data-ar>خلف كل نجاح، كيان.</span><span data-en>Behind every success, a Kayan.</span></span>
+  <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#8F7218;" dir="ltr">PROJECTION: AZIMUTHAL EQUIDISTANT @ ADEN · NATURAL EARTH 110M</span>
+</div></footer>

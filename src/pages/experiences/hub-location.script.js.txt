@@ -1,0 +1,201 @@
+
+(function () {
+  var HUB = [12.8065, 45.0415];
+  var PTS = [
+    { ar: 'The Hub — Abyan coast, Khormaksar', lat: 12.8065, lng: 45.0415, p: 'Approximate district centre', hub: true },
+    { ar: 'Aden International Airport', lat: 12.8295, lng: 45.0288, p: 'Published coordinates' },
+    { ar: 'Crater — old Aden', lat: 12.7794, lng: 45.0367, p: 'Approximate district centre' },
+    { ar: 'Al-Mualla', lat: 12.7861, lng: 45.0206, p: 'Approximate district centre' },
+    { ar: 'Al-Tawahi', lat: 12.7889, lng: 44.9944, p: 'Approximate district centre' }
+  ];
+
+  // ---- street map ----
+  var map = L.map('street', { scrollWheelZoom: false, attributionControl: true }).setView(HUB, 15);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19, attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  L.marker(HUB, { icon: L.divIcon({ className: '', html: '<div class="pin"></div>', iconSize: [22, 22], iconAnchor: [11, 11] }) })
+    .addTo(map)
+    .bindPopup('<div style="font-family:\'Instrument Sans\',sans-serif;font-size:13.5px;line-height:1.7;"><b>The Hub</b><br>Abyan coast, Khormaksar<br><span style="color:#8E2F27;">Approximate position — coordinates approved by the owner</span></div>');
+
+  L.circle(HUB, { radius: 420, color: '#A8710F', weight: 1.5, fillColor: '#E09114', fillOpacity: 0.12 }).addTo(map);
+
+  PTS.slice(1).forEach(function (p) {
+    L.circleMarker([p.lat, p.lng], { radius: 5, color: '#2A1D0C', weight: 2, fillColor: '#FAF6EC', fillOpacity: 1 })
+      .addTo(map).bindTooltip(p.ar, { direction: 'top' });
+  });
+
+  document.getElementById('btnHub').onclick = function () { map.setView(HUB, 15); };
+  document.getElementById('btnAden').onclick = function () {
+    map.fitBounds(L.latLngBounds(PTS.map(function (p) { return [p.lat, p.lng]; })).pad(0.25));
+  };
+
+  // ---- distance ----
+  function km(a, b) {
+    var R = 6371, t = Math.PI / 180;
+    var dLat = (b[0] - a[0]) * t, dLng = (b[1] - a[1]) * t;
+    var x = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(a[0] * t) * Math.cos(b[0] * t) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1 - x));
+  }
+  var sel = document.getElementById('from'), out = document.getElementById('dist');
+  PTS.slice(1).forEach(function (p, i) {
+    var o = document.createElement('option'); o.value = i + 1; o.textContent = p.ar; sel.appendChild(o);
+  });
+  function bearing(a, b) {
+    var t = Math.PI / 180, y = Math.sin((b[1] - a[1]) * t) * Math.cos(b[0] * t);
+    var x = Math.cos(a[0] * t) * Math.sin(b[0] * t) - Math.sin(a[0] * t) * Math.cos(b[0] * t) * Math.cos((b[1] - a[1]) * t);
+    return (Math.atan2(y, x) / t + 360) % 360;
+  }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var needle = document.getElementById('dialNeedle'), target = document.getElementById('dialTarget');
+  var bear = document.getElementById('distBearing'), fromCo = document.getElementById('distFromCo');
+  var meterFill = document.querySelector('#distMeter i'), rings = document.getElementById('dialRings');
+  var ticks = document.getElementById('dialTicks'), pulse = document.getElementById('dialPulse');
+  var MAXKM = 24, NS = 'http://www.w3.org/2000/svg';
+
+  // distance rings, drawn once, dashed like a survey plate
+  [44, 86, 128].forEach(function (r, i) {
+    var c = document.createElementNS(NS, 'circle');
+    c.setAttribute('cx', 150); c.setAttribute('cy', 150); c.setAttribute('r', r);
+    c.setAttribute('fill', 'none'); c.setAttribute('stroke', 'var(--rule)');
+    c.setAttribute('stroke-dasharray', '2 6'); c.setAttribute('opacity', reduce ? '1' : '0');
+    if (!reduce) { c.style.transition = 'opacity .7s ease ' + (i * 140 + 120) + 'ms'; }
+    rings.appendChild(c);
+  });
+  for (var d = 0; d < 360; d += 15) {
+    var long = d % 90 === 0, ln = document.createElementNS(NS, 'line');
+    var rad = d * Math.PI / 180, r1 = long ? 116 : 122;
+    ln.setAttribute('x1', 150 + Math.sin(rad) * r1); ln.setAttribute('y1', 150 - Math.cos(rad) * r1);
+    ln.setAttribute('x2', 150 + Math.sin(rad) * 128); ln.setAttribute('y2', 150 - Math.cos(rad) * 128);
+    ln.setAttribute('stroke', long ? '#A8710F' : 'var(--rule2)'); ln.setAttribute('stroke-width', long ? 1.4 : 1);
+    ticks.appendChild(ln);
+  }
+
+  var raf = 0, shown = 0;
+  function countTo(v) {
+    if (reduce) { out.textContent = v.toFixed(1); return; }
+    cancelAnimationFrame(raf);
+    var from = shown, t0 = performance.now(), dur = 900;
+    (function step(now) {
+      var p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      out.textContent = (from + (v - from) * e).toFixed(1);
+      if (p < 1) raf = requestAnimationFrame(step); else shown = v;
+    })(t0);
+    shown = v;
+  }
+  function upd() {
+    var p = PTS[+sel.value], v = km([p.lat, p.lng], HUB), b = bearing(HUB, [p.lat, p.lng]);
+    countTo(v);
+    var rad = b * Math.PI / 180, r = 34 + Math.min(1, v / MAXKM) * 94;
+    needle.style.transform = 'rotate(' + b.toFixed(1) + 'deg)';
+    needle.setAttribute('y2', 150 - r);
+    target.setAttribute('cx', (150 + Math.sin(rad) * r).toFixed(1));
+    target.setAttribute('cy', (150 - Math.cos(rad) * r).toFixed(1));
+    bear.textContent = b.toFixed(0) + '°';
+    fromCo.textContent = p.lat.toFixed(4) + ', ' + p.lng.toFixed(4);
+    meterFill.style.width = Math.max(6, Math.min(100, v / MAXKM * 100)).toFixed(1) + '%';
+    if (!reduce) { pulse.setAttribute('r', 18); pulse.style.transition = 'none'; pulse.style.opacity = '.55';
+      requestAnimationFrame(function () { pulse.style.transition = 'r 1.2s cubic-bezier(.23,1,.32,1),opacity 1.2s ease'; pulse.setAttribute('r', r); pulse.style.opacity = '0'; }); }
+  }
+  sel.onchange = upd;
+
+  // the dial settles once, when the section is first seen
+  var wrap = document.getElementById('distWrap'), sec = document.getElementById('distSec');
+  function play() {
+    sec.classList.add('on');
+    Array.prototype.forEach.call(rings.children, function (c) { c.setAttribute('opacity', '1'); });
+    upd();
+  }
+  if (reduce || !('IntersectionObserver' in window)) { play(); }
+  else {
+    needle.style.transform = 'rotate(0deg)';
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { io.disconnect(); setTimeout(play, 200); } });
+    }, { threshold: 0.3 });
+    io.observe(wrap);
+    setTimeout(function () { if (!sec.classList.contains('on')) play(); }, 2200);
+    out.textContent = '0.0';
+  }
+
+  var tb = document.getElementById('coords');
+  PTS.forEach(function (p) {
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td style="color:' + (p.hub ? '#2A1D0C' : '#4A6B64') + ';font-weight:' + (p.hub ? '500' : '400') + '">' + p.ar + '</td>' +
+      '<td class="mono" style="font-size:13px;">' + p.lat.toFixed(4) + '</td>' +
+      '<td class="mono" style="font-size:13px;">' + p.lng.toFixed(4) + '</td>' +
+      '<td style="color:' + (p.p.indexOf('Approximate') > -1 ? '#B23A31' : '#A8710F') + ';font-size:13px;">' + p.p + '</td>';
+    tb.appendChild(tr);
+  });
+
+  // ---- house rules: staged reveal, one card after another ----
+  (function () {
+    var rs = document.getElementById('rulesSec');
+    if (!rs) return;
+    var noMo = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (noMo || !('IntersectionObserver' in window)) { rs.classList.add('on'); return; }
+    var rio = new IntersectionObserver(function (es) {
+      es.forEach(function (x) { if (x.isIntersecting) { rio.disconnect(); rs.classList.add('on'); } });
+    }, { threshold: 0.01, rootMargin: '0px 0px -10% 0px' });
+    rio.observe(rs);
+    setTimeout(function () { rs.classList.add('on'); }, 2000);
+  })();
+
+  // ---- conditions: neuron lattice + card reveal ----
+  (function () {
+    var svg = document.getElementById('neurons'), cs = document.getElementById('condSec');
+    if (!cs) return;
+    var noMo = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reveal = function () { cs.classList.add('on'); };
+    if (noMo || !('IntersectionObserver' in window)) reveal();
+    else {
+      var cio = new IntersectionObserver(function (es) {
+        es.forEach(function (x) { if (x.isIntersecting) { cio.disconnect(); reveal(); } });
+      }, { threshold: 0.01, rootMargin: '0px 0px -10% 0px' });
+      cio.observe(cs);
+      setTimeout(reveal, 2000);
+    }
+    if (!svg) return;
+    var reduce = noMo;
+    var NSS = 'http://www.w3.org/2000/svg', W = 1200, H = 620, N = 34, pts = [], i, j;
+    var rnd = (function (seed) { return function () { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; }; })(7);
+    for (i = 0; i < N; i++) pts.push([40 + rnd() * (W - 80), 40 + rnd() * (H - 80)]);
+    var edges = [];
+    for (i = 0; i < N; i++) for (j = i + 1; j < N; j++) {
+      var dx = pts[i][0] - pts[j][0], dy = pts[i][1] - pts[j][1];
+      if (Math.sqrt(dx * dx + dy * dy) < 190) edges.push([i, j]);
+    }
+    var gl = document.createElementNS(NSS, 'g'); svg.appendChild(gl);
+    edges.forEach(function (e) {
+      var l = document.createElementNS(NSS, 'line');
+      l.setAttribute('x1', pts[e[0]][0].toFixed(1)); l.setAttribute('y1', pts[e[0]][1].toFixed(1));
+      l.setAttribute('x2', pts[e[1]][0].toFixed(1)); l.setAttribute('y2', pts[e[1]][1].toFixed(1));
+      l.setAttribute('opacity', '.55'); gl.appendChild(l);
+    });
+    pts.forEach(function (p) {
+      var c = document.createElementNS(NSS, 'circle');
+      c.setAttribute('cx', p[0].toFixed(1)); c.setAttribute('cy', p[1].toFixed(1));
+      c.setAttribute('r', 1.6); c.setAttribute('opacity', '.5'); svg.appendChild(c);
+    });
+    if (!reduce && edges.length) {
+      for (var k = 0; k < 3; k++) {
+        var e = edges[(k * 7 + 3) % edges.length];
+        var d = document.createElementNS(NSS, 'circle');
+        d.setAttribute('class', 'glow'); d.setAttribute('r', 2.4); d.setAttribute('opacity', '.75');
+        svg.appendChild(d);
+        (function (dot, a, b, delay) {
+          var t0 = performance.now() + delay, dur = 4200;
+          (function step(now) {
+            if (now > t0) {
+              var p = ((now - t0) % dur) / dur, q = p < .5 ? p * 2 : (1 - p) * 2;
+              dot.setAttribute('cx', (a[0] + (b[0] - a[0]) * q).toFixed(1));
+              dot.setAttribute('cy', (a[1] + (b[1] - a[1]) * q).toFixed(1));
+            }
+            requestAnimationFrame(step);
+          })(performance.now());
+        })(d, pts[e[0]], pts[e[1]], k * 1200);
+      }
+    }
+  })();
+})();

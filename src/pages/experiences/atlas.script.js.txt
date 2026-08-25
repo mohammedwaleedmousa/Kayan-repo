@@ -1,0 +1,166 @@
+
+window.__langHooks=[];
+function __lang(){return document.documentElement.getAttribute('data-lang')==='en'?'en':'ar';}
+function __L(ar,en){return __lang()==='en'?en:ar;}
+function __setLang(v){
+  try{localStorage.setItem('kyn-lang',v);}catch(e){}
+  var h=document.documentElement;
+  h.setAttribute('data-lang',v);h.setAttribute('lang',v);h.setAttribute('dir',v==='en'?'ltr':'rtl');
+  window.__langHooks.forEach(function(f){try{f();}catch(e){}});
+}
+
+
+(async function(){
+  const S=980, R=S/2-14, CX=S/2, CY=S/2;
+  const ADEN=[45.03,12.79];
+  const mount=d3.select('#map');
+  const svg=mount.append('svg').attr('viewBox','0 0 '+S+' '+S).attr('role','img');
+  const setAria=()=>svg.attr('aria-label',__L(
+    'قرص عدن: إسقاط متساوي المسافات مركزه عدن، عليه حلقات المسافة الحقيقية وأشعة التسليم وحد الليل والنهار الفلكي',
+    'The Aden Dial: an azimuthal equidistant projection centred on Aden, carrying true distance rings, delivery spokes, and the astronomical day and night terminator'));
+  setAria(); window.__langHooks.push(setAria);
+
+  const defs=svg.append('defs');
+  const ocean=defs.append('radialGradient').attr('id','ocean').attr('cx','50%').attr('cy','46%');
+  ocean.append('stop').attr('offset','0%').attr('stop-color','#0B3E36');
+  ocean.append('stop').attr('offset','62%').attr('stop-color','#062A25');
+  ocean.append('stop').attr('offset','100%').attr('stop-color','#031B17');
+  const goldSpoke=defs.append('linearGradient').attr('id','goldSpoke');
+  goldSpoke.append('stop').attr('offset','0%').attr('stop-color','#F3DE9C');
+  goldSpoke.append('stop').attr('offset','100%').attr('stop-color','rgba(201,162,39,.28)');
+  defs.append('clipPath').attr('id','disc').append('circle').attr('cx',CX).attr('cy',CY).attr('r',R);
+
+  let topo;
+  try{ topo=await (await fetch('/vendor/countries-110m.json')).json(); }
+  catch(e){
+    const msg=mount.append('div').style('padding','60px 20px').style('text-align','center').style('color','rgba(250,246,236,.6)');
+    const setMsg=()=>msg.text(__L('تعذر تحميل الجغرافيا — تعاد المحاولة عند عودة الاتصال.','The geography could not be loaded. It will be retried when the connection returns.'));
+    setMsg(); window.__langHooks.push(setMsg); return;
+  }
+  const land=topojson.feature(topo,topo.objects.countries);
+  const YEMEN='887';
+
+  const proj=d3.geoAzimuthalEquidistant().rotate([-ADEN[0],-ADEN[1]])
+    .clipAngle(150).translate([CX,CY]).scale(R/(150*Math.PI/180));
+  const path=d3.geoPath(proj);
+  const disc=svg.append('g').attr('clip-path','url(#disc)');
+
+  disc.append('circle').attr('cx',CX).attr('cy',CY).attr('r',R).attr('fill','url(#ocean)');
+  disc.append('path').attr('d',path(d3.geoGraticule10())).attr('fill','none').attr('stroke','rgba(233,201,107,.07)').attr('stroke-width',.7);
+
+  disc.append('g').selectAll('path').data(land.features).join('path')
+    .attr('d',path)
+    .attr('fill',d=>d.id===YEMEN?'#C9A227':'rgba(244,238,221,.13)')
+    .attr('stroke',d=>d.id===YEMEN?'#F3DE9C':'rgba(244,238,221,.30)')
+    .attr('stroke-width',d=>d.id===YEMEN?1.4:.55)
+    .attr('stroke-linejoin','round');
+
+  // True-distance rings from Aden (deg -> km via 111.19)
+  const rings=[{d:27,label:'3,000 KM'},{d:54,label:'6,000 KM'},{d:90,label:'10,000 KM'},{d:117,label:'13,000 KM'}];
+  const ringG=disc.append('g').attr('direction','ltr');
+  rings.forEach(rg=>{
+    ringG.append('path').attr('d',path(d3.geoCircle().center(ADEN).radius(rg.d)()))
+      .attr('fill','none').attr('stroke','rgba(233,201,107,.30)').attr('stroke-dasharray','1.5 5').attr('stroke-width',1);
+    const px=CX, py=CY-(rg.d*Math.PI/180)*(R/(150*Math.PI/180));
+    ringG.append('text').attr('x',px).attr('y',py-6).attr('text-anchor','middle').style('direction','ltr')
+      .attr('font-family','IBM Plex Mono,monospace').attr('font-size','11.5').attr('letter-spacing','.18em')
+      .attr('fill','rgba(233,201,107,.55)').text(rg.label);
+  });
+
+  // Live night hemisphere
+  const night=disc.append('path').attr('fill','rgba(8,26,48,.46)').attr('stroke','rgba(124,192,244,.55)').attr('stroke-dasharray','6 6').attr('stroke-width',1.2);
+  function subsolar(){
+    const now=new Date();
+    const N=(now.getTime()-Date.UTC(now.getUTCFullYear(),0,0))/864e5;
+    const decl=-23.44*Math.cos(2*Math.PI/365*(N+10));
+    const lon=180-(now.getUTCHours()+now.getUTCMinutes()/60)*15;
+    return [lon,decl];
+  }
+  function tick(){
+    if(!document.getElementById('clockChip')) return;
+    const s=subsolar();
+    night.attr('d',path(d3.geoCircle().center([s[0]+180,-s[1]]).radius(90)()));
+    const aden=new Date(Date.now()+(180+new Date().getTimezoneOffset())*60000);
+    document.getElementById('clockChip').textContent='ADEN '+String(aden.getHours()).padStart(2,'0')+':'+String(aden.getMinutes()).padStart(2,'0');
+    document.getElementById('sunChip').textContent='SUN '+Math.abs(Math.round(s[0]))+'\u00B0'+(s[0]>=0?'E':'W')+' '+Math.abs(Math.round(s[1]))+'\u00B0'+(s[1]>=0?'N':'S');
+    document.getElementById('sunFact').textContent=(d3.geoDistance(ADEN,s)*180/Math.PI<90)
+      ?__L('فوق أفق عدن','Above the horizon of Aden')
+      :__L('تحت أفق عدن — المقر على التخزين','Below the horizon of Aden, the headquarters on storage');
+  }
+  tick(); setInterval(tick,60000); window.__langHooks.push(tick);
+
+  // Delivery spokes: straight true-bearing radii in this projection
+  const dests=[
+    {c:[46.72,24.63],ar:'الرياض',en:'RIYADH',dist:'1,340 KM',lx:-34,ly:-4},
+    {c:[55.30,25.27],ar:'دبي',en:'DUBAI',dist:'1,890 KM',lx:26,ly:-8},
+    {c:[31.24,30.05],ar:'القاهرة',en:'CAIRO',dist:'2,430 KM'},
+    {c:[36.82,-1.29],ar:'نيروبي',en:'NAIROBI',dist:'1,830 KM'},
+    {c:[8.68,50.11],ar:'فرانكفورت',en:'FRANKFURT',dist:'5,430 KM',lx:-6,ly:24},
+    {c:[-0.13,51.51],ar:'لندن',en:'LONDON',dist:'5,960 KM',ly:-14},
+    {c:[103.85,1.29],ar:'سنغافورة',en:'SINGAPORE',dist:'6,570 KM'}
+  ];
+  const cityName=d=>__lang()==='en'?d.en.charAt(0)+d.en.slice(1).toLowerCase():d.ar;
+  const spokes=disc.append('g');
+  dests.forEach((d,i)=>{
+    const p=spokes.append('path').datum({type:'LineString',coordinates:[ADEN,d.c]})
+      .attr('class','spoke').attr('d',path).attr('fill','none')
+      .attr('stroke','url(#goldSpoke)').attr('stroke-width',1.6).attr('opacity',.9).attr('stroke-linecap','round');
+    if(!p.node()) return;
+    const L=p.node().getTotalLength();
+    p.attr('stroke-dasharray',L+' '+L).attr('stroke-dashoffset',L)
+     .style('animation','spoke 1.6s cubic-bezier(.23,1,.32,1) '+(0.4+i*0.16)+'s forwards');
+  });
+
+  // Points + labels
+  const tip=document.getElementById('tip'),shell=document.querySelector('.dial-shell');
+  const show=(evt,main,sub)=>{const r=shell.getBoundingClientRect();tip.innerHTML=main+'<span class="en">'+sub+'</span>';tip.style.left=(evt.clientX-r.left)+'px';tip.style.top=(evt.clientY-r.top)+'px';tip.style.opacity=1;};
+  const hide=()=>tip.style.opacity=0;
+  const pts=disc.append('g');
+  const labels=[];
+  dests.forEach(d=>{
+    const [x,y]=proj(d.c);
+    pts.append('circle').attr('cx',x).attr('cy',y).attr('r',4).attr('fill','#E9C96B').attr('stroke','#03201D').attr('stroke-width',1.4)
+      .style('cursor','pointer')
+      .on('pointerenter pointermove',e=>show(e,cityName(d),__lang()==='en'?d.dist:d.en+' · '+d.dist))
+      .on('pointerleave',hide);
+    const t=pts.append('text').attr('x',x+(d.lx||0)).attr('y',y-10+(d.ly||0)).attr('text-anchor','middle')
+      .attr('font-family','IBM Plex Sans Arabic,Instrument Sans,sans-serif').attr('font-size','15').attr('font-weight','600')
+      .attr('fill','#F3DE9C').attr('paint-order','stroke').attr('stroke','rgba(3,32,29,.85)').attr('stroke-width',4)
+      .text(cityName(d));
+    labels.push({t,d});
+  });
+  window.__langHooks.push(()=>labels.forEach(o=>o.t.text(cityName(o.d))));
+
+  // Aden: crosshair + pulse
+  const [ax,ay]=proj(ADEN);
+  const hq=disc.append('g');
+  hq.append('circle').attr('cx',ax).attr('cy',ay).attr('r',7).attr('fill','none').attr('stroke','#F3DE9C').attr('stroke-width',1.2)
+    .append('animate').attr('attributeName','r').attr('values','7;22').attr('dur','2.6s').attr('repeatCount','indefinite');
+  hq.select('circle').append('animate').attr('attributeName','opacity').attr('values','.8;0').attr('dur','2.6s').attr('repeatCount','indefinite');
+  hq.append('circle').attr('cx',ax).attr('cy',ay).attr('r',5).attr('fill','#F3DE9C').attr('stroke','#03201D').attr('stroke-width',1.6)
+    .style('cursor','pointer')
+    .on('pointerenter pointermove',e=>show(e,__L('عدن — مقر كيان','Aden — Kayan headquarters'),'HQ · CENTER OF THE DIAL'))
+    .on('pointerleave',hide);
+  [[ax-16,ay,ax-9,ay],[ax+9,ay,ax+16,ay],[ax,ay-16,ax,ay-9],[ax,ay+9,ax,ay+16]].forEach(l=>{
+    hq.append('line').attr('x1',l[0]).attr('y1',l[1]).attr('x2',l[2]).attr('y2',l[3]).attr('stroke','#F3DE9C').attr('stroke-width',1.4);
+  });
+
+  // Instrument bezel
+  svg.append('circle').attr('cx',CX).attr('cy',CY).attr('r',R).attr('fill','none').attr('stroke','rgba(201,162,39,.75)').attr('stroke-width',2);
+  svg.append('circle').attr('cx',CX).attr('cy',CY).attr('r',R-7).attr('fill','none').attr('stroke','rgba(201,162,39,.22)').attr('stroke-width',1);
+  const ticks=svg.append('g');
+  for(let a=0;a<360;a+=10){
+    const rad=a*Math.PI/180, big=a%90===0;
+    ticks.append('line')
+      .attr('x1',CX+Math.sin(rad)*(R-(big?16:9))).attr('y1',CY-Math.cos(rad)*(R-(big?16:9)))
+      .attr('x2',CX+Math.sin(rad)*(R-2)).attr('y2',CY-Math.cos(rad)*(R-2))
+      .attr('stroke',big?'#E9C96B':'rgba(233,201,107,.35)').attr('stroke-width',big?2:1);
+  }
+  const compass=[['N',0],['E',90],['S',180],['W',270]];
+  compass.forEach(([t,a])=>{
+    const rad=a*Math.PI/180;
+    svg.append('text').attr('x',CX+Math.sin(rad)*(R-30)).attr('y',CY-Math.cos(rad)*(R-30)+5)
+      .attr('text-anchor','middle').attr('font-family','IBM Plex Mono,monospace').attr('font-size','13')
+      .attr('letter-spacing','.1em').attr('fill','rgba(233,201,107,.8)').text(t);
+  });
+})();

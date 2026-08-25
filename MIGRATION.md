@@ -8,9 +8,9 @@ Shared runtime dependencies are `support.js`, `kayan-registry*.js`, `kayan-card.
 
 ## Fidelity strategy
 
-React Router owns the application routes. Each route mounts its approved page in a same-origin compatibility boundary from `public/legacy`. This deliberately retains the exact authored DOM, inline CSS, DC runtime, animations, responsive rules, storage contracts, and interactions. A React navigation bridge maps internal `.html` links back to clean application routes.
+React Router owns all 31 production routes, and every route now mounts a native React page. The native pages preserve the approved source DOM, CSS, assets, fonts, responsive rules, storage contracts, animations, and interactions. Shared native renderers handle the original DC templates and plain authored pages without an iframe, full-document injection, or `LegacyPage` route dependency.
 
-This is an incremental migration boundary: individual DC screens can later be replaced route-by-route with native JSX after screenshot and interaction parity tests exist. Rewriting the complex templates and direct-DOM runtime all at once would create unnecessary visual and behavioural risk.
+The original source pages and `public/legacy` remain unchanged as visual and behavioural references. Internal legacy-style links are translated to the corresponding clean React routes.
 
 ## Commands
 

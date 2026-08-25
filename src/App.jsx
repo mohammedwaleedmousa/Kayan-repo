@@ -1,10 +1,9 @@
 import { Link, Route, Routes } from 'react-router-dom';
-import LegacyPage from './LegacyPage.jsx';
 import HomePage from './home/HomePage.jsx';
 import { CharterPage, JourneyPage, LegalPage, PeoplePage, PlanetPage, RecordPage, SealPage } from './pages/core/CorePages.jsx';
 import { ClientsPage, DeliveryArPage, DeliveryEnPage, ForgeArPage, ForgeEnPage, HubArPage, HubEnPage, K4yPage, ProductsPage, TalentPage } from './pages/services/ServicePages.jsx';
 import { AccessPage, AdminPage, ApplyPage, ClientProfilePage, PodPage, PortalPage, SpaceClientPage, SpaceTalentPage, TalentProfilePage } from './pages/workspace/WorkspacePages.jsx';
-import { routes } from './routes.js';
+import { AtlasPage, HubLocationPage, ToolkitPage, VoyagePage } from './pages/experiences/ExperiencePages.jsx';
 
 export default function App() {
   return (
@@ -36,9 +35,10 @@ export default function App() {
       <Route path="/space/talent" element={<SpaceTalentPage />} />
       <Route path="/pod/:code?" element={<PodPage />} />
       <Route path="/admin" element={<AdminPage />} />
-      {routes.filter(([path]) => !['/', '/charter', '/journey', '/people', '/planet', '/record', '/seal', '/legal', '/clients', '/talent', '/lines/delivery', '/en/lines/delivery', '/lines/products', '/lines/hub', '/en/lines/hub', '/lines/forge', '/en/lines/forge', '/k4y', '/access', '/apply', '/portal', '/clients/account', '/talent/profile', '/space/client', '/space/talent', '/pod/:code?', '/admin'].includes(path)).map(([path, file]) => (
-        <Route key={path} path={path} element={<LegacyPage file={file} />} />
-      ))}
+      <Route path="/atlas" element={<AtlasPage />} />
+      <Route path="/voyage" element={<VoyagePage />} />
+      <Route path="/hub-location" element={<HubLocationPage />} />
+      <Route path="/tools/scope" element={<ToolkitPage />} />
       <Route
         path="*"
         element={

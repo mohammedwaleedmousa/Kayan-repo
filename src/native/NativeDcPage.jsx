@@ -5,7 +5,7 @@ import { isInternalHomeHref, routeForHomeHref } from '../home/homeRoutes.js';
 
 const loadedScripts = new Map();
 
-function ensureScript(src) {
+export function ensureScript(src) {
   if (loadedScripts.has(src)) return loadedScripts.get(src);
   const promise = new Promise((resolve, reject) => {
     const existing = document.querySelector(`script[data-native-src="${src}"]`);

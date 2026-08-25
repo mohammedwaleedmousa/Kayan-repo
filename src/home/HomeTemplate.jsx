@@ -12,6 +12,8 @@ const EVENT_NAMES = {
   onmouseenter: 'onMouseEnter',
   onmouseleave: 'onMouseLeave',
   onmousemove: 'onMouseMove',
+  onmouseover: 'onMouseOver',
+  onmouseout: 'onMouseOut',
   onfocus: 'onFocus',
   onblur: 'onBlur',
 };
@@ -40,6 +42,7 @@ const ATTRIBUTE_NAMES = {
   'text-anchor': 'textAnchor',
   'font-family': 'fontFamily',
   'font-size': 'fontSize',
+  'letter-spacing': 'letterSpacing',
   'vector-effect': 'vectorEffect',
   'fill-opacity': 'fillOpacity',
   repeatcount: 'repeatCount',
@@ -168,13 +171,16 @@ function renderNode(node, scope, key) {
 }
 
 function renderChildren(node, scope, key) {
-  return Array.from(node.childNodes).map((child, index) => renderNode(child, scope, `${key}-${index}`));
+  const strictTableParent = ['table', 'thead', 'tbody', 'tfoot', 'tr'].includes(node.nodeName.toLowerCase());
+  return Array.from(node.childNodes)
+    .filter((child) => !(strictTableParent && child.nodeType === Node.TEXT_NODE && !child.textContent.trim()))
+    .map((child, index) => renderNode(child, scope, `${key}-${index}`));
 }
 
 export default function HomeTemplate({ values, templateSource = template }) {
   const documentRoot = useMemo(() => {
     const parsed = new DOMParser().parseFromString(templateSource, 'text/html');
-    return parsed.body.firstElementChild;
+    return parsed.body;
   }, [templateSource]);
-  return renderNode(documentRoot, values, 'home');
+  return renderChildren(documentRoot, values, 'home');
 }
