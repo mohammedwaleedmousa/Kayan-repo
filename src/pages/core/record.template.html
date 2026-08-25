@@ -1,0 +1,182 @@
+<div dir="rtl" style="{{ rootStyle }}">
+
+  <sc-if value="{{ offline }}" hint-placeholder-val="{{ false }}">
+    <div data-noprint="" style="background:#052E2B;color:#FAF6EC;padding:10px clamp(18px,5vw,28px);font-size:13px;line-height:1.7;">
+      لا يوجد اتصال. يعرض السجل من نسخة محفوظة على هذا الجهاز.
+      <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11.5px;color:rgba(250,246,236,.72);margin-inline-start:8px;">OFFLINE · CACHED COPY</span>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ onLookup }}" hint-placeholder-val="{{ false }}">
+    <div style="min-height:100vh;background:#052E2B;color:#FAF6EC;display:flex;flex-direction:column;justify-content:center;padding:64px clamp(18px,5vw,28px);box-sizing:border-box;">
+      <div style="width:100%;max-width:520px;margin:0 auto;">
+        <img src="uploads/kayan_logo_gold.png" alt="كيان" style="height:26px;display:block;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(30px,8vw,40px);line-height:1.25;letter-spacing:-.01em;margin-top:30px;">تحقق من سجل</div>
+        <div style="font-size:15px;line-height:1.9;color:rgba(250,246,236,.86);margin-top:12px;max-width:44ch;">يقيد في السجل ما سلم وقبل بمحضر استلام. ولا يعتد بما لم يقيد.</div>
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:13px;line-height:1.6;color:rgba(250,246,236,.62);margin-top:6px;max-width:52ch;">The register records what was delivered and accepted. Nothing else counts.</div>
+
+        <form onSubmit="{{ submit }}" style="display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;">
+          <input dir="ltr" value="{{ q }}" onInput="{{ onQ }}" placeholder="A7F3-0142" aria-label="معرف كيان" style="flex:1 1 190px;min-width:0;height:54px;box-sizing:border-box;background:rgba(250,246,236,.06);border:1px solid rgba(250,246,236,.28);border-radius:12px;padding:0 16px;color:#FAF6EC;font-family:'Instrument Sans',sans-serif;font-size:17px;letter-spacing:.1em;font-variant-numeric:tabular-nums;">
+          <button type="submit" style="flex:0 0 auto;white-space:nowrap;height:54px;padding:0 22px;border:0;border-radius:12px;background:#FAF6EC;color:#052E2B;font-size:15px;font-weight:500;cursor:pointer;" style-hover="background:#fff;">عرض السجل</button>
+        </form>
+
+        <sc-if value="{{ refusal }}" hint-placeholder-val="{{ false }}">
+          <div role="alert" style="margin-top:20px;border:1px solid #B23A31;border-radius:14px;padding:18px;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;color:#F0A79F;">{{ refusalTitle }}</div>
+            <div style="font-size:14px;line-height:1.9;color:rgba(250,246,236,.92);margin-top:10px;">السبب: {{ refusalReason }}</div>
+            <div style="font-size:14px;line-height:1.9;color:rgba(250,246,236,.92);margin-top:4px;">الإجراء: {{ refusalAction }}</div>
+            <div style="font-size:13px;line-height:1.85;color:rgba(250,246,236,.66);margin-top:10px;">{{ refusalNote }}</div>
+          </div>
+        </sc-if>
+
+        <div style="display:flex;gap:26px;flex-wrap:wrap;margin-top:44px;padding-top:22px;border-top:1px solid rgba(250,246,236,.18);">
+          <div>
+            <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:26px;font-variant-numeric:tabular-nums;">128</div>
+            <div style="font-size:12.5px;color:rgba(250,246,236,.72);margin-top:2px;">عقد مسلم</div>
+          </div>
+          <div>
+            <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:26px;font-variant-numeric:tabular-nums;">6</div>
+            <div style="font-size:12.5px;color:rgba(250,246,236,.72);margin-top:2px;">متوسط أيام الصرف</div>
+          </div>
+          <div>
+            <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:26px;font-variant-numeric:tabular-nums;">2</div>
+            <div style="font-size:12.5px;color:rgba(250,246,236,.72);margin-top:2px;">نزاع مفتوح</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:13.5px;color:rgba(250,246,236,.8);">
+          <span>للمنفذين</span><span>للعملاء</span><span>المعايير</span><span>الأرقام</span>
+          <button onClick="{{ toggleSound }}" aria-pressed="{{ soundOn }}" style="{{ soundBtnStyle }}">{{ soundLabel }}</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ onRecord }}" hint-placeholder-val="{{ true }}">
+  <div data-page="" style="max-width:560px;margin:0 auto;padding:22px clamp(18px,5vw,28px) 56px;">
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;">
+      <img src="uploads/kayan_logo_forest.png" alt="كيان" style="height:22px;">
+      <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#33544D;">PUBLIC REGISTER</span>
+    </div>
+
+    <div style="height:1px;background:#EDE5D2;margin:18px 0 30px;"></div>
+
+    <div style="{{ headStyle }}">
+      <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+        <span style="font-size:13.5px;color:#33544D;">سجل عمل</span>
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#33544D;white-space:nowrap;">RECORD OF WORK</span>
+      </div>
+      <h1 style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(29px,7.6vw,40px);line-height:1.3;letter-spacing:-.01em;margin:10px 0 0;color:#052E2B;">{{ name }}</h1>
+      <div style="font-size:14.5px;line-height:1.8;color:#33544D;margin-top:6px;">{{ role }}</div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;letter-spacing:.16em;color:#33544D;margin-top:12px;font-variant-numeric:tabular-nums;">{{ idFull }}</div>
+    </div>
+
+    <div style="{{ tierRowStyle }}">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <span style="{{ tierBarStyle }}"></span>
+        <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:22px;line-height:1.2;color:#052E2B;">{{ tierAr }}</span>
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.18em;color:#33544D;white-space:nowrap;">{{ tierCode }}</span>
+      </div>
+      <div style="font-size:14px;line-height:1.85;color:#33544D;margin-top:8px;">{{ tierNote }}</div>
+    </div>
+
+    <div style="{{ statusStyle }}">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:9px;">
+          <span style="{{ statusDotStyle }}"></span>
+          <span style="{{ statusWordStyle }}">{{ statusWord }}</span>
+        </div>
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.16em;color:#33544D;white-space:nowrap;">{{ statusEn }}</span>
+      </div>
+      <div style="font-size:14px;line-height:1.9;color:#052E2B;margin-top:8px;">{{ statusLine }}</div>
+      <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:2px;">{{ statusReason }}</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:20px;align-items:end;margin-top:34px;">
+      <div>
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-weight:500;font-size:clamp(44px,12vw,58px);line-height:.92;color:#052E2B;font-variant-numeric:tabular-nums;">{{ accepted }}</div>
+        <div style="font-size:13px;line-height:1.6;color:#33544D;margin-top:8px;">تسليم مقبول</div>
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10px;letter-spacing:.16em;color:#33544D;">ACCEPTED</div>
+      </div>
+      <div data-strata="" style="position:relative;height:132px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(180deg,transparent,#000 16%,#000 84%,transparent);">
+        <sc-for list="{{ strata }}" as="line" hint-placeholder-count="14">
+          <div style="{{ line.style }}"></div>
+        </sc-for>
+        <sc-if value="{{ revoked }}" hint-placeholder-val="{{ false }}">
+          <span style="position:absolute;inset-inline:-3%;top:50%;height:2px;background:#B23A31;transform:rotate(-3deg);"></span>
+        </sc-if>
+      </div>
+    </div>
+
+    <div style="font-size:13px;line-height:1.85;color:#33544D;margin-top:14px;">يكثف النقش مع كل تسليم مقبول، ولا يخف. وعند الإلغاء يشطب ولا يمحى.</div>
+
+    <div style="height:1px;background:#EDE5D2;margin:32px 0 24px;"></div>
+
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+      <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;color:#052E2B;">قيود السجل</span>
+      <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#33544D;">ENTRIES · LAST FIVE</span>
+    </div>
+
+    <div style="margin-top:14px;">
+      <sc-for list="{{ ledger }}" as="e" hint-placeholder-count="5">
+        <div style="padding:14px 0;border-top:1px solid #EDE5D2;">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
+            <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12px;color:#33544D;font-variant-numeric:tabular-nums;">{{ e.d }}</span>
+            <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.08em;color:#33544D;">{{ e.h }}</span>
+          </div>
+          <div style="font-size:15px;line-height:1.75;color:#052E2B;margin-top:5px;">{{ e.s }}</div>
+          <div style="font-size:12px;color:#33544D;margin-top:6px;">{{ e.ref }}</div>
+        </div>
+      </sc-for>
+      <sc-if value="{{ noEntries }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:16px 0;border-top:1px solid #EDE5D2;font-size:14.5px;line-height:1.9;color:#33544D;">لا قيود بعد. يفتح السجل بالتسجيل، ويقيد أول تسليم بمحضر استلام موقع.</div>
+      </sc-if>
+      <div style="height:1px;background:#EDE5D2;"></div>
+    </div>
+
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:20px;">
+      <span style="font-size:13.5px;color:#33544D;">يرتبط كل قبول بما قبله. أي تعديل يكسر التسلسل.</span>
+      <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.1em;color:#33544D;">{{ chainHead }}</span>
+    </div>
+
+    <div style="margin-top:34px;padding:20px;border:1px solid #EDE5D2;border-radius:18px;background:#F4F1E8;">
+      <div style="font-size:14.5px;line-height:2;color:#052E2B;">يصدر هذا السجل عن كيان ولا يعدل. يضاف إليه بمحضر استلام موقع من الطرفين. ولا يشطب قيد بعد إثباته؛ ويقيد الإلغاء قيدا لاحقا يذكر تاريخه وسببه.</div>
+      <div style="font-size:14.5px;line-height:2;color:#052E2B;margin-top:10px;">إذا توقفت كيان عن العمل، يحال السجل إلى جهة حافظة معلنة ويبقى متاحا للاطلاع.</div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;line-height:1.65;color:#33544D;margin-top:12px;">This record is issued by Kayan and is not amended. Entries are added by a receipt signed by both parties. An entry is never struck once proven; a revocation is recorded as a later entry stating its date and cause. Should Kayan cease operations, the register passes to a named custodian and remains readable.</div>
+    </div>
+
+    <div style="margin-top:24px;">
+      <div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:10.5px;letter-spacing:normal;color:#33544D;white-space:nowrap;">PERMANENT LINK · الرابط الدائم</div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#052E2B;margin-top:6px;overflow-wrap:anywhere;">{{ permalink }}</div>
+      <div style="font-size:12.5px;color:#33544D;margin-top:8px;">آخر تحديث للسجل: <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;">{{ lastUpdate }}</span></div>
+    </div>
+
+    <div data-noprint="" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;">
+      <button onClick="{{ share }}" style="white-space:nowrap;min-height:48px;padding:0 20px;border:0;border-radius:12px;background:#052E2B;color:#FAF6EC;font-size:15px;font-weight:500;cursor:pointer;" style-hover="background:#0B3F3A;">{{ shareLabel }}</button>
+      <button onClick="{{ doPrint }}" style="white-space:nowrap;min-height:48px;padding:0 20px;border:1px solid #052E2B;border-radius:12px;background:transparent;color:#052E2B;font-size:15px;cursor:pointer;" style-hover="background:rgba(5,46,43,.06);">طباعة</button>
+      <button onClick="{{ copyBadge }}" style="white-space:nowrap;min-height:48px;padding:0 20px;border:1px solid #EDE5D2;border-radius:12px;background:transparent;color:#052E2B;font-size:15px;cursor:pointer;" style-hover="border-color:#052E2B;">{{ badgeLabel }}</button>
+    </div>
+
+    <div data-noprint="" style="margin-top:22px;">
+      <button onClick="{{ goLookup }}" style="white-space:nowrap;min-height:44px;padding:0;border:0;background:transparent;color:#0E6E66;font-size:14px;cursor:pointer;" style-hover="color:#052E2B;">تحقق من سجل آخر ←</button>
+    </div>
+  </div>
+  </sc-if>
+
+  <div data-noprint="" style="background:#052E2B;color:rgba(250,246,236,.72);padding:18px clamp(18px,5vw,28px);">
+    <div style="max-width:560px;margin:0 auto;">
+      <div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:10px;letter-spacing:normal;">PROTOTYPE STATES · حالات العرض</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
+        <sc-for list="{{ states }}" as="s" hint-placeholder-count="8">
+          <button onClick="{{ s.go }}" style="{{ s.style }}">{{ s.label }}</button>
+        </sc-for>
+      </div>
+      <div style="font-size:12px;line-height:1.8;margin-top:14px;">بيانات هذه الصفحة عينة تصميمية، لا سجلات حقيقية.</div>
+    </div>
+  </div>
+
+</div>
+
+
+<kayan-compass current="record"></kayan-compass>

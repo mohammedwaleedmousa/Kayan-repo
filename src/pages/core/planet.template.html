@@ -1,0 +1,131 @@
+<div data-lang="{{ langCode }}" dir="rtl" style="background:#F4EEDD;min-height:100vh;">
+<header style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px clamp(16px,4vw,44px);border-bottom:1px solid #E0D6BD;position:sticky;top:0;background:rgba(244,238,221,.92);backdrop-filter:blur(10px);z-index:5;">
+  <a href="Kayan Home.dc.html"><img src="assets/kayan-logo-gold.png" alt="{{ tMarkAlt }}" style="height:38px;display:block;"></a>
+  <nav style="display:flex;align-items:center;gap:16px;font-size:13px;flex-wrap:wrap;">
+    <a href="#meter"><span data-ar="">عداد الأثر</span><span data-en="">Footprint meter</span></a>
+    <a href="#commit"><span data-ar="">الالتزامات</span><span data-en="">Commitments</span></a>
+    <a href="#sdg"><span data-ar="">الأهداف الأممية</span><span data-en="">UN goals</span></a>
+    <a href="Kayan People.dc.html"><span data-ar="">فريق كيان</span><span data-en="">Kayan People</span></a>
+    <div style="display:inline-flex;align-items:center;gap:3px;background:#FAF6EC;border:1px solid #E0D6BD;border-radius:99px;padding:3px;">
+      <button type="button" data-langbtn="ar" onClick="{{ setLangAr }}" lang="ar" style="background:transparent;border:0;border-radius:99px;padding:5px 11px;cursor:pointer;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:11.5px;color:#2F6B3A;">عربي</button>
+      <button type="button" data-langbtn="en" onClick="{{ setLangEn }}" lang="en" style="background:transparent;border:0;border-radius:99px;padding:5px 11px;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:#2F6B3A;">EN</button>
+    </div>
+    <a href="Kayan Access.dc.html" style="border:1.5px solid #2F6B3A;border-radius:999px;padding:8px 18px;font-weight:700;color:#2F6B3A;"><span data-ar="">الدخول</span><span data-en="">Access</span></a>
+  </nav>
+</header>
+<section style="max-width:1160px;margin:0 auto;padding:clamp(40px,7vw,90px) clamp(16px,4vw,44px) clamp(20px,3vw,40px);">
+  <div style="max-width:70ch;animation:kIn .8s ease both;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;color:#2F6B3A;">KAYAN &amp; PLANET · <span data-ar="">البيئة والالتزامات</span><span data-en="">ENVIRONMENT &amp; COMMITMENTS</span></div>
+    <h1 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:200;font-size:clamp(34px,5.4vw,62px);line-height:1.32;color:#052E2B;">
+      <span data-ar="">أخف أثرًا على الأرض، <b style="font-weight:800;color:#2F6B3A;">أبقى أثرًا في الناس.</b></span>
+      <span data-en="">A lighter footprint on the earth, <b style="font-weight:800;color:#2F6B3A;">a longer one in people.</b></span>
+    </h1>
+    <p style="margin:16px 0 0;font-size:15px;line-height:2.15;color:#4A6B64;">
+      <span data-ar="">تدار البيئة عندنا كما يدار حساب الضمان: التزام يكتب، وعداد يقرأ، وحساب يراجع. لا نتزين بأرقام لا نملك إثباتها؛ ننشر ما نقيسه، ونسمي ما لم نبلغه بعد عجزًا لا إنجازًا مؤجلًا.</span>
+      <span data-en="">The environment is managed here the way an escrow account is managed: a commitment is written, a meter is read, an account is audited. We do not decorate ourselves with numbers we cannot prove; we publish what we measure, and we call what we have not yet reached a shortfall, not a deferred achievement.</span>
+    </p>
+    <p data-ar="" dir="ltr" style="margin:10px 0 0;max-width:64ch;font-family:'Instrument Sans','IBM Plex Mono',sans-serif;font-size:12px;letter-spacing:.02em;line-height:1.9;color:#7A8B85;">Our footprint, measured live from this very page — commitments run like escrow: written, metered, audited.</p>
+    <p data-en="" dir="rtl" style="margin:10px 0 0;max-width:60ch;font-size:12.5px;line-height:2;color:#7A8B85;">أثرنا يقاس حيًّا من هذه الصفحة؛ والالتزام يدار كحساب ضمان: يكتب، ويقاس، ويراجع.</p>
+  </div>
+</section>
+<section id="meter" style="max-width:1160px;margin:0 auto;padding:clamp(14px,2vw,26px) clamp(16px,4vw,44px) clamp(30px,4vw,56px);">
+  <div data-meter="" style="background:#12331B;border-radius:26px;padding:clamp(22px,3.6vw,38px);color:#EAF3EC;display:grid;grid-template-columns:auto 1fr;gap:clamp(22px,4vw,48px);align-items:center;animation:kIn .8s .1s ease both;">
+    <div style="position:relative;width:min(230px,60vw);aspect-ratio:1;justify-self:center;">
+      <div style="position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 220deg,{{ gaugeColor }} {{ gaugeDeg }},rgba(143,208,160,.12) {{ gaugeDeg }} 280deg,transparent 280deg);transition:background 1s ease;"></div>
+      <div style="position:absolute;inset:14px;border-radius:50%;background:#12331B;display:grid;place-items:center;text-align:center;">
+        <div>
+          <div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:800;font-size:clamp(30px,5vw,44px);color:#8FD0A0;">{{ grams }}</div>
+          <div style="font-size:11px;color:rgba(234,243,236,.7);"><span data-ar="">غرام CO₂e لكل زيارة</span><span data-en="">grams CO₂e per visit</span></div>
+          <div dir="ltr" style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:{{ gradeColor }};border:1px solid {{ gradeColor }};border-radius:99px;padding:3px 12px;display:inline-block;">{{ grade }}</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;color:#8FD0A0;">LIVE FOOTPRINT METER · <span data-ar="">يقاس الآن من متصفحك</span><span data-en="">MEASURED NOW FROM YOUR BROWSER</span></div>
+      <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(22px,3.2vw,32px);line-height:1.5;">
+        <span data-ar="">هذه الصفحة تزن <b style="font-weight:700;color:#8FD0A0;" dir="ltr">{{ mb }}</b> ميغابايت</span>
+        <span data-en="">This page weighs <b style="font-weight:700;color:#8FD0A0;" dir="ltr">{{ mb }}</b> megabytes</span>
+      </h2>
+      <p style="margin:10px 0 0;max-width:58ch;font-size:13.5px;line-height:2.1;color:rgba(234,243,236,.78);">
+        <span data-ar="">يجمع العداد حجم ما نقله متصفحك فعلًا لهذه الصفحة، ويقدر انبعاثها وفق نموذج التصميم الرقمي المستدام <a href="https://sustainablewebdesign.org/estimating-digital-emissions/" target="_blank" rel="noopener" style="color:#8FD0A0;text-decoration:underline;" dir="ltr">SWDM v4</a> بافتراضاته المنشورة (٠٫٨١ ك.و.س/غ.ب و٤٩٤ غ/ك.و.س). تقدير لا قياس مختبري — وننشره لأن الشفافية أنفع من الكمال.</span>
+        <span data-en="">The meter adds up what your browser actually transferred for this page and estimates its emissions under the Sustainable Web Design Model <a href="https://sustainablewebdesign.org/estimating-digital-emissions/" target="_blank" rel="noopener" style="color:#8FD0A0;text-decoration:underline;" dir="ltr">SWDM v4</a> with its published assumptions (0.81 kWh/GB and 494 g/kWh). An estimate, not a laboratory measurement, and we publish it because transparency serves better than perfection.</span>
+      </p>
+      <div style="margin-top:18px;display:grid;gap:10px;max-width:520px;">
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px;color:rgba(234,243,236,.75);"><span><span data-ar="">هذه الصفحة</span><span data-en="">This page</span></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;">{{ grams }} g</span></div>
+          <div style="margin-top:5px;height:9px;border-radius:99px;background:rgba(143,208,160,.14);overflow:hidden;" dir="ltr"><span style="display:block;height:100%;width:{{ ourBar }};background:linear-gradient(90deg,#2F6B3A,#8FD0A0);border-radius:99px;transition:width 1.2s ease;"></span></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px;color:rgba(234,243,236,.55);"><span><span data-ar="">وسيط صفحات الويب عالميًا (~2.5 م.ب)</span><span data-en="">Global median web page (~2.5 MB)</span></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;">≈ 0.98 g</span></div>
+          <div style="margin-top:5px;height:9px;border-radius:99px;background:rgba(143,208,160,.14);overflow:hidden;" dir="ltr"><span style="display:block;height:100%;width:100%;background:rgba(234,243,236,.28);border-radius:99px;"></span></div>
+        </div>
+      </div>
+      <div style="margin-top:14px;font-size:12px;color:rgba(234,243,236,.6);line-height:2;">
+        <span data-ar="">ميزانيتنا المعلنة: لا تتجاوز صفحة النشر الواحدة <b style="color:#8FD0A0;">غرامًا واحدًا</b> للزيارة؛ وما تجاوزها يعاد ضغطه قبل أي زينة جديدة.</span>
+        <span data-en="">Our published budget: no single published page exceeds <b style="color:#8FD0A0;">one gram</b> per visit; anything over it is re-compressed before any new ornament is added.</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="commit" style="background:#052E2B;padding:clamp(40px,6vw,80px) clamp(16px,4vw,44px);">
+  <div style="max-width:1160px;margin:0 auto;">
+    <div data-reveal="">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#8FD0A0;">COMMITMENTS · <span data-ar="">التزامات تشغيلية</span><span data-en="">OPERATIONAL COMMITMENTS</span></div>
+      <h2 style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(26px,4vw,42px);color:#FAF6EC;">
+        <span data-ar="">ست سياسات، لا <b style="font-weight:700;color:#8FD0A0;">ست أمنيات.</b></span>
+        <span data-en="">Six policies, not <b style="font-weight:700;color:#8FD0A0;">six wishes.</b></span>
+      </h2>
+    </div>
+    <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px;">
+      <sc-for list="{{ commits }}" as="c" hint-placeholder-count="6">
+        <div data-card="" data-reveal="" style="background:#0A3A34;border:1px solid #0E4A44;border-radius:20px;padding:22px;">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;color:#FAF6EC;">{{ c.t }}</div>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.14em;color:#8FD0A0;">{{ c.c }}</span>
+          </div>
+          <p style="margin:10px 0 0;font-size:13px;line-height:2.05;color:rgba(250,246,236,.75);">{{ c.x }}</p>
+          <div style="margin-top:10px;font-size:11.5px;color:#8FD0A0;">{{ c.proof }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+<section id="sdg" style="max-width:1160px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(16px,4vw,44px);">
+  <div data-reveal="">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#2F6B3A;">GLOBAL GOALS · <span data-ar="">المرجعيات</span><span data-en="">REFERENCES</span></div>
+    <h2 style="margin:12px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(26px,4vw,42px);color:#052E2B;">
+      <span data-ar="">نعمل على خط <b style="font-weight:700;color:#2F6B3A;">الأولويات الكبرى.</b></span>
+      <span data-en="">We work along the line of <b style="font-weight:700;color:#2F6B3A;">the larger priorities.</b></span>
+    </h2>
+    <p style="margin:12px 0 0;max-width:66ch;font-size:14px;line-height:2.1;color:#4A6B64;">
+      <span data-ar="">نموذج كيان — تحقق فعمل مضمون فدخل يصل أهله — يخدم بطبيعته <a href="https://sdgs.un.org/goals" target="_blank" rel="noopener">أهداف التنمية المستدامة</a> السبعة عشر في مواضع بعينها، ويوائم أولويات التعافي الوطنية وجهود شركاء الاستقرار في سبل العيش ومكافحة الفقر. ولا يدرج شريك أو برنامج هنا إلا باتفاق موقع.</span>
+      <span data-en="">The Kayan model — verification, then guaranteed work, then income that reaches the people who earned it — serves specific points among the seventeen <a href="https://sdgs.un.org/goals" target="_blank" rel="noopener">Sustainable Development Goals</a>, and aligns with national recovery priorities and the work of stability partners on livelihoods and poverty. No partner or programme is listed here without a signed agreement.</span>
+    </p>
+  </div>
+  <div style="margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;">
+    <sc-for list="{{ sdgs }}" as="s" hint-placeholder-count="7">
+      <div data-card="" data-reveal="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;">
+        <span style="width:44px;height:44px;flex:0 0 auto;border-radius:12px;background:{{ s.bg }};color:#fff;display:grid;place-items:center;font-family:'Alexandria',sans-serif;font-weight:800;font-size:17px;" dir="ltr">{{ s.n }}</span>
+        <div>
+          <div style="font-weight:700;font-size:14px;color:#052E2B;">{{ s.t }}</div>
+          <div style="margin-top:5px;font-size:12.5px;line-height:1.95;color:#4A6B64;">{{ s.x }}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <div data-reveal="" style="margin-top:22px;background:#EDE5D2;border-radius:20px;padding:22px 26px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;">
+    <img src="assets/bird-k4y.png" alt="" style="height:56px;">
+    <div>
+      <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;color:#052E2B;"><span data-ar="">قضايانا الثلاث: الفقر، والنساء، والشباب.</span><span data-en="">Our three causes: poverty, women, and youth.</span></div>
+      <p style="margin:8px 0 0;font-size:13px;line-height:2.05;color:#4A6B64;">
+        <span data-ar="">لا صندوق تبرعات عندنا؛ القضية تخدم من داخل النموذج: دخل موثق يكافح الفقر، وإدماج للنساء في صلب الفرق لا على هامشها، وجسر للشباب من <a href="Line III - The Forge.dc.html">المصهر</a> إلى أول محضر استلام باسمهم. وذراعنا المدنية <a href="Civic Wing - Kayan for Yemen.dc.html">كيان لليمن</a> تحول ساعات التطوع مقامًا يذكر لا مالًا يدفع.</span>
+        <span data-en="">We keep no donations box; the cause is served from inside the model: documented income against poverty, women in the core of the teams and not on their margin, and a bridge for young people from <a href="Line III - The Forge.dc.html">the Forge</a> to a first handover record in their own name. And our civic arm, <a href="Civic Wing - Kayan for Yemen.dc.html">Kayan for Yemen</a>, turns volunteer hours into standing that is recorded, not money that is paid.</span>
+      </p>
+    </div>
+  </div>
+</section>
+<footer style="background:#03201D;padding:26px clamp(16px,4vw,44px);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+  <div style="display:flex;align-items:center;gap:12px;"><img src="assets/kayan-mark-cream.png" alt="" style="height:28px;"><span style="font-size:12.5px;color:rgba(250,246,236,.75);"><span data-ar="">خلف كل نجاح، كيان.</span><span data-en="">Behind every success, a Kayan.</span></span></div>
+  <nav style="display:flex;gap:16px;font-size:12px;flex-wrap:wrap;"><a href="Kayan Home.dc.html" style="color:#8FD0A0;"><span data-ar="">الرئيسة</span><span data-en="">Home</span></a><a href="Kayan People.dc.html" style="color:#8FD0A0;"><span data-ar="">فريق كيان</span><span data-en="">Kayan People</span></a><a href="Line II - The Hub and Cafe.dc.html" style="color:#8FD0A0;"><span data-ar="">المقر</span><span data-en="">The Hub</span></a><a href="Kayan Legal.dc.html" style="color:#8FD0A0;"><span data-ar="">الأحكام</span><span data-en="">Legal</span></a></nav>
+</footer>
+</div>

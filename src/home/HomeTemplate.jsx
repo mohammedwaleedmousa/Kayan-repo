@@ -4,6 +4,9 @@ import { routeForHomeHref } from './homeRoutes.js';
 
 const EVENT_NAMES = {
   onclick: 'onClick',
+  oninput: 'onInput',
+  onchange: 'onChange',
+  onsubmit: 'onSubmit',
   onmouseenter: 'onMouseEnter',
   onmouseleave: 'onMouseLeave',
   onfocus: 'onFocus',
@@ -46,7 +49,7 @@ function interpolate(value, scope) {
 
 function styleObject(cssText) {
   if (!cssText || typeof cssText !== 'string') return cssText || undefined;
-  cssText = cssText.replace(/url\((['"]?)assets\//g, 'url($1/legacy/assets/');
+  cssText = cssText.replace(/url\((['"]?)(assets|uploads)\//g, 'url($1/legacy/$2/');
   const style = {};
   for (const declaration of cssText.split(';')) {
     const separator = declaration.indexOf(':');
@@ -133,7 +136,7 @@ function renderNode(node, scope, key) {
 
     const name = ATTRIBUTE_NAMES[rawName] || rawName;
     if (name === 'href') props[name] = routeForHomeHref(resolved);
-    else if (name === 'src' && typeof resolved === 'string' && resolved.startsWith('assets/')) props[name] = `/legacy/${resolved}`;
+    else if (name === 'src' && typeof resolved === 'string' && /^(assets|uploads)\//.test(resolved)) props[name] = `/legacy/${resolved}`;
     else if (resolved === '') props[name] = '';
     else props[name] = resolved;
   }
@@ -150,10 +153,10 @@ function renderChildren(node, scope, key) {
   return Array.from(node.childNodes).map((child, index) => renderNode(child, scope, `${key}-${index}`));
 }
 
-export default function HomeTemplate({ values }) {
+export default function HomeTemplate({ values, templateSource = template }) {
   const documentRoot = useMemo(() => {
-    const parsed = new DOMParser().parseFromString(template, 'text/html');
+    const parsed = new DOMParser().parseFromString(templateSource, 'text/html');
     return parsed.body.firstElementChild;
-  }, []);
+  }, [templateSource]);
   return renderNode(documentRoot, values, 'home');
 }

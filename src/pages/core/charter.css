@@ -1,0 +1,49 @@
+
+html,body{margin:0;padding:0;background:#03201D;overflow-x:hidden;}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+a{color:#C9A227;text-decoration:none;}
+a:hover{color:#E9C96B;}
+::selection{background:#C9A227;color:#03201D;}
+p{text-wrap:pretty;}
+h1,h2,h3{text-wrap:balance;}
+button{font-family:inherit;-webkit-tap-highlight-color:transparent;}
+a:focus-visible,button:focus-visible{outline:2px solid #C9A227;outline-offset:3px;border-radius:4px;}
+[data-mo] [data-reveal]{opacity:0;transform:translateY(15px);transition:opacity .6s cubic-bezier(.23,1,.32,1),transform .6s cubic-bezier(.23,1,.32,1);}
+[data-mo] [data-reveal][data-on]{opacity:1;transform:none;}
+/* ── Neuron ground: nodes on a slow drift, threads pulsing between them ──
+   Built from positioned dots and hairlines, not an SVG illustration, so it
+   scales with the section and costs nothing to paint. */
+@keyframes chDrift{0%,100%{transform:translate3d(0,0,0);}50%{transform:translate3d(2.5%,-2%,0);}}
+@keyframes chDriftB{0%,100%{transform:translate3d(0,0,0);}50%{transform:translate3d(-3%,2.5%,0);}}
+@keyframes chPulse{0%,100%{opacity:.18;transform:scale(1);}50%{opacity:.85;transform:scale(1.5);}}
+@keyframes chThread{0%{opacity:.05;}45%{opacity:.45;}100%{opacity:.05;}}
+@keyframes chOrb{0%,100%{transform:translate3d(0,0,0) scale(1);}50%{transform:translate3d(3%,-2.5%,0) scale(1.1);}}
+@keyframes chSweep{0%{transform:translateX(-40%) skewX(-10deg);}100%{transform:translateX(300%) skewX(-10deg);}}
+[data-neuro]{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+[data-neuroweb]{position:absolute;inset:-8%;will-change:transform;}
+[data-neuroweb="a"]{animation:chDrift 44s ease-in-out infinite;}
+[data-neuroweb="b"]{animation:chDriftB 56s ease-in-out infinite;}
+[data-node]{position:absolute;border-radius:50%;background:#E9C96B;animation:chPulse 7s ease-in-out infinite;}
+[data-thread]{position:absolute;height:1px;transform-origin:left center;background:linear-gradient(90deg,rgba(201,162,39,.5),rgba(201,162,39,.05));animation:chThread 9s ease-in-out infinite;}
+[data-neuroorb]{position:absolute;border-radius:50%;filter:blur(52px);animation:chOrb 40s ease-in-out infinite;}
+[data-neurosweep]{position:absolute;top:0;bottom:0;width:16%;background:linear-gradient(90deg,transparent,rgba(233,201,107,.05),transparent);animation:chSweep 24s cubic-bezier(.6,0,.4,1) infinite;}
+/* Article cards answer the pointer: lift, gold edge, numeral lights */
+[data-artcard]{position:relative;transition:transform .5s cubic-bezier(.16,1,.3,1),border-color .45s ease,background-color .45s ease,box-shadow .5s cubic-bezier(.16,1,.3,1);will-change:transform;}
+[data-artcard]::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#C9A227,#E9C96B);transform:scaleY(0);transform-origin:top;transition:transform .6s cubic-bezier(.16,1,.3,1);}
+[data-artcard]:hover{transform:translateY(-6px);background-color:#FFFDF7;box-shadow:0 26px 52px -26px rgba(5,46,43,.34);z-index:2;}
+[data-artcard]:hover::before{transform:scaleY(1);}
+[data-artcard] [data-artno]{transition:color .45s ease,letter-spacing .45s ease;}
+[data-artcard]:hover [data-artno]{color:#8F7218;letter-spacing:.26em;}
+[data-artcard] [data-artnum]{transition:transform .5s cubic-bezier(.16,1,.3,1),background-color .45s ease,color .45s ease,border-color .45s ease;}
+[data-artcard]:hover [data-artnum]{transform:scale(1.08);background-color:#C9A227;border-color:#C9A227;color:#03201D;}
+[data-artcard][data-artlead]:hover{background-color:transparent;background-image:linear-gradient(160deg,#FAEFD2,#FFFDF7 70%);}
+[data-artcard][data-artlead]:hover [data-artnum]{background-color:#A8841B;border-color:#A8841B;color:#FAF6EC;}
+@media (prefers-reduced-motion:reduce){[data-artcard]:hover [data-artnum]{transform:none;}}
+@media (prefers-reduced-motion:reduce){[data-artcard]:hover{transform:none;}}
+[data-wipeline]{position:relative;display:block;width:fit-content;max-width:100%;overflow:hidden;padding:3px 10px;margin:3px -10px;}
+[data-wipeline] i{position:absolute;inset:0;border-radius:3px;background:linear-gradient(100deg,#C9A227,#E9C96B 55%,#C9A227);transform:translateX(0);transition:transform 1.05s cubic-bezier(.77,0,.175,1);}
+[data-reveal][data-on] [data-wipeline] i{transform:translateX(-102%);}
+[data-reveal][data-on] [dir="ltr"] [data-wipeline] i{transform:translateX(102%);}
+[data-card]{transition:transform .2s cubic-bezier(.23,1,.32,1),box-shadow .2s ease;}
+@media (hover:hover){[data-card]:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(5,46,43,.12);}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}[data-mo] [data-reveal]{opacity:1;transform:none}[data-wipeline] i{display:none}}

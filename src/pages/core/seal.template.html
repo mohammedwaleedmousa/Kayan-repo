@@ -1,0 +1,340 @@
+<div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;color:#052E2B;background:#FAF6EC;">
+
+<section data-screen-label="الختم · Seal — الغلاف" style="background:#052E2B;padding:80px clamp(20px,4vw,48px) 72px;position:relative;overflow:hidden;">
+  <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:44px;align-items:center;">
+    <div style="min-width:0;">
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.22em;color:#12B5A4;">KYN-SEAL-01 · DERIVED IDENTITY</div>
+      <h1 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(34px,5.4vw,62px);line-height:1.14;color:#FAF6EC;">الختم المحسوب</h1>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:clamp(15px,1.8vw,19px);color:rgba(250,246,236,.62);margin-top:8px;">The computed seal — a mark that cannot exist before its record.</div>
+      <div style="font-size:16.5px;line-height:2.05;color:rgba(250,246,236,.8);margin-top:26px;max-width:52ch;">كل ما في هذه الهوية يرسم مرة ويكرر: العلامة، واللون، والحرف. والختم لا يرسم. يشتق من نص القيد نفسه، فلا يوجد قبل وجود العمل، ولا يعاد استعماله على قيد آخر.</div>
+      <div style="font-size:16.5px;line-height:2.05;color:rgba(250,246,236,.8);margin-top:16px;max-width:52ch;">من غير الوثيقة لا يستخرج الختم، ومن الختم لا تستخرج الوثيقة. ومن ملك الاثنين أثبت أن أحدهما لم يمس.</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:30px;padding:14px 18px;border:1px solid rgba(18,181,164,.34);border-radius:14px;background:rgba(18,181,164,.08);max-width:52ch;">
+        <span style="width:18px;height:3px;border-radius:2px;background:#12B5A4;flex-shrink:0;"></span>
+        <span style="font-size:14px;line-height:1.8;color:rgba(250,246,236,.88);">«نثبت لا ندعي» تحولت من جملة إلى إجراء يمكن لأي طرف أن يجريه بنفسه.</span>
+      </div>
+    </div>
+    <div style="min-width:0;display:flex;flex-direction:column;align-items:center;gap:18px;">
+      <div style="background:#FAF6EC;border-radius:6px;padding:26px;box-shadow:0 26px 70px rgba(0,0,0,.42);">
+        <svg viewBox="{{ heroBox }}" width="{{ heroW }}" height="{{ heroW }}" role="img" aria-label="ختم القيد">
+          <sc-for list="{{ heroRuns }}" as="r" hint-placeholder-count="11">
+            <rect x="{{ r.x }}" y="{{ r.y }}" width="{{ r.w }}" height="{{ r.h }}" rx="{{ r.rx }}" fill="#052E2B"></rect>
+          </sc-for>
+        </svg>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;color:#052E2B;text-align:center;margin-top:14px;">{{ heroShort }}</div>
+      </div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:.14em;color:rgba(250,246,236,.5);text-align:center;">SEAL OF ACCEPTANCE · A7F3-0142 · 2026-07-14</div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="الختم · التوليد" style="background:#FAF6EC;padding:88px clamp(20px,4vw,48px);">
+  <div style="max-width:1120px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#0E6E66;font-weight:500;"><bdi style="letter-spacing:normal">التوليد</bdi> · GENERATION</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:24ch;">غير حرفا واحدا، يتغير الختم كله</h2>
+    <div style="font-size:16px;line-height:2;color:#33544D;margin-top:12px;max-width:58ch;">تركب الحقول في صيغة معيارية واحدة، ثم تختزل بدالة <bdi dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:14px;">SHA-256</bdi>، ثم ترسم الشيفرة أحد عشر طبقة على محور واحد. التوليد يجري في متصفحك، بلا خادم ولا اتصال.</div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;margin-top:36px;align-items:start;">
+
+      <div style="border:1px solid #EDE5D2;border-radius:20px;background:#fff;overflow:hidden;min-width:0;">
+        <div style="padding:14px 20px;border-bottom:1px solid #EDE5D2;background:#FAF6EC;font-size:13px;color:#33544D;">حقول القيد</div>
+        <div style="padding:20px;display:flex;flex-direction:column;gap:14px;">
+          <label style="display:flex;flex-direction:column;gap:6px;">
+            <span style="font-size:12.5px;color:#6E675A;">نوع الوثيقة</span>
+            <select value="{{ fDoc }}" onChange="{{ setDoc }}" style="font-size:14.5px;color:#052E2B;background:#FAF6EC;border:1px solid #E2DAC8;border-radius:10px;padding:11px 12px;min-height:44px;">
+              <option value="محضر استلام">محضر استلام</option>
+              <option value="قيد ترقية">قيد ترقية</option>
+              <option value="قرار مسبب">قرار مسبب</option>
+              <option value="أمر تغيير">أمر تغيير</option>
+            </select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;">
+            <span style="font-size:12.5px;color:#6E675A;">رقم القيد</span>
+            <input dir="ltr" value="{{ fId }}" onInput="{{ setId }}" style="font-family:'IBM Plex Mono',monospace;font-size:14.5px;color:#052E2B;background:#FAF6EC;border:1px solid #E2DAC8;border-radius:10px;padding:11px 12px;min-height:44px;">
+          </label>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:14px;">
+            <label style="display:flex;flex-direction:column;gap:6px;min-width:0;">
+              <span style="font-size:12.5px;color:#6E675A;">الفئة</span>
+              <select value="{{ fTier }}" onChange="{{ setTier }}" style="font-size:14.5px;color:#052E2B;background:#FAF6EC;border:1px solid #E2DAC8;border-radius:10px;padding:11px 12px;min-height:44px;">
+                <option value="T0">T0 مسجل</option>
+                <option value="T1">T1 معرف</option>
+                <option value="T2">T2 موثق</option>
+                <option value="T3">T3 مثبت</option>
+                <option value="T4">T4 مؤتمن</option>
+              </select>
+            </label>
+            <label style="display:flex;flex-direction:column;gap:6px;min-width:0;">
+              <span style="font-size:12.5px;color:#6E675A;">التاريخ</span>
+              <input dir="ltr" value="{{ fDate }}" onInput="{{ setDate }}" style="font-family:'IBM Plex Mono',monospace;font-size:14.5px;color:#052E2B;background:#FAF6EC;border:1px solid #E2DAC8;border-radius:10px;padding:11px 12px;min-height:44px;min-width:0;">
+            </label>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:6px;">
+            <span style="font-size:12.5px;color:#6E675A;">رقم العقد</span>
+            <input dir="ltr" value="{{ fContract }}" onInput="{{ setContract }}" style="font-family:'IBM Plex Mono',monospace;font-size:14.5px;color:#052E2B;background:#FAF6EC;border:1px solid #E2DAC8;border-radius:10px;padding:11px 12px;min-height:44px;">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;">
+            <span style="font-size:12.5px;color:#6E675A;">نطاق التسليم المقبول</span>
+            <textarea rows="2" value="{{ fScope }}" onInput="{{ setScope }}" style="font-size:14.5px;line-height:1.8;color:#052E2B;background:#FAF6EC;border:1px solid #E2DAC8;border-radius:10px;padding:11px 12px;resize:vertical;"></textarea>
+          </label>
+          <label style="display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid #E2DAC8;border-radius:10px;background:#FAF6EC;min-height:44px;cursor:pointer;">
+            <input type="checkbox" checked="{{ fRevoked }}" onChange="{{ setRevoked }}" style="width:18px;height:18px;accent-color:#B23A31;">
+            <span style="font-size:14px;color:#33544D;">القيد ملغى بقرار لاحق</span>
+          </label>
+        </div>
+      </div>
+
+      <div style="min-width:0;display:flex;flex-direction:column;gap:18px;">
+        <div style="border:1px solid #EDE5D2;border-radius:20px;background:#fff;overflow:hidden;">
+          <div style="padding:14px 20px;border-bottom:1px solid #EDE5D2;background:#FAF6EC;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+            <span style="font-size:13px;color:#33544D;">الختم الناتج</span>
+            <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.16em;color:{{ stateColor }};">{{ stateLabel }}</span>
+          </div>
+          <div style="padding:30px 20px;display:flex;flex-direction:column;align-items:center;gap:16px;background:#FAF6EC;">
+            <div style="background:#fff;padding:22px;border:1px solid #EDE5D2;">
+              <svg viewBox="{{ mainBox }}" width="{{ mainW }}" height="{{ mainW }}" role="img" aria-label="ختم مولد من حقول القيد">
+                <sc-for list="{{ mainRuns }}" as="r" hint-placeholder-count="11">
+                  <rect x="{{ r.x }}" y="{{ r.y }}" width="{{ r.w }}" height="{{ r.h }}" rx="{{ r.rx }}" fill="{{ mainInk }}"></rect>
+                </sc-for>
+                <sc-if value="{{ fRevoked }}" hint-placeholder-val="{{ false }}">
+                  <rect x="{{ strikeX }}" y="{{ strikeY }}" width="{{ strikeW }}" height="3" fill="#B23A31"></rect>
+                </sc-if>
+              </svg>
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;color:#052E2B;text-align:center;margin-top:14px;">{{ mainShort }}</div>
+            </div>
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.9;color:#6E675A;word-break:break-all;text-align:center;max-width:34ch;">{{ mainHash }}</div>
+          </div>
+        </div>
+
+        <div style="border:1px solid #EDE5D2;border-radius:16px;background:#052E2B;padding:16px 18px;">
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10px;letter-spacing:.2em;color:rgba(250,246,236,.5);">CANONICAL STRING</div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:2;color:#7FE7DA;word-break:break-all;margin-top:8px;">{{ canonical }}</div>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button onClick="{{ dlSvg }}" style="flex:1 1 130px;min-height:44px;font-size:13.5px;color:#FAF6EC;background:#052E2B;border:none;border-radius:11px;padding:12px 16px;cursor:pointer;transition:background .14s cubic-bezier(.2,0,.2,1);" style-hover="background:#0A4540">تنزيل SVG</button>
+          <button onClick="{{ dlPng }}" style="flex:1 1 130px;min-height:44px;font-size:13.5px;color:#052E2B;background:transparent;border:1px solid #052E2B;border-radius:11px;padding:12px 16px;cursor:pointer;transition:background .14s cubic-bezier(.2,0,.2,1);" style-hover="background:#EDE5D2">تنزيل PNG ×٤</button>
+          <button onClick="{{ copyHash }}" style="flex:1 1 130px;min-height:44px;font-size:13.5px;color:#33544D;background:transparent;border:1px solid #E2DAC8;border-radius:11px;padding:12px 16px;cursor:pointer;transition:background .14s cubic-bezier(.2,0,.2,1);" style-hover="background:#F3EFE2">{{ copyLabel }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="الختم · القانون" style="background:#fff;padding:88px clamp(20px,4vw,48px);">
+  <div style="max-width:1120px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#0E6E66;font-weight:500;"><bdi style="letter-spacing:normal">القانون</bdi> · THE LAW OF THE SEAL</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:22ch;">ثمانية أحكام تضبط الختم</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;margin-top:34px;background:#EDE5D2;border:1px solid #EDE5D2;border-radius:20px;overflow:hidden;">
+      <div style="background:#fff;padding:24px 22px;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">01</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">لا يرسم الختم</div>
+        <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">يشتق حسابا من نص القيد. ولا يجوز لمصمم أن يعدل خانة منه، ولا أن يحسنه.</div>
+      </div>
+      <div style="background:#fff;padding:24px 22px;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">02</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">الطبقات إحدى عشرة</div>
+        <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">لا تزيد ولا تنقص. والطبقة التي تحسب خالية ترسم خطا رفيعا، ولا تترك بياضا.</div>
+      </div>
+      <div style="background:#fff;padding:24px 22px;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">03</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">التناظر على محور</div>
+        <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">يقرأ الختم من الجهتين سواء، فيصلح للعربية والإنجليزية بلا قلب.</div>
+      </div>
+      <div style="background:#fff;padding:24px 22px;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">04</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">لون واحد</div>
+        <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">حبر <bdi dir="ltr" style="font-family:'IBM Plex Mono',monospace;">#052E2B</bdi>. ولا يجوز الذهب إلا على الفئة الرابعة، ولا الأحمر إلا شطبا على الملغى.</div>
+      </div>
+      <div style="background:#fff;padding:24px 22px;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">05</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">الملغى يشطب</div>
+        <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">ولا يمحى. يبقى الختم ظاهرا تحت الشطب، فالسجل لا يعاد كتابته.</div>
+      </div>
+      <div style="background:#fff;padding:24px 22px;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">06</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">حد أدنى ١٤ ملم</div>
+        <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">دون ذلك تلتحم الطبقات في الطباعة. وعلى الشاشة الحد ٥٦ بكسلا.</div>
+      </div>
+      <div style="background:#fff;padding:24px 22px;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">07</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">الشيفرة تصاحب الختم</div>
+        <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">تطبع أول ثماني خانات تحته بخط أحادي المسافة. الصورة وحدها لا تتحقق.</div>
+      </div>
+      <div style="background:#fff;padding:24px 22px;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">08</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">لا يستعمل للزينة</div>
+        <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">ختم بلا قيد خلفه غش. ولا يوضع على غلاف، ولا على إعلان، ولا على قميص.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:26px;">
+      <div style="border:1px solid #EDE5D2;border-radius:16px;padding:20px 22px;min-width:0;">
+        <div style="display:flex;align-items:center;gap:8px;"><span style="width:18px;height:3px;border-radius:2px;background:#0E6E66;flex-shrink:0;"></span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#33544D;">GRID</span></div>
+        <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:9px;">١١ × ١١ خانة. ست خانات مستقلة في كل طبقة، والباقي انعكاس. ٦٦ بتا للنمط، و٢٢ بتا للأوزان.</div>
+      </div>
+      <div style="border:1px solid #EDE5D2;border-radius:16px;padding:20px 22px;min-width:0;">
+        <div style="display:flex;align-items:center;gap:8px;"><span style="width:18px;height:3px;border-radius:2px;background:#12B5A4;flex-shrink:0;"></span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#33544D;">WEIGHTS</span></div>
+        <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:9px;">أربعة أوزان للطبقة: <bdi dir="ltr" style="font-family:'IBM Plex Mono',monospace;">.30 · .46 · .64 · .84</bdi> من ارتفاع الخانة. هي نفسها لغة الطبقات على البطاقة.</div>
+      </div>
+      <div style="border:1px solid #EDE5D2;border-radius:16px;padding:20px 22px;min-width:0;">
+        <div style="display:flex;align-items:center;gap:8px;"><span style="width:18px;height:3px;border-radius:2px;background:#B8891A;flex-shrink:0;"></span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#33544D;">COLLISION</span></div>
+        <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:9px;">٨٨ بتا مرسومة تعطي احتمال تطابق يقارب واحدا في <bdi dir="ltr" style="font-family:'IBM Plex Mono',monospace;">3×10²⁶</bdi>. والشيفرة الكاملة هي الحجة، لا الصورة.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="الختم · السلسلة" style="background:#052E2B;padding:88px clamp(20px,4vw,48px);">
+  <div style="max-width:1120px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#12B5A4;font-weight:500;"><bdi style="letter-spacing:normal">السلسلة</bdi> · THE CHAIN</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#FAF6EC;max-width:26ch;">السجل لا يعدل، لأن التعديل يظهر</h2>
+    <div style="font-size:16px;line-height:2;color:rgba(250,246,236,.76);margin-top:12px;max-width:60ch;">يحمل كل قيد ختم القيد الذي قبله. فمن غير قيدا قديما كسر كل ما بعده، وظهر الكسر في السطر لا في التقرير. عدل نص القيد الأول أدناه وانظر.</div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:38px;">
+      <sc-for list="{{ chain }}" as="link" hint-placeholder-count="3">
+        <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.04);padding:22px;min-width:0;display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(250,246,236,.55);">{{ link.no }}</span>
+            <span style="font-size:11.5px;padding:4px 10px;border-radius:99px;color:{{ link.fg }};background:{{ link.bg }};border:1px solid {{ link.bd }};">{{ link.status }}</span>
+          </div>
+          <input value="{{ link.text }}" onInput="{{ link.onEdit }}" style="width:100%;box-sizing:border-box;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:14px;color:#FAF6EC;background:rgba(0,0,0,.22);border:1px solid rgba(250,246,236,.18);border-radius:10px;padding:11px 12px;min-height:44px;">
+          <div style="display:flex;align-items:center;gap:16px;">
+            <div style="background:#FAF6EC;padding:11px;border-radius:4px;flex-shrink:0;">
+              <svg viewBox="{{ link.box }}" width="88" height="88" role="img" aria-label="ختم القيد">
+                <sc-for list="{{ link.runs }}" as="r" hint-placeholder-count="11">
+                  <rect x="{{ r.x }}" y="{{ r.y }}" width="{{ r.w }}" height="{{ r.h }}" rx="{{ r.rx }}" fill="#052E2B"></rect>
+                </sc-for>
+              </svg>
+            </div>
+            <div style="min-width:0;">
+              <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:9.5px;letter-spacing:.16em;color:rgba(250,246,236,.42);">THIS SEAL</div>
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:#7FE7DA;margin-top:3px;">{{ link.short }}</div>
+              <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:9.5px;letter-spacing:.16em;color:rgba(250,246,236,.42);margin-top:11px;">CARRIES PREVIOUS</div>
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:rgba(250,246,236,.68);margin-top:3px;">{{ link.prevShort }}</div>
+            </div>
+          </div>
+          <div style="font-size:13px;line-height:1.8;color:{{ link.noteFg }};">{{ link.note }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:26px;">
+      <button onClick="{{ resetChain }}" style="min-height:44px;font-size:13.5px;color:#052E2B;background:#12B5A4;border:none;border-radius:11px;padding:12px 20px;cursor:pointer;">إعادة السلسلة إلى أصلها</button>
+      <span style="font-size:13.5px;line-height:1.8;color:rgba(250,246,236,.6);flex:1 1 240px;min-width:0;">في التشغيل الحقيقي لا يوجد زر إعادة. القيد المكسور يبقى مكسورا، ويصدر بشأنه قرار مسبب.</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="الختم · التحقق" style="background:#F1EAD9;padding:88px clamp(20px,4vw,48px);">
+  <div style="max-width:1120px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#0E6E66;font-weight:500;"><bdi style="letter-spacing:normal">التحقق</bdi> · VERIFICATION</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:26ch;">يتحقق منه أي طرف، بلا إذن من كيان</h2>
+    <div style="font-size:16px;line-height:2;color:#33544D;margin-top:12px;max-width:58ch;">من بيده ورقة مختومة يعيد إدخال نصها المعياري هنا، ويقارن الناتج بالشيفرة المطبوعة. ولا يحتاج إلى حساب، ولا إلى اتصال بكيان، ولا إلى تصديقها. هذا هو الفرق بين سجل وبين ادعاء.</div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:34px;align-items:start;">
+      <div style="border:1px solid #E2DAC8;border-radius:20px;background:#FAF6EC;padding:22px;min-width:0;display:flex;flex-direction:column;gap:14px;">
+        <label style="display:flex;flex-direction:column;gap:6px;">
+          <span style="font-size:12.5px;color:#6E675A;">النص المعياري كما هو مطبوع على الوثيقة</span>
+          <textarea rows="4" dir="ltr" value="{{ vRec }}" onInput="{{ setVRec }}" placeholder="KYN|MHD|A7F3-0142|T3|2026-07-14|MD-2026-204|…" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.9;color:#052E2B;background:#fff;border:1px solid #E2DAC8;border-radius:10px;padding:12px;resize:vertical;"></textarea>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:6px;">
+          <span style="font-size:12.5px;color:#6E675A;">الشيفرة المطبوعة تحت الختم — ثماني خانات</span>
+          <input dir="ltr" value="{{ vSeal }}" onInput="{{ setVSeal }}" placeholder="A1B2C3D4" style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:#052E2B;background:#fff;border:1px solid #E2DAC8;border-radius:10px;padding:12px;min-height:44px;">
+        </label>
+        <button onClick="{{ fillFromMain }}" style="align-self:flex-start;min-height:44px;font-size:13px;color:#33544D;background:transparent;border:1px solid #E2DAC8;border-radius:11px;padding:11px 16px;cursor:pointer;" style-hover="background:#F3EFE2">تعبئة من الختم المولد أعلاه</button>
+      </div>
+
+      <div style="border:1px solid {{ vBorder }};border-radius:20px;background:#fff;padding:26px;min-width:0;">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:{{ vTone }};">{{ vKicker }}</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(20px,2.4vw,27px);line-height:1.4;color:#052E2B;margin-top:12px;">{{ vTitle }}</div>
+        <div style="font-size:14.5px;line-height:2;color:#33544D;margin-top:10px;">{{ vBody }}</div>
+        <div style="height:1px;background:#EDE5D2;margin:20px 0;"></div>
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10px;letter-spacing:.18em;color:#6E675A;">COMPUTED</div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.2em;color:#052E2B;margin-top:5px;">{{ vComputed }}</div>
+        <div style="font-size:13px;line-height:1.85;color:#6E675A;margin-top:16px;">{{ vRoute }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="الختم · المواضع" style="background:#FAF6EC;padding:88px clamp(20px,4vw,48px) 96px;">
+  <div style="max-width:1120px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#0E6E66;font-weight:500;"><bdi style="letter-spacing:normal">المواضع</bdi> · WHERE IT APPEARS</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:24ch;">أربعة مواضع لا خامس لها</h2>
+    <div style="font-size:16px;line-height:2;color:#33544D;margin-top:12px;max-width:56ch;">حيثما وجد الختم وجد خلفه قيد يمكن فتحه. وحيثما لم يوجد قيد فلا ختم.</div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-top:36px;">
+      <div style="border:1px solid #EDE5D2;border-radius:18px;background:#fff;overflow:hidden;min-width:0;">
+        <div style="padding:26px;display:flex;justify-content:center;background:#F7F4EA;border-bottom:1px solid #EDE5D2;">
+          <svg viewBox="{{ heroBox }}" width="112" height="112" role="img" aria-label="ختم على المحضر">
+            <sc-for list="{{ heroRuns }}" as="r" hint-placeholder-count="11">
+              <rect x="{{ r.x }}" y="{{ r.y }}" width="{{ r.w }}" height="{{ r.h }}" rx="{{ r.rx }}" fill="#052E2B"></rect>
+            </sc-for>
+          </svg>
+        </div>
+        <div style="padding:20px 22px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">على محضر الاستلام</div>
+          <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:7px;">أسفل يمين الصفحة الثانية، ٢٠ ملم، بجوار خانة رقم القيد. يوضع بعد التوقيع لا قبله.</div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #EDE5D2;border-radius:18px;background:#fff;overflow:hidden;min-width:0;">
+        <div style="padding:26px;display:flex;justify-content:center;background:#052E2B;border-bottom:1px solid #EDE5D2;">
+          <svg viewBox="{{ heroBox }}" width="112" height="112" role="img" aria-label="ختم الفئة الرابعة">
+            <sc-for list="{{ heroRuns }}" as="r" hint-placeholder-count="11">
+              <rect x="{{ r.x }}" y="{{ r.y }}" width="{{ r.w }}" height="{{ r.h }}" rx="{{ r.rx }}" fill="#E9BE4B"></rect>
+            </sc-for>
+          </svg>
+        </div>
+        <div style="padding:20px 22px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">على بطاقة المؤتمن</div>
+          <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:7px;">ظهر البطاقة، ١٤ ملم، ذهبا. وهو الموضع الوحيد الذي يجوز فيه الذهب.</div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #EDE5D2;border-radius:18px;background:#fff;overflow:hidden;min-width:0;">
+        <div style="padding:26px;display:flex;justify-content:center;background:#F7F4EA;border-bottom:1px solid #EDE5D2;position:relative;">
+          <svg viewBox="{{ heroBox }}" width="112" height="112" role="img" aria-label="ختم قيد ملغى">
+            <sc-for list="{{ heroRuns }}" as="r" hint-placeholder-count="11">
+              <rect x="{{ r.x }}" y="{{ r.y }}" width="{{ r.w }}" height="{{ r.h }}" rx="{{ r.rx }}" fill="#8A9A94"></rect>
+            </sc-for>
+            <rect x="{{ strikeX }}" y="{{ strikeY }}" width="{{ strikeW }}" height="3" fill="#B23A31"></rect>
+          </svg>
+        </div>
+        <div style="padding:20px 22px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">على القيد الملغى</div>
+          <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:7px;">يخفت الحبر ويشطب بخط أحمر واحد. ويبقى مقروءا، فالإلغاء قيد جديد لا محو.</div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #EDE5D2;border-radius:18px;background:#fff;overflow:hidden;min-width:0;">
+        <div style="padding:26px;display:flex;align-items:center;justify-content:center;gap:14px;background:#F7F4EA;border-bottom:1px solid #EDE5D2;">
+          <svg viewBox="{{ heroBox }}" width="56" height="56" role="img" aria-label="ختم بالحد الأدنى">
+            <sc-for list="{{ heroRuns }}" as="r" hint-placeholder-count="11">
+              <rect x="{{ r.x }}" y="{{ r.y }}" width="{{ r.w }}" height="{{ r.h }}" rx="{{ r.rx }}" fill="#052E2B"></rect>
+            </sc-for>
+          </svg>
+          <svg viewBox="{{ heroBox }}" width="34" height="34" role="img" aria-label="ختم دون الحد الأدنى — ممنوع" style="opacity:.4;">
+            <sc-for list="{{ heroRuns }}" as="r" hint-placeholder-count="11">
+              <rect x="{{ r.x }}" y="{{ r.y }}" width="{{ r.w }}" height="{{ r.h }}" rx="{{ r.rx }}" fill="#B23A31"></rect>
+            </sc-for>
+          </svg>
+        </div>
+        <div style="padding:20px 22px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">على صفحة السجل</div>
+          <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:7px;">٥٦ بكسلا حدا أدنى. وما دونه — على اليسار — لا يعتد به ولا يطبع.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;padding:26px 28px;border:1px solid #E2DAC8;border-radius:20px;background:#fff;display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;">
+      <span style="width:22px;height:3px;border-radius:2px;background:#B23A31;flex-shrink:0;margin-top:11px;"></span>
+      <div style="flex:1 1 260px;min-width:0;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;">ما لا يجوز</div>
+        <div style="font-size:14.5px;line-height:2;color:#33544D;margin-top:8px;">لا يوضع الختم على مادة تسويقية. ولا يولد ختم لعمل لم يقبل. ولا تعرض صورة ختم دون شيفرته. ولا يشتق ختم من حقول ناقصة. ومن أصدر ختما بغير قيد، يقيد ذلك في سجل المخالفات باسم الموقع لا باسم النظام.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>

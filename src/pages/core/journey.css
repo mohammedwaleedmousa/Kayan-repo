@@ -1,0 +1,77 @@
+
+html,body{margin:0;padding:0;background:#EDE5D2;overflow-x:hidden;}
+body{-webkit-font-smoothing:antialiased;}
+a{color:#0E6E66;text-decoration:none;}a:hover{color:#12B5A4;}
+::selection{background:#12B5A4;color:#052E2B;}
+input,button,select,textarea{font-family:inherit;}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #12B5A4;outline-offset:2px;}
+button{-webkit-tap-highlight-color:transparent;}
+/* Bilingual layer. Both languages ship in the markup; CSS shows one.
+   Arabic is the authored source and the default — English restates it. */
+[data-en]{display:none;}
+[data-lang="en"] [data-en]{display:revert;}
+[data-lang="en"] [data-ar]{display:none;}
+[data-lang="en"] [data-en-ltr]{direction:ltr;text-align:left;}
+@keyframes jIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+@keyframes jRow{from{opacity:0;transform:translateX(-8px);}to{opacity:1;transform:none;}}
+/* ── Abstract ground for the cover: drifting orbs, a faint grid, a slow sweep ── */
+@keyframes jOrbA{0%,100%{transform:translate3d(0,0,0) scale(1);}50%{transform:translate3d(4%,-3%,0) scale(1.08);}}
+@keyframes jOrbB{0%,100%{transform:translate3d(0,0,0) scale(1);}50%{transform:translate3d(-5%,4%,0) scale(1.12);}}
+@keyframes jSweep{0%{transform:translateX(-40%) skewX(-12deg);}100%{transform:translateX(280%) skewX(-12deg);}}
+@keyframes jFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+[data-jdeco]{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+[data-jgrid]{position:absolute;inset:-12%;background-image:linear-gradient(rgba(250,246,236,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(250,246,236,.05) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000 24%,transparent 78%);mask-image:radial-gradient(70% 60% at 50% 40%,#000 24%,transparent 78%);}
+[data-jorb]{position:absolute;border-radius:50%;filter:blur(46px);will-change:transform;}
+[data-jorb="a"]{animation:jOrbA 38s ease-in-out infinite;}
+[data-jorb="b"]{animation:jOrbB 48s ease-in-out infinite;}
+[data-jring]{position:absolute;border-radius:50%;border:1px solid rgba(250,246,236,.09);}
+[data-jsweep]{position:absolute;top:0;bottom:0;width:18%;background:linear-gradient(90deg,transparent,rgba(250,246,236,.04),transparent);animation:jSweep 21s cubic-bezier(.6,0,.4,1) infinite;}
+[data-jdot]{position:absolute;border-radius:50%;animation:jFloat 13s ease-in-out infinite;}
+[data-jticks]{position:absolute;background:repeating-linear-gradient(180deg,rgba(250,246,236,.14) 0 1px,transparent 1px 22px);}
+
+/* ── Station rail: plain text stops. The rule under each one draws itself
+   slowly on hover; the current stop keeps its rule drawn. No dots, no pills. ── */
+[data-stop]{position:relative;transition:color .55s cubic-bezier(.16,1,.3,1),opacity .55s ease;}
+[data-stop]::after{content:"";position:absolute;inset-inline:2px;bottom:6px;height:1.5px;border-radius:2px;background:currentColor;opacity:0;transform:scaleX(0);transform-origin:inline-start;transition:opacity .5s ease,transform .75s cubic-bezier(.16,1,.3,1);}
+[data-stop]:hover::after,[data-stop]:focus-visible::after{opacity:.4;transform:scaleX(1);}
+[data-stop][data-on]::after{opacity:1;transform:scaleX(1);height:2px;}
+[data-stop] [data-stopno]{transition:letter-spacing .55s cubic-bezier(.16,1,.3,1),opacity .55s ease;}
+[data-stop]:hover [data-stopno]{letter-spacing:.18em;opacity:.95;}
+
+/* ── The screen-and-register stage ──────────────────────────────────────
+   The point of this section is causality: the phone acts, the register records.
+   So the register is dressed as live instrumentation — a scanline, a pulsing
+   LIVE lamp, the newest entry lit and flagged — and a wire runs from the phone
+   to the panel so the two columns read as one mechanism rather than two cards. */
+@keyframes jScan{0%{transform:translateY(-120%)}100%{transform:translateY(820%)}}
+@keyframes jLamp{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+@keyframes jWire{0%{transform:translateX(-100%)}100%{transform:translateX(320%)}}
+@keyframes jShimmer{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@keyframes jNewFlash{0%{background-color:rgba(127,231,218,.16)}100%{background-color:transparent}}
+[data-jstage]{position:relative;overflow:hidden;}
+[data-jsdeco]{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+[data-jsorb]{position:absolute;border-radius:50%;filter:blur(50px);animation:jOrbA 42s ease-in-out infinite;}
+[data-jsgrid]{position:absolute;inset:0;background-image:linear-gradient(rgba(5,46,43,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(5,46,43,.045) 1px,transparent 1px);background-size:52px 52px;-webkit-mask-image:radial-gradient(76% 66% at 50% 42%,#000 22%,transparent 80%);mask-image:radial-gradient(76% 66% at 50% 42%,#000 22%,transparent 80%);}
+[data-regpanel]{position:relative;box-shadow:0 30px 70px -34px rgba(5,46,43,.5);}
+[data-regscan]{position:absolute;inset-inline:0;top:0;height:16%;background:linear-gradient(180deg,transparent,rgba(127,231,218,.05),transparent);pointer-events:none;z-index:2;animation:jScan 11s linear infinite;}
+[data-lamp]{display:inline-block;width:7px;height:7px;border-radius:50%;background:#7FE7DA;box-shadow:0 0 8px rgba(127,231,218,.9);animation:jLamp 2.4s ease-in-out infinite;}
+[data-regrow]{position:relative;transition:background-color .32s ease,padding-inline-start .32s cubic-bezier(.16,1,.3,1);}
+[data-regrow]::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:2px;background:#7FE7DA;transform:scaleY(0);transform-origin:center;transition:transform .34s cubic-bezier(.16,1,.3,1);}
+[data-regrow]:hover{background-color:rgba(250,246,236,.05);padding-inline-start:26px;}
+[data-regrow]:hover::before{transform:scaleY(1);}
+[data-regrow][data-new]{animation:jRow .3s cubic-bezier(.16,1,.3,1) both,jNewFlash 2.4s cubic-bezier(.16,1,.3,1) both;}
+[data-regrow][data-new]::before{transform:scaleY(1);}
+[data-wire]{position:relative;overflow:hidden;}
+[data-wire] i{position:absolute;inset-block:0;inset-inline-start:0;width:34%;background:linear-gradient(90deg,transparent,#12B5A4,transparent);animation:jWire 3.4s cubic-bezier(.4,0,.6,1) infinite;}
+[data-escbar]{position:relative;overflow:hidden;}
+[data-escbar] i{position:absolute;inset-block:0;inset-inline-start:0;width:40%;background:linear-gradient(90deg,transparent,rgba(250,246,236,.4),transparent);animation:jShimmer 2.8s cubic-bezier(.4,0,.6,1) infinite;}
+[data-phoneglow]{position:absolute;left:8%;right:8%;bottom:-26px;height:52px;border-radius:50%;background:radial-gradient(closest-side,rgba(18,181,164,.3),transparent 72%);filter:blur(20px);pointer-events:none;}
+/* ── Rule cards: one row on a real screen, and the hovered card comes forward ── */
+@media (min-width:1040px){[data-rulegrid]{grid-template-columns:repeat(6,minmax(0,1fr)) !important;}}
+[data-rulecard]{position:relative;transition:transform .5s cubic-bezier(.16,1,.3,1),background-color .45s ease,box-shadow .5s cubic-bezier(.16,1,.3,1);will-change:transform;}
+[data-rulecard]::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,#0E6E66,#12B5A4);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.16,1,.3,1);}
+[data-rulecard]:hover{transform:translateY(-6px);background-color:#FFFDF7;box-shadow:0 26px 50px -26px rgba(5,46,43,.3);z-index:2;}
+[data-rulecard]:hover::before{transform:scaleX(1);}
+[data-rulecard] [data-ruleno]{transition:color .45s ease,letter-spacing .45s ease;}
+[data-rulecard]:hover [data-ruleno]{color:#12B5A4;letter-spacing:.14em;}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;}[data-stop]:hover,[data-rulecard]:hover{transform:none;}}
