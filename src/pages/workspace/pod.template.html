@@ -1,0 +1,207 @@
+<div dir="rtl" style="min-height:100vh;background:radial-gradient(1200px 600px at 80% -10%,rgba(91,74,142,.35),transparent 60%),#140E26;color:#F1ECFF;">
+<sc-if value="{{ gate }}" hint-placeholder-val="{{ true }}">
+  <div style="min-height:100vh;display:grid;place-items:center;padding:24px;">
+    <div style="max-width:480px;width:100%;background:#1D1433;border:1px solid #3A2F5C;border-radius:26px;padding:clamp(26px,4vw,40px);animation:kIn .6s ease both;">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+        <img src="assets/kayan-mark-cream.png" alt="كيان" style="height:30px;opacity:.9;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.22em;color:#B9A8E8;">POD ROOM · GATED</span>
+      </div>
+      <h1 style="margin:20px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,32px);line-height:1.4;">غرفة لا تفتح إلا <b style="font-weight:700;color:#B9A8E8;">لأهلها.</b></h1>
+      <p style="margin:10px 0 0;font-size:13px;line-height:2.1;color:rgba(241,236,255,.7);">يدخلها عضو الفريق بجلسته، ويفتحها رقم الفريق أو رقم التكليف. لا غرف انتظار عندنا — الغرفة قائمة ما دام التكليف قائمًا.</p>
+      <sc-if value="{{ noAuth }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:18px;border:1px solid rgba(233,201,107,.4);background:rgba(233,201,107,.07);border-radius:14px;padding:13px 16px;font-size:12.5px;line-height:2;color:#E9C96B;">لا جلسة كفاءة على هذا الجهاز. <a href="Kayan Access.dc.html" style="color:#E9C96B;text-decoration:underline;">الدخول أولًا ←</a></div>
+      </sc-if>
+      <sc-if value="{{ hasAuth }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top:16px;display:flex;gap:10px;align-items:center;background:rgba(185,168,232,.08);border:1px solid #3A2F5C;border-radius:14px;padding:11px 14px;">
+          <span style="width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,#C9A227,#E9C96B);color:#052E2B;display:grid;place-items:center;font-family:'Alexandria',sans-serif;font-weight:800;font-size:13px;">{{ initial }}</span>
+          <div style="min-width:0;"><div style="font-size:12.5px;font-weight:600;">{{ authName }}</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#B9A8E8;text-align:left;">{{ authId }}</div></div>
+        </div>
+        <label style="display:grid;gap:6px;margin-top:14px;"><span style="font-size:12.5px;font-weight:600;">رقم الفريق أو رقم التكليف</span>
+          <input value="{{ code }}" onInput="{{ setCode }}" onKeyDown="{{ codeKey }}" dir="ltr" placeholder="POD-26-041 · KY-J-26-00417" style="border:1.5px solid #3A2F5C;border-radius:12px;padding:13px 15px;font-size:14px;background:#140E26;color:#F1ECFF;text-align:center;font-family:'IBM Plex Mono',monospace;letter-spacing:.08em;">
+        </label>
+        <sc-if value="{{ err }}" hint-placeholder-val="{{ false }}"><div role="alert" style="margin-top:10px;border:1px solid #C96B4A;background:rgba(201,107,74,.1);color:#F0B9A0;border-radius:12px;padding:10px 14px;font-size:12.5px;line-height:1.9;">{{ err }}</div></sc-if>
+        <button type="button" onClick="{{ unlock }}" style="margin-top:14px;width:100%;border:none;cursor:pointer;border-radius:14px;padding:14px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:15px;color:#140E26;background:linear-gradient(135deg,#B9A8E8,#D8CCF6);transition:transform .25s ease;" style-hover="transform:translateY(-2px)">فتح الغرفة</button>
+        <div style="margin-top:12px;font-size:11px;color:rgba(241,236,255,.5);text-align:center;" dir="ltr">Demo: POD-26-041</div>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+<sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
+  <div style="max-width:1240px;margin:0 auto;padding:clamp(14px,2.6vw,28px);">
+    <header style="background:#1D1433;border:1px solid #3A2F5C;border-radius:22px;padding:clamp(16px,2.6vw,24px);animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+      <div style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;">
+        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+          <a href="Kayan Space - Talent.dc.html" title="عودة إلى مساحتك"><img src="assets/kayan-mark-cream.png" alt="كيان" style="height:32px;"></a>
+          <div>
+            <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+              <span style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:19px;">فريق سنّار</span>
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#B9A8E8;background:rgba(185,168,232,.12);border-radius:99px;padding:4px 10px;">POD-26-041 · KY-J-26-00417</span>
+            </div>
+            <div style="margin-top:5px;font-size:12.5px;color:rgba(241,236,255,.68);">هوية بصرية متكاملة لمصنع أغذية — البند الجاري: التطبيقات والملفات المصدر</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+          <div style="display:flex;">
+            <sc-for list="{{ members }}" as="m" hint-placeholder-count="3">
+              <span title="{{ m.tip }}" style="width:36px;height:36px;border-radius:12px;background:{{ m.bg }};color:{{ m.fg }};display:grid;place-items:center;font-family:'Alexandria',sans-serif;font-weight:800;font-size:13px;border:2px solid #1D1433;margin-inline-start:-6px;position:relative;">{{ m.i }}<span style="position:absolute;bottom:-2px;inset-inline-end:-2px;width:9px;height:9px;border-radius:99px;border:2px solid #1D1433;background:{{ m.dot }};"></span></span>
+            </sc-for>
+          </div>
+          <div style="text-align:center;background:rgba(185,168,232,.08);border:1px solid #3A2F5C;border-radius:14px;padding:8px 16px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:17px;color:#D8CCF6;">{{ countdown }}</div>
+            <div style="font-size:9.5px;color:rgba(241,236,255,.55);">حتى موعد التسليم</div>
+          </div>
+          <button type="button" onClick="{{ leave }}" style="border:1px solid #3A2F5C;background:none;color:#B9A8E8;cursor:pointer;border-radius:10px;padding:9px 14px;font-size:11.5px;font-weight:600;">مغادرة الغرفة</button>
+        </div>
+      </div>
+      <div style="margin-top:18px;display:grid;grid-template-columns:repeat(10,1fr);gap:4px;" dir="ltr">
+        <sc-for list="{{ gates }}" as="g" hint-placeholder-count="10">
+          <div title="{{ g.tip }}" style="display:grid;gap:5px;justify-items:center;">
+            <span style="height:5px;width:100%;border-radius:99px;background:{{ g.bar }};"></span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:{{ g.fg }};">{{ g.id }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </header>
+    <nav style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;animation:kIn .5s .08s ease both;">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+        <button type="button" onClick="{{ t.go }}" style="border:1.5px solid {{ t.bd }};background:{{ t.bg }};color:{{ t.fg }};cursor:pointer;border-radius:999px;padding:10px 20px;font-size:13px;font-weight:700;transition:all .25s ease;">{{ t.label }}</button>
+      </sc-for>
+    </nav>
+    <sc-if value="{{ vBoard }}" hint-placeholder-val="{{ true }}">
+      <section style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px;animation:kIn .5s .12s ease both;">
+        <sc-for list="{{ lanes }}" as="ln" hint-placeholder-count="4">
+          <div style="background:#1D1433;border:1px solid #3A2F5C;border-radius:18px;padding:14px;display:grid;gap:10px;align-content:start;min-height:220px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12.5px;font-weight:700;color:{{ ln.hd }};">{{ ln.name }}</span>
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:rgba(241,236,255,.5);">{{ ln.count }}</span>
+            </div>
+            <sc-for list="{{ ln.tasks }}" as="k" hint-placeholder-count="2">
+              <div data-card="" style="background:#140E26;border:1px solid #3A2F5C;border-inline-start:3px solid {{ ln.hd }};border-radius:12px;padding:11px 13px;">
+                <div style="font-size:12.5px;line-height:1.8;">{{ k.t }}</div>
+                <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:8px;">
+                  <span style="font-size:10px;color:#B9A8E8;">{{ k.owner }}</span>
+                  <span style="display:flex;gap:4px;">
+                    <sc-if value="{{ k.canBack }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ k.back }}" title="إرجاع خطوة" style="border:1px solid #3A2F5C;background:none;color:#B9A8E8;cursor:pointer;border-radius:8px;padding:3px 9px;font-size:11px;">→</button></sc-if>
+                    <sc-if value="{{ k.canFwd }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ k.fwd }}" title="تقديم خطوة" style="border:none;background:rgba(185,168,232,.16);color:#D8CCF6;cursor:pointer;border-radius:8px;padding:3px 9px;font-size:11px;">←</button></sc-if>
+                  </span>
+                </div>
+              </div>
+            </sc-for>
+            <sc-if value="{{ ln.isFirst }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;gap:6px;">
+                <input value="{{ newTask }}" onInput="{{ setNewTask }}" onKeyDown="{{ newTaskKey }}" placeholder="بند جديد…" style="flex:1;min-width:0;border:1px dashed #3A2F5C;border-radius:10px;padding:9px 12px;font-size:12px;background:transparent;color:#F1ECFF;">
+                <button type="button" onClick="{{ addTask }}" style="border:none;background:rgba(185,168,232,.16);color:#D8CCF6;cursor:pointer;border-radius:10px;padding:9px 13px;font-size:12px;font-weight:700;">+</button>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vLog }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:16px;background:#1D1433;border:1px solid #3A2F5C;border-radius:20px;padding:clamp(16px,2.6vw,24px);animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;">يوميات التسليم</div>
+          <span style="font-size:11px;color:rgba(241,236,255,.55);">تدون الوقائع لا الانطباعات؛ اليوميات جزء من ملف التكليف</span>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:8px;">
+          <input value="{{ newLog }}" onInput="{{ setNewLog }}" onKeyDown="{{ newLogKey }}" placeholder="ما الذي أنجز أو تقرر اليوم؟" style="flex:1;border:1.5px solid #3A2F5C;border-radius:12px;padding:12px 15px;font-size:13px;background:#140E26;color:#F1ECFF;">
+          <button type="button" onClick="{{ addLog }}" style="border:none;cursor:pointer;border-radius:12px;padding:12px 22px;font-weight:700;font-size:13px;color:#140E26;background:linear-gradient(135deg,#B9A8E8,#D8CCF6);">تدوين</button>
+        </div>
+        <div style="margin-top:16px;display:grid;">
+          <sc-for list="{{ logEntries }}" as="l" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;padding:12px 0;border-top:1px solid rgba(58,47,92,.7);">
+              <div style="display:grid;justify-items:center;gap:4px;">
+                <span style="width:9px;height:9px;border-radius:99px;background:#B9A8E8;margin-top:5px;"></span>
+                <span style="width:1px;flex:1;background:rgba(58,47,92,.7);"></span>
+              </div>
+              <div>
+                <div style="font-size:13px;line-height:1.9;">{{ l.x }}</div>
+                <div dir="ltr" style="margin-top:4px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(241,236,255,.5);text-align:left;">{{ l.t }} · {{ l.who }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vChat }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:16px;background:#1D1433;border:1px solid #3A2F5C;border-radius:20px;overflow:hidden;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <div style="padding:14px 20px;border-bottom:1px solid #3A2F5C;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;">
+          <div style="font-weight:700;font-size:14px;">قناة الفريق</div>
+          <span style="font-size:11px;color:rgba(241,236,255,.55);">قناة العميل منفصلة ويديرها مدير التسليم — هنا كلام الصنعة</span>
+        </div>
+        <div style="padding:18px 20px;display:grid;gap:12px;max-height:400px;overflow:auto;">
+          <sc-for list="{{ chat }}" as="m" hint-placeholder-count="4">
+            <div style="max-width:80%;justify-self:{{ m.side }};">
+              <div style="display:flex;gap:8px;align-items:baseline;justify-content:{{ m.align }};"><span style="font-size:10.5px;font-weight:700;color:{{ m.nameC }};">{{ m.who }}</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:rgba(241,236,255,.4);">{{ m.t }}</span></div>
+              <div style="margin-top:4px;background:{{ m.bg }};color:{{ m.fg }};border-radius:14px;padding:10px 14px;font-size:13px;line-height:1.9;">{{ m.x }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="padding:14px 20px;border-top:1px solid #3A2F5C;display:flex;gap:8px;">
+          <input value="{{ draft }}" onInput="{{ setDraft }}" onKeyDown="{{ draftKey }}" placeholder="اكتب للفريق…" style="flex:1;border:1.5px solid #3A2F5C;border-radius:12px;padding:12px 15px;font-size:13px;background:#140E26;color:#F1ECFF;">
+          <button type="button" onClick="{{ send }}" style="border:none;cursor:pointer;border-radius:12px;padding:12px 24px;font-weight:700;font-size:13px;color:#140E26;background:linear-gradient(135deg,#B9A8E8,#D8CCF6);">إرسال</button>
+        </div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vGateTab }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:16px;display:grid;gap:14px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <div style="background:#1D1433;border:1px solid #3A2F5C;border-radius:20px;padding:clamp(16px,2.6vw,24px);">
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;">حراسة البوابة G6 — جاهزية التسليم</div>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#B9A8E8;">{{ checksDone }}/5</span>
+          </div>
+          <p style="margin:8px 0 0;font-size:12.5px;line-height:2;color:rgba(241,236,255,.68);">لا يرفع بند للمراجعة قبل اكتمال بنود الحراسة؛ فالجودة تفحص داخل الغرفة قبل أن يراها فاحص كيان المستقل.</p>
+          <div style="margin-top:14px;display:grid;gap:8px;">
+            <sc-for list="{{ checks }}" as="c" hint-placeholder-count="5">
+              <button type="button" onClick="{{ c.tap }}" style="display:flex;gap:12px;align-items:center;text-align:start;border:1.5px solid {{ c.bd }};background:{{ c.bg }};cursor:pointer;border-radius:14px;padding:13px 16px;transition:all .25s ease;">
+                <span style="width:22px;height:22px;flex:0 0 auto;border-radius:8px;border:2px solid {{ c.boxBd }};background:{{ c.boxBg }};color:#140E26;display:grid;place-items:center;font-size:13px;font-weight:800;">{{ c.mark }}</span>
+                <span style="font-size:13px;line-height:1.8;color:{{ c.fg }};">{{ c.x }}</span>
+              </button>
+            </sc-for>
+          </div>
+          <button type="button" onClick="{{ askGate }}" style="margin-top:14px;border:none;cursor:{{ gateCur }};border-radius:14px;padding:14px 26px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:14px;color:{{ gateBtnFg }};background:{{ gateBtnBg }};animation:{{ gateAnim }};">{{ gateBtnLabel }}</button>
+          <sc-if value="{{ gateAsked }}" hint-placeholder-val="{{ false }}"><div style="margin-top:12px;border:1px solid rgba(126,224,184,.4);background:rgba(126,224,184,.07);border-radius:14px;padding:12px 16px;font-size:12.5px;line-height:2;color:#7CE0B8;">قدم طلب فتح البوابة؛ يفحص فاحص مستقل خلال يوم عمل، والنتيجة تدون في اليوميات باسم صاحبها.</div></sc-if>
+        </div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vFiles }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:16px;display:grid;gap:14px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <div style="background:#1D1433;border:1px solid #3A2F5C;border-radius:20px;padding:clamp(16px,2.6vw,24px);">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;">ملفات التكليف</div>
+          <div style="margin-top:12px;display:grid;gap:8px;">
+            <sc-for list="{{ files }}" as="f" hint-placeholder-count="4">
+              <div data-card="" style="display:flex;justify-content:space-between;gap:12px;align-items:center;background:#140E26;border:1px solid #3A2F5C;border-radius:14px;padding:13px 16px;flex-wrap:wrap;">
+                <div style="display:flex;gap:12px;align-items:center;">
+                  <span style="width:36px;height:36px;border-radius:10px;background:rgba(185,168,232,.12);color:#B9A8E8;display:grid;place-items:center;font-family:'IBM Plex Mono',monospace;font-size:8.5px;">{{ f.ext }}</span>
+                  <div><div style="font-size:13px;font-weight:600;">{{ f.name }}</div><div dir="ltr" style="margin-top:3px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:rgba(241,236,255,.5);text-align:left;">{{ f.meta }}</div></div>
+                </div>
+                <span style="font-size:11px;font-weight:700;color:{{ f.c }};">{{ f.st }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:10px;border:1px dashed #3A2F5C;border-radius:14px;padding:14px;text-align:center;font-size:12px;color:rgba(241,236,255,.55);">الرفع يفعل عند الربط بالخادم — تسمى الملفات باسم البند ورقم الإصدار</div>
+        </div>
+        <div style="background:#1D1433;border:1px solid #3A2F5C;border-radius:20px;padding:clamp(16px,2.6vw,24px);">
+          <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;">توزيع المستحق</div>
+            <span style="font-size:11px;color:rgba(241,236,255,.55);">ثبت قبل بدء العمل ولا يعدل أثناءه</span>
+          </div>
+          <div style="margin-top:14px;display:grid;gap:10px;">
+            <sc-for list="{{ split }}" as="s" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;">
+                <span style="font-size:12.5px;min-width:150px;">{{ s.name }} <span style="color:#B9A8E8;font-size:10.5px;">{{ s.role }}</span></span>
+                <span style="height:8px;border-radius:99px;background:rgba(185,168,232,.12);overflow:hidden;display:block;" dir="ltr"><span style="display:block;height:100%;width:{{ s.pct }};background:linear-gradient(90deg,#5B4A8E,#B9A8E8);border-radius:99px;"></span></span>
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#D8CCF6;">{{ s.pct }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+    <footer style="margin-top:22px;padding:14px 6px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:11px;color:rgba(241,236,255,.45);">
+      <span>الغرفة سجل رسمي؛ ما دون فيها فهو من ملف التكليف.</span>
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;">KAYAN POD ROOM · ADEN</span>
+    </footer>
+  </div>
+</sc-if>
+</div>

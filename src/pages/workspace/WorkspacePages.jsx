@@ -1,0 +1,45 @@
+import NativeDcPage from '../../native/NativeDcPage.jsx';
+import AccessLogic from './AccessLogic.js';
+import ApplyLogic from './ApplyLogic.js';
+import PortalLogic from './PortalLogic.js';
+import ClientProfileLogic from './ClientProfileLogic.js';
+import TalentProfileLogic from './TalentProfileLogic.js';
+import SpaceClientLogic from './SpaceClientLogic.js';
+import SpaceTalentLogic from './SpaceTalentLogic.js';
+import PodLogic from './PodLogic.js';
+import AdminLogic from './AdminLogic.js';
+import accessTemplate from './access.template.html?raw';
+import applyTemplate from './apply.template.html?raw';
+import portalTemplate from './portal.template.html?raw';
+import clientProfileTemplate from './client-profile.template.html?raw';
+import talentProfileTemplate from './talent-profile.template.html?raw';
+import spaceClientTemplate from './space-client.template.html?raw';
+import spaceTalentTemplate from './space-talent.template.html?raw';
+import podTemplate from './pod.template.html?raw';
+import adminTemplate from './admin.template.html?raw';
+import accessStyles from './access.css?raw';
+import applyStyles from './apply.css?raw';
+import portalStyles from './portal.css?raw';
+import clientProfileStyles from './client-profile.css?raw';
+import talentProfileStyles from './talent-profile.css?raw';
+import spaceClientStyles from './space-client.css?raw';
+import spaceTalentStyles from './space-talent.css?raw';
+import podStyles from './pod.css?raw';
+import adminStyles from './admin.css?raw';
+
+const MARK = ['/legacy/kayan-mark.js'];
+const COMPASS_MARK = ['/legacy/kayan-compass.js', '/legacy/kayan-mark.js'];
+const REGISTRY = ['/legacy/kayan-registry.js', '/legacy/kayan-registry-2.js', '/legacy/kayan-registry-3.js', '/legacy/kayan-registry-4.js'];
+const page = (Logic, template, styles, title, scripts = [], props) => function WorkspacePage() {
+  return <NativeDcPage Logic={Logic} template={template} styles={styles} title={title} scripts={scripts} props={props} />;
+};
+
+export const AccessPage = page(AccessLogic, accessTemplate, accessStyles, 'كيان — الدخول والتسجيل');
+export const ApplyPage = page(ApplyLogic, applyTemplate, applyStyles, 'التسجيل في كيان', [...REGISTRY, '/legacy/kayan-card.js', ...COMPASS_MARK]);
+export const PortalPage = page(PortalLogic, portalTemplate, portalStyles, 'بوابة كيان', COMPASS_MARK);
+export const ClientProfilePage = page(ClientProfileLogic, clientProfileTemplate, clientProfileStyles, 'كيان · حساب العميل', MARK);
+export const TalentProfilePage = page(TalentProfileLogic, talentProfileTemplate, talentProfileStyles, 'كيان · ملف المنفذ', ['/legacy/kayan-card.js', ...MARK]);
+export const SpaceClientPage = page(SpaceClientLogic, spaceClientTemplate, spaceClientStyles, 'كيان — لوحة العميل');
+export const SpaceTalentPage = page(SpaceTalentLogic, spaceTalentTemplate, spaceTalentStyles, 'كيان — مساحة الكفاءة');
+export const PodPage = page(PodLogic, podTemplate, podStyles, 'كيان — غرفة الفريق');
+export const AdminPage = page(AdminLogic, adminTemplate, adminStyles, 'كيان — بوابة الإدارة', [], { defaultRole: 'sys', startSignedIn: true });

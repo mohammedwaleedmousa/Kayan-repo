@@ -1,0 +1,640 @@
+<div dir="rtl" style="min-height:100vh;background:#F4EEDD;">
+<sc-if value="{{ gateOn }}" hint-placeholder-val="{{ false }}">
+  <div style="min-height:100vh;background:#03201D;display:grid;place-items:center;padding:24px;">
+    <div style="width:min(440px,100%);background:#052E2B;border:1px solid #0E4A44;border-radius:24px;padding:clamp(28px,4vw,42px);animation:kIn .6s ease both;box-sizing:border-box;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+        <img src="assets/kayan-mark-cream.png" alt="كيان" style="height:44px;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.24em;color:#E9C96B;">ADMIN GATE · REGISTRY</span>
+      </div>
+      <h1 style="margin:20px 0 0;font-family:'Alexandria',sans-serif;font-weight:200;font-size:30px;color:#FAF6EC;">بوابة <b style="font-weight:700;color:#E9C96B;">الإدارة.</b></h1>
+      <p style="margin:10px 0 0;font-size:13px;line-height:2.05;color:rgba(250,246,236,.72);">يفتح الدخول بحساب وظيفي وتوثيق ثنائي. يسجل كل دخول ومحاولة في سجل التدقيق.</p>
+      <div style="margin-top:22px;display:grid;gap:10px;">
+        <label style="display:grid;gap:6px;font-size:12px;color:rgba(250,246,236,.8);">البريد الوظيفي
+          <input dir="ltr" placeholder="name@kayanwork.com" style="border:1px solid #0E4A44;background:#03201D;color:#FAF6EC;border-radius:12px;padding:12px 14px;font-size:13.5px;box-sizing:border-box;width:100%;">
+        </label>
+        <label style="display:grid;gap:6px;font-size:12px;color:rgba(250,246,236,.8);">كلمة المرور
+          <input type="password" dir="ltr" style="border:1px solid #0E4A44;background:#03201D;color:#FAF6EC;border-radius:12px;padding:12px 14px;font-size:13.5px;box-sizing:border-box;width:100%;">
+        </label>
+        <label style="display:grid;gap:6px;font-size:12px;color:rgba(250,246,236,.8);">رمز التحقق (TOTP)
+          <input dir="ltr" placeholder="000 000" style="border:1px solid #0E4A44;background:#03201D;color:#FAF6EC;border-radius:12px;padding:12px 14px;font-size:13.5px;letter-spacing:.2em;font-family:'IBM Plex Mono',monospace;box-sizing:border-box;width:100%;">
+        </label>
+        <button type="button" onClick="{{ enter }}" data-card="" style="margin-top:6px;border:none;cursor:pointer;border-radius:12px;padding:14px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:14.5px;color:#052E2B;background:linear-gradient(135deg,#C9A227,#E9C96B);box-shadow:0 12px 26px -12px rgba(201,162,39,.7);">دخول</button>
+      </div>
+      <ul style="margin:20px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:11.5px;line-height:1.9;color:rgba(250,246,236,.55);">
+        <li>يقفل الحساب بعد خمس محاولات خاطئة لمدة خمس عشرة دقيقة.</li>
+        <li>لا يفتح الباب من خارج الشبكة الموثوقة إلا بتوثيق إضافي.</li>
+        <li>تنتهي جلسة الإدارة بعد ثماني ساعات أو عند الخمول.</li>
+      </ul>
+      <div dir="ltr" style="margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.2em;color:rgba(250,246,236,.35);">ADMIN.KAYANWORK.COM · INTERNAL NETWORK</div>
+    </div>
+  </div>
+</sc-if>
+<sc-if value="{{ shellOn }}" hint-placeholder-val="{{ true }}">
+<div data-shell="" style="display:grid;grid-template-columns:238px 1fr;min-height:100vh;">
+  <aside data-side="" style="background:#03201D;color:#FAF6EC;padding:20px 14px;display:flex;flex-direction:column;gap:4px;position:sticky;top:0;height:100vh;box-sizing:border-box;overflow:auto;">
+    <div style="display:flex;align-items:center;gap:10px;padding:4px 8px 16px;border-bottom:1px solid rgba(233,201,107,.16);margin-bottom:8px;">
+      <img src="assets/kayan-mark-cream.png" alt="كيان" style="height:30px;">
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#E9C96B;">ADMIN CONSOLE</span>
+    </div>
+    <div data-grp="" style="padding:8px 8px 4px;font-size:10.5px;font-weight:600;color:rgba(233,201,107,.55);">التشغيل</div>
+    <sc-for list="{{ navOps }}" as="n" hint-placeholder-count="5">
+      <button type="button" onClick="{{ n.go }}" style="display:flex;align-items:center;justify-content:space-between;gap:8px;border:none;cursor:pointer;text-align:start;border-radius:12px;padding:10px 12px;font-size:13px;font-weight:600;background:{{ n.bg }};color:{{ n.fg }};transition:all .25s ease;">
+        <span>{{ n.label }}</span>
+        <sc-if value="{{ n.badge }}" hint-placeholder-val="{{ false }}"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;background:rgba(233,201,107,.14);color:#E9C96B;border-radius:99px;padding:2px 8px;">{{ n.badge }}</span></sc-if>
+      </button>
+    </sc-for>
+    <div data-grp="" style="padding:12px 8px 4px;font-size:10.5px;font-weight:600;color:rgba(233,201,107,.55);">المكاتب</div>
+    <sc-for list="{{ navDesks }}" as="n" hint-placeholder-count="2">
+      <button type="button" onClick="{{ n.go }}" style="display:flex;align-items:center;justify-content:space-between;gap:8px;border:none;cursor:pointer;text-align:start;border-radius:12px;padding:10px 12px;font-size:13px;font-weight:600;background:{{ n.bg }};color:{{ n.fg }};transition:all .25s ease;">
+        <span>{{ n.label }}</span>
+        <sc-if value="{{ n.badge }}" hint-placeholder-val="{{ false }}"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;background:rgba(233,201,107,.14);color:#E9C96B;border-radius:99px;padding:2px 8px;">{{ n.badge }}</span></sc-if>
+      </button>
+    </sc-for>
+    <div data-grp="" style="padding:12px 8px 4px;font-size:10.5px;font-weight:600;color:rgba(233,201,107,.55);">الحوكمة</div>
+    <sc-for list="{{ navGov }}" as="n" hint-placeholder-count="3">
+      <button type="button" onClick="{{ n.go }}" style="display:flex;align-items:center;justify-content:space-between;gap:8px;border:none;cursor:pointer;text-align:start;border-radius:12px;padding:10px 12px;font-size:13px;font-weight:600;background:{{ n.bg }};color:{{ n.fg }};transition:all .25s ease;">
+        <span>{{ n.label }}</span>
+        <sc-if value="{{ n.badge }}" hint-placeholder-val="{{ false }}"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;background:rgba(233,201,107,.14);color:#E9C96B;border-radius:99px;padding:2px 8px;">{{ n.badge }}</span></sc-if>
+      </button>
+    </sc-for>
+    <div style="margin-top:auto;padding-top:14px;border-top:1px solid rgba(233,201,107,.16);display:grid;gap:8px;">
+      <div style="font-size:12px;color:rgba(250,246,236,.8);padding:0 8px;">{{ adminName }}</div>
+      <div style="font-size:10.5px;color:rgba(233,201,107,.7);padding:0 8px;">{{ roleLabel }}</div>
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:rgba(250,246,236,.4);padding:0 8px;text-align:left;">ADM-26-004</div>
+      <button type="button" onClick="{{ logout }}" style="border:1px solid rgba(233,201,107,.35);background:none;color:#E9C96B;cursor:pointer;border-radius:10px;padding:9px;font-size:12px;font-weight:600;">خروج</button>
+    </div>
+  </aside>
+  <main style="padding:clamp(18px,3.4vw,40px);max-width:1140px;box-sizing:border-box;width:100%;">
+    <header style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;color:#8F7218;">{{ crumb }}</div>
+        <h1 style="margin:8px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.2vw,34px);color:#052E2B;">{{ pageTitle }}</h1>
+        <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
+          <span style="font-size:10.5px;color:#4A6B64;">صلاحيات هذا الدور:</span>
+          <sc-for list="{{ capsChips }}" as="cc" hint-placeholder-count="3">
+            <span style="font-size:10.5px;font-weight:700;background:rgba(201,162,39,.12);color:#8F7218;border:1px solid #E3D9C2;border-radius:999px;padding:4px 11px;">{{ cc }}</span>
+          </sc-for>
+          <sc-if value="{{ capsNone }}" hint-placeholder-val="{{ false }}">
+            <span style="font-size:10.5px;font-weight:700;background:#EDE5D2;color:#7A8B85;border:1px solid #E3D9C2;border-radius:999px;padding:4px 11px;">قراءة اللوحات فقط — دون تصرف</span>
+          </sc-if>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;background:#052E2B;color:#E9C96B;border-radius:999px;padding:7px 14px;">DEMO · بيانات عرض</span>
+        <label style="display:flex;align-items:center;gap:8px;font-size:11.5px;color:#4A6B64;">تعرض بصلاحيات
+          <select onChange="{{ setRole }}" value="{{ role }}" style="border:1px solid #E0D6BD;background:#FAF6EC;color:#052E2B;border-radius:10px;padding:8px 12px;font-size:12.5px;cursor:pointer;">
+            <sc-for list="{{ roles }}" as="r" hint-placeholder-count="9"><option value="{{ r.k }}">{{ r.label }}</option></sc-for>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <sc-if value="{{ vOverview }}" hint-placeholder-val="{{ true }}">
+      <section style="margin-top:24px;display:grid;gap:14px;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,172px),1fr));gap:12px;">
+          <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="6">
+            <div data-card="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:16px;padding:16px;animation:kIn .5s ease both;">
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:#8F7218;">{{ k.code }}</div>
+              <div style="margin-top:8px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:23px;color:#052E2B;" dir="ltr">{{ k.v }}</div>
+              <div style="margin-top:4px;font-size:12px;font-weight:600;color:#33544D;">{{ k.label }}</div>
+              <div style="margin-top:4px;font-size:11px;color:#4A6B64;">{{ k.d }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px;">
+          <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:20px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">TODAY · بريد اليوم</div>
+            <div style="margin-top:12px;display:grid;gap:8px;">
+              <sc-for list="{{ queues }}" as="q" hint-placeholder-count="5">
+                <button type="button" onClick="{{ q.go }}" style="display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid #E3D9C2;background:{{ q.bg }};cursor:pointer;border-radius:12px;padding:12px 14px;font-size:12.5px;font-weight:600;color:{{ q.fg }};text-align:start;">
+                  <span>{{ q.label }}</span>
+                  <span style="display:flex;align-items:center;gap:8px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8F7218;">{{ q.n }}</span><span style="font-size:10.5px;font-weight:700;color:{{ q.tagc }};">{{ q.tag }}</span></span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+          <div style="background:#052E2B;border-radius:20px;padding:20px;color:#FAF6EC;">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#E9C96B;">AUDIT FEED · آخر الحركات</div>
+              <span style="width:7px;height:7px;border-radius:99px;background:#7CE0B8;animation:kPulse 2s infinite;"></span>
+            </div>
+            <div style="margin-top:12px;display:grid;gap:10px;">
+              <sc-for list="{{ feed }}" as="f" hint-placeholder-count="5">
+                <div style="display:grid;grid-template-columns:76px 1fr;gap:10px;align-items:baseline;border-bottom:1px solid rgba(250,246,236,.08);padding-bottom:9px;">
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:rgba(233,201,107,.8);">{{ f.at }}</span>
+                  <span style="font-size:12px;line-height:1.8;color:rgba(250,246,236,.85);">{{ f.t }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <a href="#" onClick="{{ goAudit }}" style="display:inline-block;margin-top:12px;font-size:11.5px;color:#E9C96B;">سجل التدقيق كاملًا ←</a>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ vTalent }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:24px;display:grid;gap:14px;">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:16px;overflow-x:auto;">
+          <div style="min-width:760px;">
+            <div style="display:grid;grid-template-columns:130px 1fr 1.3fr 110px 130px;gap:10px;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8F7218;"><span dir="ltr">ID</span><span>الاسم</span><span>التخصص الأول</span><span>المحطات</span><span>الحالة</span></div>
+            <div style="display:grid;gap:6px;margin-top:4px;">
+              <sc-for list="{{ tRows }}" as="t" hint-placeholder-count="6">
+                <button type="button" onClick="{{ t.open }}" style="display:grid;grid-template-columns:130px 1fr 1.3fr 110px 130px;gap:10px;align-items:center;border:1px solid {{ t.bd }};background:{{ t.bg }};cursor:pointer;border-radius:12px;padding:12px;text-align:start;">
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#052E2B;">{{ t.id }}</span>
+                  <span style="font-size:13px;font-weight:600;color:#052E2B;">{{ t.name }}</span>
+                  <span style="font-size:12px;color:#4A6B64;">{{ t.spec }}</span>
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#33544D;">{{ t.st }}</span>
+                  <span style="font-size:11px;font-weight:700;border-radius:999px;padding:5px 10px;text-align:center;background:{{ t.cbg }};color:{{ t.cfg }};">{{ t.chip }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px;">
+          <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:20px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">FILE · {{ selTid }}</div>
+            <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;">{{ selTname }}</h2>
+            <div style="margin-top:4px;font-size:12px;color:#4A6B64;">{{ selTmeta }}</div>
+            <div style="margin-top:16px;display:grid;gap:9px;">
+              <sc-for list="{{ selTaxes }}" as="a" hint-placeholder-count="5">
+                <div style="display:grid;grid-template-columns:86px 1fr auto;gap:10px;align-items:center;">
+                  <span style="font-size:12px;font-weight:600;color:#33544D;">{{ a.n }}</span>
+                  <span style="height:6px;border-radius:99px;background:#EDE5D2;overflow:hidden;" dir="ltr"><span style="display:block;height:100%;width:{{ a.w }};background:linear-gradient(90deg,#C9A227,#E9C96B);border-radius:99px;"></span></span>
+                  <span style="font-size:11px;color:#4A6B64;">{{ a.v }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="margin-top:14px;display:grid;gap:7px;">
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:#8F7218;">REFERENCES · جهات التزكية</div>
+              <sc-for list="{{ refRows }}" as="rf" hint-placeholder-count="2">
+                <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;border:1px solid #E3D9C2;background:#F4EEDD;border-radius:12px;padding:9px 12px;">
+                  <span style="font-size:11.5px;color:#33544D;">{{ rf.name }}</span>
+                  <span style="display:flex;align-items:center;gap:8px;">
+                    <span style="font-size:10.5px;font-weight:700;color:{{ rf.stc }};">{{ rf.st }}</span>
+                    <sc-if value="{{ rf.pend }}" hint-placeholder-val="{{ false }}"><sc-if value="{{ canRefs }}" hint-placeholder-val="{{ true }}">
+                      <button type="button" onClick="{{ actRefMark }}" style="border:1px solid #C9A227;background:none;color:#8F7218;cursor:pointer;border-radius:99px;padding:4px 12px;font-size:10.5px;font-weight:700;">وردت ✓</button>
+                    </sc-if></sc-if>
+                  </span>
+                </div>
+              </sc-for>
+              <sc-if value="{{ noRefs }}" hint-placeholder-val="{{ false }}"><div style="font-size:10.5px;color:#7A8B85;">قيد التزكيات من صلاحية مراجعة طلبات المواهب.</div></sc-if>
+            </div>
+            <div style="margin-top:14px;font-size:11.5px;line-height:1.95;color:#4A6B64;background:#F4EEDD;border:1px solid #E3D9C2;border-radius:12px;padding:12px 14px;">تحذف صور الهوية بعد اكتمال التحقق ويحتفظ بالملخص الرقمي (hash) وفق البند الثاني من الموافقات.</div>
+          </div>
+          <div style="background:#052E2B;border-radius:20px;padding:20px;color:#FAF6EC;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#E9C96B;">DECISION · قرار السجل</div>
+            <p style="margin:12px 0 0;font-size:12.5px;line-height:2.05;color:rgba(250,246,236,.8);">يصدر القرار باسم صاحب الصلاحية ويبلغ كتابة. للمتقدم تظلم واحد أمام لجنة الالتزام خلال واحد وعشرين يومًا.</p>
+            <div style="margin-top:16px;display:grid;gap:9px;">
+              <sc-if value="{{ canDecide }}" hint-placeholder-val="{{ true }}">
+                <button type="button" onClick="{{ actApprove }}" data-card="" style="border:none;cursor:pointer;border-radius:12px;padding:13px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:13.5px;color:#052E2B;background:linear-gradient(135deg,#C9A227,#E9C96B);">قبول الطلب وإصدار الرقم</button>
+              </sc-if>
+              <sc-if value="{{ noDecide }}" hint-placeholder-val="{{ false }}">
+                <div style="border:1px dashed rgba(233,201,107,.4);border-radius:12px;padding:12px;text-align:center;font-size:11.5px;color:rgba(233,201,107,.8);">قبول الطلبات من صلاحية أمين السجل</div>
+              </sc-if>
+              <sc-if value="{{ canReject }}" hint-placeholder-val="{{ true }}">
+                <textarea rows="2" placeholder="سبب القرار — يلزم نصًا مكتوبًا" style="border:1px solid #0E4A44;background:#03201D;color:#FAF6EC;border-radius:12px;padding:11px 13px;font-size:12.5px;resize:vertical;box-sizing:border-box;width:100%;"></textarea>
+                <button type="button" onClick="{{ actReject }}" style="border:1px solid rgba(201,107,74,.6);background:rgba(201,107,74,.12);color:#F0B9A0;cursor:pointer;border-radius:12px;padding:12px;font-size:12.5px;font-weight:700;">رفض بقرار مسبب</button>
+              </sc-if>
+              <sc-if value="{{ noReject }}" hint-placeholder-val="{{ false }}">
+                <div style="border:1px dashed rgba(250,246,236,.25);border-radius:12px;padding:12px;text-align:center;font-size:11.5px;color:rgba(250,246,236,.55);">الرفض يوقع من لجنة الالتزام</div>
+              </sc-if>
+            </div>
+          </div>
+        </div>
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:18px;">
+          <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">TRUST LADDER · سلم الثقة — مواهب مسجلة</div>
+            <span style="font-size:11px;color:#4A6B64;">تغيير الدرجة قرار مسبب يقيد في سجل التدقيق</span>
+          </div>
+          <div style="margin-top:12px;display:grid;gap:7px;">
+            <sc-for list="{{ ladder }}" as="ld" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:140px 1fr 1fr 56px auto;gap:10px;align-items:center;border:1px solid #E3D9C2;background:#F4EEDD;border-radius:12px;padding:10px 13px;">
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#052E2B;">{{ ld.id }}</span>
+                <span style="font-size:12.5px;font-weight:600;color:#052E2B;">{{ ld.name }} — <span style="font-weight:400;color:#4A6B64;">{{ ld.spec }}</span></span>
+                <span style="font-size:11px;color:#4A6B64;">{{ ld.note }} <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;white-space:nowrap;">{{ ld.noteCode }}</span></span>
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;color:#8F7218;text-align:center;background:rgba(201,162,39,.12);border-radius:99px;padding:4px 0;">{{ ld.tier }}</span>
+                <span style="display:flex;gap:6px;">
+                  <sc-if value="{{ canTier }}" hint-placeholder-val="{{ true }}">
+                    <button type="button" onClick="{{ actTierUp }}" style="border:1px solid #C9A227;background:none;color:#8F7218;cursor:pointer;border-radius:99px;padding:4px 12px;font-size:10.5px;font-weight:700;">رفع</button>
+                    <button type="button" onClick="{{ actTierDown }}" style="border:1px solid #E0D6BD;background:none;color:#4A6B64;cursor:pointer;border-radius:99px;padding:4px 12px;font-size:10.5px;font-weight:700;">خفض</button>
+                  </sc-if>
+                </span>
+              </div>
+            </sc-for>
+          </div>
+          <sc-if value="{{ noTier }}" hint-placeholder-val="{{ false }}"><div style="margin-top:10px;border:1px dashed #C9A227;border-radius:12px;padding:10px;text-align:center;font-size:11px;color:#8F7218;">تغيير الدرجات من صلاحية قبول الطلبات — أمين السجل</div></sc-if>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ vClients }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:24px;display:grid;gap:14px;">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:16px;overflow-x:auto;">
+          <div style="min-width:760px;">
+            <div style="display:grid;grid-template-columns:120px 1.2fr 1.2fr 120px 130px;gap:10px;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8F7218;"><span dir="ltr">FILE</span><span>الجهة</span><span>الخط</span><span>الميزانية</span><span>الحالة</span></div>
+            <div style="display:grid;gap:6px;margin-top:4px;">
+              <sc-for list="{{ cRows }}" as="c" hint-placeholder-count="5">
+                <button type="button" onClick="{{ c.open }}" style="display:grid;grid-template-columns:120px 1.2fr 1.2fr 120px 130px;gap:10px;align-items:center;border:1px solid {{ c.bd }};background:{{ c.bg }};cursor:pointer;border-radius:12px;padding:12px;text-align:start;">
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#052E2B;">{{ c.id }}</span>
+                  <span style="font-size:13px;font-weight:600;color:#052E2B;">{{ c.org }}</span>
+                  <span style="font-size:12px;color:#4A6B64;">{{ c.line }}</span>
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#33544D;">{{ c.budget }}</span>
+                  <span style="font-size:11px;font-weight:700;border-radius:999px;padding:5px 10px;text-align:center;background:{{ c.cbg }};color:{{ c.cfg }};">{{ c.chip }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div style="background:#0A2434;border-radius:20px;padding:20px;color:#FAF6EC;display:grid;gap:12px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#7CC0F4;">FILE · {{ selCid }}</div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;">{{ selCorg }} — {{ selCline }}</div>
+          <p style="margin:0;font-size:12.5px;line-height:2;color:rgba(250,246,236,.78);">{{ selCscope }}</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:11px;">
+            <span style="background:rgba(124,192,244,.12);border:1px solid rgba(124,192,244,.3);border-radius:999px;padding:5px 12px;color:#7CC0F4;">الملف مربوط بحساب: {{ selCmail }}</span>
+            <span style="background:rgba(124,192,244,.12);border:1px solid rgba(124,192,244,.3);border-radius:999px;padding:5px 12px;color:#7CC0F4;">اكتملت الخطوات 5/5</span>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+            <sc-if value="{{ canConvert }}" hint-placeholder-val="{{ true }}">
+              <button type="button" onClick="{{ actConvert }}" data-card="" style="border:none;cursor:pointer;border-radius:12px;padding:13px 22px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:13.5px;color:#052E2B;background:linear-gradient(135deg,#C9A227,#E9C96B);">تحويل إلى ارتباط وفتح حساب ضمان</button>
+            </sc-if>
+            <sc-if value="{{ noConvert }}" hint-placeholder-val="{{ false }}">
+              <div style="border:1px dashed rgba(124,192,244,.4);border-radius:12px;padding:12px 18px;font-size:11.5px;color:#7CC0F4;">التحويل من صلاحية مكتب العملاء</div>
+            </sc-if>
+            <span style="font-size:11.5px;color:rgba(250,246,236,.6);">لا يبدأ تنفيذ قبل إيداع الضمان — لا عقد، لا ضمان، لا عمل.</span>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ vEscrow }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:24px;display:grid;gap:14px;">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:16px;overflow-x:auto;">
+          <div style="min-width:780px;">
+            <div style="display:grid;grid-template-columns:130px 1.1fr 110px 100px 100px 120px;gap:10px;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8F7218;"><span dir="ltr">JOB</span><span>الجهة</span><span>الفريق</span><span>محتجز</span><span>مصروف</span><span>المرحلة</span></div>
+            <div style="display:grid;gap:6px;margin-top:4px;">
+              <sc-for list="{{ eRows }}" as="e" hint-placeholder-count="4">
+                <button type="button" onClick="{{ e.open }}" style="display:grid;grid-template-columns:130px 1.1fr 110px 100px 100px 120px;gap:10px;align-items:center;border:1px solid {{ e.bd }};background:{{ e.bg }};cursor:pointer;border-radius:12px;padding:12px;text-align:start;">
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#052E2B;">{{ e.job }}</span>
+                  <span style="font-size:12.5px;font-weight:600;color:#052E2B;">{{ e.org }}</span>
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#4A6B64;">{{ e.pod }}</span>
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">{{ e.held }}</span>
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8F7218;">{{ e.rel }}</span>
+                  <span style="font-size:11px;font-weight:700;color:#33544D;">{{ e.stage }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px;">
+          <div style="background:#052E2B;border-radius:20px;padding:20px;color:#FAF6EC;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#E9C96B;">LEDGER · {{ selEjob }}</div>
+            <div style="margin-top:12px;display:grid;gap:8px;">
+              <sc-for list="{{ selEledger }}" as="l" hint-placeholder-count="4">
+                <div style="display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:baseline;border-bottom:1px solid rgba(250,246,236,.08);padding-bottom:8px;">
+                  <span style="font-size:12.5px;color:rgba(250,246,236,.85);">{{ l.t }}</span>
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:rgba(250,246,236,.45);">{{ l.at }}</span>
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:{{ l.c }};">{{ l.amt }}</span>
+                </div>
+              </sc-for>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;padding-top:4px;">
+                <span style="font-size:12.5px;font-weight:700;color:#E9C96B;">الرصيد المحتجز</span>
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#E9C96B;">{{ selEbal }}</span>
+              </div>
+            </div>
+            <div style="margin-top:12px;font-size:11.5px;line-height:1.95;color:rgba(250,246,236,.6);">يقفل القيد على صفر عند نهاية الارتباط. تبدأ الضمانة ثلاثين يومًا من توقيع محضر الاستلام.</div>
+          </div>
+          <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:20px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">RELEASE · أمر صرف</div>
+            <div style="margin-top:12px;display:grid;gap:8px;font-size:12px;color:#33544D;">
+              <div style="display:flex;align-items:center;gap:8px;"><span style="color:#0E6E66;font-weight:700;">✓</span> محضر استلام موقع للبند D-02</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span style="color:#0E6E66;font-weight:700;">✓</span> التوقيع من صاحب الصلاحية لدى العميل</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span style="color:#0E6E66;font-weight:700;">✓</span> لا أمر تغيير مفتوحًا على البند</div>
+            </div>
+            <div style="margin-top:16px;display:grid;gap:9px;">
+              <sc-if value="{{ canRelease }}" hint-placeholder-val="{{ true }}">
+                <button type="button" onClick="{{ actRelease }}" data-card="" style="border:none;cursor:pointer;border-radius:12px;padding:13px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:13.5px;color:#052E2B;background:linear-gradient(135deg,#C9A227,#E9C96B);box-shadow:0 12px 26px -12px rgba(201,162,39,.7);">صرف $600 مقابل البند D-02</button>
+              </sc-if>
+              <sc-if value="{{ noRelease }}" hint-placeholder-val="{{ false }}">
+                <div style="border:1px dashed #C9A227;border-radius:12px;padding:12px;text-align:center;font-size:11.5px;color:#8F7218;">الصرف من صلاحية أمين الضمان وحده</div>
+              </sc-if>
+              <div style="font-size:11px;color:#4A6B64;line-height:1.9;">يقيد الصرف باسم الآمر ووقته وبصمة المحضر في سجل التدقيق.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ vPods }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:24px;display:grid;gap:14px;">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:16px;overflow-x:auto;">
+          <div style="min-width:720px;">
+            <div style="display:grid;grid-template-columns:120px 130px 80px 120px 1fr;gap:10px;padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8F7218;"><span dir="ltr">POD</span><span dir="ltr">JOB</span><span>البوابة</span><span>فحوص الحارس</span><span>الطلب</span></div>
+            <div style="display:grid;gap:6px;margin-top:4px;">
+              <sc-for list="{{ pRows }}" as="p" hint-placeholder-count="4">
+                <button type="button" onClick="{{ p.open }}" style="display:grid;grid-template-columns:120px 130px 80px 120px 1fr;gap:10px;align-items:center;border:1px solid {{ p.bd }};background:{{ p.bg }};cursor:pointer;border-radius:12px;padding:12px;text-align:start;">
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#052E2B;">{{ p.code }}</span>
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#4A6B64;">{{ p.job }}</span>
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:#5B4A8E;">{{ p.gate }}</span>
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#33544D;">{{ p.checks }}</span>
+                  <span style="font-size:11.5px;font-weight:600;color:{{ p.reqc }};">{{ p.req }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div style="background:#1D1433;border-radius:20px;padding:20px;color:#FAF6EC;">
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#B9A7E8;">GATE REVIEW · {{ selPcode }}</div>
+            <span style="font-size:11.5px;color:rgba(250,246,236,.6);">قائد الفريق: {{ selPlead }}</span>
+          </div>
+          <div dir="ltr" style="margin-top:14px;display:grid;grid-template-columns:repeat(10,1fr);gap:5px;">
+            <sc-for list="{{ selPgates }}" as="g" hint-placeholder-count="10">
+              <div style="display:grid;gap:5px;justify-items:center;">
+                <span style="height:6px;width:100%;border-radius:99px;background:{{ g.bar }};"></span>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:{{ g.fg }};">{{ g.n }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:8px;">
+            <sc-for list="{{ selPchecks }}" as="c" hint-placeholder-count="5">
+              <div style="display:flex;align-items:center;gap:8px;background:rgba(185,167,232,.08);border:1px solid rgba(185,167,232,.2);border-radius:10px;padding:9px 12px;font-size:11.5px;color:rgba(250,246,236,.85);"><span style="color:#B9A7E8;font-weight:700;">✓</span>{{ c }}</div>
+            </sc-for>
+          </div>
+          <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+            <sc-if value="{{ canGate }}" hint-placeholder-val="{{ true }}">
+              <button type="button" onClick="{{ actGate }}" data-card="" style="border:none;cursor:pointer;border-radius:12px;padding:13px 22px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:13.5px;color:#1D1433;background:linear-gradient(135deg,#B9A7E8,#D9CDF6);">اعتماد العبور إلى G5</button>
+            </sc-if>
+            <sc-if value="{{ noGate }}" hint-placeholder-val="{{ false }}">
+              <div style="border:1px dashed rgba(185,167,232,.5);border-radius:12px;padding:12px 18px;font-size:11.5px;color:#B9A7E8;">اعتماد البوابات من صلاحية مشرف التسليم</div>
+            </sc-if>
+            <span style="font-size:11.5px;color:rgba(250,246,236,.55);">لا تعتمد بوابة قبل اكتمال الفحوص الخمسة. يقيد الاعتماد باسم المشرف.</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px;">
+          <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:18px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">CALLS · نداءات الفرق والمطابقة</div>
+            <div style="margin-top:12px;display:grid;gap:7px;">
+              <sc-for list="{{ callRows }}" as="cl" hint-placeholder-count="2">
+                <div style="display:grid;grid-template-columns:100px 1fr auto;gap:10px;align-items:center;border:1px solid #E3D9C2;background:#F4EEDD;border-radius:12px;padding:10px 13px;">
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#052E2B;">{{ cl.code }}</span>
+                  <span style="font-size:12px;color:#052E2B;">{{ cl.need }} <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#4A6B64;white-space:nowrap;">{{ cl.ref }}</span> · <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#5B4A8E;white-space:nowrap;">{{ cl.tier }}</span> · <span style="color:#4A6B64;">{{ cl.int }}</span></span>
+                  <span style="font-size:10.5px;font-weight:700;border-radius:999px;padding:4px 10px;background:{{ cl.cbg }};color:{{ cl.cfg }};">{{ cl.st }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+              <sc-if value="{{ canPodsOps }}" hint-placeholder-val="{{ true }}">
+                <button type="button" onClick="{{ actCloseCall }}" style="border:1px solid #C9A227;background:none;color:#8F7218;cursor:pointer;border-radius:10px;padding:9px 16px;font-size:11.5px;font-weight:700;">إغلاق النداء الأول</button>
+              </sc-if>
+              <sc-if value="{{ noPodsOps }}" hint-placeholder-val="{{ false }}">
+                <div style="border:1px dashed #C9A227;border-radius:10px;padding:9px 14px;font-size:11px;color:#8F7218;">النداءات من صلاحية مشرف التسليم</div>
+              </sc-if>
+              <span style="font-size:11px;color:#4A6B64;">يعرض النداء لمن طابق تخصصه ودرجته فقط — التحقق غير التكليف.</span>
+            </div>
+          </div>
+          <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:18px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">MEMBERS · عضوية {{ selPcode }} والقسمة الثابتة</div>
+            <div style="margin-top:12px;display:grid;gap:7px;">
+              <sc-for list="{{ memberRows }}" as="mb" hint-placeholder-count="3">
+                <div style="display:grid;grid-template-columns:1fr 1fr 56px;gap:10px;align-items:center;border:1px solid #E3D9C2;background:#F4EEDD;border-radius:12px;padding:10px 13px;">
+                  <span style="font-size:12.5px;font-weight:600;color:#052E2B;">{{ mb.name }}</span>
+                  <span style="font-size:11.5px;color:#4A6B64;">{{ mb.role }}</span>
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;text-align:center;">{{ mb.share }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+              <sc-if value="{{ canPodsOps }}" hint-placeholder-val="{{ true }}">
+                <button type="button" onClick="{{ actMembers }}" style="border:1px solid #C9A227;background:none;color:#8F7218;cursor:pointer;border-radius:10px;padding:9px 16px;font-size:11.5px;font-weight:700;">تعديل العضوية والقسمة</button>
+              </sc-if>
+              <sc-if value="{{ noPodsOps }}" hint-placeholder-val="{{ false }}">
+                <div style="border:1px dashed #C9A227;border-radius:10px;padding:9px 14px;font-size:11px;color:#8F7218;">العضوية من صلاحية مشرف التسليم</div>
+              </sc-if>
+              <span style="font-size:11px;color:#4A6B64;">يبقى القائد بدرجة T3 أو أعلى، وتجمع القسمة إلى 100%.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ vPeople }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:14px;">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:18px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">APPLICATIONS · ترشحات الوظائف</div>
+          <div style="margin-top:12px;display:grid;gap:7px;">
+            <sc-for list="{{ jobApps }}" as="j" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:110px 1fr auto;gap:10px;align-items:center;border:1px solid #E3D9C2;background:#F4EEDD;border-radius:12px;padding:11px 13px;">
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#052E2B;">{{ j.id }}</span>
+                <span style="font-size:12.5px;color:#052E2B;"><b style="font-weight:700;">{{ j.name }}</b> — {{ j.pos }}</span>
+                <span style="font-size:10.5px;font-weight:700;color:{{ j.duec }};">{{ j.due }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:12px;font-size:11.5px;color:#4A6B64;line-height:1.9;">يفرز الترشح خلال أسبوع، وتحمل كل إجابة رقم الترشح.</div>
+        </div>
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:18px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">REGISTRY INBOX · صندوق السجل</div>
+          <div style="margin-top:12px;display:grid;gap:7px;">
+            <sc-for list="{{ inbox }}" as="m" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:110px 1fr auto;gap:10px;align-items:center;border:1px solid {{ m.bd }};background:{{ m.bg }};border-radius:12px;padding:11px 13px;">
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#052E2B;">{{ m.id }}</span>
+                <span style="font-size:12.5px;color:#052E2B;">{{ m.door }} — <span style="color:#4A6B64;">{{ m.sub }}</span></span>
+                <span style="font-size:10.5px;font-weight:700;color:{{ m.duec }};">{{ m.due }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+            <sc-if value="{{ canReply }}" hint-placeholder-val="{{ true }}">
+              <button type="button" onClick="{{ actReply }}" data-card="" style="border:none;cursor:pointer;border-radius:12px;padding:12px 20px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:13px;color:#052E2B;background:linear-gradient(135deg,#C9A227,#E9C96B);">رد يختم برقم القيد</button>
+            </sc-if>
+            <sc-if value="{{ noReply }}" hint-placeholder-val="{{ false }}">
+              <div style="border:1px dashed #C9A227;border-radius:12px;padding:11px 16px;font-size:11.5px;color:#8F7218;">الرد من صلاحية مكتب الناس</div>
+            </sc-if>
+            <span style="font-size:11.5px;color:#4A6B64;">يرد خلال ثلاثة إلى خمسة أيام عمل وفق الباب.</span>
+          </div>
+        </div>
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:18px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">POSITIONS · الوظائف المفتوحة</div>
+          <div style="margin-top:12px;display:grid;gap:7px;">
+            <sc-for list="{{ posRows }}" as="ps" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:64px 1fr auto auto;gap:10px;align-items:center;border:1px solid #E3D9C2;background:#F4EEDD;border-radius:12px;padding:10px 13px;">
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#052E2B;">{{ ps.code }}</span>
+                <span style="font-size:12.5px;color:#052E2B;"><b style="font-weight:700;">{{ ps.title }}</b> — <span style="color:#4A6B64;">{{ ps.loc }}</span></span>
+                <span style="font-size:10.5px;color:#4A6B64;">{{ ps.close }}</span>
+                <span style="font-size:10.5px;font-weight:700;border-radius:999px;padding:4px 10px;background:{{ ps.cbg }};color:{{ ps.cfg }};">{{ ps.st }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+            <sc-if value="{{ canPeopleOps }}" hint-placeholder-val="{{ true }}">
+              <button type="button" onClick="{{ actClosePos }}" style="border:1px solid #C9A227;background:none;color:#8F7218;cursor:pointer;border-radius:10px;padding:9px 16px;font-size:11.5px;font-weight:700;">إغلاق وظيفة</button>
+            </sc-if>
+            <sc-if value="{{ noPeopleOps }}" hint-placeholder-val="{{ false }}">
+              <div style="border:1px dashed #C9A227;border-radius:10px;padding:9px 14px;font-size:11px;color:#8F7218;">الوظائف من صلاحية مكتب الناس</div>
+            </sc-if>
+            <span style="font-size:11px;color:#4A6B64;">لا تنشر وظيفة دون موقع ونطاق راتب، ولا تغلق قبل أسبوعين من نشرها.</span>
+          </div>
+        </div>
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:18px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">K4Y · ساعات التطوع الموثقة</div>
+          <div style="margin-top:12px;display:grid;gap:8px;">
+            <input placeholder="رقم الموهبة — KY-T-…" dir="ltr" style="border:1px solid #E0D6BD;background:#FFF;color:#052E2B;border-radius:12px;padding:11px 14px;font-size:12.5px;box-sizing:border-box;width:100%;font-family:'IBM Plex Mono',monospace;">
+            <div style="display:grid;grid-template-columns:110px 1fr;gap:8px;">
+              <input placeholder="الساعات" dir="ltr" style="border:1px solid #E0D6BD;background:#FFF;color:#052E2B;border-radius:12px;padding:11px 14px;font-size:12.5px;box-sizing:border-box;width:100%;text-align:center;">
+              <input placeholder="الجهة والعمل — يذكر باختصار" style="border:1px solid #E0D6BD;background:#FFF;color:#052E2B;border-radius:12px;padding:11px 14px;font-size:12.5px;box-sizing:border-box;width:100%;">
+            </div>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+            <sc-if value="{{ canPeopleOps }}" hint-placeholder-val="{{ true }}">
+              <button type="button" onClick="{{ actK4y }}" style="border:none;cursor:pointer;border-radius:12px;padding:11px 18px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:12.5px;color:#052E2B;background:linear-gradient(135deg,#C9A227,#E9C96B);">قيد الساعات بعد التحقق</button>
+            </sc-if>
+            <sc-if value="{{ noPeopleOps }}" hint-placeholder-val="{{ false }}">
+              <div style="border:1px dashed #C9A227;border-radius:10px;padding:9px 14px;font-size:11px;color:#8F7218;">القيد من صلاحية مكتب الناس</div>
+            </sc-if>
+            <span style="font-size:11px;color:#4A6B64;">تنعكس الساعات في ملف الموهبة وتحسب في سلم الثقة.</span>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ vContent }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:14px;">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:18px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">CATALOGUE · المنتجات الجاهزة</div>
+          <div style="margin-top:12px;display:grid;gap:7px;">
+            <sc-for list="{{ rpRows }}" as="r" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:90px 1fr 80px 80px;gap:10px;align-items:center;border:1px solid #E3D9C2;background:#F4EEDD;border-radius:12px;padding:11px 13px;">
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#052E2B;">{{ r.code }}</span>
+                <span style="font-size:12.5px;font-weight:600;color:#052E2B;">{{ r.name }}</span>
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">{{ r.price }}</span>
+                <span style="font-size:10.5px;font-weight:700;border-radius:999px;padding:4px 10px;text-align:center;background:{{ r.cbg }};color:{{ r.cfg }};">{{ r.st }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:12px;font-size:11.5px;color:#4A6B64;line-height:1.9;">يعدل السعر والوصف هنا وينعكس على صفحة الكتالوج فور النشر.</div>
+        </div>
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:18px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">ANNOUNCEMENT · شريط الإعلان</div>
+          <textarea rows="3" placeholder="نص الإعلان بالعربية أولًا — يظهر أعلى الصفحة الرئيسية" style="margin-top:12px;border:1px solid #E0D6BD;background:#FFF;color:#052E2B;border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.9;resize:vertical;box-sizing:border-box;width:100%;"></textarea>
+          <input dir="ltr" placeholder="English secondary line (smaller, lighter)" style="margin-top:8px;border:1px solid #E0D6BD;background:#FFF;color:#052E2B;border-radius:12px;padding:11px 14px;font-size:12.5px;box-sizing:border-box;width:100%;">
+          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+            <sc-if value="{{ canPublish }}" hint-placeholder-val="{{ true }}">
+              <button type="button" onClick="{{ actPublish }}" data-card="" style="border:none;cursor:pointer;border-radius:12px;padding:12px 20px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:13px;color:#052E2B;background:linear-gradient(135deg,#C9A227,#E9C96B);">نشر بعد المراجعة</button>
+            </sc-if>
+            <sc-if value="{{ noPublish }}" hint-placeholder-val="{{ false }}">
+              <div style="border:1px dashed #C9A227;border-radius:12px;padding:11px 16px;font-size:11.5px;color:#8F7218;">النشر من صلاحية محرر المحتوى</div>
+            </sc-if>
+            <span style="font-size:11.5px;color:#4A6B64;">تكتب العربية أولًا؛ الإنجليزية سطر ثانٍ أصغر وأخف.</span>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ vUsers }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:24px;display:grid;gap:14px;">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:18px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">STAFF · حسابات الإدارة</div>
+            <sc-if value="{{ canUsers }}" hint-placeholder-val="{{ true }}">
+              <button type="button" onClick="{{ actInvite }}" style="border:1px solid #C9A227;background:none;color:#8F7218;cursor:pointer;border-radius:10px;padding:8px 16px;font-size:12px;font-weight:700;">دعوة حساب جديد</button>
+            </sc-if>
+          </div>
+          <div style="margin-top:12px;display:grid;gap:7px;">
+            <sc-for list="{{ admins }}" as="a" hint-placeholder-count="5">
+              <div style="display:grid;grid-template-columns:1.2fr 1fr 110px 110px;gap:10px;align-items:center;border:1px solid #E3D9C2;background:#F4EEDD;border-radius:12px;padding:11px 13px;">
+                <span style="font-size:12.5px;font-weight:600;color:#052E2B;">{{ a.name }}</span>
+                <span style="font-size:11px;font-weight:700;border-radius:999px;padding:4px 12px;text-align:center;background:rgba(201,162,39,.12);color:#8F7218;justify-self:start;">{{ a.role }}</span>
+                <span style="font-size:11px;color:{{ a.tfac }};font-weight:700;">{{ a.tfa }}</span>
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#4A6B64;">{{ a.last }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:18px;overflow-x:auto;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">RBAC MATRIX · مصفوفة الصلاحيات</div>
+          <div style="min-width:880px;margin-top:12px;">
+            <div style="display:grid;grid-template-columns:190px repeat(9,1fr);gap:4px;align-items:center;">
+              <span></span>
+              <sc-for list="{{ roles }}" as="r" hint-placeholder-count="9"><span style="font-size:9.5px;font-weight:700;color:#33544D;text-align:center;line-height:1.5;">{{ r.label }}</span></sc-for>
+            </div>
+            <div style="display:grid;gap:4px;margin-top:6px;">
+              <sc-for list="{{ matrix }}" as="row" hint-placeholder-count="12">
+                <div style="display:grid;grid-template-columns:190px repeat(9,1fr);gap:4px;align-items:center;background:#F4EEDD;border:1px solid #E3D9C2;border-radius:10px;padding:8px 10px;">
+                  <span style="font-size:11.5px;font-weight:600;color:#052E2B;">{{ row.label }}</span>
+                  <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="9"><span style="text-align:center;font-size:11px;font-weight:700;color:{{ cell.c }};">{{ cell.t }}</span></sc-for>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="margin-top:12px;font-size:11.5px;color:#4A6B64;line-height:1.9;">تمنح الأدوار بأدنى صلاحية كافية. يسجل كل تغيير دور في سجل التدقيق ويراجع فصليًا.</div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ vAudit }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:24px;display:grid;gap:14px;">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <sc-for list="{{ auditFilters }}" as="f" hint-placeholder-count="5">
+            <span style="font-size:11.5px;font-weight:700;border-radius:999px;padding:7px 16px;background:{{ f.bg }};color:{{ f.fg }};border:1px solid {{ f.bd }};">{{ f.t }}</span>
+          </sc-for>
+        </div>
+        <div style="background:#052E2B;border-radius:20px;padding:18px;color:#FAF6EC;overflow-x:auto;">
+          <div style="min-width:820px;display:grid;gap:7px;">
+            <div style="display:grid;grid-template-columns:120px 150px 1fr 150px 140px;gap:10px;padding:4px 12px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.16em;color:#E9C96B;"><span dir="ltr">TIME</span><span dir="ltr">ACTOR</span><span>الحركة</span><span dir="ltr">OBJECT</span><span dir="ltr">HASH CHAIN</span></div>
+            <sc-for list="{{ audit }}" as="a" hint-placeholder-count="8">
+              <div style="display:grid;grid-template-columns:120px 150px 1fr 150px 140px;gap:10px;align-items:baseline;background:rgba(250,246,236,.04);border:1px solid rgba(250,246,236,.08);border-radius:10px;padding:10px 12px;">
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:rgba(233,201,107,.85);">{{ a.at }}</span>
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:rgba(250,246,236,.6);">{{ a.actor }}</span>
+                <span style="font-size:12px;color:rgba(250,246,236,.88);">{{ a.t }}</span>
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(250,246,236,.45);">{{ a.obj }}</span>
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#7CE0B8;">{{ a.h }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:12px;font-size:11.5px;color:rgba(250,246,236,.55);line-height:1.9;">سجل ملحق فقط: لا يعدل قيد ولا يحذف. يربط كل قيد ببصمة القيد السابق (سلسلة تجزئة).</div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ vSettings }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;">
+        <sc-for list="{{ settingCards }}" as="s" hint-placeholder-count="6">
+          <div data-card="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:18px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">{{ s.code }}</div>
+            <div style="margin-top:8px;font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;">{{ s.title }}</div>
+            <div style="margin-top:10px;display:grid;gap:7px;">
+              <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="3">
+                <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline;border-bottom:1px dashed #E3D9C2;padding-bottom:6px;">
+                  <span style="font-size:12px;color:#33544D;">{{ r.k }}</span>
+                  <span style="font-size:11.5px;font-weight:700;color:#052E2B;">{{ r.v }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+        <div style="grid-column:1/-1;background:#052E2B;border-radius:20px;padding:18px;color:#FAF6EC;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;">
+          <div>
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#F0B9A0;">DANGER ZONE · منطقة الحذر</div>
+            <div style="margin-top:8px;font-size:12.5px;line-height:1.95;color:rgba(250,246,236,.8);">تصدير البيانات، إيقاف التسجيل، ووضع الصيانة — من صلاحية مدير النظام وحده وبتوثيق ثنائي إضافي.</div>
+          </div>
+          <sc-if value="{{ canSettings }}" hint-placeholder-val="{{ true }}">
+            <button type="button" onClick="{{ actDanger }}" style="border:1px solid rgba(201,107,74,.6);background:rgba(201,107,74,.12);color:#F0B9A0;cursor:pointer;border-radius:12px;padding:12px 20px;font-size:12.5px;font-weight:700;">فتح منطقة الحذر</button>
+          </sc-if>
+          <sc-if value="{{ noSettings }}" hint-placeholder-val="{{ false }}">
+            <div style="border:1px dashed rgba(240,185,160,.5);border-radius:12px;padding:11px 18px;font-size:11.5px;color:#F0B9A0;">صلاحية غير متاحة لهذا الدور</div>
+          </sc-if>
+        </div>
+      </section>
+    </sc-if>
+
+    <footer style="margin-top:34px;padding-top:16px;border-top:1px solid #E0D6BD;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline;">
+      <span style="font-size:12px;color:#4A6B64;">خلف كل نجاح، كيان.</span>
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.2em;color:#8F7218;">KAYAN ADMIN · ADEN · ASIA/ADEN</span>
+    </footer>
+  </main>
+</div>
+</sc-if>
+<sc-if value="{{ toastOn }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;bottom:18px;inset-inline-start:18px;z-index:60;background:#052E2B;color:#E9C96B;border:1px solid #0E4A44;border-radius:12px;padding:12px 18px;font-size:12.5px;box-shadow:0 18px 40px -18px rgba(5,46,43,.5);animation:kIn .3s ease both;">{{ toastMsg }}</div>
+</sc-if>
+</div>

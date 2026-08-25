@@ -1,0 +1,15 @@
+
+html,body{margin:0;padding:0;background:#F4EFE2;overflow-x:hidden}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:#0A6F68;text-decoration:none}
+a:hover{color:#12B5A4}
+::selection{background:#12B5A4;color:#04302C}
+p{text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
+button{font-family:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid #12B5A4;outline-offset:3px;border-radius:4px}
+@keyframes kArrive{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes kRow{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes kSheen{0%{transform:translateX(-130%) skewX(-16deg)}55%,100%{transform:translateX(280%) skewX(-16deg)}}
+@keyframes kGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important}}

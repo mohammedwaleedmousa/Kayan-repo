@@ -7,6 +7,8 @@ const EVENT_NAMES = {
   oninput: 'onInput',
   onchange: 'onChange',
   onsubmit: 'onSubmit',
+  onkeydown: 'onKeyDown',
+  onshow: 'onShow',
   onmouseenter: 'onMouseEnter',
   onmouseleave: 'onMouseLeave',
   onmousemove: 'onMouseMove',

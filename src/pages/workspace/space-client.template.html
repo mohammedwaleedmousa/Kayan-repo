@@ -1,0 +1,244 @@
+<div dir="rtl" style="min-height:100vh;background:#F4EEDD;">
+<sc-if value="{{ locked }}" hint-placeholder-val="{{ false }}">
+  <div style="min-height:100vh;display:grid;place-items:center;padding:24px;">
+    <div style="max-width:460px;text-align:center;background:#FAF6EC;border:1px solid #E0D6BD;border-radius:24px;padding:40px 32px;animation:kIn .6s ease both;">
+      <img src="assets/kayan-bird-elite-gold.png" alt="" style="height:64px;opacity:.9;">
+      <h1 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:26px;color:#052E2B;">هذه اللوحة <b style="font-weight:700;color:#2E7CBC;">للعملاء.</b></h1>
+      <p style="margin:10px 0 0;font-size:13.5px;line-height:2.1;color:#4A6B64;">لا جلسة عميل قائمة على هذا الجهاز. يفتح الدخول من باب الوصول، ثم تعود هذه الصفحة تلقائيًا.</p>
+      <a href="Kayan Access.dc.html" style="margin-top:18px;display:inline-block;border-radius:12px;padding:13px 28px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:14px;color:#FAF6EC;background:linear-gradient(135deg,#0A2434,#2E7CBC);">إلى صفحة الدخول ←</a>
+    </div>
+  </div>
+</sc-if>
+<sc-if value="{{ open }}" hint-placeholder-val="{{ true }}">
+<div data-shell="" style="display:grid;grid-template-columns:250px 1fr;min-height:100vh;">
+  <aside data-side="" style="background:#0A2434;color:#FAF6EC;padding:22px 16px;display:flex;flex-direction:column;gap:6px;position:sticky;top:0;height:100vh;box-sizing:border-box;overflow:auto;">
+    <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:10px;padding:4px 8px 16px;border-bottom:1px solid rgba(124,192,244,.18);margin-bottom:10px;">
+      <img src="assets/kayan-mark-cream.png" alt="كيان" style="height:30px;">
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#7CC0F4;">CLIENT SPACE</span>
+    </a>
+    <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="8">
+      <button type="button" onClick="{{ n.go }}" style="display:flex;align-items:center;justify-content:space-between;gap:8px;border:none;cursor:pointer;text-align:start;border-radius:12px;padding:11px 12px;font-size:13px;font-weight:600;background:{{ n.bg }};color:{{ n.fg }};transition:all .25s ease;">
+        <span>{{ n.label }}</span>
+        <sc-if value="{{ n.badge }}" hint-placeholder-val="{{ false }}"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;background:rgba(124,192,244,.16);color:#7CC0F4;border-radius:99px;padding:2px 8px;">{{ n.badge }}</span></sc-if>
+      </button>
+    </sc-for>
+    <div style="margin-top:auto;padding-top:14px;border-top:1px solid rgba(124,192,244,.18);display:grid;gap:8px;">
+      <div style="font-size:12px;color:rgba(250,246,236,.75);padding:0 8px;">{{ userName }}</div>
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#7CC0F4;padding:0 8px;text-align:left;">{{ userId }}</div>
+      <button type="button" onClick="{{ logout }}" style="border:1px solid rgba(124,192,244,.35);background:none;color:#7CC0F4;cursor:pointer;border-radius:10px;padding:9px;font-size:12px;font-weight:600;">تسجيل الخروج</button>
+    </div>
+  </aside>
+  <main style="padding:clamp(18px,3.4vw,40px);max-width:1060px;box-sizing:border-box;width:100%;">
+    <header style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;color:#2E7CBC;">{{ crumb }}</div>
+        <h1 style="margin:8px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.2vw,36px);color:#052E2B;">{{ pageTitle }}</h1>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;background:#0A2434;color:#7CC0F4;border-radius:999px;padding:7px 14px;">{{ jobId }}</span>
+        <span style="font-size:11.5px;background:{{ stageChipBg }};color:{{ stageChipFg }};border-radius:999px;padding:7px 14px;font-weight:700;">{{ stageChip }}</span>
+      </div>
+    </header>
+    <sc-if value="{{ vOverview }}" hint-placeholder-val="{{ true }}">
+      <section style="margin-top:26px;display:grid;gap:16px;">
+        <div style="background:#0A2434;border-radius:22px;padding:clamp(18px,3vw,28px);color:#FAF6EC;animation:kIn .55s .05s ease both;">
+          <div style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline;">
+            <div>
+              <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;">{{ scopeTitle }}</div>
+              <div style="margin-top:6px;font-size:12.5px;color:rgba(250,246,236,.72);">الفريق: {{ podName }} · قائد الفريق: {{ podLead }} · الموعد: {{ deadline }}</div>
+            </div>
+            <div style="text-align:center;">
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:26px;color:#7CC0F4;">{{ daysLeft }}</div>
+              <div style="font-size:11px;color:rgba(250,246,236,.6);">يومًا حتى الموعد</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;display:grid;grid-template-columns:repeat({{ stagesCount }},1fr);gap:6px;" dir="ltr">
+            <sc-for list="{{ stages }}" as="s" hint-placeholder-count="6">
+              <div style="display:grid;gap:7px;justify-items:center;">
+                <span style="height:6px;width:100%;border-radius:99px;background:{{ s.bar }};transition:background .4s;"></span>
+                <span dir="rtl" style="font-size:10px;color:{{ s.fg }};text-align:center;line-height:1.5;">{{ s.name }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:16px;display:flex;gap:10px;align-items:center;background:rgba(124,192,244,.1);border:1px solid rgba(124,192,244,.25);border-radius:14px;padding:12px 16px;">
+            <span style="width:8px;height:8px;border-radius:99px;background:#7CC0F4;animation:kPulse 2s infinite;"></span>
+            <span style="font-size:13px;line-height:1.9;">{{ nextAction }}</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;">
+          <div data-card="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:18px;animation:kIn .55s .1s ease both;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">ESCROW · حساب الضمان</div>
+            <div style="margin-top:10px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:24px;color:#052E2B;" dir="ltr">{{ escrowAmt }}</div>
+            <div style="margin-top:8px;height:8px;border-radius:99px;background:#EDE5D2;overflow:hidden;" dir="ltr"><span style="display:block;height:100%;width:{{ escrowPct }};background:linear-gradient(90deg,#0E6E66,#2E7CBC);border-radius:99px;animation:kGrow 1.2s ease both;"></span></div>
+            <div style="margin-top:8px;font-size:11.5px;color:#4A6B64;">{{ escrowLine }}</div>
+          </div>
+          <div data-card="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:18px;animation:kIn .55s .15s ease both;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">DELIVERABLES · التسليمات</div>
+            <div style="margin-top:10px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:24px;color:#052E2B;"><span dir="ltr">{{ delivDone }}</span> / <span dir="ltr">{{ delivTotal }}</span></div>
+            <div style="margin-top:8px;font-size:11.5px;color:#4A6B64;">بند مقبول بمحضر استلام موقع</div>
+          </div>
+          <div data-card="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:18px;animation:kIn .55s .2s ease both;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">WARRANTY · الضمانة</div>
+            <div style="margin-top:10px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:24px;color:#052E2B;">{{ warrantyBig }}</div>
+            <div style="margin-top:8px;font-size:11.5px;color:#4A6B64;">{{ warrantyLine }}</div>
+          </div>
+        </div>
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:18px;animation:kIn .55s .25s ease both;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#052E2B;">آخر ما جرى</div>
+          <div style="margin-top:12px;display:grid;gap:0;">
+            <sc-for list="{{ logView }}" as="l" hint-placeholder-count="4">
+              <div style="display:flex;gap:12px;padding:10px 0;border-top:1px solid #EDE5D2;">
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8F7218;white-space:nowrap;padding-top:3px;">{{ l.t }}</span>
+                <span style="font-size:13px;line-height:1.9;color:#33544D;">{{ l.x }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vScope }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;display:grid;gap:14px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:clamp(18px,3vw,28px);">
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:18px;color:#052E2B;">نطاق العمل الموقع</div>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8F7218;">SOW · SIGNED</span>
+          </div>
+          <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px;">
+            <sc-for list="{{ sowFacts }}" as="f" hint-placeholder-count="4">
+              <div style="background:#F4EEDD;border-radius:14px;padding:14px;">
+                <div style="font-size:11px;color:#8F7218;font-weight:600;">{{ f.k }}</div>
+                <div style="margin-top:6px;font-size:13.5px;font-weight:600;color:#052E2B;line-height:1.8;">{{ f.v }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-size:12px;color:#8F7218;font-weight:600;">تعريف الاكتمال — لا يقبل بند خارجه</div>
+            <ul style="margin:10px 0 0;padding-inline-start:20px;display:grid;gap:8px;font-size:13.5px;line-height:1.9;color:#33544D;">
+              <sc-for list="{{ dod }}" as="d" hint-placeholder-count="4"><li>{{ d }}</li></sc-for>
+            </ul>
+          </div>
+          <div style="margin-top:16px;border:1px dashed #C9A227;border-radius:14px;padding:12px 16px;font-size:12.5px;line-height:2;color:#4A6B64;background:rgba(201,162,39,.05);">ما خرج عن هذا النطاق يمر عبر <b style="color:#052E2B;">أمر تغيير</b> موقع يعدل السعر والموعد معًا — من تبويب أوامر التغيير.</div>
+        </div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vEscrow }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;display:grid;gap:14px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <div style="background:#052E2B;border-radius:20px;padding:clamp(18px,3vw,28px);color:#FAF6EC;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#E9C96B;">ESCROW LEDGER</div>
+          <div style="margin-top:10px;font-size:13.5px;line-height:2.1;color:rgba(250,246,236,.85);max-width:60ch;">يودع المبلغ في حساب الضمان قبل بدء العمل، ولا يصرف إلا بتوقيعك على محضر الاستلام. الضمان التزام في ذمة كيان، لا إيراد لها.</div>
+          <div style="margin-top:18px;display:grid;gap:0;">
+            <sc-for list="{{ ledger }}" as="e" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:13px 0;border-top:1px solid rgba(233,201,107,.15);">
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#E9C96B;">{{ e.t }}</span>
+                <span style="font-size:13px;color:rgba(250,246,236,.85);">{{ e.x }}</span>
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:{{ e.c }};">{{ e.amt }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:14px;display:flex;justify-content:space-between;gap:12px;border-top:2px solid rgba(233,201,107,.3);padding-top:14px;">
+            <span style="font-weight:700;font-size:14px;">الرصيد المحتجز</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;color:#E9C96B;">{{ escrowHeld }}</span>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vDeliv }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;display:grid;gap:12px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <sc-for list="{{ deliverables }}" as="d" hint-placeholder-count="3">
+          <div data-card="" style="background:#FAF6EC;border:1.5px solid {{ d.bd }};border-radius:18px;padding:18px 20px;">
+            <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;">
+              <div>
+                <div style="font-weight:700;font-size:15px;color:#052E2B;">{{ d.name }}</div>
+                <div style="margin-top:5px;font-size:12px;color:#4A6B64;">{{ d.note }}</div>
+              </div>
+              <span style="font-size:11.5px;font-weight:700;border-radius:999px;padding:6px 14px;background:{{ d.chipBg }};color:{{ d.chipFg }};">{{ d.status }}</span>
+            </div>
+            <sc-if value="{{ d.canAccept }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:14px;border-top:1px solid #EDE5D2;padding-top:14px;">
+                <div style="font-size:12.5px;line-height:2;color:#4A6B64;">بتوقيعك يحرر محضر الاستلام ويصرف المستحق من الضمان وتبدأ ضمانة الثلاثين يومًا. يوقع صاحب صفة التوقيع وحده.</div>
+                <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;">
+                  <input value="{{ signName }}" onInput="{{ setSignName }}" placeholder="الاسم كما في السجل — توقيعًا" style="flex:1;min-width:220px;border:1.5px solid #E0D6BD;border-radius:12px;padding:11px 14px;font-size:13.5px;background:#fff;color:#052E2B;">
+                  <button type="button" onClick="{{ d.accept }}" style="border:none;cursor:pointer;border-radius:12px;padding:11px 22px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:13.5px;color:#FAF6EC;background:linear-gradient(135deg,#0E6E66,#2E7CBC);">توقيع محضر الاستلام</button>
+                  <button type="button" onClick="{{ d.reject }}" style="border:1.5px solid #C96B4A;cursor:pointer;border-radius:12px;padding:11px 18px;font-weight:600;font-size:13px;color:#8F3A1F;background:none;">طلب تصويب</button>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vChange }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;display:grid;gap:14px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:clamp(18px,3vw,26px);">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:17px;color:#052E2B;">طلب أمر تغيير</div>
+          <p style="margin:8px 0 0;font-size:12.5px;line-height:2;color:#4A6B64;">يوصف التعديل المطلوب؛ يعاد تقدير الأثر على السعر والموعد ويعرض عليك للتوقيع قبل أي تنفيذ.</p>
+          <textarea value="{{ coText }}" onInput="{{ setCoText }}" rows="3" placeholder="ما الذي يضاف أو يعدل في النطاق؟" style="margin-top:12px;width:100%;box-sizing:border-box;border:1.5px solid #E0D6BD;border-radius:14px;padding:13px 15px;font-size:13.5px;line-height:1.9;background:#fff;color:#052E2B;resize:vertical;"></textarea>
+          <button type="button" onClick="{{ submitCo }}" style="margin-top:10px;border:none;cursor:pointer;border-radius:12px;padding:12px 24px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:13.5px;color:#052E2B;background:linear-gradient(135deg,#C9A227,#E9C96B);">إرسال الطلب للتقدير</button>
+        </div>
+        <sc-for list="{{ changeOrders }}" as="c" hint-placeholder-count="1">
+          <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:16px;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+            <div><div style="font-size:13.5px;font-weight:600;color:#052E2B;">{{ c.x }}</div><div dir="ltr" style="margin-top:4px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8F7218;">{{ c.id }} · {{ c.t }}</div></div>
+            <span style="font-size:11.5px;font-weight:700;border-radius:999px;padding:6px 14px;background:#EDE5D2;color:#8F7218;align-self:center;">{{ c.st }}</span>
+          </div>
+        </sc-for>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vMsgs }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;overflow:hidden;display:grid;">
+          <div style="padding:14px 20px;border-bottom:1px solid #EDE5D2;display:flex;justify-content:space-between;align-items:center;gap:10px;">
+            <div style="font-weight:700;font-size:14px;color:#052E2B;">قناة المشروع — عبر كيان</div>
+            <span style="font-size:11px;color:#4A6B64;">يرد مدير التسليم خلال يوم عمل</span>
+          </div>
+          <div style="padding:18px 20px;display:grid;gap:12px;max-height:380px;overflow:auto;">
+            <sc-for list="{{ msgs }}" as="m" hint-placeholder-count="3">
+              <div style="max-width:78%;justify-self:{{ m.side }};background:{{ m.bg }};color:{{ m.fg }};border-radius:16px;padding:11px 15px;">
+                <div style="font-size:10.5px;font-weight:700;opacity:.75;">{{ m.who }}</div>
+                <div style="margin-top:4px;font-size:13px;line-height:1.9;">{{ m.x }}</div>
+                <div dir="ltr" style="margin-top:4px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;opacity:.6;text-align:left;">{{ m.t }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="padding:14px 20px;border-top:1px solid #EDE5D2;display:flex;gap:10px;">
+            <input value="{{ draft }}" onInput="{{ setDraft }}" onKeyDown="{{ draftKey }}" placeholder="اكتب رسالتك…" style="flex:1;border:1.5px solid #E0D6BD;border-radius:12px;padding:12px 15px;font-size:13.5px;background:#fff;color:#052E2B;">
+            <button type="button" onClick="{{ sendMsg }}" style="border:none;cursor:pointer;border-radius:12px;padding:12px 22px;font-weight:700;font-size:13.5px;color:#FAF6EC;background:#0E6E66;">إرسال</button>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vDocs }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;display:grid;gap:10px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <sc-for list="{{ docs }}" as="d" hint-placeholder-count="4">
+          <div data-card="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:16px;padding:15px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="display:flex;gap:12px;align-items:center;">
+              <span style="width:38px;height:38px;border-radius:10px;background:#0A2434;color:#7CC0F4;display:grid;place-items:center;font-family:'IBM Plex Mono',monospace;font-size:9px;">{{ d.ext }}</span>
+              <div><div style="font-size:13.5px;font-weight:600;color:#052E2B;">{{ d.name }}</div><div dir="ltr" style="margin-top:3px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:#8F7218;">{{ d.meta }}</div></div>
+            </div>
+            <span style="font-size:11.5px;font-weight:700;color:#0E6E66;">{{ d.st }}</span>
+          </div>
+        </sc-for>
+        <div style="font-size:11.5px;color:#7A8B85;line-height:2;padding:4px 6px;">تحفظ أصول المستندات في سجل كيان سبع سنوات؛ التنزيل يفعل عند الربط بالخادم.</div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vSettings }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;display:grid;gap:14px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:22px;display:grid;gap:14px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;color:#052E2B;">بيانات الحساب</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;">
+            <div style="background:#F4EEDD;border-radius:14px;padding:14px;"><div style="font-size:11px;color:#8F7218;font-weight:600;">الجهة</div><div style="margin-top:5px;font-size:13.5px;font-weight:600;color:#052E2B;">{{ userOrg }}</div></div>
+            <div style="background:#F4EEDD;border-radius:14px;padding:14px;"><div style="font-size:11px;color:#8F7218;font-weight:600;">صاحب صفة التوقيع</div><div style="margin-top:5px;font-size:13.5px;font-weight:600;color:#052E2B;">{{ userName }}</div></div>
+            <div style="background:#F4EEDD;border-radius:14px;padding:14px;"><div style="font-size:11px;color:#8F7218;font-weight:600;">البريد</div><div style="margin-top:5px;font-size:13px;font-weight:600;color:#052E2B;" dir="ltr">{{ userEmail }}</div></div>
+            <div style="background:#F4EEDD;border-radius:14px;padding:14px;"><div style="font-size:11px;color:#8F7218;font-weight:600;">الرقم التعريفي</div><div style="margin-top:5px;font-size:13px;font-weight:600;color:#052E2B;" dir="ltr">{{ userId }}</div></div>
+          </div>
+          <div style="border-top:1px solid #EDE5D2;padding-top:14px;font-size:12.5px;line-height:2;color:#4A6B64;">تعديل صفة التوقيع يمر بإثبات جديد؛ يطلب من قناة المشروع. حذف الحساب لا يمس سجلات العقود المحفوظة نظامًا.</div>
+        </div>
+      </section>
+    </sc-if>
+    <footer style="margin-top:40px;padding-top:18px;border-top:1px solid #E0D6BD;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:11.5px;color:#7A8B85;">
+      <span>لا عقد، لا ضمان، لا عمل.</span>
+      <span><a href="Kayan Journey.dc.html">رحلة التكليف</a> · <a href="Kayan Legal.dc.html">الأحكام</a> · <a href="Kayan Planet.dc.html">البيئة</a></span>
+    </footer>
+  </main>
+</div>
+</sc-if>
+</div>

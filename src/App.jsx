@@ -3,6 +3,7 @@ import LegacyPage from './LegacyPage.jsx';
 import HomePage from './home/HomePage.jsx';
 import { CharterPage, JourneyPage, LegalPage, PeoplePage, PlanetPage, RecordPage, SealPage } from './pages/core/CorePages.jsx';
 import { ClientsPage, DeliveryArPage, DeliveryEnPage, ForgeArPage, ForgeEnPage, HubArPage, HubEnPage, K4yPage, ProductsPage, TalentPage } from './pages/services/ServicePages.jsx';
+import { AccessPage, AdminPage, ApplyPage, ClientProfilePage, PodPage, PortalPage, SpaceClientPage, SpaceTalentPage, TalentProfilePage } from './pages/workspace/WorkspacePages.jsx';
 import { routes } from './routes.js';
 
 export default function App() {
@@ -26,7 +27,16 @@ export default function App() {
       <Route path="/lines/forge" element={<ForgeArPage />} />
       <Route path="/en/lines/forge" element={<ForgeEnPage />} />
       <Route path="/k4y" element={<K4yPage />} />
-      {routes.filter(([path]) => !['/', '/charter', '/journey', '/people', '/planet', '/record', '/seal', '/legal', '/clients', '/talent', '/lines/delivery', '/en/lines/delivery', '/lines/products', '/lines/hub', '/en/lines/hub', '/lines/forge', '/en/lines/forge', '/k4y'].includes(path)).map(([path, file]) => (
+      <Route path="/access" element={<AccessPage />} />
+      <Route path="/apply" element={<ApplyPage />} />
+      <Route path="/portal" element={<PortalPage />} />
+      <Route path="/clients/account" element={<ClientProfilePage />} />
+      <Route path="/talent/profile" element={<TalentProfilePage />} />
+      <Route path="/space/client" element={<SpaceClientPage />} />
+      <Route path="/space/talent" element={<SpaceTalentPage />} />
+      <Route path="/pod/:code?" element={<PodPage />} />
+      <Route path="/admin" element={<AdminPage />} />
+      {routes.filter(([path]) => !['/', '/charter', '/journey', '/people', '/planet', '/record', '/seal', '/legal', '/clients', '/talent', '/lines/delivery', '/en/lines/delivery', '/lines/products', '/lines/hub', '/en/lines/hub', '/lines/forge', '/en/lines/forge', '/k4y', '/access', '/apply', '/portal', '/clients/account', '/talent/profile', '/space/client', '/space/talent', '/pod/:code?', '/admin'].includes(path)).map(([path, file]) => (
         <Route key={path} path={path} element={<LegacyPage file={file} />} />
       ))}
       <Route

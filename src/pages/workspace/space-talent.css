@@ -1,0 +1,20 @@
+
+body{margin:0;background:#F4EEDD;font-family:'IBM Plex Sans Arabic',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8F7218;text-decoration:none}a:hover{color:#C9A227}
+input,select,button,textarea{font-family:inherit}
+input:focus,button:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
+@keyframes kIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes kGrow{from{width:0}}
+@keyframes kPulse{0%,100%{opacity:.5}50%{opacity:1}}
+a{transition:color .15s ease}
+button{transition:transform .16s cubic-bezier(.23,1,.32,1)}
+button:active{transform:scale(.97)}
+[data-card]{transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s cubic-bezier(.23,1,.32,1)}
+@media (hover:hover) and (pointer:fine){[data-card]:hover{transform:translateY(-2px);box-shadow:0 16px 34px -18px rgba(5,46,43,.35)}}
+@media (max-width:900px){
+[data-shell]{grid-template-columns:1fr!important}
+[data-side]{position:static!important;height:auto!important;flex-direction:row!important;flex-wrap:wrap!important;align-items:center!important}
+[data-side]>a{border-bottom:none!important;margin-bottom:0!important;padding:4px 8px!important}
+[data-side]>div:last-child{margin-top:0!important;padding-top:0!important;border-top:none!important;margin-inline-start:auto!important;display:flex!important;align-items:center!important;gap:8px!important}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

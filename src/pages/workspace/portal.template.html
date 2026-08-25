@@ -1,0 +1,509 @@
+<div data-lang="{{ langCode }}" dir="rtl" style="font-family:'IBM Plex Sans Arabic','Instrument Sans',sans-serif;color:#143C37;background:#F4EEDD;min-height:100vh;display:flex;flex-direction:column;">
+
+<header style="position:sticky;top:0;z-index:80;background:rgba(3,32,29,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,162,39,.24);">
+  <div style="height:2px;background:linear-gradient(90deg,transparent,#C9A227 35%,#E9C96B 50%,#C9A227 65%,transparent);"></div>
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(14px,3vw,32px);display:flex;align-items:center;gap:12px;height:64px;">
+    <a href="Kayan Home.dc.html" title="{{ tHomeTitle }}" style="display:flex;align-items:center;gap:10px;color:#FAF6EC;">
+      <img src="assets/kayan-logo-gold.png" alt="{{ tMarkAlt }}" style="height:44px;width:auto;display:block;">
+      <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15.5px;"><span data-ar="">البوابة</span><span data-en="">The Portal</span></span>
+    </a>
+    <button type="button" onClick="{{ goEnter }}" style="background:transparent;border:none;cursor:pointer;color:rgba(250,246,236,.6);font-size:12.5px;padding:8px 10px;">{{ crumb }}</button>
+    <div style="margin-inline-start:auto;display:flex;align-items:center;gap:8px;">
+      <a href="Kayan Charter.dc.html" style="color:rgba(250,246,236,.75);font-size:12.5px;border:1px solid rgba(250,246,236,.25);border-radius:99px;padding:8px 14px;white-space:nowrap;"><span data-ar="">الميثاق</span><span data-en="">The Charter</span></a>
+      <a href="Kayan Journey.dc.html" style="color:rgba(250,246,236,.75);font-size:12.5px;border:1px solid rgba(250,246,236,.25);border-radius:99px;padding:8px 14px;white-space:nowrap;"><span data-ar="">الرحلة</span><span data-en="">The Journey</span></a>
+      <a href="Kayan Apply.dc.html" style="color:rgba(250,246,236,.75);font-size:12.5px;border:1px solid rgba(250,246,236,.25);border-radius:99px;padding:8px 14px;white-space:nowrap;"><span data-ar="">التسجيل</span><span data-en="">Register</span></a>
+      <div style="flex-shrink:0;display:inline-flex;align-items:center;gap:3px;background:rgba(250,246,236,.07);border:1px solid rgba(250,246,236,.2);border-radius:99px;padding:3px;">
+        <button type="button" data-langbtn="ar" onClick="{{ setLangAr }}" lang="ar" style="background:transparent;border:0;border-radius:99px;padding:5px 11px;cursor:pointer;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:11.5px;color:rgba(250,246,236,.62);">عربي</button>
+        <button type="button" data-langbtn="en" onClick="{{ setLangEn }}" lang="en" style="background:transparent;border:0;border-radius:99px;padding:5px 11px;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:rgba(250,246,236,.62);">EN</button>
+      </div>
+      <button type="button" data-btn="" onClick="{{ resetAll }}" title="{{ tResetTitle }}" style="background:transparent;border:1px solid rgba(250,246,236,.18);color:rgba(250,246,236,.5);font-size:12px;padding:8px 13px;border-radius:99px;cursor:pointer;white-space:nowrap;">{{ tReset }}</button>
+    </div>
+  </div>
+</header>
+
+<main data-pmain="" style="flex:1;width:100%;max-width:1240px;margin:0 auto;padding:clamp(20px,3.5vh,36px) clamp(14px,3vw,32px) clamp(48px,7vh,80px);box-sizing:border-box;">
+
+<sc-if value="{{ atEnter }}" hint-placeholder-val="{{ true }}">
+<section data-view="" data-screen-label="البوابة · المدخل">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+    <div style="min-width:0;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#8F7218;">KYN-PORTAL · WORKING MODEL</div>
+      <h1 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(26px,4vw,42px);line-height:1.3;color:#052E2B;"><span data-ar="">ثلاثة أبواب، <b style="font-weight:700;color:#8F7218;">وقاعدة واحدة</b></span><span data-en="">Three doors, <b style="font-weight:700;color:#8F7218;">one rule</b></span></h1>
+      <p style="margin:10px 0 0;max-width:60ch;font-size:14.5px;line-height:2.05;color:#4A6B64;"><span data-ar="">هنا تدار العلاقة بعد أول قرار: يفتح العميل نطاقه ويتابع ضمانه، وتدير الكفاءة ملفها وسجلها، وتفتح غرفة الفريق عند قيام تكليف. والقاعدة فوق الجميع: <b style="color:#052E2B;">لا عقد، لا ضمان، لا عمل.</b></span><span data-en="">The relationship is run here after the first decision: the client opens a scope and follows its escrow, the talent manages a file and a record, and the pod room opens once an assignment stands. Above all of it, the rule: <b style="color:#052E2B;">no contract, no escrow, no work.</b></span></p>
+    </div>
+    <kayan-mark line="gold" motion="glide" aria-hidden="true" style="width:calc(1.175 * clamp(70px,9vw,110px));flex-shrink:0;opacity:.9;"></kayan-mark>
+  </div>
+  <div style="position:relative;overflow:hidden;margin-top:22px;background:#052E2B;border-radius:18px;padding:clamp(18px,2.4vw,26px);">
+    <div data-pgdeco="" aria-hidden="true">
+      <div data-pgorb="" style="top:-60%;inset-inline-start:18%;width:min(40vw,420px);height:min(40vw,420px);background:radial-gradient(circle,rgba(201,162,39,.16),transparent 70%);"></div>
+      <div data-pgticks="" style="top:0;bottom:0;inset-inline-start:2%;width:8px;"></div>
+    </div>
+    <div style="position:relative;z-index:1;">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#E9C96B;">THE RULE, IN ORDER</span>
+        <span style="font-size:12.5px;color:rgba(250,246,236,.55);"><span data-ar="">كل بوابة تقفل ما بعدها. لا تفتح الثانية قبل الأولى.</span><span data-en="">Each gate locks the next. The second does not open before the first.</span></span>
+      </div>
+      <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:10px;">
+        <sc-for list="{{ gates }}" as="g" hint-placeholder-count="3">
+          <div data-gate="" data-on="{{ g.onAttr }}" style="position:relative;background:#03201D;border:1px solid {{ g.bd }};border-radius:13px;padding:15px 16px;overflow:hidden;">
+            <span data-gatebar="" aria-hidden="true" style="background:{{ g.bar }};"></span>
+            <div style="display:flex;align-items:center;gap:9px;">
+              <span data-gatedot="" aria-hidden="true" style="background:{{ g.dot }};box-shadow:0 0 0 4px {{ g.halo }};"></span>
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;color:{{ g.no }};">{{ g.code }}</span>
+              <span style="margin-inline-start:auto;font-size:10.5px;white-space:nowrap;color:{{ g.stateFg }};border:1px solid {{ g.bd }};border-radius:99px;padding:2px 8px;">{{ g.state }}</span>
+            </div>
+            <div style="margin-top:9px;font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#FAF6EC;">{{ g.title }}</div>
+            <div style="margin-top:6px;font-size:12.5px;line-height:1.8;color:rgba(250,246,236,.62);">{{ g.body }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:#FAF6EC;border:1px solid #E0D6BD;border-radius:14px;padding:12px 16px;">
+    <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">UNIFIED ACCESS</span>
+    <span style="font-size:12.5px;color:#4A6B64;"><span data-ar="">لمن يملك حسابًا: الدخول الموحد يفتح لوحتك مباشرة —</span><span data-en="">If you already hold an account, unified sign-in opens your dashboard directly —</span></span>
+    <a href="Kayan Access.dc.html" style="font-size:12.5px;font-weight:700;"><span data-ar="">صفحة الدخول والتسجيل ←</span><span data-en="">Sign-in and registration ←</span></a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:16px;">
+    <button type="button" data-card="" data-door="client" onClick="{{ enterClient }}" style="text-align:start;cursor:pointer;background:#0A2434;border:1.5px solid #123A52;border-radius:20px;padding:22px;color:#FAF6EC;display:flex;flex-direction:column;gap:10px;">
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#7CC0F4;">DOOR 01 · CLIENT</span>
+      <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;"><span data-ar="">بوابة العملاء</span><span data-en="">The clients’ door</span></span>
+      <span style="font-size:13px;line-height:1.95;color:rgba(250,246,236,.72);"><span data-ar="">تسمي النتيجة وموعدها، ونحمل نحن الفريق والجودة والمخاطر — بسعر مكتوب وضمان ممول وبوابة قبول لا يوقعها غيرك.</span><span data-en="">You name the outcome and its date; we carry the pod, the quality and the risk, at a written price, against funded escrow, behind an acceptance gate no one but you signs.</span></span>
+      <span data-doorstate="" style="margin-top:4px;font-size:12.5px;color:#7CC0F4;font-weight:600;">{{ clientDoorState }}</span>
+    </button>
+    <button type="button" data-card="" data-door="talent" onClick="{{ enterTalent }}" style="text-align:start;cursor:pointer;background:#052E2B;border:1.5px solid #0E4A44;border-radius:20px;padding:22px;color:#FAF6EC;display:flex;flex-direction:column;gap:10px;">
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#E9C96B;">DOOR 02 · TALENT</span>
+      <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;"><span data-ar="">بوابة الكفاءات</span><span data-en="">The talent door</span></span>
+      <span style="font-size:13px;line-height:1.95;color:rgba(250,246,236,.72);"><span data-ar="">ملفك وسجلك وسلم ثقتك وقنوات صرفك — كل ما يبنى عليه اسمك المهني، في مكان واحد يقرأ قيدا قيدا.</span><span data-en="">Your file, your record, your trust rung and your payout channels — everything your professional name is built on, in one place, read record by record.</span></span>
+      <span data-doorstate="" style="margin-top:4px;font-size:12.5px;color:#E9C96B;font-weight:600;">{{ talentDoorState }}</span>
+    </button>
+    <button type="button" data-card="" data-door="pod" onClick="{{ enterPod }}" style="text-align:start;cursor:pointer;background:{{ podDoorBg }};border:1.5px solid {{ podDoorBd }};border-radius:20px;padding:22px;color:#FAF6EC;display:flex;flex-direction:column;gap:10px;">
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#B9A8E8;">DOOR 03 · POD</span>
+      <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;"><span data-ar="">غرفة الفريق</span><span data-en="">The pod room</span> {{ podLockMark }}</span>
+      <span style="font-size:13px;line-height:1.95;color:rgba(250,246,236,.72);"><span data-ar="">لا تفتح الغرفة إلا عند قيام تكليف وتشكيل فريقه — فالفريق عندنا وحدة تنفيذ لعمل قائم، لا قائمة انتظار.</span><span data-en="">The room opens only once an assignment stands and its pod is formed. A pod here is an execution unit for live work, not a waiting list.</span></span>
+      <span data-doorstate="" style="margin-top:4px;font-size:12.5px;color:#B9A8E8;font-weight:600;">{{ podDoorState }}</span>
+    </button>
+  </div>
+  <div style="margin-top:18px;background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+    <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#8F7218;">HOW PODS FORM</span>
+    <span style="font-size:13px;line-height:1.9;color:#4A6B64;"><span data-ar="">يتشكل الفريق بطريقين: تشكيل كيان لكل تكليف من سجل الكفاءات، أو <a href="Kayan Apply.dc.html">تسجيل فريق جاهز</a> باسمه وأعضائه من محطة «الفريق الجاهز» في التسجيل.</span><span data-en="">A pod forms two ways: Kayan forms one per assignment from the talent register, or <a href="Kayan Apply.dc.html">a ready pod registers</a> under its own name and members from the “ready pod” step in registration.</span></span>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ atCApply }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="البوابة · طلب عميل" style="max-width:860px;margin:0 auto;">
+  <sc-if value="{{ cSessOn }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:#052E2B;border-radius:14px;padding:11px 16px;margin-bottom:12px;color:#FAF6EC;">
+      <span style="width:7px;height:7px;border-radius:99px;background:#7CE0B8;"></span>
+      <span style="font-size:12.5px;">{{ cSessLine }}</span>
+      <a href="Kayan Space - Client.dc.html" style="margin-inline-start:auto;font-size:12px;font-weight:700;color:#E9C96B;"><span data-ar="">لوحتي ←</span><span data-en="">My dashboard ←</span></a>
+    </div>
+  </sc-if>
+  <div style="display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px;">
+    <sc-for list="{{ cRail }}" as="s" hint-placeholder-count="5">
+      <button type="button" data-step="" data-locked="{{ s.lockAttr }}" data-nudge="{{ s.nudgeAttr }}" onClick="{{ s.go }}" aria-disabled="{{ s.locked }}" title="{{ s.tip }}" style="flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;min-height:42px;font-size:12.5px;color:{{ s.fg }};background:{{ s.bg }};border:1px solid {{ s.bd }};border-radius:99px;padding:8px 14px;cursor:pointer;white-space:nowrap;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;opacity:.75;">{{ s.no }}</span>
+        <span>{{ s.label }}</span>
+        <sc-if value="{{ s.done }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="color:#0E6E66;font-weight:700;">✓</span></sc-if>
+        <sc-if value="{{ s.locked }}" hint-placeholder-val="{{ false }}"><span data-locksign="" aria-hidden="true"></span></sc-if>
+      </button>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ cs0 }}" hint-placeholder-val="{{ true }}">
+    <div data-view="" style="margin-top:20px;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#2E7CBC;">CLIENT 00 · THE ORGANISATION</div>
+      <h2 style="margin:8px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(22px,3vw,32px);color:#052E2B;"><span data-ar="">الملف يفتح <b style="font-weight:700;color:#2E7CBC;">باسم المنشأة</b></span><span data-en="">The file opens <b style="font-weight:700;color:#2E7CBC;">in the organisation’s name</b></span></h2>
+      <div data-why="" style="margin-top:12px;"><span data-ar="">لماذا نسأل: يقيد العقد والضمان ومحضر القبول على شخصية واحدة — المنشأة لا موظفها. الفرد صاحب العمل يقيد باسمه الشخصي.</span><span data-en="">Why we ask: the contract, the escrow and the acceptance certificate are recorded to one legal person — the organisation, not its employee. A sole proprietor is recorded under their personal name.</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;margin-top:16px;">
+        <label style="grid-column:1/-1;"><b><span data-ar="">اسم المنشأة كما في سجلها</span><span data-en="">Organisation name as registered</span></b><input type="text" value="{{ cOrgName }}" onInput="{{ setCOrgName }}" placeholder="{{ tPhOrgName }}"></label>
+        <label style="overflow:visible;"><b><span data-ar="">الصفة القانونية</span><span data-en="">Legal form</span></b><span data-pick="">
+          <button type="button" data-picktrigger="" onClick="{{ pkOrgType.toggle }}" aria-expanded="{{ pkOrgType.open }}" aria-haspopup="listbox" style="color:{{ pkOrgType.fg }};"><span>{{ pkOrgType.text }}</span><span data-pickchev="" aria-hidden="true"></span></button>
+          <sc-if value="{{ pkOrgType.open }}" hint-placeholder-val="{{ false }}">
+            <span data-picklist="" role="listbox" style="display:block;">
+              <sc-for list="{{ pkOrgType.items }}" as="o" hint-placeholder-count="5">
+                <button type="button" data-pickopt="" role="option" aria-selected="{{ o.sel }}" onClick="{{ o.pick }}"><span data-pickdot="" aria-hidden="true"></span><span>{{ o.l }}</span></button>
+              </sc-for>
+            </span>
+          </sc-if>
+        </span></label>
+        <label style="overflow:visible;"><b><span data-ar="">القطاع</span><span data-en="">Sector</span></b><span data-pick="">
+          <button type="button" data-picktrigger="" onClick="{{ pkSector.toggle }}" aria-expanded="{{ pkSector.open }}" aria-haspopup="listbox" style="color:{{ pkSector.fg }};"><span>{{ pkSector.text }}</span><span data-pickchev="" aria-hidden="true"></span></button>
+          <sc-if value="{{ pkSector.open }}" hint-placeholder-val="{{ false }}">
+            <span data-picklist="" role="listbox" style="display:block;">
+              <sc-for list="{{ pkSector.items }}" as="o" hint-placeholder-count="10">
+                <button type="button" data-pickopt="" role="option" aria-selected="{{ o.sel }}" onClick="{{ o.pick }}"><span data-pickdot="" aria-hidden="true"></span><span>{{ o.l }}</span></button>
+              </sc-for>
+            </span>
+          </sc-if>
+        </span></label>
+        <label style="overflow:visible;"><b><span data-ar="">حجم المنشأة</span><span data-en="">Size of the organisation</span></b><span data-pick="">
+          <button type="button" data-picktrigger="" onClick="{{ pkSize.toggle }}" aria-expanded="{{ pkSize.open }}" aria-haspopup="listbox" style="color:{{ pkSize.fg }};"><span>{{ pkSize.text }}</span><span data-pickchev="" aria-hidden="true"></span></button>
+          <sc-if value="{{ pkSize.open }}" hint-placeholder-val="{{ false }}">
+            <span data-picklist="" role="listbox" style="display:block;">
+              <sc-for list="{{ pkSize.items }}" as="o" hint-placeholder-count="4">
+                <button type="button" data-pickopt="" role="option" aria-selected="{{ o.sel }}" onClick="{{ o.pick }}"><span data-pickdot="" aria-hidden="true"></span><span>{{ o.l }}</span></button>
+              </sc-for>
+            </span>
+          </sc-if>
+        </span></label>
+        <label><b><span data-ar="">بلد المقر</span><span data-en="">Country of registration</span></b><input type="text" value="{{ cCountry }}" onInput="{{ setCCountry }}" placeholder="{{ tPhCountry }}"></label>
+        <label><b><span data-ar="">المدينة</span><span data-en="">City</span></b><input type="text" value="{{ cCity }}" onInput="{{ setCCity }}" placeholder="{{ tPhCity }}"></label>
+        <label><b><span data-ar="">الموقع الإلكتروني (اختياري)</span><span data-en="">Website (optional)</span></b><input type="url" dir="ltr" value="{{ cSite }}" onInput="{{ setCSite }}" placeholder="https://..."></label>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ cs1 }}" hint-placeholder-val="{{ false }}">
+    <div data-view="" style="margin-top:20px;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#2E7CBC;">CLIENT 01 · SIGNING AUTHORITY</div>
+      <h2 style="margin:8px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(22px,3vw,32px);color:#052E2B;"><span data-ar="">من <b style="font-weight:700;color:#2E7CBC;">يوقع؟</b></span><span data-en="">Who <b style="font-weight:700;color:#2E7CBC;">signs?</b></span></h2>
+      <div data-why="" style="margin-top:12px;"><span data-ar="">لماذا نسأل: يوقع النطاق ومحضر القبول من يملك صفة التوقيع. تثبت الصفة مرة واحدة، وتحفظ بصمتها في السجل، ولا يقبل توقيع سواها.</span><span data-en="">Why we ask: the scope and the acceptance certificate are signed by whoever holds signing authority. The authority is established once, its fingerprint is held in the register, and no other signature is accepted.</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;margin-top:16px;">
+        <label><b><span data-ar="">اسم المفوض بالتوقيع</span><span data-en="">Name of the authorised signatory</span></b><input type="text" value="{{ cAuthName }}" onInput="{{ setCAuthName }}"></label>
+        <label><b><span data-ar="">صفته في المنشأة</span><span data-en="">Their position in the organisation</span></b><input type="text" value="{{ cAuthRole }}" onInput="{{ setCAuthRole }}" placeholder="{{ tPhAuthRole }}"></label>
+        <label><b><span data-ar="">بريده الرسمي</span><span data-en="">Their official email</span></b><input type="email" dir="ltr" value="{{ cAuthEmail }}" onInput="{{ setCAuthEmail }}" placeholder="name@org.com"></label>
+        <label><b><span data-ar="">هاتف أو واتساب</span><span data-en="">Phone or WhatsApp</span></b><input type="tel" dir="ltr" value="{{ cAuthPhone }}" onInput="{{ setCAuthPhone }}" placeholder="+967 ..."></label>
+        <label style="grid-column:1/-1;"><b><span data-ar="">إثبات الصفة — تفويض أو سجل تجاري يظهر المخولين (PDF أو صورة، حتى 10MB)</span><span data-en="">Proof of authority — a mandate or commercial register showing the authorised persons (PDF or image, up to 10MB)</span></b><input type="file" accept="image/jpeg,image/png,application/pdf" onChange="{{ pickCProof }}" style="padding:10px;background:#FBF7EA;"><span style="font-size:12px;color:{{ cProofColor }};">{{ cProofMsg }}</span></label>
+      </div>
+      <div style="margin-top:14px;background:#FFFFFF;border:1px solid #E0D6BD;border-radius:14px;padding:14px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;">
+        <div style="flex:1 1 260px;min-width:0;">
+          <div style="font-size:13.5px;font-weight:600;color:#3E5A54;"><span data-ar="">تأكيد قناة المفوض</span><span data-en="">Confirming the signatory’s channel</span></div>
+          <div style="font-size:12.5px;color:#8A7F63;line-height:1.9;margin-top:4px;">{{ cCodeHint }}</div>
+        </div>
+        <sc-if value="{{ cCodeSent }}" hint-placeholder-val="{{ false }}">
+          <input type="text" dir="ltr" value="{{ cCode }}" onInput="{{ setCCode }}" placeholder="— — — —" maxLength="4" style="width:120px;text-align:center;font-family:'IBM Plex Mono',monospace;letter-spacing:.3em;">
+        </sc-if>
+        <button type="button" data-btn="" onClick="{{ sendCCode }}" style="background:{{ cCodeBtnBg }};color:{{ cCodeBtnFg }};border:1px solid #2E7CBC;font-size:13px;font-weight:600;padding:11px 18px;border-radius:10px;cursor:pointer;">{{ cCodeBtnLabel }}</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ cs2 }}" hint-placeholder-val="{{ false }}">
+    <div data-view="" style="margin-top:20px;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#2E7CBC;">CLIENT 02 · COMPLIANCE</div>
+      <h2 style="margin:8px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(22px,3vw,32px);color:#052E2B;"><span data-ar="">أربعة إقرارات — <b style="font-weight:700;color:#2E7CBC;">قبل أي تسعير</b></span><span data-en="">Four declarations — <b style="font-weight:700;color:#2E7CBC;">before any pricing</b></span></h2>
+      <div data-why="" style="margin-top:12px;"><span data-ar="">تقرأ هذه الإقرارات كما تقرأ العقود: كل بند على حدة، ولا معالجة قبل تأشيرها كلها. سحب أي إقرار لاحقا يوقف الملف.</span><span data-en="">Read these as you read a contract: each clause on its own, and no processing before all are ticked. Withdrawing any declaration later halts the file.</span></div>
+      <div style="display:flex;flex-direction:column;gap:9px;margin-top:16px;">
+        <sc-for list="{{ cComp }}" as="c" hint-placeholder-count="4">
+          <button type="button" onClick="{{ c.toggle }}" aria-pressed="{{ c.on }}" style="text-align:start;cursor:pointer;display:flex;gap:12px;align-items:flex-start;background:#FFFFFF;border:1px solid #E0D6BD;border-radius:14px;padding:14px 16px;">
+            <span aria-hidden="true" style="flex-shrink:0;margin-top:2px;width:24px;height:24px;border-radius:7px;border:2px solid {{ c.bd }};background:{{ c.bg }};color:#FAF6EC;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;">{{ c.mark }}</span>
+            <span style="display:flex;flex-direction:column;gap:4px;min-width:0;">
+              <b style="font-size:14px;color:#052E2B;">{{ c.t }}</b>
+              <span style="font-size:12.5px;line-height:1.95;color:#4A6B64;">{{ c.b }}</span>
+            </span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ cs3 }}" hint-placeholder-val="{{ false }}">
+    <div data-view="" style="margin-top:20px;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#2E7CBC;">CLIENT 03 · THE OUTCOME</div>
+      <h2 style="margin:8px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(22px,3vw,32px);color:#052E2B;"><span data-ar="">سم <b style="font-weight:700;color:#2E7CBC;">النتيجة</b>، لا المهام</span><span data-en="">Name the <b style="font-weight:700;color:#2E7CBC;">outcome</b>, not the tasks</span></h2>
+      <div data-why="" style="margin-top:12px;"><span data-ar="">تشترى النتيجة لا الساعات: ما الذي يستلم، ومتى، وبأي حد للمال. يرد التسعير الثابت خلال خمسة أيام عمل، ولا يعاد فتحه بعد التوقيع.</span><span data-en="">The outcome is bought, not the hours: what is handed over, when, and to what ceiling. The fixed price is returned within five working days and is not reopened after signature.</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;margin-top:16px;">
+        <label style="grid-column:1/-1;"><b><span data-ar="">النتيجة المطلوبة — جملة واحدة تسمي ما يستلم</span><span data-en="">The outcome sought — one sentence naming what is handed over</span></b><input type="text" value="{{ cOutcome }}" onInput="{{ setCOutcome }}" placeholder="{{ tPhOutcome }}"></label>
+        <label style="overflow:visible;"><b><span data-ar="">الخط المعني</span><span data-en="">The line concerned</span></b><span data-pick="">
+          <button type="button" data-picktrigger="" onClick="{{ pkLine.toggle }}" aria-expanded="{{ pkLine.open }}" aria-haspopup="listbox" style="color:{{ pkLine.fg }};"><span>{{ pkLine.text }}</span><span data-pickchev="" aria-hidden="true"></span></button>
+          <sc-if value="{{ pkLine.open }}" hint-placeholder-val="{{ false }}">
+            <span data-picklist="" role="listbox" style="display:block;">
+              <sc-for list="{{ pkLine.items }}" as="o" hint-placeholder-count="4">
+                <button type="button" data-pickopt="" role="option" aria-selected="{{ o.sel }}" onClick="{{ o.pick }}"><span data-pickdot="" aria-hidden="true"></span><span>{{ o.l }}</span></button>
+              </sc-for>
+            </span>
+          </sc-if>
+        </span></label>
+        <label><b><span data-ar="">الموعد الأقصى للاستلام</span><span data-en="">Latest date for handover</span></b><input type="date" value="{{ cDeadline }}" onInput="{{ setCDeadline }}" min="2026-08-25"></label>
+        <label style="overflow:visible;"><b><span data-ar="">حد الميزانية</span><span data-en="">Budget ceiling</span></b><span data-pick="">
+          <button type="button" data-picktrigger="" onClick="{{ pkBudget.toggle }}" aria-expanded="{{ pkBudget.open }}" aria-haspopup="listbox" style="color:{{ pkBudget.fg }};"><span>{{ pkBudget.text }}</span><span data-pickchev="" aria-hidden="true"></span></button>
+          <sc-if value="{{ pkBudget.open }}" hint-placeholder-val="{{ false }}">
+            <span data-picklist="" role="listbox" style="display:block;">
+              <sc-for list="{{ pkBudget.items }}" as="o" hint-placeholder-count="6">
+                <button type="button" data-pickopt="" role="option" aria-selected="{{ o.sel }}" onClick="{{ o.pick }}"><span data-pickdot="" aria-hidden="true"></span><span>{{ o.l }}</span></button>
+              </sc-for>
+            </span>
+          </sc-if>
+        </span></label>
+        <label style="grid-column:1/-1;"><b><span data-ar="">وصف موجز — ما الموجود اليوم، وما المقبول به وما المرفوض (30 حرفا فأكثر)</span><span data-en="">A brief description — what exists today, what is acceptable and what is not (30 characters or more)</span></b><textarea rows="4" value="{{ cDesc }}" onInput="{{ setCDesc }}" placeholder="{{ tPhDesc }}"></textarea></label>
+        <label style="grid-column:1/-1;"><b><span data-ar="">مرفقات (اختياري — كراسة شروط، نماذج، هوية بصرية)</span><span data-en="">Attachments (optional — a brief, forms, visual identity)</span></b><input type="file" onChange="{{ pickCFile }}" style="padding:10px;background:#FBF7EA;"><span style="font-size:12px;color:#8A7F63;">{{ cFilesMsg }}</span></label>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ cs4 }}" hint-placeholder-val="{{ false }}">
+    <div data-view="" style="margin-top:20px;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#2E7CBC;">CLIENT 04 · ESCROW &amp; REVIEW</div>
+      <h2 style="margin:8px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(22px,3vw,32px);color:#052E2B;"><span data-ar="">المراجعة، <b style="font-weight:700;color:#2E7CBC;">ونموذج الضمان</b></span><span data-en="">The review, <b style="font-weight:700;color:#2E7CBC;">and the escrow model</b></span></h2>
+      <div style="margin-top:16px;background:#0A2434;border-radius:18px;padding:20px 22px;color:#FAF6EC;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#7CC0F4;"><span data-ar="">كيف يحمي الضمان مالك</span><span data-en="">How escrow protects your money</span></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px;margin-top:12px;font-size:13px;line-height:2;color:rgba(250,246,236,.82);">
+          <span><span data-ar=""><b style="color:#FAF6EC;">قبل البدء:</b> يودع المبلغ لدى طرف أمين، ولا يمس قبل قبولك.</span><span data-en=""><b style="color:#FAF6EC;">Before work starts:</b> the amount is deposited with a trustee and is untouched until you accept.</span></span>
+          <span><span data-ar=""><b style="color:#FAF6EC;">أثناء العمل:</b> تعثر المنفذ علينا لا عليك — يستبدل على حسابنا والسعر لا يفتح.</span><span data-en=""><b style="color:#FAF6EC;">During the work:</b> an executor’s default falls on us, not on you. They are replaced at our cost and the price is not reopened.</span></span>
+          <span><span data-ar=""><b style="color:#FAF6EC;">عند الاستلام:</b> توقع محضر القبول بنفسك، وعندها فقط يصرف — وضمان ثلاثين يوما بعده.</span><span data-en=""><b style="color:#FAF6EC;">On handover:</b> you sign the acceptance certificate yourself, and only then is payment released — with a thirty-day warranty after it.</span></span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px;">
+        <sc-for list="{{ cReview }}" as="r" hint-placeholder-count="6">
+          <div style="display:flex;gap:12px;align-items:flex-start;background:#FFFFFF;border:1px solid #E0D6BD;border-radius:13px;padding:13px 16px;">
+            <span style="flex-shrink:0;width:110px;font-size:12.5px;font-weight:700;color:#2E7CBC;">{{ r.k }}</span>
+            <span style="flex:1;min-width:0;font-size:13px;line-height:1.9;color:#3E5A54;overflow-wrap:anywhere;">{{ r.v }}</span>
+            <button type="button" onClick="{{ r.go }}" style="flex-shrink:0;background:transparent;border:1px solid #D8CCAE;color:#6E675A;font-size:11.5px;border-radius:99px;padding:6px 13px;cursor:pointer;"><span data-ar="">تعديل</span><span data-en="">Edit</span></button>
+          </div>
+        </sc-for>
+      </div>
+      <button type="button" onClick="{{ toggleCFinal }}" aria-pressed="{{ cFinalOn }}" style="margin-top:14px;text-align:start;cursor:pointer;display:flex;gap:12px;align-items:flex-start;background:#FBF7EA;border:1.5px solid #E0D6BD;border-radius:14px;padding:14px 16px;width:100%;">
+        <span aria-hidden="true" style="flex-shrink:0;margin-top:2px;width:24px;height:24px;border-radius:7px;border:2px solid {{ cFinalBd }};background:{{ cFinalBg }};color:#FAF6EC;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;">{{ cFinalMark }}</span>
+        <span style="font-size:13.5px;line-height:2;color:#143C37;"><span data-ar="">فهمت القاعدة وألتزم بها: <b style="color:#052E2B;">لا يبدأ عمل قبل توقيع النطاق وتمويل الضمان</b> — وما عدا ذلك ليس عملا عبر كيان.</span><span data-en="">I understand the rule and hold to it: <b style="color:#052E2B;">no work begins before the scope is signed and escrow is funded.</b> Anything else is not work through Kayan.</span></span>
+      </button>
+    </div>
+  </sc-if>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px;flex-wrap:wrap;">
+    <button type="button" data-btn="" onClick="{{ cBack }}" style="background:transparent;border:1px solid #D8CCAE;color:#6E675A;font-size:13.5px;padding:12px 22px;border-radius:12px;cursor:pointer;"><span data-ar="">→ السابق</span><span data-en="">← Back</span></button>
+    <div style="font-size:12.5px;color:#8A7F63;max-width:46ch;">{{ cHint }}</div>
+    <button type="button" data-btn="" onClick="{{ cNext }}" style="background:{{ cNextBg }};color:{{ cNextFg }};border:none;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:12px;cursor:{{ cNextCursor }};">{{ cNextLabel }}</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ atClient }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="البوابة · لوحة العميل">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+    <div style="min-width:0;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#2E7CBC;">CLIENT DASHBOARD · {{ cId }}</div>
+      <h1 style="margin:8px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,36px);color:#052E2B;">{{ cOrgName }}</h1>
+      <div style="margin-top:6px;font-size:13px;color:#6E675A;"><span data-ar="">المفوض:</span><span data-en="">Signatory:</span> {{ cAuthName }} · {{ cAuthRole }}</div>
+    </div>
+    <button type="button" data-btn="" onClick="{{ simAdvance }}" title="زر عرض: يحاكي تقدم المرحلة لدى فريق كيان" style="background:transparent;border:1.5px dashed #2E7CBC;color:#2E7CBC;font-size:12.5px;font-weight:600;padding:11px 18px;border-radius:11px;cursor:pointer;">{{ simLabel }}</button>
+  </div>
+
+  <div style="margin-top:20px;background:#FFFFFF;border:1px solid #E0D6BD;border-radius:18px;padding:20px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#052E2B;"><span data-ar="">المشروع:</span><span data-en="">Project:</span> {{ cOutcome }}</div>
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A7F63;">{{ cLineTag }}</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px;margin-top:16px;">
+      <sc-for list="{{ cStages }}" as="s" hint-placeholder-count="6">
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <span style="height:5px;border-radius:3px;background:{{ s.bar }};"></span>
+          <span style="font-size:11.5px;font-weight:{{ s.w }};color:{{ s.fg }};line-height:1.6;">{{ s.t }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top:12px;font-size:13px;line-height:2;color:#4A6B64;">{{ cStageNote }}</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:14px;">
+    <div style="background:#0A2434;border-radius:18px;padding:20px;color:#FAF6EC;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;"><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#7CC0F4;"><span data-ar="">دفتر الضمان</span><span data-en="">Escrow ledger</span></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:rgba(250,246,236,.5);">ESCROW LEDGER</span></div>
+      <div style="display:flex;flex-direction:column;gap:0;margin-top:10px;">
+        <sc-for list="{{ cLedger }}" as="l" hint-placeholder-count="2">
+          <div style="display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px dashed rgba(250,246,236,.14);font-size:12.5px;">
+            <span style="color:rgba(250,246,236,.8);">{{ l.t }}</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;color:{{ l.c }};white-space:nowrap;">{{ l.v }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:10px;font-size:11.5px;line-height:1.9;color:rgba(250,246,236,.55);">{{ cLedgerNote }}</div>
+    </div>
+    <div style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:18px;padding:20px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;"><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#052E2B;"><span data-ar="">التسليمات وبوابة القبول</span><span data-en="">Deliveries and the acceptance gate</span></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:#8A7F63;">ACCEPTANCE</span></div>
+      <sc-if value="{{ cDelivOn }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:12px;border:1px solid #E0D6BD;border-radius:13px;padding:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <span style="flex:1;min-width:200px;font-size:13.5px;line-height:1.9;color:#3E5A54;"><b style="color:#052E2B;">{{ cOutcome }}</b><span data-ar=""> — مراجعة كيان المستقلة اجتيزت، والتسليم بانتظار توقيعك.</span><span data-en=""> — Kayan’s independent review is passed, and the delivery awaits your signature.</span></span>
+          <button type="button" data-btn="" onClick="{{ signAccept }}" style="background:linear-gradient(135deg,#C9A227,#E9C96B);color:#03201D;border:none;font-size:13.5px;font-weight:700;padding:12px 22px;border-radius:11px;cursor:pointer;"><span data-ar="">وقع محضر القبول ←</span><span data-en="">Sign the acceptance certificate ←</span></button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cDelivDone }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:12px;background:#EAF4F0;border:1px solid #BFE0D6;border-radius:13px;padding:14px;font-size:13.5px;line-height:1.9;color:#0E6E66;"><span data-ar="">وقع محضر القبول بتاريخ {{ cAcceptDate }} — صرف المستحق للمنفذين، ويسري ضمان ثلاثين يوما حتى {{ cWarrantyEnd }}.</span><span data-en="">The acceptance certificate was signed on {{ cAcceptDate }}. The amount was released to the pod, and a thirty-day warranty runs to {{ cWarrantyEnd }}.</span></div>
+      </sc-if>
+      <sc-if value="{{ cDelivIdle }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top:12px;font-size:13px;line-height:2;color:#8A7F63;"><span data-ar="">لا تسليم معروضا بعد — يعرض هنا كل تسليم بعد اجتيازه مراجعة كيان المستقلة، ولا يعرض قبلها.</span><span data-en="">No delivery is presented yet. Every delivery appears here after it passes Kayan’s independent review, and not before.</span></div>
+      </sc-if>
+      <div data-why="" style="margin-top:12px;"><span data-ar="">بوابة القبول لا يوقعها غير مفوضكم — لا مدير مشروعنا ولا فريقنا. توقيعك هو الذي يحرك المال.</span><span data-en="">The acceptance gate is signed by your signatory alone — not by our project manager and not by our pod. Your signature is what moves the money.</span></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:14px;">
+    <sc-if value="{{ cPodOn }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#1D1433;border:1px solid #34255C;border-radius:18px;padding:20px;color:#FAF6EC;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;"><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#B9A8E8;"><span data-ar="">فريق التنفيذ</span><span data-en="">The execution pod</span></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:rgba(250,246,236,.5);">{{ podCode }}</span></div>
+        <div style="margin-top:10px;font-size:13.5px;color:rgba(250,246,236,.85);"><span data-ar="">{{ podName }} — {{ podCount }} أعضاء بأدوار مسماة.</span><span data-en="">{{ podName }} — {{ podCount }} members in named roles.</span></div>
+        <div style="margin-top:8px;font-size:12px;line-height:1.9;color:rgba(250,246,236,.6);"><span data-ar="">تخاطب الفريق عبر نافذة كيان الواحدة — لا تراسل المنفذين فرادى، وهذا يحميك ويحميهم.</span><span data-en="">The pod is addressed through the single Kayan window. Executors are not messaged individually; this protects you and protects them.</span></div>
+        <button type="button" onClick="{{ enterPod }}" style="margin-top:12px;background:transparent;border:1px solid #B9A8E8;color:#B9A8E8;font-size:12.5px;font-weight:600;padding:10px 18px;border-radius:99px;cursor:pointer;"><span data-ar="">غرفة الفريق ←</span><span data-en="">The pod room ←</span></button>
+      </div>
+    </sc-if>
+    <div style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:18px;padding:20px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#052E2B;"><span data-ar="">سجل الملف</span><span data-en="">The file record</span></div>
+      <div style="display:flex;flex-direction:column;gap:0;margin-top:8px;">
+        <sc-for list="{{ cLog }}" as="e" hint-placeholder-count="3">
+          <div style="display:flex;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px dashed #EFE8D5;">
+            <span dir="ltr" style="flex-shrink:0;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#B0A48A;">{{ e.d }}</span>
+            <span style="font-size:12.5px;line-height:1.85;color:#3E5A54;">{{ e.t }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:10px;font-size:11.5px;color:#8A7F63;"><span data-ar="">قيود مؤرخة لا تعدل ولا تحذف — وما يستجد يضاف قيدا جديدا.</span><span data-en="">Dated records, neither amended nor deleted. Whatever arises is added as a new record.</span></div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ atTalent }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="البوابة · لوحة الكفاءة">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+    <div style="min-width:0;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#8F7218;">TALENT DASHBOARD · {{ tId }}</div>
+      <h1 style="margin:8px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,36px);color:#052E2B;">{{ tName }}</h1>
+      <div style="margin-top:6px;font-size:13px;color:#6E675A;">{{ tCraft }} · {{ tCity }}</div>
+    </div>
+    <a href="Kayan Apply.dc.html" style="border:1.5px dashed #8F7218;color:#8F7218;font-size:12.5px;font-weight:600;padding:11px 18px;border-radius:11px;"><span data-ar="">تحديث الملف من محطاته ←</span><span data-en="">Update the file from its steps ←</span></a>
+  </div>
+
+  <div style="margin-top:20px;background:#052E2B;border-radius:18px;padding:20px 22px;color:#FAF6EC;">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+      <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#E9C96B;"><span data-ar="">سلم الثقة — درجتك تبنى بالدليل</span><span data-en="">The trust ladder — your rung is built on evidence</span></span>
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:rgba(250,246,236,.5);">TRUST LADDER</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:6px;margin-top:16px;">
+      <sc-for list="{{ tLadder }}" as="s" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <span style="height:5px;border-radius:3px;background:{{ s.bar }};"></span>
+          <span style="font-size:11.5px;font-weight:{{ s.w }};color:{{ s.fg }};line-height:1.6;">{{ s.t }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top:12px;font-size:13px;line-height:2;color:rgba(250,246,236,.75);">{{ tLadderNote }}</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:14px;">
+    <div style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:18px;padding:20px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#052E2B;"><span data-ar="">حالة الطلب</span><span data-en="">Application status</span></div>
+      <div style="display:flex;flex-direction:column;gap:0;margin-top:8px;">
+        <sc-for list="{{ tSteps }}" as="s" hint-placeholder-count="5">
+          <div style="display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed #EFE8D5;">
+            <span aria-hidden="true" style="flex-shrink:0;width:11px;height:11px;border-radius:50%;margin-top:5px;background:{{ s.dot }};border:2px solid #C9A227;"></span>
+            <span style="display:flex;flex-direction:column;gap:2px;"><b style="font-size:13px;color:#052E2B;">{{ s.t }}</b><span style="font-size:12px;line-height:1.85;color:#6E675A;">{{ s.d }}</span></span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:18px;padding:20px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;"><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#052E2B;"><span data-ar="">التكليفات</span><span data-en="">Assignments</span></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:#8A7F63;">ASSIGNMENTS</span></div>
+      <div style="margin-top:12px;font-size:13px;line-height:2.05;color:#8A7F63;"><span data-ar="">لا تكليف بعد — وهذا طبيعي: <b style="color:#3E5A54;">التحقق يثبت القدرة ولا يخصص عملا.</b> حين يلائم تكليف قدرتك وجاهزيتك تخاطب على واتساب من رقم كيان الرسمي، ويظهر التكليف هنا بنطاقه وأجره المستقل.</span><span data-en="">No assignment yet, and that is normal: <b style="color:#3E5A54;">verification establishes capability; it does not allocate work.</b> When an assignment matches your capability and availability you are contacted on WhatsApp from Kayan’s official number, and it appears here with its scope and its independent fee.</span></div>
+      <div data-why="" style="margin-top:12px;"><span data-ar="">أجرك يقيد قبل أن يعرف سعر العميل، ولا يشتق منه — ويصرف عند القبول لا عند تحسن السيولة.</span><span data-en="">Your fee is recorded before the client’s price is known and is not derived from it. It is released on acceptance, not when cash flow improves.</span></div>
+    </div>
+    <div style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:18px;padding:20px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;"><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#052E2B;"><span data-ar="">قنوات الصرف</span><span data-en="">Payout channels</span></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:#8A7F63;">PAYOUT</span></div>
+      <sc-if value="{{ tBanksOn }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;">
+          <sc-for list="{{ tBanks }}" as="b" hint-placeholder-count="2">
+            <span style="border:1px solid #E0D6BD;background:#FBF7EA;border-radius:99px;padding:7px 13px;font-size:12.5px;color:#3E5A54;">{{ b }}</span>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ tBanksOff }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top:12px;font-size:13px;line-height:2;color:#8A7F63;"><span data-ar="">لم تقيد قناة صرف بعد — تضاف من محطة «الصرف» في التسجيل.</span><span data-en="">No payout channel is recorded yet. One is added from the “payout” step in registration.</span></div>
+      </sc-if>
+      <div style="margin-top:12px;font-size:11.5px;line-height:1.9;color:#8A7F63;"><span data-ar="">تستخدم البيانات عند أول مستحق فقط، ولا يطلع عليها غير موظفي الصرف. لا صرف عبر حوالات شخصية أو عملات رقمية.</span><span data-en="">The details are used only at the first payment due, and are seen by payout staff alone. No payment is made through personal transfers or digital currencies.</span></div>
+    </div>
+    <div style="background:#F0F5EC;border:1px solid #D9E3D2;border-radius:18px;padding:20px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;"><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#2F6B3A;"><span data-ar="">كيان لليمن</span><span data-en="">Kayan for Yemen</span></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:#6E8A5E;">K4Y HOURS</span></div>
+      <div style="margin-top:12px;font-size:13px;line-height:2;color:#4A6B64;">{{ tK4y }}</div>
+      <div style="margin-top:8px;display:flex;align-items:baseline;gap:8px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:26px;color:#2F6B3A;">{{ tK4yHours }}</span><span style="font-size:12px;color:#6E8A5E;"><span data-ar="">ساعة موثقة في سجل المدينة</span><span data-en="">hours recorded in the city register</span></span></div>
+    </div>
+  </div>
+
+  <div style="margin-top:14px;background:#FFFFFF;border:1px solid #E0D6BD;border-radius:18px;padding:20px;">
+    <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#052E2B;"><span data-ar="">سجلي — قيد بقيد</span><span data-en="">My record — entry by entry</span></div>
+    <div style="display:flex;flex-direction:column;gap:0;margin-top:8px;">
+      <sc-for list="{{ tLog }}" as="e" hint-placeholder-count="3">
+        <div style="display:flex;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px dashed #EFE8D5;">
+          <span dir="ltr" style="flex-shrink:0;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#B0A48A;">{{ e.d }}</span>
+          <span style="font-size:12.5px;line-height:1.85;color:#3E5A54;">{{ e.t }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ atPod }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="البوابة · غرفة الفريق" style="max-width:920px;margin:0 auto;">
+  <sc-if value="{{ podLocked }}" hint-placeholder-val="{{ true }}">
+    <div style="text-align:center;padding:clamp(30px,6vh,60px) 0;">
+      <div style="width:84px;height:84px;border-radius:50%;border:2px dashed #B9A8E8;display:inline-flex;align-items:center;justify-content:center;font-size:32px;" aria-hidden="true">🔒</div>
+      <h1 style="margin:18px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,36px);color:#052E2B;"><span data-ar="">الغرفة <b style="font-weight:700;color:#5B4A8E;">لم تفتح بعد</b></span><span data-en="">The room <b style="font-weight:700;color:#5B4A8E;">has not opened yet</b></span></h1>
+      <p style="margin:12px auto 0;max-width:56ch;font-size:14px;line-height:2.05;color:#4A6B64;"><span data-ar="">تفتح غرفة الفريق عند اجتماع شرطين: <b style="color:#052E2B;">تكليف قائم بضمان ممول، وفريق مشكل له</b>. لا غرف انتظار عندنا — الفريق وحدة تنفيذ لعمل قائم.</span><span data-en="">The pod room opens when two conditions meet: <b style="color:#052E2B;">a live assignment with funded escrow, and a pod formed for it.</b> There are no waiting rooms here; a pod is an execution unit for live work.</span></p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px;margin-top:24px;text-align:start;">
+        <div style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:18px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#5B4A8E;">PATH A</div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#052E2B;margin-top:8px;"><span data-ar="">تشكيل كيان</span><span data-en="">Formed by Kayan</span></div>
+          <p style="margin:7px 0 0;font-size:12.5px;line-height:2;color:#4A6B64;"><span data-ar="">عند توقيع نطاق عميل وتمويل ضمانه، تشكل كيان الفريق من السجل وتفتح الغرفة لأعضائه تلقائيا.</span><span data-en="">Once a client scope is signed and its escrow funded, Kayan forms the pod from the register and opens the room to its members automatically.</span></p>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:18px;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#5B4A8E;">PATH B</div>
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#052E2B;margin-top:8px;"><span data-ar="">فريق جاهز مسجل</span><span data-en="">A registered ready pod</span></div>
+          <p style="margin:7px 0 0;font-size:12.5px;line-height:2;color:#4A6B64;"><span data-ar="">فريق سجل من محطة «الفريق الجاهز» يعتمد وحدة واحدة بعد تحقق أعضائه، وتفتح غرفته عند أول تكليف يسند إليه. <a href="Kayan Apply.dc.html">سجل فريقك ←</a></span><span data-en="">A pod registered from the “ready pod” step is accredited as a single unit once its members are verified, and its room opens at the first assignment given to it. <a href="Kayan Apply.dc.html">Register your pod ←</a></span></p>
+        </div>
+      </div>
+      <div style="margin-top:16px;font-size:12.5px;color:#8A7F63;">{{ podLockHint }}</div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ podOpen }}" hint-placeholder-val="{{ false }}">
+    <div data-view="">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+        <div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#5B4A8E;">POD ROOM · {{ podCode }}</div>
+          <h1 style="margin:8px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,36px);color:#052E2B;">{{ podName }}</h1>
+          <div style="margin-top:6px;font-size:13px;color:#6E675A;"><span data-ar="">التكليف القائم:</span><span data-en="">Live assignment:</span> {{ cOutcome }}</div>
+        </div>
+        <span style="background:#EFEAF9;border:1px solid #D6CBEF;color:#5B4A8E;font-size:12px;font-weight:600;border-radius:99px;padding:8px 16px;"><span data-ar="">الغرفة مفتوحة — تكليف نشط</span><span data-en="">The room is open — assignment active</span></span>
+      </div>
+      <div style="margin-top:18px;background:#FFFFFF;border:1px solid #E0D6BD;border-radius:18px;overflow:hidden;">
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 110px;gap:12px;padding:12px 20px;background:#FBF7EA;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#8A7F63;"><span><span data-ar="">العضو</span><span data-en="">Member</span></span><span><span data-ar="">الدور</span><span data-en="">Role</span></span><span><span data-ar="">الحصة</span><span data-en="">Share</span></span></div>
+        <sc-for list="{{ podRows }}" as="m" hint-placeholder-count="3">
+          <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 110px;gap:12px;padding:13px 20px;border-top:1px solid #EFE8D5;align-items:baseline;">
+            <span style="font-size:13.5px;font-weight:600;color:#052E2B;">{{ m.name }}</span>
+            <span style="font-size:12.5px;color:#4A6B64;">{{ m.role }}</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#5B4A8E;">{{ m.share }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px;margin-top:14px;">
+        <div style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:18px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:14.5px;color:#052E2B;"><span data-ar="">الصرف مربوط بالقبول</span><span data-en="">Payment is tied to acceptance</span></div>
+          <p style="margin:7px 0 0;font-size:12.5px;line-height:2;color:#4A6B64;"><span data-ar="">تصرف الحصص من الضمان عند توقيع العميل محضر القبول — بالقسمة المعلنة أعلاه، ولا تعدل القسمة أثناء تكليف قائم.</span><span data-en="">Shares are released from escrow when the client signs the acceptance certificate, on the split declared above. The split is not amended during a live assignment.</span></p>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:18px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:14.5px;color:#052E2B;"><span data-ar="">نافذة واحدة للعميل</span><span data-en="">One window to the client</span></div>
+          <p style="margin:7px 0 0;font-size:12.5px;line-height:2;color:#4A6B64;"><span data-ar="">يخاطب العميل عبر كيان حصرا. نزاع الفريق يرفعه القائد إلى كيان — لا إلى العميل أبدا، وتحسم بالدليل من السجل.</span><span data-en="">The client is addressed through Kayan exclusively. A pod dispute is raised by the lead to Kayan, never to the client, and is settled on the evidence in the register.</span></p>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid #E0D6BD;border-radius:16px;padding:18px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:14.5px;color:#052E2B;"><span data-ar="">التعثر يعالج داخليا</span><span data-en="">Default is handled internally</span></div>
+          <p style="margin:7px 0 0;font-size:12.5px;line-height:2;color:#4A6B64;"><span data-ar="">تعثر عضو يبلغ مبكرا ويستبدل على حساب كيان — الموعد للعميل لا يتحرك، وسجل المبلغ مبكرا لا يمس.</span><span data-en="">A member’s default is reported early and replaced at Kayan’s cost. The client’s date does not move, and the record of whoever reported early is untouched.</span></p>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</section>
+</sc-if>
+</main>
+
+<footer style="background:#03201D;color:rgba(250,246,236,.65);padding:26px clamp(16px,3vw,32px);">
+  <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;">
+    <div style="display:flex;align-items:center;gap:10px;"><kayan-mark line="cream" tone="bright" aria-hidden="true" style="width:calc(1.175 * 26px);flex-shrink:0;opacity:.9;"></kayan-mark><span><span data-ar="">خلف كل نجاح، كيان</span><span data-en="">Behind every success, a Kayan.</span></span></div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <a href="Kayan Home.dc.html" style="color:rgba(250,246,236,.65);"><span data-ar="">الدار</span><span data-en="">Home</span></a>
+      <a href="Kayan Charter.dc.html" style="color:rgba(250,246,236,.65);"><span data-ar="">الميثاق</span><span data-en="">The Charter</span></a>
+      <a href="Kayan for Clients.dc.html" style="color:rgba(250,246,236,.65);"><span data-ar="">للعملاء</span><span data-en="">For clients</span></a>
+      <a href="Kayan for Talent.dc.html" style="color:rgba(250,246,236,.65);"><span data-ar="">للكفاءات</span><span data-en="">For talent</span></a>
+    </div>
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;">KHORMAKSAR · CORNICHE ST · ADEN</div>
+  </div>
+</footer>
+</div>
+<kayan-compass current="portal"></kayan-compass>

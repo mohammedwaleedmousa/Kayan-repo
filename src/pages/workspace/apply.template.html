@@ -1,0 +1,723 @@
+<div ref="{{ rootRef }}" dir="rtl" style="font-family:'IBM Plex Sans Arabic','Instrument Sans',sans-serif;color:#3A1B12;background:#F6EFE2;min-height:100vh;display:flex;flex-direction:column;">
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:80;background:rgba(46,15,10,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(208,64,47,.24);overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:url(assets/forge-grain.png);background-size:200px 200px;opacity:.14;mix-blend-mode:overlay;pointer-events:none;"></div>
+  <div style="position:relative;height:2px;background:linear-gradient(90deg,transparent,#D0402F 35%,#FF8A6B 50%,#D0402F 65%,transparent);"></div>
+  <div style="position:relative;max-width:1240px;margin:0 auto;padding:0 clamp(14px,3vw,32px);display:flex;align-items:center;gap:12px;height:64px;">
+    <a href="Kayan Home.dc.html" title="{{ x195 }}" style="display:flex;align-items:center;gap:10px;color:#FAF6EC;">
+      <img src="assets/forge-logo-ember.png" alt="كيان" style="height:44px;width:auto;display:block;">
+      <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15.5px;">{{ x0 }}</span>
+    </a>
+    <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:rgba(255,138,107,.75);border:1px solid rgba(208,64,47,.35);border-radius:99px;padding:5px 11px;">KYN-REG-01 · WORKING MODEL</span>
+    <div style="margin-inline-start:auto;display:flex;align-items:center;gap:8px;">
+      <div dir="ltr" style="display:flex;align-items:center;border:1px solid rgba(208,64,47,.4);border-radius:99px;overflow:hidden;flex-shrink:0;">
+        <button type="button" data-btn="" onClick="{{ pickAr }}" aria-pressed="{{ isAr }}" style="border:none;cursor:pointer;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12px;font-weight:600;padding:7px 15px;line-height:1.5;background:{{ arBg }};color:{{ arFg }};transition:background .25s ease,color .25s ease;">عربي</button>
+        <button type="button" data-btn="" onClick="{{ pickEn }}" aria-pressed="{{ isEn }}" style="border:none;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;padding:8px 13px;background:{{ enBg }};color:{{ enFg }};transition:background .25s ease,color .25s ease;">EN</button>
+      </div>
+      <a href="Kayan Portal.dc.html" data-hpill="" style="color:rgba(250,246,236,.75);font-size:12.5px;border:1px solid rgba(250,246,236,.25);border-radius:99px;padding:8px 14px;">{{ x1 }}</a>
+      <a href="Kayan for Talent.dc.html" data-hpill="" style="color:rgba(250,246,236,.75);font-size:12.5px;border:1px solid rgba(250,246,236,.25);border-radius:99px;padding:8px 14px;">{{ x2 }}</a>
+      <button type="button" data-btn="" onClick="{{ resetAll }}" title="{{ x200 }}" data-hpill="" style="background:transparent;border:1px solid rgba(250,246,236,.18);color:rgba(250,246,236,.5);font-size:12px;padding:8px 13px;border-radius:99px;cursor:pointer;">{{ x3 }}</button>
+    </div>
+  </div>
+  <div style="height:3px;background:rgba(250,246,236,.08);"><div style="height:100%;width:{{ progressPct }};background:linear-gradient(90deg,#D0402F,#FF8A6B);transition:width .5s cubic-bezier(.23,1,.32,1);"></div></div>
+</header>
+
+<div style="flex:1;width:100%;max-width:1240px;margin:0 auto;padding:calc(66px + clamp(18px,3vh,32px)) clamp(14px,3vw,32px) clamp(44px,7vh,72px);box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(16px,2.5vw,28px);align-items:start;" ref="{{ gridRef }}">
+
+<nav data-rail="" ref="{{ railRef }}" aria-label="{{ x201 }}" style="position:sticky;top:66px;z-index:40;display:flex;gap:0;overflow-x:auto;scrollbar-width:none;background:rgba(246,239,226,.94);backdrop-filter:blur(10px);padding:12px 0 10px;">
+  <sc-for list="{{ rail }}" as="s" hint-placeholder-count="14">
+    <button type="button" data-stn="" onClick="{{ s.go }}" title="{{ s.title }}" aria-current="{{ s.aria }}" style="flex:1 1 0;min-width:clamp(78px,7.6vw,104px);background:transparent;border:none;padding:0;cursor:{{ s.cursor }};display:flex;flex-direction:column;align-items:center;gap:7px;position:relative;opacity:{{ s.op }};">
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.14em;color:{{ s.numFg }};transition:color .18s ease;">{{ s.no }}</span>
+      <span aria-hidden="true" style="position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:16px;">
+        <i style="position:absolute;inset-inline-start:0;width:50%;height:1px;background:{{ s.lineA }};display:{{ s.lineAShow }};"></i>
+        <i style="position:absolute;inset-inline-end:0;width:50%;height:1px;background:{{ s.lineB }};display:{{ s.lineBShow }};"></i>
+        <i data-node="" style="position:relative;box-sizing:border-box;width:{{ s.dot }};height:{{ s.dot }};border-radius:99px;background:{{ s.nodeBg }};border:1.5px solid {{ s.nodeBd }};box-shadow:{{ s.nodeSh }};display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:{{ s.tickFg }};line-height:1;">{{ s.tick }}</i>
+      </span>
+      <span style="font-size:11px;line-height:1.35;text-align:center;color:{{ s.fg }};font-weight:{{ s.lw }};transition:color .18s ease;">{{ s.label }}</span>
+    </button>
+  </sc-for>
+</nav>
+
+<main data-stage-body="" style="min-width:0;max-width:100%;">
+
+<sc-if value="{{ st0 }}" hint-placeholder-val="{{ true }}">
+<section data-view="" data-screen-label="التسجيل · 00 التمهيد" style="max-width:860px;margin:0 auto;">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+    <div>
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#B8381F;">STATION 00 · ORIENTATION</div>
+      <h1 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(26px,4vw,40px);line-height:1.3;max-width:28ch;color:#3C1610;">{{ x4 }} <b style="font-weight:700;color:#B8381F;">{{ x5 }}</b></h1>
+      <p style="margin:12px 0 0;max-width:60ch;font-size:14.5px;line-height:2.05;color:#7A4530;">{{ x6 }}</p>
+    </div>
+    <kayan-mark line="forge" motion="glide" aria-hidden="true" style="width:calc(1.175 * 64px);flex-shrink:0;opacity:.85;"></kayan-mark>
+  </div>
+
+  <div data-facts="" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 14px;margin-top:24px;align-items:stretch;">
+    <sc-for list="{{ ackCards }}" as="c" hint-placeholder-count="6">
+      <button type="button" data-fact="" onClick="{{ c.toggle }}" aria-pressed="{{ c.on }}" style="text-align:start;cursor:pointer;min-height:160px;box-sizing:border-box;background:{{ c.bg }};border:1px solid {{ c.bd }};border-radius:16px;padding:20px 22px 18px;box-shadow:{{ c.sh }};display:flex;flex-direction:column;gap:12px;">
+        <span style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.14em;color:{{ c.noFg }};">{{ c.no }}</span>
+          <span aria-hidden="true" style="flex-shrink:0;box-sizing:border-box;width:28px;height:28px;border-radius:99px;background:{{ c.dotBg }};border:1px solid {{ c.dotBd }};display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:{{ c.dotFg }};line-height:1;transition:background-color .18s ease,border-color .18s ease;">{{ c.mark }}</span>
+        </span>
+        <span style="display:flex;flex-direction:column;gap:7px;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;line-height:1.35;color:#3F1D16;">{{ c.t }}</span>
+          <span style="font-size:13px;line-height:1.9;color:rgba(112,65,48,.86);max-width:44ch;">{{ c.b }}</span>
+        </span>
+        <span dir="ltr" style="margin-top:auto;align-self:flex-end;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:{{ c.metaFg }};transition:color .18s ease;">{{ c.meta }}</span>
+      </button>
+    </sc-for>
+  </div>
+
+  <div style="margin-top:26px;background:#FFFFFF;border:1px solid #E3D5C6;border-radius:18px;overflow:hidden;">
+    <div style="padding:16px 20px;border-bottom:1px solid #F1E7DA;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#3C1610;">{{ x7 }}</div>
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:{{ scrollHintColor }};">{{ scrollHint }}</div>
+    </div>
+    <div ref="{{ termsRef }}" style="max-height:340px;overflow-y:auto;padding:20px 22px 18px;font-size:13px;line-height:1.9;color:rgba(112,65,48,.86);">
+      <sc-for list="{{ compact }}" as="cl" hint-placeholder-count="14">
+        <p data-clause="" style="margin:0 0 14px;padding-inline-start:14px;border-inline-start:2px solid rgba(96,55,42,.13);"><b dir="ltr" style="display:inline-block;min-width:22px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.14em;color:rgba(110,64,48,.48);">{{ cl.n }}</b> {{ cl.t }}</p>
+      </sc-for>
+      <p style="margin:8px 0 4px;color:#8B7565;font-size:12.5px;">{{ x8 }}</p>
+    </div>
+    <div style="padding:14px 20px;border-top:1px solid #F1E7DA;background:#FDF7EE;">
+      <button type="button" data-btn="" onClick="{{ toggleHonesty }}" aria-pressed="{{ honestyOn }}" style="display:flex;align-items:center;gap:11px;background:transparent;border:none;cursor:{{ honestyCursor }};padding:6px 2px;text-align:start;opacity:{{ honestyOpacity }};width:100%;">
+        <span aria-hidden="true" style="flex-shrink:0;width:24px;height:24px;border-radius:7px;border:2px solid {{ honestyBoxBd }};background:{{ honestyBoxBg }};color:#FAF6EC;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;">{{ honestyMark }}</span>
+        <span style="font-size:14px;color:#3A1B12;line-height:1.9;">{{ x9 }} <b style="color:#B8381F;">{{ honestyNote }}</b></span>
+      </button>
+    </div>
+  </div>
+
+  <div style="margin-top:22px;background:#3C1610;border:1px solid rgba(255,138,107,.18);border-radius:16px;padding:20px 22px 18px;color:#FAF6EC;">
+    <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;line-height:1.35;color:#FF8A6B;">{{ x10 }}</div>
+    <div data-qgrid="" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px;margin-top:14px;">
+      <div>
+        <div style="font-size:13.5px;line-height:1.95;color:rgba(250,246,236,.85);">{{ x11 }}</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+          <sc-for list="{{ q1opts }}" as="o" hint-placeholder-count="3">
+            <button type="button" onClick="{{ o.pick }}" style="text-align:start;cursor:pointer;font-size:13px;line-height:1.8;padding:10px 14px;border-radius:11px;border:1px solid {{ o.bd }};background:{{ o.bg }};color:{{ o.fg }};min-height:44px;">{{ o.t }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:13.5px;line-height:1.95;color:rgba(250,246,236,.85);">{{ x12 }}</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+          <sc-for list="{{ q2opts }}" as="o" hint-placeholder-count="3">
+            <button type="button" onClick="{{ o.pick }}" style="text-align:start;cursor:pointer;font-size:13px;line-height:1.8;padding:10px 14px;border-radius:11px;border:1px solid {{ o.bd }};background:{{ o.bg }};color:{{ o.fg }};min-height:44px;">{{ o.t }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <div style="font-size:12.5px;color:rgba(250,246,236,.6);margin-top:12px;">{{ compFeedback }}</div>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap;">
+    <div style="font-size:12.5px;color:#8B7565;">{{ st0Hint }}</div>
+    <button type="button" data-btn="" onClick="{{ next }}" style="background:{{ nextBg }};color:{{ nextFg }};border:none;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:12px;cursor:{{ nextCursor }};">{{ x13 }}</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ st1 }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="التسجيل · 01 الحساب" style="max-width:760px;margin:0 auto;">
+  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#B8381F;">STATION 01 · ACCOUNT</div>
+  <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px);line-height:1.28;max-width:30ch;color:#3C1610;">{{ x14 }} <b style="font-weight:700;color:#B8381F;">{{ x15 }}</b></h2>
+  <p style="margin:10px 0 0;font-size:14px;line-height:2;color:#7A4530;">{{ x16 }}</p>
+  <div data-why="" style="margin-top:14px;">{{ x17 }}</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:20px;">
+    <label><b>{{ x18 }}</b><input type="text" value="{{ accName }}" onInput="{{ setAccName }}" placeholder="{{ x202 }}"></label>
+    <label><b>{{ x19 }}</b><input type="tel" dir="ltr" value="{{ accWa }}" onInput="{{ setAccWa }}" placeholder="+967 7X XXX XXXX"></label>
+    <label><b>{{ x20 }}</b><input type="email" dir="ltr" value="{{ accEmail }}" onInput="{{ setAccEmail }}" placeholder="name@example.com"></label>
+    <label><b>{{ x21 }}</b><input type="password" dir="ltr" value="{{ accPw }}" onInput="{{ setAccPw }}" placeholder="{{ x203 }}"></label>
+  </div>
+  <div style="margin-top:18px;background:#FFFFFF;border:1px solid #E3D5C6;border-radius:14px;padding:16px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;">
+    <div style="flex:1 1 260px;min-width:0;">
+      <div style="font-size:13.5px;font-weight:600;color:#6B3524;">{{ x22 }}</div>
+      <div style="font-size:12.5px;color:#8B7565;line-height:1.9;margin-top:4px;">{{ codeHint }}</div>
+    </div>
+    <sc-if value="{{ codeSent }}" hint-placeholder-val="{{ false }}">
+      <input type="text" dir="ltr" value="{{ accCode }}" onInput="{{ setAccCode }}" placeholder="— — — —" maxLength="4" style="width:120px;text-align:center;font-family:'IBM Plex Mono',monospace;letter-spacing:.3em;">
+    </sc-if>
+    <button type="button" data-btn="" data-codebtn="" onClick="{{ sendCode }}" style="background:{{ codeBtnBg }};color:{{ codeBtnFg }};border:1px solid #C4381F;font-size:13px;font-weight:600;padding:11px 18px;border-radius:10px;cursor:pointer;">{{ codeBtnLabel }}</button>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap;">
+    <button type="button" data-btn="" onClick="{{ back }}" style="background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:13.5px;padding:12px 22px;border-radius:12px;cursor:pointer;">{{ x23 }}</button>
+    <div style="font-size:12.5px;color:#8B7565;">{{ st1Hint }}</div>
+    <button type="button" data-btn="" onClick="{{ next }}" style="background:{{ nextBg }};color:{{ nextFg }};border:none;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:12px;cursor:{{ nextCursor }};">{{ x24 }}</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ st2 }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="التسجيل · 02 الهوية" style="max-width:860px;margin:0 auto;">
+  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#B8381F;">STATION 02 · IDENTITY</div>
+  <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px);line-height:1.28;max-width:30ch;color:#3C1610;">{{ x25 }} <b style="font-weight:700;color:#B8381F;">{{ x26 }}</b></h2>
+  <p style="margin:10px 0 0;font-size:14px;line-height:2;color:#7A4530;">{{ x27 }}</p>
+  <div data-why="" style="margin-top:14px;">{{ y0 }}</div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;margin-top:20px;">
+    <label style="grid-column:1/-1;"><b>{{ x28 }}</b><input type="text" value="{{ idLegal }}" onInput="{{ setIdLegal }}" placeholder="{{ x204 }}"></label>
+    <label><b>{{ x29 }}</b><input type="date" value="{{ idDob }}" onInput="{{ setIdDob }}" max="2010-12-31" min="1940-01-01"></label>
+    <label><b>{{ x30 }}</b><select value="{{ idSex }}" onChange="{{ setIdSex }}"><option value="">{{ x31 }}</option><option value="ذكر">{{ x32 }}</option><option value="أنثى">{{ x33 }}</option></select></label>
+    <label><b>{{ x34 }}</b><input type="text" value="{{ idNat }}" onInput="{{ setIdNat }}" placeholder="{{ x205 }}"></label>
+    <label><b>{{ x35 }}</b><select value="{{ idGov }}" onChange="{{ setIdGov }}"><option value="">{{ x31 }}</option><sc-for list="{{ govOpts }}" as="g" hint-placeholder-count="23"><option value="{{ g.v }}">{{ g.t }}</option></sc-for></select></label>
+    <label><b>{{ x36 }}</b><input type="text" value="{{ idCity }}" onInput="{{ setIdCity }}" placeholder="{{ x206 }}"></label>
+    <sc-if value="{{ abroadOn }}" hint-placeholder-val="{{ false }}"><label><b>{{ x37 }}</b><input type="text" value="{{ idCountry }}" onInput="{{ setIdCountry }}" placeholder="{{ x207 }}"></label></sc-if>
+    <label><b>{{ x38 }}</b><select value="{{ idType }}" onChange="{{ setIdType }}"><option value="">{{ x31 }}</option><sc-for list="{{ idTypeOpts }}" as="t" hint-placeholder-count="4"><option value="{{ t.v }}">{{ t.t }}</option></sc-for></select></label>
+    <label><b>{{ x39 }}</b><input type="text" dir="ltr" value="{{ idNum }}" onInput="{{ setIdNum }}" placeholder="XXXXXXXX"></label>
+    <label><b>{{ x40 }}</b><input type="date" value="{{ idExp }}" onInput="{{ setIdExp }}" min="2026-08-11"></label>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:22px;">
+    <div style="background:#FFFFFF;border:1px solid #E3D5C6;border-radius:16px;padding:16px 18px;">
+      <div style="font-size:13.5px;font-weight:600;color:#6B3524;">{{ x41 }}</div>
+      <div style="font-size:12px;color:#8B7565;line-height:1.85;margin-top:5px;">{{ x42 }}</div>
+      <input type="file" accept="image/jpeg,image/png,application/pdf" onChange="{{ pickFront }}" style="margin-top:11px;">
+      <div style="font-size:12.5px;margin-top:8px;color:{{ frontMsgColor }};">{{ frontMsg }}</div>
+    </div>
+    <div style="background:#FFFFFF;border:1px solid #E3D5C6;border-radius:16px;padding:16px 18px;">
+      <div style="font-size:13.5px;font-weight:600;color:#6B3524;">{{ x43 }}</div>
+      <div style="font-size:12px;color:#8B7565;line-height:1.85;margin-top:5px;">{{ x44 }}</div>
+      <input type="file" accept="image/jpeg,image/png,application/pdf" onChange="{{ pickBack }}" style="margin-top:11px;">
+      <div style="font-size:12.5px;margin-top:8px;color:{{ backMsgColor }};">{{ backMsg }}</div>
+    </div>
+  </div>
+
+  <div style="margin-top:22px;background:#3C1610;border-radius:18px;padding:20px 22px;color:#FAF6EC;">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+      <div style="flex:1 1 320px;min-width:0;">
+        <div data-cap="" style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#FF8A6B;">{{ x45 }}</div>
+        <p style="margin:8px 0 0;font-size:13px;line-height:2;color:rgba(250,246,236,.8);">{{ y1 }}<b style="color:#FF8A6B;">{{ y2 }}</b></p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
+          <sc-for list="{{ liveChecks }}" as="c" hint-placeholder-count="4">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid {{ c.bd }};color:{{ c.fg }};border-radius:99px;padding:5px 10px;">{{ c.t }}</span>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:10px;">
+        <div style="width:168px;height:168px;border-radius:50%;overflow:hidden;border:3px solid {{ selfieRing }};background:#2E0F0A;display:flex;align-items:center;justify-content:center;position:relative;">
+          <video ref="{{ videoRef }}" autoPlay="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" style="width:100%;height:100%;object-fit:cover;display:{{ videoDisp }};transform:scaleX(-1);"></video>
+          <sc-if value="{{ selfieHas }}" hint-placeholder-val="{{ false }}"><img ref="{{ selfieRef }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="{{ x208 }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></sc-if>
+          <sc-if value="{{ camIdle }}" hint-placeholder-val="{{ true }}"><span style="font-size:34px;" aria-hidden="true">◉</span></sc-if>
+        </div>
+        <div style="font-size:12px;color:#FF8A6B;min-height:18px;text-align:center;">{{ camPrompt }}</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
+          <button type="button" data-btn="" onClick="{{ startCam }}" style="background:linear-gradient(135deg,#D0402F,#FF8A6B);color:#2E0F0A;border:none;font-size:12.5px;font-weight:700;padding:10px 16px;border-radius:99px;cursor:pointer;">{{ camBtnLabel }}</button>
+          <sc-if value="{{ camOn }}" hint-placeholder-val="{{ false }}"><button type="button" data-btn="" onClick="{{ snapSelfie }}" style="background:#FAF6EC;color:#3C1610;border:none;font-size:12.5px;font-weight:700;padding:10px 16px;border-radius:99px;cursor:pointer;">{{ x46 }}</button></sc-if>
+        </div>
+        <label style="color:rgba(250,246,236,.55);font-size:11.5px;align-items:center;">{{ x47 }}<input type="file" accept="image/jpeg,image/png" onChange="{{ pickSelfie }}" style="margin-top:6px;background:rgba(250,246,236,.06);border-color:rgba(250,246,236,.2);color:#FAF6EC;font-size:11px;padding:8px;"></label>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap;">
+    <button type="button" data-btn="" onClick="{{ back }}" style="background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:13.5px;padding:12px 22px;border-radius:12px;cursor:pointer;">{{ x23 }}</button>
+    <div style="font-size:12.5px;color:#8B7565;">{{ st2Hint }}</div>
+    <button type="button" data-btn="" onClick="{{ next }}" style="background:{{ nextBg }};color:{{ nextFg }};border:none;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:12px;cursor:{{ nextCursor }};">{{ x24 }}</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ st3 }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="التسجيل · 03 الملف المهني" style="max-width:760px;margin:0 auto;">
+  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#B8381F;">STATION 03 · PROFILE</div>
+  <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px);line-height:1.28;max-width:30ch;color:#3C1610;">{{ x48 }} <b style="font-weight:700;color:#B8381F;">{{ x49 }}</b></h2>
+  <p style="margin:10px 0 0;font-size:14px;line-height:2;color:#7A4530;">{{ y3 }}</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;margin-top:20px;">
+    <label><b>{{ x50 }}</b><select value="{{ pEdu }}" onChange="{{ setPEdu }}"><option value="">{{ x31 }}</option><option>{{ x51 }}</option><option>{{ x52 }}</option><option>{{ x53 }}</option><option>{{ x54 }}</option><option>{{ x55 }}</option><option>{{ x56 }}</option></select></label>
+    <label><b>{{ x57 }}</b><select value="{{ pYears }}" onChange="{{ setPYears }}"><option value="">{{ x31 }}</option><option>{{ x58 }}</option><option>{{ x59 }}</option><option>{{ x60 }}</option><option>{{ x61 }}</option><option>{{ x62 }}</option></select></label>
+    <label><b>{{ x63 }}</b><select value="{{ pStatus }}" onChange="{{ setPStatus }}"><option value="">{{ x31 }}</option><option>{{ x64 }}</option><option>{{ x65 }}</option><option>{{ x66 }}</option><option>{{ x67 }}</option><option>{{ x68 }}</option></select></label>
+    <label><b>{{ x69 }}</b><select value="{{ pHours }}" onChange="{{ setPHours }}"><option value="">{{ x31 }}</option><option>{{ x70 }}</option><option>10–20</option><option>20–35</option><option>{{ x71 }}</option></select></label>
+    <label><b>{{ x72 }}</b><select value="{{ pDevice }}" onChange="{{ setPDevice }}"><option value="">{{ x31 }}</option><option>{{ x73 }}</option><option>{{ x74 }}</option><option>{{ x75 }}</option><option>{{ x76 }}</option><option>{{ x77 }}</option></select></label>
+    <label><b>{{ x78 }}</b><select value="{{ pNet }}" onChange="{{ setPNet }}"><option value="">{{ x31 }}</option><option>{{ x79 }}</option><option>{{ x80 }}</option><option>{{ x81 }}</option><option>{{ x82 }}</option><option>{{ x83 }}</option></select></label>
+    <label><b>{{ x84 }}</b><select value="{{ pPower }}" onChange="{{ setPPower }}"><option value="">{{ x31 }}</option><option>{{ x85 }}</option><option>{{ x86 }}</option><option>{{ x87 }}</option><option>{{ x88 }}</option></select></label>
+    <label><b>{{ x89 }}</b><select value="{{ pBackup }}" onChange="{{ setPBackup }}"><option value="">{{ x31 }}</option><option>{{ x90 }}</option><option>{{ x91 }}</option><option>{{ x92 }}</option><option>{{ x93 }}</option></select></label>
+  </div>
+  <div data-why="" style="margin-top:16px;">{{ y4 }}</div>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap;">
+    <button type="button" data-btn="" onClick="{{ back }}" style="background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:13.5px;padding:12px 22px;border-radius:12px;cursor:pointer;">{{ x23 }}</button>
+    <div style="font-size:12.5px;color:#8B7565;">{{ st3Hint }}</div>
+    <button type="button" data-btn="" onClick="{{ next }}" style="background:{{ nextBg }};color:{{ nextFg }};border:none;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:12px;cursor:{{ nextCursor }};">{{ x24 }}</button>
+  </div>
+</section>
+</sc-if>
+<sc-if value="{{ st4 }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="التسجيل · 04 التخصصات" style="max-width:920px;margin:0 auto;">
+  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#B8381F;">STATION 04 · SPECIALISATIONS</div>
+  <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px);line-height:1.28;max-width:30ch;color:#3C1610;">{{ x94 }} <b style="font-weight:700;color:#B8381F;">{{ x95 }}</b></h2>
+  <p style="margin:10px 0 0;font-size:14px;line-height:2;color:#7A4530;">{{ y5 }}</p>
+  <div data-why="" style="margin-top:14px;">{{ y6 }}</div>
+
+  <div style="margin-top:20px;background:#FFFFFF;border:1px solid #E3D5C6;border-radius:16px;padding:16px 18px;">
+    <label><b>{{ x96 }}</b><input type="text" value="{{ specSearch }}" onInput="{{ setSpecSearch }}" placeholder="{{ x209 }}"></label>
+    <sc-if value="{{ specResultsOn }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:12px;">
+        <sc-for list="{{ specResults }}" as="r" hint-placeholder-count="5">
+          <button type="button" onClick="{{ r.add }}" style="text-align:start;cursor:pointer;display:flex;align-items:center;gap:10px;background:#FDF7EE;border:1px solid #F1E7DA;border-radius:11px;padding:11px 14px;min-height:44px;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#B8381F;border:1px solid #EADFCE;border-radius:6px;padding:3px 7px;">{{ r.code }}</span>
+            <span style="font-size:13.5px;color:#3A1B12;font-weight:600;">{{ r.t }}</span>
+            <span style="font-size:12px;color:#8B7565;">{{ r.sub }}</span>
+            <span style="margin-inline-start:auto;color:#C4381F;font-weight:700;">{{ x97 }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </sc-if>
+    <sc-if value="{{ noMatch }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#FDF6EC;border:1px dashed #FF9E7E;border-radius:11px;padding:12px 14px;">
+        <span style="font-size:13px;color:#8E2E1A;line-height:1.9;">{{ y7 }}</span>
+        <button type="button" data-btn="" onClick="{{ proposeTerm }}" style="background:#B8381F;color:#FAF6EC;border:none;border-radius:9px;font-size:12.5px;font-weight:600;padding:9px 16px;cursor:pointer;">{{ x98 }}</button>
+      </div>
+    </sc-if>
+    <sc-if value="{{ proposalsOn }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:10px;font-size:12px;color:#C4381F;">{{ x99 }} <sc-for list="{{ proposals }}" as="p" hint-placeholder-count="1"><b>«{{ p }}» </b></sc-for>{{ x100 }}</div>
+    </sc-if>
+  </div>
+
+  <div style="margin-top:16px;">
+    <div style="font-size:13px;color:#6E5C51;margin-bottom:10px;">{{ x101 }}</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,206px),1fr));gap:10px;">
+      <sc-for list="{{ famList }}" as="f" hint-placeholder-count="12">
+        <button type="button" data-fam="" data-on="{{ f.open }}" onClick="{{ f.toggle }}" aria-expanded="{{ f.open }}" style="cursor:pointer;box-sizing:border-box;width:100%;text-align:start;position:relative;overflow:hidden;background:{{ f.bg }};color:{{ f.fg }};border:1px solid {{ f.bd }};border-radius:14px;padding:14px 15px 13px;display:flex;flex-direction:column;gap:9px;min-height:104px;">
+          <span aria-hidden="true" data-famrule="" style="position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:{{ f.rule }};"></span>
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+            <span dir="ltr" data-famcode="" style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;letter-spacing:.1em;color:{{ f.codeFg }};">{{ f.c }}</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:{{ f.metaFg }};">{{ f.n }}</span>
+          </span>
+          <span style="display:flex;flex-direction:column;gap:3px;min-width:0;">
+            <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:13.5px;line-height:1.35;">{{ f.a }}</span>
+            <span data-famalt="" dir="{{ f.altDir }}" style="font-family:{{ f.altFont }};font-size:11px;line-height:1.5;color:{{ f.metaFg }};">{{ f.e }}</span>
+          </span>
+        </button>
+      </sc-for>
+    </div>
+    <sc-for list="{{ famList }}" as="f" hint-placeholder-count="0">
+      <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+        <div data-view="" style="margin-top:12px;background:#FFFFFF;border:1px solid #E3D5C6;border-radius:14px;overflow:hidden;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 15px;border-bottom:1px solid #EFE6DA;background:#FDF9F3;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:rgba(110,64,48,.6);">{{ f.c }} · SPECIALISATIONS</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:rgba(110,64,48,.45);">{{ f.n }}</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,268px),1fr));gap:1px;background:#EFE6DA;">
+            <sc-for list="{{ f.specs }}" as="sp" hint-placeholder-count="6">
+              <button type="button" data-spec="" data-on="{{ sp.on }}" aria-pressed="{{ sp.on }}" onClick="{{ sp.add }}" style="all:unset;box-sizing:border-box;cursor:pointer;position:relative;display:flex;align-items:center;gap:11px;width:100%;padding:13px 15px;background:#FFFFFF;min-height:56px;">
+                <span aria-hidden="true" data-specrule="" style="position:absolute;inset-inline-start:0;top:0;bottom:0;width:0;background:#C4381F;"></span>
+                <span data-specbox="" aria-hidden="true" style="flex:none;box-sizing:border-box;width:17px;height:17px;border-radius:5px;border:1.5px solid #DCCBB9;display:flex;align-items:center;justify-content:center;font-size:9px;line-height:1;color:#FFFFFF;">{{ sp.tick }}</span>
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0;">
+                  <span style="font-size:13px;line-height:1.4;color:#3A1B12;">{{ sp.t }}</span>
+                  <span dir="ltr" data-speccode="" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:rgba(110,64,48,.45);">{{ sp.code }}</span>
+                </span>
+              </button>
+            </sc-for>
+          </div>
+          </sc-if>
+        </div>
+      </sc-if>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ pickedOn }}" hint-placeholder-val="{{ false }}">
+    <div style="margin-top:22px;display:flex;flex-direction:column;gap:14px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#3C1610;">{{ cSel }}</div>
+      <sc-for list="{{ pickedSpecs }}" as="x" hint-placeholder-count="1">
+        <div style="background:#FFFFFF;border:1.5px solid #E3D5C6;border-radius:18px;padding:18px;">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#B8381F;border:1px solid #EADFCE;border-radius:6px;padding:3px 7px;">{{ x.code }}</span>
+            <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#3C1610;">{{ x.name }}</span>
+            <span style="font-size:11.5px;color:#8B7565;">{{ x.fam }}</span>
+            <span style="font-size:11px;font-weight:700;color:#B8381F;border:1px solid #EADFCE;background:#FDF6EC;border-radius:99px;padding:4px 10px;">{{ x.badge }}</span>
+            <div style="margin-inline-start:auto;display:flex;gap:8px;">
+              <button type="button" onClick="{{ x.makePrimary }}" style="background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:11.5px;border-radius:99px;padding:6px 12px;cursor:pointer;">{{ x102 }}</button>
+              <button type="button" onClick="{{ x.remove }}" style="background:transparent;border:1px solid #F7DBD2;color:#B44228;font-size:11.5px;border-radius:99px;padding:6px 12px;cursor:pointer;">{{ x103 }}</button>
+            </div>
+          </div>
+          <sc-if value="{{ x.hasMicros }}" hint-placeholder-val="{{ false }}">
+          <div style="font-size:12.5px;color:#6E5C51;margin:14px 0 8px;">{{ x.cMicro }}</div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;max-height:220px;overflow-y:auto;padding:2px;">
+            <sc-for list="{{ x.micros }}" as="m" hint-placeholder-count="6">
+              <button type="button" data-chip="" data-on="{{ m.on }}" onClick="{{ m.toggle }}" style="font-size:12px;padding:8px 12px;min-height:38px;">{{ m.t }}</button>
+            </sc-for>
+          </div>
+          </sc-if>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px;">
+            <span style="font-size:12.5px;color:#6E5C51;">{{ x104 }}</span>
+            <div style="display:flex;gap:6px;">
+              <sc-for list="{{ x.rating }}" as="r" hint-placeholder-count="5">
+                <button type="button" onClick="{{ r.pick }}" aria-label="{{ cGrade }}" style="width:38px;height:38px;border-radius:10px;cursor:pointer;border:1.5px solid {{ r.bd }};font-weight:700;font-size:13px;background:{{ r.bg }};color:#3C1610;">{{ r.n }}</button>
+              </sc-for>
+            </div>
+            <span style="font-size:12.5px;color:#B8381F;font-weight:600;">{{ x.ratingLabel }}</span>
+          </div>
+        </div>
+      </sc-for>
+      <div data-why="">{{ y8 }}</div>
+    </div>
+  </sc-if>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap;">
+    <button type="button" data-btn="" onClick="{{ back }}" style="background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:13.5px;padding:12px 22px;border-radius:12px;cursor:pointer;">{{ x23 }}</button>
+    <div style="font-size:12.5px;color:#8B7565;">{{ st4Hint }}</div>
+    <button type="button" data-btn="" onClick="{{ next }}" style="background:{{ nextBg }};color:{{ nextFg }};border:none;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:12px;cursor:{{ nextCursor }};">{{ x24 }}</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ st5 }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="التسجيل · 05 اللغات" style="max-width:860px;margin:0 auto;">
+  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#B8381F;">STATION 05 · LANGUAGES</div>
+  <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px);line-height:1.28;max-width:30ch;color:#3C1610;">{{ x105 }} <b style="font-weight:700;color:#B8381F;">{{ x106 }}</b></h2>
+  <p style="margin:10px 0 0;font-size:14px;line-height:2;color:#7A4530;">{{ y9 }}</p>
+  <div data-why="" style="margin-top:14px;">{{ y10 }}</div>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-top:20px;">
+    <sc-for list="{{ langRows }}" as="l" hint-placeholder-count="1">
+      <div style="background:#FFFFFF;border:1px solid #E3D5C6;border-radius:16px;padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px;align-items:end;">
+        <label><b>{{ x107 }}</b><select value="{{ l.lang }}" onChange="{{ l.setLang }}"><option value="">{{ x31 }}</option><sc-for list="{{ l.langOpts }}" as="o" hint-placeholder-count="19"><option value="{{ o.v }}">{{ o.t }}</option></sc-for></select></label>
+        <label><b>{{ x108 }}</b><select value="{{ l.level }}" onChange="{{ l.setLevel }}"><option value="">{{ x31 }}</option><sc-for list="{{ l.levelOpts }}" as="o" hint-placeholder-count="7"><option value="{{ o.v }}">{{ o.t }}</option></sc-for></select></label>
+        <label><b>{{ x109 }}</b><select value="{{ l.proof }}" onChange="{{ l.setProof }}"><sc-for list="{{ l.proofOpts }}" as="o" hint-placeholder-count="3"><option value="{{ o.v }}">{{ o.t }}</option></sc-for></select></label>
+        <sc-if value="{{ l.certOn }}" hint-placeholder-val="{{ false }}">
+          <label><b>{{ x110 }}</b><input type="file" accept="image/*,application/pdf" onChange="{{ l.pickCert }}"><span style="font-size:11.5px;color:#8B7565;">{{ l.certName }}</span></label>
+        </sc-if>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;grid-column:1/-1;">
+          <span style="font-size:12px;color:#8B7565;line-height:1.8;">{{ l.proofDesc }}</span>
+          <sc-if value="{{ l.removable }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ l.remove }}" style="background:transparent;border:1px solid #F7DBD2;color:#B44228;font-size:11.5px;border-radius:99px;padding:6px 12px;cursor:pointer;flex-shrink:0;">{{ x103 }}</button></sc-if>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <button type="button" data-btn="" onClick="{{ addLang }}" style="margin-top:12px;background:transparent;border:1.5px dashed #CDB9A7;color:#6E5C51;font-size:13px;padding:12px 20px;border-radius:12px;cursor:pointer;width:100%;">{{ x111 }}</button>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap;">
+    <button type="button" data-btn="" onClick="{{ back }}" style="background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:13.5px;padding:12px 22px;border-radius:12px;cursor:pointer;">{{ x23 }}</button>
+    <div style="font-size:12.5px;color:#8B7565;">{{ st5Hint }}</div>
+    <button type="button" data-btn="" onClick="{{ next }}" style="background:{{ nextBg }};color:{{ nextFg }};border:none;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:12px;cursor:{{ nextCursor }};">{{ x24 }}</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ st6 }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="التسجيل · 06 الإثباتات" style="max-width:860px;margin:0 auto;">
+  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#B8381F;">STATION 06 · EVIDENCE</div>
+  <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px);line-height:1.28;max-width:30ch;color:#3C1610;">{{ x112 }} <b style="font-weight:700;color:#B8381F;">{{ x113 }}</b></h2>
+  <p style="margin:10px 0 0;font-size:14px;line-height:2;color:#7A4530;">{{ y11 }}</p>
+  <div data-why="" style="margin-top:14px;">{{ y12 }}</div>
+  <div style="margin-top:20px;background:#FFFFFF;border:1.5px dashed #CDB9A7;border-radius:16px;padding:18px;text-align:center;">
+    <div style="font-size:13.5px;color:#6E5C51;line-height:1.9;">{{ x114 }}</div>
+    <input type="file" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" onChange="{{ addDoc }}" style="margin-top:10px;max-width:420px;background:#FDF7EE;">
+  </div>
+  <sc-if value="{{ docsOn }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:14px;">
+      <sc-for list="{{ docRows }}" as="d" hint-placeholder-count="1">
+        <div style="background:#FFFFFF;border:1px solid #E3D5C6;border-radius:14px;padding:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px;align-items:end;">
+          <div style="grid-column:1/-1;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span aria-hidden="true" style="width:34px;height:34px;border-radius:9px;background:#FDF6EC;border:1px solid #EADFCE;display:inline-flex;align-items:center;justify-content:center;font-size:15px;">🗎</span>
+            <span dir="ltr" style="font-size:12.5px;color:#3A1B12;font-weight:600;">{{ d.file }}</span>
+            <span dir="ltr" style="font-size:11px;color:#8B7565;">{{ d.size }}</span>
+            <button type="button" onClick="{{ d.remove }}" style="margin-inline-start:auto;background:transparent;border:1px solid #F7DBD2;color:#B44228;font-size:11.5px;border-radius:99px;padding:6px 12px;cursor:pointer;">{{ x103 }}</button>
+          </div>
+          <label><b>{{ x115 }}</b><select value="{{ d.kind }}" onChange="{{ d.setKind }}"><sc-for list="{{ docKindOpts }}" as="k" hint-placeholder-count="8"><option value="{{ k }}">{{ k }}</option></sc-for></select></label>
+          <label><b>{{ x116 }}</b><input type="text" value="{{ d.issuer }}" onInput="{{ d.setIssuer }}" placeholder="{{ x210 }}"></label>
+          <label><b>{{ x117 }}</b><input type="number" dir="ltr" value="{{ d.year }}" onInput="{{ d.setYear }}" min="1980" max="2026" placeholder="2024"></label>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+  <div style="margin-top:18px;">
+    <div style="font-size:13px;color:#6E5C51;margin-bottom:8px;">{{ x118 }}</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <sc-for list="{{ linkRows }}" as="l" hint-placeholder-count="1">
+        <div style="display:flex;gap:8px;align-items:center;">
+          <input type="url" dir="ltr" value="{{ l.v }}" onInput="{{ l.set }}" placeholder="https://behance.net/... · https://github.com/...">
+          <button type="button" onClick="{{ l.remove }}" aria-label="{{ x211 }}" style="flex-shrink:0;background:transparent;border:1px solid #F7DBD2;color:#B44228;font-size:12px;border-radius:10px;padding:10px 13px;cursor:pointer;min-height:44px;">×</button>
+        </div>
+      </sc-for>
+    </div>
+    <button type="button" data-btn="" onClick="{{ addLink }}" style="margin-top:8px;background:transparent;border:1.5px dashed #CDB9A7;color:#6E5C51;font-size:12.5px;padding:10px 18px;border-radius:10px;cursor:pointer;">{{ x119 }}</button>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap;">
+    <button type="button" data-btn="" onClick="{{ back }}" style="background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:13.5px;padding:12px 22px;border-radius:12px;cursor:pointer;">{{ x23 }}</button>
+    <div style="font-size:12.5px;color:#8B7565;">{{ st6Hint }}</div>
+    <button type="button" data-btn="" onClick="{{ next }}" style="background:{{ nextBg }};color:{{ nextFg }};border:none;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:12px;cursor:{{ nextCursor }};">{{ x24 }}</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ st7 }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="التسجيل · 07 الفريق الجاهز" style="max-width:860px;margin:0 auto;">
+  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#B8381F;">STATION 07 · READY POD</div>
+  <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px);line-height:1.28;max-width:30ch;color:#3C1610;">{{ x120 }} <b style="font-weight:700;color:#B8381F;">{{ x121 }}</b></h2>
+  <p style="margin:10px 0 0;font-size:14px;line-height:2;color:#7A4530;">{{ y13 }}</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px;margin-top:20px;">
+    <button type="button" data-card="" onClick="{{ podNo }}" style="text-align:start;cursor:pointer;background:{{ podNoBg }};color:{{ podNoFg }};border:1.5px solid #E3D5C6;border-radius:16px;padding:18px;">
+      <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;">{{ x122 }}</span>
+      <span style="display:block;font-size:12.5px;line-height:1.9;margin-top:6px;opacity:.8;">{{ x123 }}</span>
+    </button>
+    <button type="button" data-card="" onClick="{{ podYes }}" style="text-align:start;cursor:pointer;background:{{ podYesBg }};color:{{ podYesFg }};border:1.5px solid #E3D5C6;border-radius:16px;padding:18px;">
+      <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;">{{ x124 }}</span>
+      <span style="display:block;font-size:12.5px;line-height:1.9;margin-top:6px;opacity:.8;">{{ x125 }}</span>
+    </button>
+  </div>
+  <sc-if value="{{ podOn }}" hint-placeholder-val="{{ false }}">
+    <div data-view="" style="margin-top:16px;background:#FFFFFF;border:1px solid #E3D5C6;border-radius:18px;padding:18px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px;">
+        <label><b>{{ x126 }}</b><input type="text" value="{{ podName }}" onInput="{{ setPodName }}" placeholder="{{ x212 }}"></label>
+        <label><b>{{ x127 }}</b><input type="text" value="{{ podSplit }}" onInput="{{ setPodSplit }}" placeholder="{{ x213 }}"></label>
+      </div>
+      <div style="font-size:13px;color:#6E5C51;margin:16px 0 8px;">{{ cPod }}</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <sc-for list="{{ podMembers }}" as="m" hint-placeholder-count="2">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:10px;align-items:end;background:#FDF7EE;border:1px solid #F1E7DA;border-radius:12px;padding:12px;">
+            <label><b>{{ cMember }}</b><input type="text" value="{{ m.name }}" onInput="{{ m.setName }}" placeholder="{{ x154 }}"></label>
+            <label><b>{{ x128 }}</b><input type="tel" dir="ltr" value="{{ m.wa }}" onInput="{{ m.setWa }}" placeholder="+967 ..."></label>
+            <label><b>{{ x129 }}</b><select value="{{ m.role }}" onChange="{{ m.setRole }}"><option>{{ x130 }}</option><option>{{ x131 }}</option><option>{{ x132 }}</option><option>{{ x133 }}</option></select></label>
+            <sc-if value="{{ m.removable }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ m.remove }}" style="background:transparent;border:1px solid #F7DBD2;color:#B44228;font-size:11.5px;border-radius:99px;padding:8px 12px;cursor:pointer;min-height:40px;">{{ x103 }}</button></sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <button type="button" data-btn="" onClick="{{ addMember }}" style="margin-top:10px;background:transparent;border:1.5px dashed #CDB9A7;color:#6E5C51;font-size:12.5px;padding:10px 18px;border-radius:10px;cursor:pointer;">{{ x134 }}</button>
+      <div data-why="" style="margin-top:12px;">{{ y14 }}</div>
+    </div>
+  </sc-if>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap;">
+    <button type="button" data-btn="" onClick="{{ back }}" style="background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:13.5px;padding:12px 22px;border-radius:12px;cursor:pointer;">{{ x23 }}</button>
+    <div style="font-size:12.5px;color:#8B7565;">{{ st7Hint }}</div>
+    <button type="button" data-btn="" onClick="{{ next }}" style="background:{{ nextBg }};color:{{ nextFg }};border:none;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:12px;cursor:{{ nextCursor }};">{{ x24 }}</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ st8 }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="التسجيل · 08 كيان لليمن" style="max-width:860px;margin:0 auto;">
+  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#A8431C;">STATION 08 · KAYAN FOR YEMEN</div>
+  <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px);line-height:1.28;max-width:30ch;color:#3C1610;">{{ x135 }} <b style="font-weight:700;color:#A8431C;">{{ x136 }}</b> {{ x137 }}</h2>
+  <p style="margin:10px 0 0;font-size:14px;line-height:2;color:#7A4530;">{{ y15 }}</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px;margin-top:20px;">
+    <button type="button" data-card="" onClick="{{ k4yYes }}" style="text-align:start;cursor:pointer;background:{{ k4yYesBg }};color:{{ k4yYesFg }};border:1.5px solid #F3D9CC;border-radius:16px;padding:18px;">
+      <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;">{{ x138 }}</span>
+      <span style="display:block;font-size:12.5px;line-height:1.9;margin-top:6px;opacity:.85;">{{ x139 }}</span>
+    </button>
+    <button type="button" data-card="" onClick="{{ k4yNo }}" style="text-align:start;cursor:pointer;background:{{ k4yNoBg }};color:{{ k4yNoFg }};border:1.5px solid #E3D5C6;border-radius:16px;padding:18px;">
+      <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;">{{ x140 }}</span>
+      <span style="display:block;font-size:12.5px;line-height:1.9;margin-top:6px;opacity:.8;">{{ x141 }}</span>
+    </button>
+  </div>
+  <sc-if value="{{ k4yOpen }}" hint-placeholder-val="{{ false }}">
+    <div data-view="" style="margin-top:16px;background:#FFFFFF;border:1px solid #F3D9CC;border-radius:18px;padding:18px;">
+      <div style="font-size:13px;color:#6E5C51;margin-bottom:8px;">{{ x142 }}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:7px;">
+        <sc-for list="{{ k4yFields }}" as="f" hint-placeholder-count="10">
+          <button type="button" data-chip="" data-on="{{ f.on }}" onClick="{{ f.toggle }}">{{ f.t }}</button>
+        </sc-for>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;margin-top:16px;">
+        <label><b>{{ x143 }}</b><select value="{{ k4yHours }}" onChange="{{ setK4yHours }}"><option value="">{{ x31 }}</option><option>{{ x144 }}</option><option>{{ x145 }}</option><option>{{ x146 }}</option><option>{{ x147 }}</option></select></label>
+        <label><b>{{ x148 }}</b><input type="text" value="{{ k4yPrior }}" onInput="{{ setK4yPrior }}" placeholder="{{ x214 }}"></label>
+      </div>
+      <div style="font-size:13px;color:#6E5C51;margin:14px 0 8px;">{{ x149 }}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:7px;">
+        <sc-for list="{{ k4yGovs }}" as="g" hint-placeholder-count="10">
+          <button type="button" data-chip="" data-on="{{ g.on }}" onClick="{{ g.toggle }}" style="font-size:12px;padding:8px 12px;min-height:38px;">{{ g.t }}</button>
+        </sc-for>
+      </div>
+      <label style="margin-top:14px;"><b>{{ x150 }}</b><textarea rows="2" value="{{ k4yWhy }}" onInput="{{ setK4yWhy }}" placeholder="{{ x215 }}"></textarea></label>
+    </div>
+  </sc-if>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap;">
+    <button type="button" data-btn="" onClick="{{ back }}" style="background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:13.5px;padding:12px 22px;border-radius:12px;cursor:pointer;">{{ x23 }}</button>
+    <div style="font-size:12.5px;color:#8B7565;">{{ st8Hint }}</div>
+    <button type="button" data-btn="" onClick="{{ next }}" style="background:{{ nextBg }};color:{{ nextFg }};border:none;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:12px;cursor:{{ nextCursor }};">{{ x24 }}</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ st9 }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="التسجيل · 09 المزكون" style="max-width:860px;margin:0 auto;">
+  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#B8381F;">STATION 09 · REFEREES</div>
+  <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px);line-height:1.28;max-width:30ch;color:#3C1610;">{{ x151 }} <b style="font-weight:700;color:#B8381F;">{{ x152 }}</b></h2>
+  <p style="margin:10px 0 0;font-size:14px;line-height:2;color:#7A4530;">{{ cRefRules }}</p>
+  <div data-why="" style="margin-top:14px;">{{ y16 }}<b>{{ x153 }}</b>{{ y17 }}</div>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-top:20px;">
+    <sc-for list="{{ refRows }}" as="r" hint-placeholder-count="2">
+      <div style="background:#FFFFFF;border:1px solid #E3D5C6;border-radius:18px;padding:18px;">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:14.5px;color:#3C1610;">{{ cRef }}</span>
+          <span style="font-size:11px;font-weight:600;border-radius:99px;padding:4px 12px;background:{{ r.stBg }};color:{{ r.stFg }};">{{ r.status }}</span>
+          <sc-if value="{{ r.removable }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ r.remove }}" style="margin-inline-start:auto;background:transparent;border:1px solid #F7DBD2;color:#B44228;font-size:11.5px;border-radius:99px;padding:6px 12px;cursor:pointer;">{{ x103 }}</button></sc-if>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;margin-top:14px;">
+          <label><b>{{ x154 }}</b><input type="text" value="{{ r.name }}" onInput="{{ r.setName }}" placeholder="{{ x216 }}"></label>
+          <label><b>{{ x155 }}</b><select value="{{ r.rel }}" onChange="{{ r.setRel }}"><option value="">{{ x31 }}</option><sc-for list="{{ r.relOpts }}" as="o" hint-placeholder-count="5"><option value="{{ o }}">{{ o }}</option></sc-for></select></label>
+          <label><b>{{ x156 }}</b><input type="text" value="{{ r.org }}" onInput="{{ r.setOrg }}" placeholder="{{ x217 }}"></label>
+          <label><b>{{ x157 }}</b><input type="tel" dir="ltr" value="{{ r.phone }}" onInput="{{ r.setPhone }}" placeholder="+967 ..."></label>
+          <label><b>{{ x158 }}</b><input type="email" dir="ltr" value="{{ r.email }}" onInput="{{ r.setEmail }}" placeholder="name@org.com"></label>
+        </div>
+        <label style="margin-top:12px;"><b>{{ x159 }}</b><textarea rows="2" value="{{ r.work }}" onInput="{{ r.setWork }}" placeholder="{{ x218 }}"></textarea></label>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+    <button type="button" data-btn="" onClick="{{ addRef }}" style="background:transparent;border:1.5px dashed #CDB9A7;color:#6E5C51;font-size:12.5px;padding:11px 18px;border-radius:10px;cursor:pointer;">{{ x160 }}</button>
+    <button type="button" data-btn="" onClick="{{ sendRefs }}" style="background:#C4381F;color:#FAF6EC;border:none;font-size:13px;font-weight:600;padding:11px 20px;border-radius:10px;cursor:pointer;">{{ x161 }}</button>
+    <sc-if value="{{ anySent }}" hint-placeholder-val="{{ false }}">
+      <button type="button" data-btn="" onClick="{{ simulateFetch }}" title="{{ x219 }}" style="background:transparent;border:1px solid #C4381F;color:#C4381F;font-size:12.5px;padding:11px 18px;border-radius:10px;cursor:pointer;">{{ x162 }}</button>
+    </sc-if>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap;">
+    <button type="button" data-btn="" onClick="{{ back }}" style="background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:13.5px;padding:12px 22px;border-radius:12px;cursor:pointer;">{{ x23 }}</button>
+    <div style="font-size:12.5px;color:#8B7565;">{{ st9Hint }}</div>
+    <button type="button" data-btn="" onClick="{{ next }}" style="background:{{ nextBg }};color:{{ nextFg }};border:none;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:12px;cursor:{{ nextCursor }};">{{ x24 }}</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ st10 }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="التسجيل · 10 الصرف" style="max-width:900px;margin:0 auto;">
+  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#B8381F;">STATION 10 · PAYOUT</div>
+  <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px);line-height:1.28;max-width:30ch;color:#3C1610;">{{ x163 }} <b style="font-weight:700;color:#B8381F;">{{ x164 }}</b></h2>
+  <p style="margin:10px 0 0;font-size:14px;line-height:2;color:#7A4530;">{{ x165 }}</p>
+  <div data-why="" style="margin-top:14px;">{{ y18 }}</div>
+  <div style="font-size:13px;color:#6E5C51;margin:18px 0 8px;">{{ x166 }}</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:8px;">
+    <sc-for list="{{ bankChips }}" as="b" hint-placeholder-count="16">
+      <button type="button" data-chip="" data-on="{{ b.on }}" onClick="{{ b.toggle }}" style="justify-content:flex-start;text-align:start;border-radius:12px;min-height:52px;">
+        <span style="display:flex;flex-direction:column;gap:2px;">
+          <span style="font-weight:600;">{{ b.t }}</span>
+          <sc-if value="{{ b.altOn }}" hint-placeholder-val="{{ false }}"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:10px;opacity:.62;">{{ b.alt }}</span></sc-if>
+          <span style="font-size:10.5px;opacity:.75;">{{ b.sub }}</span>
+        </span>
+      </button>
+    </sc-for>
+  </div>
+  <sc-if value="{{ bankAccsOn }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+      <sc-for list="{{ bankAccs }}" as="b" hint-placeholder-count="1">
+        <div style="background:#FFFFFF;border:1px solid #E3D5C6;border-radius:14px;padding:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px;align-items:end;">
+          <div style="grid-column:1/-1;font-size:13.5px;font-weight:700;color:#3C1610;">{{ b.bank }}</div>
+          <label><b>{{ x167 }}</b><input type="text" value="{{ b.accName }}" onInput="{{ b.setAccName }}"></label>
+          <label><b>{{ x168 }}</b><input type="text" dir="ltr" value="{{ b.accNum }}" onInput="{{ b.setAccNum }}"></label>
+          <label><b>{{ x169 }}</b><input type="text" value="{{ b.branch }}" onInput="{{ b.setBranch }}" placeholder="{{ x220 }}"></label>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+  <div style="font-size:13px;color:#6E5C51;margin:18px 0 8px;">{{ x170 }}</div>
+  <div style="display:flex;flex-wrap:wrap;gap:7px;">
+    <sc-for list="{{ walletChips }}" as="w" hint-placeholder-count="6">
+      <button type="button" data-chip="" data-on="{{ w.on }}" onClick="{{ w.toggle }}" style="flex-direction:column;align-items:flex-start;gap:1px;">
+        <span>{{ w.t }}</span>
+        <sc-if value="{{ w.altOn }}" hint-placeholder-val="{{ false }}"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:10px;opacity:.62;">{{ w.alt }}</span></sc-if>
+      </button>
+    </sc-for>
+  </div>
+  <div style="font-size:12px;color:#8B7565;line-height:1.9;margin-top:10px;">{{ walletNote }}</div>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap;">
+    <button type="button" data-btn="" onClick="{{ back }}" style="background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:13.5px;padding:12px 22px;border-radius:12px;cursor:pointer;">{{ x23 }}</button>
+    <div style="font-size:12.5px;color:#8B7565;">{{ st10Hint }}</div>
+    <button type="button" data-btn="" onClick="{{ next }}" style="background:{{ nextBg }};color:{{ nextFg }};border:none;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:12px;cursor:{{ nextCursor }};">{{ x24 }}</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ st11 }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="التسجيل · 11 الموافقات" style="max-width:820px;margin:0 auto;">
+  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#B8381F;">STATION 11 · CONSENTS</div>
+  <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px);line-height:1.28;max-width:30ch;color:#3C1610;">{{ x171 }} <b style="font-weight:700;color:#B8381F;">{{ x172 }}</b></h2>
+  <p style="margin:10px 0 0;font-size:14px;line-height:2;color:#7A4530;">{{ x173 }}</p>
+  <div style="display:flex;flex-direction:column;gap:9px;margin-top:20px;">
+    <sc-for list="{{ consentRows }}" as="c" hint-placeholder-count="13">
+      <button type="button" onClick="{{ c.toggle }}" aria-pressed="{{ c.on }}" style="text-align:start;cursor:pointer;display:flex;gap:12px;align-items:flex-start;background:#FFFFFF;border:1px solid #E3D5C6;border-radius:14px;padding:14px 16px;">
+        <span aria-hidden="true" style="flex-shrink:0;margin-top:2px;width:24px;height:24px;border-radius:7px;border:2px solid {{ c.boxBd }};background:{{ c.boxBg }};color:#FAF6EC;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;">{{ c.mark }}</span>
+        <span style="display:flex;flex-direction:column;gap:4px;min-width:0;">
+          <span style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;"><b style="font-size:14px;color:#3C1610;">{{ c.t }}</b><span style="font-size:10px;font-weight:700;border-radius:99px;padding:3px 9px;background:{{ c.tagBg }};color:{{ c.tagFg }};">{{ c.tag }}</span></span>
+          <span style="font-size:12.5px;line-height:1.95;color:#7A4530;">{{ c.b }}</span>
+        </span>
+      </button>
+    </sc-for>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap;">
+    <button type="button" data-btn="" onClick="{{ back }}" style="background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:13.5px;padding:12px 22px;border-radius:12px;cursor:pointer;">{{ x23 }}</button>
+    <div style="font-size:12.5px;color:#8B7565;">{{ st11Hint }}</div>
+    <button type="button" data-btn="" onClick="{{ next }}" style="background:{{ nextBg }};color:{{ nextFg }};border:none;font-size:14.5px;font-weight:700;padding:14px 30px;border-radius:12px;cursor:{{ nextCursor }};">{{ x174 }}</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ st12 }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="التسجيل · 12 المراجعة" style="max-width:820px;margin:0 auto;">
+  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#B8381F;">STATION 12 · REVIEW</div>
+  <h2 style="margin:10px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px);line-height:1.28;max-width:30ch;color:#3C1610;">{{ x175 }} <b style="font-weight:700;color:#B8381F;">{{ x176 }}</b></h2>
+  <p style="margin:10px 0 0;font-size:14px;line-height:2;color:#7A4530;">{{ x177 }}</p>
+  <div style="display:flex;flex-direction:column;gap:8px;margin-top:20px;">
+    <sc-for list="{{ reviewRows }}" as="r" hint-placeholder-count="11">
+      <div style="display:flex;gap:12px;align-items:flex-start;background:#FFFFFF;border:1px solid #E3D5C6;border-radius:13px;padding:13px 16px;">
+        <span style="flex-shrink:0;width:110px;font-size:12.5px;font-weight:700;color:#B8381F;">{{ r.k }}</span>
+        <span style="flex:1;min-width:0;font-size:13px;line-height:1.9;color:#6B3524;overflow-wrap:anywhere;">{{ r.v }}</span>
+        <button type="button" onClick="{{ r.go }}" style="flex-shrink:0;background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:11.5px;border-radius:99px;padding:6px 13px;cursor:pointer;">{{ x178 }}</button>
+      </div>
+    </sc-for>
+  </div>
+  <button type="button" onClick="{{ toggleConsent }}" aria-pressed="{{ consentOn }}" style="display:flex;align-items:flex-start;gap:13px;width:100%;text-align:start;margin-top:20px;background:#FFFFFF;border:1px solid {{ consentBd }};border-radius:14px;padding:15px 17px;cursor:pointer;font-family:inherit;transition:border-color .2s ease,background .2s ease;">
+    <span aria-hidden="true" style="flex-shrink:0;width:22px;height:22px;border-radius:6px;border:1.5px solid {{ consentBd }};background:{{ consentBg }};color:#FAF6EC;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-top:2px;">{{ consentMark }}</span>
+    <span style="min-width:0;">
+      <span style="display:block;font-size:14px;line-height:1.9;color:#5A2A1D;">{{ x179 }} <a href="Kayan Legal.dc.html#terms" target="_blank" rel="noopener" style="color:#B8381F;font-weight:600;">{{ x180 }}</a> {{ x181 }}<a href="Kayan Legal.dc.html#privacy" target="_blank" rel="noopener" style="color:#B8381F;font-weight:600;">{{ x182 }}</a>{{ x183 }} <a href="Kayan Legal.dc.html#data" target="_blank" rel="noopener" style="color:#B8381F;font-weight:600;">{{ x184 }}</a>.</span>
+      <span style="display:block;margin-top:6px;font-size:12px;line-height:1.8;color:#8B7565;">{{ x185 }}</span>
+    </span>
+  </button>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;flex-wrap:wrap;">
+    <button type="button" data-btn="" onClick="{{ back }}" style="background:transparent;border:1px solid #DCCBB9;color:#6E5C51;font-size:13.5px;padding:12px 22px;border-radius:12px;cursor:pointer;">{{ x23 }}</button>
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+      <span style="font-size:12.5px;color:#8B7565;">{{ consentHint }}</span>
+      <button type="button" data-btn="" onClick="{{ submit }}" disabled="{{ submitOff }}" style="background:{{ submitBg }};color:{{ submitFg }};border:none;font-size:15px;font-weight:700;padding:15px 34px;border-radius:12px;cursor:{{ submitCursor }};opacity:{{ submitOpacity }};transition:opacity .2s ease;">{{ x186 }}</button>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ st13 }}" hint-placeholder-val="{{ false }}">
+<section data-view="" data-screen-label="التسجيل · 13 النتيجة" style="max-width:760px;margin:0 auto;text-align:center;">
+  <kayan-mark line="forge" motion="glide" glow="" entrance="settle" aria-hidden="true" style="width:calc(1.175 * 110px);margin:10px auto 0;"></kayan-mark>
+  <h2 style="margin:18px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(26px,4vw,40px);color:#3C1610;">{{ x187 }} <b style="font-weight:700;color:#B8381F;">{{ x188 }}</b></h2>
+  <div dir="ltr" style="margin:18px auto 0;display:inline-flex;align-items:center;gap:10px;background:#3C1610;color:#FF8A6B;font-family:'IBM Plex Mono',monospace;font-size:clamp(15px,2.6vw,22px);letter-spacing:.12em;border-radius:14px;padding:14px 26px;">{{ appId }}</div>
+  <p style="margin:14px 0 0;font-size:13.5px;line-height:2;color:#7A4530;">{{ cPermNo }}</p>
+  <div style="display:flex;flex-wrap:wrap;gap:clamp(16px,3vw,30px);align-items:center;justify-content:center;text-align:start;background:#FFFFFF;border:1px solid #E3D5C6;border-radius:18px;padding:clamp(18px,2.4vw,26px);margin-top:24px;">
+    <kayan-card tier="T0" name="{{ cardName }}" kid="{{ appId }}" verify="kayanwork.com/v/{{ appId }}" lang="ar"></kayan-card>
+    <div style="flex:1 1 250px;min-width:0;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#B8381F;">YOUR CARD · T0 · REGISTERED</div>
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#3C1610;margin-top:10px;">{{ x189 }}</div>
+      <p style="margin:10px 0 0;font-size:13.5px;line-height:2;color:#7A4530;">{{ x190 }}</p>
+      <a href="Kayan for Talent.dc.html#card" style="display:inline-block;margin-top:14px;font-size:13px;">{{ x191 }}</a>
+    </div>
+  </div>
+  <div style="text-align:start;background:#FFFFFF;border:1px solid #E3D5C6;border-radius:18px;padding:20px;margin-top:24px;">
+    <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#3C1610;">{{ x192 }}</div>
+    <div style="display:flex;flex-direction:column;gap:0;margin-top:14px;">
+      <sc-for list="{{ outcomeSteps }}" as="s" hint-placeholder-count="5">
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed #F1E7DA;">
+          <span aria-hidden="true" style="flex-shrink:0;width:12px;height:12px;border-radius:50%;margin-top:6px;background:{{ s.dot }};border:2px solid #D0402F;"></span>
+          <span style="display:flex;flex-direction:column;gap:3px;"><b style="font-size:13.5px;color:#3C1610;">{{ s.t }}</b><span style="font-size:12.5px;line-height:1.9;color:#7A4530;">{{ s.d }}</span></span>
+        </div>
+      </sc-for>
+    </div>
+    <div data-why="" style="margin-top:14px;">{{ x193 }}</div>
+  </div>
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px;">
+    <button type="button" data-btn="" onClick="{{ goPortal }}" style="background:linear-gradient(135deg,#D0402F,#FF8A6B);color:#2E0F0A;border:none;font-size:14.5px;font-weight:700;padding:14px 28px;border-radius:12px;cursor:pointer;">{{ x194 }}</button>
+    <a href="Kayan Home.dc.html" style="border:1px solid #DCCBB9;color:#6E5C51;font-size:13.5px;padding:13px 24px;border-radius:12px;">{{ x195 }}</a>
+  </div>
+</section>
+</sc-if>
+</main>
+</div>
+
+<footer style="position:relative;overflow:hidden;background:#2E0F0A;color:rgba(250,246,236,.65);padding:26px clamp(16px,3vw,32px);">
+  <div aria-hidden="true" style="position:absolute;inset-inline:0;top:0;height:2px;background:linear-gradient(90deg,transparent,#D0402F 30%,#FF8A6B 50%,#D0402F 70%,transparent);"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:url(assets/forge-grain.png);background-size:200px 200px;opacity:.1;mix-blend-mode:overlay;pointer-events:none;"></div>
+  <div style="position:relative;max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;">
+    <div style="display:flex;align-items:center;gap:10px;"><kayan-mark line="cream" tone="bright" aria-hidden="true" style="width:calc(1.175 * 26px);flex-shrink:0;opacity:.9;"></kayan-mark><span>{{ x196 }}</span></div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <a href="Kayan Home.dc.html" style="color:rgba(250,246,236,.65);">{{ x197 }}</a>
+      <a href="Kayan for Talent.dc.html" style="color:rgba(250,246,236,.65);">{{ x2 }}</a>
+      <a href="Kayan Portal.dc.html" style="color:rgba(250,246,236,.65);">{{ x1 }}</a>
+      <a href="Kayan Charter.dc.html" style="color:rgba(250,246,236,.65);">{{ x198 }}</a>
+      <a href="Kayan Legal.dc.html" style="color:rgba(250,246,236,.65);">{{ x199 }}</a>
+    </div>
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;">KHORMAKSAR · CORNICHE ST · ADEN</div>
+  </div>
+</footer>
+</div>
+<kayan-compass current="apply"></kayan-compass>
