@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>Kayan — The Master Dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#FAF6EC;}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+a{color:#0E6E66;text-decoration:none;border-bottom:1px solid rgba(14,110,102,.28);}
+a[href^="#"]{border-bottom:none;}
+a:hover{color:#12B5A4;border-bottom-color:#12B5A4;}
+::selection{background:#12B5A4;color:#052E2B;}
+@keyframes kDrift{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(-2%,1.3%,0)}100%{transform:translate3d(0,0,0)}}
+@keyframes kPulse{0%,100%{opacity:.35;transform:scale(.9)}50%{opacity:1;transform:scale(1)}}
+@keyframes kFly{to{stroke-dashoffset:0}}
+@keyframes kRipple{0%{transform:scale(.25);opacity:.9}100%{transform:scale(1.9);opacity:0}}
+</style>
+<script src="./kayan-mark.js"></script>
+</helmet>
+<div style="font-family:'Outfit',sans-serif;color:#143C37;background:#FAF6EC;min-height:100vh;">
+
+<header style="position:sticky;top:0;z-index:60;background:rgba(5,46,43,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(250,246,236,.14);">
+  <div style="max-width:1340px;margin:0 auto;padding:0 clamp(14px,3vw,30px);display:flex;align-items:center;gap:clamp(8px,2vw,20px);height:58px;">
+    <div style="display:flex;align-items:center;gap:9px;flex-shrink:0;">
+      <kayan-mark line="cream" tone="bright" role="img" aria-label="Kayan" style="width:calc(1.175 * 22px);flex-shrink:0;"></kayan-mark>
+      <span style="font-weight:600;font-size:14px;letter-spacing:.14em;color:#FAF6EC;">KAYAN</span>
+    </div>
+    <nav style="flex:1;min-width:0;display:flex;gap:0;overflow-x:auto;scrollbar-width:none;">
+      <a href="#index" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Index</a>
+      <a href="#institution" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Institution</a>
+      <a href="#mark" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Mark</a>
+      <a href="#bird" style="white-space:nowrap;font-size:12px;color:#12B5A4;padding:8px 9px;">Bird doctrine</a>
+      <a href="#colour" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Colour</a>
+      <a href="#type" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Type</a>
+      <a href="#sound" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Sound</a>
+      <a href="#gates" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Gates</a>
+      <a href="#money" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Money</a>
+      <a href="#trust" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Trust spine</a>
+      <a href="#taxonomy" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Taxonomy</a>
+      <a href="#products" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Products</a>
+      <a href="#civic" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">K4Y</a>
+      <a href="#site" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Website</a>
+      <a href="#hub" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Hub</a>
+      <a href="#clarion" style="white-space:nowrap;font-size:12px;color:#E67E22;padding:8px 9px;">Clarion</a>
+      <a href="#stack" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Stack</a>
+      <a href="#year" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Year one</a>
+      <a href="#sources" style="white-space:nowrap;font-size:12px;color:rgba(250,246,236,.65);padding:8px 9px;">Sources</a>
+    </nav>
+    <div style="flex-shrink:0;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:rgba(250,246,236,.42);">KYN-MASTER v2</div>
+  </div>
+</header>
+
+<!-- ===== COVER ===== -->
+<section data-screen-label="Cover" style="position:relative;background:#052E2B;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(1100px 640px at 84% -12%,rgba(18,181,164,.28),transparent 62%),radial-gradient(880px 560px at 2% 108%,rgba(201,162,39,.16),transparent 62%);animation:kDrift 34s ease-in-out infinite;"></div>
+  <svg viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;opacity:.5;">
+    <path d="M-40 380 C 220 300, 380 180, 620 200 S 1020 140, 1240 60" fill="none" stroke="rgba(18,181,164,.35)" stroke-width="1.2" stroke-dasharray="1600" stroke-dashoffset="1600" style="animation:kFly 5s 0.3s ease-out forwards;"/>
+    <path d="M-40 430 C 260 380, 420 300, 700 300 S 1060 240, 1240 170" fill="none" stroke="rgba(201,162,39,.28)" stroke-width="1" stroke-dasharray="1600" stroke-dashoffset="1600" style="animation:kFly 6s 0.8s ease-out forwards;"/>
+    <g fill="rgba(18,181,164,.55)"><circle cx="220" cy="316" r="2.5"/><circle cx="620" cy="200" r="3"/><circle cx="900" cy="168" r="2.5"/><circle cx="700" cy="300" r="2.5"/><circle cx="420" cy="349" r="2"/></g>
+  </svg>
+  <div style="position:relative;max-width:1340px;margin:0 auto;padding:clamp(46px,8vh,92px) clamp(20px,4vw,44px) clamp(38px,6vh,74px);display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(20px,3vw,40px);align-items:center;">
+    <div style="grid-column:span 7;min-width:0;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#12B5A4;">THE MASTER DOSSIER · ADEN · LAUNCH 20 AUGUST 2026</div>
+      <h1 style="margin:20px 0 0;font-weight:600;font-size:clamp(36px,5.6vw,84px);line-height:1.1;letter-spacing:-.03em;color:#FAF6EC;">The talent was<br>always here.<br><span style="color:#C9A227;">The system was not.</span></h1>
+      <p style="margin:26px 0 0;max-width:62ch;font-size:clamp(15px,1.5vw,18px);line-height:1.75;color:rgba(250,246,236,.75);">Kayan is not a marketplace that matches and disclaims. It is a Yemeni operating institution that makes talent visible, verifiable and bankable — and this is the single document that holds all of it: the identity, the bird doctrine, the machine of trust, the money, the taxonomy, the products, the website, the stack, and the twelve months from launch.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:30px;">
+        <a href="#index" style="background:#12B5A4;color:#052E2B;font-size:14px;font-weight:600;padding:12px 20px;border-radius:3px;">Read the index</a>
+        <a href="#gates" style="border:1px solid rgba(250,246,236,.28);color:#FAF6EC;font-size:14px;font-weight:500;padding:12px 20px;border-radius:3px;">See the ten gates</a>
+      </div>
+      <div style="margin-top:32px;padding-top:22px;border-top:1px solid rgba(250,246,236,.14);display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:16px;">
+        <div><div style="font-weight:500;font-size:26px;color:#FAF6EC;">1 in 6</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:rgba(250,246,236,.5);margin-top:5px;">APPLICANTS JOIN</div></div>
+        <div><div style="font-weight:500;font-size:26px;color:#FAF6EC;">80/20/2</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:rgba(250,246,236,.5);margin-top:5px;">UNIT ECONOMICS</div></div>
+        <div><div style="font-weight:500;font-size:26px;color:#FAF6EC;">G0–G9</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:rgba(250,246,236,.5);margin-top:5px;">QUALITY GATES</div></div>
+        <div><div style="font-weight:500;font-size:26px;color:#FAF6EC;">144</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:rgba(250,246,236,.5);margin-top:5px;">NAMED SKILLS</div></div>
+        <div><div style="font-weight:500;font-size:26px;color:#12B5A4;">35</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:rgba(250,246,236,.5);margin-top:5px;">READY PRODUCTS</div></div>
+      </div>
+    </div>
+    <div style="grid-column:span 5;min-width:0;display:flex;flex-direction:column;align-items:center;gap:18px;">
+      <img src="assets/kayan-logo-light.png" alt="Kayan — the grosbeak in flight above the chevron K" style="width:min(100%,340px);height:auto;display:block;">
+      <div style="width:min(100%,340px);border:1px solid rgba(250,246,236,.16);border-radius:18px;overflow:hidden;background:rgba(250,246,236,.04);">
+        <img src="assets/aden-sira-castle.jpeg" alt="Sira Castle above the harbour at Aden" style="display:block;width:100%;height:150px;object-fit:cover;">
+        <div style="display:flex;justify-content:space-between;gap:10px;padding:11px 14px;border-top:1px solid rgba(250,246,236,.14);font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:rgba(250,246,236,.5);"><span>SIRA CASTLE · ADEN</span><span style="color:#12B5A4;">THE HARBOUR</span></div>
+      </div>
+    </div>
+  </div>
+  <div style="position:relative;border-top:1px solid rgba(250,246,236,.14);padding:20px clamp(20px,4vw,44px);">
+    <div style="max-width:1340px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div dir="rtl" style="font-family:'Amiri',serif;font-size:clamp(19px,2vw,26px);color:#C9A227;">«خلف كلّ مشروعٍ ناجح، كيان»</div>
+      <div style="font-family:'Amiri',serif;font-style:italic;font-size:17px;color:rgba(250,246,236,.6);">Behind every successful project, a Kayan.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INDEX ===== -->
+<section id="index" data-screen-label="Index" style="background:#FAF6EC;padding:clamp(48px,8vh,84px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">INDEX · 18 CHAPTERS</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(24px,3.2vw,40px);line-height:1.2;color:#052E2B;max-width:26ch;letter-spacing:-.02em;">Settled, and still to build</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:1px;background:#E3DAC5;border:1px solid #E3DAC5;border-radius:20px;overflow:hidden;margin-top:28px;">
+      <a href="#institution" style="background:#fff;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">01 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">The institution</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:#4A6B64;">The missing middle, and the one sentence.</p></a>
+      <a href="#mark" style="background:#fff;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">02 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">The mark</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:#4A6B64;">Grosbeak, chevron, wordmark. Lockups and limits.</p></a>
+      <a href="#bird" style="background:#fff;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">03 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">The bird doctrine</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:#4A6B64;">One bird. Six flights. Six lines.</p></a>
+      <a href="#colour" style="background:#fff;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">04 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">Colour · 70/20/7/3</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:#4A6B64;">Sand, Night, Gold, Bloom — and the Aden Pulse.</p></a>
+      <a href="#type" style="background:#fff;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">05 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">Type</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:#4A6B64;">Amiri leads, Outfit operates.</p></a>
+      <a href="#sound" style="background:#fff;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">06 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">Sound</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:#4A6B64;">The Harbour Bell, D3 to D4. Playable.</p></a>
+      <a href="#gates" style="background:#052E2B;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">07 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#FAF6EC;margin-top:8px;">The machine of trust</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:rgba(250,246,236,.7);">Ten gates, woven. Interactive.</p></a>
+      <a href="#money" style="background:#fff;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">08 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">Money · 80/20/2</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:#4A6B64;">Escrow as a bank liability, not revenue.</p></a>
+      <a href="#trust" style="background:#fff;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">09 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">The trust spine</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:#4A6B64;">T0–T4, the funnel, and the Card.</p></a>
+      <a href="#taxonomy" style="background:#fff;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">10 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">The taxonomy</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:#4A6B64;">10 domains, 35 specialties, 144 skills.</p></a>
+      <a href="#products" style="background:#fff;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">11 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">35 ready products</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:#4A6B64;">Choose. Fund. Start.</p></a>
+      <a href="#civic" style="background:#fff;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">12 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">K4Y &amp; the Aden Hub</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:#4A6B64;">The civic engine, the Absorption Ratio, and the room itself.</p></a>
+      <a href="#site" style="background:#052E2B;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">13 · TO BUILD</div><div style="font-weight:600;font-size:16.5px;color:#FAF6EC;margin-top:8px;">The website</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:rgba(250,246,236,.7);">Fourteen pages across four subdomains.</p></a>
+      <a href="#surfaces" style="background:#052E2B;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">14 · TO BUILD</div><div style="font-weight:600;font-size:16.5px;color:#FAF6EC;margin-top:8px;">Line surfaces &amp; Clarion</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:rgba(250,246,236,.7);">Six landing pages, one template — and the broadcast arm.</p></a>
+      <a href="#stack" style="background:#052E2B;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">15 · TO BUILD</div><div style="font-weight:600;font-size:16.5px;color:#FAF6EC;margin-top:8px;">The stack</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:rgba(250,246,236,.7);">Every technical decision, named.</p></a>
+      <a href="#year" style="background:#052E2B;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">16 · TO BUILD</div><div style="font-weight:600;font-size:16.5px;color:#FAF6EC;margin-top:8px;">Twelve months</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:rgba(250,246,236,.7);">Four acts, one story.</p></a>
+      <a href="#refusals" style="background:#fff;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B23A31;">17 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">Refusals</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:#4A6B64;">Sent back without discussion.</p></a>
+      <a href="#sources" style="background:#fff;padding:19px 21px;border:none;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B8891A;">18 · SETTLED</div><div style="font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">Sources</div><p style="margin:5px 0 0;font-size:13px;line-height:1.65;color:#4A6B64;">Every claim cited. Two corrections.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 01 INSTITUTION ===== -->
+<section id="institution" data-screen-label="01 The institution" style="background:#fff;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);border-radius:clamp(22px,4vw,40px) clamp(22px,4vw,40px) 0 0;">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">01 — THE INSTITUTION</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#052E2B;max-width:22ch;">The missing middle</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">In Arabic, <bdi style="font-family:'Amiri',serif;font-size:19px;color:#052E2B;">كِيان</bdi> means an entity — a thing with structure and substance. Two chains were broken: talent in Yemen could not reach serious clients, and serious clients could not verify unknown talent. Kayan is the institutional layer between them, and its mission is that geography stops being destiny.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:32px;">
+      <div style="grid-column:1/-1;background:#052E2B;border-radius:22px;padding:clamp(24px,4vw,40px);position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background:radial-gradient(700px 320px at 90% 0%,rgba(18,181,164,.18),transparent 65%);"></div>
+        <div style="position:relative;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#C9A227;">THE ONE SENTENCE · used verbatim, everywhere</div>
+          <p style="margin:16px 0 0;font-weight:300;font-size:clamp(18px,2.3vw,30px);line-height:1.45;color:#FAF6EC;max-width:44ch;letter-spacing:-.015em;">Kayan is the managed delivery company that connects verified Yemeni talent with global clients — with escrow protection, milestone accountability, and a financial guarantee.</p>
+        </div>
+      </div>
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-radius:20px;padding:24px 22px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B23A31;">THE IRON RULE</div>
+        <div style="font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;line-height:1.35;">No signed scope + no funded guarantee = no work.</div>
+        <p style="margin:9px 0 0;font-size:14px;line-height:1.72;color:#4A6B64;">Printed on the model page, repeated at intake, enforced at gate G2. It is the one sentence a client may quote back at us.</p>
+      </div>
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-radius:20px;padding:24px 22px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">WE SELL OUTCOMES</div>
+        <div style="font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;line-height:1.35;">Kayan does not sell effort.</div>
+        <p style="margin:9px 0 0;font-size:14px;line-height:1.72;color:#4A6B64;">No hourly rates on any public surface. Every commercial page quotes a scope and a date. Effort is our problem; the outcome is the product.</p>
+      </div>
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-radius:20px;padding:24px 22px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">DIGNITY FIRST</div>
+        <div style="font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;line-height:1.35;">Describe people by what they now do.</div>
+        <p style="margin:9px 0 0;font-size:14px;line-height:1.72;color:#4A6B64;">Never by what they once lacked. Impact is reported by name and number, never by pity. This governs every photograph in the system.</p>
+      </div>
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-radius:20px;padding:24px 22px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">MISSION AND MARGIN</div>
+        <div style="font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;line-height:1.35;">The same activity, not two budgets.</div>
+        <p style="margin:9px 0 0;font-size:14px;line-height:1.72;color:#4A6B64;">Kayan is not a charity with a business attached. The civic line runs on the same rails as the money, funded from operating surplus.</p>
+      </div>
+    </div>
+
+    <h3 style="margin:46px 0 0;font-weight:600;font-size:clamp(19px,2.4vw,26px);color:#052E2B;letter-spacing:-.02em;">The three fractures, and what repairs each</h3>
+    <p style="margin:8px 0 0;max-width:62ch;font-size:15px;line-height:1.75;color:#4A6B64;">Yemen's share of the six-trillion-dollar global professional services market is under a hundredth of one per cent. That is not a capability gap; it is a trust deficit with three named fractures.</p>
+    <div style="display:grid;gap:1px;background:#E3DAC5;border:1px solid #E3DAC5;border-radius:20px;overflow:hidden;margin-top:20px;">
+      <div style="background:#FAF6EC;display:grid;grid-template-columns:1fr 1.2fr 1.2fr;gap:16px;padding:13px 20px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.13em;color:#8A8272;"><span>THE FRACTURE</span><span>THE OPERATIONAL FAILURE</span><span>THE STRUCTURAL CORRECTION</span></div>
+      <div style="background:#fff;display:grid;grid-template-columns:1fr 1.2fr 1.2fr;gap:16px;padding:17px 20px;align-items:start;"><span style="font-size:14.5px;color:#052E2B;font-weight:600;">Client &amp; provider</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Clients cannot verify providers or enforce delivery.</span><span style="font-size:13.5px;line-height:1.7;color:#052E2B;">Managed delivery: one accountable contract with a bank-held guarantee.</span></div>
+      <div style="background:#fff;display:grid;grid-template-columns:1fr 1.2fr 1.2fr;gap:16px;padding:17px 20px;align-items:start;"><span style="font-size:14.5px;color:#052E2B;font-weight:600;">Funder &amp; outcome</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Donors fund training but cannot trace graduates into paid work.</span><span style="font-size:13.5px;line-height:1.7;color:#052E2B;">The absorption layer: a chain from Forge training to recorded, bankable income.</span></div>
+      <div style="background:#fff;display:grid;grid-template-columns:1fr 1.2fr 1.2fr;gap:16px;padding:17px 20px;align-items:start;"><span style="font-size:14.5px;color:#052E2B;font-weight:600;">Talent &amp; market</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Capable professionals cannot prove credentials or identity globally.</span><span style="font-size:13.5px;line-height:1.7;color:#052E2B;">The Verified Talent Map, expressed through the Kayan Card.</span></div>
+    </div>
+
+    <h3 style="margin:46px 0 0;font-weight:600;font-size:clamp(19px,2.4vw,26px);color:#052E2B;letter-spacing:-.02em;">Neither a marketplace nor an agency</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:20px;">
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-radius:20px;padding:24px 22px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B23A31;">NOT A MARKETPLACE</div>
+        <p style="margin:10px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">A marketplace introduces strangers and withdraws, leaving the client to be recruiter, project manager and risk absorber — paying once in money and again in uncertainty. It sells access to a crowd.</p>
+        <p style="margin:9px 0 0;font-size:14px;line-height:1.75;color:#052E2B;">Kayan sells a guaranteed outcome, and takes responsibility for who the people are.</p>
+      </div>
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-radius:20px;padding:24px 22px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B23A31;">NOT AN AGENCY</div>
+        <p style="margin:10px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">An agency hides its margin, carries a fixed bench that is expensive to maintain and slow to adapt, and rests its trust on a relationship with one person.</p>
+        <p style="margin:9px 0 0;font-size:14px;line-height:1.75;color:#052E2B;">Kayan publishes its split, assembles a pod per engagement, and makes the institution — not an individual — liable for the fix.</p>
+      </div>
+      <div style="background:#052E2B;border-radius:20px;padding:24px 22px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">THE COMPETITIVE MOAT STACK</div>
+        <div style="display:grid;gap:9px;margin-top:14px;">
+          <div style="border-left:3px solid #3E9EEA;padding:9px 12px;background:rgba(250,246,236,.04);border-radius:0 10px 10px 0;"><div style="font-size:14px;color:#FAF6EC;">Data moat</div><div style="font-size:12.5px;line-height:1.65;color:rgba(250,246,236,.65);margin-top:2px;">Operational memory: how specific people perform under specific constraints.</div></div>
+          <div style="border-left:3px solid #12B5A4;padding:9px 12px;background:rgba(250,246,236,.04);border-radius:0 10px 10px 0;"><div style="font-size:14px;color:#FAF6EC;">Delivery moat</div><div style="font-size:12.5px;line-height:1.65;color:rgba(250,246,236,.65);margin-top:2px;">Ten gates and three QA layers make paying for bad work structurally difficult.</div></div>
+          <div style="border-left:3px solid #C9A227;padding:9px 12px;background:rgba(201,162,39,.1);border-radius:0 10px 10px 0;"><div style="font-size:14px;color:#FAF6EC;">Trust moat</div><div style="font-size:12.5px;line-height:1.65;color:rgba(250,246,236,.65);margin-top:2px;">The iron rule turns a gamble into a bankable transaction.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;background:#F1EAD9;border:1px solid #E3DAC5;border-radius:20px;padding:24px 22px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B8891A;">THE STANDING PROMISE · الوعد الراسخ</div>
+      <div style="font-weight:600;font-size:clamp(19px,2.4vw,27px);line-height:1.3;color:#052E2B;margin-top:11px;letter-spacing:-.02em;max-width:34ch;">Geography is no longer destiny.</div>
+      <p style="margin:11px 0 0;max-width:70ch;font-size:14.5px;line-height:1.78;color:#4A6B64;">A developer in Aden or a researcher in Taiz should deliver with the same dignity and access as any professional on earth. And operating in a demanding environment is treated as a specialisation, not a handicap: delivering quality through power cuts and connectivity gaps is itself a discipline, backed by solar and satellite infrastructure. Kayan succeeds when a global client's first reflex is to reach for it — not to help Yemen, but because they want the work done well.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 02 THE MARK ===== -->
+<section id="mark" data-screen-label="02 The mark" style="background:#FAF6EC;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">02 — THE MARK</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#052E2B;max-width:22ch;">A bird in flight, above a letter built from chevrons</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">The mark holds two parts in one silhouette. Above: the Socotra Golden-winged Grosbeak with wings raised, the messenger of capability. Below: a K assembled from two chevrons, the arrow of forward movement doubled into a letter. Between them a rule, and under it the wordmark. Nothing is added to it, and nothing is redrawn.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:32px;">
+      <div style="border:1px solid #E3DAC5;border-radius:22px;overflow:hidden;background:#fff;">
+        <div style="padding:34px 26px;display:flex;align-items:center;justify-content:center;min-height:250px;background:repeating-linear-gradient(0deg,#F5F0E2 0 1px,transparent 1px 22px),repeating-linear-gradient(90deg,#F5F0E2 0 1px,transparent 1px 22px);">
+          <img src="assets/kayan-logo.png" alt="Kayan primary mark on light ground" style="width:min(100%,215px);height:auto;display:block;">
+        </div>
+        <div style="padding:17px 21px;border-top:1px solid #E3DAC5;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">PRIMARY · ON ADEN SAND</div>
+          <p style="margin:7px 0 0;font-size:13.5px;line-height:1.72;color:#4A6B64;">The default. Full colour, full lockup, on the light canvas. Used on every document, proposal and page header.</p>
+        </div>
+      </div>
+      <div style="border:1px solid #E3DAC5;border-radius:22px;overflow:hidden;background:#052E2B;">
+        <div style="padding:34px 26px;display:flex;align-items:center;justify-content:center;min-height:250px;position:relative;">
+          <div style="position:absolute;inset:0;background:radial-gradient(340px 240px at 50% 40%,rgba(18,181,164,.2),transparent 70%);"></div>
+          <img src="assets/kayan-logo-light.png" alt="Kayan mark on Aden Night" style="position:relative;width:min(100%,215px);height:auto;display:block;">
+        </div>
+        <div style="padding:17px 21px;border-top:1px solid rgba(250,246,236,.14);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">REVERSED · ON ADEN NIGHT</div>
+          <p style="margin:7px 0 0;font-size:13.5px;line-height:1.72;color:rgba(250,246,236,.7);">For dark surfaces: covers, film, the night state of the site. The artwork lightens; the geometry never changes.</p>
+        </div>
+      </div>
+      <div style="border:1px solid #E3DAC5;border-radius:22px;overflow:hidden;background:#fff;">
+        <div style="padding:26px;display:grid;gap:20px;min-height:250px;align-content:center;background:#FCFAF3;">
+          <div><img src="assets/kayan-lockup-h.png" alt="Kayan horizontal lockup" style="height:46px;width:auto;display:block;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:8px;">HORIZONTAL LOCKUP · SITE HEADER · EMAIL SIGNATURE</div></div>
+          <div style="display:flex;align-items:center;gap:14px;"><img src="assets/kayan-logo.png" alt="" style="height:34px;width:auto;"><div style="width:1px;height:24px;background:#DCD3BE;"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8A8272;">STACKED · 24 px MINIMUM</div></div>
+          <div style="display:flex;align-items:center;gap:14px;"><kayan-mark line="gold" tone="mid" role="img" aria-label="Kayan chevron" style="width:calc(1.175 * 22px);flex-shrink:0;"></kayan-mark><div style="width:1px;height:18px;background:#DCD3BE;"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#0E6E66;">BELOW 24 px — CHEVRON ALONE</div></div>
+        </div>
+        <div style="padding:17px 21px;border-top:1px solid #E3DAC5;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">SCALE</div>
+          <p style="margin:7px 0 0;font-size:13.5px;line-height:1.72;color:#4A6B64;">Below 24 px the wing feathers close up. At that size the chevron K is used alone — never a squashed full lockup.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:16px;">
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8A8272;">CLEAR SPACE</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">The height of the K</div><p style="margin:6px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">Measured on all four sides from the outer edge of the lockup. No text, rule or image enters it.</p></div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8A8272;">DIRECTION</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">The bird is never mirrored</div><p style="margin:6px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">Unlike the layout, the mark does not flip for Arabic. It flies one way in both scripts; only its position in the header moves.</p></div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8A8272;">GROUNDS</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">Two, and no more</div><p style="margin:6px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">Aden Sand or Aden Night. Never on a photograph, a bloom colour, or a gradient.</p></div>
+      <div style="border:1px solid rgba(201,162,39,.5);border-radius:18px;background:#FDF7E4;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B8891A;">THE GOLD EDITION</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">Proof surfaces only</div><p style="margin:6px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">The gold monochrome lockup exists for one purpose: accepted handovers, released escrow, and the Card. It is never a decorative choice.</p></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:16px;">
+      <div style="border:1px solid #E3DAC5;border-radius:20px;overflow:hidden;background:#fff;">
+        <div style="height:180px;display:flex;align-items:center;justify-content:center;padding:22px;"><img src="assets/kayan-logo.png" alt="Kayan in green" style="max-height:100%;width:auto;display:block;"></div>
+        <div style="padding:15px 19px;border-top:1px solid #E3DAC5;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">GREEN · THE DEFAULT</div><p style="margin:6px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">Full colour on Aden Sand. Every document, proposal and page header.</p></div>
+      </div>
+      <div style="border:1px solid rgba(201,162,39,.5);border-radius:20px;overflow:hidden;background:#052E2B;">
+        <div style="height:180px;display:flex;align-items:center;justify-content:center;padding:22px;position:relative;"><div style="position:absolute;inset:0;background:radial-gradient(280px 180px at 50% 45%,rgba(201,162,39,.16),transparent 70%);"></div><img src="assets/kayan-logo-gold.png" alt="Kayan in gold" style="position:relative;max-height:100%;width:auto;display:block;"></div>
+        <div style="padding:15px 19px;border-top:1px solid rgba(201,162,39,.35);"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">GOLD · PROOF ONLY</div><p style="margin:6px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.72);">Monochrome #C9A227. Handover certificates, release receipts, and the Kayan Card.</p></div>
+      </div>
+      <div style="border:1px solid #E3DAC5;border-radius:20px;overflow:hidden;background:#FCFAF3;">
+        <div style="height:180px;display:flex;align-items:center;justify-content:center;padding:22px;"><kayan-mark line="gold" tone="mid" role="img" aria-label="Kayan chevron" style="width:min(60%,140px);"></kayan-mark></div>
+        <div style="padding:15px 19px;border-top:1px solid #E3DAC5;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">THE CHEVRON · SMALL SIZES</div><p style="margin:6px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">Below 24 px, and wherever the wordmark is already set in type — favicons, app icons, the site header.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 BIRD DOCTRINE ===== -->
+<section id="bird" data-screen-label="03 The bird doctrine" style="background:#052E2B;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 10% -8%,rgba(18,181,164,.15),transparent 62%),radial-gradient(820px 500px at 94% 106%,rgba(201,162,39,.12),transparent 62%);"></div>
+  <div style="position:relative;max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#12B5A4;">03 — THE BIRD DOCTRINE</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#FAF6EC;max-width:22ch;">One bird. Six flights.</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:rgba(250,246,236,.72);">Kayan does not keep a zoo. There is one bird — the Socotra Golden-winged Grosbeak, the messenger of capability — and each business line is signalled by <em>how it flies</em>, not by swapping species. The flight path is the line's motion signature: it governs the masthead animation, the loading state, and the way a card enters the screen.</p>
+
+    <div style="margin-top:30px;border:1px solid rgba(250,246,236,.18);border-radius:24px;overflow:hidden;background:rgba(250,246,236,.04);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));">
+        <div style="padding:32px 30px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#C9A227;">THE MESSENGER OF CAPABILITY</div>
+          <h3 style="margin:12px 0 0;font-weight:600;font-size:clamp(21px,2.7vw,30px);line-height:1.24;color:#FAF6EC;letter-spacing:-.02em;">Socotra Golden-winged Grosbeak</h3>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#12B5A4;margin-top:7px;">Rhynchostruthus socotranus</div>
+          <p style="margin:14px 0 0;font-size:15px;line-height:1.78;color:rgba(250,246,236,.78);">Endemic to Socotra: a heavy-billed finch, grey-brown with a black mask and a broad golden-yellow flash across the wing and tail. That gold panel is the reason it is the mark — capability visible only in motion, when the wing opens.</p>
+          <p style="margin:12px 0 0;font-size:15px;line-height:1.78;color:#12B5A4;">It carries skill from where it is to where it is needed. Its flight paths across the site are the trails of projects connecting Aden to the world.</p>
+          <div style="display:flex;margin-top:20px;border-radius:12px;overflow:hidden;height:40px;"><div style="flex:1.3;background:#C9A227;"></div><div style="flex:1;background:#8A8272;"></div><div style="flex:1;background:#E9DFC6;"></div><div style="flex:.8;background:#12B5A4;"></div><div style="flex:.8;background:#052E2B;border:1px solid rgba(250,246,236,.2);box-sizing:border-box;"></div></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.07em;color:rgba(250,246,236,.45);margin-top:8px;">PLATE — wing flash #C9A227 · body #8A8272 · pale #E9DFC6 · house teal #12B5A4 · mask #052E2B</div>
+        </div>
+        <div style="position:relative;min-height:280px;display:flex;align-items:center;justify-content:center;padding:30px;background:rgba(5,46,43,.5);">
+          <img src="assets/kayan-logo-light.png" alt="The Kayan grosbeak in flight" style="width:min(100%,250px);height:auto;display:block;">
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-weight:600;font-size:clamp(19px,2.4vw,26px);color:#FAF6EC;letter-spacing:-.02em;">The six flight signatures</h3>
+    <p style="margin:8px 0 0;max-width:60ch;font-size:15px;line-height:1.75;color:rgba(250,246,236,.66);">Each path below is the actual curve used in that line's motion. Hover any card to fly it.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:14px;margin-top:20px;">
+      <div style="border:1px solid rgba(250,246,236,.16);border-top:3px solid #3E9EEA;border-radius:18px;background:rgba(250,246,236,.05);overflow:hidden;" style-hover="background:rgba(62,158,234,.12)">
+        <svg viewBox="0 0 280 96" aria-hidden="true" style="display:block;width:100%;height:auto;background:rgba(5,46,43,.4);">
+          <path d="M12 60 C 70 60, 90 34, 140 34 S 214 34, 268 34" fill="none" stroke="rgba(62,158,234,.3)" stroke-width="1.4" stroke-dasharray="4 5"/>
+          <path d="M12 60 C 70 60, 90 34, 140 34 S 214 34, 268 34" fill="none" stroke="#3E9EEA" stroke-width="2" stroke-dasharray="300" stroke-dashoffset="300" style="animation:kFly 2.6s .2s ease-out infinite;"/>
+          <circle cx="268" cy="34" r="3" fill="#3E9EEA"/>
+        </svg>
+        <div style="padding:18px 20px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#3E9EEA;">L1 · MANAGED DELIVERY · ADEN SKY #3E9EEA</div>
+          <div style="font-weight:600;font-size:17px;color:#FAF6EC;margin-top:8px;">Coordinated wingbeats</div>
+          <p style="margin:6px 0 0;font-size:13.5px;line-height:1.72;color:rgba(250,246,236,.7);">An even, level climb that holds its line. It signals outcome certainty: the destination was known before the bird left.</p>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-top:3px solid #FFB627;border-radius:18px;background:rgba(250,246,236,.05);overflow:hidden;">
+        <svg viewBox="0 0 280 96" aria-hidden="true" style="display:block;width:100%;height:auto;background:rgba(5,46,43,.4);">
+          <path d="M12 20 C 90 22, 150 58, 200 72 S 250 80, 268 80" fill="none" stroke="rgba(255,182,39,.3)" stroke-width="1.4" stroke-dasharray="4 5"/>
+          <path d="M12 20 C 90 22, 150 58, 200 72 S 250 80, 268 80" fill="none" stroke="#FFB627" stroke-width="2" stroke-dasharray="300" stroke-dashoffset="300" style="animation:kFly 3s .2s ease-in-out infinite;"/>
+          <circle cx="268" cy="80" r="3" fill="#FFB627"/><path d="M250 84 H 280" stroke="rgba(255,182,39,.5)" stroke-width="1.2"/>
+        </svg>
+        <div style="padding:18px 20px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#FFB627;">L2 · THE HUB · MANGO GOLD #FFB627</div>
+          <div style="font-weight:600;font-size:17px;color:#FAF6EC;margin-top:8px;">A gentle descent, and a landing</div>
+          <p style="margin:6px 0 0;font-size:13.5px;line-height:1.72;color:rgba(250,246,236,.7);">Capability gathering in one place. The Hub on the Aden Corniche is where the flight ends and the desk begins.</p>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-top:3px solid #FF6250;border-radius:18px;background:rgba(250,246,236,.05);overflow:hidden;">
+        <svg viewBox="0 0 280 96" aria-hidden="true" style="display:block;width:100%;height:auto;background:rgba(5,46,43,.4);">
+          <path d="M12 74 C 60 74, 120 10, 178 40 S 236 84, 268 44" fill="none" stroke="rgba(255,98,80,.3)" stroke-width="1.4" stroke-dasharray="4 5"/>
+          <path d="M12 74 C 60 74, 120 10, 178 40 S 236 84, 268 44" fill="none" stroke="#FF6250" stroke-width="2" stroke-dasharray="340" stroke-dashoffset="340" style="animation:kFly 3.2s .2s ease-in-out infinite;"/>
+          <circle cx="268" cy="44" r="3" fill="#FF6250"/>
+        </svg>
+        <div style="padding:18px 20px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#FF6250;">L3 · KAYAN FORGE · CORAL EMBER #FF6250</div>
+          <div style="font-weight:600;font-size:17px;color:#FAF6EC;margin-top:8px;">A banking turn</div>
+          <p style="margin:6px 0 0;font-size:13.5px;line-height:1.72;color:rgba(250,246,236,.7);">The bird changes direction under its own power. Practice and transformation: the same bird, on a new heading.</p>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-top:3px solid #3FA75B;border-radius:18px;background:rgba(250,246,236,.05);overflow:hidden;">
+        <svg viewBox="0 0 280 96" aria-hidden="true" style="display:block;width:100%;height:auto;background:rgba(5,46,43,.4);">
+          <path d="M12 78 C 80 78, 120 20, 200 22 S 258 16, 276 12" fill="none" stroke="rgba(63,167,91,.3)" stroke-width="1.4" stroke-dasharray="4 5"/>
+          <path d="M12 78 C 80 78, 120 20, 200 22 S 258 16, 276 12" fill="none" stroke="#3FA75B" stroke-width="2" stroke-dasharray="340" stroke-dashoffset="340" style="animation:kFly 4s .2s ease-out infinite;"/>
+          <circle cx="12" cy="78" r="3" fill="#3FA75B"/>
+        </svg>
+        <div style="padding:18px 20px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#3FA75B;">L4 · KAYAN FOR YEMEN · LEAF GREEN #3FA75B</div>
+          <div style="font-weight:600;font-size:17px;color:#FAF6EC;margin-top:8px;">A long outward arc</div>
+          <p style="margin:6px 0 0;font-size:13.5px;line-height:1.72;color:rgba(250,246,236,.7);">The only flight that leaves the frame and does not return in shot. Contribution: the effect lands somewhere you cannot see.</p>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-top:3px solid #12B5A4;border-radius:18px;background:rgba(250,246,236,.05);overflow:hidden;">
+        <svg viewBox="0 0 280 96" aria-hidden="true" style="display:block;width:100%;height:auto;background:rgba(5,46,43,.4);">
+          <path d="M60 40 C 110 40, 150 52, 210 56" fill="none" stroke="rgba(18,181,164,.3)" stroke-width="1.4" stroke-dasharray="4 5"/>
+          <path d="M60 40 C 110 40, 150 52, 210 56" fill="none" stroke="#12B5A4" stroke-width="2" stroke-dasharray="180" stroke-dashoffset="180" style="animation:kFly 1.5s .2s ease-out infinite;"/>
+          <circle cx="210" cy="56" r="3.5" fill="#12B5A4"/><path d="M200 68 H 224" stroke="#12B5A4" stroke-width="1.6"/>
+        </svg>
+        <div style="padding:18px 20px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">L5 · READY PRODUCTS · REEF TURQUOISE #12B5A4</div>
+          <div style="font-weight:600;font-size:17px;color:#FAF6EC;margin-top:8px;">A short, confident glide</div>
+          <p style="margin:6px 0 0;font-size:13.5px;line-height:1.72;color:rgba(250,246,236,.7);">No climb, no search. A fixed arrival position, because the scope, the price and the date were fixed before takeoff.</p>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-top:3px solid #E67E22;border-radius:18px;background:rgba(250,246,236,.05);overflow:hidden;">
+        <svg viewBox="0 0 280 96" aria-hidden="true" style="display:block;width:100%;height:auto;background:rgba(5,46,43,.4);">
+          <circle cx="128" cy="48" r="18" fill="none" stroke="#E67E22" stroke-width="1.6" style="transform-origin:128px 48px;animation:kRipple 2.6s .1s ease-out infinite;"/>
+          <circle cx="128" cy="48" r="18" fill="none" stroke="#E67E22" stroke-width="1.6" style="transform-origin:128px 48px;animation:kRipple 2.6s .85s ease-out infinite;"/>
+          <circle cx="128" cy="48" r="18" fill="none" stroke="#E67E22" stroke-width="1.6" style="transform-origin:128px 48px;animation:kRipple 2.6s 1.6s ease-out infinite;"/>
+          <circle cx="128" cy="48" r="4" fill="#E67E22"/>
+        </svg>
+        <div style="padding:18px 20px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#E67E22;">L6 · KAYAN CLARION · SAFFRON DUSK #E67E22</div>
+          <div style="font-weight:600;font-size:17px;color:#FAF6EC;margin-top:8px;">The broadcaster's hover</div>
+          <p style="margin:6px 0 0;font-size:13.5px;line-height:1.72;color:rgba(250,246,236,.7);">Highest altitude, wings fully spread, stationary. Ripples leave the beak and wash over the map: the voice of Yemeni talent travelling where the person cannot.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:14px;margin-top:22px;">
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">ONE BIRD RULE</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.72);">No second species is ever introduced. A line is signalled by its flight path and its bloom colour, never by a different animal.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">PHOTOGRAPH OR MARK</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.72);">Where a real bird is shown it is a licensed photograph of the species. Everywhere else, the mark. The grosbeak is never hand-illustrated or re-drawn.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">MOTION BUDGET</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.72);">One flight per screen. The path draws once on entry, then rests — it does not loop behind text a user is trying to read.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 COLOUR ===== -->
+<section id="colour" data-screen-label="04 Colour" style="background:#fff;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">04 — COLOUR · THE 70/20/7/3 DISCIPLINE</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#052E2B;max-width:22ch;">Colour is rationed by percentage, not by taste</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">Seventy per cent of any surface is Aden Sand. Twenty is Aden Night, carrying the text. Seven is Kayan Gold, the signature that marks proof. Three is the line's bloom colour — and only on that line's own material. These are enforced as CSS tokens, not suggested as guidance.</p>
+
+    <div style="display:flex;height:52px;border-radius:12px;overflow:hidden;margin-top:30px;border:1px solid #E3DAC5;">
+      <div style="flex:70;background:#FAF6EC;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8272;">70 · CANVAS</div>
+      <div style="flex:20;background:#052E2B;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(250,246,236,.8);">20 · INK</div>
+      <div style="flex:7;background:#C9A227;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#052E2B;">7</div>
+      <div style="flex:3;background:linear-gradient(90deg,#3E9EEA,#FFB627,#FF6250,#3FA75B,#12B5A4,#E67E22);"></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:16px;">
+      <div style="border:1px solid #E3DAC5;border-radius:20px;overflow:hidden;"><div style="height:104px;background:#FAF6EC;border-bottom:1px solid #E3DAC5;"></div><div style="padding:16px 18px;"><div style="font-weight:600;font-size:16px;color:#052E2B;">Aden Sand</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8272;margin-top:4px;">#FAF6EC · 70%</div><p style="margin:7px 0 0;font-size:12.5px;line-height:1.7;color:#4A6B64;">The canvas. Daylight state of every page, and every long-form document.</p></div></div>
+      <div style="border:1px solid #E3DAC5;border-radius:20px;overflow:hidden;"><div style="height:104px;background:#052E2B;"></div><div style="padding:16px 18px;"><div style="font-weight:600;font-size:16px;color:#052E2B;">Aden Night</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8272;margin-top:4px;">#052E2B · 20%</div><p style="margin:7px 0 0;font-size:12.5px;line-height:1.7;color:#4A6B64;">The ink. Body text on Sand, and the ground for covers, film and the night state.</p></div></div>
+      <div style="border:1px solid rgba(201,162,39,.5);border-radius:20px;overflow:hidden;"><div style="height:104px;background:#C9A227;"></div><div style="padding:16px 18px;"><div style="font-weight:600;font-size:16px;color:#052E2B;">Kayan Gold</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8272;margin-top:4px;">#C9A227 · 7%</div><p style="margin:7px 0 0;font-size:12.5px;line-height:1.7;color:#4A6B64;">The wing flash. Proof only: escrow funded, handover accepted, tier earned.</p></div></div>
+      <div style="border:1px solid #E3DAC5;border-radius:20px;overflow:hidden;"><div style="height:104px;background:#12B5A4;"></div><div style="padding:16px 18px;"><div style="font-weight:600;font-size:16px;color:#052E2B;">Reef Turquoise</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8272;margin-top:4px;">#12B5A4 · action</div><p style="margin:7px 0 0;font-size:12.5px;line-height:1.7;color:#4A6B64;">The single action colour: primary buttons, live links, focus rings. One per view.</p></div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(142px,1fr));gap:12px;margin-top:14px;">
+      <div style="border:1px solid #E3DAC5;border-radius:14px;overflow:hidden;"><div style="height:56px;background:#3E9EEA;"></div><div style="padding:11px 13px;"><div style="font-size:13px;font-weight:500;color:#052E2B;">Aden Sky</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:3px;">#3E9EEA · L1</div></div></div>
+      <div style="border:1px solid #E3DAC5;border-radius:14px;overflow:hidden;"><div style="height:56px;background:#FFB627;"></div><div style="padding:11px 13px;"><div style="font-size:13px;font-weight:500;color:#052E2B;">Mango Gold</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:3px;">#FFB627 · L2</div></div></div>
+      <div style="border:1px solid #E3DAC5;border-radius:14px;overflow:hidden;"><div style="height:56px;background:#FF6250;"></div><div style="padding:11px 13px;"><div style="font-size:13px;font-weight:500;color:#052E2B;">Coral Ember</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:3px;">#FF6250 · L3</div></div></div>
+      <div style="border:1px solid #E3DAC5;border-radius:14px;overflow:hidden;"><div style="height:56px;background:#3FA75B;"></div><div style="padding:11px 13px;"><div style="font-size:13px;font-weight:500;color:#052E2B;">Leaf Green</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:3px;">#3FA75B · L4</div></div></div>
+      <div style="border:1px solid #E3DAC5;border-radius:14px;overflow:hidden;"><div style="height:56px;background:#12B5A4;"></div><div style="padding:11px 13px;"><div style="font-size:13px;font-weight:500;color:#052E2B;">Reef</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:3px;">#12B5A4 · L5</div></div></div>
+      <div style="border:1px solid #E3DAC5;border-radius:14px;overflow:hidden;"><div style="height:56px;background:#E67E22;"></div><div style="padding:11px 13px;"><div style="font-size:13px;font-weight:500;color:#052E2B;">Saffron Dusk</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:3px;">#E67E22 · L6</div></div></div>
+      <div style="border:1.5px dashed #C7BFA9;border-radius:14px;overflow:hidden;"><div style="height:56px;background:#8A5CE6;opacity:.5;"></div><div style="padding:11px 13px;"><div style="font-size:13px;font-weight:500;color:#052E2B;">Orchid</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:3px;">Ventures · held</div></div></div>
+      <div style="border:1.5px dashed #C7BFA9;border-radius:14px;overflow:hidden;"><div style="height:56px;background:#F0549A;opacity:.5;"></div><div style="padding:11px 13px;"><div style="font-size:13px;font-weight:500;color:#052E2B;">Lantana</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:3px;">Studio · held</div></div></div>
+    </div>
+
+    <h3 style="margin:44px 0 0;font-weight:600;font-size:clamp(19px,2.4vw,26px);color:#052E2B;letter-spacing:-.02em;">The Aden Pulse</h3>
+    <p style="margin:8px 0 0;max-width:62ch;font-size:15px;line-height:1.75;color:#4A6B64;">The canvas follows local time in Aden. In daylight the site is Sand with dark text; after sunset it settles into Night, and the gold accents read as the wing flash they are. The switch is a token swap, not a second design — layout, spacing and type never move.</p>
+    <div style="margin-top:20px;border:1px solid {{ pulseBorder }};border-radius:22px;overflow:hidden;background:{{ pulseBg }};transition:background .8s ease,border-color .8s ease;">
+      <div style="padding:clamp(26px,4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;align-items:center;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#C9A227;">{{ pulseLabel }}</div>
+          <div style="font-weight:600;font-size:clamp(21px,2.7vw,32px);line-height:1.24;color:{{ pulseInk }};margin-top:12px;transition:color .8s ease;letter-spacing:-.02em;">Work is managed. Then it is proven.</div>
+          <p style="margin:11px 0 0;font-size:14.5px;line-height:1.75;color:{{ pulseMuted }};transition:color .8s ease;max-width:44ch;">The same page, the same grid, the same type. Only the canvas and ink tokens exchange places — and the gold stays exactly where it was.</p>
+          <button type="button" onClick="{{ togglePulse }}" style="margin-top:20px;border:none;background:#12B5A4;color:#052E2B;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;padding:12px 20px;border-radius:3px;cursor:pointer;" style-hover="background:#5BD6C8">{{ pulseBtn }}</button>
+        </div>
+        <div style="display:grid;gap:10px;">
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid {{ pulseBorder }};border-radius:12px;transition:border-color .8s ease;"><span style="width:10px;height:10px;border-radius:50%;background:#C9A227;flex-shrink:0;"></span><span style="font-size:14px;color:{{ pulseInk }};transition:color .8s ease;flex:1;">Escrow funded</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#C9A227;">G2</span></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid {{ pulseBorder }};border-radius:12px;transition:border-color .8s ease;"><span style="width:10px;height:10px;border-radius:50%;background:#12B5A4;flex-shrink:0;"></span><span style="font-size:14px;color:{{ pulseInk }};transition:color .8s ease;flex:1;">Independent QA passed</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#12B5A4;">G7</span></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid {{ pulseBorder }};border-radius:12px;transition:border-color .8s ease;"><span style="width:10px;height:10px;border-radius:50%;background:#C9A227;flex-shrink:0;"></span><span style="font-size:14px;color:{{ pulseInk }};transition:color .8s ease;flex:1;">Released from escrow</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#C9A227;">G9</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px;margin-top:16px;">
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-radius:18px;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">CONTRAST FLOOR</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">Body text holds 4.5:1 on its canvas, display 3:1. Mango and Saffron Dusk never carry body text on Aden Sand — on the light canvas they carry edges, dots and rules only. On Aden Night both clear 3:1, so display-size labels in those blooms are permitted there and nowhere else.</p></div>
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-radius:18px;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">ONE BLOOM PER VIEW</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">A page belongs to one line. Two bloom colours in a single view means the page is doing two jobs and should be split.</p></div>
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-radius:18px;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B23A31;">NEVER</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">Gradient backgrounds. Gold on anything unproven. Status carried by colour alone. A bloom colour used as a page background.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05 TYPE ===== -->
+<section id="type" data-screen-label="05 Type" style="background:#FAF6EC;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">05 — TYPE</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#052E2B;max-width:24ch;">Arabic leads the layout. English operates it.</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">Arabic is authored natively in the register of contracts and handover minutes — never machine-translated, never thought in English first. Amiri carries the Arabic display voice; Outfit carries the operational English. Where both appear, Arabic sits first and larger, and the English restates rather than adds.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:16px;margin-top:30px;">
+      <div style="background:#fff;border:1px solid #E3DAC5;border-radius:20px;padding:25px 23px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">ARABIC DISPLAY · AMIRI</div>
+        <div dir="rtl" style="font-family:'Amiri',serif;font-size:44px;line-height:1.5;color:#052E2B;margin-top:12px;">يُدار العمل</div>
+        <p style="margin:10px 0 0;font-size:13.5px;line-height:1.72;color:#4A6B64;">Headlines, pull quotes, the tagline. A naskh with authority — the letterform of a regulation, not a poster. No تشكيل anywhere.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E3DAC5;border-radius:20px;padding:25px 23px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">ARABIC TEXT · IBM PLEX SANS ARABIC</div>
+        <div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:16px;line-height:1.95;color:#143C37;margin-top:12px;">تودع القيمة في حساب الضمان قبل الانطلاق، ولا يُفرج عنها إلا بمحضر استلام موقّع.</div>
+        <p style="margin:10px 0 0;font-size:13.5px;line-height:1.72;color:#4A6B64;">Interface, forms and contracts, where Amiri would tire the eye. Line height 1.9 or more, weight 400.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E3DAC5;border-radius:20px;padding:25px 23px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">LATIN · OUTFIT</div>
+        <div style="font-weight:600;font-size:30px;line-height:1.15;color:#052E2B;margin-top:12px;letter-spacing:-.025em;">Work is managed.</div>
+        <div style="font-weight:300;font-size:19px;color:#4A6B64;margin-top:5px;">Then it is proven.</div>
+        <p style="margin:10px 0 0;font-size:13.5px;line-height:1.72;color:#4A6B64;">The whole English voice: display at 600 with tight tracking, body at 400, support at 300. One family, no exceptions.</p>
+      </div>
+      <div style="background:#052E2B;border-radius:20px;padding:25px 23px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">DATA · IBM PLEX MONO</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:14.5px;line-height:1.75;color:#FAF6EC;margin-top:12px;">KYN-MD-2026-0184<br>ESCROW · FUNDED · GL 2100<br>G7 · QA PASSED<br>KC-C · T3</div>
+        <p style="margin:10px 0 0;font-size:13.5px;line-height:1.72;color:rgba(250,246,236,.7);">Reference numbers, gate codes, card IDs, money. Uppercase, tracked, small. Never used for a sentence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 SOUND ===== -->
+<section id="sound" data-screen-label="06 Sound" style="background:#07202C;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 88% -6%,rgba(18,181,164,.18),transparent 62%);"></div>
+  <div style="position:relative;max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#12B5A4;">06 — SOUND</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#FAF6EC;max-width:24ch;">The Harbour Bell</h2>
+    <p style="margin:14px 0 0;max-width:64ch;font-size:16.5px;line-height:1.75;color:rgba(250,246,236,.72);">Three struck notes rising an octave — D3, A3, D4. A fifth, then the fourth that closes it: the same note an octave up, so the phrase arrives where it began. It grounds the listener in a governed space, confirming they have entered a professional environment where the standards are global even when the talent is local. Press to hear it.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(278px,1fr));gap:16px;margin-top:30px;align-items:start;">
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:22px;background:rgba(250,246,236,.04);padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:#12B5A4;">THE HARBOUR BELL · D3 → A3 → D4</div>
+        <div style="display:flex;align-items:flex-end;gap:8px;height:104px;margin-top:18px;">
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:7px;"><div style="height:32%;background:#0E6E66;border-radius:3px;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(250,246,236,.5);text-align:center;">D3</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:7px;"><div style="height:62%;background:#12B5A4;border-radius:3px;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(250,246,236,.5);text-align:center;">A3</span></div>
+          <div style="flex:1.5;display:flex;flex-direction:column;justify-content:flex-end;gap:7px;"><div style="height:100%;background:#C9A227;border-radius:3px;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#C9A227;text-align:center;">D4 · sustain</span></div>
+        </div>
+        <button type="button" onClick="{{ playHouse }}" style="margin-top:18px;width:100%;border:none;background:#12B5A4;color:#052E2B;font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;padding:14px 20px;border-radius:3px;cursor:pointer;" style-hover="background:#5BD6C8">Ring the Harbour Bell</button>
+        <button type="button" onClick="{{ playTick }}" style="margin-top:8px;width:100%;border:1px solid rgba(250,246,236,.28);background:transparent;color:#FAF6EC;font-family:'Outfit',sans-serif;font-size:14px;padding:11px 18px;border-radius:3px;cursor:pointer;" style-hover="background:rgba(250,246,236,.08)">Play a sonic tick</button>
+        <div style="display:flex;justify-content:space-between;gap:12px;margin-top:11px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(250,246,236,.45);">STRUCK · OCTAVE RISE · SUSTAINED TAIL</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#12B5A4;">{{ nowPlaying }}</span></div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:22px;background:rgba(250,246,236,.04);padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:#C9A227;">PER-LINE RULE · TIMBRE, NOT MELODY</div>
+        <p style="margin:11px 0 0;font-size:14px;line-height:1.75;color:rgba(250,246,236,.72);">The three notes never change. Only timbre, pitch and tail length move, matching the flight signature. Change the notes and you have left the identity. Clarion alone adds a sustained, vibrating tail to open a broadcast.</p>
+        <div style="display:grid;gap:7px;margin-top:16px;">
+          <button type="button" onClick="{{ playL1 }}" style="display:flex;align-items:center;gap:11px;border:1px solid rgba(62,158,234,.4);background:rgba(62,158,234,.09);border-radius:11px;padding:12px 15px;cursor:pointer;text-align:left;font-family:inherit;" style-hover="background:rgba(62,158,234,.2)"><span style="width:9px;height:9px;border-radius:50%;background:#3E9EEA;flex-shrink:0;"></span><span style="font-size:14px;color:#FAF6EC;flex:1;">Managed Delivery</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(250,246,236,.5);">LEVEL · +0</span></button>
+          <button type="button" onClick="{{ playL2 }}" style="display:flex;align-items:center;gap:11px;border:1px solid rgba(255,182,39,.4);background:rgba(255,182,39,.09);border-radius:11px;padding:12px 15px;cursor:pointer;text-align:left;font-family:inherit;" style-hover="background:rgba(255,182,39,.2)"><span style="width:9px;height:9px;border-radius:50%;background:#FFB627;flex-shrink:0;"></span><span style="font-size:14px;color:#FAF6EC;flex:1;">The Hub</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(250,246,236,.5);">LANDING · +12</span></button>
+          <button type="button" onClick="{{ playL3 }}" style="display:flex;align-items:center;gap:11px;border:1px solid rgba(255,98,80,.4);background:rgba(255,98,80,.09);border-radius:11px;padding:12px 15px;cursor:pointer;text-align:left;font-family:inherit;" style-hover="background:rgba(255,98,80,.2)"><span style="width:9px;height:9px;border-radius:50%;background:#FF6250;flex-shrink:0;"></span><span style="font-size:14px;color:#FAF6EC;flex:1;">Kayan Forge</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(250,246,236,.5);">TURN · GRACE</span></button>
+          <button type="button" onClick="{{ playL4 }}" style="display:flex;align-items:center;gap:11px;border:1px solid rgba(63,167,91,.4);background:rgba(63,167,91,.09);border-radius:11px;padding:12px 15px;cursor:pointer;text-align:left;font-family:inherit;" style-hover="background:rgba(63,167,91,.2)"><span style="width:9px;height:9px;border-radius:50%;background:#3FA75B;flex-shrink:0;"></span><span style="font-size:14px;color:#FAF6EC;flex:1;">Kayan for Yemen</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(250,246,236,.5);">OUTWARD · −12</span></button>
+          <button type="button" onClick="{{ playL5 }}" style="display:flex;align-items:center;gap:11px;border:1px solid rgba(18,181,164,.4);background:rgba(18,181,164,.09);border-radius:11px;padding:12px 15px;cursor:pointer;text-align:left;font-family:inherit;" style-hover="background:rgba(18,181,164,.2)"><span style="width:9px;height:9px;border-radius:50%;background:#12B5A4;flex-shrink:0;"></span><span style="font-size:14px;color:#FAF6EC;flex:1;">Ready Products</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(250,246,236,.5);">GLIDE · TIGHT</span></button>
+          <button type="button" onClick="{{ playL6 }}" style="display:flex;align-items:center;gap:11px;border:1px solid rgba(230,126,34,.4);background:rgba(230,126,34,.09);border-radius:11px;padding:12px 15px;cursor:pointer;text-align:left;font-family:inherit;" style-hover="background:rgba(230,126,34,.2)"><span style="width:9px;height:9px;border-radius:50%;background:#E67E22;flex-shrink:0;"></span><span style="font-size:14px;color:#FAF6EC;flex:1;">Kayan Clarion</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(250,246,236,.5);">HOVER · SUSTAIN</span></button>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:22px;background:rgba(250,246,236,.04);padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:rgba(250,246,236,.5);">WHERE IT PLAYS</div>
+        <div style="display:grid;gap:1px;background:rgba(250,246,236,.14);border-radius:12px;overflow:hidden;margin-top:15px;">
+          <div style="background:#07202C;padding:13px 15px;"><div style="font-size:14px;color:#FAF6EC;">Escrow funded</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#12B5A4;margin-top:4px;">G2 · FULL LOCK · ONCE</div></div>
+          <div style="background:#07202C;padding:13px 15px;"><div style="font-size:14px;color:#FAF6EC;">Handover accepted</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#12B5A4;margin-top:4px;">G8 · FULL LOCK · ONCE</div></div>
+          <div style="background:#07202C;padding:13px 15px;"><div style="font-size:14px;color:#FAF6EC;">Funds released</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#12B5A4;margin-top:4px;">G9 · FULL LOCK · ONCE</div></div>
+          <div style="background:#07202C;padding:13px 15px;"><div style="font-size:14px;color:#FAF6EC;">Tier promotion on the Card</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#12B5A4;margin-top:4px;">LINE VARIANT</div></div>
+          <div style="background:#07202C;padding:13px 15px;"><div style="font-size:14px;color:#FAF6EC;">An audited figure spoken on Clarion</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#C9A227;margin-top:4px;">SONIC TICK · MARKS IT LEDGER-VERIFIED</div></div>
+          <div style="background:rgba(178,58,49,.16);padding:13px 15px;"><div style="font-size:14px;color:#FAF6EC;">Never on notifications, errors, or loading</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#FF8A6B;margin-top:4px;">THE LOCK MARKS PROOF, NOT ACTIVITY</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 07 THE GATES ===== -->
+<section id="gates" data-screen-label="07 The machine of trust" style="background:#FAF6EC;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">07 — THE MACHINE OF TRUST</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#052E2B;max-width:24ch;">Ten gates, and none of them opens on goodwill</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">Because Kayan introduces itself for the first time, it does not borrow trust from a track record — it engineers trust through structure. Each gate has an owner, an artefact, and a condition that must be true before the next opens. Select any gate to read it.</p>
+
+    <div style="margin-top:30px;border:1px solid #E3DAC5;border-radius:24px;overflow:hidden;background:#052E2B;">
+      <div style="padding:26px clamp(20px,3vw,30px) 22px;">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <sc-for list="{{ gates }}" as="g" hint-placeholder-count="10">
+            <button type="button" onClick="{{ g.go }}" style="display:flex;align-items:center;gap:8px;border:1px solid {{ g.bd }};background:{{ g.bg }};color:{{ g.fg }};border-radius:999px;padding:9px 15px;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;transition:background .25s ease,color .25s ease;">
+              <span style="width:7px;height:7px;border-radius:50%;background:{{ g.dot }};flex-shrink:0;"></span>{{ g.id }}
+            </button>
+          </sc-for>
+        </div>
+        <div style="height:3px;background:rgba(250,246,236,.14);border-radius:2px;margin-top:20px;overflow:hidden;"><div style="height:100%;background:linear-gradient(90deg,#12B5A4,#C9A227);transition:width .4s cubic-bezier(.22,1,.36,1);width:{{ gateProgress }};"></div></div>
+      </div>
+      <div style="border-top:1px solid rgba(250,246,236,.14);padding:clamp(24px,3.5vw,36px) clamp(20px,3vw,30px);display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;align-items:start;">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:34px;color:#C9A227;letter-spacing:-.02em;">{{ gateId }}</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#12B5A4;border:1px solid rgba(18,181,164,.4);border-radius:999px;padding:4px 10px;">{{ gatePhase }}</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:rgba(250,246,236,.45);">{{ gateNum }}</span>
+          </div>
+          <h3 style="margin:10px 0 0;font-weight:600;font-size:clamp(20px,2.6vw,28px);line-height:1.24;color:#FAF6EC;letter-spacing:-.02em;">{{ gateTitle }}</h3>
+          <p style="margin:12px 0 0;font-size:15.5px;line-height:1.8;color:rgba(250,246,236,.76);max-width:50ch;">{{ gateDesc }}</p>
+        </div>
+        <div style="display:grid;gap:10px;">
+          <div style="border:1px solid rgba(250,246,236,.16);border-radius:14px;padding:16px 18px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">ARTEFACT PRODUCED</div><div style="font-size:15px;color:#FAF6EC;margin-top:7px;">{{ gateArtefact }}</div></div>
+          <div style="border:1px solid rgba(250,246,236,.16);border-radius:14px;padding:16px 18px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">OWNER</div><div style="font-size:15px;color:#FAF6EC;margin-top:7px;">{{ gateOwner }}</div></div>
+          <div style="border:1px solid rgba(201,162,39,.4);background:rgba(201,162,39,.08);border-radius:14px;padding:16px 18px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">THE IRON RULE</div><div style="font-size:14.5px;line-height:1.7;color:#FAF6EC;margin-top:7px;">No signed scope + no funded guarantee = no work.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin:44px 0 0;font-weight:600;font-size:clamp(19px,2.4vw,26px);color:#052E2B;letter-spacing:-.02em;">The six reality tests at G7</h3>
+    <p style="margin:8px 0 0;max-width:62ch;font-size:15px;line-height:1.75;color:#4A6B64;">A reviewer who did not do the work answers six questions. A single failure sends the work back with a reasoned decision — never with a comment thread, and never overruled by the pod.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:14px;margin-top:18px;">
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#0E6E66;">TEST 01 · SCOPE</div><p style="margin:8px 0 0;font-size:14px;line-height:1.72;color:#4A6B64;">Does every deliverable in the signed scope exist, in the stated format?</p></div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#0E6E66;">TEST 02 · USE</div><p style="margin:8px 0 0;font-size:14px;line-height:1.72;color:#4A6B64;">Can the client use this tomorrow without asking us a question?</p></div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#0E6E66;">TEST 03 · CLAIMS</div><p style="margin:8px 0 0;font-size:14px;line-height:1.72;color:#4A6B64;">Is every factual claim inside the work sourced and checkable?</p></div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#0E6E66;">TEST 04 · LANGUAGE</div><p style="margin:8px 0 0;font-size:14px;line-height:1.72;color:#4A6B64;">Does the Arabic read as authored Arabic, in the contract register?</p></div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#0E6E66;">TEST 05 · HANDOVER</div><p style="margin:8px 0 0;font-size:14px;line-height:1.72;color:#4A6B64;">Are source files, credentials and licences transferred — not just outputs?</p></div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#0E6E66;">TEST 06 · IDENTITY</div><p style="margin:8px 0 0;font-size:14px;line-height:1.72;color:#4A6B64;">Does it obey the colour, type, mark and photography rules in this dossier?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 08 MONEY ===== -->
+<section id="money" data-screen-label="08 Money" style="background:#fff;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">08 — MONEY · 80 / 20 / 2</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#052E2B;max-width:24ch;">Client money is a bank liability, never Kayan revenue</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">From G2 the full project value sits in a held account at Aden Bank, booked as a liability under GL 2100. Kayan cannot move it. It is released only on the client's written acceptance at G8 — and that single fact is what makes a first-year institution workable.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:30px;">
+      <div style="background:#052E2B;border-radius:22px;padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">THE SPLIT ON EVERY ACCEPTED PROJECT</div>
+        <div style="display:flex;height:44px;border-radius:10px;overflow:hidden;margin-top:18px;">
+          <div style="flex:80;background:#12B5A4;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#052E2B;">80</div>
+          <div style="flex:20;background:#C9A227;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#052E2B;">20</div>
+          <div style="flex:2;background:#FF6250;"></div>
+        </div>
+        <div style="display:grid;gap:13px;margin-top:18px;">
+          <div style="display:flex;gap:11px;align-items:baseline;"><span style="width:9px;height:9px;border-radius:2px;background:#12B5A4;flex-shrink:0;"></span><div><div style="font-size:14.5px;color:#FAF6EC;">80% — talent share</div><div style="font-size:13px;line-height:1.7;color:rgba(250,246,236,.65);margin-top:3px;">Paid immediately on acceptance, not on a monthly cycle.</div></div></div>
+          <div style="display:flex;gap:11px;align-items:baseline;"><span style="width:9px;height:9px;border-radius:2px;background:#C9A227;flex-shrink:0;"></span><div><div style="font-size:14.5px;color:#FAF6EC;">20% — Kayan net fee</div><div style="font-size:13px;line-height:1.7;color:rgba(250,246,236,.65);margin-top:3px;">Covers management, the three QA layers, and the guarantee itself.</div></div></div>
+          <div style="display:flex;gap:11px;align-items:baseline;"><span style="width:9px;height:9px;border-radius:2px;background:#FF6250;flex-shrink:0;"></span><div><div style="font-size:14.5px;color:#FAF6EC;">2% — quality holdback</div><div style="font-size:13px;line-height:1.7;color:rgba(250,246,236,.65);margin-top:3px;">Held thirty clean days after delivery against latent defects, then released.</div></div></div>
+        </div>
+      </div>
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-radius:22px;padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">THE ESCROW SEQUENCE</div>
+        <div style="display:grid;gap:12px;margin-top:15px;">
+          <div style="display:flex;gap:12px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B8891A;flex-shrink:0;">G2</span><span style="font-size:14px;line-height:1.72;color:#4A6B64;">Client deposits 100% of project value. It is booked as a liability at Aden Bank. Work does not begin before the confirmation lands.</span></div>
+          <div style="display:flex;gap:12px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B8891A;flex-shrink:0;">G4</span><span style="font-size:14px;line-height:1.72;color:#4A6B64;">Milestones run with weekly demos. Progress is visible; money does not move at a milestone.</span></div>
+          <div style="display:flex;gap:12px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B8891A;flex-shrink:0;">G8</span><span style="font-size:14px;line-height:1.72;color:#4A6B64;">Client accepts in writing, or issues a dated defect list. Silence is never acceptance.</span></div>
+          <div style="display:flex;gap:12px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B8891A;flex-shrink:0;">G9</span><span style="font-size:14px;line-height:1.72;color:#4A6B64;">Release. Talent paid 80% at once, fee recognised, 2% held thirty days, receipt issued to all parties.</span></div>
+        </div>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid #E3DAC5;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">PROTECTED STATUS</div>
+          <p style="margin:7px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">Active clients see a live indicator in the portal: their funds, the account they sit in, and the gate that will release them.</p>
+        </div>
+      </div>
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-radius:22px;padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B23A31;">THE GUARANTEE · IN CONTRACT LANGUAGE</div>
+        <div style="display:grid;gap:12px;margin-top:15px;">
+          <div style="font-size:14.5px;line-height:1.75;color:#052E2B;">If Kayan misses the signed delivery date for reasons within Kayan's control, the client may accept the work as it stands and pay only the accepted proportion, or cancel and be refunded in full from escrow.</div>
+          <div style="font-size:14px;line-height:1.75;color:#4A6B64;">If work fails independent QA twice on the same criterion, the pod is changed at Kayan's cost.</div>
+          <div style="font-size:14px;line-height:1.75;color:#4A6B64;">Requests outside the signed scope are priced and dated as a change order before any work begins on them. There are no free extras and no silent ones.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 09 TRUST SPINE ===== -->
+<section id="trust" data-screen-label="09 The trust spine" style="background:#052E2B;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 90% -8%,rgba(201,162,39,.14),transparent 62%),radial-gradient(820px 500px at 4% 106%,rgba(18,181,164,.14),transparent 62%);"></div>
+  <div style="position:relative;max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#12B5A4;">09 — THE TRUST SPINE</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#FAF6EC;max-width:24ch;">Trust is earned in tiers, never self-declared</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:rgba(250,246,236,.72);">One in six applicants joins the Verified Talent Map. That rate is published, not hinted at — it is the number that makes the word “verified” mean something. Standing rises through five tiers on demonstrated work, and it can fall.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-top:30px;align-items:start;">
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:22px;background:rgba(250,246,236,.04);padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">THE KAYAN NUMBER · SELECTION FUNNEL</div>
+        <svg viewBox="0 0 260 150" aria-hidden="true" style="width:100%;height:auto;margin-top:16px;">
+          <path d="M10 12 H250 L196 62 H64 Z" fill="rgba(250,246,236,.1)"/>
+          <path d="M64 62 H196 L172 104 H88 Z" fill="rgba(18,181,164,.28)"/>
+          <path d="M88 104 H172 L152 142 H108 Z" fill="#C9A227"/>
+          <text x="130" y="40" text-anchor="middle" font-family="monospace" font-size="11" fill="rgba(250,246,236,.75)">600 APPLY</text>
+          <text x="130" y="88" text-anchor="middle" font-family="monospace" font-size="11" fill="#FAF6EC">210 TESTED</text>
+          <text x="130" y="128" text-anchor="middle" font-family="monospace" font-size="11" fill="#052E2B">100 JOIN</text>
+        </svg>
+        <p style="margin:14px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.7);">Illustrative proportions at the published 1-in-6 rate. The real figures are printed on the Institution page and updated as the register grows.</p>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:22px;background:rgba(250,246,236,.04);padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">THE TRUST LADDER · T0 → T4</div>
+        <div style="display:grid;gap:8px;margin-top:16px;">
+          <div style="display:flex;align-items:center;gap:12px;border-left:3px solid rgba(250,246,236,.3);padding:11px 14px;background:rgba(250,246,236,.03);border-radius:0 10px 10px 0;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(250,246,236,.6);width:44px;flex-shrink:0;">T0·1.1</span><div style="flex:1;"><div style="font-size:14.5px;color:#FAF6EC;">Applicant</div><div style="font-size:12.5px;color:rgba(250,246,236,.6);margin-top:2px;">In the queue. No standing, no assignment.</div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(250,246,236,.5);flex-shrink:0;">GREY</span></div>
+          <div style="display:flex;align-items:center;gap:12px;border-left:3px solid #8C9AA6;padding:11px 14px;background:rgba(250,246,236,.03);border-radius:0 10px 10px 0;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8C9AA6;width:44px;flex-shrink:0;">T1·1.2</span><div style="flex:1;"><div style="font-size:14.5px;color:#FAF6EC;">Registered member</div><div style="font-size:12.5px;color:rgba(250,246,236,.6);margin-top:2px;">Identity verified. Eligible for internships.</div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#8C9AA6;flex-shrink:0;">GREY</span></div>
+          <div style="display:flex;align-items:center;gap:12px;border-left:3px solid #3E9EEA;padding:11px 14px;background:rgba(250,246,236,.03);border-radius:0 10px 10px 0;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#3E9EEA;width:44px;flex-shrink:0;">T2·2.x</span><div style="flex:1;"><div style="font-size:14.5px;color:#FAF6EC;">Verified talent</div><div style="font-size:12.5px;color:rgba(250,246,236,.6);margin-top:2px;">Passed the Forge rubrics. Eligible for pod work at G4.</div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#C7CDD2;flex-shrink:0;">SILVER</span></div>
+          <div style="display:flex;align-items:center;gap:12px;border-left:3px solid #12B5A4;padding:11px 14px;background:rgba(250,246,236,.03);border-radius:0 10px 10px 0;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#12B5A4;width:44px;flex-shrink:0;">T3·3.x</span><div style="flex:1;"><div style="font-size:14.5px;color:#FAF6EC;">Trusted professional</div><div style="font-size:12.5px;color:rgba(250,246,236,.6);margin-top:2px;">Two or more completed projects. Serves as a layer-2 reviewer.</div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#C9A227;flex-shrink:0;">GOLD</span></div>
+          <div style="display:flex;align-items:center;gap:12px;border-left:3px solid #C9A227;padding:11px 14px;background:rgba(201,162,39,.1);border-radius:0 10px 10px 0;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C9A227;width:44px;flex-shrink:0;">T4·4.x</span><div style="flex:1;"><div style="font-size:14.5px;color:#FAF6EC;">Certified elite / anchor</div><div style="font-size:12.5px;color:rgba(250,246,236,.6);margin-top:2px;">Ten or more clean deliveries. Pod lead and mentor. Reassessed, never permanent.</div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#E9EDF0;flex-shrink:0;">PLATINUM</span></div>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:22px;background:rgba(250,246,236,.04);padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">THE KAYAN CARD · KC-A TO KC-F</div>
+        <div style="perspective:1200px;margin-top:16px;">
+          <div style="position:relative;height:196px;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.22,1,.36,1);transform:{{ cardTransform }};">
+            <div style="position:absolute;inset:0;backface-visibility:hidden;border:1px solid rgba(201,162,39,.45);border-radius:14px;padding:19px;background:linear-gradient(155deg,rgba(201,162,39,.18),rgba(250,246,236,.03));">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
+                <div>
+                  <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.16em;color:rgba(250,246,236,.55);">VERIFIED PROFESSIONAL · KC-C</div>
+                  <div style="font-weight:600;font-size:18px;color:#FAF6EC;margin-top:7px;">Name Surname</div>
+                  <div style="font-size:12.5px;color:rgba(250,246,236,.65);margin-top:2px;">Arabic–English legal contracts, GCC · Aden</div>
+                </div>
+                <kayan-mark line="gold" tone="mid" aria-hidden="true" style="width:calc(1.175 * 30px);flex-shrink:0;"></kayan-mark>
+              </div>
+              <div style="display:flex;gap:18px;margin-top:20px;padding-top:14px;border-top:1px solid rgba(250,246,236,.16);">
+                <div><div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:rgba(250,246,236,.5);">TIER</div><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#C9A227;margin-top:4px;">T3</div></div>
+                <div><div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:rgba(250,246,236,.5);">ACCEPTED</div><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#12B5A4;margin-top:4px;">14</div></div>
+                <div><div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:rgba(250,246,236,.5);">GIVE-BACK</div><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#3FA75B;margin-top:4px;">62h</div></div>
+                <div><div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:rgba(250,246,236,.5);">CARD ID</div><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FAF6EC;margin-top:4px;">KC-C-0184</div></div>
+              </div>
+            </div>
+            <div style="position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);border:1px solid rgba(18,181,164,.45);border-radius:14px;padding:19px;background:linear-gradient(155deg,rgba(18,181,164,.16),rgba(250,246,236,.03));">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.16em;color:#12B5A4;">DELIVERY LEDGER · PROOF CARDS</div>
+              <div style="display:grid;gap:7px;margin-top:12px;">
+                <div style="display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid rgba(250,246,236,.12);padding-bottom:6px;"><span style="font-size:12.5px;color:#FAF6EC;">GCC supply contract set</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#12B5A4;">ACCEPTED</span></div>
+                <div style="display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid rgba(250,246,236,.12);padding-bottom:6px;"><span style="font-size:12.5px;color:#FAF6EC;">Tender pack, bilingual</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#12B5A4;">ACCEPTED</span></div>
+                <div style="display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid rgba(250,246,236,.12);padding-bottom:6px;"><span style="font-size:12.5px;color:#FAF6EC;">School lab documentation · K4Y</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#3FA75B;">CIVIC</span></div>
+                <div style="display:flex;justify-content:space-between;gap:10px;"><span style="font-size:12.5px;color:rgba(250,246,236,.6);">+ 11 more on the public ledger</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:rgba(250,246,236,.5);">kayanwork.com/verify</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" onClick="{{ flipCard }}" style="margin-top:16px;width:100%;border:1px solid rgba(250,246,236,.28);background:transparent;color:#FAF6EC;font-family:'Outfit',sans-serif;font-size:14px;padding:12px 18px;border-radius:3px;cursor:pointer;" style-hover="background:rgba(250,246,236,.08)">{{ flipLabel }}</button>
+        <p style="margin:12px 0 0;font-size:13px;line-height:1.72;color:rgba(250,246,236,.68);">A portable lifetime credential in bands from Grey to Platinum. Anyone can audit a Card ID publicly — tier, specialty and delivery history, with no login.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10 TAXONOMY ===== -->
+<section id="taxonomy" data-screen-label="10 The taxonomy" style="background:#FAF6EC;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">10 — THE TAXONOMY</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#052E2B;max-width:26ch;">Not “translator”. Arabic–English legal contracts for the GCC.</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">Broad job titles are noise: they cannot be verified, priced, or matched. Kayan describes people at micro-specialisation depth, which is what makes a skill testable and a pod assemblable. Clients search the specialty, not the label.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:30px;align-items:start;">
+      <div style="background:#052E2B;border-radius:22px;padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">THE STRUCTURE</div>
+        <div style="display:flex;align-items:flex-end;gap:10px;height:130px;margin-top:20px;">
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;"><div style="height:16%;background:#0E6E66;border-radius:3px;"></div><div style="text-align:center;"><div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#FAF6EC;">10</div><div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:rgba(250,246,236,.5);margin-top:2px;">DOMAINS</div></div></div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;"><div style="height:42%;background:#12B5A4;border-radius:3px;"></div><div style="text-align:center;"><div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#FAF6EC;">35</div><div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:rgba(250,246,236,.5);margin-top:2px;">SPECIALTIES</div></div></div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;"><div style="height:100%;background:#C9A227;border-radius:3px;"></div><div style="text-align:center;"><div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#FAF6EC;">144</div><div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:rgba(250,246,236,.5);margin-top:2px;">NAMED SKILLS</div></div></div>
+        </div>
+        <p style="margin:18px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.72);">The verification register extends further still — 20 families, 79 groups and 483 verified nodes — but the public search surface is built on the 10 / 35 / 144 spine, because that is the depth a client can actually navigate.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E3DAC5;border-radius:22px;padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">THE TEN DOMAINS</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:15px;">
+          <div style="font-size:13.5px;color:#052E2B;padding:9px 11px;background:#FAF6EC;border-radius:8px;">Software &amp; Web</div>
+          <div style="font-size:13.5px;color:#052E2B;padding:9px 11px;background:#FAF6EC;border-radius:8px;">Data, AI &amp; Research</div>
+          <div style="font-size:13.5px;color:#052E2B;padding:9px 11px;background:#FAF6EC;border-radius:8px;">Design &amp; Creative</div>
+          <div style="font-size:13.5px;color:#052E2B;padding:9px 11px;background:#FAF6EC;border-radius:8px;">Marketing &amp; Content</div>
+          <div style="font-size:13.5px;color:#052E2B;padding:9px 11px;background:#FAF6EC;border-radius:8px;">Business &amp; Finance</div>
+          <div style="font-size:13.5px;color:#052E2B;padding:9px 11px;background:#FAF6EC;border-radius:8px;">Engineering &amp; Trades</div>
+          <div style="font-size:13.5px;color:#052E2B;padding:9px 11px;background:#FAF6EC;border-radius:8px;">Language &amp; Translation</div>
+          <div style="font-size:13.5px;color:#052E2B;padding:9px 11px;background:#FAF6EC;border-radius:8px;">Media Production</div>
+          <div style="font-size:13.5px;color:#052E2B;padding:9px 11px;background:#FAF6EC;border-radius:8px;">Admin &amp; Operations</div>
+          <div style="font-size:13.5px;color:#052E2B;padding:9px 11px;background:#FAF6EC;border-radius:8px;">Delivery in Hard Environments</div>
+        </div>
+        <p style="margin:14px 0 0;font-size:13px;line-height:1.72;color:#4A6B64;">Engineering and trades are included only where the work is documentable — Kayan verifies evidence, and a skill that leaves no artefact cannot enter the register.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E3DAC5;border-radius:22px;padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">LABEL VS SPECIALTY</div>
+        <div style="display:grid;gap:12px;margin-top:15px;">
+          <div style="display:grid;grid-template-columns:1fr auto 1.35fr;gap:10px;align-items:center;">
+            <span style="font-size:14px;color:#8A8272;text-decoration:line-through;">Translator</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#12B5A4;">→</span>
+            <span style="font-size:14px;color:#052E2B;">LG-LC-011 · Arabic–English legal contracts, GCC</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr auto 1.35fr;gap:10px;align-items:center;">
+            <span style="font-size:14px;color:#8A8272;text-decoration:line-through;">Developer</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#12B5A4;">→</span>
+            <span style="font-size:14px;color:#052E2B;">SW-FE-003 · React performance optimisation</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr auto 1.35fr;gap:10px;align-items:center;">
+            <span style="font-size:14px;color:#8A8272;text-decoration:line-through;">Designer</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#12B5A4;">→</span>
+            <span style="font-size:14px;color:#052E2B;">Bilingual RTL interface systems</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr auto 1.35fr;gap:10px;align-items:center;">
+            <span style="font-size:14px;color:#8A8272;text-decoration:line-through;">Researcher</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#052E2B;">Monitoring &amp; evaluation, humanitarian programmes</span>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid #E3DAC5;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B8891A;">WHY IT COMPOUNDS</div>
+          <p style="margin:7px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">Every completed project writes back into operational memory: which specialty combination delivered, how long it took, what it cost. The next match is faster and the next price is more accurate. That dataset is the moat.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 11 PRODUCTS ===== -->
+<section id="products" data-screen-label="11 Ready products" style="background:#fff;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">11 — THE 35 READY PRODUCTS</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#052E2B;max-width:22ch;">Choose. Fund. Start.</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">A first-time buyer should be able to buy something small before trusting us with something large. Thirty-five packages across eight families, each with a fixed scope, a fixed price and a fixed window — and an exclusion list printed as prominently as the inclusion list.</p>
+
+    <div style="margin-top:30px;border:1px solid #E3DAC5;border-radius:22px;overflow:hidden;background:#FAF6EC;">
+      <div style="padding:24px clamp(20px,3vw,28px) 18px;border-bottom:1px solid #E3DAC5;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">PRICE SPINE · $280 TO $5,500</div>
+        <div style="position:relative;height:52px;margin-top:16px;">
+          <div style="position:absolute;left:0;right:0;top:24px;height:2px;background:#E3DAC5;"></div>
+          <div style="position:absolute;left:0;top:18px;width:14px;height:14px;border-radius:50%;background:#12B5A4;"></div>
+          <div style="position:absolute;left:16%;top:20px;width:10px;height:10px;border-radius:50%;background:#3E9EEA;"></div>
+          <div style="position:absolute;left:34%;top:20px;width:10px;height:10px;border-radius:50%;background:#FFB627;"></div>
+          <div style="position:absolute;left:58%;top:20px;width:10px;height:10px;border-radius:50%;background:#FF6250;"></div>
+          <div style="position:absolute;right:0;top:18px;width:14px;height:14px;border-radius:50%;background:#C9A227;"></div>
+          <div style="position:absolute;left:0;top:0;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#4A6B64;">$280</div>
+          <div style="position:absolute;left:14%;top:40px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#8A8272;">$500</div>
+          <div style="position:absolute;left:32%;top:40px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#8A8272;">$1,200</div>
+          <div style="position:absolute;left:56%;top:40px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#8A8272;">$2,400</div>
+          <div style="position:absolute;right:0;top:0;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#4A6B64;">$5,500</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:#E3DAC5;">
+        <div style="background:#FAF6EC;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">FAMILY A</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">Brand &amp; Identity</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">RP-001 Identity Pack, $500. Logo, palette, type and usage rules — delivered as source files, never as images.</p></div>
+        <div style="background:#FAF6EC;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">FAMILY B</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">Digital &amp; Web</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">RP-002 Professional Website, $1,200. RP-022 Custom Web Platform, $5,500 — the ceiling of the catalogue.</p></div>
+        <div style="background:#FAF6EC;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">FAMILY C</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">Marketing &amp; Growth</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">RP-009 Social Retainer, $550 a month, with a stated reporting period and a named owner.</p></div>
+        <div style="background:#FAF6EC;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">FAMILY D</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">Content &amp; Media</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">RP-031 Voice-Over, $280 — the entry point to the whole catalogue.</p></div>
+        <div style="background:#FAF6EC;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">FAMILY E</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">Strategy &amp; Documents</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">Bilingual policy, tender and proposal packs authored in Arabic first.</p></div>
+        <div style="background:#FAF6EC;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">FAMILY F</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">Consulting</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">Fixed-scope advisory with a written output — never billed by the hour.</p></div>
+        <div style="background:#FAF6EC;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">FAMILY G</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">Managed Programmes</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">Multi-month delivery under one scope, gated the same way as everything else.</p></div>
+        <div style="background:#FAF6EC;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">FAMILY H</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:8px;">Enterprise Custom</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:#4A6B64;">Institutional buyers: M&amp;E studies and combined programmes, quoted against the same fixed-scope rules.</p></div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:16px;">
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#FAF6EC;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">EVERY CARD CARRIES</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">Enumerated deliverables, a final price in one currency, a window in business days from G2, the exclusion list, and the gate at which it is accepted.</p></div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#FAF6EC;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">THE HONEST PART</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">A product with no exclusion list is not published. What a package does <em>not</em> include is the sentence that prevents the dispute.</p></div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#FAF6EC;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B23A31;">NO DEVICES</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">No discounts, no bundles, no countdowns, no “from” pricing. A price that moves under pressure was never a real price.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 12 K4Y ===== -->
+<section id="civic" data-screen-label="12 Kayan for Yemen" style="background:#F1EAD9;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#2E7D46;">12 — KAYAN FOR YEMEN · THE CIVIC ENGINE</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#052E2B;max-width:24ch;">Mission and margin are the same activity</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">K4Y is not a side project or a foundation bolted on. It is the civic conscience running through every line, funded from operating surplus and sponsor partnerships, and reported by name and number. Talent raises its Card standing by contributing hours — and those hours are counted, not described.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin-top:30px;align-items:start;">
+      <div style="background:#052E2B;border-radius:22px;padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">THE GOVERNING NUMBER</div>
+        <div style="font-weight:600;font-size:clamp(22px,2.8vw,30px);line-height:1.24;color:#FAF6EC;margin-top:12px;letter-spacing:-.02em;">The Absorption Ratio</div>
+        <p style="margin:11px 0 0;font-size:14.5px;line-height:1.78;color:rgba(250,246,236,.75);">The share of the verified registry that has entered recorded, paid work. Kayan judges itself on this above every other metric — because training that does not end in income is not a result, it is an activity.</p>
+        <div style="margin-top:20px;">
+          <div style="display:flex;justify-content:space-between;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(250,246,236,.55);"><span>VERIFIED REGISTRY</span><span>IN PAID WORK</span></div>
+          <div style="height:26px;border-radius:6px;background:rgba(250,246,236,.12);margin-top:8px;overflow:hidden;display:flex;"><div style="width:58%;background:linear-gradient(90deg,#3FA75B,#12B5A4);display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#052E2B;">TARGET</div></div>
+          <p style="margin:9px 0 0;font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.6);">Published quarterly with the counting method stated. No projection is ever printed as a result.</p>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E3DAC5;border-radius:22px;padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#2E7D46;">THE GIVE-BACK LEDGER</div>
+        <div style="display:grid;gap:1px;background:#EDE5D2;border:1px solid #EDE5D2;border-radius:12px;overflow:hidden;margin-top:15px;">
+          <div style="background:#fff;display:grid;grid-template-columns:1.6fr .7fr .8fr;gap:10px;padding:11px 13px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:#8A8272;"><span>DELIVERABLE</span><span>HOURS</span><span>RECIPIENT</span></div>
+          <div style="background:#fff;display:grid;grid-template-columns:1.6fr .7fr .8fr;gap:10px;padding:12px 13px;align-items:baseline;"><span style="font-size:13.5px;color:#052E2B;">School science lab records system</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#3FA75B;">64</span><span style="font-size:12.5px;color:#4A6B64;">Named school</span></div>
+          <div style="background:#fff;display:grid;grid-template-columns:1.6fr .7fr .8fr;gap:10px;padding:12px 13px;align-items:baseline;"><span style="font-size:13.5px;color:#052E2B;">Clinic patient-record templates</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#3FA75B;">38</span><span style="font-size:12.5px;color:#4A6B64;">Named clinic</span></div>
+          <div style="background:#fff;display:grid;grid-template-columns:1.6fr .7fr .8fr;gap:10px;padding:12px 13px;align-items:baseline;"><span style="font-size:13.5px;color:#052E2B;">Open dataset: Aden service points</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#3FA75B;">96</span><span style="font-size:12.5px;color:#4A6B64;">Public</span></div>
+        </div>
+        <p style="margin:13px 0 0;font-size:13px;line-height:1.72;color:#4A6B64;">Four columns and nothing else: what was delivered, how many hours, to whom, on what date. Adjectives are not permitted in this table.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E3DAC5;border-radius:22px;padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B8891A;">THE FOUNDERS' WALL</div>
+        <div style="font-weight:600;font-size:18px;color:#052E2B;margin-top:10px;">The first 100, and the first 10</div>
+        <p style="margin:9px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">The founding cohort of Act I is named publicly: the first hundred verified talents and the ten anchor clients who signed before there was a track record to point at. They are recorded as co-builders, not as testimonials.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:16px;">
+          <span style="width:22px;height:22px;border-radius:50%;background:#C9A227;"></span><span style="width:22px;height:22px;border-radius:50%;background:#12B5A4;"></span><span style="width:22px;height:22px;border-radius:50%;background:#3E9EEA;"></span><span style="width:22px;height:22px;border-radius:50%;background:#3FA75B;"></span><span style="width:22px;height:22px;border-radius:50%;background:#FF6250;"></span><span style="width:22px;height:22px;border-radius:50%;background:#FFB627;"></span><span style="width:22px;height:22px;border-radius:50%;background:#E3DAC5;"></span><span style="width:22px;height:22px;border-radius:50%;background:#E3DAC5;"></span><span style="width:22px;height:22px;border-radius:50%;background:#E3DAC5;"></span><span style="width:22px;height:22px;border-radius:50%;background:#E3DAC5;"></span><span style="display:flex;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8272;padding-left:5px;">+ 90</span>
+        </div>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid #E3DAC5;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B23A31;">DIGNITY-FIRST REPORTING</div>
+          <p style="margin:7px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">Describe people by what they now do, never by what they once lacked. No before-and-after framing, no crisis photography, and no story traded for funding.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 12b PHYSICAL ANCHORS ===== -->
+<section id="hub" data-screen-label="12b The Aden Hub" style="background:#fff;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#B8891A;">12b — PHYSICAL &amp; CULTURAL ANCHORS</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#052E2B;max-width:24ch;">A sanctuary of reliability on the Khormaksar Corniche</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">An institution that promises delivery through power cuts has to own the room where the delivering happens. The Hub is the physical proof of the Standing Promise: reliability engineered rather than hoped for, and a professional home where scattered individuals gather.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:16px;margin-top:30px;">
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-top:4px solid #FFB627;border-radius:20px;padding:24px 22px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B8891A;">INFRASTRUCTURE</div>
+        <div style="font-weight:600;font-size:17px;color:#052E2B;margin-top:9px;">Solar and Starlink</div>
+        <p style="margin:7px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">Solar-powered and satellite-connected, specifically to overcome the city's power and internet gaps. This is not an amenity — it is what makes a signed delivery date defensible.</p>
+      </div>
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-top:4px solid #FFB627;border-radius:20px;padding:24px 22px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B8891A;">BIRTHPLACE BREW</div>
+        <div style="font-weight:600;font-size:17px;color:#052E2B;margin-top:9px;">The wellness engine</div>
+        <p style="margin:7px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">A strictly healthy and heritage menu: qishr infusions, herbal coffees, protein salads and local ice cream. Yemen's coffee heritage served as itself, not as a theme.</p>
+      </div>
+      <div style="background:#FAF6EC;border:1px solid #E3DAC5;border-top:4px solid #FFB627;border-radius:20px;padding:24px 22px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B8891A;">CULTURE</div>
+        <div style="font-weight:600;font-size:17px;color:#052E2B;margin-top:9px;">Painting corners, oud soundstage</div>
+        <p style="margin:7px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">Verified talent organise their own activities in the space. The soundstage is also where Clarion is recorded, so the broadcast is physically grounded in the Corniche.</p>
+      </div>
+      <div style="background:#052E2B;border-radius:20px;padding:24px 22px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">THE PHOTOGRAPHY RULE</div>
+        <div style="font-weight:600;font-size:17px;color:#FAF6EC;margin-top:9px;">The real room, or nothing</div>
+        <p style="margin:7px 0 0;font-size:14px;line-height:1.75;color:rgba(250,246,236,.72);">Every image of the Hub is a photograph of the actual space, with the actual people who work there. Stock offices are refused at review — a claim about reliability cannot be illustrated with someone else's room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 13 THE WEBSITE ===== -->
+<section id="site" data-screen-label="13 The website" style="background:#052E2B;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(950px 540px at 8% -8%,rgba(18,181,164,.16),transparent 62%);"></div>
+  <div style="position:relative;max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#12B5A4;">13 — THE WEBSITE · TO BUILD</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#FAF6EC;max-width:24ch;">Fourteen pages, four subdomains, one institution</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:rgba(250,246,236,.72);">Not a brochure — a working surface. Every page has one job and one primary action, and nothing is added because a competitor has it. Arabic leads the layout with a full right-to-left mirror, not a translated overlay.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:28px;">
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:16px;background:rgba(250,246,236,.05);padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#12B5A4;">kayanwork.com</div><div style="font-size:14px;color:#FAF6EC;margin-top:7px;">The institution</div><p style="margin:4px 0 0;font-size:12.5px;line-height:1.65;color:rgba(250,246,236,.62);">Home, model, organisations, talent, products, institution, intake.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:16px;background:rgba(250,246,236,.05);padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#3E9EEA;">platform.</div><div style="font-size:14px;color:#FAF6EC;margin-top:7px;">The portal</div><p style="margin:4px 0 0;font-size:12.5px;line-height:1.65;color:rgba(250,246,236,.62);">Scope, gate state, escrow status, handover minute. Login only.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:16px;background:rgba(250,246,236,.05);padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#FFB627;">space.</div><div style="font-size:14px;color:#FAF6EC;margin-top:7px;">The Hub</div><p style="margin:4px 0 0;font-size:12.5px;line-height:1.65;color:rgba(250,246,236,.62);">Desks, membership, the room on the Aden Corniche.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:16px;background:rgba(250,246,236,.05);padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#FF6250;">forge.</div><div style="font-size:14px;color:#FAF6EC;margin-top:7px;">Academy &amp; civic</div><p style="margin:4px 0 0;font-size:12.5px;line-height:1.65;color:rgba(250,246,236,.62);">Cohorts, tier progression, and the K4Y civic ledger.</p></div>
+    </div>
+
+    <div style="margin-top:22px;border:1px solid rgba(250,246,236,.18);border-radius:24px;overflow:hidden;background:rgba(250,246,236,.04);">
+      <div style="padding:26px clamp(20px,3vw,28px) 22px;border-bottom:1px solid rgba(250,246,236,.14);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:#C9A227;">PAGE 01 · THE HOME SURFACE — the first fifteen seconds</div>
+        <p style="margin:11px 0 0;max-width:62ch;font-size:15px;line-height:1.8;color:rgba(250,246,236,.75);">A photorealistic grosbeak glides over a vector mesh of the Verified Talent Map. Beneath it: the one sentence, three mechanisms, and one action. No carousel, no logo wall of clients we do not have, no statistic we cannot cite.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:rgba(250,246,236,.14);">
+        <div style="background:#052E2B;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">HERO</div><div style="font-weight:600;font-size:16px;color:#FAF6EC;margin-top:8px;">One claim, one button</div><p style="margin:6px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">The one sentence over the living map. Primary: “Start a project”. Secondary: “See how it works”.</p></div>
+        <div style="background:#052E2B;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">THREE MECHANISMS</div><div style="font-weight:600;font-size:16px;color:#FAF6EC;margin-top:8px;">Verification · Scope · Escrow</div><p style="margin:6px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">One line each. These are the reason to trust an institution with no history.</p></div>
+        <div style="background:#052E2B;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">LIVE COUNTERS</div><div style="font-weight:600;font-size:16px;color:#FAF6EC;margin-top:8px;">Three numbers, real</div><p style="margin:6px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">Verified talent, community hours earned, successful deliveries. Read from the register — never hand-set.</p></div>
+        <div style="background:#052E2B;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">THE SIX DOORS</div><div style="font-weight:600;font-size:16px;color:#FAF6EC;margin-top:8px;">One job named per line</div><p style="margin:6px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">Each door carries its bloom as a top edge and its flight path as the hover state.</p></div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:18px;">
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.5);">02 · THE MODEL</div><div style="font-weight:600;font-size:15.5px;color:#FAF6EC;margin-top:7px;">The living loom</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">G0–G9 as a thread woven through nodes. Carries the iron rule and the 80/20/2 hover.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.5);">03 · FOR ORGANISATIONS</div><div style="font-weight:600;font-size:15.5px;color:#FAF6EC;margin-top:7px;">The client case</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">What we take on, what we refuse, how risk is held. Scope and date only — never a rate.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.5);">04 · FOR TALENT</div><div style="font-weight:600;font-size:15.5px;color:#FAF6EC;margin-top:7px;">The verification spine</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">T0–T4 vertically, the Card preview, and what disqualifies — stated plainly.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.5);">05 · THE TALENT MAP</div><div style="font-weight:600;font-size:15.5px;color:#FAF6EC;margin-top:7px;">Search by specialty</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">The taxonomy interface. Kinetic Cards that flip to a delivery ledger of proof cards.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.5);">06 · VERIFY</div><div style="font-weight:600;font-size:15.5px;color:#FAF6EC;margin-top:7px;">The command centre</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">One field. Enter a Card ID, see live tier and specialty history. No login, no account.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.5);">07 · READY PRODUCTS</div><div style="font-weight:600;font-size:15.5px;color:#FAF6EC;margin-top:7px;">The catalogue</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">Thirty-five packages, searchable by outcome. The only page where a number is a price.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.5);">08 · THE DELIVERY LEDGER</div><div style="font-weight:600;font-size:15.5px;color:#FAF6EC;margin-top:7px;">Proof cards, not testimonials</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">Append-only. One record per completed pod project, with photo-backed evidence and a date.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.5);">09 · KAYAN FOR YEMEN</div><div style="font-weight:600;font-size:15.5px;color:#FAF6EC;margin-top:7px;">The give-back ticker</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">Hours, recipient, deliverable, date — and the Absorption Ratio above them all.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.5);">10 · THE HUB</div><div style="font-weight:600;font-size:15.5px;color:#FAF6EC;margin-top:7px;">The room in Aden</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">Real photographs of the real space. Hours, power, bandwidth, membership terms.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.5);">11 · FORGE</div><div style="font-weight:600;font-size:15.5px;color:#FAF6EC;margin-top:7px;">Cohorts and sponsorship</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">What you learn, what you must produce, who assesses it, and what the tier is worth.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.5);">12 · THE INSTITUTION</div><div style="font-weight:600;font-size:15.5px;color:#FAF6EC;margin-top:7px;">Governance and the wall</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">Registration, named roles, the Absorption Ratio, and the Founders' Wall.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.5);">13 · INTAKE</div><div style="font-weight:600;font-size:15.5px;color:#FAF6EC;margin-top:7px;">Start a project</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">Six fields. The AI intake engine drafts the scope; a named human owns and signs it.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.5);">14 · THE PORTAL DOOR</div><div style="font-weight:600;font-size:15.5px;color:#FAF6EC;margin-top:7px;">Protected status</div><p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:rgba(250,246,236,.68);">Scope, gate, escrow state, handover minute. Nothing else is shown to a client.</p></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px;margin-top:22px;">
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">BILINGUAL PARITY</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.7);">The switch mirrors layout, alignment and number direction — it does not swap strings. Arabic is authored; English is the operational translation.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">PERFORMANCE FLOOR</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.7);">Built for a mid-range Android on an unreliable connection: first paint under 1.5s, no page over 400 KB of script, fonts subset per script.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">ACCESSIBILITY FLOOR</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.7);">WCAG 2.2 AA, keyboard-complete, 44 px targets, focus visible in Reef, and full function with motion disabled.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 14 LINE SURFACES ===== -->
+<section id="surfaces" data-screen-label="14 Line surfaces" style="background:#FAF6EC;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">14 — LINE SURFACES · TO BUILD</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#052E2B;max-width:24ch;">Six landing pages, one template, six flights</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">Every line page runs the same skeleton so the house reads as one institution: masthead carrying the flight path in the bloom colour, the one job, the proof of method, and a single action. Only the flight, the bloom and the content change.</p>
+
+    <div style="display:grid;gap:14px;margin-top:28px;">
+      <div style="border:1px solid #E3DAC5;border-left:5px solid #3E9EEA;border-radius:18px;background:#fff;padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#1E63A8;">L1 · MANAGED DELIVERY · COORDINATED WINGBEATS</div><div style="font-weight:600;font-size:19px;color:#052E2B;margin-top:8px;">Outcome certainty</div><p style="margin:7px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">The page a serious client lands on. The headline states the outcome, not the service: a scoped project delivered on a signed date, or the guarantee applies.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8A8272;">PROOF OF METHOD</div><p style="margin:8px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">The ten gates as a compact rail, using the exact state language the client will see in the portal. Plus three stated refusals: no open-ended retainers, no unscoped changes, no verbal approvals.</p></div>
+      </div>
+      <div style="border:1px solid #E3DAC5;border-left:5px solid #FFB627;border-radius:18px;background:#fff;padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B8891A;">L2 · THE HUB · DESCENT AND LANDING</div><div style="font-weight:600;font-size:19px;color:#052E2B;margin-top:8px;">Capability gathering in one place</div><p style="margin:7px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">The physical room on the Khormaksar Corniche: desks, power, connectivity, and somewhere a client call can be taken without apology.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8A8272;">PROOF OF METHOD</div><p style="margin:8px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">Stated infrastructure — hours, power arrangement, bandwidth, booking — and the membership obligations in both directions. Photographs of the real room only; never stock offices.</p></div>
+      </div>
+      <div style="border:1px solid #E3DAC5;border-left:5px solid #FF6250;border-radius:18px;background:#fff;padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C8443A;">L3 · KAYAN FORGE · THE BANKING TURN</div><div style="font-weight:600;font-size:19px;color:#052E2B;margin-top:8px;">Practice, and a new heading</div><p style="margin:7px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">Addressed to the person, never to a donor: what you learn, what you must produce, who assesses it, and what the tier is worth in paid work afterwards.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8A8272;">PROOF OF METHOD</div><p style="margin:8px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">The tier progression rules, including the assessment that can fail you. Sponsorship states what a sponsor gets — and explicitly what they do not: no naming rights over a person.</p></div>
+      </div>
+      <div style="border:1px solid #E3DAC5;border-left:5px solid #3FA75B;border-radius:18px;background:#fff;padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#2E7D46;">L4 · KAYAN FOR YEMEN · THE OUTWARD ARC</div><div style="font-weight:600;font-size:19px;color:#052E2B;margin-top:8px;">Contribution, counted</div><p style="margin:7px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">Hours contributed to Yemeni institutions, published with the method of counting stated. The page's discipline is arithmetic, not adjectives.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8A8272;">PROOF OF METHOD</div><p style="margin:8px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">The give-back ledger and the Absorption Ratio, quarterly. What we decline is on the page: anything that trades a person's story for funding.</p></div>
+      </div>
+      <div style="border:1px solid #E3DAC5;border-left:5px solid #12B5A4;border-radius:18px;background:#fff;padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E8E80;">L5 · READY PRODUCTS · THE SHORT GLIDE</div><div style="font-weight:600;font-size:19px;color:#052E2B;margin-top:8px;">A known price, a known date</div><p style="margin:7px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">Thirty-five packages, filtered by outcome rather than discipline, because clients search for what they need done.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8A8272;">PROOF OF METHOD</div><p style="margin:8px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">The exclusion list sits at the same weight as the inclusion list, and “Fund” opens a scope that is already written. Buying is one decision, not a negotiation.</p></div>
+      </div>
+      <div style="border:1px solid #E3DAC5;border-left:5px solid #E67E22;border-radius:18px;background:#fff;padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C25E10;">L6 · KAYAN CLARION · THE BROADCASTER’S HOVER</div><div style="font-weight:600;font-size:19px;color:#052E2B;margin-top:8px;">The method, published</div><p style="margin:7px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">Episodes, written pieces, and the standards library made public — so the method is visible before anyone signs anything.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#8A8272;">PROOF OF METHOD</div><p style="margin:8px 0 0;font-size:14px;line-height:1.75;color:#4A6B64;">Publish the checklists we actually use, not summaries of them. No client is discussed without written permission and a signed scope reference.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 14b CLARION ===== -->
+<section id="clarion" data-screen-label="14b Kayan Clarion" style="background:#0B1F26;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 84% -8%,rgba(230,126,34,.18),transparent 62%),radial-gradient(800px 480px at 6% 106%,rgba(18,181,164,.12),transparent 62%);"></div>
+  <div style="position:relative;max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#E67E22;">14b — KAYAN CLARION · كيان كلاريون</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#FAF6EC;max-width:22ch;">Voice of the Harbour</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:rgba(250,246,236,.72);">Clarion is the broadcast arm — the audible pulse of the institution, converting ledger data and talent records into narrative authority. It is not a podcast with a brand attached; it is a structured content engine whose purpose is to de-risk the Yemeni market for global buyers. Its promise: <em style="color:#E67E22;font-style:normal;">resonance through structure</em>.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:30px;align-items:start;">
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:22px;background:rgba(250,246,236,.05);overflow:hidden;">
+        <svg viewBox="0 0 320 150" aria-hidden="true" style="display:block;width:100%;height:auto;background:rgba(5,46,43,.35);">
+          <path d="M20 122 C 70 116, 110 126, 150 118 S 250 108, 306 116" fill="none" stroke="rgba(250,246,236,.16)" stroke-width="1"/>
+          <g stroke="rgba(250,246,236,.14)" stroke-width=".8"><path d="M46 120 L92 108 L138 116 L186 104 L232 112 L282 102"/><path d="M92 108 L110 126 M186 104 L204 120 M232 112 L250 126"/></g>
+          <g fill="rgba(18,181,164,.6)"><circle cx="46" cy="120" r="2.4"/><circle cx="92" cy="108" r="2.4"/><circle cx="138" cy="116" r="2.4"/><circle cx="186" cy="104" r="2.4"/><circle cx="232" cy="112" r="2.4"/><circle cx="282" cy="102" r="2.4"/></g>
+          <circle cx="160" cy="52" r="16" fill="none" stroke="#E67E22" stroke-width="1.6" style="transform-origin:160px 52px;animation:kRipple 3s 0s ease-out infinite;"/>
+          <circle cx="160" cy="52" r="16" fill="none" stroke="#E67E22" stroke-width="1.6" style="transform-origin:160px 52px;animation:kRipple 3s 1s ease-out infinite;"/>
+          <circle cx="160" cy="52" r="16" fill="none" stroke="#E67E22" stroke-width="1.6" style="transform-origin:160px 52px;animation:kRipple 3s 2s ease-out infinite;"/>
+          <circle cx="160" cy="52" r="4.5" fill="#E67E22"/>
+        </svg>
+        <div style="padding:20px 22px;border-top:1px solid rgba(250,246,236,.14);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#E67E22;">THE BROADCASTER'S HOVER</div>
+          <p style="margin:8px 0 0;font-size:14px;line-height:1.75;color:rgba(250,246,236,.72);">The grosbeak at its highest altitude, wings fully spread, holding still. Ripples leave the beak and wash over the mesh map of Yemen — the one flight in the doctrine that does not travel, because the voice travels instead.</p>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:22px;background:rgba(250,246,236,.05);padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#E67E22;">THE FOUR DISPATCH PILLARS</div>
+        <div style="display:grid;gap:11px;margin-top:16px;">
+          <div style="border-left:3px solid #3E9EEA;padding:10px 13px;background:rgba(250,246,236,.04);border-radius:0 10px 10px 0;"><div style="font-size:14.5px;color:#FAF6EC;">Faces of the Map</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.65);margin-top:3px;">A weekly T3-and-above professional, named with their specific taxonomy node and their path up the Trust Ladder.</div></div>
+          <div style="border-left:3px solid #12B5A4;padding:10px 13px;background:rgba(250,246,236,.04);border-radius:0 10px 10px 0;"><div style="font-size:14.5px;color:#FAF6EC;">The Sector Series</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.65);margin-top:3px;">Deep dives into one capability domain, argued from Delivery Ledger data rather than opinion.</div></div>
+          <div style="border-left:3px solid #C9A227;padding:10px 13px;background:rgba(250,246,236,.04);border-radius:0 10px 10px 0;"><div style="font-size:14.5px;color:#FAF6EC;">The Diaspora Shadow</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.65);margin-top:3px;">A diaspora shadow lead in conversation with a local pod about shipping an international project.</div></div>
+          <div style="border-left:3px solid #E67E22;padding:10px 13px;background:rgba(230,126,34,.1);border-radius:0 10px 10px 0;"><div style="font-size:14.5px;color:#FAF6EC;">The Policy Playbook</div><div style="font-size:12.5px;line-height:1.7;color:rgba(250,246,236,.65);margin-top:3px;">A monthly briefing on frontier economics, making the case that geography should stop being destiny.</div></div>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:22px;background:rgba(250,246,236,.05);padding:26px 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#E67E22;">SENSORY ARCHITECTURE</div>
+        <div style="display:grid;gap:12px;margin-top:15px;">
+          <div><div style="font-size:14.5px;color:#FAF6EC;">The Clarion Bell</div><p style="margin:4px 0 0;font-size:13px;line-height:1.72;color:rgba(250,246,236,.68);">The Harbour Bell with a sustained, vibrating tail — the one authorised variation, and only to open a broadcast.</p></div>
+          <div><div style="font-size:14.5px;color:#FAF6EC;">Verified audio stamps</div><p style="margin:4px 0 0;font-size:13px;line-height:1.72;color:rgba(250,246,236,.68);">A sonic tick marks any figure spoken on air that is audit-ready and traceable to the Ledger. An unticked number was not verified.</p></div>
+          <div><div style="font-size:14.5px;color:#FAF6EC;">Recorded on the Corniche</div><p style="margin:4px 0 0;font-size:13px;line-height:1.72;color:rgba(250,246,236,.68);">Every dispatch is recorded live from the oud soundstage at the Aden Hub, so the broadcast is physically grounded where the work is.</p></div>
+          <div style="padding-top:12px;border-top:1px solid rgba(250,246,236,.16);"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">PROOF-OF-VOICE</div><p style="margin:6px 0 0;font-size:13px;line-height:1.72;color:rgba(250,246,236,.68);">A T4 anchor who hosts a masterclass dispatch earns a public-authority point on their Card, raising their priority for high-stakes international consultancy.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 15 STACK ===== -->
+<section id="stack" data-screen-label="15 The stack" style="background:#052E2B;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(900px 520px at 92% -6%,rgba(18,181,164,.15),transparent 62%);"></div>
+  <div style="position:relative;max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#12B5A4;">15 — THE STACK · TO BUILD</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#FAF6EC;max-width:26ch;">Boring technology, chosen for a bad connection</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:rgba(250,246,236,.72);">Two constraints govern every choice: it must work on a mid-range Android over an unreliable Yemeni connection, and a small team must maintain it without a specialist. Nothing here is chosen because it is new.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:14px;margin-top:28px;">
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">FRONT END</div><div style="font-weight:600;font-size:16px;color:#FAF6EC;margin-top:8px;">Server-rendered, hydrated only where needed</div><p style="margin:6px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.7);">Marketing pages ship as static HTML with no framework runtime. Interactivity is added per component, not per page. Logical CSS properties throughout, so the RTL mirror is structural rather than a stylesheet fork.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">TYPE DELIVERY</div><div style="font-weight:600;font-size:16px;color:#FAF6EC;margin-top:8px;">Self-hosted, subset per script</div><p style="margin:6px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.7);">Amiri, IBM Plex Sans Arabic, Outfit and Plex Mono as self-hosted WOFF2, subset and split so no page downloads a script it does not render.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">PORTAL</div><div style="font-weight:600;font-size:16px;color:#FAF6EC;margin-top:8px;">One relational database, strict states</div><p style="margin:6px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.7);">Gate state is a single enumerated column with an append-only audit table beside it: every transition records who, when, and against which artefact. No state is edited in place.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">MONEY</div><div style="font-weight:600;font-size:16px;color:#FAF6EC;margin-top:8px;">Bank-held liability, never our balance</div><p style="margin:6px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.7);">Funds sit under GL 2100 at Aden Bank. The portal records the escrow state and reference only; release is a human action by Finance against a written acceptance.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">DOCUMENTS</div><div style="font-weight:600;font-size:16px;color:#FAF6EC;margin-top:8px;">Generated, versioned, never hand-edited</div><p style="margin:6px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.7);">Scopes, change orders and handover minutes are produced from templates with a reference number and stored immutably. A signed document is superseded by a new version that cites it — never replaced.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">AI, WHERE IT EARNS ITS PLACE</div><div style="font-weight:600;font-size:16px;color:#FAF6EC;margin-top:8px;">Drafting and matching, never deciding</div><p style="margin:6px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.7);">The intake engine drafts a scope from an unstructured brief; predictive matching proposes pod combinations from the register. Both produce suggestions a named human signs. No model closes a gate.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">IDENTITY &amp; ACCESS</div><div style="font-weight:600;font-size:16px;color:#FAF6EC;margin-top:8px;">Separation enforced in the schema</div><p style="margin:6px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.7);">Clients see only their own project. Reviewers cannot see commercial terms. Resourcing cannot alter verification records. Nobody verifies their own hire.</p></div>
+      <div style="border:1px solid rgba(250,246,236,.16);border-radius:18px;background:rgba(250,246,236,.05);padding:21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#12B5A4;">MEASUREMENT</div><div style="font-weight:600;font-size:16px;color:#FAF6EC;margin-top:8px;">Server-side, cookieless</div><p style="margin:6px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.7);">Page views, intake submissions, gate durations. No third-party trackers and no session recording on a surface that handles identity documents.</p></div>
+      <div style="border:1px solid rgba(201,162,39,.4);border-radius:18px;background:rgba(201,162,39,.08);padding:21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#C9A227;">THE RULE BEHIND ALL OF IT</div><div style="font-weight:600;font-size:16px;color:#FAF6EC;margin-top:8px;">If it cannot be audited, it is not built</div><p style="margin:6px 0 0;font-size:13.5px;line-height:1.75;color:rgba(250,246,236,.7);">Every feature answers two questions: what record does this leave, and who can read it? A feature that leaves no record has no place in an institution whose product is proof.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 16 TWELVE MONTHS ===== -->
+<section id="year" data-screen-label="16 Twelve months" style="background:#FAF6EC;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">16 — TWELVE MONTHS, ONE STORY</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#052E2B;max-width:24ch;">Four acts from 20 August 2026</h2>
+    <p style="margin:14px 0 0;max-width:66ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">The first year is one narrative, not a backlog. Each act ends with something a person outside the company can inspect — and no act says “finalise” or “polish”.</p>
+    <div style="display:grid;gap:1px;background:#E3DAC5;border:1px solid #E3DAC5;border-radius:22px;overflow:hidden;margin-top:28px;">
+      <div style="background:#fff;display:grid;grid-template-columns:120px 1fr 1.15fr;gap:16px;padding:22px clamp(18px,2.5vw,24px);align-items:start;">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3E9EEA;">ACT I</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8A8272;margin-top:4px;">AUG — OCT</div></div>
+        <div><div style="font-weight:600;font-size:17px;color:#052E2B;">Arrival</div><p style="margin:5px 0 0;font-size:14px;line-height:1.72;color:#4A6B64;">Make Kayan known. Reveal the Verified Talent Map, open the Hub on the Khormaksar Corniche, and name the Founding 100 on a physical wall.</p></div>
+        <p style="margin:0;font-size:13.5px;line-height:1.72;color:#4A6B64;"><strong style="color:#052E2B;">Done when:</strong> a stranger can arrive at the site, understand the mechanism, and start a project without speaking to us first — and the first hundred verified talents are on the wall.</p>
+      </div>
+      <div style="background:#fff;display:grid;grid-template-columns:120px 1fr 1.15fr;gap:16px;padding:22px clamp(18px,2.5vw,24px);align-items:start;">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#12B5A4;">ACT II</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8A8272;margin-top:4px;">NOV — JAN</div></div>
+        <div><div style="font-weight:600;font-size:17px;color:#052E2B;">Proof</div><p style="margin:5px 0 0;font-size:14px;line-height:1.72;color:#4A6B64;">Launch the public Delivery Ledger. Proof cards from completed pod projects answer buyer fear with evidence rather than argument, and the diaspora bridge opens.</p></div>
+        <p style="margin:0;font-size:13.5px;line-height:1.72;color:#4A6B64;"><strong style="color:#052E2B;">Done when:</strong> the ledger holds real accepted handovers with dates and photo-backed evidence, and the verify tool returns live tiers for every Card issued.</p>
+      </div>
+      <div style="background:#fff;display:grid;grid-template-columns:120px 1fr 1.15fr;gap:16px;padding:22px clamp(18px,2.5vw,24px);align-items:start;">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3FA75B;">ACT III</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8A8272;margin-top:4px;">FEB — APR</div></div>
+        <div><div style="font-weight:600;font-size:17px;color:#052E2B;">Mobilise</div><p style="margin:5px 0 0;font-size:14px;line-height:1.72;color:#4A6B64;">The Ramadan civic peak — “Ten Nights, Ten Skills”, ten community projects delivered by volunteer pods. Alongside it, “She Delivers” puts women’s technical excellence on the record.</p></div>
+        <p style="margin:0;font-size:13.5px;line-height:1.72;color:#4A6B64;"><strong style="color:#052E2B;">Done when:</strong> contributed hours are published by recipient and deliverable, and Card standing visibly reflects civic contribution.</p>
+      </div>
+      <div style="background:#052E2B;display:grid;grid-template-columns:120px 1fr 1.15fr;gap:16px;padding:22px clamp(18px,2.5vw,24px);align-items:start;">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#C9A227;">ACT IV</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(250,246,236,.5);margin-top:4px;">MAY — JUL</div></div>
+        <div><div style="font-weight:600;font-size:17px;color:#FAF6EC;">Scale</div><p style="margin:5px 0 0;font-size:14px;line-height:1.72;color:rgba(250,246,236,.72);">The Sector Series, Campus-to-Career pathways with universities, the launch of Kayan Ventures, and regional expansion toward Cairo.</p></div>
+        <p style="margin:0;font-size:13.5px;line-height:1.72;color:rgba(250,246,236,.72);"><strong style="color:#FAF6EC;">Done when:</strong> the Absorption Ratio is published for a full year and rising — the only measure by which year one is judged a success.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:18px;">
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B23A31;">THE BLOCKING ITEM</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">Licensed photographs of the grosbeak, for the hero and the six mastheads. Until they exist the mastheads carry the mark and the flight path alone — the bird is never illustrated to fill the gap.</p></div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B8891A;">THE HELD ITEM</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">The national-bird claim stays out of all public material until a decree number and date are attached to it. Held, not deleted.</p></div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#fff;padding:19px 21px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">THE SEQUENCING RULE</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">The portal does not launch before a pilot project has walked all ten gates end to end. A gate that has never been walked is a diagram, not a mechanism.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 17 REFUSALS ===== -->
+<section id="refusals" data-screen-label="17 Refusals" style="background:#fff;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#B23A31;">17 — REFUSALS</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.16;letter-spacing:-.025em;color:#052E2B;max-width:24ch;">Sent back without discussion</h2>
+    <p style="margin:14px 0 0;max-width:64ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">These are not preferences. Any one of them is grounds for refusing work at G7, whoever made it and however close the deadline is.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:28px;">
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#FAF6EC;padding:21px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B23A31;">THE MARK</div>
+        <div style="display:grid;gap:8px;margin-top:12px;">
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Stretching, squeezing, tilting or rotating the lockup</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Mirroring the bird, in either script</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Shadows, bevels, outlines, or a glow</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Placing it on a photograph, a bloom colour, or a gradient</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Merging it with a partner logo into one device</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Re-drawing the bird by hand at any size</span></div>
+        </div>
+      </div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#FAF6EC;padding:21px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B23A31;">IN WRITING</div>
+        <div style="display:grid;gap:8px;margin-top:12px;">
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">An unsourced factual claim about Yemen, an institution, or a date</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Arabic that reads as a translation of an English draft</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">«تم + مصدر» in place of the passive verb</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Exclamation marks, hype, or an adjective that cannot be audited</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">A price published without an exclusion list</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">An hourly rate on any public surface</span></div>
+        </div>
+      </div>
+      <div style="border:1px solid #E3DAC5;border-radius:18px;background:#FAF6EC;padding:21px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B23A31;">IMAGERY &amp; PROCESS</div>
+        <div style="display:grid;gap:8px;margin-top:12px;">
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Crisis photography, or a person shown as a beneficiary</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Stock offices standing in for the Hub</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Two bloom colours in one view</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">Work begun before G2, for any client, for any reason</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">A review by anyone inside the pod that made the work</span></div>
+          <div style="display:flex;gap:9px;"><span style="color:#B23A31;font-weight:700;">✕</span><span style="font-size:13.5px;line-height:1.7;color:#4A6B64;">A verbal approval treated as acceptance</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 18 SOURCES ===== -->
+<section id="sources" data-screen-label="18 Sources" style="background:#F1EAD9;padding:clamp(52px,9vh,90px) clamp(20px,4vw,44px);">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#B8891A;">18 — SOURCES &amp; CORRECTIONS</div>
+    <h2 style="margin:12px 0 0;font-weight:600;font-size:clamp(24px,3.2vw,42px);line-height:1.18;letter-spacing:-.025em;color:#052E2B;max-width:26ch;">Every claim has a source, and two earlier claims are corrected here</h2>
+    <p style="margin:14px 0 0;max-width:64ch;font-size:16.5px;line-height:1.75;color:#4A6B64;">Corrections are recorded in the document itself. An error is never removed quietly, because a company whose product is proof cannot edit its own history in silence.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:#E3DAC5;border:1px solid #E3DAC5;border-radius:20px;overflow:hidden;margin-top:26px;">
+      <div style="background:#fff;padding:21px 23px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B23A31;">CORRECTED — 01</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:9px;">The species range</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">An earlier draft of this identity used a bee-eater as the house bird and stated it was described from Yemeni specimens. Both are withdrawn. The house bird is the Socotra Golden-winged Grosbeak, per the institutional blueprint, and the grosbeak complex is treated carefully: the Socotra bird is <em>Rhynchostruthus socotranus</em>; the mainland Yemeni bird is the Arabian Grosbeak, <em>R. percivali</em>. Where copy refers to a mainland sighting, the mainland name is used.</p></div>
+      <div style="background:#fff;padding:21px 23px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B8891A;">HELD — 02</div><div style="font-weight:600;font-size:16px;color:#052E2B;margin-top:9px;">The national-bird claim</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">The grosbeak is widely described as Yemen's national bird. Until a decree number and date are attached, that sentence stays out of external material. It remains in the register as held — not asserted, not deleted.</p></div>
+      <div style="background:#fff;padding:21px 23px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">S-01 · IDENTITY</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">The one sentence, the iron rule, the 70/20/7/3 discipline, the bird doctrine and the flight signatures per line.</p><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:8px;">Kayan Strategic Website Operating Surface Blueprint</div></div>
+      <div style="background:#fff;padding:21px 23px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">S-02 · OPERATIONS</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">The ten gates and their QA layers, the 80/20/2 split, the thirty-day holdback, and the Aden Bank liability treatment.</p><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:8px;">Kayan Master Operating Directive · Managed Delivery Standard</div></div>
+      <div style="background:#fff;padding:21px 23px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">S-03 · TALENT</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">The Trust Ladder T0–T4, the Kayan Card bands KC-A to KC-F, the 1-in-6 vetting rate, and the Absorption Ratio as governing metric.</p><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:8px;">Registration, Assessment &amp; Verification Architecture</div></div>
+      <div style="background:#fff;padding:21px 23px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0E6E66;">S-04 · TAXONOMY &amp; CATALOGUE</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">10 domains / 35 specialties / 144 named skills, the wider 20 / 79 / 483 register, and the 35 ready products across eight families, $280–$5,500.</p><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#8A8272;margin-top:8px;">Micro-Specialisation Taxonomy · Ready Products Operating Catalogue</div></div>
+      <div style="background:#FAF6EC;padding:21px 23px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:#B8891A;">THE RULE OF EVIDENCE</div><p style="margin:8px 0 0;font-size:13.5px;line-height:1.75;color:#4A6B64;">No sentence about a species, an institution, or a date is published without an attached source. What is not documented stays in the held register — and does not enter external material, however probable it seems.</p></div>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:36px;padding-top:26px;border-top:1px solid #E3DAC5;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <img src="assets/kayan-lockup-h.png" alt="Kayan" style="height:40px;width:auto;display:block;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#6E675A;">KYN-MASTER v2 · AUGUST 2026 · ADEN</div>
+          <div dir="rtl" style="font-family:'Amiri',serif;font-size:18px;color:#B8891A;margin-top:5px;">«خلف كلّ مشروعٍ ناجح، كيان»</div>
+        </div>
+      </div>
+      <div style="font-family:'Amiri',serif;font-style:italic;font-size:16px;color:#4A6B64;">Behind every successful project, a Kayan.</div>
+    </div>
+  </div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1320,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { gate: 2, night: false, nowPlaying: "—", flip: false };
+
+  componentWillUnmount() { if (this.actx) this.actx.close(); }
+
+  ensure() {
+    if (!this.actx) {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return null;
+      this.actx = new AC();
+    }
+    if (this.actx.state === "suspended") this.actx.resume();
+    return this.actx;
+  }
+
+  lock(key) {
+    const ctx = this.ensure();
+    if (!ctx) return;
+    const table = {
+      house: { wave: "triangle", shift: 0, decay: 1.6, grace: false, sub: true },
+      tick: { wave: "triangle", shift: 12, decay: 0.14, grace: false, sub: false, tick: true },
+      l1: { wave: "triangle", shift: 0, decay: 1.3, grace: false, sub: true },
+      l2: { wave: "sine", shift: 12, decay: 1.7, grace: false, sub: false },
+      l3: { wave: "square", shift: 0, decay: 0.9, grace: true, sub: true },
+      l4: { wave: "sine", shift: -12, decay: 2.2, grace: false, sub: false },
+      l5: { wave: "triangle", shift: 7, decay: 0.7, grace: false, sub: false },
+      l6: { wave: "sine", shift: 5, decay: 2.6, grace: true, sub: true }
+    };
+    const v = table[key] || table.house;
+    const t0 = ctx.currentTime + 0.04;
+    const sc = Math.pow(2, v.shift / 12);
+    // The Harbour Bell — D3 → A3 → D4
+    const notes = v.tick
+      ? [[587.33, 0, 0.12]]
+      : [[146.83, 0, 0.5], [220, 0.26, 0.55], [293.66, 0.52, v.decay]];
+    const bus = ctx.createGain();
+    bus.gain.value = 0.5;
+    bus.connect(ctx.destination);
+    notes.forEach(([f, at, dur], i) => {
+      const o = ctx.createOscillator(), g = ctx.createGain(), lp = ctx.createBiquadFilter();
+      lp.type = "lowpass"; lp.frequency.value = 3200;
+      o.type = v.wave; o.frequency.value = f * sc;
+      const s = t0 + at;
+      g.gain.setValueAtTime(0, s);
+      g.gain.linearRampToValueAtTime(i === 2 ? 0.3 : 0.24, s + 0.008);
+      g.gain.exponentialRampToValueAtTime(0.0008, s + dur);
+      o.connect(lp); lp.connect(g); g.connect(bus);
+      o.start(s); o.stop(s + dur + 0.05);
+      if (v.sub) {
+        const o2 = ctx.createOscillator(), g2 = ctx.createGain();
+        o2.type = "sine"; o2.frequency.value = f * sc * 0.5;
+        g2.gain.setValueAtTime(0, s);
+        g2.gain.linearRampToValueAtTime(0.09, s + 0.01);
+        g2.gain.exponentialRampToValueAtTime(0.0008, s + dur * 0.8);
+        o2.connect(g2); g2.connect(bus);
+        o2.start(s); o2.stop(s + dur);
+      }
+    });
+    if (v.grace) {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = v.wave; o.frequency.value = 440 * sc;
+      const s = t0 + 0.72;
+      g.gain.setValueAtTime(0, s);
+      g.gain.linearRampToValueAtTime(0.12, s + 0.006);
+      g.gain.exponentialRampToValueAtTime(0.0008, s + 0.16);
+      o.connect(g); g.connect(bus);
+      o.start(s); o.stop(s + 0.2);
+    }
+    const names = { house: "The Harbour Bell", tick: "Sonic tick", l1: "Managed Delivery", l2: "The Hub", l3: "Kayan Forge", l4: "Kayan for Yemen", l5: "Ready Products", l6: "Kayan Clarion" };
+    this.setState({ nowPlaying: names[key] || "—" });
+  }
+
+  renderVals() {
+    const G = [
+      { id: "G0", t: "Brief received", d: "Intake. The brief is logged and triaged against what Kayan takes on. Anything outside the 483-node taxonomy is declined in writing, with a reason.", a: "Intake record", o: "Client lead", p: "INTAKE" },
+      { id: "G1", t: "Acceptance criteria defined", d: "Intake. A scoping call converts the brief into deliverables, dates, exclusions and price. The smart intake engine drafts the SOW; a named human owns it.", a: "Draft statement of work", o: "Delivery lead", p: "INTAKE" },
+      { id: "G2", t: "Scope signed", d: "Intake closes. Both parties sign the statement of work. Nothing about the engagement is verbal from this point forward.", a: "Signed SOW", o: "Client + Kayan", p: "INTAKE" },
+      { id: "G3", t: "Escrow funded", d: "The trust gate. 100% of project value is funded into escrow and held as a liability at Aden Bank under GL 2100. No work exists before this confirmation lands.", a: "Bank confirmation", o: "Finance", p: "TRUST" },
+      { id: "G4", t: "Pod staffed", d: "Staffing. The Verified Talent Map is mined for the exact micro-specialisation nodes the brief needs. Only T2 and above are eligible, and every tier is recorded on the roster.", a: "Pod roster · T2+", o: "Resourcing", p: "STAFFING" },
+      { id: "G5", t: "Execution", d: "Milestones run with weekly demos visible in the portal rather than in email threads. The maker checks their own work against the scope, line by line.", a: "Milestone submissions", o: "Pod lead", p: "EXECUTION" },
+      { id: "G6", t: "Internal checkpoint", d: "Second QA layer. A peer in the same specialisation reviews craft and correctness inside the pod before anything leaves it.", a: "Peer review note", o: "Peer", p: "EXECUTION" },
+      { id: "G7", t: "Independent QA", d: "Third layer, and the one that matters. An auditor outside the pod applies the six reality tests and must score 4.0 or above. The decision is reasoned, and the pod cannot overrule it.", a: "QA score ≥ 4.0", o: "Auditor", p: "QUALITY" },
+      { id: "G8", t: "Client acceptance", d: "Delivery with the certificate attached, and a five-day review window. The client signs, or issues a dated defect list. Silence is never acceptance.", a: "Signed certificate", o: "Client", p: "ACCEPTANCE" },
+      { id: "G9", t: "Release", d: "Escrow releases. Talent is paid 80% immediately, the 20% institutional fee is recognised, and 2% is held for thirty clean days as a quality buffer.", a: "Release receipt", o: "Finance", p: "ACCEPTANCE" }
+    ];
+    const i = Math.max(0, Math.min(9, this.state.gate));
+    const g = G[i];
+    return {
+      gates: G.map((x, n) => ({
+        id: x.id, t: x.t,
+        go: () => this.setState({ gate: n }),
+        bg: n === i ? (n === 3 ? "#C9A227" : n === 9 ? "#12B5A4" : "#FAF6EC") : "rgba(250,246,236,.06)",
+        fg: n === i ? "#052E2B" : "rgba(250,246,236,.72)",
+        bd: n === i ? "transparent" : "rgba(250,246,236,.18)",
+        dot: n < i ? "#12B5A4" : n === i ? "#C9A227" : "rgba(250,246,236,.25)"
+      })),
+      gateId: g.id, gateTitle: g.t, gateDesc: g.d, gateArtefact: g.a, gateOwner: g.o, gatePhase: g.p,
+      gateNum: (i + 1) + " / 10",
+      gateProgress: Math.round(((i + 1) / 10) * 100) + "%",
+      pulseLabel: this.state.night ? "Aden Night · after sunset" : "Aden Sand · daylight",
+      pulseBg: this.state.night ? "#052E2B" : "#FAF6EC",
+      pulseInk: this.state.night ? "#FAF6EC" : "#052E2B",
+      pulseMuted: this.state.night ? "rgba(250,246,236,.7)" : "#4A6B64",
+      pulseBorder: this.state.night ? "rgba(250,246,236,.2)" : "#E3DAC5",
+      pulseBtn: this.state.night ? "Show daylight" : "Show after sunset",
+      togglePulse: () => this.setState({ night: !this.state.night }),
+      cardTransform: this.state.flip ? "rotateY(180deg)" : "rotateY(0deg)",
+      flipCard: () => this.setState({ flip: !this.state.flip }),
+      flipLabel: this.state.flip ? "Show the front" : "Flip to the delivery ledger",
+      nowPlaying: this.state.nowPlaying,
+      playHouse: () => this.lock("house"),
+      playL1: () => this.lock("l1"),
+      playL2: () => this.lock("l2"),
+      playL3: () => this.lock("l3"),
+      playL4: () => this.lock("l4"),
+      playL5: () => this.lock("l5"),
+      playL6: () => this.lock("l6"),
+      playTick: () => this.lock("tick")
+    };
+  }
+}
+</script>
+</body>
+</html>

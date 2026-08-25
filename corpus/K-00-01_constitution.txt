@@ -1,0 +1,406 @@
+KAYAN INNOVATION, ENTREPRENEURSHIP & WORK ENVIRONMENTS LLC
+Aden, Republic of Yemen
+
+The Kayan Business Constitution
+What Kayan is, what it sells, how it compounds, and what may not be changed without a formal decision
+This is the highest document in the Kayan estate. Every other document, form, system, contract and decision must be consistent with it. Where a conflict arises, this document governs. It exists so that Kayan can be operated by people who were not present when it was designed.
+Document code
+K-00-01
+Version
+v1.0
+Status
+Founding draft — for founder ratification
+Date
+5 August 2026
+Owner
+Founder / Chief Executive
+Classification
+INTERNAL — CONFIDENTIAL
+Supersedes
+All prior positioning, concept and strategy drafts (retained as evidence, not as authority)
+Derives from
+Founder mandate; forensic review of the 311-document source estate
+Unlocks
+K-00-02 Decision Register · K-02-01 Entity & Identity Architecture · all business-line documents
+Read this before writing anything else for Kayan.
+
+Contents
+TOC \h \o "1-3"
+
+1. How to use this document
+This document answers one question: what is Kayan, precisely enough that a competent stranger could run it. It is not marketing, it is not a pitch, and it is not a plan. It is the fixed point from which plans are derived.
+Three rules govern its use:
+Nothing downstream may contradict it. A form, a contract, a price, a job description or a website page that conflicts with this document is wrong by definition and must be corrected.
+It changes only by recorded decision. Amendments are logged in K-00-02 Decision Register with date, rationale and author. Silent drift is the failure mode this document exists to prevent.
+Claims are labelled. Every material statement carries a label: FACT (evidenced and locked), JUDGEMENT (professional interpretation taken as a working position), or OPEN (a decision not yet taken). Nothing is asserted as settled that is not.
+2. The problem Kayan exists to solve
+The conventional account of the Yemeni labour market is that there is a shortage of opportunity for an abundance of talent. That account is true but useless, because it does not identify what is actually binding.
+The binding constraint is not the supply of skill. Skill is abundant, and it is cheap relative to the quality it delivers. The binding constraint is that there is no mechanism to transmit a credible signal of that skill across a border to a buyer who has no way to verify it, and no mechanism to move money in either direction with confidence. [JUDGEMENT]
+Consider a buyer — a company in Riyadh, a diaspora professional in London, a programme officer in an aid agency in Aden. They have work to be done. They cannot answer five questions:
+Is this person real, and are they who they claim to be?
+Are they actually competent at the specific thing I need, as opposed to generally capable?
+If I contract with them, is that contract worth anything?
+If I pay in advance, will I see the work? If I pay on delivery, will they trust me?
+If it goes wrong, who is accountable, and what recourse do I have?
+Existing institutions answer some of these and fail at the rest. Open marketplaces solve discovery and fail at assurance — they transfer all risk to the buyer and all fee pressure to the worker. Agencies solve assurance and fail at scale — they are opaque, capacity-capped, and dependent on the personal credibility of a principal. Training programmes build skill and fail at absorption — they produce certificates that no employer prices, and they measure themselves on people trained rather than people earning.
+What is missing is an institution that manufactures trust as a product: that takes latent, unverifiable talent and converts it into contract-grade, insurable, deliverable professional capacity — and then stands behind it. [JUDGEMENT]
+That is the entire thesis of Kayan.
+3. What Kayan is
+3.1 The category sentence
+Kayan is the verified professional infrastructure of the frontier economy: the institution that establishes, evidences and stands behind the competence of professionals in constrained markets, so that their work can be bought with confidence anywhere in the world.
+Two words in that sentence are load-bearing. Infrastructure, because Kayan is not a party to the work — it is the layer that makes the work transactable, and layers compound where services do not. Verified, because verification is the asset; everything else is delivery of that asset.
+3.2 What Kayan is not
+Kayan is not
+Because
+The consequence of confusing this
+A freelance marketplace
+Marketplaces compete on liquidity and capital. Kayan cannot win that fight and does not need to.
+We would price at 15%, carry no risk, be undifferentiated, and lose to incumbents.
+An agency or outsourcing firm
+Agencies scale with headcount and depend on a principal&apos;s reputation. That caps the institution at the founder.
+We would be capacity-bound, founder-dependent, and unsaleable.
+A training provider or academy
+Training that does not end in paid work is a cost with a certificate attached.
+We would measure trainees instead of earnings, and fund a treadmill.
+A development programme or NGO
+Kayan is a commercial company with a moral claim, not a charity with a revenue line.
+We would become grant-dependent and die when the grant cycle turns.
+A recruitment agency
+We do not place people and exit. We stand behind delivery.
+We would forfeit the recurring economics and the trust asset.
+The word academy is retired from all Kayan usage. The talent formation line is Kayan Forge. [DECISION D-07]
+4. Constitutional beliefs
+These are not values statements. They are testable commitments: every future decision may be checked against them, and a decision that violates one is presumptively wrong.
+#
+Belief
+What it obliges us to do
+B1
+Skill has no geography. Circumstance is not capability.
+Never price or present Yemeni work as discount work. Sell it on outcome, not on pity or on cheapness.
+B2
+Trust must be manufactured, not assumed. It must be evidenced, portable, time-bound and revocable.
+Every trust claim traces to an artefact. Verification expires and can be withdrawn. A badge that cannot be revoked is decoration.
+B3
+Access without protection is exploitation.
+No engagement without a written scope, a funded escrow, and a defined acceptance test. We do not connect people and walk away.
+B4
+Verification is developmental, not exclusionary.
+The ladder is built for ascent. Nobody is rejected for being early. Everyone is told exactly what would move them up.
+B5
+Absorption is the only honest measure of talent formation.
+We report the share of trained and verified people who enter recorded, paid, contracted work — not attendance, not graduates.
+B6
+People are described by what they do, never by category.
+No document, form or page classifies a person by disability, displacement, gender or hardship as their identity. Inclusion is designed into access, not asserted in copy.
+B7
+The institution must survive the founder.
+Every relationship becomes a record; every judgement becomes a rule; every rule becomes a checklist. If it only works when the founder is present, it is not built.
+B8
+Money moves through official channels, with evidence.
+Bank rails by default. Cash is an exception requiring prior dual approval, a documented reason, and a monthly cap.
+B9
+We are a profitable company pursuing a moral claim — not a moral claim seeking a subsidy.
+Every line must show how it makes or protects money. Impact that cannot fund itself eventually stops.
+
+5. The product
+Kayan does not sell people, and it does not sell hours. It sells de-risked delivery: a defined outcome, produced by verified professionals, under a written scope, with the client&apos;s money held in escrow until the work is accepted.
+The client is buying the removal of five risks — identity risk, competence risk, contract risk, payment risk and accountability risk. That is what the fee is for, and it is why the fee is defensible at a level a pure marketplace could never charge. [JUDGEMENT]
+5.1 What the client actually receives
+Component
+What it means in practice
+A scoped outcome
+A written Scope of Work with deliverables, acceptance criteria, milestones and dates — not a rate card and a hope.
+A verified team
+Every contributor is identity-verified and capability-assessed at a stated tier, in the specific micro-specialisation the work requires.
+Protected funds
+Client money sits in a designated escrow account and is released only against accepted milestones.
+A single accountable counterparty
+Kayan contracts with the client. If a contributor fails, that is Kayan&apos;s problem to solve, not the client&apos;s.
+An evidence trail
+Delivery notes, acceptance certificates, and a documented record that survives staff turnover on both sides.
+5.2 What the professional receives
+The professional receives the thing they cannot manufacture alone: a credible, evidenced, third-party account of their competence, and access to buyers who would never otherwise have taken the risk. They also receive protection — a written engagement, a funded escrow, and a fee that is disclosed rather than extracted.
+6. The economic engine: the Absorption Flywheel
+Kayan&apos;s structure serves three constituencies with one asset. Understanding this is the difference between running a company and running three unrelated activities that share an office.
+Constituency
+What they need
+What they pay for
+Clients (commercial demand)
+Work done without carrying delivery risk
+A net fee on managed delivery
+Professionals (supply)
+Market access and provable competence
+Nothing at entry — they are the inventory, not the customer
+Sponsors and funders (legitimacy)
+Measurable economic absorption, not attendance
+Forge cohorts and K4Y programmes
+6.1 How the loop closes
+The insight that makes Kayan financially unusual is this: sponsor and donor capital funds the supply side of a commercial business, and the commercial business produces the evidence that unlocks the next round of sponsor capital. [JUDGEMENT]
+Sponsor or programme capital funds a Forge cohort or a K4Y programme.
+Forge trains, assesses and verifies. Verified professionals enter the registry — at no acquisition cost to the commercial line.
+Managed Delivery sells that verified capacity to clients and earns a net fee.
+Delivery produces two outputs: revenue, and evidence — accepted deliverables, earnings records, and the Absorption Ratio.
+That evidence is the strongest possible case to the next sponsor, and the strongest possible proof to the next client.
+Each turn of the loop lowers talent acquisition cost, raises the value of the Kayan credential, and deepens the delivery record that makes the next sale easier.
+The Hub sits at the centre of the loop as its physical anchor: it is where in-person verification happens, where Forge cohorts run, where pods work, where clients and sponsors are hosted, and where evidence is produced. It converts what would be a fixed overhead into a revenue line and a proof asset simultaneously. [JUDGEMENT]
+7. Business lines and phase gating
+The single most common way a company of this kind fails is by attempting all of its good ideas at once. The following gating is binding. A Phase 2 or Phase 3 line may be designed, discussed and pre-sold, but it may not consume build capacity or capital before its gate is met. [DECISION D-03]
+7.1 Phase 1 — live at launch, 20 July 2026
+Code
+Line
+Role in the system
+Revenue basis
+L1
+Managed Delivery
+The revenue engine. Kayan contracts, assembles a pod, delivers under guarantee, escrow-backed.
+Agent net fee on client contract value
+L2
+The Hub & Café
+Physical anchor, verification venue, cohort space, proof asset, cash line.
+Memberships, day passes, room hire, café sales, events
+L3
+Kayan Forge
+The talent formation and verification engine: train, assess, verify, place.
+Sponsorship, programme contracts, selective tuition
+L4
+Kayan for Yemen (K4Y)
+The civic absorption arm: programmes that place people into recorded paid work.
+Programme funding and sponsorship
+7.2 Phase 2 — 2027, gated
+Code
+Line
+Opening gate (all must be true)
+L5
+Open marketplace and client-formed pods (self-serve, reduced take rate)
+≥250 talent at T2 or above; ≥40 completed engagements with acceptance; dispute rate below 5%; automated matching and payout proven under managed delivery first
+L6
+E-working space (remote membership and digital workspace)
+Hub operating at ≥60% capacity; platform stable; member support process proven physically before it is sold digitally
+L7
+Public portable credential at scale (externally recognised verification)
+≥150 verified professionals with a delivery record; ≥3 external organisations expressing intent to recognise or filter on it
+Until L5 opens, Kayan does not connect clients to individual professionals. All demand is fulfilled through managed delivery with Kayan as the contracting counterparty. This is deliberate: it is how the delivery record and the verification evidence are accumulated, and releasing it early would destroy the asset before it exists. [DECISION D-04]
+7.3 Phase 3 — designed, not built
+Recognised as real and valuable, explicitly out of scope for build capacity until Phase 2 lines are stable: financial services layered on the payment flow (advance payouts, invoice factoring); enterprise services (employer of record, systems integration); a design and production studio; venture building; geographic replication of the Hub model; and licensing of the verification standard to third parties.
+
+8. Revenue architecture
+8.1 The agent doctrine
+Kayan recognises as revenue only its own fee. The gross value of a client project is not Kayan revenue; it is a flow that passes through Kayan, of which the client&apos;s portion payable to contributors is a liability until discharged. [FACT — accounting policy, locked]
+This is not a presentational preference. It determines the balance sheet, the tax position, the investor narrative and the integrity of every KPI. A company that books gross flows as revenue is telling itself a lie that will be discovered by the first serious counterparty.
+Flow
+Treatment
+Ledger position
+Client payment received into escrow
+Not revenue. A liability owed onward.
+Escrow liability account
+Kayan net fee on accepted milestone
+Revenue, recognised on acceptance
+Fee revenue account
+Contributor payout
+Discharge of liability, not an expense of sale
+Escrow liability reduced
+Hub memberships, café, room hire
+Revenue on delivery of service
+Hub revenue accounts
+Sponsorship and programme funding
+Revenue recognised against programme obligations as they are performed
+Programme revenue, with deferred balance
+8.2 Revenue lines at launch
+Line
+Mechanism
+Notes
+Managed delivery net fee
+A stated percentage of contract value, disclosed to both sides
+The core engine. Rate is set in the Finance document, not here.
+Hub memberships and passes
+Recurring monthly and daily
+Predictable cash, smooths the lumpy project cycle
+Café and events
+Transactional and bookings
+Cash-generative, also the primary informal client-acquisition channel
+Forge sponsorship and programme contracts
+Cohort-funded by sponsors
+Non-dilutive capital that builds the commercial supply side
+K4Y programme funding
+Contracted programme delivery
+Carries the absorption evidence that funds the next cycle
+Specific percentages, prices and salary figures are held in the Finance and Pricing documents as controlled variables, not embedded here. This document states the mechanism; the Finance document states the number. Changing a number must never require reopening the constitution. [DECISION D-05]
+9. The defensible assets
+A company is worth what it owns that cannot be quickly copied. Kayan&apos;s defensibility does not lie in its ability to deliver projects — anyone can do that. It lies in five assets that compound with use.
+Asset
+What it is
+Why it compounds
+Current maturity
+The Verification Mark
+A time-bound, revocable designation that a professional has been identity-verified and capability-assessed to a stated tier in a stated specialisation
+Every verified professional and every completed engagement makes the mark mean more. Meaning cannot be bought.
+Designed, not yet issued
+The Trust Ladder (T0–T4)
+The graded standard behind the mark, with published criteria and evidence requirements
+A standard that others adopt becomes infrastructure; infrastructure is not competed with, it is used
+Designed
+The Micro-Specialisation Taxonomy
+A structured, coded, extensible map of what people actually do
+It is the vocabulary of the market. Whoever defines the categories defines the comparisons.
+Structure designed; population in progress
+The Absorption Ratio
+The share of trained and verified people who enter recorded, paid, contracted work
+It is the metric funders wish existed and cannot compute themselves. Owning a metric is owning a conversation.
+Defined; awaiting live data
+The Delivery Record
+The accumulated, verifiable history of what was delivered, by whom, accepted by whom
+It is the only true answer to &apos;can they actually do it&apos;, and it cannot be fabricated retrospectively
+Begins at first engagement
+Everything else Kayan does is a service. These five are the institution. Build priority follows this list. [JUDGEMENT]
+10. Operating rules that may not be broken
+#
+Rule
+Why
+R1
+No engagement begins without a signed scope and funded escrow.
+Removes the single largest cause of dispute and non-payment.
+R2
+Verification status never determines who receives work.
+Work allocation is a separate decision based on fit, availability and client requirement. Conflating them corrupts the ladder and invites accusations of favouritism.
+R3
+Kayan revenue is the net fee only.
+Integrity of every financial statement and KPI.
+R4
+Cash payments are an exception, pre-approved, documented, and capped monthly.
+Cash is the primary vector for loss, fraud and untraceability in this operating environment.
+R5
+Every person, organisation and engagement has one record and one identifier.
+Prevents the duplicate-record decay that destroys reporting.
+R6
+A human touches a record only at a genuine judgement gate.
+Any process requiring routine manual handling breaks between 100 and 1,000 registrations.
+R7
+Any claim made externally must be traceable to an artefact.
+Reputation in a trust business is the entire balance sheet.
+R8
+No personal data is collected without a stated purpose, a retention period and a specific consent.
+Legal exposure, and the credibility of a company whose product is trust.
+R9
+Client concentration above a stated threshold triggers a documented mitigation plan.
+A single client at 60% of revenue is not a business, it is a contract.
+R10
+Nothing is described as complete until it can be operated by someone who was not present when it was built.
+The founder-dependency failure mode.
+
+11. Red team: how this fails
+This section exists because a strategy that has not been attacked has not been tested. Each risk below is stated at its strongest, followed by the structural counter already built into the design. Where the counter is insufficient, that is stated plainly.
+Attack
+The strongest version of the argument
+Structural counter
+Residual
+Verification has no willing payer
+Nobody will pay for a badge. Verification is a cost centre dressed as a moat.
+Verification is never sold standalone at launch. It is the input that makes managed delivery sellable at an agency-grade fee, and the outcome that makes sponsor capital fundable. It is monetised twice, indirectly.
+Low. But we must never build a P&L line that depends on selling verification directly before Phase 2.
+Managed delivery is just an agency
+It scales with people, caps at management attention, and is worth a low multiple.
+Pods with pod leads move delivery supervision off the centre; productised scopes reduce bespoke design; the verification asset is what is actually being built underneath.
+Real. Mitigated only if pod-lead capability is built early and standard scopes are genuinely used.
+Payment infrastructure kills it
+Escrow, cross-border receipts and payouts in Yemen are the true binding constraint, and no strategy survives their failure.
+Acknowledged as the number one existential dependency. Escrow protocol, defined proof standard, multi-rail payout, and a capped cash exception.
+High and unresolved until the escrow and payout mechanism is proven end to end with real money. This gates launch.
+Client concentration
+One institutional client becomes the business and then reorganises.
+Concentration cap with mandatory mitigation; deliberate diversification across diaspora, GCC SME and institutional demand.
+Medium in year one; structurally unavoidable early.
+Disintermediation
+The client hires the professional directly after the first project and Kayan is cut out.
+Non-circumvention terms; but the real defence is that going direct reinstates all five risks the client paid to remove. Some leakage is accepted and treated as marketing.
+Medium. Never rely on the contract clause alone; rely on the value of the guarantee.
+The credential means nothing
+A badge from an unknown Aden company is worth nothing to a buyer in London.
+Correct today. The mark earns meaning only through accumulated delivery evidence. We therefore do not over-claim portability at launch; we build the record first and claim later.
+Accepted. This is a sequencing discipline, not a risk to be eliminated.
+Founder dependency
+Everything runs because one person holds it together.
+Role codes, documented procedure, records over relationships, and the explicit completion test in rule R10.
+Real and present. This is the primary internal risk in year one.
+Conclusion of the red team: the strategy survives every attack except the payment and fund-protection mechanism, which is not yet proven. That mechanism is therefore the highest-priority build in the company, ahead of all platform, marketing and content work. [JUDGEMENT — this is the single most important sentence in this document.]
+12. What must be true at launch
+Launch is 20 July 2026. Launch is not an announcement; it is a state. The following is the definition of that state. Each item is binary and owned.
+#
+Condition
+Why it is non-negotiable
+L-01
+Escrow and payout mechanism proven end to end with real money on at least three engagements
+Rule R1 and the primary existential risk. Without this there is no product.
+L-02
+Client contract set counsel-reviewed and executable: master agreement, scope of work, escrow terms, acceptance certificate
+We cannot contract without it, and a bad first contract sets a precedent.
+L-03
+Registration, verification and record system operating without manual re-keying
+Rule R6. Manual process fails at the volumes we intend to reach.
+L-04
+A verified talent base with sufficient depth across the specialisations we intend to sell
+We cannot sell capacity we cannot staff.
+L-05
+At least three managed-delivery engagements delivered and accepted before launch day
+Launch with evidence, not with promises. The first case study is the single highest-value marketing asset we will ever produce.
+L-06
+Hub open and trading, café operating, membership sellable
+Cash line, proof asset and verification venue.
+L-07
+Forge cohort one recruited with sponsor funding committed
+The supply engine must be running before demand arrives.
+L-08
+Every internal role either filled or covered by a named interim with a written handover plan
+Rule R10.
+L-09
+Financial controls live: escrow ledger, approval thresholds, daily cash close, evidence standard
+A trust business that cannot account for money has no product.
+L-10
+Public presence that survives professional scrutiny
+In a trust business, an amateur front door is a disqualifying signal.
+Numerical targets for L-04 and elsewhere are set in the execution plan, not here, so they can be revised without reopening the constitution.
+13. Decisions taken in this document
+The following were open and are now taken. Each is recorded in K-00-02 with full rationale. A decision may be reversed, but only explicitly and on the record.
+ID
+Decision
+D-01
+Kayan&apos;s category is verified professional infrastructure for the frontier economy. The verification and trust layer is the core asset; managed delivery is how it is monetised at launch.
+D-02
+Phase 1 lines are Managed Delivery, The Hub & Café, Kayan Forge, and Kayan for Yemen. No others.
+D-03
+Phase 2 and Phase 3 lines may be designed and pre-sold but may not consume build capacity or capital before their stated gate is met.
+D-04
+No client-to-individual connection before Phase 2. All demand is fulfilled through managed delivery with Kayan as contracting counterparty.
+D-05
+Prices, rates, salaries and numeric targets live in controlled documents, never in the constitution.
+D-06
+Revenue is the agent net fee only. Escrow balances are liabilities.
+D-07
+The term &apos;academy&apos; is retired. The talent formation line is Kayan Forge.
+D-08
+Verification status never determines work allocation. The two decisions are formally separated.
+D-09
+The payment and fund-protection mechanism is the highest-priority build in the company and gates launch.
+D-10
+Pods may be formed in three ways: assembled by Kayan for a project, registered as an existing team, or composed by Kayan from individuals and members of registered pods.
+14. Open questions requiring founder decision
+These are not deferred by oversight. They are decisions that materially change downstream architecture and should be taken deliberately.
+ID
+Open question
+What it changes downstream
+Q-01
+Is the public portable credential released at launch, or held internal until a delivery record exists?
+Whether talent records have a public face at launch; the design of the public profile; external messaging.
+Q-02
+Does the existing 12-family, 441-node micro-specialisation structure carry forward, or is the taxonomy rebuilt on the broader inclusive family set proposed in K-02-02?
+The entire registration navigation, assessment mapping and reporting structure.
+Q-03
+Is there a paid tier for professionals at any point, or is the supply side permanently free at entry?
+Whether the talent side is ever a customer; the fairness argument; the platform build.
+Q-04
+Fiscal year end.
+Financial calendar, reporting cycle, audit planning, tax filing.
+Q-05
+Concentration threshold that triggers mandatory mitigation.
+Sales strategy and risk policy.
+
+End of document. Amendments only by recorded decision in K-00-02.

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>مسار المنفذ · The worker path</title>
+<meta name="description" content="رحلة التكليف في كيان — من أول رسالة إلى محضر الاستلام: نطاق موقع، ضمان ممول، تنفيذ مدار، قبول بتوقيع العميل وحده. The Kayan journey: SOW, escrow, managed delivery, acceptance.">
+<meta property="og:title" content="الرحلة · The Kayan Journey">
+<meta property="og:description" content="ست محطات يقطعها كل تكليف — والقاعدة فوقها: لا عقد، لا ضمان، لا عمل.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_YE">
+<meta property="og:locale:alternate" content="en">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"The Kayan Journey","inLanguage":["ar","en"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#EDE5D2;overflow-x:hidden;}
+body{-webkit-font-smoothing:antialiased;}
+a{color:#0E6E66;text-decoration:none;}a:hover{color:#12B5A4;}
+::selection{background:#12B5A4;color:#052E2B;}
+input,button,select,textarea{font-family:inherit;}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #12B5A4;outline-offset:2px;}
+button{-webkit-tap-highlight-color:transparent;}
+/* Bilingual layer. Both languages ship in the markup; CSS shows one.
+   Arabic is the authored source and the default — English restates it. */
+[data-en]{display:none;}
+[data-lang="en"] [data-en]{display:revert;}
+[data-lang="en"] [data-ar]{display:none;}
+[data-lang="en"] [data-en-ltr]{direction:ltr;text-align:left;}
+@keyframes jIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+@keyframes jRow{from{opacity:0;transform:translateX(-8px);}to{opacity:1;transform:none;}}
+/* ── Abstract ground for the cover: drifting orbs, a faint grid, a slow sweep ── */
+@keyframes jOrbA{0%,100%{transform:translate3d(0,0,0) scale(1);}50%{transform:translate3d(4%,-3%,0) scale(1.08);}}
+@keyframes jOrbB{0%,100%{transform:translate3d(0,0,0) scale(1);}50%{transform:translate3d(-5%,4%,0) scale(1.12);}}
+@keyframes jSweep{0%{transform:translateX(-40%) skewX(-12deg);}100%{transform:translateX(280%) skewX(-12deg);}}
+@keyframes jFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+[data-jdeco]{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+[data-jgrid]{position:absolute;inset:-12%;background-image:linear-gradient(rgba(250,246,236,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(250,246,236,.05) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000 24%,transparent 78%);mask-image:radial-gradient(70% 60% at 50% 40%,#000 24%,transparent 78%);}
+[data-jorb]{position:absolute;border-radius:50%;filter:blur(46px);will-change:transform;}
+[data-jorb="a"]{animation:jOrbA 38s ease-in-out infinite;}
+[data-jorb="b"]{animation:jOrbB 48s ease-in-out infinite;}
+[data-jring]{position:absolute;border-radius:50%;border:1px solid rgba(250,246,236,.09);}
+[data-jsweep]{position:absolute;top:0;bottom:0;width:18%;background:linear-gradient(90deg,transparent,rgba(250,246,236,.04),transparent);animation:jSweep 21s cubic-bezier(.6,0,.4,1) infinite;}
+[data-jdot]{position:absolute;border-radius:50%;animation:jFloat 13s ease-in-out infinite;}
+[data-jticks]{position:absolute;background:repeating-linear-gradient(180deg,rgba(250,246,236,.14) 0 1px,transparent 1px 22px);}
+
+/* ── Station rail: plain text stops. The rule under each one draws itself
+   slowly on hover; the current stop keeps its rule drawn. No dots, no pills. ── */
+[data-stop]{position:relative;transition:color .55s cubic-bezier(.16,1,.3,1),opacity .55s ease;}
+[data-stop]::after{content:"";position:absolute;inset-inline:2px;bottom:6px;height:1.5px;border-radius:2px;background:currentColor;opacity:0;transform:scaleX(0);transform-origin:inline-start;transition:opacity .5s ease,transform .75s cubic-bezier(.16,1,.3,1);}
+[data-stop]:hover::after,[data-stop]:focus-visible::after{opacity:.4;transform:scaleX(1);}
+[data-stop][data-on]::after{opacity:1;transform:scaleX(1);height:2px;}
+[data-stop] [data-stopno]{transition:letter-spacing .55s cubic-bezier(.16,1,.3,1),opacity .55s ease;}
+[data-stop]:hover [data-stopno]{letter-spacing:.18em;opacity:.95;}
+
+/* ── The screen-and-register stage ──────────────────────────────────────
+   The point of this section is causality: the phone acts, the register records.
+   So the register is dressed as live instrumentation — a scanline, a pulsing
+   LIVE lamp, the newest entry lit and flagged — and a wire runs from the phone
+   to the panel so the two columns read as one mechanism rather than two cards. */
+@keyframes jScan{0%{transform:translateY(-120%)}100%{transform:translateY(820%)}}
+@keyframes jLamp{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+@keyframes jWire{0%{transform:translateX(-100%)}100%{transform:translateX(320%)}}
+@keyframes jShimmer{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@keyframes jNewFlash{0%{background-color:rgba(127,231,218,.16)}100%{background-color:transparent}}
+[data-jstage]{position:relative;overflow:hidden;}
+[data-jsdeco]{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+[data-jsorb]{position:absolute;border-radius:50%;filter:blur(50px);animation:jOrbA 42s ease-in-out infinite;}
+[data-jsgrid]{position:absolute;inset:0;background-image:linear-gradient(rgba(5,46,43,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(5,46,43,.045) 1px,transparent 1px);background-size:52px 52px;-webkit-mask-image:radial-gradient(76% 66% at 50% 42%,#000 22%,transparent 80%);mask-image:radial-gradient(76% 66% at 50% 42%,#000 22%,transparent 80%);}
+[data-regpanel]{position:relative;box-shadow:0 30px 70px -34px rgba(5,46,43,.5);}
+[data-regscan]{position:absolute;inset-inline:0;top:0;height:16%;background:linear-gradient(180deg,transparent,rgba(127,231,218,.05),transparent);pointer-events:none;z-index:2;animation:jScan 11s linear infinite;}
+[data-lamp]{display:inline-block;width:7px;height:7px;border-radius:50%;background:#7FE7DA;box-shadow:0 0 8px rgba(127,231,218,.9);animation:jLamp 2.4s ease-in-out infinite;}
+[data-regrow]{position:relative;transition:background-color .32s ease,padding-inline-start .32s cubic-bezier(.16,1,.3,1);}
+[data-regrow]::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:2px;background:#7FE7DA;transform:scaleY(0);transform-origin:center;transition:transform .34s cubic-bezier(.16,1,.3,1);}
+[data-regrow]:hover{background-color:rgba(250,246,236,.05);padding-inline-start:26px;}
+[data-regrow]:hover::before{transform:scaleY(1);}
+[data-regrow][data-new]{animation:jRow .3s cubic-bezier(.16,1,.3,1) both,jNewFlash 2.4s cubic-bezier(.16,1,.3,1) both;}
+[data-regrow][data-new]::before{transform:scaleY(1);}
+[data-wire]{position:relative;overflow:hidden;}
+[data-wire] i{position:absolute;inset-block:0;inset-inline-start:0;width:34%;background:linear-gradient(90deg,transparent,#12B5A4,transparent);animation:jWire 3.4s cubic-bezier(.4,0,.6,1) infinite;}
+[data-escbar]{position:relative;overflow:hidden;}
+[data-escbar] i{position:absolute;inset-block:0;inset-inline-start:0;width:40%;background:linear-gradient(90deg,transparent,rgba(250,246,236,.4),transparent);animation:jShimmer 2.8s cubic-bezier(.4,0,.6,1) infinite;}
+[data-phoneglow]{position:absolute;left:8%;right:8%;bottom:-26px;height:52px;border-radius:50%;background:radial-gradient(closest-side,rgba(18,181,164,.3),transparent 72%);filter:blur(20px);pointer-events:none;}
+/* ── Rule cards: one row on a real screen, and the hovered card comes forward ── */
+@media (min-width:1040px){[data-rulegrid]{grid-template-columns:repeat(6,minmax(0,1fr)) !important;}}
+[data-rulecard]{position:relative;transition:transform .5s cubic-bezier(.16,1,.3,1),background-color .45s ease,box-shadow .5s cubic-bezier(.16,1,.3,1);will-change:transform;}
+[data-rulecard]::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,#0E6E66,#12B5A4);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.16,1,.3,1);}
+[data-rulecard]:hover{transform:translateY(-6px);background-color:#FFFDF7;box-shadow:0 26px 50px -26px rgba(5,46,43,.3);z-index:2;}
+[data-rulecard]:hover::before{transform:scaleX(1);}
+[data-rulecard] [data-ruleno]{transition:color .45s ease,letter-spacing .45s ease;}
+[data-rulecard]:hover [data-ruleno]{color:#12B5A4;letter-spacing:.14em;}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;}[data-stop]:hover,[data-rulecard]:hover{transform:none;}}
+</style>
+<script src="./kayan-compass.js"></script>
+</helmet>
+<div ref="{{ rootRef }}" dir="rtl" data-lang="ar" style="font-family:'IBM Plex Sans Arabic',sans-serif;color:#052E2B;background:#EDE5D2;min-height:100vh;">
+
+<header style="position:sticky;top:0;z-index:90;background:rgba(3,32,29,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(201,162,39,.22);">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);height:clamp(60px,7vh,74px);">
+    <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+      <img src="assets/kayan-logo-gold.png" alt="كيان — Kayan" style="height:clamp(38px,4.6vw,46px);width:auto;display:block;">
+    </a>
+    <span style="width:1px;height:22px;background:rgba(250,246,236,.2);flex-shrink:0;"></span>
+    <span style="font-size:12.5px;color:rgba(250,246,236,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"><span data-ar="">الرحلة — من أول رسالة إلى محضر الاستلام</span><span data-en="">The journey — from first message to acceptance record</span></span>
+    <nav style="margin-inline-start:auto;min-width:0;display:flex;align-items:center;gap:clamp(9px,1.5vw,20px);font-size:13.5px;overflow-x:auto;scrollbar-width:none;">
+      <a href="Kayan Home.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.76);" style-hover="color:#E9C96B"><span data-ar="">الدار</span><span data-en="">Home</span></a>
+      <a href="Kayan for Clients.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.76);" style-hover="color:#E9C96B"><span data-ar="">للعملاء</span><span data-en="">For clients</span></a>
+      <a href="Kayan for Talent.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.76);" style-hover="color:#E9C96B"><span data-ar="">للكفاءات</span><span data-en="">For talent</span></a>
+      <a href="Kayan Portal.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.76);" style-hover="color:#E9C96B"><span data-ar="">البوابة</span><span data-en="">The Portal</span></a>
+    </nav>
+    <span role="group" aria-label="Language / اللغة" style="flex-shrink:0;display:inline-flex;align-items:center;border:1px solid rgba(250,246,236,.24);border-radius:99px;overflow:hidden;">
+      <button type="button" onClick="{{ setAr }}" aria-pressed="{{ isAr }}" style="min-height:34px;font-size:12px;font-weight:500;line-height:1;padding:9px 13px;cursor:pointer;border:none;background:{{ arBg }};color:{{ arFg }};transition:background-color 140ms cubic-bezier(.2,0,.2,1),color 140ms cubic-bezier(.2,0,.2,1);">عربي</button>
+      <button type="button" onClick="{{ setEn }}" aria-pressed="{{ isEn }}" dir="ltr" style="min-height:34px;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:500;line-height:1;padding:9px 13px;cursor:pointer;border:none;background:{{ enBg }};color:{{ enFg }};transition:background-color 140ms cubic-bezier(.2,0,.2,1),color 140ms cubic-bezier(.2,0,.2,1);">EN</button>
+    </span>
+    <a href="Kayan Apply.dc.html" style="flex-shrink:0;white-space:nowrap;background:linear-gradient(135deg,#C9A227,#E9C96B);color:#03201D;font-size:13px;font-weight:700;padding:10px 20px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1);" style-active="transform:scale(.97)"><span data-ar="">افتح ملفك</span><span data-en="">Open your file</span></a>
+  </div>
+</header>
+
+<section data-screen-label="المسار · الغلاف" style="position:relative;overflow:hidden;background:#052E2B;padding:64px clamp(20px,4vw,48px) 56px;">
+  <div data-jdeco="" aria-hidden="true">
+    <div data-jgrid=""></div>
+    <div data-jorb="a" style="top:-24%;inset-inline-end:-8%;width:min(46vw,540px);height:min(46vw,540px);background:radial-gradient(circle,rgba(18,181,164,.24),transparent 68%);"></div>
+    <div data-jorb="b" style="bottom:-30%;inset-inline-start:-10%;width:min(38vw,430px);height:min(38vw,430px);background:radial-gradient(circle,rgba(201,162,39,.16),transparent 70%);"></div>
+    <div data-jring="" style="top:-14%;inset-inline-end:2%;width:min(36vw,400px);height:min(36vw,400px);"></div>
+    <div data-jring="" style="bottom:-40%;inset-inline-start:6%;width:min(44vw,500px);height:min(44vw,500px);border-color:rgba(18,181,164,.1);"></div>
+    <div data-jsweep="" style="inset-inline-start:0;"></div>
+    <div data-jticks="" style="top:16%;bottom:16%;inset-inline-start:1.5%;width:9px;"></div>
+    <div data-jdot="" style="top:26%;inset-inline-start:11%;width:5px;height:5px;background:rgba(127,231,218,.6);"></div>
+    <div data-jdot="" style="top:64%;inset-inline-end:16%;width:4px;height:4px;background:rgba(233,201,107,.55);animation-delay:-5s;"></div>
+    <div data-jdot="" style="top:44%;inset-inline-start:4%;width:3px;height:3px;background:rgba(250,246,236,.4);animation-delay:-9s;"></div>
+  </div>
+  <div style="position:relative;z-index:1;max-width:1240px;margin:0 auto;">
+    <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.22em;color:#12B5A4;">KYN-FLOW-01 · WORKING PROTOTYPE</div>
+    <h1 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(30px,4.6vw,54px);line-height:1.16;color:#FAF6EC;max-width:20ch;"><span data-ar="">مسار المنفذ، من التسجيل إلى الصرف</span><span data-en="">The worker path, from registration to payment</span></h1>
+    <div style="font-size:16.5px;line-height:2.05;color:rgba(250,246,236,.78);margin-top:16px;max-width:62ch;"><span data-ar="">سبع محطات بحالات حقيقية تنتقل بينها. على اليمين ما يراه المنفذ على هاتفه، وعلى اليسار ما يقيده السجل في اللحظة نفسها. الشاشة تنسى، والسجل لا ينسى — وهذا هو المنتج.</span><span data-en="">Seven stations with real states you move between. On one side, what the worker sees on their phone; on the other, what the register enters at that same moment. The screen forgets. The register does not, and that is the product.</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;align-items:center;">
+      <button onClick="{{ toggleArm }}" style="min-height:44px;font-size:13.5px;color:{{ armFg }};background:{{ armBg }};border:1px solid #12B5A4;border-radius:11px;padding:12px 18px;cursor:pointer;transition:background .14s cubic-bezier(.2,0,.2,1);">{{ armLabel }}</button>
+      <button onClick="{{ reset }}" style="min-height:44px;font-size:13.5px;color:rgba(250,246,236,.8);background:transparent;border:1px solid rgba(250,246,236,.24);border-radius:11px;padding:12px 18px;cursor:pointer;"><span data-ar="">إعادة المسار</span><span data-en="">Reset the path</span></button>
+      <span style="font-size:13px;line-height:1.8;color:rgba(250,246,236,.52);flex:1 1 220px;min-width:0;"><span data-ar="">النغمات لا تعمل قبل التفعيل، ولا تعمل عند التحميل. نغمة واحدة لكل حدث.</span><span data-en="">Tones do not sound before you enable them, and never on load. One tone per event.</span></span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="المسار · المحطات" style="background:#FAF6EC;padding:0 clamp(20px,4vw,48px);position:sticky;top:0;z-index:20;border-bottom:1px solid #E2DAC8;">
+  <div style="position:relative;max-width:1240px;margin:0 auto;padding:8px 0 6px;">
+    <div style="position:relative;z-index:1;display:flex;gap:clamp(12px,2vw,26px);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;">
+      <sc-for list="{{ rail }}" as="s" hint-placeholder-count="7">
+        <button data-stop="" data-on="{{ s.onAttr }}" onClick="{{ s.go }}" aria-current="{{ s.cur }}" title="{{ s.label }}" style="flex:0 0 auto;min-height:44px;display:flex;align-items:baseline;gap:8px;font-size:13.5px;font-weight:{{ s.w }};color:{{ s.fg }};background:none;border:none;padding:11px 4px 13px;cursor:pointer;white-space:nowrap;">
+          <span data-stopno="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;opacity:.55;">{{ s.no }}</span>
+          <span>{{ s.label }}</span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="المسار · الشاشة والسجل" data-jstage="" style="background:#EDE5D2;padding:46px clamp(20px,4vw,48px) 72px;">
+  <div data-jsdeco="" aria-hidden="true">
+    <div data-jsgrid=""></div>
+    <div data-jsorb="" style="top:-16%;inset-inline-end:-6%;width:min(44vw,500px);height:min(44vw,500px);background:radial-gradient(circle,rgba(18,181,164,.14),transparent 70%);"></div>
+    <div data-jsorb="" style="bottom:-22%;inset-inline-start:-8%;width:min(36vw,410px);height:min(36vw,410px);background:radial-gradient(circle,rgba(201,162,39,.1),transparent 72%);animation-delay:-16s;"></div>
+  </div>
+  <div style="position:relative;z-index:1;max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;align-items:start;">
+
+    <div style="min-width:0;order:2;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+        <span style="width:18px;height:3px;border-radius:2px;background:#0E6E66;flex-shrink:0;"></span>
+        <span style="font-size:14px;color:#33544D;"><span data-ar="">ما يقيده السجل — إضافة فقط، بلا تعديل</span><span data-en="">What the register enters — append only, no amendment</span></span>
+      </div>
+      <div data-wire="" aria-hidden="true" style="height:2px;border-radius:2px;background:rgba(18,181,164,.16);margin-bottom:12px;"><i></i></div>
+      <div data-regpanel="" style="border:1px solid #0E4A44;border-radius:20px;background:#052E2B;overflow:hidden;">
+        <div data-regscan="" aria-hidden="true"></div>
+        <div style="position:relative;z-index:1;padding:14px 20px;border-bottom:1px solid rgba(250,246,236,.12);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;">
+          <span style="display:inline-flex;align-items:center;gap:9px;">
+            <span data-lamp="" aria-hidden="true"></span>
+            <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:rgba(250,246,236,.62);">REGISTER · APPEND-ONLY</span>
+          </span>
+          <span style="display:inline-flex;align-items:center;gap:12px;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:rgba(250,246,236,.5);">{{ logCount }}</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7FE7DA;">{{ regId }}</span>
+          </span>
+        </div>
+        <div style="position:relative;z-index:1;padding:8px 0;max-height:520px;overflow:auto;-webkit-overflow-scrolling:touch;">
+          <sc-for list="{{ log }}" as="r" hint-placeholder-count="4">
+            <div data-regrow="" data-new="{{ r.newAttr }}" style="display:grid;grid-template-columns:minmax(0,26px) minmax(0,80px) minmax(0,1fr);gap:12px;padding:12px 20px;border-bottom:1px solid rgba(250,246,236,.07);">
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.9;color:rgba(250,246,236,.28);">{{ r.n }}</div>
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.7;color:rgba(250,246,236,.42);">{{ r.t }}</div>
+              <div style="min-width:0;">
+                <div style="font-size:13.5px;line-height:1.7;color:{{ r.fg }};">{{ r.what }}</div>
+                <div style="display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-top:4px;">
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:rgba(250,246,236,.4);">{{ r.by }}</span>
+                  <sc-if value="{{ r.isNew }}" hint-placeholder-val="{{ false }}">
+                    <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.16em;color:#7FE7DA;border:1px solid rgba(127,231,218,.42);border-radius:3px;padding:1px 6px;">NEW</span>
+                  </sc-if>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="position:relative;z-index:1;padding:16px 20px;border-top:1px solid rgba(250,246,236,.12);background:rgba(0,0,0,.18);">
+          <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+            <span style="font-size:12.5px;color:rgba(250,246,236,.6);"><span data-ar="">حالة الضمان</span><span data-en="">Escrow status</span></span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:{{ escFg }};">{{ escState }}</span>
+          </div>
+          <div style="height:6px;border-radius:99px;background:rgba(250,246,236,.12);margin-top:10px;overflow:hidden;">
+            <div data-escbar="" style="height:100%;width:{{ escPct }};background:{{ escBar }};border-radius:99px;transition:width .4s cubic-bezier(.16,1,.3,1);"><sc-if value="{{ escHeld }}" hint-placeholder-val="{{ false }}"><i></i></sc-if></div>
+          </div>
+          <div style="font-size:12px;line-height:1.8;color:rgba(250,246,236,.5);margin-top:10px;">{{ escNote }}</div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;padding:18px 20px;border:1px solid #DCD3BE;border-radius:18px;background:#FAF6EC;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#052E2B;">{{ ruleTitle }}</div>
+        <div style="font-size:13px;line-height:1.85;color:#33544D;margin-top:7px;">{{ ruleBody }}</div>
+      </div>
+    </div>
+
+    <div style="min-width:0;order:1;display:flex;justify-content:center;">
+      <div style="position:relative;width:100%;max-width:392px;">
+        <span data-phoneglow="" aria-hidden="true"></span>
+        <div style="position:relative;border-radius:34px;background:#0B1614;padding:11px;box-shadow:0 30px 70px rgba(5,46,43,.32);">
+          <div style="border-radius:25px;background:#FAF6EC;overflow:hidden;position:relative;min-height:620px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px 8px;">
+              <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;color:#6E675A;">9:41</span>
+              <span style="width:52px;height:5px;border-radius:99px;background:#DCD3BE;"></span>
+              <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;color:#6E675A;">▮▮ 62%</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 20px 14px;border-bottom:1px solid #EDE5D2;">
+              <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#052E2B;">كيان</span>
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#6E675A;">{{ screenTag }}</span>
+            </div>
+
+            <div style="flex:1;padding:22px 20px 24px;display:flex;flex-direction:column;">
+
+              <sc-if value="{{ isS0 }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;flex-direction:column;height:100%;animation:jIn .4s cubic-bezier(.16,1,.3,1) both;">
+                  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#0E6E66;">{{ qCount }}</div>
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:23px;line-height:1.45;color:#052E2B;margin-top:12px;">{{ qLabel }}</div>
+                  <input value="{{ qValue }}" onInput="{{ setQ }}" placeholder="{{ qHint }}" style="margin-top:18px;font-size:16px;color:#052E2B;background:#fff;border:1px solid #E2DAC8;border-radius:12px;padding:14px;min-height:52px;">
+                  <div style="margin-top:14px;padding:14px 16px;border-radius:12px;background:#F1EAD9;">
+                    <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:9.5px;letter-spacing:.18em;color:#6E675A;">WHY WE ASK</div>
+                    <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:5px;">{{ qWhy }}</div>
+                  </div>
+                  <div style="flex:1;"></div>
+                  <button onClick="{{ nextQ }}" style="min-height:52px;font-size:15.5px;color:#FAF6EC;background:#052E2B;border:none;border-radius:14px;padding:15px;cursor:pointer;transition:background .14s cubic-bezier(.2,0,.2,1);" style-hover="background:#0A4540">{{ qBtn }}</button>
+                  <div style="font-size:12.5px;line-height:1.8;color:#6E675A;margin-top:12px;text-align:center;"><span data-ar="">يجوز الوقوف والعودة. ما أدخل يحفظ.</span><span data-en="">You may stop and return. What you entered is kept.</span></div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isS1 }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;height:100%;animation:jIn .4s cubic-bezier(.16,1,.3,1) both;">
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;line-height:1.45;color:#052E2B;"><span data-ar="">التوثيق على خمسة محاور</span><span data-en="">Verification across five axes</span></div>
+                  <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:8px;"><span data-ar="">الهوية تحكم الباقي. من لم تثبت هويته لا يفحص في غيرها.</span><span data-en="">Identity governs the rest. Whoever is unverified there is examined in nothing else.</span></div>
+                  <div style="display:flex;flex-direction:column;gap:1px;margin-top:16px;background:#EDE5D2;border-radius:14px;overflow:hidden;">
+                    <sc-for list="{{ axes }}" as="a" hint-placeholder-count="5">
+                      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 15px;background:#fff;">
+                        <span style="font-size:14.5px;color:#052E2B;min-width:0;">{{ a.name }}</span>
+                        <span style="font-size:11.5px;white-space:nowrap;padding:4px 10px;border-radius:99px;color:{{ a.fg }};background:{{ a.bg }};">{{ a.state }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div style="flex:1;"></div>
+                  <div style="padding:14px 16px;border-radius:12px;background:#F1EAD9;margin-bottom:14px;">
+                    <div style="font-size:13.5px;line-height:1.9;color:#33544D;">{{ vNote }}</div>
+                  </div>
+                  <button onClick="{{ vAct }}" style="min-height:52px;font-size:15.5px;color:#FAF6EC;background:#052E2B;border:none;border-radius:14px;padding:15px;cursor:pointer;">{{ vBtn }}</button>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isS2 }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;height:100%;align-items:center;text-align:center;animation:jIn .5s cubic-bezier(.16,1,.3,1) both;">
+                  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">TIER ISSUED</div>
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:26px;line-height:1.4;color:#052E2B;margin-top:10px;"><span data-ar="">صدرت بطاقتك</span><span data-en="">Your card is issued</span></div>
+                  <div style="width:172px;height:272px;border-radius:14px;background:#052E2B;margin-top:22px;position:relative;overflow:hidden;box-shadow:0 16px 40px rgba(5,46,43,.28);">
+                    <div style="position:absolute;inset:22px 16px auto;display:flex;flex-direction:column;gap:{{ strataGap }};">
+                      <sc-for list="{{ strata }}" as="n" hint-placeholder-count="7">
+                        <div style="height:2px;border-radius:2px;background:rgba(127,231,218,.5);"></div>
+                      </sc-for>
+                    </div>
+                    <div style="position:absolute;inset:auto 16px 18px;text-align:right;">
+                      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#FAF6EC;">{{ regName }}</div>
+                      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#7FE7DA;margin-top:4px;">{{ tierCode }} · {{ regId }}</div>
+                    </div>
+                  </div>
+                  <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:20px;max-width:30ch;">{{ tierBody }}</div>
+                  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;margin-top:10px;">kayanwork.com/v/{{ regId }}</div>
+                  <div style="flex:1;"></div>
+                  <button onClick="{{ toS3 }}" style="width:100%;min-height:52px;font-size:15.5px;color:#FAF6EC;background:#052E2B;border:none;border-radius:14px;padding:15px;cursor:pointer;"><span data-ar="">عرض دعوات التكليف</span><span data-en="">View assignment calls</span></button>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isS3 }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;height:100%;animation:jIn .4s cubic-bezier(.16,1,.3,1) both;">
+                  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#0E6E66;">POD CALL · MD-2026-204</div>
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;line-height:1.45;color:#052E2B;margin-top:10px;"><span data-ar="">دعوة إلى فريق تنفيذ</span><span data-en="">A call to a delivery pod</span></div>
+                  <div style="display:flex;flex-direction:column;gap:1px;margin-top:16px;background:#EDE5D2;border-radius:14px;overflow:hidden;">
+                    <div style="background:#fff;padding:13px 15px;"><div style="font-size:11.5px;color:#6E675A;"><span data-ar="">الدور</span><span data-en="">Role</span></div><div style="font-size:14.5px;color:#052E2B;margin-top:3px;"><span data-ar="">مساهم صاعد — تحت إشراف قائد الفريق</span><span data-en="">Rising contributor, under the pod lead</span></div></div>
+                    <div style="background:#fff;padding:13px 15px;"><div style="font-size:11.5px;color:#6E675A;"><span data-ar="">نطاق العمل</span><span data-en="">Scope of work</span></div><div style="font-size:14.5px;line-height:1.8;color:#052E2B;margin-top:3px;"><span data-ar="">أربع صفحات هبوط، وملف أصول مسلم، ودليل استعمال من صفحتين</span><span data-en="">Four landing pages, a delivered asset file, and a two-page usage guide</span></div></div>
+                    <div style="background:#fff;padding:13px 15px;"><div style="font-size:11.5px;color:#6E675A;"><span data-ar="">معايير القبول</span><span data-en="">Acceptance criteria</span></div><div style="font-size:14.5px;line-height:1.8;color:#052E2B;margin-top:3px;"><span data-ar="">تفتح الصفحات دون ثانية على شبكة بطيئة، وتقرأ بالعربية والإنجليزية، وتسلم مصادرها</span><span data-en="">Pages open in under a second on a slow network, read in Arabic and English, and their sources are handed over</span></div></div>
+                    <div style="background:#fff;padding:13px 15px;display:flex;justify-content:space-between;gap:10px;"><div><div style="font-size:11.5px;color:#6E675A;"><span data-ar="">المدة</span><span data-en="">Duration</span></div><div style="font-size:14.5px;color:#052E2B;margin-top:3px;"><span data-ar="">أربعة عشر يوما</span><span data-en="">Fourteen days</span></div></div><div style="text-align:left;"><div style="font-size:11.5px;color:#6E675A;"><span data-ar="">حصتك</span><span data-en="">Your share</span></div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#052E2B;margin-top:3px;border-bottom:1px dotted #B0A48A;">PH-AMT</div></div></div>
+                  </div>
+                  <div style="font-size:12.5px;line-height:1.85;color:#6E675A;margin-top:12px;"><span data-ar="">المبلغ يقره المالك قبل النشر. ولا تعرض دعوة بمبلغ غير مقر.</span><span data-en="">The owner approves the amount before publication. No call is shown with an unapproved amount.</span></div>
+                  <div style="flex:1;"></div>
+                  <div style="display:flex;flex-direction:column;gap:9px;">
+                    <button onClick="{{ toS4 }}" style="min-height:52px;font-size:15.5px;color:#FAF6EC;background:#052E2B;border:none;border-radius:14px;padding:15px;cursor:pointer;"><span data-ar="">قبول التكليف</span><span data-en="">Accept the assignment</span></button>
+                    <button style="min-height:44px;font-size:14px;color:#33544D;background:transparent;border:1px solid #E2DAC8;border-radius:14px;padding:12px;cursor:pointer;"><span data-ar="">اعتذار — لا يحتسب عليك</span><span data-en="">Decline — not counted against you</span></button>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isS4 }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;height:100%;animation:jIn .4s cubic-bezier(.16,1,.3,1) both;">
+                  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#0E6E66;">ESCROW</div>
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;line-height:1.45;color:#052E2B;margin-top:10px;"><span data-ar="">مول الضمان، فابدأ</span><span data-en="">Fund the escrow, then begin</span></div>
+                  <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:10px;"><span data-ar="">أودع العميل المستحق كاملا في حساب الضمان قبل أول يوم عمل. المبلغ محجوز لا لكيان ولا للعميل، ويفرج عنه بمحضر الاستلام.</span><span data-en="">The client deposited the full amount into the escrow account before the first working day. It is held for neither Kayan nor the client, and is released on the acceptance record.</span></div>
+                  <div style="margin-top:18px;border:1px solid #EDE5D2;border-radius:14px;background:#fff;overflow:hidden;">
+                    <sc-for list="{{ escSteps }}" as="e" hint-placeholder-count="4">
+                      <div style="display:flex;align-items:center;gap:11px;padding:13px 15px;border-bottom:1px solid #F3EFE2;">
+                        <span style="width:9px;height:9px;border-radius:99px;background:{{ e.dot }};flex-shrink:0;"></span>
+                        <span style="flex:1;min-width:0;font-size:14px;color:{{ e.fg }};">{{ e.label }}</span>
+                        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6E675A;white-space:nowrap;">{{ e.at }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div style="flex:1;"></div>
+                  <button onClick="{{ toS5 }}" style="min-height:52px;font-size:15.5px;color:#FAF6EC;background:#052E2B;border:none;border-radius:14px;padding:15px;cursor:pointer;"><span data-ar="">تسليم المخرجات للمراجعة</span><span data-en="">Hand over deliverables for review</span></button>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isS5 }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;height:100%;animation:jIn .4s cubic-bezier(.16,1,.3,1) both;">
+                  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#0E6E66;">KYN-F-01 · HANDOVER</div>
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;line-height:1.45;color:#052E2B;margin-top:10px;"><span data-ar="">سلمت. القرار عند العميل خلال خمسة أيام.</span><span data-en="">Handed over. The decision rests with the client for five days.</span></div>
+                  <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:10px;"><span data-ar="">تنقضي المهلة فيعد التسليم مقبولا حكما، ويصرف المستحق. الصمت ليس ردا.</span><span data-en="">The term lapses, the handover is deemed accepted, and the amount is paid. Silence is not a refusal.</span></div>
+                  <div style="margin-top:18px;padding:16px;border:1px dashed #C2B69C;border-radius:14px;background:#F7F4EA;">
+                    <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:9.5px;letter-spacing:.18em;color:#6E675A;"><span data-ar="">للعرض · قرار العميل</span><span data-en="">FOR DEMONSTRATION · CLIENT DECISION</span></div>
+                    <div style="display:flex;flex-direction:column;gap:9px;margin-top:12px;">
+                      <button onClick="{{ doAccept }}" style="min-height:48px;font-size:14.5px;color:#FAF6EC;background:#0E6E66;border:none;border-radius:12px;padding:13px;cursor:pointer;"><span data-ar="">قبول التسليم كاملا</span><span data-en="">Accept the handover in full</span></button>
+                      <button onClick="{{ doRefuse }}" style="min-height:48px;font-size:14.5px;color:#8E2F27;background:transparent;border:1px solid #B23A31;border-radius:12px;padding:13px;cursor:pointer;"><span data-ar="">رد بتحفظ</span><span data-en="">Return with reservation</span></button>
+                    </div>
+                  </div>
+                  <div style="flex:1;"></div>
+                  <sc-if value="{{ refused }}" hint-placeholder-val="{{ false }}">
+                    <div style="padding:16px;border:1px solid #B23A31;border-radius:14px;background:#fff;">
+                      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:9.5px;letter-spacing:.18em;color:#8E2F27;"><span data-ar="">قرار مسبب · REASONED REFUSAL</span><span data-en="">REASONED REFUSAL · قرار مسبب</span></div>
+                      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:9px;"><span data-ar="">رد التسليم لسبب واحد محدد</span><span data-en="">The handover is returned for one stated reason</span></div>
+                      <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:8px;"><span data-ar="">لم يسلم ملف الأصول المفتوحة، وهو بند وارد في معايير القبول. وما عداه مستوف.</span><span data-en="">The open-source asset file was not handed over, and it is a clause in the acceptance criteria. Everything else is met.</span></div>
+                      <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:8px;"><span style="color:#0E6E66;"><span data-ar="">الطريق:</span><span data-en="">The way through:</span></span> <span data-ar="">يرفع الملف خلال ثلاثة أيام فيقبل التسليم. ولا يمس الرد فئتك ولا سجلك ما لم يتكرر.</span><span data-en="">File it within three days and the handover is accepted. A return touches neither your tier nor your record unless it recurs.</span></div>
+                      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6E675A;margin-top:11px;">POS-DEL-QA · 2026-07-19 · APPEAL WITHIN 7D</div>
+                      <button onClick="{{ doAccept }}" style="width:100%;min-height:48px;font-size:14.5px;color:#FAF6EC;background:#052E2B;border:none;border-radius:12px;padding:13px;cursor:pointer;margin-top:14px;"><span data-ar="">رفع الملف الناقص وإعادة التسليم</span><span data-en="">File the missing document and hand over again</span></button>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isS6 }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;height:100%;align-items:center;text-align:center;animation:jIn .5s cubic-bezier(.16,1,.3,1) both;">
+                  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">ACCEPTED · PAID</div>
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:25px;line-height:1.4;color:#052E2B;margin-top:10px;"><span data-ar="">قبل التسليم وصرف المستحق</span><span data-en="">Handover accepted, amount paid</span></div>
+                  <div style="margin-top:20px;background:#fff;border:1px solid #EDE5D2;padding:16px;">
+                    <svg viewBox="{{ sealBox }}" width="128" height="128" role="img" aria-label="ختم القبول · Acceptance seal">
+                      <sc-for list="{{ sealRuns }}" as="r" hint-placeholder-count="11">
+                        <rect x="{{ r.x }}" y="{{ r.y }}" width="{{ r.w }}" height="{{ r.h }}" rx="{{ r.rx }}" fill="#052E2B"></rect>
+                      </sc-for>
+                    </svg>
+                    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;color:#052E2B;margin-top:10px;">{{ sealShort }}</div>
+                  </div>
+                  <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:16px;max-width:32ch;"><span data-ar="">ختم هذا القبول محسوب من نص المحضر نفسه. من غير حرفا في المحضر بعد اليوم، ظهر التغيير.</span><span data-en="">This acceptance seal is computed from the text of the record itself. Alter one character after today and the change shows.</span></div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;margin-top:18px;">
+                    <div style="padding:13px;border:1px solid #EDE5D2;border-radius:12px;background:#fff;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:19px;color:#052E2B;">3</div><div style="font-size:11.5px;color:#6E675A;margin-top:3px;"><span data-ar="">أيام حتى الصرف</span><span data-en="">days to payment</span></div></div>
+                    <div style="padding:13px;border:1px solid #EDE5D2;border-radius:12px;background:#fff;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:19px;color:#052E2B;">1</div><div style="font-size:11.5px;color:#6E675A;margin-top:3px;"><span data-ar="">تسليم مقبول في سجلك</span><span data-en="">accepted handover in your record</span></div></div>
+                  </div>
+                  <div style="flex:1;"></div>
+                  <div style="width:100%;padding:14px 16px;border-radius:12px;background:#F1EAD9;text-align:right;">
+                    <div style="font-size:13.5px;line-height:1.9;color:#33544D;"><span data-ar="">بقي تسليمان مقبولان وجهة تزكية لبلوغ الفئة الثانية. والفئة لا تشترى ولا تمنح.</span><span data-en="">Two accepted handovers and a referring body remain to reach tier two. A tier is neither bought nor granted.</span></div>
+                  </div>
+                </div>
+              </sc-if>
+
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;font-size:12.5px;color:#5F6E66;margin-top:14px;"><span data-ar="">بيانات عينة تصميمية. الاسم والأرقام غير حقيقية.</span><span data-en="">Sample design data. The name and figures are not real.</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section data-screen-label="المسار · القواعد" style="background:#FAF6EC;padding:80px clamp(20px,4vw,48px) 92px;">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#0E6E66;font-weight:500;"><bdi style="letter-spacing:normal"><span data-ar="">ما يثبته المسار</span><span data-en="">What the flow proves</span></bdi> <span data-ar="">· WHAT THE FLOW PROVES</span><span data-en="">· KYN-FLOW-01</span></div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:24ch;"><span data-ar="">ست قواعد لا يجوز خرقها في أي شاشة</span><span data-en="">Six rules no screen may break</span></h2>
+
+    <div data-rulegrid="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,168px),1fr));gap:1px;margin-top:34px;background:#EDE5D2;border:1px solid #EDE5D2;border-radius:20px;overflow:visible;">
+      <div data-rulecard="" style="background:#fff;padding:22px 18px;min-width:0;border-radius:20px 0 0 20px;"><div data-ruleno="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">01</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;line-height:1.5;color:#052E2B;margin-top:8px;"><span data-ar="">سؤال واحد في الشاشة</span><span data-en="">One question per screen</span></div><div style="font-size:13px;line-height:1.85;color:#33544D;margin-top:7px;"><span data-ar="">ومعه سبب سؤاله. من لا يعرف لماذا يسأل، لا يجيب بصدق.</span><span data-en="">And with it, the reason it is asked. Whoever does not know why is asked answers without candour.</span></div></div>
+      <div data-rulecard="" style="background:#fff;padding:22px 18px;min-width:0;"><div data-ruleno="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">02</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;line-height:1.5;color:#052E2B;margin-top:8px;"><span data-ar="">الآلة تمرر ولا ترد</span><span data-en="">The machine passes, it does not refuse</span></div><div style="font-size:13px;line-height:1.85;color:#33544D;margin-top:7px;"><span data-ar="">كل رد يصدر عن موقع مسمى، بسبب مكتوب، ومعه مهلة تظلم.</span><span data-en="">Every refusal issues from a named post, with a written reason and a term of appeal.</span></div></div>
+      <div data-rulecard="" style="background:#fff;padding:22px 18px;min-width:0;"><div data-ruleno="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">03</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;line-height:1.5;color:#052E2B;margin-top:8px;"><span data-ar="">لا عمل قبل تمويل الضمان</span><span data-en="">No work before escrow is funded</span></div><div style="font-size:13px;line-height:1.85;color:#33544D;margin-top:7px;"><span data-ar="">القاعدة المؤسسة. ولا يستثنى منها عميل مهما كان.</span><span data-en="">The founding rule. No client is exempt from it.</span></div></div>
+      <div data-rulecard="" style="background:#fff;padding:22px 18px;min-width:0;"><div data-ruleno="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">04</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;line-height:1.5;color:#052E2B;margin-top:8px;"><span data-ar="">الصمت ليس ردا</span><span data-en="">Silence is not a refusal</span></div><div style="font-size:13px;line-height:1.85;color:#33544D;margin-top:7px;"><span data-ar="">تنقضي مهلة المراجعة فيقبل التسليم حكما ويصرف المستحق.</span><span data-en="">The review term lapses, the handover is deemed accepted, and the amount is paid.</span></div></div>
+      <div data-rulecard="" style="background:#fff;padding:22px 18px;min-width:0;"><div data-ruleno="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">05</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;line-height:1.5;color:#052E2B;margin-top:8px;"><span data-ar="">السجل يضاف إليه</span><span data-en="">The register is added to</span></div><div style="font-size:13px;line-height:1.85;color:#33544D;margin-top:7px;"><span data-ar="">لا يعدل سطر ولا يحذف. والإلغاء قيد جديد يعلو ما قبله ويبقى الاثنان.</span><span data-en="">No line is amended or deleted. A cancellation is a new entry that supersedes the one before it, and both remain.</span></div></div>
+      <div data-rulecard="" style="background:#fff;padding:22px 18px;min-width:0;border-radius:0 20px 20px 0;"><div data-ruleno="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">06</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;line-height:1.5;color:#052E2B;margin-top:8px;"><span data-ar="">نغمة واحدة للحدث</span><span data-en="">One tone per event</span></div><div style="font-size:13px;line-height:1.85;color:#33544D;margin-top:7px;"><span data-ar="">أربع لحظات فقط تصوت: استيفاء حقل، وصدور فئة، وقبول، ورد. وما عداها صامت.</span><span data-en="">Only four moments sound: a field met, a tier issued, an acceptance, a refusal. All else is silent.</span></div></div>
+    </div>
+
+    <div style="margin-top:34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;">
+      <div style="border:1px solid #E2DAC8;border-radius:18px;padding:22px;background:#fff;min-width:0;">
+        <div style="display:flex;align-items:center;gap:8px;"><span style="width:18px;height:3px;border-radius:2px;background:#12B5A4;flex-shrink:0;"></span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#33544D;">SOUND MAP</span></div>
+        <div style="font-size:14px;line-height:2;color:#33544D;margin-top:10px;"><bdi dir="ltr" style="font-family:'IBM Plex Mono',monospace;">verify</bdi> <span data-ar="">عند استيفاء حقل</span><span data-en="">on a field met</span> · <bdi dir="ltr" style="font-family:'IBM Plex Mono',monospace;">tier</bdi> <span data-ar="">عند صدور الفئة</span><span data-en="">on a tier issued</span> · <bdi dir="ltr" style="font-family:'IBM Plex Mono',monospace;">accept</bdi> <span data-ar="">عند القبول</span><span data-en="">on acceptance</span> · <bdi dir="ltr" style="font-family:'IBM Plex Mono',monospace;">halt</bdi> <span data-ar="">عند الرد.</span><span data-en="">on refusal.</span></div>
+      </div>
+      <div style="border:1px solid #E2DAC8;border-radius:18px;padding:22px;background:#fff;min-width:0;">
+        <div style="display:flex;align-items:center;gap:8px;"><span style="width:18px;height:3px;border-radius:2px;background:#0E6E66;flex-shrink:0;"></span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#33544D;">MOTION</span></div>
+        <div style="font-size:14px;line-height:2;color:#33544D;margin-top:10px;"><span data-ar="">الدخول على منحنى الاستقرار ٤٠٠ ملي، واللمس ١٤٠، والخروج ٢٢٠. شيء واحد يتحرك في المرة، ولا حركة أثناء القراءة.</span><span data-en="">Entrances settle over 400ms, touch over 140, exits over 220. One thing moves at a time, and nothing moves while you read.</span></div>
+      </div>
+      <div style="border:1px solid #E2DAC8;border-radius:18px;padding:22px;background:#fff;min-width:0;">
+        <div style="display:flex;align-items:center;gap:8px;"><span style="width:18px;height:3px;border-radius:2px;background:#B8891A;flex-shrink:0;"></span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#33544D;">TARGETS</span></div>
+        <div style="font-size:14px;line-height:2;color:#33544D;margin-top:10px;"><span data-ar="">كل زر لا يقل عن ٤٤ بكسلا ارتفاعا، والأفعال الرئيسة في الثلث الأسفل من الشاشة حيث يبلغها الإبهام.</span><span data-en="">No button is under 44px tall, and primary actions sit in the lower third of the screen where the thumb reaches.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<kayan-compass current="journey"></kayan-compass>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  state = { stage: 0, q: 0, name: '', phone: '', spec: '', vPhase: 0, escrow: 0, refused: false, armed: false, lang: Component.initialLang() };
+
+  // English leads on first visit. A language chosen anywhere else on the site
+  // (kyn-lang) still travels here and wins.
+  static initialLang() {
+    try { const v = localStorage.getItem('kyn-lang'); if (v === 'ar' || v === 'en') return v; } catch (e) {}
+    return 'en';
+  }
+  root = { current: null };
+  E(ar, en) { return this.state.lang === 'en' ? en : ar; }
+  _syncDir() {
+    const el = this.root && this.root.current; if (!el) return;
+    const en = this.state.lang === 'en';
+    el.setAttribute('data-lang', en ? 'en' : 'ar');
+    el.setAttribute('dir', en ? 'ltr' : 'rtl');
+    el.style.fontFamily = en ? "'Instrument Sans','IBM Plex Sans Arabic',sans-serif" : "'IBM Plex Sans Arabic',sans-serif";
+  }
+  componentDidMount() { this._syncDir(); }
+  componentDidUpdate(pp, ps) { if (!ps || ps.lang !== this.state.lang) this._syncDir(); }
+  setLang(v) {
+    if (v === this.state.lang) return;
+    try { localStorage.setItem('kyn-lang', v); } catch (e) {}
+    this.setState({ lang: v });
+  }
+
+  reduce = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion:reduce)').matches;
+  componentWillUnmount() { if (this._ac) this._ac.close(); }
+
+  // ---------- sonic: same engine and the same maqam as the master document ----------
+  ac() { if (!this.state.armed) return null; if (!this._ac) { const C = window.AudioContext || window.webkitAudioContext; if (!C) return null; this._ac = new C(); } if (this._ac.state === 'suspended') this._ac.resume(); return this._ac; }
+  bus() {
+    if (this._out) return;
+    const ac = this._ac, m = ac.createGain(); m.gain.value = 0.15;
+    const hp = ac.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 150;
+    const dly = ac.createDelay(); dly.delayTime.value = 0.112;
+    const fb = ac.createGain(); fb.gain.value = 0.2;
+    const wet = ac.createGain(); wet.gain.value = 0.26;
+    m.connect(hp); hp.connect(ac.destination); hp.connect(dly); dly.connect(fb); fb.connect(dly); dly.connect(wet); wet.connect(ac.destination);
+    this._out = m;
+  }
+  deg() { const d = 587.33, c = n => d * Math.pow(2, n / 1200); return { drone: d / 4, low: d / 2, d: d, n3: c(347), g: c(500), a: c(700), oct: c(1200), high: c(1200) * 1.5 }; }
+  pluck(f, t0, dur, gain, type) {
+    const ac = this._ac, o = ac.createOscillator(), o2 = ac.createOscillator(), g = ac.createGain(), g2 = ac.createGain(), lp = ac.createBiquadFilter();
+    o.type = type || 'triangle'; o.frequency.value = f;
+    o2.type = 'sawtooth'; o2.frequency.value = f * 2.002; g2.gain.value = 0.12;
+    lp.type = 'lowpass'; lp.frequency.setValueAtTime(3600, t0); lp.frequency.exponentialRampToValueAtTime(1200, t0 + dur);
+    g.gain.setValueAtTime(0, t0); g.gain.linearRampToValueAtTime(gain, t0 + 0.008); g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    o.connect(lp); o2.connect(g2); g2.connect(lp); lp.connect(g); g.connect(this._out);
+    o.start(t0); o2.start(t0); o.stop(t0 + dur + 0.05); o2.stop(t0 + dur + 0.05);
+  }
+  drone(f, t0, dur, gain) {
+    const ac = this._ac, o = ac.createOscillator(), g = ac.createGain();
+    o.type = 'sine'; o.frequency.value = f;
+    g.gain.setValueAtTime(0, t0); g.gain.linearRampToValueAtTime(gain, t0 + 0.25); g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    o.connect(g); g.connect(this._out); o.start(t0); o.stop(t0 + dur + 0.05);
+  }
+  fire(name) {
+    const ac = this.ac(); if (!ac) return;
+    this.bus();
+    const t = ac.currentTime + 0.03, k = this.deg();
+    if (name === 'verify') { this.pluck(k.a, t, 0.2, 0.15); this.pluck(k.oct, t + 0.08, 0.3, 0.12); }
+    if (name === 'tier') { [k.d, k.n3, k.a, k.oct].forEach((f, i) => this.pluck(f, t + i * 0.09, 0.6, 0.15)); this.pluck(k.high, t + 0.4, 0.7, 0.06, 'sine'); }
+    if (name === 'accept') { [[k.d, 0], [k.g, 0.09], [k.a, 0.18], [k.oct, 0.3]].forEach(x => this.pluck(x[0], t + x[1], 1.3, 0.13)); this.drone(k.drone, t, 2.0, 0.085); }
+    if (name === 'halt') { this.pluck(k.n3, t, 0.42, 0.13); this.pluck(k.d, t + 0.13, 0.5, 0.11); }
+  }
+
+  // ---------- seal: the same derivation as KYN-SEAL-01 ----------
+  sha256(str) {
+    const K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
+      0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
+      0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,
+      0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,
+      0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,
+      0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,
+      0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,
+      0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+    let H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+    const b = Array.from(new TextEncoder().encode(str)), bitLen = b.length * 8;
+    b.push(0x80); while (b.length % 64 !== 56) b.push(0);
+    for (let i = 7; i >= 0; i--) b.push(Math.floor(bitLen / Math.pow(2, i * 8)) & 0xff);
+    const rr = (x, n) => (x >>> n) | (x << (32 - n));
+    for (let i = 0; i < b.length; i += 64) {
+      const w = new Array(64);
+      for (let j = 0; j < 16; j++) w[j] = (b[i+j*4] << 24) | (b[i+j*4+1] << 16) | (b[i+j*4+2] << 8) | b[i+j*4+3];
+      for (let j = 16; j < 64; j++) {
+        const s0 = rr(w[j-15],7) ^ rr(w[j-15],18) ^ (w[j-15] >>> 3);
+        const s1 = rr(w[j-2],17) ^ rr(w[j-2],19) ^ (w[j-2] >>> 10);
+        w[j] = (w[j-16] + s0 + w[j-7] + s1) | 0;
+      }
+      let a = H[0], bb = H[1], c = H[2], d = H[3], e = H[4], f = H[5], g = H[6], h = H[7];
+      for (let j = 0; j < 64; j++) {
+        const S1 = rr(e,6) ^ rr(e,11) ^ rr(e,25), ch = (e & f) ^ (~e & g);
+        const t1 = (h + S1 + ch + K[j] + w[j]) | 0;
+        const S0 = rr(a,2) ^ rr(a,13) ^ rr(a,22), mj = (a & bb) ^ (a & c) ^ (bb & c);
+        const t2 = (S0 + mj) | 0;
+        h = g; g = f; f = e; e = (d + t1) | 0; d = c; c = bb; bb = a; a = (t1 + t2) | 0;
+      }
+      const add = [a,bb,c,d,e,f,g,h];
+      H = H.map((v, k2) => (v + add[k2]) | 0);
+    }
+    return H.map(v => (v >>> 0).toString(16).padStart(8, '0')).join('').toUpperCase();
+  }
+  runs(hex, cell) {
+    const bit = i => (parseInt(hex[i >> 2], 16) >> (3 - (i & 3))) & 1;
+    const N = 11, W = [0.30, 0.46, 0.64, 0.84], out = [];
+    for (let r = 0; r < N; r++) {
+      const hgt = W[(bit(66 + r * 2) << 1) | bit(66 + r * 2 + 1)] * cell, on = [];
+      for (let c = 0; c < N; c++) on.push(bit(r * 6 + (c <= 5 ? c : 10 - c)));
+      let c = 0, any = false;
+      while (c < N) {
+        if (on[c]) { const s = c; while (c < N && on[c]) c++;
+          out.push({ x: +(s*cell).toFixed(2), y: +(r*cell + (cell-hgt)/2).toFixed(2), w: +((c-s)*cell - cell*0.2).toFixed(2), h: +hgt.toFixed(2), rx: +Math.min(hgt/2, cell*0.16).toFixed(2) });
+          any = true;
+        } else c++;
+      }
+      if (!any) out.push({ x: +(cell*0.9).toFixed(2), y: +(r*cell + cell/2 - cell*0.045).toFixed(2), w: +(cell*9.2).toFixed(2), h: +(cell*0.09).toFixed(2), rx: 0.5 });
+    }
+    return out;
+  }
+
+  qs() {
+    return [
+      { key: 'name', label: this.E('ما اسمك كما هو في وثيقتك الرسمية؟', 'What is your name as it appears on your official document?'), hint: this.E('الاسم الرباعي', 'Full four-part name'), why: this.E('يقيد الاسم كما في الوثيقة ليطابق ما يظهر على البطاقة وفي المحاضر. ولا يعدل بعد صدور الفئة إلا بقرار مسبب.', 'The name is entered as on the document so it matches the card and the records. After a tier is issued it is amended only by reasoned decision.') },
+      { key: 'phone', label: this.E('رقم يصلك عليه واتساب', 'A number that reaches you on WhatsApp'), hint: '+967 …', why: this.E('التكليفات وقرارات القبول ترسل على هذا الرقم. ولا يستعمل في تسويق، ولا يشارك مع عميل قبل اعتماد التكليف.', 'Assignments and acceptance decisions are sent to this number. It is not used for marketing, and is not shared with a client before an assignment is approved.') },
+      { key: 'spec', label: this.E('ما تخصصك الدقيق؟', 'What is your exact specialisation?'), hint: this.E('مثال: تصميم واجهات', 'e.g. interface design'), why: this.E('يبنى عليه الترشيح للفرق. الوصف الدقيق يرفع فرصك أكثر من الوصف الواسع.', 'Pod nomination is built on it. A precise description raises your chances more than a broad one.') }
+    ];
+  }
+
+  renderVals() {
+    const s = this.state, Q = this.qs(), cur = Q[Math.min(s.q, 2)];
+    const stage = s.stage;
+    const name = s.name || this.E('نورا سعيد باسلامة', 'Noura Saeed Baslama');
+    const regId = 'A7F3-0142';
+
+    const stages = this.E(['التسجيل','التوثيق','الفئة','التكليف','الضمان','محضر الاستلام','الصرف'], ['Registration','Verification','Tier','Assignment','Escrow','Acceptance record','Payment']);
+    const rail = stages.map((label, i) => {
+      const on = i === stage, done = i < stage;
+      return {
+        no: String(i + 1).padStart(2, '0'), label, cur: on ? 'step' : 'false',
+        onAttr: on ? '' : null, w: on ? '600' : '400',
+        fg: on ? '#052E2B' : (done ? '#0E6E66' : '#7C8A83'),
+        go: () => this.setState({ stage: i, refused: false })
+      };
+    });
+
+    // append-only register log, built from how far the flow has come
+    const L = [];
+    const push = (t, what, by, fg) => L.push({ t, what, by, fg: fg || 'rgba(250,246,236,.9)' });
+    if (stage >= 0 && s.q > 0) push('09:41:02', this.E('فتح ملف تسجيل', 'Registration file opened'), 'SELF · WHATSAPP ENTRY');
+    if (s.q >= 1 || stage >= 1) push('09:41:38', this.E('قيد الاسم: ', 'Name entered: ') + name, 'SELF');
+    if (s.q >= 2 || stage >= 1) push('09:42:10', this.E('قيد قناة الاتصال', 'Contact channel entered'), 'SELF');
+    if (stage >= 1) push('09:42:44', this.E('اكتمل ملف التسجيل — ثلاثة حقول', 'Registration file complete — three fields'), 'SELF');
+    if (stage >= 1 && s.vPhase >= 1) push('09:43:01', this.E('فحص آلي: أربعة محاور مستوفاة، ومحور يحتاج مراجعة', 'Automated check: four axes met, one axis needs review'), 'SYSTEM · NIGHTLY COMPUTE');
+    if (stage >= 2) push('11:20:16', this.E('اعتماد التوثيق ومنح الفئة الأولى', 'Verification approved and tier one granted'), this.E('POS-TAL-VER · اعتماد إنسان', 'POS-TAL-VER · HUMAN APPROVAL'));
+    if (stage >= 2) push('11:20:17', this.E('إصدار بطاقة وفتح صفحة سجل عامة', 'Card issued and a public record page opened'), 'SYSTEM');
+    if (stage >= 3) push('14:02:55', this.E('ترشيح لفريق تنفيذ على العقد MD-2026-204', 'Nominated to a delivery pod on contract MD-2026-204'), 'SYSTEM · MATCHING');
+    if (stage >= 4) push('14:19:03', this.E('قبول التكليف وتثبيت حصة الدور', 'Assignment accepted and the role share fixed'), 'SELF');
+    if (stage >= 4) push('14:51:40', this.E('إيداع المستحق كاملا في حساب الضمان', 'Full amount deposited into the escrow account'), 'CLIENT · TADAMON ESCROW');
+    if (stage >= 5) push('2026-07-18', this.E('تسليم المخرجات للمراجعة', 'Deliverables handed over for review'), 'SELF');
+    if (s.refused) push('2026-07-19', this.E('رد بتحفظ — نقص ملف الأصول المفتوحة', 'Returned with reservation — open-source asset file missing'), this.E('POS-DEL-QA · قرار مسبب', 'POS-DEL-QA · REASONED DECISION'), '#FF9A8F');
+    if (stage >= 6) push('2026-07-21', this.E('قبول التسليم كاملا وتحرير محضر الاستلام', 'Handover accepted in full and the acceptance record drawn up'), 'CLIENT + POS-DEL-QA', '#7FE7DA');
+    if (stage >= 6) push('2026-07-21', this.E('ختم المحضر وقيده في السلسلة', 'Record sealed and entered in the chain'), 'SYSTEM · KYN-SEAL-01', '#7FE7DA');
+    if (stage >= 6) push('2026-07-21', this.E('الإفراج عن المستحق وصرفه', 'Amount released and paid'), 'FINANCE · ESCROW RELEASE', '#7FE7DA');
+    if (!L.length) push('—', this.E('لم يقيد شيء بعد. السجل يبدأ عند أول إدخال.', 'Nothing is entered yet. The register begins at the first entry.'), 'AWAITING', 'rgba(250,246,236,.55)');
+
+    // Number the entries and flag the newest, so the panel reads as a live ledger.
+    const total = L.length;
+    L.forEach((r, i) => { r.n = String(i + 1).padStart(2, '0'); r.isNew = i === total - 1 && total > 1; r.newAttr = r.isNew ? '' : null; });
+
+    const escStages = [
+      { label: this.E('غير ممول', 'Unfunded'), at: '—' },
+      { label: this.E('ممول ومحجوز', 'Funded and held'), at: '14:51' },
+      { label: this.E('قيد المراجعة', 'Under review'), at: '07-18' },
+      { label: this.E('مفرج عنه', 'Released'), at: '07-21' }
+    ];
+    const escIdx = stage >= 6 ? 3 : (stage >= 5 ? 2 : (stage >= 4 ? 1 : 0));
+    const escSteps = escStages.map((e, i) => ({
+      label: e.label, at: i <= escIdx ? e.at : '—',
+      dot: i < escIdx ? '#0E6E66' : (i === escIdx ? '#12B5A4' : '#DCD3BE'),
+      fg: i <= escIdx ? '#052E2B' : '#8E9A94'
+    }));
+
+    const axesBase = this.E(['الهوية','المهارة','السجل','السلوك','الطاقة'], ['Identity','Skill','Record','Conduct','Capacity']);
+    const axes = axesBase.map((n, i) => {
+      let st = this.E('لم يفحص', 'Not examined'), fg = '#6E675A', bg = '#F0EDE3';
+      if (s.vPhase >= 1) {
+        if (i === 2) { st = this.E('مراجعة إنسان', 'Human review'); fg = '#8A6A12'; bg = '#FFF3D6'; }
+        else { st = this.E('مستوف', 'Met'); fg = '#0E6E66'; bg = '#E4F2EE'; }
+      }
+      if (s.vPhase >= 2) { st = this.E('مستوف', 'Met'); fg = '#0E6E66'; bg = '#E4F2EE'; }
+      return { name: n, state: st, fg, bg };
+    });
+
+    // Hashed from the Arabic source text in both languages, so the seal does not change with the UI language.
+    const sealHash = this.sha256('KYN|MHD|' + regId + '|T1|2026-07-21|MD-2026-204|أربع صفحات هبوط وملف أصول ودليل استعمال');
+
+    const rules = this.E([
+      ['التسجيل يسأل ولا يستجوب', 'ثمانية عشر شاشة، سؤال واحد في كل شاشة، وسبب ظاهر لكل سؤال. ويجوز الوقوف والعودة دون فقد ما أدخل.'],
+      ['الآلة تمرر، والإنسان يرد', 'الفحص الليلي يرشح، ولا يرد أحدا. والرد يصدر عن موقع مسمى بسبب مكتوب ومهلة تظلم.'],
+      ['الفئة تصدر ولا تشترى', 'وتسقط بالخمول درجة واحدة قابلة للاسترداد. وهذا مكتوب قبل التسجيل لا بعده.'],
+      ['نطاق قبل عمل', 'لا تعرض دعوة بلا نطاق مكتوب ومعايير قبول قابلة للقياس ومدة محددة.'],
+      ['المال يودع قبل اليوم الأول', 'حساب الضمان التزام لا إيراد. ولا يبدأ عمل على وعد بالدفع.'],
+      ['المحضر يسبق الصرف', 'لا يصرف مستحق قبل قيده. والقيد يختم، والختم يشتق من نص المحضر.'],
+      ['الصرف يقيد مدته', 'عدد الأيام بين القبول والصرف يقيد وينشر شهريا، سواء أحسن أم ساء.']
+    ], [
+      ['Registration asks; it does not interrogate', 'Eighteen screens, one question each, and a stated reason for every question. You may stop and return without losing what you entered.'],
+      ['The machine passes; a person refuses', 'The nightly check nominates and refuses no one. A refusal issues from a named post with a written reason and a term of appeal.'],
+      ['A tier is issued, not bought', 'It falls one recoverable step through dormancy. This is written before registration, not after.'],
+      ['Scope before work', 'No call is shown without a written scope, measurable acceptance criteria, and a fixed term.'],
+      ['The money is deposited before day one', 'The escrow account is an obligation, not revenue. No work begins on a promise to pay.'],
+      ['The record precedes payment', 'No amount is paid before it is entered. The entry is sealed, and the seal derives from the text of the record.'],
+      ['Payment time is recorded', 'The number of days between acceptance and payment is entered and published monthly, whether it flatters us or not.']
+    ]);
+    const rule = rules[Math.min(stage, 6)];
+
+    const advance = (to, cue) => { if (cue) this.fire(cue); this.setState({ stage: to, refused: false }); };
+
+    return {
+      armLabel: s.armed ? this.E('الصوت مفعل — اضغط للإطفاء', 'Sound on — tap to mute') : this.E('تفعيل الصوت لهذه الجلسة', 'Enable sound for this session'),
+      armBg: s.armed ? '#12B5A4' : 'transparent',
+      armFg: s.armed ? '#04211F' : '#12B5A4',
+      toggleArm: () => { const n = !s.armed; this.setState({ armed: n }); if (n) { setTimeout(() => { this.ac(); }, 0); } },
+      reset: () => this.setState({ stage: 0, q: 0, name: '', phone: '', spec: '', vPhase: 0, refused: false }),
+
+      rootRef: this.root,
+      isAr: s.lang !== 'en', isEn: s.lang === 'en',
+      arBg: s.lang !== 'en' ? '#E9C96B' : 'transparent',
+      arFg: s.lang !== 'en' ? '#03201D' : 'rgba(250,246,236,.72)',
+      enBg: s.lang === 'en' ? '#E9C96B' : 'transparent',
+      enFg: s.lang === 'en' ? '#03201D' : 'rgba(250,246,236,.72)',
+      setAr: () => this.setLang('ar'),
+      setEn: () => this.setLang('en'),
+
+      rail, log: L, regId, regName: name,
+      logCount: this.E(total + ' قيدا', total + (total === 1 ? ' ENTRY' : ' ENTRIES')),
+      escHeld: escIdx === 1 || escIdx === 2,
+      escState: escStages[escIdx].label,
+      escPct: [4, 46, 66, 100][escIdx] + '%',
+      escBar: escIdx === 3 ? '#12B5A4' : (escIdx === 0 ? '#6E675A' : '#0E6E66'),
+      escFg: escIdx === 3 ? '#7FE7DA' : 'rgba(250,246,236,.8)',
+      escNote: escIdx === 0 ? this.E('لا يبدأ عمل قبل ورود المستحق كاملا.', 'No work begins before the full amount arrives.') : (escIdx === 3 ? this.E('صرف بعد ثلاثة أيام من قيد المحضر.', 'Paid three days after the record was entered.') : this.E('المبلغ محجوز — لا لكيان ولا للعميل.', 'The amount is held — for neither Kayan nor the client.')),
+      ruleTitle: rule[0], ruleBody: rule[1],
+
+      screenTag: ['REGISTRATION','VERIFICATION','TIER','POD CALL','ESCROW','HANDOVER','SETTLED'][stage],
+      isS0: stage === 0, isS1: stage === 1, isS2: stage === 2, isS3: stage === 3, isS4: stage === 4, isS5: stage === 5, isS6: stage === 6,
+
+      qCount: this.E('السؤال ' + (s.q + 1) + ' من ٣', 'QUESTION ' + (s.q + 1) + ' OF 3'),
+      qLabel: cur.label, qHint: cur.hint, qWhy: cur.why,
+      qValue: s[cur.key] || '',
+      qBtn: s.q === 2 ? this.E('إنهاء التسجيل', 'Finish registration') : this.E('التالي', 'Next'),
+      setQ: e => this.setState({ [cur.key]: e.target.value }),
+      nextQ: () => { this.fire('verify'); if (s.q < 2) this.setState({ q: s.q + 1 }); else this.setState({ stage: 1 }); },
+
+      axes,
+      vNote: s.vPhase === 0 ? this.E('يجري الفحص الآلي ليلا على كل ملف مكتمل. وهو يرشح فقط.', 'The automated check runs nightly on every complete file. It only nominates.')
+        : (s.vPhase === 1 ? this.E('مر الفحص الآلي. محور السجل يحتاج قرار إنسان — لأن الآلة يجوز لها أن تمرر، ولا يجوز لها أن ترد.', 'The automated check passed. The record axis needs a human decision, because the machine may pass but may not refuse.')
+        : this.E('اعتمد التوثيق. صدر القرار عن الموقع POS-TAL-VER وقيد باسمه.', 'Verification is approved. The decision issued from post POS-TAL-VER and is entered in its name.')),
+      vBtn: s.vPhase === 0 ? this.E('إجراء الفحص الآلي', 'Run the automated check') : (s.vPhase === 1 ? this.E('عرض على POS-TAL-VER', 'Refer to POS-TAL-VER') : this.E('استلام الفئة', 'Receive the tier')),
+      vAct: () => {
+        if (s.vPhase === 0) { this.fire('verify'); this.setState({ vPhase: 1 }); }
+        else if (s.vPhase === 1) { this.setState({ vPhase: 2 }); }
+        else { this.fire('tier'); this.setState({ stage: 2 }); }
+      },
+
+      strata: [0,1,2,3,4,5,6], strataGap: '19px',
+      tierCode: this.E('T1 · معرف', 'T1 · IDENTIFIED'),
+      tierBody: this.E('الفئة الأولى تتيح الانضمام إلى فريق تحت إشراف. وصفحة سجلك مفتوحة للعامة من الآن، بلا دخول ولا رسوم.', 'Tier one allows joining a supervised pod. Your record page is public from now, with no login and no fee.'),
+      toS3: () => advance(3),
+      toS4: () => advance(4),
+      toS5: () => advance(5),
+
+      escSteps,
+      refused: s.refused,
+      doAccept: () => { this.fire('accept'); this.setState({ stage: 6, refused: false }); },
+      doRefuse: () => { this.fire('halt'); this.setState({ refused: true }); },
+
+      sealRuns: this.runs(sealHash, 11), sealBox: '0 0 121 121', sealShort: sealHash.slice(0, 8)
+    };
+  }
+}
+
+</script>
+</body>
+</html>

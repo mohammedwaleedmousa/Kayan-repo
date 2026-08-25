@@ -1,0 +1,257 @@
+KAYAN INNOVATION, ENTREPRENEURSHIP & WORK ENVIRONMENTS LLC
+Aden, Republic of Yemen
+
+Decision Register
+Every decision taken, its reason, and every question still open
+This register exists so that decisions are taken once. Anything recorded here is settled until it is explicitly reversed here. Anything not recorded here is not decided, however often it has been discussed.
+Document code
+K-00-02
+Version
+v1.0
+Status
+Live — updated at every session
+Date
+5 August 2026
+Owner
+Founder / Chief Executive
+Classification
+INTERNAL — CONFIDENTIAL
+Supersedes
+—
+Derives from
+K-00-01 The Kayan Business Constitution
+Unlocks
+Prevents silent drift across all documents
+Update this at the end of every working session, without exception.
+
+Contents
+TOC \h \o "1-3"
+
+1. How this register works
+Three states only. TAKEN means the decision is settled and downstream work may rely on it. PROPOSED means a position has been reasoned and recommended but awaits founder ratification. OPEN means the question is live and materially affects downstream architecture.
+A decision may be reversed at any time, but only by adding a superseding entry with a reason. Silent reversal is the failure this register prevents, and it is the commonest way a company of this kind loses coherence over a year of fast work.
+2. Decisions taken
+ID
+Decision
+Reason
+Source
+State
+D-01
+Kayan&apos;s category is verified professional infrastructure for the frontier economy; the trust layer is the core asset
+Marketplace and agency positions are both structurally weak here; the verification layer is the only asset that compounds
+K-00-01 §3
+PROPOSED
+D-02
+Phase 1 lines: Managed Delivery, Hub and Café, Forge, K4Y
+These four form a closed loop: supply, demand, proof and capital. Nothing else is load-bearing at launch
+K-00-01 §7
+PROPOSED
+D-03
+Phase 2 and 3 lines may be designed and pre-sold but not built before their gate
+Attempting everything simultaneously is the primary failure mode of this company type
+K-00-01 §7
+PROPOSED
+D-04
+No client-to-individual connection before Phase 2
+Founder instruction; also correct — the delivery record is the asset and releasing early destroys it before it exists
+Founder + K-00-01
+TAKEN
+D-05
+Prices, rates, salaries and numeric targets live in controlled documents, never in the constitution
+A number must be changeable without reopening the foundation
+K-00-01 §8
+TAKEN
+D-06
+Revenue is the agent net fee only; escrow balances are liabilities
+Accounting integrity; every KPI depends on it
+K-00-01 §8
+TAKEN
+D-07
+The term academy is retired; the talent formation line is Kayan Forge
+Founder instruction
+Founder
+TAKEN
+D-08
+Verification never determines work allocation
+Protects the ladder&apos;s integrity and makes honest registration rational
+K-00-01 §10
+PROPOSED
+D-09
+The payment and fund-protection mechanism is the highest-priority build and gates launch
+It is the only risk the red team could not answer structurally
+K-00-01 §11
+PROPOSED
+D-10
+Three pod formation types, all equal in standing
+Founder instruction; matches how teams actually form
+Founder
+TAKEN
+D-11
+Nine entities only
+Anything else is an attribute, document or event; entity sprawl destroys reporting
+K-02-01 §2
+PROPOSED
+D-12
+Identifier KY-<TYPE>-<YY>-<SEQ>-<C> with modulus-11 check character
+Must be speakable, writable and self-validating in a partly manual, low-connectivity environment
+K-02-01 §3
+PROPOSED
+D-13
+Separate public verification reference KVR-nnnnn
+Allows public display without exposing internal volumes or sequencing
+K-02-01 §3
+PROPOSED
+D-14
+Talent and Member records are linked, never merged
+A lapsed desk must never delete a verification history
+K-02-01 §2
+PROPOSED
+D-15
+Pod formation type never affects work allocation
+Same logic as D-08
+K-02-01 §4
+PROPOSED
+D-16
+The apprentice role is a standing structural position in pods
+It is the mechanism by which absorption actually happens without exposing clients to risk
+K-02-01 §4
+PROPOSED
+D-17
+Relationship pages are event-driven, never manually maintained
+Manual maintenance fails between 100 and 1,000 records
+K-02-01 §5
+PROPOSED
+D-18
+Identity document images deleted once verification is decided
+Legal exposure, and the credibility of a company whose product is trust
+K-02-01 §7
+PROPOSED
+D-19
+Verification-does-not-allocate-work is stated to every registrant at start and end
+Prevents the single most likely misunderstanding in the system
+K-03-01 §1
+PROPOSED
+D-20
+Eleven-stage journey with orientation and honesty compact before any field
+Registration is the first act of the relationship, not an administrative cost
+K-03-01 §2
+PROPOSED
+D-21
+Six core competencies on one five-point scale used by assessors, referees and pod leads alike
+Ratings from different sources must be comparable or they cannot be combined
+K-03-01 §3
+PROPOSED
+D-22
+Five-tier ladder with published criteria, validity periods, lapse, downgrade and one right of appeal
+A credential that cannot be challenged is an opinion, not a standard
+K-03-01 §4
+PROPOSED
+D-23
+Four assessment instruments producing a profile, reported as bands with written meaning
+A single score conceals exactly what matters when staffing a pod
+K-03-01 §5
+PROPOSED
+D-24
+Integrity signals produce flags for human judgement, never automatic failures
+Automatic failure would punish unstable power and connectivity as if it were misconduct
+K-03-01 §5
+PROPOSED
+D-25
+References automated, tokenised, strictly gated, never disclosed to the subject
+A referee who expects to be read does not answer candidly
+K-03-01 §6
+PROPOSED
+D-26
+Thirteen separate consents, individually given, versioned and dated
+Blanket consent is not defensible to an institutional client
+K-03-01 §7
+PROPOSED
+D-28
+No outcome is called rejection
+Follows directly from belief B4; this is structural, not tone
+K-03-01 §8
+PROPOSED
+D-29
+Client compliance sits before contract, never before conversation
+A client abandons a form in ninety seconds; compliance at the door loses the business
+K-03-01 §9
+PROPOSED
+D-30
+Eight standing quality control checklists including a scheduled fairness review
+Tier meaning degrades into individual opinion within a year without consistency checking
+K-03-01 §11
+PROPOSED
+D-31
+Taxonomy structure FF-GG-NNN, three levels, permanent codes
+Whoever defines the categories defines the comparisons
+K-02-02 §3
+PROPOSED
+D-32
+Twenty families covering trades, crafts, hospitality, agriculture and health with equal standing
+The earlier structure silently defined who Kayan was for by omission
+K-02-02 §3
+PROPOSED
+D-33
+No fixed node count; codes never reused
+441 becomes a ceiling the moment reality exceeds it
+K-02-02 §3
+PROPOSED
+D-34
+A node may not go active until a verification method exists for it
+Otherwise the trust asset is hollowed out from inside
+K-02-02 §6
+PROPOSED
+D-35
+Three navigation routes including plain language, none more than three steps deep
+Formal vocabulary as the only entry silently excludes the people we exist to include
+K-02-02 §4
+PROPOSED
+
+3. Open questions
+Ordered by how much downstream work each one blocks. The first three should be answered before the next build session.
+ID
+Question
+Blocks
+My recommendation
+Q-02
+Is the taxonomy rebuilt on the widened twenty-family structure, or does the earlier twelve-family, 441-node registry carry forward?
+Registration navigation, assessment mapping, pod capability, all reporting. Highest blocking value.
+Adopt the twenty-family structure. The earlier one excluded trades, hospitality and agriculture, which contradicts the inclusion principle.
+Q-01
+Is the public verification reference released at launch, or held until a delivery record exists?
+Public profile design, external messaging, talent expectations.
+Hold it. The mark earns meaning through delivery evidence; publishing an empty credential devalues it permanently.
+Q-10
+Is registration open to all at launch, or invitation-led for the first cohort?
+Verification throughput, queue risk, launch reputation.
+Invitation-led. A verification backlog is a reputational event, not an administrative one.
+Q-06
+Numeric thresholds: engagements required for T3, mentoring for T4, assessment pass bands.
+Tier decisions cannot be made without them.
+Set provisionally now, calibrate against the first hundred assessments.
+Q-08
+Does Forge completion substitute for part of the T2 assessment, or count as evidence alongside it?
+Forge&apos;s value proposition to participants and to sponsors.
+Evidence alongside, never substitution. Substitution would make the credential a function of who paid for training.
+Q-03
+Is the professional side ever a paying customer, or permanently free at entry?
+Platform build, fairness argument, revenue model.
+Permanently free at entry. Charging the supply side of a trust business inverts the incentive.
+Q-07
+Is a practical task required at T2 for all specialisations or only where a portfolio is inconclusive?
+Assessment build volume and verification throughput.
+Only where the portfolio is inconclusive. Otherwise throughput cannot meet demand.
+Q-09
+Cooling period between assessment attempts.
+Assessment integrity design.
+Set at a fixed interval; calibrate on observed retake behaviour.
+Q-04
+Fiscal year end.
+Financial calendar, reporting cycle, audit planning.
+Founder decision — no strong technical argument either way.
+Q-05
+Client concentration threshold triggering mandatory mitigation.
+Sales strategy and risk policy.
+Set a stated percentage of trailing twelve-month revenue.
+4. Reversals
+None recorded. Any reversal is entered here with the superseded decision identifier, the date, the reason and the author.

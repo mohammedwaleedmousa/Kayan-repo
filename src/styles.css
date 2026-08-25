@@ -1,0 +1,36 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #03201d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.legacy-page {
+  display: block;
+  width: 100%;
+  height: 100dvh;
+  border: 0;
+  background: #03201d;
+}
+
+.route-not-found {
+  min-height: 100%;
+  display: grid;
+  place-content: center;
+  gap: 16px;
+  padding: 24px;
+  color: #faf6ec;
+  font-family: Alexandria, sans-serif;
+  text-align: center;
+}
+
+.route-not-found a {
+  color: #e9c96b;
+}

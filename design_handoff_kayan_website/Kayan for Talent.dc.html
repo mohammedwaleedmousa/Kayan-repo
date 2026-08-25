@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كيان · للمنفذين والبودات</title>
+<meta name="description" content="كيان للكفاءات — سجل مهني يبنى بالدليل: هوية تثبت، وقدرة تقاس، وأجر مستقل يصرف عند القبول لا عند تحسن السيولة. Kayan for talent: verified capability, protected pay.">
+<meta property="og:title" content="كيان للكفاءات · Kayan for Talent">
+<meta property="og:description" content="التحقق يثبت قدرتك ولا يخصص عملا — والسجل يبني اسمك قيدا بقيد.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_YE">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kayan for Talent","inLanguage":"ar"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&amp;family=Instrument+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="./kayan-card.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#F4EFE2;overflow-x:hidden}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:#0A6F68;text-decoration:none}
+a:hover{color:#12B5A4}
+::selection{background:#12B5A4;color:#04302C}
+p{text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
+input,select,textarea,button{font-family:inherit}
+input::placeholder,textarea::placeholder{color:#A7B3B1}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #12B5A4;outline-offset:3px;border-radius:4px}
+@keyframes kGlide{0%{transform:translate3d(0,0,0) rotate(0deg)}50%{transform:translate3d(-12px,-20px,0) rotate(-1.2deg)}100%{transform:translate3d(0,0,0) rotate(0deg)}}
+@keyframes kArrive{from{opacity:0;transform:translateY(24px) scale(.988)}to{opacity:1;transform:none}}
+@keyframes kRow{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+@keyframes kSheen{0%{transform:translateX(-130%) skewX(-16deg)}55%,100%{transform:translateX(280%) skewX(-16deg)}}
+@keyframes kPulse{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:.9;transform:scale(1.3)}}
+@keyframes kRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
+<script src="./kayan-compass.js"></script>
+<script src="./kayan-mark.js"></script>
+</helmet>
+
+<div dir="rtl" style="font-family:'IBM Plex Sans Arabic','Instrument Sans',sans-serif;color:#0C2A28;background:#F4EFE2;min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(4,42,39,.90);backdrop-filter:blur(18px);border-bottom:1px solid rgba(111,220,206,.18)">
+    <div style="max-width:1360px;margin:0 auto;padding:0 clamp(16px,3.4vw,44px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);height:clamp(62px,7vh,78px)">
+      <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:10px;flex-shrink:0;color:#F4EFE2">
+        <img src="assets/kayan-logo-gold.png" alt="كيان — Kayan" style="height:clamp(40px,5vw,50px);width:auto;display:block">
+      </a>
+      <span style="width:1px;height:22px;background:rgba(244,239,226,.2);flex-shrink:0"></span>
+      <span style="font-size:12.5px;color:rgba(244,239,226,.78);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">للمنفذين والبودات</span>
+      <nav style="margin-inline-start:auto;min-width:0;display:flex;align-items:center;gap:clamp(9px,1.5vw,20px);font-size:13.5px;overflow-x:auto;scrollbar-width:none">
+        <a href="#what" style="white-space:nowrap;color:rgba(244,239,226,.76)" style-hover="color:#FFFFFF">ما كيان</a>
+        <a href="#card" style="white-space:nowrap;color:rgba(244,239,226,.76)" style-hover="color:#FFFFFF">البطاقة</a>
+        <a href="#ladder" style="white-space:nowrap;color:rgba(244,239,226,.76)" style-hover="color:#FFFFFF">الطبقات</a>
+        <a href="#money" style="white-space:nowrap;color:rgba(244,239,226,.76)" style-hover="color:#FFFFFF">المستحق</a>
+      </nav>
+      <a href="Kayan Portal.dc.html" style="flex-shrink:0;white-space:nowrap;color:rgba(244,239,226,.78);font-size:13px;border:1px solid rgba(244,239,226,.28);border-radius:99px;padding:9px 16px" style-hover="color:#6FDCCE;border-color:#6FDCCE">دخول</a>
+      <a href="Kayan Apply.dc.html" style="flex-shrink:0;white-space:nowrap;background:#12B5A4;color:#04302C;font-size:13px;font-weight:600;padding:10px 20px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease" style-hover="background:#6FDCCE" style-active="transform:scale(.97)">افتح ملفك</a>
+    </div>
+  </header>
+
+  <section style="position:relative;background:#05312D;color:#F4EFE2;overflow:clip">
+    <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 10% 0%,rgba(18,181,164,.30),transparent 55%),radial-gradient(70% 70% at 92% 90%,rgba(221,149,32,.15),transparent 60%);pointer-events:none"></div>
+    <div style="position:absolute;inset:0;opacity:.26;background-image:linear-gradient(rgba(111,220,206,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(111,220,206,.10) 1px,transparent 1px);background-size:62px 62px;mask-image:radial-gradient(80% 70% at 50% 28%,#000,transparent);pointer-events:none"></div>
+    <kayan-mark line="rp" motion="glide" flock="3" aria-hidden="true" style="position:absolute;inset-inline-end:-6%;top:-8%;width:min(52vw,680px);opacity:.45;filter:drop-shadow(0 40px 70px rgba(0,0,0,.45));pointer-events:none;"></kayan-mark>
+    <div style="position:relative;max-width:1360px;margin:0 auto;padding:clamp(50px,7.5vw,96px) clamp(16px,3.4vw,44px) clamp(38px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:clamp(28px,4.5vw,64px);align-items:center">
+      <div style="min-width:0;animation:kArrive .85s cubic-bezier(.2,.7,.2,1) both">
+        <div style="display:inline-flex;align-items:center;gap:11px;margin-bottom:22px">
+          <span style="width:7px;height:7px;border-radius:99px;background:#12B5A4;box-shadow:0 0 0 6px rgba(18,181,164,.18)"></span>
+          <span style="font-size:12px;letter-spacing:.28em;color:#6FDCCE">المنفذون والبودات</span>
+        </div>
+        <h1 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(32px,5vw,74px);line-height:1.06;font-weight:300;letter-spacing:-.025em">مهارتك تقاس،<br><span style="font-weight:600;color:#6FDCCE">وعملك يقيد، ومستحقك محفوظ.</span></h1>
+        <p style="margin:22px 0 0;max-width:54ch;font-size:clamp(14.5px,1.3vw,18px);line-height:1.9;color:rgba(244,239,226,.82);font-weight:300">لا يوزع العمل في كيان بالمعرفة ولا بالتزكية وحدها. تثبت الهوية، وتقاس القدرة في تخصص محدد، ثم تسند إليك أعمال بنطاق مكتوب. ومال العميل مودع قبل أن تبدأ.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px">
+          <a href="#register" style="display:inline-flex;align-items:center;gap:11px;background:#12B5A4;color:#04302C;font-size:15px;font-weight:600;padding:14px 26px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .2s ease" style-hover="background:#6FDCCE;transform:translateY(-2px)">افتح ملفك<span style="font-size:17px">←</span></a>
+          <a href="#ladder" style="display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(111,220,206,.34);color:#F4EFE2;font-size:15px;padding:14px 24px;border-radius:99px;transition:border-color .2s ease,background .2s ease" style-hover="border-color:#6FDCCE;background:rgba(111,220,206,.08)">كيف ترتفع الطبقة</a>
+        </div>
+      </div>
+
+      <div style="min-width:0;position:relative;animation:kArrive .95s .1s cubic-bezier(.2,.7,.2,1) both">
+        <div style="position:absolute;inset-inline:13px;top:20px;height:100%;background:rgba(244,239,226,.07);border:1px solid rgba(111,220,206,.16);border-radius:20px;transform:rotate(-2.2deg)"></div>
+        <div style="position:absolute;inset-inline:6px;top:10px;height:100%;background:rgba(244,239,226,.10);border:1px solid rgba(111,220,206,.2);border-radius:20px;transform:rotate(-1deg)"></div>
+        <div style="position:relative;display:grid;gap:16px;justify-items:center">
+          <div style="position:relative;width:min(100%,300px)">
+            <kayan-card tier="{{ heroTier }}" name="نموذج" kid="KYN·TAL-0000·0000" lang="ar" style="position:relative;display:block;width:100%;filter:drop-shadow(0 40px 60px rgba(0,0,0,.5))"></kayan-card>
+          </div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap;justify-content:center">
+            <sc-for list="{{ heroTiers }}" as="ht" hint-placeholder-count="5">
+              <button type="button" data-k="{{ ht.k }}" onClick="{{ pickHeroTier }}" style="{{ ht.chip }}"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em">{{ ht.k }}</span><span style="font-family:'Alexandria',sans-serif;font-size:12px;font-weight:500">{{ ht.name }}</span></button>
+            </sc-for>
+          </div>
+          <div style="display:flex;align-items:center;gap:9px;background:rgba(18,181,164,.10);border:1px solid rgba(18,181,164,.22);border-radius:11px;padding:10px 14px">
+            <span style="width:6px;height:6px;border-radius:99px;background:#12B5A4;animation:kPulse 2.6s ease-in-out infinite;flex:none"></span>
+            <span style="font-size:12px;color:#6FDCCE;line-height:1.6">لا يضاف سطر إلى البطاقة إلا بقيد. ولا يمحى قيد.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:relative;border-top:1px solid rgba(111,220,206,.16);background:rgba(4,40,37,.5)">
+      <div style="max-width:1360px;margin:0 auto;padding:18px clamp(16px,3.4vw,44px);display:flex;flex-wrap:wrap;gap:12px 40px;align-items:center">
+        <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:'Alexandria',sans-serif;font-size:24px;font-weight:600;color:#6FDCCE">١</span><span style="font-size:12.5px;color:rgba(244,239,226,.66)">متعاقد واحد يقف بينك وبين العميل</span></div>
+        <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:'Alexandria',sans-serif;font-size:24px;font-weight:600;color:#6FDCCE">٤</span><span style="font-size:12.5px;color:rgba(244,239,226,.66)">طبقات، يرتقى بينها بالعمل المقبول</span></div>
+        <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:'Alexandria',sans-serif;font-size:24px;font-weight:600;color:#DD9520">٥</span><span style="font-size:12.5px;color:rgba(244,239,226,.66)">أيام، مهلة القبول ثم يستحق الصرف</span></div>
+        <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:'Alexandria',sans-serif;font-size:24px;font-weight:600;color:#6FDCCE">٪١٠٠</span><span style="font-size:12.5px;color:rgba(244,239,226,.66)">من العمل يمر بمراجعة مستقلة</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="what" style="max-width:1360px;margin:0 auto;padding:clamp(56px,7vw,104px) clamp(16px,3.4vw,44px)">
+    <div style="max-width:66ch">
+      <div style="font-size:11.5px;letter-spacing:.26em;color:#0A6F68;margin-bottom:18px">لمن يسأل أولا</div>
+      <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(26px,3.8vw,54px);line-height:1.12;font-weight:300;letter-spacing:-.025em">ما كيان، بلا زخرفة.</h2>
+      <p style="margin:18px 0 0;font-size:clamp(14.5px,1.2vw,17px);line-height:1.95;color:#3C514F;font-weight:300">منشأة تتعاقد مع العميل باسمها، وتؤلف لكل عمل فريقا موثقا، وتحتجز مال العميل في حساب ضمان حتى القبول. أنت لا تبيع نفسك للعميل، ولا تطارد مستحقك. تنفذ نطاقا مكتوبا، ويقيد لك ما أنجزت.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,258px),1fr));gap:14px;margin-top:clamp(32px,4vw,52px)">
+      <div style="background:#FBF8F0;border:1px solid rgba(7,27,26,.10);border-radius:18px;padding:26px 24px;animation:kRise .7s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 3% cover 20%;transition:transform .4s cubic-bezier(.23,1,.32,1),border-color .3s ease" style-hover="border-color:#12B5A4;transform:translateY(-4px)">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#0A6F68">01</div>
+        <h3 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-size:20px;font-weight:500;letter-spacing:-.01em">لا تتفاوض وحدك</h3>
+        <p style="margin:11px 0 0;font-size:14px;line-height:1.9;color:#3C514F;font-weight:300">تتعاقد كيان، وتحرر النطاق، وتحدد الميقات. وإن اختل شيء، فالتبعة على المؤسسة لا عليك أمام العميل.</p>
+      </div>
+      <div style="background:#FBF8F0;border:1px solid rgba(7,27,26,.10);border-radius:18px;padding:26px 24px;animation:kRise .7s .07s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 3% cover 20%;transition:transform .4s cubic-bezier(.23,1,.32,1),border-color .3s ease" style-hover="border-color:#12B5A4;transform:translateY(-4px)">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#0A6F68">02</div>
+        <h3 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-size:20px;font-weight:500;letter-spacing:-.01em">لا تلاحق مستحقك</h3>
+        <p style="margin:11px 0 0;font-size:14px;line-height:1.9;color:#3C514F;font-weight:300">يودع العميل القيمة قبل أن يبدأ العمل. يصرف نصيبك على محضر القبول، أو بانقضاء مهلة القبول دون اعتراض مسبب.</p>
+      </div>
+      <div style="background:#05312D;color:#F4EFE2;border:1px solid rgba(111,220,206,.2);border-radius:18px;padding:26px 24px;animation:kRise .7s .14s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 3% cover 20%;transition:transform .4s cubic-bezier(.23,1,.32,1)" style-hover="transform:translateY(-4px)">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#6FDCCE">03</div>
+        <h3 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-size:20px;font-weight:500;letter-spacing:-.01em">يبقى لك سجل</h3>
+        <p style="margin:11px 0 0;font-size:14px;line-height:1.9;color:rgba(244,239,226,.78);font-weight:300">كل عمل مقبول يقيد باسمك في سجل يقرأه عميل خارج الحدود. السجل ملكك، ويسافر معك.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="card" style="background:#FBF8F0;border-block:1px solid rgba(7,27,26,.10)">
+    <div style="max-width:1360px;margin:0 auto;padding:clamp(56px,7vw,104px) clamp(16px,3.4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(30px,4.5vw,64px);align-items:start">
+      <div style="min-width:0">
+        <div style="font-size:11.5px;letter-spacing:.26em;color:#0A6F68;margin-bottom:18px">بطاقة كيان</div>
+        <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(25px,3.5vw,48px);line-height:1.14;font-weight:300;letter-spacing:-.025em">أربعة سطور،<br>وكل سطر يكتسب.</h2>
+        <p style="margin:18px 0 28px;font-size:15px;line-height:1.95;color:#3C514F;font-weight:300;max-width:48ch">هذه هي الوثيقة التي تعرفك. لا تكتب بالادعاء، ولا تصحح بالمجاملة. اضغط أي سطر لتعرف كيف يكتسب.</p>
+        <div style="display:grid;gap:9px;max-width:520px">
+          <sc-for list="{{ cardRows }}" as="r" hint-placeholder-count="4">
+            <button type="button" data-k="{{ r.k }}" onClick="{{ pickRow }}" style="{{ r.btn }}">
+              <span style="display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%">
+                <span style="display:flex;align-items:center;gap:12px"><span style="{{ r.dot }}"></span><span style="font-family:'Alexandria',sans-serif;font-size:16px;font-weight:500">{{ r.title }}</span></span>
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#0A6F68">{{ r.tag }}</span>
+              </span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="min-width:0;position:sticky;top:100px;background:#05312D;color:#F4EFE2;border-radius:22px;padding:clamp(26px,3vw,40px);min-height:320px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden">
+        <div style="position:absolute;inset:0;background:radial-gradient(90% 70% at 100% 0%,rgba(18,181,164,.24),transparent 60%);pointer-events:none"></div>
+        <div style="position:relative">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#6FDCCE">{{ row.tag }}</div>
+          <h3 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-size:clamp(22px,2.4vw,32px);font-weight:400;letter-spacing:-.02em;line-height:1.25">{{ row.title }}</h3>
+          <p style="margin:18px 0 0;font-size:16px;line-height:1.95;color:rgba(244,239,226,.82);font-weight:300">{{ row.body }}</p>
+        </div>
+        <div style="position:relative;margin-top:28px;padding-top:20px;border-top:1px solid rgba(111,220,206,.2);font-size:12.5px;color:#6FDCCE;line-height:1.8">{{ row.rule }}</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ladder" style="max-width:1360px;margin:0 auto;padding:clamp(56px,7vw,104px) clamp(16px,3.4vw,44px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:22px;margin-bottom:clamp(26px,3.4vw,44px)">
+      <div style="max-width:56ch">
+        <div style="font-size:11.5px;letter-spacing:.26em;color:#0A6F68;margin-bottom:18px">الطبقات</div>
+        <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(25px,3.5vw,48px);line-height:1.14;font-weight:300;letter-spacing:-.025em">لا ترقى بالأقدمية.<br>ترقى بما قبل.</h2>
+      </div>
+      <p style="margin:0;max-width:44ch;font-size:14.5px;line-height:1.95;color:#3C514F;font-weight:300">الطبقة تنال في تخصص بعينه، لا في المهنة كلها. ويجوز أن تحمل طبقتين في تخصصين.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px">
+      <sc-for list="{{ tiers }}" as="t" hint-placeholder-count="5">
+        <button type="button" data-k="{{ t.k }}" onClick="{{ pickTier }}" style="{{ t.card }}">
+          <span style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;width:100%">
+            <span dir="ltr" style="font-family:'Alexandria',sans-serif;font-size:26px;font-weight:600;color:{{ t.numColor }}">{{ t.k }}</span>
+            <span style="font-size:11.5px;color:{{ t.metaColor }}">{{ t.short }}</span>
+          </span>
+          <span style="display:block;font-family:'Alexandria',sans-serif;font-size:17px;font-weight:500;margin-top:12px;text-align:start;line-height:1.4">{{ t.name }}</span>
+          <span style="display:block;font-size:13px;line-height:1.85;margin-top:9px;text-align:start;color:{{ t.bodyColor }};font-weight:300">{{ t.line }}</span>
+        </button>
+      </sc-for>
+    </div>
+    <div style="margin-top:14px;background:#05312D;color:#F4EFE2;border-radius:20px;padding:clamp(24px,3vw,36px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(20px,3vw,40px)">
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#6FDCCE">{{ tier.k }} · REQUIREMENT</div>
+        <h3 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-size:clamp(21px,2.2vw,30px);font-weight:400;letter-spacing:-.02em">{{ tier.name }}</h3>
+        <p style="margin:14px 0 0;font-size:15.5px;line-height:1.95;color:rgba(244,239,226,.82);font-weight:300">{{ tier.body }}</p>
+      </div>
+      <div style="display:grid;gap:10px;align-content:start">
+        <div style="font-size:11.5px;letter-spacing:.2em;color:#6FDCCE;margin-bottom:2px">ما يشترط</div>
+        <sc-for list="{{ tier.needs }}" as="n" hint-placeholder-count="3">
+          <div style="display:flex;gap:11px;align-items:flex-start;background:rgba(244,239,226,.055);border:1px solid rgba(111,220,206,.16);border-radius:12px;padding:12px 14px">
+            <span style="width:5px;height:5px;border-radius:99px;background:#12B5A4;flex:none;margin-top:8px"></span>
+            <span style="font-size:14px;line-height:1.8;color:rgba(244,239,226,.86);font-weight:300">{{ n }}</span>
+          </div>
+        </sc-for>
+        <div style="font-size:12.5px;line-height:1.85;color:rgba(244,239,226,.6);margin-top:4px">{{ tier.note }}</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="money" style="position:relative;background:#05312D;color:#F4EFE2;overflow:clip">
+    <div style="position:absolute;inset:0;background:radial-gradient(80% 70% at 0% 0%,rgba(18,181,164,.22),transparent 58%),radial-gradient(70% 60% at 100% 100%,rgba(221,149,32,.16),transparent 60%);pointer-events:none"></div>
+    <div style="position:relative;max-width:1360px;margin:0 auto;padding:clamp(56px,7vw,104px) clamp(16px,3.4vw,44px)">
+      <div style="max-width:58ch">
+        <div style="font-size:11.5px;letter-spacing:.26em;color:#DD9520;margin-bottom:18px">مسار المستحق</div>
+        <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(25px,3.5vw,48px);line-height:1.14;font-weight:300;letter-spacing:-.025em">من إيداع العميل<br><span style="color:#6FDCCE;font-weight:500">إلى صرف مستحقك.</span></h2>
+        <p style="margin:18px 0 0;font-size:15.5px;line-height:1.95;color:rgba(244,239,226,.82);font-weight:300">خمس محطات، لا سادسة. ولا محطة تتجاوز.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,205px),1fr));gap:12px;margin-top:clamp(30px,4vw,50px)">
+        <sc-for list="{{ rail }}" as="s" hint-placeholder-count="5">
+          <div style="position:relative;background:rgba(244,239,226,.055);border:1px solid rgba(111,220,206,.18);border-radius:16px;padding:22px 20px;min-height:172px;display:flex;flex-direction:column;gap:10px;animation:kRise .7s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 18%">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#6FDCCE">{{ s.n }}</span>
+            <span style="font-family:'Alexandria',sans-serif;font-size:17.5px;font-weight:500;line-height:1.35">{{ s.t }}</span>
+            <span style="font-size:13.5px;line-height:1.85;color:rgba(244,239,226,.74);font-weight:300">{{ s.b }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:clamp(34px,5vw,56px);border:1px solid rgba(111,220,206,.18);border-radius:20px;background:rgba(4,40,37,.55);padding:clamp(20px,3vw,32px);overflow:hidden;position:relative">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px">
+          <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(18px,2vw,24px);font-weight:400;letter-spacing:-.015em">وبين الإيداع والصرف، عشر بوابات</h3>
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#DD9520;white-space:nowrap">G0 → G9 · QUALITY GATES</span>
+        </div>
+        <p style="margin:10px 0 0;max-width:70ch;font-size:13.5px;line-height:1.9;color:rgba(244,239,226,.7);font-weight:300">تفتح كل بوابة بشرطها وتغلق بسجلها، ولا تتجاوز بوابة. البوابات الذهبية تمس المال. اضغط أي بوابة.</p>
+        <div dir="ltr" style="position:relative;margin-top:clamp(22px,3vw,32px)">
+          <div aria-hidden="true" style="position:absolute;inset-inline:5%;top:17px;height:2px;background:linear-gradient(90deg,rgba(111,220,206,.1),rgba(111,220,206,.45) 20%,rgba(221,149,32,.6) 90%,rgba(221,149,32,.2))"></div>
+          <div style="position:relative;display:grid;grid-template-columns:repeat(10,1fr);gap:4px">
+            <sc-for list="{{ gates10 }}" as="g" hint-placeholder-count="10">
+              <button type="button" data-k="{{ g.i }}" onClick="{{ pickGate }}" aria-label="{{ g.name }}" style="display:grid;gap:8px;justify-items:center;background:none;border:none;padding:0;cursor:pointer;min-width:0">
+                <span style="{{ g.node }}">{{ g.id }}</span>
+                <span dir="rtl" style="{{ g.lbl }}">{{ g.name }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="margin-top:clamp(18px,2.6vw,26px);display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 18px;background:rgba(244,239,226,.05);border:1px solid rgba(111,220,206,.14);border-radius:14px;padding:16px 20px">
+          <span dir="ltr" style="font-family:'Alexandria',sans-serif;font-size:24px;font-weight:600;color:{{ gateSel.accent }};flex:none">{{ gateSel.id }}</span>
+          <span style="min-width:0">
+            <span style="display:block;font-family:'Alexandria',sans-serif;font-size:16px;font-weight:500;color:#F4EFE2">{{ gateSel.name }}</span>
+            <span style="display:block;margin-top:5px;font-size:13.5px;line-height:1.9;color:rgba(244,239,226,.74);font-weight:300">{{ gateSel.body }}</span>
+          </span>
+        </div>
+      </div>
+      <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:rgba(221,149,32,.10);border:1px solid rgba(221,149,32,.28);border-radius:14px;padding:16px 20px">
+        <span style="width:6px;height:6px;border-radius:99px;background:#DD9520;flex:none"></span>
+        <span style="font-size:14px;line-height:1.85;color:rgba(244,239,226,.86);font-weight:300">لا يطلب منك عمل قبل الإيداع. وإن طلب، فارفعه إلى الالتزام.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="register" style="max-width:1360px;margin:0 auto;padding:clamp(56px,7vw,104px) clamp(16px,3.4vw,44px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px">
+      <div style="max-width:54ch">
+        <div style="font-size:11.5px;letter-spacing:.26em;color:#0A6F68;margin-bottom:18px">التسجيل</div>
+        <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-size:clamp(25px,3.5vw,48px);line-height:1.14;font-weight:300;letter-spacing:-.025em">لا يفتح ملف إلا من<br><span style="font-weight:600;color:#0A6F68">نموذج التسجيل</span>.</h2>
+        <p style="margin:18px 0 0;font-size:15px;line-height:1.95;color:#3C514F;font-weight:300">يقدم الطلب على نموذج كيان الرسمي: تثبت الهوية، وترفق أعمال سابقة وجهة تزكية، ثم يحدد موعد قياس القدرة في التخصص. ولا يسند عمل قبل اكتمال التحقق.</p>
+      </div>
+      <a href="Kayan Apply.dc.html" style="display:inline-flex;align-items:center;gap:12px;background:#12B5A4;color:#04302C;font-size:15.5px;font-weight:600;padding:16px 30px;border-radius:99px;flex:none;transition:transform 180ms cubic-bezier(.23,1,.32,1),background .2s ease;box-shadow:0 18px 40px rgba(18,181,164,.22)" style-hover="background:#6FDCCE;transform:translateY(-2px)" style-active="transform:translateY(0) scale(.98)">افتح نموذج التسجيل<span style="font-size:17px">←</span></a>
+    </div>
+
+    <div style="margin-top:clamp(26px,3.4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(14px,2vw,22px);align-items:start">
+
+      <div style="background:#FBF8F0;border:1px solid rgba(7,27,26,.10);border-radius:22px;overflow:hidden">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:20px clamp(20px,2.6vw,28px);border-bottom:1px solid rgba(7,27,26,.09)">
+          <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-size:17px;font-weight:500">خمس مراحل، لا سادسة</h3>
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#8A9694;flex:none">KYN-AP</span>
+        </div>
+        <div style="display:grid;gap:1px;background:rgba(7,27,26,.08)">
+          <sc-for list="{{ regStages }}" as="s" hint-placeholder-count="5">
+            <div style="background:#FBF8F0;padding:16px clamp(20px,2.6vw,28px);display:flex;align-items:baseline;gap:14px">
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#12B5A4;flex:none;width:20px">{{ s.n }}</span>
+              <span style="min-width:0">
+                <span style="display:block;font-size:14.5px;font-weight:500;color:#0C2A28">{{ s.t }}</span>
+                <span style="display:block;font-size:13px;line-height:1.85;color:#5B6E6C;font-weight:300;margin-top:4px">{{ s.d }}</span>
+              </span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="padding:16px clamp(20px,2.6vw,28px);border-top:1px solid rgba(7,27,26,.09);font-size:13px;line-height:1.85;color:#5B6E6C;font-weight:300">التسجيل مجاني. لا يؤخذ رسم تسجيل ولا رسم قياس، وتقتطع كيان حصتها من قيمة العمل المتعاقد عليه وحده.</div>
+      </div>
+
+      <div style="background:#05312D;color:#F4EFE2;border-radius:22px;padding:clamp(24px,3vw,32px);position:relative;overflow:hidden">
+        <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(90% 70% at 100% 0%,rgba(18,181,164,.20),transparent 62%);pointer-events:none"></div>
+        <div style="position:relative">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#6FDCCE">BEFORE YOU START</div>
+          <h3 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-size:clamp(19px,2.2vw,24px);font-weight:500;letter-spacing:-.015em">يطلب معك</h3>
+          <div style="display:grid;gap:11px;margin-top:18px">
+            <sc-for list="{{ regNeeds }}" as="n" hint-placeholder-count="4">
+              <div style="display:flex;align-items:baseline;gap:11px">
+                <span style="width:5px;height:5px;border-radius:99px;background:#12B5A4;flex:none;transform:translateY(-3px)"></span>
+                <span style="font-size:14px;line-height:1.85;color:rgba(244,239,226,.86);font-weight:300">{{ n }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:24px;padding-top:18px;border-top:1px solid rgba(111,220,206,.18);display:flex;flex-wrap:wrap;gap:11px">
+            <a href="Kayan Portal.dc.html" style="display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(111,220,206,.42);color:#6FDCCE;font-size:14px;font-weight:500;padding:12px 22px;border-radius:99px;transition:background .2s ease,border-color .2s ease" style-hover="background:rgba(111,220,206,.10);border-color:#6FDCCE">لي ملف — دخول البوابة</a>
+            <a href="Kayan Charter.dc.html" style="display:inline-flex;align-items:center;gap:9px;color:rgba(244,239,226,.6);font-size:14px;padding:12px 4px" style-hover="color:#6FDCCE">اقرأ الميثاق أولا</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="background:#FBF8F0;border-top:1px solid rgba(7,27,26,.10)">
+    <div style="max-width:1360px;margin:0 auto;padding:clamp(50px,6vw,88px) clamp(16px,3.4vw,44px)">
+      <div style="font-size:11.5px;letter-spacing:.26em;color:#0A6F68;margin-bottom:20px">أسئلة تتكرر</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:13px">
+        <div style="background:#F4EFE2;border:1px solid rgba(7,27,26,.09);border-radius:16px;padding:22px 22px">
+          <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-size:16.5px;font-weight:500;line-height:1.5">هل أدفع شيئا للتسجيل؟</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.9;color:#3C514F;font-weight:300">لا. لا يؤخذ من المنفذ رسم تسجيل ولا رسم قياس. تقتطع كيان حصتها من قيمة العمل المتعاقد عليه.</p>
+        </div>
+        <div style="background:#F4EFE2;border:1px solid rgba(7,27,26,.09);border-radius:16px;padding:22px 22px">
+          <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-size:16.5px;font-weight:500;line-height:1.5">هل يشترط أن أكون في عدن؟</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.9;color:#3C514F;font-weight:300">لا. العمل يدار عن بعد في أغلب التخصصات. ويشترط الحضور في الأعمال الميدانية والفعاليات وحدها.</p>
+        </div>
+        <div style="background:#F4EFE2;border:1px solid rgba(7,27,26,.09);border-radius:16px;padding:22px 22px">
+          <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-size:16.5px;font-weight:500;line-height:1.5">ماذا لو رد العميل العمل؟</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.9;color:#3C514F;font-weight:300">يرد الاعتراض إلى النطاق المكتوب. فإن كان داخله عولج بلا تكلفة عليك، وإن كان خارجه فهو أمر تغيير يسعر من جديد.</p>
+        </div>
+        <div style="background:#F4EFE2;border:1px solid rgba(7,27,26,.09);border-radius:16px;padding:22px 22px">
+          <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-size:16.5px;font-weight:500;line-height:1.5">وإن لم أجتز القياس؟</h3>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.9;color:#3C514F;font-weight:300">يبقى الملف مفتوحا، وترشح إلى برنامج تكوين يعالج الفجوة، ويعاد القياس بعده دون رسم.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#071B1A;color:rgba(244,239,226,.62);border-top:1px solid rgba(111,220,206,.14)">
+    <div style="max-width:1360px;margin:0 auto;padding:clamp(44px,5.5vw,72px) clamp(16px,3.4vw,44px) 36px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:30px;align-items:start">
+        <div>
+          <div style="font-family:'Alexandria',sans-serif;font-size:24px;font-weight:600;color:#F4EFE2">كيان</div>
+          <div style="font-family:'Alexandria',sans-serif;font-size:20px;font-weight:300;color:#6FDCCE;margin-top:12px">خلف كل نجاح، كيان</div>
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12px;letter-spacing:.05em;color:rgba(244,239,226,.45);margin-top:7px">Behind every success, a Kayan.</div>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:16px;font-size:12.5px;">
+            <a href="Kayan Legal.dc.html#terms" style="color:rgba(111,220,206,.75);">الشروط والأحكام</a>
+            <a href="Kayan Legal.dc.html#privacy" style="color:rgba(111,220,206,.75);">الخصوصية</a>
+            <a href="Kayan Legal.dc.html#data" style="color:rgba(111,220,206,.75);">حماية البيانات</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;letter-spacing:.2em;color:#6FDCCE;margin-bottom:14px">الخطوط</div>
+          <div style="display:grid;gap:8px;font-size:13.5px">
+            <a href="Line I - Managed Delivery.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">الخط الأول · التسليم المدار</a>
+            <a href="Line II - The Hub and Cafe.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">الخط الثاني · الملتقى والمقهى</a>
+            <a href="Line III - The Forge.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">الخط الثالث · التكوين المهني</a>
+            <a href="Civic Wing - Kayan for Yemen.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">الذراع المدنية · كيان لليمن</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;letter-spacing:.2em;color:#6FDCCE;margin-bottom:14px">ابدأ من هنا</div>
+          <div style="display:grid;gap:8px;font-size:13.5px">
+            <a href="Kayan Apply.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">افتح ملفك — التسجيل الكامل</a>
+            <a href="Kayan Talent Profile.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">ملف المنفذ</a>
+            <a href="Kayan for Clients.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">إن كنت عميلا</a>
+            <a href="Line I - Ready Products.dc.html" style="color:rgba(244,239,226,.72)" style-hover="color:#6FDCCE">المنتجات الجاهزة</a>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:32px;padding-top:20px;border-top:1px solid rgba(111,220,206,.14);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:12px;color:rgba(244,239,226,.42)">
+        <span>كيان · عدن</span>
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;letter-spacing:.12em">TALENT GATEWAY · AR</span>
+      </div>
+    </div>
+  </footer>
+</div>
+<kayan-compass current="talent"></kayan-compass>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1360}}">
+const ROWS = [
+  { k:'id',   tag:'LINE 01 · IDENTITY',   title:'الهوية موثقة',
+    body:'يفتح الملف باسم واحد ومستند رسمي واحد. لا اسم مستعار، ولا ملف ثان لشخص واحد. والاسم الذي يقيد هو الاسم الذي يقرأه العميل.',
+    rule:'يعلق الملف عند أي اختلاف بين المستند والبيانات.' },
+  { k:'tier', tag:'LINE 02 · TIER',       title:'التخصص والطبقة',
+    body:'تقاس القدرة في تخصص دقيق، لا في مهنة عامة. مصمم هوية ليس مصمم عرض، ومترجم عقود ليس مترجما عاما. وتقال الطبقة في التخصص الذي قيست فيه.',
+    rule:'يجوز أن تحمل طبقتين في تخصصين، وتقاس كل واحدة على حدة.' },
+  { k:'work', tag:'LINE 03 · RECORD',     title:'الأعمال المقبولة',
+    body:'لا يقيد العمل بتسليمه، بل بقبوله. يضاف السطر على محضر قبول موقع، أو بانقضاء مهلة القبول دون اعتراض مسبب. وما رد لا يقيد.',
+    rule:'لا يمحى قيد، ولا يعدل سطر بعد إثباته.' },
+  { k:'civic',tag:'LINE 04 · STANDING',   title:'المكانة',
+    body:'ساعات التطوع المقيدة في برامج كيان لليمن تكسب مكانة لا مالا. تظهر في البطاقة، وترجح عند تكافؤ المرشحين، ولا تشترى.',
+    rule:'المكانة تكسب بالفعل المقيد، ولا تمنح ولا تباع.' }
+];
+
+const TIERS = [
+  { k:'T0', short:'الباب', name:'مسجل',
+    body:'سجل مفتوح بلا قيد. يقيد الاسم ويفتح المسار، ولا يسند عمل، ولا تصدر بطاقة مادية.',
+    needs:['فتح ملف باسم واحد','لا يشترط إثبات قدرة','قبول الميثاق'],
+    note:'هذه الطبقة باب لا مقام. يخرج منها صاحبها بأول قياس.' },
+  { k:'T1', short:'المدخل', name:'معرف',
+    body:'هوية مثبتة وقدرة أساسية مقاسة. تسند أعمال محدودة النطاق تحت مراجعة قريبة، ويبنى بها أول سجل.',
+    needs:['مستند هوية سار','عمل واحد سابق أو مخرج من برنامج في المصنع','اجتياز القياس الأساسي في التخصص'],
+    note:'الغرض من هذه الطبقة أن يبدأ من لا سجل له، لا أن يبقى فيها.' },
+  { k:'T2', short:'الافتراضي', name:'موثق',
+    body:'الطبقة التي تسند إليها أغلب الأعمال. تنفذ نطاقا كاملا بلا إشراف لصيق، وتجيب عن جودة مخرجك أمام المراجع.',
+    needs:['اجتياز القياس في التخصص','أعمال مقبولة مقيدة في السجل','جهة تزكية يمكن الرجوع إليها'],
+    note:'وهي الحد الأدنى لمن ينفذ عملا يخرج إلى عميل.' },
+  { k:'T3', short:'الأقدم', name:'مثبت',
+    body:'يراجع عمل غيره، ويقود مخرجا معقدا، ويستشار في تحرير النطاق قبل التسعير.',
+    needs:['عدد من الأعمال المقبولة في التخصص نفسه','سجل مراجعة نظيف','قياس متقدم يشمل الحكم لا الأداء وحده'],
+    note:'العدد المطلوب مقرر في لائحة الطبقات، ويراجع دوريا على أول مئة قياس.' },
+  { k:'T4', short:'القيادة', name:'مؤتمن',
+    body:'يقود بودا كاملا، ويجيب أمام المؤسسة عن الميقات والجودة، ويوجه من هم دونه في التخصص.',
+    needs:['سجل قيادة أعمال مسلمة ومقبولة','توجيه منفذين في التخصص','تقييم قيادي لا يقتصر على المخرج'],
+    note:'لا ترقى إلى هذه الطبقة بالأقدمية، ولا تمنح إلا بقرار مسبب.' }
+];
+
+const RAIL = [
+  { n:'01', t:'يحرر النطاق', b:'يكتب المخرج بالعدد والصيغة والميقات، ويوقع. وعليه وحده يقاس التسليم لاحقا.' },
+  { n:'02', t:'يودع العميل', b:'تودع القيمة في حساب الضمان قبل أن يفتح الأمر. ولا يبدأ عمل قبل الإيداع.' },
+  { n:'03', t:'ينفذ البود',  b:'يسند العمل إلى منفذ ومراجع وقائد. ويبدأ العد من اكتمال مدخلات العميل.' },
+  { n:'04', t:'تجيز المراجعة', b:'تقرأ المراجعة المستقلة المخرج قبل خروجه. ولا يرى العميل شيئا قبل إجازتها.' },
+  { n:'05', t:'يصرف المستحق', b:'يصرف على محضر القبول، أو بانقضاء مهلة القبول دون اعتراض مسبب. ويقيد السطر في بطاقتك.' }
+];
+
+const GATES = [
+  { name:'إشارة',        body:'يرد طلب العميل ويقيد برقم. لا وعد يقطع قبل القيد.' },
+  { name:'استيعاب',      body:'يقرأ الطلب ويحدد ما ينقص من مدخلات قبل أي تسعير.' },
+  { name:'توضيح',        body:'تستكمل المدخلات وتحسم الأسئلة المفتوحة كتابة.' },
+  { name:'نطاق موقع',    body:'يحرر النطاق بالعدد والصيغة والميقات، ويوقع، وتودع القيمة في حساب الضمان.', money:true },
+  { name:'فرز وامتثال',  body:'يفحص الالتزام وتجاز المباشرة. ما لا يجاز هنا لا يبدأ.' },
+  { name:'تشكيل الفريق', body:'يؤلف البود ويثبت التوزيع قبل أول مهمة. لا يعدل التوزيع بأثر رجعي.' },
+  { name:'جاهزية التسليم', body:'تجاز المخرجات في المراجعة المستقلة قبل أن يرى العميل شيئا.' },
+  { name:'مراجعة العميل', body:'يعرض العمل، ويقيد الاعتراض المسبب إن ورد، ويرد إلى النطاق المكتوب.' },
+  { name:'قبول ومحضر',   body:'يوقع محضر الاستلام بندا بندا. المحضر وحده سند الصرف.', money:true },
+  { name:'صرف وضمانة',   body:'يصرف مستحقك على المحضر، ويقيد السطر في بطاقتك، وتسري الضمانة.', money:true }
+];
+
+const STEPS = [
+  { tag:'STEP 01 · IDENTITY', title:'من أنت', hint:'يقيد الاسم كما هو في المستند الرسمي، ولا يعدل بعد التوثيق.',
+    fields:[
+      { k:'name',  label:'الاسم الرباعي كما في المستند', ph:'الاسم الأول واسم الأب والجد واللقب', req:true },
+      { k:'phone', label:'رقم الهاتف مع مفتاح الدولة', ph:'٩٦٧٧٧…', req:true },
+      { k:'email', label:'البريد الإلكتروني', ph:'name@example.com', req:true },
+      { k:'city',  label:'مدينة الإقامة', type:'select', options:['عدن','صنعاء','تعز','المكلا','الحديدة','سيئون','مدينة أخرى داخل اليمن','مقيم خارج اليمن'] }
+    ] },
+  { tag:'STEP 02 · SPECIALISATION', title:'تخصصك', hint:'يقاس التخصص الدقيق. اختر ما تنفذه فعلا، لا ما تعرفه إجمالا.',
+    fields:[
+      { k:'family', label:'العائلة', type:'select', options:['الهوية والتصميم','المواقع والتطوير الرقمي','التسويق ووسائل التواصل','المحتوى والصياغة','الترجمة والوثائق','البيانات وخدمات الذكاء الاصطناعي','الإنتاج الإعلامي','الأعمال والاستراتيجية','القطاع التنموي','المالية والإدارة','الفعاليات والتنظيم'] },
+      { k:'spec',  label:'التخصص الدقيق', ph:'مصمم هوية بصرية · مترجم عقود · محلل بيانات ميدانية', req:true },
+      { k:'years', label:'سنوات الممارسة في هذا التخصص', type:'select', options:['أقل من سنة','سنة إلى ثلاث','ثلاث إلى سبع','أكثر من سبع'] },
+      { k:'tier',  label:'الطبقة التي تطلب قياسها', type:'select', options:['T1 · معرف','T2 · موثق','T3 · مثبت','T4 · مؤتمن'] }
+    ] },
+  { tag:'STEP 03 · EVIDENCE', title:'إثباتك', hint:'يرفق عملان سابقان وجهة تزكية. تراجع الروابط قبل القياس.',
+    fields:[
+      { k:'work1', label:'رابط العمل الأول', ph:'https://', req:true },
+      { k:'work2', label:'رابط العمل الثاني', ph:'https://' },
+      { k:'ref',   label:'جهة تزكية · الاسم وصفتها', ph:'الاسم، الصفة، جهة العمل', req:true },
+      { k:'refc',  label:'وسيلة التواصل بجهة التزكية', ph:'هاتف أو بريد', req:true }
+    ] },
+  { tag:'STEP 04 · READINESS', title:'جاهزيتك', hint:'تحدد الطاقة الأسبوعية على أساسها الجدولة، ويبنى عليها قبول الأمر.',
+    fields:[
+      { k:'hours',  label:'الساعات المتاحة أسبوعيا', type:'select', options:['حتى ١٠ ساعات','١٠ إلى ٢٠','٢٠ إلى ٣٥','أكثر من ٣٥'] },
+      { k:'notice', label:'المهلة قبل استلام أمر جديد', type:'select', options:['فورا','خلال ٤٨ ساعة','خلال أسبوع'] },
+      { k:'pay',    label:'وسيلة استلام المستحق', type:'select', options:['حوالة محلية','حساب بنكي داخل اليمن','حساب بنكي خارج اليمن','محفظة رقمية'] },
+      { k:'tools',  label:'الأدوات والبرامج التي تعمل عليها', ph:'اذكرها مفصولة بفاصلة', type:'area' }
+    ] },
+  { tag:'STEP 05 · UNDERTAKING', title:'تعهدك', hint:'أربعة تعهدات، وكلها ملزمة. لا يفتح الملف بدونها.', pledge:true, fields:[] }
+];
+
+const PLEDGES = [
+  { k:'p1', text:'أقر بصحة بياناتي، وأعلم أن اختلاف المستند عن البيانات يعلق الملف.' },
+  { k:'p2', text:'ألتزم بالنطاق المكتوب والميقات المقيد، ولا أطالب بعمل خارج النطاق دون أمر تغيير.' },
+  { k:'p3', text:'أحفظ سرية ما أطلع عليه من مواد العميل، ولا أنشر عملا قبل إذن مكتوب.' },
+  { k:'p4', text:'أقبل حكم المراجعة المستقلة، وأعالج ما يرد داخل النطاق دون مقابل إضافي.' }
+];
+
+const NEXT = [
+  { t:'مراجعة الطلب', w:'٤٨ ساعة' },
+  { t:'طلب مستند الهوية', w:'بعد المراجعة' },
+  { t:'موعد قياس القدرة', w:'خلال أسبوعين' },
+  { t:'فتح البطاقة وأول إسناد', w:'بعد القياس' }
+];
+
+class Component extends DCLogic {
+  state = { row:'id', tier:'T2', heroTier:'T2', gate:3, step:0, done:false, ref:'', form:{}, pledges:{}, errs:{} };
+
+  componentDidMount() {
+    try {
+      const raw = localStorage.getItem('kayan.talent.draft');
+      if (raw) {
+        const d = JSON.parse(raw);
+        if (d && typeof d === 'object') this.setState({ form: d.form || {}, pledges: d.pledges || {}, step: d.step || 0 });
+      }
+    } catch (e) {}
+  }
+
+  persist(patch) {
+    const next = { form: this.state.form, pledges: this.state.pledges, step: this.state.step, ...patch };
+    try { localStorage.setItem('kayan.talent.draft', JSON.stringify(next)); } catch (e) {}
+  }
+
+  setField = (k, v) => {
+    const form = { ...this.state.form, [k]: v };
+    const errs = { ...this.state.errs }; delete errs[k];
+    this.setState({ form, errs });
+    this.persist({ form });
+  };
+
+  validate() {
+    const s = STEPS[this.state.step];
+    const errs = {};
+    (s.fields || []).forEach(f => {
+      const v = (this.state.form[f.k] || '').trim();
+      if (f.req && !v) errs[f.k] = 'حقل مطلوب';
+      else if (f.k === 'email' && v && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) errs[f.k] = 'بريد غير صحيح';
+      else if (f.k === 'phone' && v && v.replace(/\D/g, '').length < 8) errs[f.k] = 'رقم غير مكتمل';
+      else if ((f.k === 'work1' || f.k === 'work2') && v && !/^https?:\/\//i.test(v)) errs[f.k] = 'يبدأ الرابط بـ https';
+    });
+    if (s.pledge && PLEDGES.some(p => !this.state.pledges[p.k])) errs.pledge = 'كل التعهدات ملزمة';
+    this.setState({ errs });
+    return Object.keys(errs).length === 0;
+  }
+
+  renderVals() {
+    const st = this.state;
+    const step = STEPS[st.step];
+    const row = ROWS.find(r => r.k === st.row) || ROWS[0];
+    const tier = TIERS.find(t => t.k === st.tier) || TIERS[1];
+    const last = st.step === STEPS.length - 1;
+
+    const fields = (step.fields || []).map(f => {
+      const err = st.errs[f.k];
+      const isSelect = f.type === 'select', isArea = f.type === 'area';
+      return {
+        k: f.k, label: f.label, ph: f.ph || '', options: f.options || [],
+        value: st.form[f.k] || (isSelect ? f.options[0] : ''),
+        isSelect, isArea, isText: !isSelect && !isArea,
+        wrap: 'display:block;min-width:0' + (isArea ? ';grid-column:1/-1' : ''),
+        err: err || '',
+        errStyle: 'display:block;font-size:11.5px;margin-top:6px;color:#C0563C;min-height:14px;opacity:' + (err ? '1' : '0')
+      };
+    });
+
+    return {
+      cardRows: ROWS.map(r => ({
+        k: r.k, title: r.title, tag: r.tag,
+        btn: 'all:unset;cursor:pointer;box-sizing:border-box;display:block;width:100%;padding:16px 18px;border-radius:14px;transition:background .3s ease,border-color .3s ease,transform .3s cubic-bezier(.23,1,.32,1);border:1px solid ' +
+          (r.k === st.row ? '#12B5A4;background:#fff;transform:translateX(-4px)' : 'rgba(7,27,26,.10);background:#F4EFE2'),
+        dot: 'width:9px;height:9px;border-radius:99px;flex:none;background:' + (r.k === st.row ? '#12B5A4' : 'rgba(7,27,26,.18)')
+      })),
+      row,
+      pickRow: (e) => this.setState({ row: e.currentTarget.getAttribute('data-k') }),
+
+      heroTier: st.heroTier,
+      heroTiers: [
+        { k:'T0', name:'مسجل' }, { k:'T1', name:'معرف' }, { k:'T2', name:'موثق' },
+        { k:'T3', name:'مثبت' }, { k:'T4', name:'مؤتمن' }
+      ].map(t => {
+        const on = t.k === st.heroTier;
+        return { k: t.k, name: t.name,
+          chip: 'display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border-radius:99px;cursor:pointer;transition:all .3s cubic-bezier(.23,1,.32,1);' +
+            (on ? 'background:#12B5A4;color:#04302C;border:1px solid #12B5A4'
+                : 'background:transparent;color:rgba(244,239,226,.72);border:1px solid rgba(111,220,206,.3)') };
+      }),
+      pickHeroTier: (e) => this.setState({ heroTier: e.currentTarget.getAttribute('data-k') }),
+
+      tiers: TIERS.map(t => {
+        const on = t.k === st.tier;
+        return {
+          k: t.k, name: t.name, short: t.short, line: t.body.split('.')[0] + '.',
+          card: 'all:unset;cursor:pointer;box-sizing:border-box;display:block;width:100%;min-height:168px;padding:22px 20px;border-radius:18px;transition:transform .4s cubic-bezier(.23,1,.32,1),border-color .3s ease,background .3s ease;border:1px solid ' +
+            (on ? '#12B5A4;background:#05312D;color:#F4EFE2;transform:translateY(-4px)' : 'rgba(7,27,26,.10);background:#FBF8F0'),
+          numColor: on ? '#6FDCCE' : '#0A6F68',
+          metaColor: on ? 'rgba(244,239,226,.7)' : '#8A9694',
+          bodyColor: on ? 'rgba(244,239,226,.78)' : '#3C514F'
+        };
+      }),
+      tier,
+      pickTier: (e) => this.setState({ tier: e.currentTarget.getAttribute('data-k') }),
+
+      rail: RAIL,
+
+      gates10: GATES.map((g, i) => {
+        const on = i === st.gate, gold = !!g.money;
+        const c = gold ? '#DD9520' : '#6FDCCE';
+        return { i: String(i), id: 'G' + i, name: g.name,
+          node: 'width:36px;height:36px;border-radius:99px;display:grid;place-items:center;font-family:IBM Plex Mono,monospace;font-size:10.5px;letter-spacing:.04em;transition:all .3s cubic-bezier(.23,1,.32,1);' +
+            (on ? (gold ? 'background:linear-gradient(135deg,#DD9520,#F3C96B);color:#3A2604;box-shadow:0 0 18px rgba(221,149,32,.5)'
+                        : 'background:#12B5A4;color:#04302C;box-shadow:0 0 18px rgba(18,181,164,.45)')
+                : 'background:#05312D;color:' + c + ';border:1px solid ' + (gold ? 'rgba(221,149,32,.5)' : 'rgba(111,220,206,.35)')),
+          lbl: 'font-size:10px;line-height:1.5;text-align:center;font-weight:' + (on ? '600' : '300') + ';color:' + (on ? (gold ? '#F3C96B' : '#6FDCCE') : 'rgba(244,239,226,.55)') };
+      }),
+      gateSel: { id: 'G' + st.gate, name: GATES[st.gate].name, body: GATES[st.gate].body,
+        accent: GATES[st.gate].money ? '#F3C96B' : '#6FDCCE' },
+      pickGate: (e) => this.setState({ gate: Number(e.currentTarget.getAttribute('data-k')) }),
+
+      regStages: [
+        { n: '٠١', t: 'البيانات الأساسية', d: 'الاسم، والتخصص، والمدينة، ووسيلة الاتصال.' },
+        { n: '٠٢', t: 'إثبات الهوية', d: 'مستند سار وصورة حية، تفحص بشريا.' },
+        { n: '٠٣', t: 'سجل العمل', d: 'نماذج من عمل سابق، وجهة تزكية تسأل.' },
+        { n: '٠٤', t: 'قياس القدرة', d: 'اختبار عملي في التخصص، يجيز أو يرد بقرار مسبب.' },
+        { n: '٠٥', t: 'القيد', d: 'يفتح الملف، وتصدر بطاقة كيان بطبقتها.' }
+      ],
+      regNeeds: [
+        'مستند هوية سار — بطاقة وطنية أو جواز.',
+        'بريد إلكتروني ورقم هاتف عاملان.',
+        'نماذج من عمل سابق تنسب إليك.',
+        'اسم جهة تزكية ووسيلة الاتصال بها.'
+      ],
+
+      dots: STEPS.map((s, i) => ({
+        style: 'width:' + (i === st.step && !st.done ? '26px' : '8px') + ';height:8px;border-radius:99px;transition:width .45s cubic-bezier(.23,1,.32,1),background-color .45s ease;background:' +
+          (st.done || i < st.step ? '#12B5A4' : i === st.step ? '#0A6F68' : 'rgba(7,27,26,.16)')
+      })),
+      pct: (st.done ? 100 : Math.round((st.step / STEPS.length) * 100)) + '%',
+      stepTag: step.tag, stepTitle: step.title, stepHint: step.hint,
+      stepCount: 'الخطوة ' + (st.step + 1) + ' من ' + STEPS.length,
+      nextLabel: last ? 'أرسل الطلب' : 'التالي',
+      isPledge: !!step.pledge,
+      fields,
+      done: st.done, ref: st.ref, nextSteps: NEXT,
+
+      pledges: PLEDGES.map(p => {
+        const on = !!st.pledges[p.k];
+        const bad = !!st.errs.pledge && !on;
+        return {
+          k: p.k, text: p.text, tick: on ? '✓' : '',
+          style: 'all:unset;cursor:pointer;box-sizing:border-box;display:flex;gap:12px;align-items:flex-start;width:100%;padding:14px 16px;border-radius:13px;transition:border-color .3s ease,background .3s ease;border:1px solid ' +
+            (on ? '#12B5A4;background:rgba(18,181,164,.07)' : bad ? '#C0563C;background:#fff' : 'rgba(7,27,26,.12);background:#fff'),
+          box: 'width:20px;height:20px;border-radius:6px;flex:none;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#04302C;transition:background .25s ease,border-color .25s ease;border:1px solid ' +
+            (on ? '#12B5A4;background:#12B5A4' : 'rgba(7,27,26,.22);background:#fff')
+        };
+      }),
+      togglePledge: (e) => {
+        const k = e.currentTarget.getAttribute('data-k');
+        const pledges = { ...this.state.pledges, [k]: !this.state.pledges[k] };
+        const errs = { ...this.state.errs }; delete errs.pledge;
+        this.setState({ pledges, errs });
+        this.persist({ pledges });
+      },
+
+      onField: (e) => this.setField(e.currentTarget.getAttribute('data-k'), e.currentTarget.value),
+
+      backStyle: 'background:transparent;border:1px solid rgba(7,27,26,.18);color:#3C514F;font-size:14px;padding:12px 22px;border-radius:99px;cursor:pointer;transition:opacity .3s ease,border-color .2s ease;opacity:' + (st.step === 0 ? '.35' : '1'),
+      back: () => { if (this.state.step > 0) { const step = this.state.step - 1; this.setState({ step, errs:{} }); this.persist({ step }); } },
+      next: () => {
+        if (!this.validate()) return;
+        if (last) {
+          const ref = 'TAL-' + String(Math.floor(Math.random() * 9000) + 1000);
+          const record = { ...this.state.form, pledges: this.state.pledges, ref, at: new Date().toISOString(), status: 'قيد المراجعة' };
+          try { localStorage.setItem('kayan.talent', JSON.stringify(record)); localStorage.removeItem('kayan.talent.draft'); } catch (err) {}
+          this.setState({ done: true, ref });
+        } else {
+          const step = this.state.step + 1;
+          this.setState({ step });
+          this.persist({ step });
+        }
+      },
+      reset: () => { this.setState({ done:false, step:0, form:{}, pledges:{}, errs:{}, ref:'' }); try { localStorage.removeItem('kayan.talent.draft'); } catch (e) {} }
+    };
+  }
+}
+</script>
+</body>
+</html>

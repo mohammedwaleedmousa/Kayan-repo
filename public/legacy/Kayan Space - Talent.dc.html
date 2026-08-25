@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>كيان — مساحة الكفاءة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4EEDD;font-family:'IBM Plex Sans Arabic',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8F7218;text-decoration:none}a:hover{color:#C9A227}
+input,select,button,textarea{font-family:inherit}
+input:focus,button:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
+@keyframes kIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes kGrow{from{width:0}}
+@keyframes kPulse{0%,100%{opacity:.5}50%{opacity:1}}
+a{transition:color .15s ease}
+button{transition:transform .16s cubic-bezier(.23,1,.32,1)}
+button:active{transform:scale(.97)}
+[data-card]{transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s cubic-bezier(.23,1,.32,1)}
+@media (hover:hover) and (pointer:fine){[data-card]:hover{transform:translateY(-2px);box-shadow:0 16px 34px -18px rgba(5,46,43,.35)}}
+@media (max-width:900px){
+[data-shell]{grid-template-columns:1fr!important}
+[data-side]{position:static!important;height:auto!important;flex-direction:row!important;flex-wrap:wrap!important;align-items:center!important}
+[data-side]>a{border-bottom:none!important;margin-bottom:0!important;padding:4px 8px!important}
+[data-side]>div:last-child{margin-top:0!important;padding-top:0!important;border-top:none!important;margin-inline-start:auto!important;display:flex!important;align-items:center!important;gap:8px!important}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div dir="rtl" style="min-height:100vh;background:#F4EEDD;">
+<sc-if value="{{ locked }}" hint-placeholder-val="{{ false }}">
+  <div style="min-height:100vh;display:grid;place-items:center;padding:24px;">
+    <div style="max-width:460px;text-align:center;background:#FAF6EC;border:1px solid #E0D6BD;border-radius:24px;padding:40px 32px;animation:kIn .6s ease both;">
+      <img src="assets/kayan-bird-elite-gold.png" alt="" style="height:64px;opacity:.9;">
+      <h1 style="margin:16px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:26px;color:#052E2B;">هذه المساحة <b style="font-weight:700;color:#8F7218;">للكفاءات.</b></h1>
+      <p style="margin:10px 0 0;font-size:13.5px;line-height:2.1;color:#4A6B64;">لا جلسة كفاءة قائمة على هذا الجهاز. يفتح الدخول ببريدك وكلمة مرورك، ومن لم يسجل بعد يبدأ من محطة التسجيل.</p>
+      <div style="margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <a href="Kayan Access.dc.html" style="border-radius:12px;padding:13px 26px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:14px;color:#052E2B;background:linear-gradient(135deg,#C9A227,#E9C96B);">إلى صفحة الدخول ←</a>
+        <a href="Kayan Apply.dc.html" style="border-radius:12px;padding:13px 26px;font-weight:600;font-size:13.5px;color:#052E2B;border:1.5px solid #C9A227;">التسجيل الجديد</a>
+      </div>
+    </div>
+  </div>
+</sc-if>
+<sc-if value="{{ open }}" hint-placeholder-val="{{ true }}">
+<div data-shell="" style="display:grid;grid-template-columns:250px 1fr;min-height:100vh;">
+  <aside data-side="" style="background:#03201D;color:#FAF6EC;padding:22px 16px;display:flex;flex-direction:column;gap:6px;position:sticky;top:0;height:100vh;box-sizing:border-box;overflow:auto;">
+    <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:10px;padding:4px 8px 16px;border-bottom:1px solid rgba(233,201,107,.18);margin-bottom:10px;">
+      <img src="assets/kayan-mark-cream.png" alt="كيان" style="height:30px;">
+      <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#E9C96B;">TALENT SPACE</span>
+    </a>
+    <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="8">
+      <button type="button" onClick="{{ n.go }}" style="display:flex;align-items:center;justify-content:space-between;gap:8px;border:none;cursor:pointer;text-align:start;border-radius:12px;padding:11px 12px;font-size:13px;font-weight:600;background:{{ n.bg }};color:{{ n.fg }};transition:all .25s ease;">
+        <span>{{ n.label }}</span>
+        <sc-if value="{{ n.badge }}" hint-placeholder-val="{{ false }}"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;background:rgba(233,201,107,.16);color:#E9C96B;border-radius:99px;padding:2px 8px;">{{ n.badge }}</span></sc-if>
+      </button>
+    </sc-for>
+    <div style="margin-top:auto;padding-top:14px;border-top:1px solid rgba(233,201,107,.18);display:grid;gap:8px;">
+      <div style="display:flex;align-items:center;gap:10px;padding:0 6px;">
+        <span style="width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,#C9A227,#E9C96B);color:#052E2B;display:grid;place-items:center;font-family:'Alexandria',sans-serif;font-weight:800;font-size:15px;">{{ initial }}</span>
+        <div style="min-width:0;">
+          <div style="font-size:12px;color:rgba(250,246,236,.85);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ userName }}</div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#E9C96B;text-align:left;">{{ userId }}</div>
+        </div>
+      </div>
+      <button type="button" onClick="{{ logout }}" style="border:1px solid rgba(233,201,107,.35);background:none;color:#E9C96B;cursor:pointer;border-radius:10px;padding:9px;font-size:12px;font-weight:600;">تسجيل الخروج</button>
+    </div>
+  </aside>
+  <main style="padding:clamp(18px,3.4vw,40px);max-width:1060px;box-sizing:border-box;width:100%;">
+    <header style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;color:#8F7218;">{{ crumb }}</div>
+        <h1 style="margin:8px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(24px,3.2vw,36px);color:#052E2B;">{{ pageTitle }}</h1>
+      </div>
+      <button type="button" onClick="{{ toggleAvail }}" style="display:flex;align-items:center;gap:10px;border:1.5px solid {{ availBd }};background:{{ availBg }};cursor:pointer;border-radius:999px;padding:9px 18px;font-size:12.5px;font-weight:700;color:{{ availFg }};transition:all .3s ease;">
+        <span style="width:8px;height:8px;border-radius:99px;background:{{ availDot }};animation:kPulse 2s infinite;"></span>{{ availLabel }}
+      </button>
+    </header>
+    <sc-if value="{{ vOverview }}" hint-placeholder-val="{{ true }}">
+      <section style="margin-top:26px;display:grid;gap:16px;">
+        <div style="background:#052E2B;border-radius:22px;padding:clamp(18px,3vw,28px);color:#FAF6EC;animation:kIn .55s .05s ease both;">
+          <div style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+            <div>
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#E9C96B;">TRUST LADDER · سلم الثقة</div>
+              <div style="margin-top:8px;font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;">درجتك الحالية: {{ tierName }}</div>
+              <div style="margin-top:6px;font-size:12.5px;line-height:2;color:rgba(250,246,236,.72);max-width:52ch;">{{ tierDesc }}</div>
+            </div>
+            <img src="assets/kayan-bird-elite-gold.png" alt="" style="height:58px;align-self:center;opacity:.9;">
+          </div>
+          <div style="margin-top:20px;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;" dir="ltr">
+            <sc-for list="{{ tiers }}" as="t" hint-placeholder-count="5">
+              <div style="display:grid;gap:7px;justify-items:center;">
+                <span style="height:6px;width:100%;border-radius:99px;background:{{ t.bar }};"></span>
+                <span dir="rtl" style="font-size:10px;color:{{ t.fg }};text-align:center;line-height:1.5;">{{ t.name }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:16px;background:rgba(233,201,107,.1);border:1px solid rgba(233,201,107,.25);border-radius:14px;padding:12px 16px;font-size:12.5px;line-height:2;color:rgba(250,246,236,.85);">{{ tierNext }}</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;">
+          <sc-for list="{{ statCards }}" as="s" hint-placeholder-count="3">
+            <div data-card="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:18px;">
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">{{ s.k }}</div>
+              <div style="margin-top:10px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:24px;color:#052E2B;" dir="ltr">{{ s.v }}</div>
+              <div style="margin-top:8px;font-size:11.5px;color:#4A6B64;line-height:1.8;">{{ s.sub }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:18px;animation:kIn .55s .2s ease both;">
+          <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#052E2B;">تكليفك النشط</div>
+            <a href="Kayan Pod Room.dc.html" style="font-size:12.5px;font-weight:700;">فتح غرفة الفريق ←</a>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;background:#1D1433;border-radius:16px;padding:16px 18px;color:#FAF6EC;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;background:rgba(185,168,232,.15);color:#B9A8E8;border-radius:99px;padding:6px 12px;">POD-26-041</span>
+            <div style="flex:1;min-width:200px;">
+              <div style="font-weight:700;font-size:14px;">فريق سنّار — هوية بصرية لمصنع أغذية</div>
+              <div style="margin-top:4px;font-size:11.5px;color:rgba(250,246,236,.65);">دورك: قائدة الفريق · البند الجاري: التطبيقات والملفات المصدر</div>
+            </div>
+            <span style="font-size:11.5px;font-weight:700;color:#B9A8E8;">{{ podDays }} أيام للموعد</span>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vPods }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;display:grid;gap:12px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <sc-for list="{{ myPods }}" as="p" hint-placeholder-count="2">
+          <div data-card="" style="background:#FAF6EC;border:1.5px solid {{ p.bd }};border-radius:18px;padding:18px 20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;">
+            <div>
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#5B4A8E;background:rgba(91,74,142,.1);border-radius:99px;padding:4px 10px;">{{ p.code }}</span>
+                <span style="font-weight:700;font-size:15px;color:#052E2B;">{{ p.name }}</span>
+              </div>
+              <div style="margin-top:6px;font-size:12.5px;color:#4A6B64;">{{ p.meta }}</div>
+            </div>
+            <sc-if value="{{ p.active }}" hint-placeholder-val="{{ true }}"><a href="Kayan Pod Room.dc.html" style="border-radius:12px;padding:11px 22px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:13px;color:#FAF6EC;background:linear-gradient(135deg,#1D1433,#5B4A8E);">دخول الغرفة ←</a></sc-if>
+            <sc-if value="{{ p.closed }}" hint-placeholder-val="{{ false }}"><span style="font-size:11.5px;font-weight:700;color:#0E6E66;">{{ p.closeNote }}</span></sc-if>
+          </div>
+        </sc-for>
+        <div style="font-size:12px;line-height:2;color:#7A8B85;padding:4px 6px;">الفريق وحدة تنفيذ لتكليف قائم، لا غرفة انتظار؛ يغلق ملفه بالقبول النهائي ويبقى سجله في سجل إنجازك.</div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vCalls }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;display:grid;gap:12px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <sc-for list="{{ calls }}" as="c" hint-placeholder-count="3">
+          <div data-card="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:18px 20px;">
+            <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+              <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                  <span style="font-weight:700;font-size:15px;color:#052E2B;">{{ c.title }}</span>
+                  <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#8F7218;">{{ c.id }}</span>
+                </div>
+                <div style="margin-top:6px;font-size:12.5px;line-height:1.9;color:#4A6B64;">{{ c.need }} · الدرجة الدنيا {{ c.floor }} · يغلق {{ c.closes }}</div>
+              </div>
+              <button type="button" onClick="{{ c.apply }}" style="align-self:center;border:none;cursor:pointer;border-radius:12px;padding:11px 22px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:13px;color:{{ c.btnFg }};background:{{ c.btnBg }};">{{ c.btnLabel }}</button>
+            </div>
+          </div>
+        </sc-for>
+        <div style="font-size:12px;line-height:2;color:#7A8B85;padding:4px 6px;">يرشح المحرك ثلاث تشكيلات لكل تكليف ولا يقصي أحدًا آليًا؛ إسناد الدور قرار بشري مسبب يبلغ باسمه.</div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vEarn }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;display:grid;gap:14px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;">
+          <div style="background:#052E2B;border-radius:18px;padding:20px;color:#FAF6EC;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#E9C96B;">PAID OUT · صرف</div>
+            <div style="margin-top:10px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:26px;" dir="ltr">$1,140</div>
+            <div style="margin-top:6px;font-size:11.5px;color:rgba(250,246,236,.65);">عبر بنك تضامن — الحساب المعتمد</div>
+          </div>
+          <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:20px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">IN ESCROW · محتجز لك</div>
+            <div style="margin-top:10px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:26px;color:#052E2B;" dir="ltr">$780</div>
+            <div style="margin-top:6px;font-size:11.5px;color:#4A6B64;">يصرف بتوقيع محضر استلام البند الجاري</div>
+          </div>
+          <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:20px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#8F7218;">SPLIT · نصيبك</div>
+            <div style="margin-top:10px;font-family:'Alexandria',sans-serif;font-weight:700;font-size:26px;color:#052E2B;" dir="ltr">40%</div>
+            <div style="margin-top:6px;font-size:11.5px;color:#4A6B64;">ثبت التوزيع قبل بدء العمل ولا يعدل أثناءه</div>
+          </div>
+        </div>
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:18px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#052E2B;">سجل الصرف</div>
+          <div style="margin-top:10px;display:grid;">
+            <sc-for list="{{ payouts }}" as="p" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:12px 0;border-top:1px solid #EDE5D2;">
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8F7218;">{{ p.t }}</span>
+                <span style="font-size:13px;color:#33544D;line-height:1.8;">{{ p.x }}</span>
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:#0E6E66;">{{ p.amt }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:12px;border-top:1px solid #EDE5D2;padding-top:12px;font-size:12px;line-height:2;color:#7A8B85;">يصرف عبر القنوات الرسمية وحدها: البنوك المرخصة أولًا، والمحافظ بسقوف مقيدة. تغيير قناة الصرف من تبويب الملف.</div>
+        </div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vRecord }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;display:grid;gap:12px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <sc-for list="{{ record }}" as="r" hint-placeholder-count="3">
+          <div data-card="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:18px;padding:18px 20px;">
+            <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+              <div>
+                <div style="font-weight:700;font-size:15px;color:#052E2B;">{{ r.title }}</div>
+                <div style="margin-top:5px;font-size:12px;color:#4A6B64;">{{ r.meta }}</div>
+              </div>
+              <div style="text-align:center;align-self:center;">
+                <div style="font-family:'Alexandria',sans-serif;font-weight:800;font-size:20px;color:#8F7218;" dir="ltr">{{ r.score }}</div>
+                <div style="font-size:10px;color:#7A8B85;">تقييم الجودة</div>
+              </div>
+            </div>
+            <div style="margin-top:10px;border-inline-start:3px solid #C9A227;padding:6px 14px;font-size:12.5px;line-height:2;color:#33544D;background:#F4EEDD;border-radius:0 10px 10px 0;">{{ r.quote }}</div>
+          </div>
+        </sc-for>
+        <div style="font-size:12px;color:#7A8B85;padding:4px 6px;line-height:2;">سجل الإنجاز يبنى من محاضر الاستلام الموقعة وحدها؛ لا يضاف إليه ما لم يمر بالبوابات.</div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vVerify }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;display:grid;gap:12px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <sc-for list="{{ axes }}" as="a" hint-placeholder-count="5">
+          <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;">
+            <div>
+              <div style="font-weight:700;font-size:14px;color:#052E2B;">{{ a.name }}</div>
+              <div style="margin-top:4px;font-size:12px;line-height:1.9;color:#4A6B64;">{{ a.note }}</div>
+            </div>
+            <span style="font-size:11.5px;font-weight:700;border-radius:999px;padding:6px 14px;background:{{ a.bg }};color:{{ a.fg }};">{{ a.st }}</span>
+          </div>
+        </sc-for>
+        <div style="background:#052E2B;border-radius:16px;padding:16px 20px;color:#FAF6EC;font-size:12.5px;line-height:2.1;">القاعدة الحاكمة: تمرر الآلة، ولا يرد إلا إنسان. كل نتيجة سلبية تصدر بقرار مسبب باسم صاحبه، ولك تظلم واحد خلال ٢١ يومًا.</div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vK4y }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;display:grid;gap:14px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <div style="background:#12331B;border-radius:20px;padding:clamp(18px,3vw,26px);color:#EAF3EC;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;">
+          <div>
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#8FD0A0;">K4Y · كيان لليمن</div>
+            <div style="margin-top:8px;font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;">رصيدك المدني: {{ k4yHours }} ساعة</div>
+            <div style="margin-top:6px;font-size:12.5px;line-height:2;color:rgba(234,243,236,.75);max-width:50ch;">الساعات تصعد مكانتك وبطاقتك ولا تصرف مالًا؛ فالعطاء عندنا مقام يذكر، لا أجر يدفع.</div>
+          </div>
+          <img src="assets/bird-k4y.png" alt="" style="height:64px;opacity:.9;">
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;">
+          <sc-for list="{{ k4yOps }}" as="o" hint-placeholder-count="2">
+            <div data-card="" style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:16px;padding:16px 18px;">
+              <div style="font-weight:700;font-size:14px;color:#052E2B;">{{ o.t }}</div>
+              <div style="margin-top:5px;font-size:12px;line-height:1.9;color:#4A6B64;">{{ o.x }}</div>
+              <a href="Civic Wing - Kayan for Yemen.dc.html" style="margin-top:8px;display:inline-block;font-size:12px;font-weight:700;color:#2F6B3A;">التفاصيل والانضمام ←</a>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+    <sc-if value="{{ vProfile }}" hint-placeholder-val="{{ false }}">
+      <section style="margin-top:26px;display:grid;gap:14px;animation:kIn .32s cubic-bezier(.23,1,.32,1) both;">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:22px;display:grid;gap:12px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;color:#052E2B;">الملف المهني</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;">
+            <div style="background:#F4EEDD;border-radius:14px;padding:14px;"><div style="font-size:11px;color:#8F7218;font-weight:600;">الاسم</div><div style="margin-top:5px;font-size:13.5px;font-weight:600;color:#052E2B;">{{ userName }}</div></div>
+            <div style="background:#F4EEDD;border-radius:14px;padding:14px;"><div style="font-size:11px;color:#8F7218;font-weight:600;">التخصص الرئيس</div><div style="margin-top:5px;font-size:13.5px;font-weight:600;color:#052E2B;">{{ userSpec }}</div></div>
+            <div style="background:#F4EEDD;border-radius:14px;padding:14px;"><div style="font-size:11px;color:#8F7218;font-weight:600;">البريد</div><div style="margin-top:5px;font-size:13px;font-weight:600;color:#052E2B;" dir="ltr">{{ userEmail }}</div></div>
+            <div style="background:#F4EEDD;border-radius:14px;padding:14px;"><div style="font-size:11px;color:#8F7218;font-weight:600;">قناة الصرف المعتمدة</div><div style="margin-top:5px;font-size:13.5px;font-weight:600;color:#052E2B;">بنك تضامن — عدن الرئيس</div></div>
+          </div>
+          <div style="border-top:1px solid #EDE5D2;padding-top:12px;font-size:12.5px;line-height:2;color:#4A6B64;">تعديل بيانات الهوية أو قناة الصرف يمر بتحقق جديد يفتح من هنا عند الربط بالخادم؛ ويظل ملف التسجيل الكامل في <a href="Kayan Apply.dc.html">محطة التسجيل</a>.</div>
+        </div>
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:20px;padding:22px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:16px;color:#052E2B;">الجاهزية الأسبوعية</div>
+          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+            <sc-for list="{{ week }}" as="d" hint-placeholder-count="7">
+              <button type="button" onClick="{{ d.tap }}" style="border:1.5px solid {{ d.bd }};background:{{ d.bg }};color:{{ d.fg }};cursor:pointer;border-radius:12px;padding:10px 16px;font-size:12.5px;font-weight:700;transition:all .25s ease;">{{ d.name }}</button>
+            </sc-for>
+          </div>
+          <div style="margin-top:10px;font-size:12px;color:#7A8B85;">تدخل الجاهزية في توصيات المحرك؛ الصدق فيها يحفظ اسمك من التعثر.</div>
+        </div>
+      </section>
+    </sc-if>
+    <footer style="margin-top:40px;padding-top:18px;border-top:1px solid #E0D6BD;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:11.5px;color:#7A8B85;">
+      <span>التحقق غير الإسناد؛ والاسم يبنى بالمحاضر الموقعة.</span>
+      <span><a href="Line III - The Forge.dc.html">المصهر</a> · <a href="Kayan People.dc.html">فريق كيان</a> · <a href="Kayan Legal.dc.html">الأحكام</a></span>
+    </footer>
+  </main>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    let auth=null;try{auth=JSON.parse(localStorage.getItem('kyn-auth-v1')||'null');}catch(e){}
+    this.auth=(auth&&auth.v===1&&auth.role==='talent')?auth:null;
+    this.key=this.auth?('kyn-tws-'+this.auth.id):null;
+    let ws=null;if(this.key){try{ws=JSON.parse(localStorage.getItem(this.key)||'null');}catch(e){}}
+    this.state={view:'overview',ws:(ws&&ws.v===1)?ws:{v:1,avail:true,week:[1,1,1,0,1,1,0],applied:[]}};
+    if(this.key&&!(ws&&ws.v===1))this.persist(this.state.ws);
+  }
+  persist(ws){if(this.key){try{localStorage.setItem(this.key,JSON.stringify(ws));}catch(e){}}}
+  up(fn){const ws=JSON.parse(JSON.stringify(this.state.ws));fn(ws);this.persist(ws);this.setState({ws});}
+  logout(){try{localStorage.removeItem('kyn-auth-v1');}catch(e){}window.location.href='Kayan Access.dc.html';}
+  renderVals(){
+    if(!this.auth)return {locked:true,open:false};
+    const {view,ws}=this.state,me=this.auth,tier=me.tier||2;
+    const tierNames=['T0 مسجل','T1 معرف','T2 موثق','T3 مثبت','T4 مؤتمن'];
+    const tierDescs=['فتح الملف وما اكتمل التحقق بعد.','صدرت بطاقتك؛ تشارك في فريق بإشراف.','مساهم رئيس بنطاق أسعار معتمد؛ اسمك يبنى بالمحاضر.','يقود فريقًا ويراجع عمل غيره ويدرّس في المصهر.','يواجه العميل دون إشراف ويؤلف الفرق.'];
+    const nexts=['التالي: اكتمال التحقق تصدر به البطاقة (T1).','التالي إلى T2: اجتياز اختبار التخصص واكتمال جهتي التزكية.','التالي إلى T3: محضران موقعان بتقييم ٤٫٥ فأعلى وقيادة بند تحت إشراف — بقي محضر واحد.','التالي إلى T4: اثنا عشر شهرًا دون إخلال وتزكية من قائدين مثبتين.','بلغت أعلى السلم؛ يحفظ المقام بالانتظام، والخمول ينزل درجة قابلة للاسترداد.'];
+    const navDefs=[['overview','نظرة عامة',''],['pods','تكليفاتي','1'],['calls','نداءات الفرق','3'],['earn','المستحقات',''],['record','سجل الإنجاز',''],['verify','التحقق',''],['k4y','كيان لليمن',''],['profile','الملف والجاهزية','']];
+    const titles={overview:'أهلًا، '+(me.name.split(' ')[0]||''),pods:'تكليفاتي',calls:'نداءات الفرق',earn:'المستحقات',record:'سجل الإنجاز',verify:'محاور التحقق الخمسة',k4y:'كيان لليمن',profile:'الملف والجاهزية'};
+    const days=['السبت','الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة'];
+    const callDefs=[{id:'CALL-26-052',title:'موقع تعريفي لعيادة أسنان',need:'مطلوب: مطور واجهات + محرر محتوى',floor:'T2',closes:'بعد يومين'},{id:'CALL-26-054',title:'حملة إطلاق لمتجر تمور',need:'مطلوب: مصمم اجتماعي + كاتب إعلاني',floor:'T1',closes:'بعد أربعة أيام'},{id:'CALL-26-057',title:'ترجمة تقرير مانحين ٦٠ صفحة',need:'مطلوب: مترجم قانوني + مدقق',floor:'T2',closes:'غدًا'}];
+    return {locked:false,open:true,
+      navItems:navDefs.map(([id,label,badge])=>({label,badge,go:()=>this.setState({view:id}),bg:view===id?'rgba(233,201,107,.14)':'transparent',fg:view===id?'#E9C96B':'rgba(250,246,236,.66)'})),
+      initial:(me.name||'؟').trim()[0],userName:me.name,userId:me.id,userEmail:me.email,userSpec:'تصميم الهوية البصرية',logout:()=>this.logout(),
+      crumb:'TALENT SPACE · '+me.id,pageTitle:titles[view],
+      toggleAvail:()=>this.up(w=>{w.avail=!w.avail;}),
+      availLabel:ws.avail?'جاهز لتكليف جديد':'خارج الجاهزية',availDot:ws.avail?'#0E6E66':'#C96B4A',
+      availBg:ws.avail?'rgba(14,110,102,.08)':'#EDE5D2',availBd:ws.avail?'#0E6E66':'#E0D6BD',availFg:ws.avail?'#0E6E66':'#7A8B85',
+      vOverview:view==='overview',vPods:view==='pods',vCalls:view==='calls',vEarn:view==='earn',vRecord:view==='record',vVerify:view==='verify',vK4y:view==='k4y',vProfile:view==='profile',
+      tierName:tierNames[tier],tierDesc:tierDescs[tier],tierNext:nexts[tier],
+      tiers:tierNames.map((name,i)=>({name,bar:i<tier?'#C9A227':i===tier?'linear-gradient(90deg,#C9A227,#E9C96B)':'rgba(233,201,107,.15)',fg:i<=tier?'#E9C96B':'rgba(250,246,236,.4)'})),
+      statCards:[{k:'SIGNED RECORDS',v:'7',sub:'محاضر استلام موقعة في سجلك'},{k:'QUALITY AVG',v:'4.7 / 5',sub:'متوسط تقييم بوابات الجودة'},{k:'ON-TIME',v:'100%',sub:'التزام المواعيد عبر التكليفات'}],
+      podDays:'12',
+      myPods:[{code:'POD-26-041',name:'فريق سنّار — هوية مصنع أغذية',meta:'دورك: قائدة الفريق · نصيبك 40% · البند الجاري: التطبيقات',active:true,closed:false,bd:'#5B4A8E',closeNote:''},{code:'POD-26-017',name:'فريق مرجان — متجر إلكتروني لحرفيات',meta:'دورك: مساهمة رئيسة · أغلق بمحضر نهائي وتقييم 4.8',active:false,closed:true,bd:'#E0D6BD',closeNote:'أغلق بقبول نهائي ✓'}],
+      calls:callDefs.map(c=>{const applied=ws.applied.includes(c.id);
+        return {...c,btnLabel:applied?'سجل اهتمامك ✓':'تسجيل الاهتمام',btnBg:applied?'#EDE5D2':'linear-gradient(135deg,#C9A227,#E9C96B)',btnFg:applied?'#8F7218':'#052E2B',
+          apply:()=>{if(!applied)this.up(w=>{w.applied.push(c.id);});}};}),
+      payouts:[{t:'26-08-02',x:'نصيبك من البند الأول — هوية مصنع أغذية (POD-26-041)',amt:'+$240'},{t:'26-07-18',x:'التصفية النهائية — متجر الحرفيات (POD-26-017)',amt:'+$520'},{t:'26-06-30',x:'الدفعة الأولى — متجر الحرفيات (POD-26-017)',amt:'+$380'}],
+      record:[{title:'متجر إلكتروني لحرفيات عدن',meta:'POD-26-017 · مساهمة رئيسة · سلم في موعده',score:'4.8',quote:'«التزام كامل بالنطاق والموعد، وجودة أعلى من المتوقع.» — من محضر الاستلام الموقع'},{title:'هوية مقهى على الكورنيش',meta:'POD-25-090 · مساهمة · سلم في موعده',score:'4.6',quote:'«قراءة دقيقة للمكان وروحه.» — من محضر الاستلام الموقع'},{title:'حملة توظيف لمنظمة محلية',meta:'POD-25-063 · مساهمة صاعدة · سلم في موعده',score:'4.7',quote:'«صياغات محكمة وتجاوب سريع مع الملاحظات.» — من محضر الاستلام الموقع'}],
+      axes:[{name:'الهوية',note:'وثيقة رسمية + مطابقة حية؛ حذفت الصور وحفظت البصمة الرقمية.',st:'موثقة',bg:'#0E6E66',fg:'#EAF7F0'},{name:'المهارة',note:'اختبار التخصص الرئيس مجتاز بدرجة ٨٦٪.',st:'موثقة',bg:'#0E6E66',fg:'#EAF7F0'},{name:'سجل العمل',note:'سبعة محاضر موقعة؛ يتجدد تلقائيًا مع كل قبول.',st:'موثقة',bg:'#0E6E66',fg:'#EAF7F0'},{name:'السلوك',note:'جهتا تزكية وردت إفادتهما؛ لا وقائع سلبية.',st:'موثقة',bg:'#0E6E66',fg:'#EAF7F0'},{name:'القدرة',note:'الجاهزية المعلنة ٥ أيام أسبوعيًا؛ تحدث من الملف.',st:'تحدث دوريًا',bg:'#EDE5D2',fg:'#8F7218'}],
+      k4yHours:'34',
+      k4yOps:[{t:'سبت رقمي لمدارس كريتر',x:'تدريب معلمين على أدوات الصف الرقمي — تحسب الساعات في بطاقتك.'},{t:'دليل أعمال لسوق الطويلة',x:'توثيق محال السوق القديمة وبناء أدلتها الرقمية.'}],
+      week:days.map((name,i)=>({name,tap:()=>this.up(w=>{w.week[i]=w.week[i]?0:1;}),bg:ws.week[i]?'#052E2B':'#FAF6EC',fg:ws.week[i]?'#E9C96B':'#7A8B85',bd:ws.week[i]?'#052E2B':'#E0D6BD'})),
+    };
+  }
+}
+</script>
+</body>
+</html>

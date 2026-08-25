@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#F4EEDD;color:#052E2B;font-family:'IBM Plex Sans Arabic',sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+  a{color:#8F7218;text-decoration:none;border-bottom:1px solid rgba(143,114,24,.32)}
+  a:hover{color:#052E2B;border-bottom-color:#C9A227}
+  @keyframes kIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @media print{body{background:#fff}}
+</style>
+</helmet>
+
+<div dir="rtl" style="max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,44px) 120px;">
+
+  <header style="padding:clamp(40px,7vw,84px) 0 clamp(24px,4vw,40px);border-bottom:2px solid #03201D;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#8F7218;">KYN-REV-01 · INFORMATION ARCHITECTURE &amp; COPY · 2026-08-19</div>
+    <h1 style="margin:18px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(34px,6.4vw,68px);line-height:1.16;letter-spacing:-.02em;color:#03201D;">مراجعة البنية والنص<br><span style="font-weight:600;">في موقع كيان</span></h1>
+    <p dir="ltr" style="margin:14px 0 0;font-family:'Instrument Sans',sans-serif;font-size:14px;line-height:1.6;color:#4A5F59;max-width:60ch;">A structural and editorial review of the Kayan site: how it is arranged, how it connects, and how it reads in Arabic and English.</p>
+    <p style="margin:26px 0 0;font-size:16px;line-height:2;max-width:74ch;color:#1E3B36;">قرئ ٥٣ ملفا في جذر المشروع. استخرج كل رابط ومرساة ووسم لغة ومنحنى حركة، ثم فحصت كل ملاحظة في موضعها قبل إثباتها. ما لم يثبت، رد وقيد في «ما رد من الملاحظات» أسفل التقرير.</p>
+  </header>
+
+  <section style="padding:clamp(30px,5vw,54px) 0;border-bottom:1px solid #E0D6BD;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#8F7218;">01 · THE VERDICT</div>
+    <h2 style="margin:12px 0 22px;font-family:'Alexandria',sans-serif;font-weight:400;font-size:clamp(26px,3.8vw,40px);color:#03201D;">الحكم</h2>
+    <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));">
+      <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-top:3px solid #2F6B3A;border-radius:14px;padding:22px 24px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#2F6B3A;">WHAT HOLDS</div>
+        <p style="margin:12px 0 0;font-size:15.5px;line-height:2;color:#1E3B36;">النص العربي محكم. لا علامة تعجب واحدة في نص عربي، ولا «تم + مصدر» في الموقع كله، والمصطلح صناعي دقيق: حساب الضمان، محضر الاستلام، أمر تغيير، قرار مسبب. الروابط الملفية سليمة كلها: ٥٣ ملفا بلا رابط مكسور. والحركة مضبوطة: لا منحنى داخل خاطئ، ولا تصغير من صفر، و٣١ صفحة من ٣٣ تحترم تعطيل الحركة.</p>
+      </div>
+      <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-top:3px solid #A3341F;border-radius:14px;padding:22px 24px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#A3341F;">WHAT BREAKS</div>
+        <p style="margin:12px 0 0;font-size:15.5px;line-height:2;color:#1E3B36;">لا يوجد في الموقع عنصر واحد يظهر في كل صفحاته. تعد الرؤوس ثلاثة عشر رأسا مختلفا، وست صفحات بلا رأس. فيفقد الزائر موضعه عند كل نقلة، ولا يبنى لديه تصور للموقع. هذا أثقل من كل ما دونه.</p>
+      </div>
+      <div style="background:#03201D;border-radius:14px;padding:22px 24px;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#E9C96B;">FIX THIS FIRST</div>
+        <p style="margin:12px 0 0;font-size:15.5px;line-height:2;color:#F4EEDD;">رأس واحد وذيل واحد على كل صفحة، وباب واحد لكل جمهور، وتصريح صادق بما ترجم إلى الإنجليزية وما لم يترجم. ثلاثة قرارات تحل من الملاحظات أحد عشر.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(30px,5vw,54px) 0;border-bottom:1px solid #E0D6BD;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#8F7218;">02 · THE MAP, MEASURED</div>
+    <h2 style="margin:12px 0 10px;font-family:'Alexandria',sans-serif;font-weight:400;font-size:clamp(26px,3.8vw,40px);color:#03201D;">خريطة الموقع، بالأرقام</h2>
+    <p style="margin:0 0 26px;font-size:15.5px;line-height:2;max-width:78ch;color:#1E3B36;">لكل صفحة أربعة أرقام: الوارد إليها، والصادر منها، وحال لغتها، وحال رأسها. الوارد صفرا يعني صفحة لا يبلغها أحد. الصادر صفرا يعني صفحة لا يخرج منها أحد.</p>
+    <div style="display:flex;gap:10px 18px;flex-wrap:wrap;padding:14px 18px;background:#FAF6EC;border:1px solid #E0D6BD;border-radius:12px;margin-bottom:26px;font-size:12.5px;">
+      <span><span style="display:inline-block;width:9px;height:9px;border-radius:9px;background:#2F6B3A;margin-inline-end:6px;"></span>عربي وإنجليزي بمفتاح واحد</span>
+      <span><span style="display:inline-block;width:9px;height:9px;border-radius:9px;background:#2E7CBC;margin-inline-end:6px;"></span>نسخة إنجليزية بملف منفصل</span>
+      <span><span style="display:inline-block;width:9px;height:9px;border-radius:9px;background:#5B4A8E;margin-inline-end:6px;"></span>مفتاح لغة خاص</span>
+      <span><span style="display:inline-block;width:9px;height:9px;border-radius:9px;background:#A3341F;margin-inline-end:6px;"></span>عربي فقط</span>
+    </div>
+
+    <sc-for list="{{ tiers }}" as="t" hint-placeholder-count="6">
+      <div style="margin-bottom:30px;">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:10px;border-bottom:1.5px solid #03201D;margin-bottom:14px;">
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#8F7218;">{{ t.code }}</span>
+          <b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#03201D;">{{ t.ar }}</b>
+          <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;color:#5A6B66;">{{ t.en }}</span>
+        </div>
+        <div style="display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));">
+          <sc-for list="{{ t.nodes }}" as="n" hint-placeholder-count="5">
+            <div style="background:#fff;border:1px solid #E3D9C2;border-inline-start:3px solid {{ n.c }};border-radius:11px;padding:13px 15px;">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;">
+                <b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:14px;line-height:1.5;color:#052E2B;">{{ n.name }}</b>
+                <span dir="ltr" style="flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5A6B66;">{{ n.io }}</span>
+              </div>
+              <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">
+                <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.08em;background:{{ n.lbg }};color:{{ n.c }};border:1px solid {{ n.c }};border-radius:5px;padding:2px 7px;">{{ n.lang }}</span>
+                <sc-if value="{{ n.flag }}" hint-placeholder-val="{{ true }}">
+                  <span style="font-size:11px;background:#FBEDE9;color:#A3341F;border:1px solid #E8C3B8;border-radius:5px;padding:2px 8px;">{{ n.flag }}</span>
+                </sc-if>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+
+    <div style="background:#03201D;border-radius:14px;padding:24px 26px;margin-top:8px;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#E9C96B;">WHAT THE MAP SHOWS</div>
+      <ul style="margin:14px 0 0;padding-inline-start:20px;color:#F4EEDD;font-size:15px;line-height:2.1;">
+        <li>الخطوط الثلاثة لا يشير بعضها إلى بعض. لا يبلغ الزائر من التسليم المدار إلى المصهر إلا بالعودة إلى الدار.</li>
+        <li>«الخطوط» مرساة في الدار لا صفحة. فالعرض التجاري كله، وهو أربعة أبواب، بلا صفحة أم تجمعه.</li>
+        <li>السجل والختم يبلغان من الدار، ولا يخرج منهما رابط واحد. يدخل الزائر ولا يجد مخرجا.</li>
+        <li>لوحة الإدارة لا يبلغها رابط ولا يخرج منها رابط، وهي منشورة في حزمة التسليم.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="padding:clamp(30px,5vw,54px) 0;border-bottom:1px solid #E0D6BD;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#8F7218;">03 · FINDINGS LEDGER</div>
+    <h2 style="margin:12px 0 10px;font-family:'Alexandria',sans-serif;font-weight:400;font-size:clamp(26px,3.8vw,40px);color:#03201D;">سجل الملاحظات</h2>
+    <p style="margin:0 0 26px;font-size:15.5px;line-height:2;max-width:78ch;color:#1E3B36;">ترتب بأثرها على الزائر مقسوما على كلفة إصلاحها. كل ملاحظة معها موضعها ودليلها.</p>
+    <div style="display:grid;gap:12px;">
+      <sc-for list="{{ findings }}" as="f" hint-placeholder-count="16">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-inline-start:4px solid {{ f.c }};border-radius:12px;padding:18px 20px;">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.1em;background:{{ f.c }};color:#FAF6EC;border-radius:5px;padding:3px 9px;">{{ f.id }}</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:{{ f.c }};">{{ f.sev }}</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;color:#5A6B66;">{{ f.cat }}</span>
+          </div>
+          <h3 style="margin:11px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;line-height:1.65;color:#03201D;">{{ f.t }}</h3>
+          <p style="margin:9px 0 0;font-size:15px;line-height:2;color:#1E3B36;">{{ f.body }}</p>
+          <div style="margin-top:13px;background:#fff;border:1px solid #E3D9C2;border-radius:9px;padding:12px 14px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#8F7218;">EVIDENCE</div>
+            <p dir="auto" style="margin:7px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.95;color:#33544D;">{{ f.ev }}</p>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:9px;align-items:flex-start;">
+            <span style="flex:0 0 auto;font-size:12px;font-weight:600;color:#0E6E66;padding-top:2px;">العلاج</span>
+            <p style="margin:0;font-size:14.5px;line-height:1.95;color:#0E6E66;">{{ f.fix }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding:clamp(30px,5vw,54px) 0;border-bottom:1px solid #E0D6BD;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#8F7218;">04 · THE BILINGUAL SEAM</div>
+    <h2 style="margin:12px 0 10px;font-family:'Alexandria',sans-serif;font-weight:400;font-size:clamp(26px,3.8vw,40px);color:#03201D;">درز اللغتين</h2>
+    <p style="margin:0 0 26px;font-size:15.5px;line-height:2;max-width:78ch;color:#1E3B36;">يشغل الموقع ثلاث منظومات لغوية لا تعرف إحداها الأخرى: مفتاح تبديل واحد على سبع صفحات، وملفات إنجليزية منفصلة للخطوط الثلاثة، ومفتاح خاص للذراع المدنية. وسبع عشرة صفحة بلا إنجليزية أصلا. فتنقطع اللغة عند أول نقلة. هذه المسارات مقيسة من الدار بعد اختيار الإنجليزية:</p>
+    <div style="display:grid;gap:12px;">
+      <sc-for list="{{ paths }}" as="p" hint-placeholder-count="4">
+        <div style="background:#fff;border:1px solid #E3D9C2;border-radius:12px;padding:16px 18px;">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#2E7CBC;background:#EAF2FA;border:1px solid #C7DCEF;border-radius:5px;padding:3px 9px;">{{ p.from }}</span>
+            <span style="color:#8F7218;font-size:16px;">←</span>
+            <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;color:#33544D;">“{{ p.label }}”</span>
+            <span style="color:#8F7218;font-size:16px;">←</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#A3341F;background:#FBEDE9;border:1px solid #E8C3B8;border-radius:5px;padding:3px 9px;">{{ p.to }}</span>
+          </div>
+          <p style="margin:10px 0 0;font-size:14.5px;line-height:1.95;color:#1E3B36;">{{ p.note }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top:20px;background:#FBEDE9;border:1px solid #E8C3B8;border-radius:12px;padding:20px 22px;">
+      <b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#A3341F;">أثقلها: الشروط</b>
+      <p style="margin:9px 0 0;font-size:15px;line-height:2;color:#3B1F18;">يعرض ذيل الدار بالإنجليزية ثلاثة روابط: الشروط، والخصوصية، وحماية البيانات. وتفتح كلها صفحة «الشروط والأحكام» ولا إنجليزية فيها. فيوقف زائر إنجليزي على مواد يحتكم إليها بلغة لا يقرؤها، بعد أن دل على أنها متاحة بلغته. هذه مسؤولية قانونية قبل أن تكون مسألة تجربة.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(30px,5vw,54px) 0;border-bottom:1px solid #E0D6BD;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#8F7218;">05 · LABEL DRIFT</div>
+    <h2 style="margin:12px 0 10px;font-family:'Alexandria',sans-serif;font-weight:400;font-size:clamp(26px,3.8vw,40px);color:#03201D;">اختلاف الأسماء على الباب الواحد</h2>
+    <p style="margin:0 0 26px;font-size:15.5px;line-height:2;max-width:78ch;color:#1E3B36;">يسمى الباب الواحد بأسماء كثيرة، فلا يعرف الزائر أنه هو. تحصر هنا الأسماء المستعملة فعلا لكل وجهة، ويقترح اسم واحد يثبت في كل رأس وذيل. ويترك التنويع لنص الجسم لا للتسمية.</p>
+    <div style="display:grid;gap:12px;">
+      <sc-for list="{{ drift }}" as="d" hint-placeholder-count="5">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:12px;padding:18px 20px;">
+          <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8F7218;">{{ d.file }}</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#A3341F;">{{ d.n }} اسما</span>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:7px;flex-wrap:wrap;">
+            <sc-for list="{{ d.names }}" as="x" hint-placeholder-count="6">
+              <span style="font-size:13px;background:#fff;border:1px solid #E3D9C2;border-radius:99px;padding:5px 12px;color:#33544D;">{{ x }}</span>
+            </sc-for>
+          </div>
+          <div style="margin-top:14px;padding-top:13px;border-top:1px solid #E0D6BD;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;">
+            <span style="font-size:12px;font-weight:600;color:#0E6E66;">الاسم المقترح</span>
+            <b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#0E6E66;">{{ d.canon }}</b>
+            <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#0E6E66;">{{ d.canonEn }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <p style="margin:20px 0 0;font-size:15px;line-height:2;color:#1E3B36;background:#fff;border:1px solid #E3D9C2;border-radius:11px;padding:16px 18px;">وللدار نفسها خمسة أسماء في الموقع: «الدار» في الرحلة، و«الرئيسية» في الشروط، و«الرئيسة» في الأطلس، و«كيان» في الخط الأول، و«النسخة الكلاسيكية» في الجولة المجسمة. و«الرئيسة» خطأ إملائي لا تنويع.</p>
+  </section>
+
+  <section style="padding:clamp(30px,5vw,54px) 0;border-bottom:1px solid #E0D6BD;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#8F7218;">06 · COPY &amp; REGISTER</div>
+    <h2 style="margin:12px 0 10px;font-family:'Alexandria',sans-serif;font-weight:400;font-size:clamp(26px,3.8vw,40px);color:#03201D;">النص والسجل اللغوي</h2>
+    <p style="margin:0 0 24px;font-size:15.5px;line-height:2;max-width:78ch;color:#1E3B36;">قيس النص العربي على لوائح المشروع نفسها. النتيجة أنظف مما يتوقع في موقع بهذا الحجم، وما بقي فيه مسألتان اثنتان.</p>
+    <div style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-bottom:22px;">
+      <sc-for list="{{ regScore }}" as="r" hint-placeholder-count="6">
+        <div style="background:{{ r.bg }};border:1px solid {{ r.bd }};border-radius:12px;padding:16px 18px;">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;">
+            <b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:{{ r.fg }};">{{ r.rule }}</b>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;color:{{ r.fg }};">{{ r.n }}</span>
+          </div>
+          <p style="margin:8px 0 0;font-size:13.5px;line-height:1.9;color:#33544D;">{{ r.note }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <h3 style="margin:26px 0 12px;font-family:'Alexandria',sans-serif;font-weight:600;font-size:20px;color:#03201D;">المسألة الأولى: الشرطة المعترضة في النص العربي</h3>
+    <p style="margin:0 0 16px;font-size:15.5px;line-height:2;max-width:78ch;color:#1E3B36;">تمنع لوائح المشروع «إيقاع الشرطة المنقول من الإنجليزية». وهي في النص العربي على وجهين، يفرق بينهما ولا يسويان:</p>
+    <div style="display:grid;gap:12px;">
+      <div style="background:#FBEDE9;border:1px solid #E8C3B8;border-radius:12px;padding:18px 20px;">
+        <div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#A3341F;">REWRITE</span><b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#A3341F;">جملة معترضة على النسق الإنجليزي</b></div>
+        <div style="margin-top:13px;display:grid;gap:10px;">
+          <sc-for list="{{ dashBad }}" as="b" hint-placeholder-count="3">
+            <div style="background:#fff;border:1px solid #E8C3B8;border-radius:9px;padding:12px 14px;">
+              <p style="margin:0;font-size:14.5px;line-height:2;color:#3B1F18;">{{ b.bad }}</p>
+              <div style="margin-top:9px;padding-top:9px;border-top:1px dashed #E8C3B8;display:flex;gap:9px;align-items:flex-start;">
+                <span style="flex:0 0 auto;font-size:11.5px;font-weight:600;color:#0E6E66;padding-top:3px;">تعاد</span>
+                <p style="margin:0;font-size:14.5px;line-height:2;color:#0E6E66;">{{ b.good }}</p>
+              </div>
+              <div dir="ltr" style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8F7218;">{{ b.where }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="background:#F0F5F1;border:1px solid #CBDCD0;border-radius:12px;padding:18px 20px;">
+        <div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#2F6B3A;">KEEP</span><b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#2F6B3A;">فاصل بين العربية والإنجليزية</b></div>
+        <p style="margin:11px 0 0;font-size:15px;line-height:2;color:#1E3B36;">مثل «مطفأ — يقبل Matte — accepted» في الذراع المدنية. هذه شرطة ترقيم تفصل بين لغتين، لا إيقاع منقول. وأغلب الست والأربعين في تلك الصفحة من هذا الوجه. يستحسن توحيدها على النقطة الوسطى «·» المستعملة في باقي الموقع، ولا يعد استعمالها خللا في السجل.</p>
+      </div>
+    </div>
+
+    <h3 style="margin:30px 0 12px;font-family:'Alexandria',sans-serif;font-weight:600;font-size:20px;color:#03201D;">المسألة الثانية: قاعدة التشكيل في اللوائح أوسع من اللازم</h3>
+    <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-inline-start:4px solid #8F7218;border-radius:12px;padding:20px 22px;">
+      <p style="margin:0;font-size:15.5px;line-height:2.05;color:#1E3B36;">تنص اللوائح على «لا تشكيل في أي موضع»، ثم تضرب مثلا بـ«قُبل الطلب» وفيه ضمة. فالقاعدة تخالف مثالها في الوثيقة نفسها. والموقع لا يعمل بها، وأحسن في ذلك: يكتب «أولا» و«داخليا» و«مسببا» و«كاملا» و«يوما» بتنوين النصب، وهو رسم واجب لا زينة. ولو حذف لالتبس «مسببا» بـ«مسبب».</p>
+      <p style="margin:14px 0 0;font-size:15.5px;line-height:2.05;color:#1E3B36;">وبقي موضعان يشكلان بلا حاجة ولا نظير لهما في الموقع: «بندُه» في صفحة فريق كيان، و«غيّر» في صفحة الرحلة.</p>
+      <div style="margin-top:16px;padding-top:14px;border-top:1px solid #E0D6BD;">
+        <div style="display:flex;gap:9px;align-items:flex-start;">
+          <span style="flex:0 0 auto;font-size:12px;font-weight:600;color:#0E6E66;padding-top:3px;">العلاج</span>
+          <p style="margin:0;font-size:14.5px;line-height:1.95;color:#0E6E66;">تعدل القاعدة في اللوائح إلى: «لا تشكيل إلا لرفع اللبس، ويستثنى تنوين النصب وشدة تفرق بين لفظين». ويحذف الموضعان الباقيان أو يعمم نظيرهما.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin:30px 0 12px;font-family:'Alexandria',sans-serif;font-weight:600;font-size:20px;color:#03201D;">الإنجليزية: سجل ثان، ويقوم بواجبه</h3>
+    <p style="margin:0;font-size:15.5px;line-height:2;max-width:78ch;color:#1E3B36;">تحسن الإنجليزية حيث وجدت: أصغر حجما وأخف وزنا، وتعيد المعنى ولا تتقدم عليه، كما تشترط اللوائح. «Where a verified graduate gets paid the work of a lifetime» تعيد العربية ولا تترجمها حرفا. ومسألتها ليست في صياغتها بل في انقطاعها، وهي مقيدة في الملاحظة الأولى.</p>
+  </section>
+
+  <section style="padding:clamp(30px,5vw,54px) 0;border-bottom:1px solid #E0D6BD;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#8F7218;">07 · MOTION</div>
+    <h2 style="margin:12px 0 10px;font-family:'Alexandria',sans-serif;font-weight:400;font-size:clamp(26px,3.8vw,40px);color:#03201D;">الحركة</h2>
+    <p style="margin:0 0 24px;font-size:15.5px;line-height:2;max-width:78ch;color:#1E3B36;">الحركة أصح ما في الموقع، وتحتاج عناية أقل من البنية. فحصت ثلاثة وثلاثين ملفا: لا منحنى «داخل» على انتقال، ولا تصغير من صفر، ولا مدة تتجاوز ميزانية الواجهة. وملاحظتها واحدة، وهي في الحوكمة لا في الإحساس.</p>
+    <div style="background:#03201D;border-radius:14px;padding:24px 26px;margin-bottom:22px;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#E9C96B;">SPEC SAYS THREE CURVES · CODE USES SIXTEEN</div>
+      <p style="margin:13px 0 16px;font-size:15px;line-height:2;color:#F4EEDD;">يحدد دليل الحركة في المشروع ثلاثة منحنيات لا غير. والمستعمل في الشيفرة ستة عشر، وأكثرها شيوعا ليس واحدا من الثلاثة. فصفحة الدليل تصف اليوم ما لا يفعله الموقع، وهذا في مشروع شعاره أن السجل لا ينسى، خلل في السجل نفسه.</p>
+      <div style="display:grid;gap:9px;">
+        <sc-for list="{{ curves }}" as="c" hint-placeholder-count="4">
+          <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding:11px 14px;background:rgba(244,238,221,.07);border:1px solid rgba(233,201,107,.22);border-radius:9px;">
+            <span dir="ltr" style="flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#E9C96B;">{{ c.v }}</span>
+            <span style="font-size:13.5px;color:#F4EEDD;">{{ c.note }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <h3 style="margin:0 0 12px;font-family:'Alexandria',sans-serif;font-weight:600;font-size:20px;color:#03201D;">مواضع تستحق حركة ولا حركة فيها</h3>
+    <div style="display:grid;gap:12px;">
+      <sc-for list="{{ opps }}" as="o" hint-placeholder-count="3">
+        <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-inline-start:4px solid #0E6E66;border-radius:12px;padding:17px 19px;">
+          <div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap;">
+            <b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#03201D;">{{ o.t }}</b>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;background:#DDEAE6;color:#0E6E66;border-radius:5px;padding:2px 8px;">{{ o.freq }}</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#5A6B66;">{{ o.purpose }}</span>
+          </div>
+          <p style="margin:9px 0 0;font-size:14.5px;line-height:1.95;color:#1E3B36;">{{ o.body }}</p>
+          <p dir="ltr" style="margin:10px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.85;color:#0E6E66;background:#fff;border:1px solid #CBDCD0;border-radius:8px;padding:10px 12px;">{{ o.rec }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <h3 style="margin:26px 0 12px;font-family:'Alexandria',sans-serif;font-weight:600;font-size:20px;color:#03201D;">مواضع ردت عن الحركة قصدا</h3>
+    <div style="display:grid;gap:9px;">
+      <sc-for list="{{ noAnim }}" as="x" hint-placeholder-count="4">
+        <div style="display:flex;gap:11px;align-items:flex-start;background:#fff;border:1px solid #E3D9C2;border-radius:10px;padding:13px 15px;">
+          <span dir="ltr" style="flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#A3341F;padding-top:2px;">NO</span>
+          <p style="margin:0;font-size:14.5px;line-height:1.95;color:#1E3B36;"><b style="font-weight:600;color:#03201D;">{{ x.t }}</b> {{ x.why }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <sc-if value="{{ showRejected }}" hint-placeholder-val="{{ true }}">
+    <section style="padding:clamp(30px,5vw,54px) 0;border-bottom:1px solid #E0D6BD;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#8F7218;">08 · REJECTED FINDINGS</div>
+      <h2 style="margin:12px 0 10px;font-family:'Alexandria',sans-serif;font-weight:400;font-size:clamp(26px,3.8vw,40px);color:#03201D;">ما رد من الملاحظات</h2>
+      <p style="margin:0 0 24px;font-size:15.5px;line-height:2;max-width:78ch;color:#1E3B36;">أظهر المسح الآلي هذه، ففحصت في مواضعها فبطلت. تقيد لأن المراجعة التي لا تنشر ما ردته لا يوثق بما أثبتته.</p>
+      <div style="display:grid;gap:10px;">
+        <sc-for list="{{ rejected }}" as="r" hint-placeholder-count="6">
+          <div style="background:#fff;border:1px solid #E3D9C2;border-radius:11px;padding:15px 17px;">
+            <div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;">
+              <span dir="ltr" style="flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5A6B66;background:#F0EDE3;border-radius:5px;padding:3px 8px;">REJECTED</span>
+              <b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#03201D;">{{ r.t }}</b>
+            </div>
+            <p style="margin:9px 0 0;font-size:14.5px;line-height:1.95;color:#1E3B36;">{{ r.why }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </sc-if>
+
+  <section style="padding:clamp(30px,5vw,54px) 0;border-bottom:1px solid #E0D6BD;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#8F7218;">09 · THE PROPOSED STRUCTURE</div>
+    <h2 style="margin:12px 0 10px;font-family:'Alexandria',sans-serif;font-weight:400;font-size:clamp(26px,3.8vw,40px);color:#03201D;">البنية المقترحة</h2>
+    <p style="margin:0 0 26px;font-size:15.5px;line-height:2;max-width:78ch;color:#1E3B36;">لا يقترح هدم ما بني. تجمع الصفحات القائمة تحت رأس واحد ثابت، وتضاف صفحة أم واحدة للعرض التجاري، ويوحد باب الدخول. خمسة مواضع في الرأس، لا أكثر، وترتب على ما يسأل عنه الزائر أولا.</p>
+    <div style="background:#03201D;border-radius:16px;padding:clamp(20px,3vw,30px);margin-bottom:20px;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#E9C96B;margin-bottom:16px;">ONE HEADER · EVERY PAGE</div>
+      <div style="display:grid;gap:10px;">
+        <sc-for list="{{ proposed }}" as="p" hint-placeholder-count="5">
+          <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 16px;background:rgba(244,238,221,.06);border:1px solid rgba(233,201,107,.2);border-radius:11px;">
+            <span dir="ltr" style="flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#E9C96B;padding-top:4px;">{{ p.i }}</span>
+            <div style="min-width:0;">
+              <div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;">
+                <b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#F4EEDD;">{{ p.ar }}</b>
+                <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:rgba(244,238,221,.6);">{{ p.en }}</span>
+              </div>
+              <p style="margin:7px 0 0;font-size:14.5px;line-height:1.95;color:rgba(244,238,221,.86);">{{ p.holds }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin:18px 0 0;padding-top:16px;border-top:1px solid rgba(233,201,107,.2);font-size:14.5px;line-height:1.95;color:rgba(244,238,221,.78);">وفي طرف الرأس اثنان لا يعدان من الخمسة: مبدل اللغة، وحال الحساب. يظهر «الدخول» لمن لا جلسة له، ويظهر اسم الجلسة ومدخل لوحتها لمن له جلسة. وتنقل مراسي الأقسام إلى شريط ثان تحت الرأس، ليعرف الزائر ما ينقله وما يزلقه.</p>
+    </div>
+    <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));">
+      <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:12px;padding:18px 20px;">
+        <b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#03201D;">صفحة أم للخطوط، جديدة</b>
+        <p style="margin:9px 0 0;font-size:14.5px;line-height:1.95;color:#1E3B36;">تجمع التسليم المدار، والرف الجاهز، والملتقى، والمصهر، والذراع المدنية في صفحة واحدة، ويشير كل خط إلى أخويه في ذيله. فيبلغ الزائر من خط إلى خط بلا رجوع إلى الدار.</p>
+      </div>
+      <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:12px;padding:18px 20px;">
+        <b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#03201D;">باب واحد للدخول</b>
+        <p style="margin:9px 0 0;font-size:14.5px;line-height:1.95;color:#1E3B36;">تختص صفحة الدخول بالحساب وحدها. وتصير البوابة موجها بعد الدخول لا بابا ثانيا، ويبقى «للعملاء» و«للكفاءات» للشرح، لكل منهما نداء واحد. فتنزل أبواب العميل من خمسة إلى اثنين.</p>
+      </div>
+      <div style="background:#FAF6EC;border:1px solid #E0D6BD;border-radius:12px;padding:18px 20px;">
+        <b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#03201D;">تصريح باللغة</b>
+        <p style="margin:9px 0 0;font-size:14.5px;line-height:1.95;color:#1E3B36;">يوحد المفتاح على «kyn-lang» في الموقع كله، ويدمج مفتاح الذراع المدنية فيه. وما لم يترجم بعد، يذكر في موضعه: سطر واحد يبين أن هذه الصفحة بالعربية، ويدل على أقرب صفحة بالإنجليزية. الصدق أنفع من الصمت.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(30px,5vw,54px) 0;">
+    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#8F7218;">10 · ORDER OF WORK</div>
+    <h2 style="margin:12px 0 10px;font-family:'Alexandria',sans-serif;font-weight:400;font-size:clamp(26px,3.8vw,40px);color:#03201D;">ترتيب العمل</h2>
+    <p style="margin:0 0 24px;font-size:15.5px;line-height:2;max-width:78ch;color:#1E3B36;">ترتب بما يحل أكثر الملاحظات بأقل عمل. الأولى وحدها تسقط ستا.</p>
+    <div style="display:grid;gap:10px;">
+      <sc-for list="{{ order }}" as="o" hint-placeholder-count="6">
+        <div style="display:flex;gap:16px;align-items:flex-start;background:#FAF6EC;border:1px solid #E0D6BD;border-radius:12px;padding:16px 18px;">
+          <span dir="ltr" style="flex:0 0 auto;width:30px;height:30px;border-radius:99px;background:#03201D;color:#E9C96B;display:grid;place-items:center;font-family:'IBM Plex Mono',monospace;font-size:12px;">{{ o.i }}</span>
+          <div style="min-width:0;">
+            <b style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#03201D;">{{ o.t }}</b>
+            <p style="margin:6px 0 0;font-size:14.5px;line-height:1.95;color:#1E3B36;">{{ o.body }}</p>
+            <span dir="ltr" style="display:inline-block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#8F7218;background:#fff;border:1px solid #E3D9C2;border-radius:5px;padding:3px 8px;">{{ o.closes }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <footer style="padding:34px 0 0;border-top:2px solid #03201D;display:flex;gap:16px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;">
+    <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16px;color:#03201D;">خلف كل نجاح، كيان</span>
+    <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#8F7218;">KYN-REV-01 · 53 FILES READ · 16 FINDINGS · 7 REJECTED</span>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showRejected&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Report&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const P = this.props;
+    const C = { toggle:'#2F6B3A', fork:'#2E7CBC', own:'#5B4A8E', ar:'#A3341F' };
+    const BG = { '#2F6B3A':'#EDF3EE', '#2E7CBC':'#EAF2FA', '#5B4A8E':'#EFECF6', '#A3341F':'#FBEDE9' };
+    const L = { toggle:'AR/EN · kyn-lang', fork:'EN = separate file', own:'k4y-lang', ar:'AR only' };
+    const node = (name, inn, out, kind, flag) => ({
+      name, io: inn + ' in / ' + out + ' out', c: C[kind], lbg: BG[C[kind]], lang: L[kind], flag: flag || ''
+    });
+
+    const tiers = [
+      { code:'TIER 0 · ENTRY', ar:'المدخل', en:'One page carries 23 inbound links', nodes:[
+        node('الدار Home', 23, 26, 'toggle')
+      ]},
+      { code:'TIER 1 · THE INSTITUTION', ar:'المؤسسة', en:'Governing texts and public record', nodes:[
+        node('الميثاق Charter', 5, 7, 'toggle'),
+        node('الرحلة Journey', 6, 5, 'ar', 'ليست في الرأس'),
+        node('فريق كيان People', 4, 7, 'ar'),
+        node('البيئة Planet', 4, 7, 'ar'),
+        node('الشروط Legal', 13, 3, 'ar', 'روابطها إنجليزية'),
+        node('السجل العام Record', 3, 0, 'ar', 'لا مخرج'),
+        node('الختم Seal', 2, 0, 'ar', 'لا مخرج')
+      ]},
+      { code:'TIER 2 · THE OFFER', ar:'العرض', en:'No parent page; the lines never cross-link', nodes:[
+        node('الخط الأول · التسليم المدار', 8, 12, 'fork'),
+        node('Line I · Managed Delivery EN', 6, 7, 'fork'),
+        node('الرف الجاهز Ready Products', 7, 3, 'toggle', 'لا رابط للدار'),
+        node('الخط الثاني · الملتقى', 6, 10, 'fork'),
+        node('Line II · The Hub EN', 6, 4, 'fork'),
+        node('الخط الثالث · المصهر', 7, 5, 'fork', 'شعارها لا يعيد للدار'),
+        node('Line III · The Forge EN', 4, 7, 'fork', 'شعارها لا يعيد للدار'),
+        node('خريطة الملتقى Hub map', 3, 1, 'ar', 'لا شعار'),
+        node('الذراع المدنية K4Y', 7, 4, 'own', 'موجه بمسار خاص')
+      ]},
+      { code:'TIER 3 · AUDIENCE', ar:'الجمهور', en:'Explanation pages, in-page anchors only', nodes:[
+        node('للعملاء For clients', 8, 16, 'toggle'),
+        node('للكفاءات For talent', 8, 17, 'toggle')
+      ]},
+      { code:'TIER 4 · ACCESS & WORK', ar:'الدخول والعمل', en:'Five surfaces where two would do', nodes:[
+        node('الدخول Access', 8, 6, 'toggle'),
+        node('البوابة Portal', 13, 10, 'ar'),
+        node('التسجيل Apply', 12, 9, 'toggle', '٢٦٥ فراغ قالب'),
+        node('لوحة العميل Client Space', 1, 5, 'ar', 'لا رأس'),
+        node('لوحة الكفاءة Talent Space', 2, 8, 'ar', 'لا رأس'),
+        node('غرفة الفريق Pod Room', 3, 2, 'ar', 'لا رابط للدار'),
+        node('تحرير النطاق Scoping form', 5, 1, 'ar', 'لا شعار'),
+        node('مثال صفحة عميل', 1, 4, 'ar'),
+        node('ملف المنفذ', 1, 4, 'ar')
+      ]},
+      { code:'TIER X · PARALLEL', ar:'تجربتان موازيتان', en:'Sit in the primary nav', nodes:[
+        node('الأطلس الحي Atlas', 2, 4, 'ar'),
+        node('الجولة المجسمة 3D', 1, 4, 'ar', 'في الرأس الأول')
+      ]},
+      { code:'UNREACHABLE', ar:'ما لا يبلغه رابط', en:'Zero inbound links, shipped in the handoff', nodes:[
+        node('لوحة الإدارة Admin', 0, 0, 'ar', 'لا مدخل ولا مخرج'),
+        node('Kayan Identity', 0, 2, 'ar'),
+        node('Kayan Master', 0, 0, 'ar'),
+        node('hub-map-en.html', 0, 0, 'ar'),
+        node('Internal Dossier (v1)', 0, 2, 'ar', 'نسخة ٢ هي الموصولة')
+      ]}
+    ];
+
+    const sev = { H:'#A3341F', M:'#8F7218', L:'#0E6E66' };
+    const F = (id, s, cat, t, body, ev, fix) => ({ id, sev: s==='H'?'HIGH':s==='M'?'MEDIUM':'LOW', c: sev[s], cat, t, body, ev, fix });
+
+    const findings = [
+      F('H1','H','I18N · TRUST','الإنجليزية تنقطع بعد نقلة واحدة، ولا ينبه الزائر',
+        'يعرض الموقع الإنجليزية كلغة ثانية، وهي قائمة على سبع صفحات من إحدى وثلاثين. وتدير الخطوط لغتها بملفات منفصلة لا تقرأ مفتاح اللغة، وتدير الذراع المدنية لغتها بمفتاح خاص. فمن اختار الإنجليزية في الدار، فقد اختياره عند أول نقلة، وسكت عن ذلك.',
+        'kyn-lang: Home, Charter, Apply, for Clients, for Talent, Ready Products, Access (7). Separate EN files: Line I/II/III. k4y-lang: Civic Wing. No EN: Journey, Portal, Legal, People, Planet, Record, Seal, Spaces, Pod Room, Hub, Scoping form, Admin (17).',
+        'يوحد المفتاح، وتترجم ست صفحات عامة أولا: الرحلة، والبوابة، والشروط، والسجل، وفريق كيان، والبيئة. وما بقي بالعربية، يصرح به سطر في موضعه.'),
+      F('H2','H','NAVIGATION','لا يوجد عنصر واحد يظهر في كل صفحات الموقع',
+        'كل صفحة تبتكر رأسها. ثلاثة عشر رأسا مختلفا، وست صفحات بلا رأس أصلا. فلا يتعلم الزائر الموقع، إذ يتغير المرجع تحت يده في كل نقلة. هذه أثقل ملاحظة في التقرير، وتحت إصلاحها تسقط ملاحظات أخرى.',
+        'Home 6 items · Charter 5 · Journey 5 · Portal 4 · Legal 6 · People 8 · Planet 6 · Line I 9 · Line II 7 · Line III 8 · Atlas 5 · Access 3 · Apply 3. No header element: Client Space, Talent Space, Record, Seal, Hub map, Scoping form, Admin.',
+        'رأس واحد وذيل واحد على كل صفحة: الشعار يعيد للدار، وخمسة مواضع ثابتة، ومبدل اللغة، وحال الحساب.'),
+      F('H3','H','NAVIGATION','الرأس يخلط المراسي بالوجهات، ولا فرق بينهما في الشكل',
+        'في الدار «الخطوط» و«الأبواب» يزلقان الصفحة، و«الميثاق» و«فريق كيان» و«البيئة» ينقلان منها، وهيئتها واحدة. وفي صفحات الجمهور والخطوط يصير الرأس كله مراسي داخلية. فالموضع نفسه في الشريط يعني الزلق هنا والنقل هناك.',
+        'Home: #lines, #doors scroll; Charter, People, Planet, Dimension navigate. for Clients / for Talent / Line I / II / III: header is anchors only.',
+        'يفصل الشريطان: رأس للوجهات، وشريط ثان تحته لمراسي الصفحة. ويكفي في التمييز سهم على الناقل، وهو مستعمل في الموقع أصلا.'),
+      F('H4','H','WAYFINDING','أربعة أبواب متنافسة لجمهورين، ولا يبين فرقها عند الاختيار',
+        'يعرض على العميل خمسة أسطح: «للعملاء»، والبوابة، والدخول، ومرساة الأبواب، وتحرير النطاق. وعلى الكفاءة خمسة كذلك. ووثيقة التسليم تقر بالمبدأ: مفتاح واحد ووثيقة واحدة. لكن الملاحة لا تزال تعرضها أندادا بلا شرح.',
+        'Home offers: «دخول البوابة», «الدخول والتسجيل», «بوابة كيان · التقديم والمتابعة», «افتح باب العملاء», «للعملاء» — five labels, three destinations, no stated difference. HANDOFF.md: "one key, one document (no duplicate forms)".',
+        'باب واحد لكل جمهور في الدار. الدخول للحساب وحده، والبوابة موجه بعد الدخول، وصفحتا الجمهور للشرح بنداء واحد لكل منهما.'),
+      F('H5','H','DEAD END','صفحتان عامتان تبلغان من الدار ولا يخرج منهما رابط',
+        'السجل العام والختم يبلغان من ذيل الدار، وليس فيهما رأس ولا شعار ولا رابط صادر واحد. فمن دخلهما لم يجد إلا زر الرجوع في المتصفح. ومثلهما خريطة الملتقى وتحرير النطاق، بلا شعار وبرابط واحد.',
+        'Record: 3 in / 0 out, no brand mark. Seal: 2 in / 0 out, no brand mark. Hub map: 3 in / 1 out. Scoping form: 5 in / 1 out. Admin: 0 in / 0 out.',
+        'يحل بالرأس والذيل الموحدين في «H2». ولوحة الإدارة تخرج من حزمة النشر العامة، أو توصل بباب مصرح به.'),
+      F('H6','H','ARCHITECTURE','العرض التجاري بلا صفحة أم، والخطوط لا يشير بعضها إلى بعض',
+        '«الخطوط» مرساة في الدار لا صفحة. والخطوط الثلاثة والرف الجاهز والذراع المدنية خمسة أبواب لا يجمعها موضع. وفحص روابط الخطوط بين بعضها فلم يوجد منها واحد. فمن قرأ التسليم المدار لا يبلغ المصهر إلا بالعودة إلى الدار، والبيع المتقاطع ممتنع بنية الموقع لا بنصه.',
+        'Line I out: Home, Portal, EN, Ready Products, for Clients, for Talent. Line II out: Home, EN, Hub map. Line III out: anchors, EN. No Line→Line link exists.',
+        'تنشأ صفحة «الخطوط» أما، ويوضع في ذيل كل خط إشارة إلى أخويه.'),
+      F('M1','M','CONSISTENCY','الوجهة الواحدة تسمى بعشرين اسما',
+        'يسمى باب التسجيل بعشرين اسما في الموقع، والبوابة بخمسة عشر، والشروط بتسعة عشر، والميثاق باثني عشر. والتنويع في نص الجسم بلاغة، أما في التسمية فيمنع الزائر من أن يعرف أنه رأى هذا الباب قبلا.',
+        'Apply: 20 distinct link labels. Portal: 15. Legal: 19. Charter: 12. Home: 5 («الدار», «الرئيسية», «الرئيسة», «كيان», «النسخة الكلاسيكية»).',
+        'اسم واحد لكل وجهة يثبت في كل رأس وذيل، ويترك التنويع لنص الجسم. وينظر جدول الأسماء المقترحة في القسم الخامس.'),
+      F('M2','M','BUILD · A11Y','أسماء الملاحة ووجهاتها تأتي من فراغات القالب',
+        'في الدار نداء رئيس اسمه ووجهته فراغان. وفي الميثاق الرأس كله فراغات. وفي الرف الجاهز الرأس والنداء كذلك. فلا اسم للرابط ولا وجهة له حتى يتم البث. وفي صفحة التسجيل مئتان وخمسة وستون فراغا مرقما آليا، فلا يقرأ نصها في المصدر، وهو يمنع مراجعة النص أصلا.',
+        'Home: {{ portalCta }} → {{ portalHref }}, {{ cur.href }}, {{ cur.altHref }}. Charter header: {{ tPage }}, {{ tLines }}, {{ tJourney }}, {{ tApply }}, {{ tPortal }}. Ready Products: {{ tCta }} → {{ hrefStart }}. Apply: 265 holes named x0…x220.',
+        'تكتب أسماء الملاحة ووجهاتها نصا ثابتا في القالب. ويسمى ما بقي من الفراغات بأسماء دالة لا مرقمة، ليقرأ النص ويراجع.'),
+      F('M3','M','A11Y','رابط الشعار بلا اسم مقروء في اثنتي عشرة صفحة',
+        'يلف الشعار برابط إلى الدار، ولا نص فيه ولا بديل ولا وصف. فلا يسمع قارئ الشاشة إلا اسم الملف. ومثله رابط العودة إلى أعلى في الدار.',
+        'Empty anchor, no aria-label/title, wrapping the mark → Kayan Home.dc.html on: Journey, for Talent, for Clients, Line II (AR+EN), Atlas, Dimension, Access, People, Planet, Legal. Home: empty anchor → #top.',
+        'يوضع aria-label على كل رابط شعار، ونص مخفي بصريا أو وصف على الصورة.'),
+      F('M4','M','NAVIGATION','شعار المصهر لا يعيد إلى الدار',
+        'الشعار في رأس الصفحة هو الأداة العامة للعودة إلى الدار، ويعمل بها الموقع في كل صفحاته. وفي المصهر بنسختيه يزلق الشعار إلى أعلى الصفحة نفسها. فتنكسر أداة تعلمها الزائر في غيرها.',
+        'Line III - The Forge: «مصنع كيان» → #top. Line III EN: «Kayan Forge» → #top. Every other page: mark → Kayan Home.dc.html.',
+        'يوجه الشعار إلى الدار في النسختين.'),
+      F('M5','M','MOTION · GOVERNANCE','دليل الحركة يحدد ثلاثة منحنيات، والشيفرة تستعمل ستة عشر',
+        'ينص الدليل على ثلاثة منحنيات لا غير. والمستعمل ستة عشر، وأكثرها شيوعا وهو على ثمان وعشرين صفحة ليس واحدا من الثلاثة. وأربعة منها لا تفرق إلا في عشر الوثبة. فصفحة الدليل تصف ما لا يفعله الموقع.',
+        'Spec (Kayan Handoff.md:143, Kayan Materials.dc.html:303-305): settle .16,1,.3,1/400ms · micro .2,0,.2,1/140ms · exit .4,0,1,1/220ms. Code: 16 curves; most used .23,1,.32,1 on 28 pages, undocumented. Bounce family: .34,1.2,.4,1 / .34,1.3,.4,1 / .34,1.35,.4,1 / .34,1.4,.4,1.',
+        'إما أن يعتمد المنحنى الشائع في الدليل ويعد رابعا، أو يرد إلى الثلاثة. وتوحد الوثبات الأربع في واحدة. والمهم أن يطابق الدليل الشيفرة.'),
+      F('M6','M','MOTION · A11Y','صفحتان لا تحترمان تعطيل الحركة',
+        'يحترم إحدى وثلاثون صفحة من ثلاث وثلاثين تعطيل الحركة في نظام المستعمل، وتشذ صفحتان. وفي الشروط حركة تعمل مع ذلك.',
+        'No prefers-reduced-motion query: Kayan Legal.dc.html, Kayan Toolkit - Scoping Form.dc.html. (Also the two unreachable files Identity, Master.)',
+        'تنسخ كتلة التعطيل المستعملة في باقي الموقع إلى الصفحتين.'),
+      F('M7','M','ARCHITECTURE','الذراع المدنية تشتغل بمنظومة ملاحة أخرى',
+        'تدير الذراع المدنية ملاحتها بمسار في عنوان الصفحة، وقائمتها ثمانية عشر موضعا في مستوى واحد، ومفتاح لغتها خاص بها. فتقرأ منتجا ثانيا لا جناحا في الموقع. وقد يكون هذا مقصودا، لكنه غير مصرح به للزائر.',
+        'Civic Wing: hash router #/k4y, #/campaigns … 18 flat menu items, storage key k4y-lang (separate from kyn-lang).',
+        'إن كانت الفصلة مقصودة، تعلن بحد ظاهر عند الدخول والخروج. وإن لم تكن، يوحد المفتاح وتجمع الثمانية عشر في مجموعات.'),
+      F('L1','L','COPY · REGISTER','الشرطة المعترضة في النص العربي على النسق الإنجليزي',
+        'تمنع اللوائح إيقاع الشرطة المنقول من الإنجليزية، وهو قائم في مواضع، أبينها جملة معترضة بين شرطتين. ويفرق بينه وبين الشرطة الفاصلة بين العربية والإنجليزية، فتلك ترقيم لا إيقاع. التفصيل والبدائل في القسم السادس.',
+        'Rewrite: «وما بين التوقيعين — الفريق، والجودة، والمخاطر — عهدة كيان وحدها» (Line I) · «نموذج كيان — تحقق فعمل مضمون فدخل يصل أهله — يخدم» (Planet) · «وما دونه — على اليسار — لا يعتد به» (Seal). Keep: «مطفأ — يقبل Matte — accepted» (Civic Wing, AR/EN separator).',
+        'تعاد الجمل المعترضة بفاصلة أو نقطتين أو بتفكيك الجملة. وتوحد الفواصل بين اللغتين على النقطة الوسطى.'),
+      F('L2','L','COPY · GOVERNANCE','قاعدة التشكيل في اللوائح تخالف مثالها، والموقع يخالفها محسنا',
+        'تنص اللوائح على منع التشكيل في أي موضع، ثم تمثل بـ«قُبل الطلب» وفيه ضمة. والموقع يكتب تنوين النصب في «أولا» و«مسببا» و«كاملا»، وهو رسم واجب لا زينة، ولو حذف لالتبس اللفظ. فالقاعدة أوسع من مرادها. وبقي موضعان يشكلان بلا حاجة.',
+        'Rule (CLAUDE.md): "No تشكيل anywhere" vs its own example «قُبل الطلب». Required tanween in use: أولًا، داخليًا، أسبوعًا، مسببًا، كاملًا، أثرًا، عجزًا، تلقائيًا، يومًا، معًا. Unneeded: «بندُه» (People), «غيّر» (Journey).',
+        'تعدل القاعدة إلى منع التشكيل إلا لرفع اللبس، ويستثنى تنوين النصب وشدة تفرق بين لفظين. ويسوى الموضعان الباقيان.'),
+      F('L3','L','MOTION · PERF','انتقال على «كل الخصائص» في عناصر تلمس كثيرا',
+        'يستعمل «transition: all» في أشرطة اللوحات، وتبويبات غرفة الفريق، وقائمة تحققها، وتبويبات الدخول، وأزرار أبواب فريق كيان، ورقاقات الطبقات. فيحرك المتصفح كل خصية محسوبة، وفيها ما يمس التخطيط، وهذه عناصر تلمس عشرات المرات في الجلسة.',
+        'transition: all on: Space - Client:56, Space - Talent:59/81/273, Pod Room:97/186, Access:84/85/89/90, People:284, for Talent:933/964, Admin:75/82/89.',
+        'تسمى الخصائص المرادة: transform, opacity, background-color, border-color, box-shadow. ولا يترك الأمر لـ«all».')
+    ];
+
+    const paths = [
+      { from:'Home (EN)', label:'How work is run', to:'Journey — AR only', note:'صفحة شرح الأعمال كلها، وهي أهم ما يقرؤه المشتري، لا إنجليزية فيها.' },
+      { from:'Home (EN)', label:'Portal sign-in', to:'Portal — AR only', note:'باب التقديم والمتابعة. يبلغه من اختار الإنجليزية فلا يجد فيها حرفا.' },
+      { from:'Home (EN)', label:'Terms & conditions', to:'Legal — AR only', note:'مواد يحتكم إليها، دل عليها بالإنجليزية وعرضت بالعربية وحدها.' },
+      { from:'Home (EN)', label:'Public record', to:'Record — AR only, 0 out', note:'عربية فقط، وبلا مخرج. فيجتمع على الزائر انقطاع اللغة وانقطاع الطريق.' },
+      { from:'Home (EN)', label:'Line I · Managed Delivery', to:'EN file, no kyn-lang', note:'تفتح النسخة الإنجليزية، ولا تقرأ المفتاح. فإن انتقل منها إلى البوابة عاد إلى العربية.' },
+      { from:'Home (EN)', label:'Civic Wing · Kayan for Yemen', to:'k4y-lang, own key', note:'لها مبدلها الخاص. فيبدل الزائر لغته مرتين في موقع واحد.' }
+    ];
+
+    const drift = [
+      { file:'Kayan Apply.dc.html', n:'٢٠', canon:'التسجيل', canonEn:'Register', names:['سجل حضورك','افتح ملفك','التسجيل','محطة التسجيل','التسجيل الجديد','افتح نموذج التسجيل','التقديم للدفعة القادمة','سجل فريقك','تحديث الملف من محطاته','جديد؟ سجل ككفاءة','تسجيل فريق جاهز','افتح ملفك — التسجيل الكامل'] },
+      { file:'Kayan Portal.dc.html', n:'١٥', canon:'البوابة', canonEn:'The Portal', names:['دخول البوابة','بوابة كيان · التقديم والمتابعة','البوابة','دخول','لي ملف — دخول البوابة','ادخل بوابتك','بوابة كيان','من البوابة'] },
+      { file:'Kayan Legal.dc.html', n:'١٩', canon:'الشروط والخصوصية', canonEn:'Terms & privacy', names:['الشروط والأحكام','سياسة الخصوصية','حماية البيانات','الشروط والخصوصية','الخصوصية','سياسة التشغيل','الشروط النافذة','الأحكام'] },
+      { file:'Kayan Charter.dc.html', n:'١٢', canon:'الميثاق', canonEn:'The Charter', names:['الميثاق','اقرأ الميثاق كاملا','المواد الأربع','عن كيان','اقرأ الميثاق أولا'] },
+      { file:'Kayan Home.dc.html', n:'٥', canon:'الدار', canonEn:'Home', names:['الدار','الرئيسية','الرئيسة','كيان','النسخة الكلاسيكية','الموقع الأم'] },
+      { file:'Kayan Apply / for Talent', n:'٦', canon:'للكفاءات', canonEn:'For talent', names:['للكفاءات','إن كنت منفذا','بوابة المنفذين','كفاءة تنفذ لا عميل؟','إن كنت كفاءة'] }
+    ];
+
+    const regScore = [
+      { rule:'علامات التعجب', n:'0 / clean', note:'ظهر تسعة عشر موضعا في المسح الآلي، وكلها «!important» في التنسيق أو نفي في الشيفرة. ولا واحدة في نص عربي.', bg:'#EDF3EE', bd:'#CBDCD0', fg:'#2F6B3A' },
+      { rule:'«تم + مصدر»', n:'0 / clean', note:'كل ما ظهر من «الختم» و«أتم» و«ختم هذا». ولا موضع واحد من الصيغة الممنوعة في الموقع كله.', bg:'#EDF3EE', bd:'#CBDCD0', fg:'#2F6B3A' },
+      { rule:'«قم بـ» و«من خلال» و«سوف»', n:'0 / clean', note:'لا شيء منها. والفعل يتقدم، والبناء للمجهول مستعمل في موضعه: تودع، يصرف، تراجع، لا يجوز.', bg:'#EDF3EE', bd:'#CBDCD0', fg:'#2F6B3A' },
+      { rule:'المصطلح الصناعي', n:'strong', note:'حساب الضمان، محضر الاستلام، أمر تغيير، نطاق العمل، المستحق، جهة تزكية، قرار مسبب، لجنة الالتزام. مستعملة في مواضعها لا مقحمة.', bg:'#EDF3EE', bd:'#CBDCD0', fg:'#2F6B3A' },
+      { rule:'الشرطة المعترضة', n:'needs work', note:'قائمة في مواضع على النسق الإنجليزي. ينظر التفصيل أدناه.', bg:'#FBEDE9', bd:'#E8C3B8', fg:'#A3341F' },
+      { rule:'التشكيل', n:'rule is wrong', note:'الموقع أصوب من القاعدة. والقاعدة تحتاج تعديلا، لا الموقع.', bg:'#FDF6E3', bd:'#E8DCB8', fg:'#8F7218' }
+    ];
+
+    const dashBad = [
+      { bad:'«وما بين التوقيعين — الفريق، والجودة، والمخاطر — عهدة كيان وحدها»', good:'«وما بين التوقيعين فالفريق والجودة والمخاطر عهدة كيان وحدها»', where:'Line I - Managed Delivery.dc.html' },
+      { bad:'«نموذج كيان — تحقق فعمل مضمون فدخل يصل أهله — يخدم بطبيعته أهداف التنمية»', good:'«يخدم نموذج كيان أهداف التنمية بطبيعته: تحقق، فعمل مضمون، فدخل يصل أهله»', where:'Kayan Planet.dc.html' },
+      { bad:'«وما دونه — على اليسار — لا يعتد به ولا يطبع»', good:'«وما دونه، وهو ما على اليسار، لا يعتد به ولا يطبع»', where:'Kayan Seal.dc.html' },
+      { bad:'«الرحلة — من أول رسالة إلى محضر الاستلام»', good:'«الرحلة: من أول رسالة إلى محضر الاستلام»', where:'Kayan Journey.dc.html' }
+    ];
+
+    const curves = [
+      { v:'cubic-bezier(.23,1,.32,1) — 28 pages', note:'الأكثر استعمالا في الموقع، وليس في الدليل.' },
+      { v:'cubic-bezier(.16,1,.3,1) — 10 pages', note:'«settle» في الدليل، ومستعمل في ثلث الصفحات.' },
+      { v:'cubic-bezier(.2,0,.2,1) — 10 pages', note:'«micro» في الدليل.' },
+      { v:'cubic-bezier(.4,0,1,1) — 4 files', note:'«exit» في الدليل. تسارعه صحيح للمغادرة، ولا يعد خللا.' },
+      { v:'.34,1.2,.4,1 · .34,1.3,.4,1 · .34,1.35,.4,1 · .34,1.4,.4,1', note:'أربع وثبات لا تفرق إلا في عشر، وتوحد في واحدة.' },
+      { v:'+ 8 more, 1–6 pages each', note:'انحراف بغير قصد، لا اختيار.' }
+    ];
+
+    const opps = [
+      { t:'صرف المستحق عند التوقيع على محضر الاستلام', freq:'RARE', purpose:'FEEDBACK · STATE', body:'أهم لحظة في المنتج كله: يوقع صاحب الصفة فيصرف المال من حساب الضمان. وهي اليوم قفزة في الأرقام بلا وسيط. وأثرها أن يرى العميل المال يتحرك، وهو جوهر ما وعد به.', rec:'held amount: number transition 400ms cubic-bezier(.16,1,.3,1) — the documented settle. New ledger row: @starting-style opacity 0 / translateY(6px) → settled, 400ms settle. One row, no stagger.' },
+      { t:'تبديل اللغة', freq:'RARE', purpose:'PREVENT JARRING CHANGE', body:'يستبدل نص الصفحة كله في لحظة واحدة. والتبديل مرة في الزيارة، فلا يثقل. وغيابه يجعل الصفحة تنتفض.', rec:'Content wrapper: opacity 1 → .55 → 1, 120ms cubic-bezier(.2,0,.2,1) — the documented micro curve. Under the 160ms press budget; no transform, no layout.' },
+      { t:'الارتقاء في سلم الثقة', freq:'RARE', purpose:'STATE INDICATION', body:'ترقية الكفاءة درجة في السلم حدث نادر عالي الأثر، وهو اليوم تغير ساكن في رقاقة. وهذا موضع ميزانية البهجة في الموقع، وهي غير مستعملة.', rec:'Tier node: scale .97 → 1 + opacity, 400ms settle, transform-origin at the node. Optional single bounce via the consolidated overshoot curve. Never on load, only on the change itself.' }
+    ];
+
+    const noAnim = [
+      { t:'شريط لوحتي العميل والكفاءة (ثمانية مواضع).', why:'ملاحة أولى تلمس في كل جلسة عشرات المرات. الحركة فيها تبطئ الإحساس. ترد.' },
+      { t:'محطات التسجيل الأربع عشرة.', why:'تنقل بينها كثيرا في الجلسة الواحدة. الأولى بها أن تسرع لا أن تتحرك. ترد.' },
+      { t:'عداد الأثر البيئي في صفحة البيئة.', why:'رقم يقرأ ويحتكم إليه، لا يحتفل به. تحريكه يعوق قراءته. يرد قصدا.' },
+      { t:'السجل العام والختم.', why:'صفحتا قيد وحجية. الحركة على سجل تنقص من هيبته. يرد قصدا.' },
+      { t:'قوس التسليم في الأطلس وحد الليل والنهار.', why:'متحرك أصلا، وهو مادة الصفحة لا زينتها. ليس موضع إضافة.' }
+    ];
+
+    const proposed = [
+      { i:'01', ar:'الخطوط', en:'The lines', holds:'صفحة أم جديدة تجمع التسليم المدار، والرف الجاهز، والملتقى، والمصهر، والذراع المدنية.' },
+      { i:'02', ar:'كيف يدار العمل', en:'How work is run', holds:'صفحة الرحلة. تنقل من الذيل إلى الرأس، فهي أول ما يسأل عنه المشتري.' },
+      { i:'03', ar:'الميثاق', en:'The Charter', holds:'النص الحاكم والمواد الأربع، والمهمة والرؤية.' },
+      { i:'04', ar:'المؤسسة', en:'The institution', holds:'تجمع فريق كيان، والبيئة، والسجل العام، والختم، والشروط. خمس صفحات تتزاحم اليوم في الذيل.' },
+      { i:'05', ar:'الأطلس والجولة', en:'Atlas & the 3D voyage', holds:'التجربتان الموازيتان. تنقلان من الرأس الأول إلى موضع واحد، فلا تزاحمان الميثاق في الأولوية.' }
+    ];
+
+    const order = [
+      { i:'١', t:'رأس واحد وذيل واحد على كل صفحة', body:'يبنى مرة ويوضع في إحدى وثلاثين صفحة. يحمل الشعار عائدا إلى الدار، وخمسة مواضع ثابتة، ومبدل اللغة، وحال الحساب.', closes:'CLOSES H2 · H3 · H5 · M3 · M4 · part of H1' },
+      { i:'٢', t:'باب واحد لكل جمهور', body:'تختص صفحة الدخول بالحساب، وتصير البوابة موجها بعده. وينزل نداء الدار إلى اثنين: اطلب نطاقا، وسجل حضورك.', closes:'CLOSES H4' },
+      { i:'٣', t:'تصريح باللغة وتوحيد مفتاحها', body:'يوحد المفتاح، ويكتب في كل صفحة غير مترجمة سطر يبين لغتها ويدل على أقرب بديل. ثم تترجم الرحلة والبوابة والشروط.', closes:'CLOSES H1 · M7' },
+      { i:'٤', t:'صفحة أم للخطوط، وربطها ببعضها', body:'صفحة واحدة جديدة، وثلاث إشارات في ذيول الخطوط. أقل عمل في القائمة وأعلى أثر تجاري.', closes:'CLOSES H6' },
+      { i:'٥', t:'جدول أسماء واحد', body:'اسم واحد لكل وجهة يثبت في الرأس والذيل. ويصحح «الرئيسة» إلى «الرئيسية».', closes:'CLOSES M1' },
+      { i:'٦', t:'إخراج نص الملاحة من فراغات القالب', body:'تكتب أسماء الروابط ووجهاتها نصا ثابتا. وتسمى فراغات صفحة التسجيل بأسماء دالة، ليقرأ نصها ويراجع.', closes:'CLOSES M2' },
+      { i:'٧', t:'مطابقة دليل الحركة للشيفرة', body:'يعتمد المنحنى الشائع أو يرد إلى الثلاثة، وتوحد الوثبات الأربع، وتنسخ كتلة تعطيل الحركة إلى الصفحتين الشاذتين.', closes:'CLOSES M5 · M6 · L3' },
+      { i:'٨', t:'مرور تحريري على الشرطة والتشكيل', body:'تعاد الجمل المعترضة، وتوحد الفواصل بين اللغتين، وتعدل قاعدة التشكيل في اللوائح.', closes:'CLOSES L1 · L2' }
+    ];
+
+    return {
+      tiers, findings, paths, drift, regScore, dashBad, curves, opps, noAnim, proposed, order,
+      showRejected: P.showRejected ?? true,
+      rejected: [
+        { t:'علامات تعجب في النص العربي', why:'ظهر تسعة عشر موضعا في الدار وعشرون في التسجيل. فحصت فكانت «!important» في التنسيق ونفيا في الشيفرة. ولا علامة تعجب واحدة في نص عربي في الموقع.' },
+        { t:'«تم + مصدر» في الرحلة والختم وفريق كيان', why:'ظهرت خمسة وعشرون موضعا. فحصت فكانت من «الختم» و«أتم البرنامج» و«ختم هذا»، والحروف اتفقت لا الصيغة. ولا موضع واحد من الصيغة الممنوعة.' },
+        { t:'روابط المنتجات المكسورة من الخط الأول', why:'يشير الخط الأول إلى ستة منتجات بمراس RP-001 وما بعدها، ولا وجود لها في مصدر صفحة الرف. لكن الصفحة تقرأ المرساة عند التحميل وتفتح المنتج المطابق. فالروابط تعمل، والملاحظة باطلة.' },
+        { t:'منحنى «cubic-bezier(.4,0,1,1)» يبدو منحنى دخول', why:'وهو منحنى المغادرة المنصوص عليه في دليل الحركة. وتسارعه في الخروج صحيح، ولا يعد خللا.' },
+        { t:'منحنى «ease-in» على الانتقالات، والتصغير من صفر', why:'بحث في ثلاثة وثلاثين ملفا فلم يوجد منهما موضع واحد. وهما أشيع خللين في حركة الواجهات.' },
+        { t:'روابط ملفية مكسورة', why:'استخرجت روابط ثلاثة وخمسين ملفا وقيست على الملفات الموجودة. لا رابط مكسورا واحدا، ولا مرساة داخلية بلا معرف.' },
+        { t:'ضعف الإنجليزية في صياغتها', why:'قرئت فوجدت سجلا ثانيا صحيحا: أصغر حجما، وتعيد المعنى ولا تتقدم عليه. مسألتها في انقطاعها لا في صياغتها، وهي مقيدة في «H1».' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

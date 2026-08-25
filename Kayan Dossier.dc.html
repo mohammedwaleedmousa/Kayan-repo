@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كيان · الملف المؤسسي · KYN-D-01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#FAF6EC;}
+body{-webkit-font-smoothing:antialiased;}
+::selection{background:#12B5A4;color:#052E2B;}
+a{color:#0E6E66;text-decoration:none;}a:hover{color:#12B5A4;}
+</style>
+</helmet>
+
+<div dir="rtl" style="position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:12px clamp(14px,4vw,26px);background:#052E2B;color:#FAF6EC;font-family:'IBM Plex Sans Arabic',sans-serif;">
+  <span style="display:flex;align-items:center;gap:12px;">
+    <img src="uploads/kayan_logo_gold.png" alt="كيان" style="height:20px;">
+    <span style="font-size:13.5px;">الملف المؤسسي — الشركة كاملة في وثيقة واحدة</span>
+  </span>
+  <span style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+    <a href="#d-charter" style="font-size:12.5px;color:#FAF6EC;background:rgba(250,246,236,.08);border:1px solid rgba(250,246,236,.2);border-radius:99px;padding:6px 12px;">٠١ الميثاق</a>
+    <a href="#d-econ" style="font-size:12.5px;color:#FAF6EC;background:rgba(250,246,236,.08);border:1px solid rgba(250,246,236,.2);border-radius:99px;padding:6px 12px;">٠٢ الاقتصاد</a>
+    <a href="#d-entities" style="font-size:12.5px;color:#FAF6EC;background:rgba(250,246,236,.08);border:1px solid rgba(250,246,236,.2);border-radius:99px;padding:6px 12px;">٠٣ السجل</a>
+    <a href="#d-verify" style="font-size:12.5px;color:#FAF6EC;background:rgba(250,246,236,.08);border:1px solid rgba(250,246,236,.2);border-radius:99px;padding:6px 12px;">٠٤ التحقق</a>
+    <a href="#d-launch" style="font-size:12.5px;color:#FAF6EC;background:rgba(250,246,236,.08);border:1px solid rgba(250,246,236,.2);border-radius:99px;padding:6px 12px;">٠٥ الإطلاق</a>
+    <a href="#d-contracts" style="font-size:12.5px;color:#FAF6EC;background:rgba(250,246,236,.08);border:1px solid rgba(250,246,236,.2);border-radius:99px;padding:6px 12px;">٠٦ العقود</a>
+    <a href="#d-lines" style="font-size:12.5px;color:#FAF6EC;background:rgba(250,246,236,.08);border:1px solid rgba(250,246,236,.2);border-radius:99px;padding:6px 12px;">٠٧ الخطوط</a>
+    <a href="#d-people" style="font-size:12.5px;color:#FAF6EC;background:rgba(250,246,236,.08);border:1px solid rgba(250,246,236,.2);border-radius:99px;padding:6px 12px;">٠٨ الفريق</a>
+    <a href="#d-campaign" style="font-size:12.5px;color:#FAF6EC;background:rgba(250,246,236,.08);border:1px solid rgba(250,246,236,.2);border-radius:99px;padding:6px 12px;">٠٩ الحملة</a>
+    <a href="The master one.dc.html" style="font-size:13px;color:#FAF6EC;background:rgba(250,246,236,.08);border:1px solid rgba(250,246,236,.2);border-radius:99px;padding:7px 14px;">وثيقة الهوية ←</a>
+    <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.16em;color:rgba(250,246,236,.6);">KYN-D-01 · v2 · 2026-08</span>
+  </span>
+</div>
+
+<!-- ============ COVER ============ -->
+<section id="d-cover" data-screen-label="الغلاف · Dossier cover" dir="rtl" style="background:#052E2B;color:#FAF6EC;padding:110px clamp(20px,4vw,48px) 90px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:auto 0 0 0;height:3px;display:flex;">
+    <div style="flex:2.2;background:#0E6E66;"></div><div style="flex:2.2;background:#12B5A4;"></div><div style="flex:1.4;background:#3E9EEA;"></div><div style="flex:1.4;background:#3FA75B;"></div><div style="flex:1.4;background:#FFB627;"></div><div style="flex:1.4;background:#FF6250;"></div><div style="flex:1.2;background:#F0549A;"></div><div style="flex:1;background:#C9A227;"></div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:14px;letter-spacing:.12em;color:#12B5A4;font-weight:500;">الملف المؤسسي · THE COMPANY DOSSIER</div>
+    <h1 style="margin:18px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(34px,4.6vw,60px);line-height:1.25;max-width:22ch;">شركة تصنع الثقة صناعة، وتوثقها قيدا قيدا</h1>
+    <div style="font-size:17px;line-height:2.05;color:rgba(250,246,236,.78);margin-top:20px;max-width:62ch;">يجمع هذا الملف كيان كاملة: ما هي، وكيف تكسب، وما تمسكه من سجلات، وكيف تتحقق، وما يشترط ليبدأ العمل. يقرأ عليه كل ما عداه، وتعتمد تعديلاته بقرار مقيد لا بتحرير صامت. المصدر وثائق التأسيس الأربع، وما خالفها هنا قرئ عليها.</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;">
+      <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(250,246,236,.55);border:1px solid rgba(250,246,236,.22);border-radius:99px;padding:7px 14px;">K-00-01 CONSTITUTION</span>
+      <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(250,246,236,.55);border:1px solid rgba(250,246,236,.22);border-radius:99px;padding:7px 14px;">K-01-01 ECONOMICS</span>
+      <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(250,246,236,.55);border:1px solid rgba(250,246,236,.22);border-radius:99px;padding:7px 14px;">K-02-01 ENTITIES</span>
+      <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(250,246,236,.55);border:1px solid rgba(250,246,236,.22);border-radius:99px;padding:7px 14px;">K-03-01 VERIFICATION</span>
+    </div>
+    <div style="margin-top:44px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;color:#E9BE4B;">«خلف كل نجاح، كيان»</div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-style:italic;font-size:12.5px;color:rgba(250,246,236,.55);margin-top:5px;">Behind every success, a Kayan.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANIFEST ============ -->
+<section id="d-manifest" data-screen-label="فهرس الملف · Dossier manifest" dir="rtl" style="background:#FAF6EC;padding:84px clamp(20px,4vw,48px);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:14px;letter-spacing:.12em;color:#0E6E66;font-weight:500;">الفهرس · MANIFEST</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.2vw,40px);line-height:1.3;color:#052E2B;">تسعة فصول تقرأ بالترتيب</h2>
+    <div style="margin-top:30px;border:1px solid #E2D9C4;border-radius:18px;background:#fff;overflow:hidden;font-family:'IBM Plex Sans Arabic',sans-serif;">
+      <a href="#d-charter" style="display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:baseline;padding:18px 22px;border-bottom:1px solid #EDE5D2;color:inherit;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8A8271;">٠١</span>
+        <span><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">الميثاق التأسيسي</span><span style="display:block;font-size:13.5px;color:#4A6B64;margin-top:4px;">المشكلة والأطروحة، والمعتقدات التسعة، والقواعد العشر، والخطوط وبواباتها، والأصول الخمسة</span></span>
+        <span style="font-size:12px;background:#052E2B;color:#fff;padding:4px 11px;border-radius:99px;white-space:nowrap;">هذا الإصدار</span>
+      </a>
+      <a href="#d-econ" style="display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:baseline;padding:18px 22px;border-bottom:1px solid #EDE5D2;color:inherit;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8A8271;">٠٢</span>
+        <span><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">المعمار الاقتصادي</span><span style="display:block;font-size:13.5px;color:#4A6B64;margin-top:4px;">درجات الخدمة الثلاث، ومعادلة السعر، وشرائح العملاء، والمنتجات الجاهزة، ومساري المال</span></span>
+        <span style="font-size:12px;background:#052E2B;color:#fff;padding:4px 11px;border-radius:99px;white-space:nowrap;">هذا الإصدار</span>
+      </a>
+      <a href="#d-entities" style="display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:baseline;padding:18px 22px;border-bottom:1px solid #EDE5D2;color:inherit;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8A8271;">٠٣</span>
+        <span><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">السجل والكيانات</span><span style="display:block;font-size:13.5px;color:#4A6B64;margin-top:4px;">تسعة كيانات لا عاشر لها، ومعيار الترقيم، ونموذج الفرق، وصفحات العلاقة، والأحداث العشرون</span></span>
+        <span style="font-size:12px;background:#052E2B;color:#fff;padding:4px 11px;border-radius:99px;white-space:nowrap;">هذا الإصدار</span>
+      </a>
+      <a href="#d-verify" style="display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:baseline;padding:18px 22px;border-bottom:1px solid #EDE5D2;color:inherit;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8A8271;">٠٤</span>
+        <span><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">التحقق وسلم الثقة</span><span style="display:block;font-size:13.5px;color:#4A6B64;margin-top:4px;">رحلة التسجيل، والكفايات الست، والسلم بدرجاته الخمس، وأدوات التقييم، والتزكية، والموافقات</span></span>
+        <span style="font-size:12px;background:#052E2B;color:#fff;padding:4px 11px;border-radius:99px;white-space:nowrap;">هذا الإصدار</span>
+      </a>
+      <a href="#d-launch" style="display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:baseline;padding:18px 22px;border-bottom:1px solid #EDE5D2;color:inherit;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8A8271;">٠٥</span>
+        <span><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">الإطلاق والحوكمة</span><span style="display:block;font-size:13.5px;color:#4A6B64;margin-top:4px;">حالة الإطلاق بشروطها العشرة، وضبط الجودة، وسجل القرارات، والمسائل المعلقة على المالك</span></span>
+        <span style="font-size:12px;background:#052E2B;color:#fff;padding:4px 11px;border-radius:99px;white-space:nowrap;">هذا الإصدار</span>
+      </a>
+      <a href="#d-contracts" style="display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:baseline;padding:18px 22px;border-bottom:1px solid #EDE5D2;color:inherit;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8A8271;">٠٦</span>
+        <span><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">العقود ودورة الضمان</span><span style="display:block;font-size:13.5px;color:#4A6B64;margin-top:4px;">حزمة العقود الخمس، وآلية الإفراج، والمراجعات، والنزاعات والاسترداد، وواجب التوثيق، وتصويبات ما قبل المستشار</span></span>
+        <span style="font-size:12px;background:#052E2B;color:#fff;padding:4px 11px;border-radius:99px;white-space:nowrap;">هذا الإصدار</span>
+      </a>
+      <a href="#d-lines" style="display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:baseline;padding:18px 22px;border-bottom:1px solid #EDE5D2;color:inherit;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8A8271;">٠٧</span>
+        <span><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">الخطوط الأربعة تشغيلا</span><span style="display:block;font-size:13.5px;color:#4A6B64;margin-top:4px;">المركز والمقهى بعضوياته، والمصنع بدورة أفواجه، والذراع المدني بمساره — إجراء لا وصفا</span></span>
+        <span style="font-size:12px;background:#052E2B;color:#fff;padding:4px 11px;border-radius:99px;white-space:nowrap;">هذا الإصدار</span>
+      </a>
+      <a href="#d-people" style="display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:baseline;padding:18px 22px;border-bottom:1px solid #EDE5D2;color:inherit;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8A8271;">٠٨</span>
+        <span><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">الفريق الداخلي</span><span style="display:block;font-size:13.5px;color:#4A6B64;margin-top:4px;">المواقع برموزها لا بأسماء أصحابها، وبوابات التعيين، وخريطة الموافقة المزدوجة، والمناوبون</span></span>
+        <span style="font-size:12px;background:#052E2B;color:#fff;padding:4px 11px;border-radius:99px;white-space:nowrap;">هذا الإصدار</span>
+      </a>
+      <a href="#d-campaign" style="display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:baseline;padding:18px 22px;color:inherit;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8A8271;">٠٩</span>
+        <span><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">الإطلاق العلني — «نبنيه معا»</span><span style="display:block;font-size:13.5px;color:#4A6B64;margin-top:4px;">الهمس فالافتتاح فالبرهان، والمئة المؤسسون، ونظام التواصل العامل، وستة أرقام يحكم بها</span></span>
+        <span style="font-size:12px;background:#052E2B;color:#fff;padding:4px 11px;border-radius:99px;white-space:nowrap;">هذا الإصدار</span>
+      </a>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;margin-top:18px;border:1px solid #E2D9C4;border-radius:14px;background:#fff;padding:16px 20px;">
+      <span style="width:26px;height:4px;border-radius:99px;background:#C9A227;flex:none;margin-top:9px;"></span>
+      <span style="font-size:14px;line-height:2;color:#4A6B64;font-family:'IBM Plex Sans Arabic',sans-serif;">يكمل هذا الملف <a href="The master one.dc.html">وثيقة الهوية الرئيسة</a>: تلك تحكم كيف تبدو كيان وتتكلم، وهذا يحكم ما هي وكيف تعمل. وما زال معلقا على المالك مقيدا في <a href="#d-launch">الفصل الخامس</a> باسمه ورمزه، ولا يحل بالاجتهاد.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ٠١ الميثاق التأسيسي ============ -->
+<section id="d-charter" data-screen-label="٠١ الميثاق التأسيسي · The charter" dir="rtl" style="background:#F1EAD9;padding:96px clamp(20px,4vw,48px);font-family:'IBM Plex Sans Arabic',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:14px;letter-spacing:.12em;color:#0E6E66;font-weight:500;">الفصل ٠١ · الميثاق التأسيسي</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);line-height:1.28;color:#052E2B;max-width:26ch;">خمسة أسئلة لا يجيب عنها السوق، وشركة بنيت لتجيب</h2>
+    <div style="font-size:16px;line-height:2.05;color:#33544D;margin-top:14px;max-width:64ch;">لدى المشتري — في الرياض أو لندن أو عدن — عمل ينجز، وخمسة أسئلة تقف دونه. تجيب المنصات عن بعضها وتسقط في الباقي؛ وبنيت كيان لتجيب عنها كلها في مؤسسة واحدة.</div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:26px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">01</span><div style="font-size:14.5px;line-height:1.95;color:#143C37;margin-top:8px;">هل هذا الشخص حقيقي، وهو من يدعي؟</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">02</span><div style="font-size:14.5px;line-height:1.95;color:#143C37;margin-top:8px;">هل يجيد ما أحتاجه تحديدا، لا القدرة عموما؟</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">03</span><div style="font-size:14.5px;line-height:1.95;color:#143C37;margin-top:8px;">إن تعاقدت معه، فهل للعقد قيمة تنفذ؟</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">04</span><div style="font-size:14.5px;line-height:1.95;color:#143C37;margin-top:8px;">إن دفعت مقدما فهل أرى العمل، وإن دفعت عند التسليم فهل يثق بي؟</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">05</span><div style="font-size:14.5px;line-height:1.95;color:#143C37;margin-top:8px;">إذا أخفق العمل، فمن يحاسب، وما طريق الإنصاف؟</div></div>
+    </div>
+
+    <div style="margin-top:34px;background:#052E2B;border-radius:20px;padding:34px clamp(22px,3vw,40px);color:#FAF6EC;">
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.22em;color:#12B5A4;">THE CATEGORY SENTENCE</div>
+      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(20px,2.4vw,28px);line-height:1.65;margin-top:14px;max-width:30ch;">كيان هي البنية المهنية الموثقة للأسواق المقيدة: تثبت كفاءة المهنيين، وتقيم عليها الدليل، وتقف خلفها — ليشترى عملهم بثقة من أي مكان في العالم.</div>
+      <div style="font-size:14.5px;line-height:2;color:rgba(250,246,236,.75);margin-top:14px;max-width:66ch;">كلمتان تحملان الجملة: <span style="color:#E9BE4B;">بنية</span>، لأن كيان ليست طرفا في العمل بل الطبقة التي تجعله قابلا للتعاقد — والطبقات تتراكم قيمتها حيث لا تتراكم الخدمات. و<span style="color:#E9BE4B;">موثقة</span>، لأن التحقق هو الأصل المملوك، وكل ما عداه توصيل له.</div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;color:rgba(250,246,236,.6);margin-top:16px;">Positioning: impact sourcing for professional work, built in the hardest operating environment in the world.</div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">ما ليست كيان — وعاقبة الخلط</h3>
+    <div style="margin-top:16px;border:1px solid #E2D9C4;border-radius:16px;background:#fff;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr) minmax(0,1.2fr);gap:12px;padding:12px 20px;background:#FCFBF7;font-size:12px;color:#8A8271;"><span>ليست</span><span>لأن</span><span>ولو خلطنا</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr) minmax(0,1.2fr);gap:12px;padding:15px 20px;border-top:1px solid #EDE5D2;font-size:14px;line-height:1.9;color:#143C37;"><span style="font-weight:600;">سوقا حرة</span><span style="color:#4A6B64;">الأسواق تتنافس بالسيولة ورأس المال، ولا حاجة لكيان بهذا السباق</span><span style="color:#4A6B64;">تسعير هزيل بلا مخاطرة محمولة، وخسارة أمام الرواسخ</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr) minmax(0,1.2fr);gap:12px;padding:15px 20px;border-top:1px solid #EDE5D2;font-size:14px;line-height:1.9;color:#143C37;"><span style="font-weight:600;">وكالة تنفيذ</span><span style="color:#4A6B64;">الوكالة تكبر بعدد الرؤوس وتتعلق بسمعة صاحبها</span><span style="color:#4A6B64;">سقف عند طاقة المؤسس، ومؤسسة لا تباع</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr) minmax(0,1.2fr);gap:12px;padding:15px 20px;border-top:1px solid #EDE5D2;font-size:14px;line-height:1.9;color:#143C37;"><span style="font-weight:600;">معهد تدريب</span><span style="color:#4A6B64;">تدريب لا ينتهي بعمل مدفوع كلفة تلحق بها شهادة</span><span style="color:#4A6B64;">قياس المتدربين لا الكاسبين، وتمويل دورة لا تنتهي</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr) minmax(0,1.2fr);gap:12px;padding:15px 20px;border-top:1px solid #EDE5D2;font-size:14px;line-height:1.9;color:#143C37;"><span style="font-weight:600;">منظمة إغاثية</span><span style="color:#4A6B64;">كيان شركة ربحية ذات دعوى أخلاقية، لا دعوى أخلاقية تطلب إعانة</span><span style="color:#4A6B64;">ارتهان للمنح وموت عند انقطاعها</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr) minmax(0,1.2fr);gap:12px;padding:15px 20px;border-top:1px solid #EDE5D2;font-size:14px;line-height:1.9;color:#143C37;"><span style="font-weight:600;">مكتب توظيف</span><span style="color:#4A6B64;">لا نوصل شخصا وننسحب؛ نقف خلف التسليم</span><span style="color:#4A6B64;">تفريط بالاقتصاد المتكرر وبأصل الثقة معا</span></div>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;margin-top:14px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;">
+      <span style="width:26px;height:4px;border-radius:99px;background:#FF6250;flex:none;margin-top:9px;"></span>
+      <span style="font-size:14px;line-height:2;color:#4A6B64;">سحبت كلمة «أكاديمية» من كل استعمال. خط تكوين الكفاءات اسمه <span style="color:#052E2B;font-weight:600;">مصنع كيان</span> — القرار <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;">D-07</span>.</span>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">المعتقدات التسعة — التزامات تختبر، لا شعارات</h3>
+    <div style="font-size:14.5px;line-height:2;color:#4A6B64;margin-top:8px;max-width:64ch;">يراجع كل قرار مقبل عليها، وما خالف واحدا منها فهو خطأ حتى يثبت العكس.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-top:18px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">B1</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">المهارة بلا جغرافيا</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">لا يباع عمل يمني بخصم الشفقة ولا بحجة الرخص. يباع على النتيجة.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">B2</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">الثقة تصنع ولا تفترض</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">كل ادعاء يسند إلى أثر، وكل توثيق مؤقت وقابل للسحب. وسم لا يسحب زينة لا معيار.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">B3</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">وصول بلا حماية استغلال</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">لا تكليف دون نطاق مكتوب وضمان ممول ومعيار قبول. لا نوصل وننصرف.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">B4</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">التحقق للصعود لا للفرز</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">لا يرد أحد لأنه في أول طريقه، ويقال لكل واحد ما الذي يرفعه درجة — تحديدا لا تعميما.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">B5</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">الاستيعاب هو القياس الصادق</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">يقاس من دخل عملا مدفوعا مقيدا متعاقدا عليه — لا الحضور ولا عدد الخريجين.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">B6</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">الناس بأعمالهم لا بتصنيفاتهم</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">لا وثيقة تصنف شخصا بإعاقة أو نزوح أو ظرف. الشمول يبنى في المدخل لا في النص.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">B7</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">المؤسسة تبقى بعد مؤسسها</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">كل علاقة قيد، وكل اجتهاد قاعدة، وكل قاعدة قائمة فحص. ما لا يعمل إلا بحضور المؤسس لم يبن.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">B8</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">المال في القنوات الرسمية</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">المصارف أصل، والنقد استثناء بموافقة مزدوجة مسبقة وسبب مقيد وسقف شهري.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">B9</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">ربح يحمل دعوى أخلاقية</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">يبين كل خط كيف يكسب أو يحمي المال. أثر لا يمول نفسه يتوقف يوما.</div></div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">القواعد العشر — ما لا يكسر</h3>
+    <div style="margin-top:16px;border:1px solid #E2D9C4;border-radius:16px;background:#fff;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:52px minmax(0,1.25fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">R1</span><span style="font-size:14.5px;font-weight:600;color:#052E2B;line-height:1.85;">لا يبدأ تكليف دون نطاق موقع وضمان ممول</span><span style="font-size:13px;line-height:1.9;color:#8A8271;">يرفع أكبر أسباب النزاع وعدم الدفع</span></div>
+      <div style="display:grid;grid-template-columns:52px minmax(0,1.25fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">R2</span><span style="font-size:14.5px;font-weight:600;color:#052E2B;line-height:1.85;">درجة التحقق لا تحدد من يكلف</span><span style="font-size:13px;line-height:1.9;color:#8A8271;">التكليف قرار ملاءمة وتوافر ومتطلب؛ وخلطهما يفسد السلم</span></div>
+      <div style="display:grid;grid-template-columns:52px minmax(0,1.25fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">R3</span><span style="font-size:14.5px;font-weight:600;color:#052E2B;line-height:1.85;">إيراد كيان أجرها الصافي وحده، والضمان التزام في الذمة</span><span style="font-size:13px;line-height:1.9;color:#8A8271;">سلامة كل قائمة مالية وكل مؤشر</span></div>
+      <div style="display:grid;grid-template-columns:52px minmax(0,1.25fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">R4</span><span style="font-size:14.5px;font-weight:600;color:#052E2B;line-height:1.85;">النقد استثناء مسبق الإذن، موثق، مسقوف شهريا</span><span style="font-size:13px;line-height:1.9;color:#8A8271;">النقد أول أبواب الفقد والاحتيال في هذه البيئة</span></div>
+      <div style="display:grid;grid-template-columns:52px minmax(0,1.25fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">R5</span><span style="font-size:14.5px;font-weight:600;color:#052E2B;line-height:1.85;">لكل شخص وجهة وتكليف قيد واحد ومعرف واحد</span><span style="font-size:13px;line-height:1.9;color:#8A8271;">يمنع تعفن السجلات المكررة الذي يهدم التقارير</span></div>
+      <div style="display:grid;grid-template-columns:52px minmax(0,1.25fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">R6</span><span style="font-size:14.5px;font-weight:600;color:#052E2B;line-height:1.85;">لا تمس يد قيدا إلا عند بوابة اجتهاد حقيقية</span><span style="font-size:13px;line-height:1.9;color:#8A8271;">كل إجراء يدوي روتيني ينهار بين مئة تسجيل وألف</span></div>
+      <div style="display:grid;grid-template-columns:52px minmax(0,1.25fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">R7</span><span style="font-size:14.5px;font-weight:600;color:#052E2B;line-height:1.85;">كل ادعاء خارجي يسند إلى أثر</span><span style="font-size:13px;line-height:1.9;color:#8A8271;">السمعة في تجارة الثقة هي الميزانية كلها</span></div>
+      <div style="display:grid;grid-template-columns:52px minmax(0,1.25fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">R8</span><span style="font-size:14.5px;font-weight:600;color:#052E2B;line-height:1.85;">لا يجمع بيان شخصي دون غرض معلن ومدة حفظ وموافقة محددة</span><span style="font-size:13px;line-height:1.9;color:#8A8271;">حماية قانونية، ومصداقية شركة بضاعتها الثقة</span></div>
+      <div style="display:grid;grid-template-columns:52px minmax(0,1.25fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">R9</span><span style="font-size:14.5px;font-weight:600;color:#052E2B;line-height:1.85;">تجاوز عميل حدا معلنا من الإيراد يوجب خطة معالجة مكتوبة</span><span style="font-size:13px;line-height:1.9;color:#8A8271;">عميل واحد بستين بالمئة ليس عملا؛ هو عقد</span></div>
+      <div style="display:grid;grid-template-columns:52px minmax(0,1.25fr) minmax(0,1fr);gap:12px;padding:13px 20px;align-items:baseline;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">R10</span><span style="font-size:14.5px;font-weight:600;color:#052E2B;line-height:1.85;">لا يوصف شيء بالمكتمل حتى يشغله من لم يحضر بناءه</span><span style="font-size:13px;line-height:1.9;color:#8A8271;">دواء التعلق بالمؤسس</span></div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">الخطوط وبواباتها — فكرة واحدة في وقتها</h3>
+    <div style="font-size:14.5px;line-height:2;color:#4A6B64;margin-top:8px;max-width:66ch;">أكثر ما تموت به شركة كهذه محاولة كل أفكارها الجيدة دفعة واحدة. يجوز تصميم خطوط المرحلتين الثانية والثالثة وبيعها مسبقا، ولا يجوز أن تستهلك طاقة بناء أو رأس مال قبل بلوغ بوابتها.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-top:18px;">
+      <div style="background:#052E2B;border-radius:16px;padding:22px 24px;color:#FAF6EC;">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#12B5A4;">PHASE 1 · LIVE AT LAUNCH</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;margin-top:10px;">المرحلة الأولى — تعمل من اليوم الأول</div>
+        <div style="font-size:13.5px;line-height:2.05;color:rgba(250,246,236,.82);margin-top:8px;">
+          <span style="color:#3E9EEA;">L1</span> التسليم المدار — المحرك، أجر صاف على قيمة العقد<br>
+          <span style="color:#FFB627;">L2</span> المركز والمقهى — المرتكز، وميدان التحقق، وخط النقد<br>
+          <span style="color:#FF6250;">L3</span> مصنع كيان — التكوين بتمويل الرعاة<br>
+          <span style="color:#3FA75B;">L4</span> كيان لليمن — ذراع الاستيعاب المدني
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:22px 24px;">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#B8891A;">PHASE 2 · 2027 · GATED</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">المرحلة الثانية — ببوابات عددية معلنة</div>
+        <div style="font-size:13.5px;line-height:2.05;color:#4A6B64;margin-top:8px;">
+          <span style="color:#052E2B;font-weight:600;">L5</span> السوق المفتوحة: ٢٥٠ موثقا فأكثر، و٤٠ تكليفا مقبولا، ونزاعات دون ٥٪<br>
+          <span style="color:#052E2B;font-weight:600;">L6</span> العضوية الرقمية: المركز فوق ٦٠٪ من طاقته<br>
+          <span style="color:#052E2B;font-weight:600;">L7</span> الاعتماد المحمول علنا: ١٥٠ موثقا بسجل، وثلاث جهات تعتد به
+        </div>
+      </div>
+      <div style="background:#fff;border:1px dashed #CFC5AC;border-radius:16px;padding:22px 24px;">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#8A8271;">PHASE 3 · DESIGNED, NOT BUILT</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;color:#052E2B;margin-top:10px;">المرحلة الثالثة — تصمم ولا تبنى</div>
+        <div style="font-size:13.5px;line-height:2.05;color:#4A6B64;margin-top:8px;">خدمات مالية على تدفق الدفع، وتوظيف نيابي، واستوديو، وبناء مشاريع، وتكرار نموذج المركز جغرافيا، وترخيص معيار التحقق للغير.</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;margin-top:14px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;">
+      <span style="width:26px;height:4px;border-radius:99px;background:#0E6E66;flex:none;margin-top:9px;"></span>
+      <span style="font-size:14px;line-height:2;color:#4A6B64;">حتى تفتح <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;">L5</span> لا توصل كيان عميلا بفرد. يلبى الطلب كله تسليما مدارا وكيان هي المتعاقد — فهكذا يتراكم سجل التسليم ودليل التحقق، وفتح الباب قبل أوانه يهدم الأصل قبل أن يوجد.</span>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">الأصول الخمسة — ما تساويه كيان</h3>
+    <div style="font-size:14.5px;line-height:2;color:#4A6B64;margin-top:8px;max-width:66ch;">تساوي الشركة ما تملكه مما لا ينسخ سريعا. تنفيذ المشاريع يجيده كثيرون؛ هذه الخمسة تتراكم قيمتها بالاستعمال، وأولوية البناء على ترتيبها.</div>
+    <div style="margin-top:18px;border:1px solid #E2D9C4;border-radius:16px;background:#fff;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr) minmax(0,.6fr);gap:12px;padding:12px 20px;background:#FCFBF7;font-size:12px;color:#8A8271;"><span>الأصل</span><span>لماذا يتراكم</span><span>حاله</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr) minmax(0,.6fr);gap:12px;padding:14px 20px;border-top:1px solid #EDE5D2;font-size:14px;line-height:1.9;"><span style="font-weight:600;color:#052E2B;">علامة التحقق</span><span style="color:#4A6B64;">كل موثق جديد وكل تكليف مقبول يزيدان معناها، والمعنى لا يشترى</span><span style="color:#8A8271;font-size:13px;">مصممة، لم تصدر</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr) minmax(0,.6fr);gap:12px;padding:14px 20px;border-top:1px solid #EDE5D2;font-size:14px;line-height:1.9;"><span style="font-weight:600;color:#052E2B;">سلم الثقة</span><span style="color:#4A6B64;">المعيار الذي يتبناه الغير يصير بنية، والبنية لا تنافس بل تستعمل</span><span style="color:#8A8271;font-size:13px;">مصمم — <a href="Kayan Standards.dc.html">KYN-S-01</a></span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr) minmax(0,.6fr);gap:12px;padding:14px 20px;border-top:1px solid #EDE5D2;font-size:14px;line-height:1.9;"><span style="font-weight:600;color:#052E2B;">تصنيف التخصصات الدقيقة</span><span style="color:#4A6B64;">هو معجم السوق؛ ومن يضع الفئات يملك المقارنات</span><span style="color:#8A8271;font-size:13px;">البنية قائمة، والتعبئة جارية</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr) minmax(0,.6fr);gap:12px;padding:14px 20px;border-top:1px solid #EDE5D2;font-size:14px;line-height:1.9;"><span style="font-weight:600;color:#052E2B;">نسبة الاستيعاب</span><span style="color:#4A6B64;">المؤشر الذي يتمناه الممولون ولا يحسبونه بأنفسهم؛ وملك المؤشر ملك للحوار</span><span style="color:#8A8271;font-size:13px;">معرفة، بانتظار بيانات حية</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr) minmax(0,.6fr);gap:12px;padding:14px 20px;border-top:1px solid #EDE5D2;font-size:14px;line-height:1.9;"><span style="font-weight:600;color:#052E2B;">سجل التسليم</span><span style="color:#4A6B64;">الجواب الوحيد الصادق عن «هل يستطيعون فعلا؟» — ولا يختلق بأثر رجعي</span><span style="color:#8A8271;font-size:13px;">يبدأ مع أول تكليف</span></div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">الدورة الواحدة — القواعد مجسدة في تكليف</h3>
+    <div style="font-size:14.5px;line-height:2;color:#4A6B64;margin-top:8px;max-width:66ch;">يمر كل تكليف بتسع محطات، ولا يتقدم خطوة قبل إتمام التي قبلها. وعلى هذه الدورة تجاب الأسئلة الخمسة كلها.</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin-top:18px;">
+      <div style="flex:1 1 200px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 16px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">١</span><div style="font-weight:600;font-size:14.5px;color:#052E2B;margin-top:4px;">الطلب يؤهل</div><div style="font-size:12.5px;line-height:1.85;color:#4A6B64;margin-top:2px;">حاجة وجهة اتصال ومحادثة، وتسند الشريحة على القيد</div></div>
+      <div style="flex:1 1 200px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 16px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">٢</span><div style="font-weight:600;font-size:14.5px;color:#052E2B;margin-top:4px;">النطاق يوقع</div><div style="font-size:12.5px;line-height:1.85;color:#4A6B64;margin-top:2px;">مخرجات ومعيار قبول وموعد — <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">R1</span></div></div>
+      <div style="flex:1 1 200px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 16px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">٣</span><div style="font-weight:600;font-size:14.5px;color:#052E2B;margin-top:4px;">الضمان يمول</div><div style="font-size:12.5px;line-height:1.85;color:#4A6B64;margin-top:2px;">يثبت التمويل قبل أول ساعة عمل — <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">R1·R3</span></div></div>
+      <div style="flex:1 1 200px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 16px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">٤</span><div style="font-weight:600;font-size:14.5px;color:#052E2B;margin-top:4px;">الفريق يشكل</div><div style="font-size:12.5px;line-height:1.85;color:#4A6B64;margin-top:2px;">قائد مسؤول مسمى، وحصص مفصح عنها قبل القبول</div></div>
+      <div style="flex:1 1 200px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 16px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">٥</span><div style="font-weight:600;font-size:14.5px;color:#052E2B;margin-top:4px;">التنفيذ يراجع</div><div style="font-size:12.5px;line-height:1.85;color:#4A6B64;margin-top:2px;">مراجعة مستقلة قبل أن يرى العميل شيئا</div></div>
+      <div style="flex:1 1 200px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 16px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">٦</span><div style="font-weight:600;font-size:14.5px;color:#052E2B;margin-top:4px;">التسليم يقبل</div><div style="font-size:12.5px;line-height:1.85;color:#4A6B64;margin-top:2px;">على المعيار المكتوب، بمحضر استلام <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">KYN-F-01</span></div></div>
+      <div style="flex:1 1 200px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 16px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">٧</span><div style="font-weight:600;font-size:14.5px;color:#052E2B;margin-top:4px;">الإفراج يؤذن</div><div style="font-size:12.5px;line-height:1.85;color:#4A6B64;margin-top:2px;">من الضمان بموافقة مزدوجة، والأجر الصافي وحده إيراد</div></div>
+      <div style="flex:1 1 200px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 16px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">٨</span><div style="font-weight:600;font-size:14.5px;color:#052E2B;margin-top:4px;">الصرف يثبت</div><div style="font-size:12.5px;line-height:1.85;color:#4A6B64;margin-top:2px;">لكل منفذ إثبات دفع، في القنوات الرسمية — <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">R4·B8</span></div></div>
+      <div style="flex:1 1 200px;background:#052E2B;border-radius:14px;padding:14px 16px;color:#FAF6EC;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#12B5A4;">٩</span><div style="font-weight:600;font-size:14.5px;margin-top:4px;">القيد يقفل</div><div style="font-size:12.5px;line-height:1.85;color:rgba(250,246,236,.8);margin-top:2px;">يقيد الأثر في سجل كل منفذ وصفحة العميل — ويغذي نسبة الاستيعاب</div></div>
+    </div>
+    <div style="font-size:13.5px;line-height:2;color:#8A8271;margin-top:12px;max-width:66ch;">وهذه الدورة نفسها نغمات الهوية الأربع: تكليف، فتسليم، فقبول، فعائد يرجع إلى عدن.</div>
+  </div>
+</section>
+
+<!-- ============ ٠٢ المعمار الاقتصادي ============ -->
+<section id="d-econ" data-screen-label="٠٢ المعمار الاقتصادي · The economics" dir="rtl" style="background:#FAF6EC;padding:96px clamp(20px,4vw,48px);font-family:'IBM Plex Sans Arabic',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:14px;letter-spacing:.12em;color:#0E6E66;font-weight:500;">الفصل ٠٢ · المعمار الاقتصادي</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);line-height:1.28;color:#052E2B;max-width:26ch;">الأجر ثمن المخاطرة المنقولة، لا نسبة من صفقة</h2>
+    <div style="font-size:16px;line-height:2.05;color:#33544D;margin-top:14px;max-width:66ch;">ليس لكيان معدل اقتطاع واحد. يباع العمل نفسه على ثلاث درجات من الوعد، وتحدد الدرجة ما يحتجز احتياطا وما يستحق أجرا. ويفصح عن الأجر للطرفين، ولا يذكر إلا ومعه وعود درجته مكتوبة.</div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-top:26px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:22px 24px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A8271;">S1</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A8271;">25–30%</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:8px;">الأساسية</div>
+        <div style="font-size:13.5px;line-height:2;color:#4A6B64;margin-top:6px;">أشخاص موثقون، ونطاق مكتوب، وضمان محفوظ، ومنسق تسليم. إدارة النتيجة على العميل. لا تعرض إلا إن أصر عليها، وتنكمش حصتها مع الوقت.</div>
+      </div>
+      <div style="background:#052E2B;border-radius:16px;padding:22px 24px;color:#FAF6EC;outline:2px solid #12B5A4;outline-offset:2px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#12B5A4;">S2</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#12B5A4;">35–42%</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;margin-top:8px;">المدارة — الافتراضية</div>
+        <div style="font-size:13.5px;line-height:2;color:rgba(250,246,236,.82);margin-top:6px;">كل ما في الأساسية، وقائد فريق مسؤول، ومراجعة جودة مستقلة قبل التسليم، ومعيار قبول محدد. عليها تباع المنتجات الجاهزة كلها.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:22px 24px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A8271;">S3</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A8271;">45–55%</span></div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;color:#052E2B;margin-top:8px;">المكفولة</div>
+        <div style="font-size:13.5px;line-height:2;color:#4A6B64;margin-top:6px;">كل ما في الثانية، وسعر ثابت، وموعد تلتزم كيان به، واستبدال أي منفذ على نفقتها، وكفالة بعد القبول. لا تباع قبل تسوية وضع المسؤولية والتأمين.</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;margin-top:14px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;">
+      <span style="width:26px;height:4px;border-radius:99px;background:#C9A227;flex:none;margin-top:9px;"></span>
+      <span style="font-size:14px;line-height:2;color:#4A6B64;">أجور المنفذين تثبت بالدور والدرجة والتخصص، ولا تتغير بما تتقاضاه كيان من العميل — ويفصح عن ذلك. الدرجة الأعلى تعني أن كيان تكسب أكثر لأنها تحمل أكثر، لا أن المنفذ يكسب أقل.</span>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">معادلة السعر — أرضية ثم هدف</h3>
+    <div style="font-size:14.5px;line-height:2;color:#4A6B64;margin-top:8px;max-width:66ch;">أسرع ما يقتل شركة خدمات بيع تحت أرضية لم تحسب قط. لا يصدر عرض سعر قبل حساب الأرضية، وما نزل عنها فليس خصما بل خسارة، لا تجاز إلا بموافقة تنفيذية مسماة وتقيد استثمار تطوير لا بيعا.</div>
+    <div style="margin-top:18px;background:#052E2B;border-radius:16px;padding:24px clamp(20px,3vw,32px);color:#FAF6EC;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:clamp(14px,1.8vw,18px);letter-spacing:.04em;color:#12B5A4;text-align:center;">F = D + S + Q + T + W + O</div>
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:clamp(12px,1.5vw,15px);color:rgba(250,246,236,.75);text-align:center;margin-top:10px;">Price = max( F × 1.05 , F ÷ (1−π) × σ × κ × υ × ν )</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px 18px;margin-top:18px;font-size:12.5px;line-height:1.9;color:rgba(250,246,236,.78);">
+        <span><b style="color:#E9BE4B;">D</b> التنفيذ المباشر: أجور الأدوار بساعاتها</span>
+        <span><b style="color:#E9BE4B;">S</b> الإشراف: قائد الفريق وإدارة التسليم</span>
+        <span><b style="color:#E9BE4B;">Q</b> المراجعة المستقلة قبل التسليم</span>
+        <span><b style="color:#E9BE4B;">T</b> القنوات المالية والصرف وإدارة الضمان</span>
+        <span><b style="color:#E9BE4B;">W</b> احتياطي الكفالة والتصحيح</span>
+        <span><b style="color:#E9BE4B;">O</b> حصة من كلفة المركز والمنصة والتحقق</span>
+        <span><b style="color:#12B5A4;">σ</b> الشريحة ٠٫٦٠–١٫١٥ · <b style="color:#12B5A4;">κ</b> الدرجة ١ / ١٫٢٥ / ١٫٥</span>
+        <span><b style="color:#12B5A4;">υ</b> الاستعجال حتى ١٫٤٠ · <b style="color:#12B5A4;">ν</b> الجدة حتى ١٫٣٠</span>
+      </div>
+    </div>
+    <div style="margin-top:14px;border:1px solid #E2D9C4;border-radius:16px;background:#fff;overflow:hidden;">
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;padding:13px 20px;background:#FCFBF7;border-bottom:1px solid #EDE5D2;">
+        <span style="font-size:13.5px;font-weight:600;color:#052E2B;">مثال محسوب — إخراج تقرير <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A8271;">RP-03</span> لعميل من الشريحة الأولى على الدرجة الثانية</span>
+        <span style="font-size:12px;color:#8A8271;">أرقام توضيحية تبين الطريقة؛ جدول الأجور المعتمد معلق على <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;">Q-13</span></span>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:12px;padding:12px 20px;border-bottom:1px solid #EDE5D2;align-items:baseline;font-size:13.5px;line-height:1.9;"><span style="color:#4A6B64;">الأرضية: تنفيذ 1,200 + إشراف 240 + مراجعة 180 + قنوات 120 + احتياطي 150 + حصة تشغيل 110</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#052E2B;text-align:left;">F = 2,000 USD</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:12px;padding:12px 20px;border-bottom:1px solid #EDE5D2;align-items:baseline;font-size:13.5px;line-height:1.9;"><span style="color:#4A6B64;">الهدف عند هامش مساهمة ٢٠٪</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#052E2B;text-align:left;">2,000 ÷ 0.80 = 2,500</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:12px;padding:12px 20px;align-items:baseline;font-size:13.5px;line-height:1.9;"><span style="color:#4A6B64;">بمعامل الشريحة ١٫١٠ ومعامل الدرجة ١٫٢٥، بلا استعجال ولا جدة — وهو فوق الحد الأدنى المطلق <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;">2,100</span></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0E6E66;text-align:left;font-weight:500;">2,500 × 1.10 × 1.25 = 3,438 USD</span></div>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;margin-top:14px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;">
+      <span style="width:26px;height:4px;border-radius:99px;background:#FF6250;flex:none;margin-top:9px;"></span>
+      <span style="font-size:14px;line-height:2;color:#4A6B64;">هامش الدرجة المكفولة هو احتياطي الكفالة يفرج عنه إذا سلم العمل سليما — أي أن اقتصاد الشركة كله رهن بأن يعمل التحقق فعلا. إن لم يخفض التحقق الإخفاق استهلكت المكفولة الهامش أسرع مما تكسبه الأساسية.</span>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">شرائح العملاء — دعم معلن لا تسعير مرتجل</h3>
+    <div style="margin-top:16px;border:1px solid #E2D9C4;border-radius:16px;background:#fff;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:44px minmax(0,1.1fr) minmax(0,1.3fr) 88px;gap:12px;padding:12px 20px;background:#FCFBF7;font-size:12px;color:#8A8271;"><span></span><span>الشريحة</span><span>ما تشتريه فعلا</span><span dir="ltr" style="text-align:left;">σ</span></div>
+      <div style="display:grid;grid-template-columns:44px minmax(0,1.1fr) minmax(0,1.3fr) 88px;gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#0E6E66;">A</span><span style="font-weight:600;color:#052E2B;">مؤسسات دولية ووكالات</span><span style="color:#4A6B64;">امتثال وقابلية تدقيق ودليل استيعاب وطرف يصدر فواتير</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A8271;text-align:left;">1.00–1.15</span></div>
+      <div style="display:grid;grid-template-columns:44px minmax(0,1.1fr) minmax(0,1.3fr) 88px;gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#0E6E66;">B</span><span style="font-weight:600;color:#052E2B;">شركات خليجية وأعمال المهجر</span><span style="color:#4A6B64;">ميزة كلفة مع ضمان، وكفاءات لا يصلون إليها مباشرة</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A8271;text-align:left;">1.00–1.10</span></div>
+      <div style="display:grid;grid-template-columns:44px minmax(0,1.1fr) minmax(0,1.3fr) 88px;gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#0E6E66;">C</span><span style="font-weight:600;color:#052E2B;">أفراد المهجر ومشاريعهم</span><span style="color:#4A6B64;">الثقة: عمل في اليمن يريدونه ولا قناة آمنة لتكليفه</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A8271;text-align:left;">0.85–1.00</span></div>
+      <div style="display:grid;grid-template-columns:44px minmax(0,1.1fr) minmax(0,1.3fr) 88px;gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#0E6E66;">D</span><span style="font-weight:600;color:#052E2B;">منشآت يمنية صغيرة</span><span style="color:#4A6B64;">قدرة لا يوظفونها؛ منتجات جاهزة بأسعار محلية ثابتة، دعم متعمد يقاس شهريا</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A8271;text-align:left;">0.60–0.80</span></div>
+      <div style="display:grid;grid-template-columns:44px minmax(0,1.1fr) minmax(0,1.3fr) 88px;gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#0E6E66;">E</span><span style="font-weight:600;color:#052E2B;">منظمات محلية ممولة بمنح</span><span style="color:#4A6B64;">قدرة تنفيذ مع امتثال يبلغ عنه؛ تدخل غالبا عبر ممولي الشريحة الأولى</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A8271;text-align:left;">0.80–0.90</span></div>
+    </div>
+    <div style="font-size:13.5px;line-height:2;color:#8A8271;margin-top:12px;max-width:66ch;">تسند الشريحة عند التأهيل وتثبت على قيد العميل وتظهر في كل عرض سعر — ولا تختار صفقة بصفقة. ويجمع ما نزل من المعامل عن الواحد الصحيح ويقيد بندا شهريا معلنا، فيبقى خدمة العملاء المحليين قرارا مرئيا لا نزفا خفيا.</div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">المنتجات الجاهزة الاثنا عشر — نطاق مسبق وسعر مسبق وفريق مسبق</h3>
+    <div style="font-size:14.5px;line-height:2;color:#4A6B64;margin-top:8px;max-width:66ch;">عرض السعر المفصل يستهلك ساعات من أغلى وقت الشركة قبل أن يكسب شيئا. المنتج الجاهز يطوي دورة البيع، وقائمة مستثنياته أبرز من مشمولاته، ويسلمه الشكل الفريقي نفسه في كل مرة فيتحسن تقدير كلفته مع كل تسليم. تباع كلها على الدرجة الثانية.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin-top:18px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:13px 16px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;"><span style="font-size:14px;color:#143C37;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">RP-01</span> بداية العلامة</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;white-space:nowrap;">10 أيام</span></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:13px 16px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;"><span style="font-size:14px;color:#143C37;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">RP-02</span> موقع أساسي ثنائي اللغة</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;white-space:nowrap;">15 يوما</span></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:13px 16px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;"><span style="font-size:14px;color:#143C37;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">RP-03</span> إخراج تقرير حتى ٤٠ صفحة</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;white-space:nowrap;">10 أيام</span></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:13px 16px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;"><span style="font-size:14px;color:#143C37;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">RP-04</span> رزمة ترجمة لكل ١٠ آلاف كلمة</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;white-space:nowrap;">7 أيام</span></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:13px 16px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;"><span style="font-size:14px;color:#143C37;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">RP-05</span> جولة بيانات ميدانية</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;white-space:nowrap;">20 يوما</span></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:13px 16px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;"><span style="font-size:14px;color:#143C37;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">RP-06</span> عهدة تواصل اجتماعي</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;white-space:nowrap;">شهرية</span></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:13px 16px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;"><span style="font-size:14px;color:#143C37;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">RP-07</span> فيلم قصة ثلاث دقائق</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;white-space:nowrap;">20 يوما</span></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:13px 16px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;"><span style="font-size:14px;color:#143C37;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">RP-08</span> إطار متابعة وتقييم</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;white-space:nowrap;">15 يوما</span></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:13px 16px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;"><span style="font-size:14px;color:#143C37;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">RP-09</span> نموذج مالي بثلاث قوائم</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;white-space:nowrap;">15 يوما</span></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:13px 16px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;"><span style="font-size:14px;color:#143C37;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">RP-10</span> رقمنة لكل ألف صفحة</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;white-space:nowrap;">15 يوما</span></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:13px 16px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;"><span style="font-size:14px;color:#143C37;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">RP-11</span> يوم توثيق فوتوغرافي</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;white-space:nowrap;">5 أيام</span></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:13px 16px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;"><span style="font-size:14px;color:#143C37;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8271;">RP-12</span> عدة إعداد مقترحات</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;white-space:nowrap;">10 أيام</span></div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">مسارا المال — الجباية في الخارج والصرف في الداخل</h3>
+    <div style="font-size:14.5px;line-height:2;color:#4A6B64;margin-top:8px;max-width:66ch;">قطعت المراسلة المصرفية الدولية عن اليمن، وانقسم البنك المركزي، فلا يخدم حساب واحد في عدن الوظيفتين. يفصل التحصيل عن التوزيع فصلا بنيويا — وهذا أخطر قرار في المعمار كله.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-top:18px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:20px 24px;">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#0E6E66;">RAIL A · COLLECTION</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">مسار التحصيل والضمان</div>
+        <div style="font-size:13.5px;line-height:2;color:#4A6B64;margin-top:6px;">تستقبل أموال العملاء وتحفظ على الدفعات وتفرج بالقبول — في ولاية مصرفية عاملة تدرس بينها الإمارات وعمان والأردن ومصر وتركيا. يقبل حوالات دولية، ويحفظ الأموال معرفة، ويصدر كشوفا يقبلها مدقق العميل.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:20px 24px;">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#B8891A;">RAIL B · DISTRIBUTION</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">مسار الصرف داخل اليمن</div>
+        <div style="font-size:13.5px;line-height:2;color:#4A6B64;margin-top:6px;">يصرف للمنفذين بالعملة المحلية عبر مصرف التضامن الإسلامي الدولي في عدن، وقنوات غير مصرفية مضبوطة لمن لا حساب له — بإثبات دفع لكل صرف، ووصولا إلى من هم خارج الجهاز المصرفي.</div>
+      </div>
+      <div style="background:#3B2F1E;border-radius:16px;padding:20px 24px;color:#FAF6EC;">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#FFB627;">THE BRIDGE · OPEN Q-11</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;margin-top:8px;">الجسر بينهما — معلق يحكم الإطلاق</div>
+        <div style="font-size:13.5px;line-height:2;color:rgba(250,246,236,.82);margin-top:6px;">نقل القيمة من مسار التحصيل إلى مسار الصرف: شركة تابعة في ولاية التحصيل، أو مزود دفع مرخص، أو ترتيب صرافة وتسوية متعاقد عليه. يتطلب مستشارا قانونيا واستفسارا مصرفيا، ولا يفتتح قبل حسمه. حتى يقوم المسار الأول يبنى خط البيع من عملاء يدفعون داخل اليمن أصلا: الوكالات المقيمة، والمنظمات المحلية، وحوالات المهجر.</div>
+      </div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">تحذير أنديلا — الفارق الذي يجب أن يبقى صحيحا</h3>
+    <div style="margin-top:16px;border:1px solid #E2D9C4;border-radius:16px;background:#fff;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;font-size:14px;line-height:1.95;"><span style="color:#4A6B64;">درب أنديلا الكفاءات من رأسمالها فصار كل فوج كلفة مقدمة على تكليف غير مؤكد — ثم هجرت النموذج</span><span style="color:#143C37;"><b>المصنع يمول برعاة</b> يشترون الناتج لذاته. إن مول يوما من رأس مال الشركة صار التحذير نبوءة.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;font-size:14px;line-height:1.95;"><span style="color:#4A6B64;">طلبها انحصر في مهندسي برمجيات لشركات تقنية</span><span style="color:#143C37;"><b>الاتساع حقيقي</b>: عشرون أسرة تخصص، وطلب من مؤسسات وأعمال محلية وبرامج مدنية. الانجرار إلى محل برمجيات وراثة لتركة أنديلا بلا رأسمالها.</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;padding:13px 20px;font-size:14px;line-height:1.95;"><span style="color:#4A6B64;">طال الطريق من التدريب إلى التكليف وقعد رأس المال عاطلا</span><span style="color:#143C37;"><b>المتدرب يعمل أثناء التكوين</b> بدور تحت إشراف يمر ناتجه بمراجع — فيتراكم له سجل حقيقي قبل تخرجه، وتتحرك نسبة الاستيعاب.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ٠٣ السجل والكيانات ============ -->
+<section id="d-entities" data-screen-label="٠٣ السجل والكيانات · The registry" dir="rtl" style="background:#F1EAD9;padding:96px clamp(20px,4vw,48px);font-family:'IBM Plex Sans Arabic',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:14px;letter-spacing:.12em;color:#0E6E66;font-weight:500;">الفصل ٠٣ · السجل والكيانات</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);line-height:1.28;color:#052E2B;max-width:26ch;">شيء واحد في الواقع، قيد واحد، معرف واحد، صفحة واحدة</h2>
+    <div style="font-size:16px;line-height:2.05;color:#33544D;margin-top:14px;max-width:66ch;">كل عطب تشغيلي في شركة كهذه يرجع إلى أصل واحد: الشخص نفسه أو العمل نفسه مقيد في مواضع شتى بأسماء شتى ولا يعرف أيها الصحيح. يقفل هذا الباب قبل أن يبنى أي نموذج أو صفحة.</div>
+
+    <h3 style="margin:34px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">تسعة كيانات لا عاشر لها</h3>
+    <div style="font-size:14.5px;line-height:2;color:#4A6B64;margin-top:8px;max-width:64ch;">ما عداها صفة أو وثيقة أو حدث يلحق بأحدها.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:16px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;">TAL</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:4px;">الكفاءة</div><div style="font-size:13px;line-height:1.9;color:#4A6B64;margin-top:2px;">إنسان واحد، قيد واحد، مدى الحياة</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;">CLI</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:4px;">العميل</div><div style="font-size:13px;line-height:1.9;color:#4A6B64;margin-top:2px;">الطرف المتعاقد الذي يكلف العمل</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;">POD</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:4px;">الفريق</div><div style="font-size:13px;line-height:1.9;color:#4A6B64;margin-top:2px;">وحدة التسليم المسماة بقائدها</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;">ENG</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:4px;">التكليف</div><div style="font-size:13px;line-height:1.9;color:#4A6B64;margin-top:2px;">عمل متعاقد عليه بنطاق مكتوب</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;">SPO</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:4px;">الراعي</div><div style="font-size:13px;line-height:1.9;color:#4A6B64;margin-top:2px;">من يمول أفواج المصنع وبرامج الذراع المدني</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;">PRG</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:4px;">البرنامج</div><div style="font-size:13px;line-height:1.9;color:#4A6B64;margin-top:2px;">فوج أو برنامج ممول بنواتج والتزام إبلاغ</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;">MEM</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:4px;">العضو</div><div style="font-size:13px;line-height:1.9;color:#4A6B64;margin-top:2px;">حامل عضوية المركز؛ يربط بقيد الكفاءة ولا يدمج به</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;">VER</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:4px;">التحقق</div><div style="font-size:13px;line-height:1.9;color:#4A6B64;margin-top:2px;">فحص مؤرخ واحد بنتيجة؛ يتعدد للشخص ولا يحذف</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;">PAY</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:4px;">الحركة المالية</div><div style="font-size:13px;line-height:1.9;color:#4A6B64;margin-top:2px;">دخول مال أو خروجه، مع إثباته</div></div>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;margin-top:14px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;">
+      <span style="width:26px;height:4px;border-radius:99px;background:#FFB627;flex:none;margin-top:9px;"></span>
+      <span style="font-size:14px;line-height:2;color:#4A6B64;">فصل الكفاءة عن العضو متعمد ويخطأ فيه كثيرا: العضوية عقد تجاري ينقضي، وقيد الكفاءة دائم. ودمجهما يعني أن إلغاء مكتب يمحو تاريخ تحقق.</span>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">معيار الترقيم — يكتب باليد ويقرأ في هاتف رديء</h3>
+    <div style="font-size:14.5px;line-height:2;color:#4A6B64;margin-top:8px;max-width:66ch;">يصدر المعرف مرة عند إنشاء القيد، ولا يعاد استعماله، ولا يتغير بتغير الاسم أو الدرجة، ويقتبس في كل عقد وأمر دفع ونتيجة تقييم. حرف تحقق ختامي يحسب بقسمة موزونة على أحد عشر، فيكشف أي خطأ في خانة واحدة عند إدخاله — ويرفض المعرف الساقط عند الباب، لا يخزن ثم يصحح.</div>
+    <div style="margin-top:18px;background:#052E2B;border-radius:16px;padding:24px clamp(20px,3vw,32px);color:#FAF6EC;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:clamp(15px,2vw,20px);letter-spacing:.06em;color:#12B5A4;text-align:center;">KY-T-26-00148-9</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px 18px;margin-top:16px;font-size:12.5px;line-height:1.9;color:rgba(250,246,236,.78);">
+        <span><b style="color:#E9BE4B;">KY</b> بادئة المؤسسة الثابتة</span>
+        <span><b style="color:#E9BE4B;">T</b> النوع: كفاءة، عميل، فريق، تكليف، راع، برنامج، عضو</span>
+        <span><b style="color:#E9BE4B;">26</b> سنة الإصدار الأول، لا تتغير</span>
+        <span><b style="color:#E9BE4B;">00148</b> تسلسل خماسي يستأنف كل سنة</span>
+        <span><b style="color:#E9BE4B;">9</b> حرف التحقق المحسوب</span>
+        <span><b style="color:#12B5A4;">KVR-00148</b> المرجع العلني المقابل — لا يفشي حجما ولا بنية، ولا يتبادل مع الداخلي أبدا</span>
+      </div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">الفريق — وحدة التسليم</h3>
+    <div style="font-size:14.5px;line-height:2;color:#4A6B64;margin-top:8px;max-width:66ch;">لا تبيع كيان أفرادا؛ تبيع فريقا بقائد مسؤول مسمى. وبهذا يدافع عن الأجر، وينجو التسليم إذا غاب شخص — وغيابه في هذه البيئة يقين لا احتمال.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-top:18px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:18px 22px;"><div style="font-weight:600;font-size:15.5px;color:#052E2B;">مشكل لمشروع</div><div style="font-size:13.5px;line-height:2;color:#4A6B64;margin-top:4px;">تجمعه كيان لنطاق بعينه من الموثقين المتاحين، وتعين قائده، وتحدد الحصص بالدور ويفصح لكل عضو قبل قبوله.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:18px 22px;"><div style="font-weight:600;font-size:15.5px;color:#052E2B;">مسجل قائما</div><div style="font-size:13.5px;line-height:2;color:#4A6B64;margin-top:4px;">فريق موجود يسجل باسمه وقائده المعلن وترتيبه الداخلي المكتوب — ويكشف الترتيب لكيان. ولا يكسبه التسجيل أفضلية تكليف.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:18px 22px;"><div style="font-weight:600;font-size:15.5px;color:#052E2B;">مؤلف من مصادر</div><div style="font-size:13.5px;line-height:2;color:#4A6B64;margin-top:4px;">تؤلفه كيان من أفراد بلا فريق وأعضاء يعارون من فرق مسجلة — بموافقة الفريق المعير المقيدة قبل الإسناد.</div></div>
+    </div>
+    <div style="margin-top:14px;border:1px solid #E2D9C4;border-radius:16px;background:#fff;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.6fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;font-size:14px;line-height:1.9;"><span style="font-weight:600;color:#052E2B;">قائد الفريق</span><span style="color:#4A6B64;">مسؤول التسليم ومخاطبة العميل ورفع الدفعات والتصعيد؛ تشترط فيه الدرجة المطلوبة في التكليف وسجل تسليم</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.6fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;font-size:14px;line-height:1.9;"><span style="font-weight:600;color:#052E2B;">المنفذ</span><span style="color:#4A6B64;">مخرجاته المسندة على المعيار المقبول وفي موعدها؛ موثق في تخصص العمل نفسه</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.6fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;font-size:14px;line-height:1.9;"><span style="font-weight:600;color:#052E2B;">المراجع</span><span style="color:#4A6B64;">فحص جودة مستقل قبل التسليم؛ درجته لا تقل عن درجة من يراجع له</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.6fr);gap:12px;padding:13px 20px;font-size:14px;line-height:1.9;"><span style="font-weight:600;color:#052E2B;">المتدرب</span><span style="color:#4A6B64;">إسهام تحت إشراف يمر ناتجه بمراجع دائما — موضع بنيوي لا إحسان، وهو آلة الاستيعاب، ويحمل كل فريق فوق حجم معلن واحدا</span></div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">عشرون حدثا تدير السجل — والإنسان عند الاجتهاد وحده</h3>
+    <div style="font-size:14.5px;line-height:2;color:#4A6B64;margin-top:8px;max-width:66ch;">من عشرين حدثا يسير ثلاثة عشر بلا يد بشرية، وتحجز اليد لسبع بوابات اجتهاد حقيقية. عند مئة تسجيل يكون الفرق راحة؛ وعند ألف يكون الفرق بين مؤسسة عاملة وطابور يهدم مصداقية التحقق. والتصميم يفترض عشرة آلاف.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-top:18px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:20px 24px;">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#0E6E66;">MACHINE · 13 EVENTS</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">ما تفعله الآلة وحدها</div>
+        <div style="font-size:13.5px;line-height:2.05;color:#4A6B64;margin-top:6px;">إصدار المعرف وفتح الصفحة، وتأكيد جهات الاتصال، وفحص الملفات والوجه والتكرار، وإسناد التقييمات وتصحيح الموضوعي منها، وإرسال طلبات التزكية وتذكيراتها، وعد المهل، وإنذارات الانتهاء، وإسقاط الدرجة عند انقضائها، وكتابة كل حدث في الخط الزمني الذي لا يحرر ولا يحذف.</div>
+      </div>
+      <div style="background:#052E2B;border-radius:16px;padding:20px 24px;color:#FAF6EC;">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#12B5A4;">HUMAN GATES · 7</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;margin-top:8px;">ما لا يقرره إلا إنسان</div>
+        <div style="font-size:13.5px;line-height:2.05;color:rgba(250,246,236,.82);margin-top:6px;">قبول الهوية، وتصحيح المهمة العملية، وقرار الدرجة — بموافقة مزدوجة للثالثة والرابعة — وتعيين قائد الفريق، والموافقة التجارية على التكليف، والتثبت من إثبات تمويل الضمان، والإفراج والصرف بموافقة مزدوجة، والنزاع فور قيامه، وتجديد فحص الالتزام.</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;margin-top:14px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;">
+      <span style="width:26px;height:4px;border-radius:99px;background:#0E6E66;flex:none;margin-top:9px;"></span>
+      <span style="font-size:14px;line-height:2;color:#4A6B64;">صفحات العلاقة — للكفاءة والعميل والفريق والراعي والتكليف — تولد آليا عند إنشاء القيد وتحدثها الأحداث لا الأيدي، ويفصل فيها ما يراه صاحبها عما تراه كيان وحدها. لا يحذف قيد أبدا: يقفل أو يدمج أو يستبدل، بسبب وتاريخ. وصور وثائق الهوية تمحى فور البت ويستبقى الأثر التقني والنتيجة.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ٠٤ التحقق وسلم الثقة ============ -->
+<section id="d-verify" data-screen-label="٠٤ التحقق وسلم الثقة · Verification" dir="rtl" style="background:#FAF6EC;padding:96px clamp(20px,4vw,48px);font-family:'IBM Plex Sans Arabic',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:14px;letter-spacing:.12em;color:#0E6E66;font-weight:500;">الفصل ٠٤ · التحقق وسلم الثقة</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);line-height:1.28;color:#052E2B;max-width:26ch;">الدرجة تقيد ما ثبت، والتكليف قرار آخر</h2>
+    <div style="font-size:16px;line-height:2.05;color:#33544D;margin-top:14px;max-width:66ch;">أهم جملة في المنظومة كلها: التحقق لا يوزع العمل. تقيد الدرجة ما قام عليه الدليل من قدرة، ولا تنشئ حقا في تكليف ولا تحرم منه — فالتكليف قرار ملاءمة وتوافر ومتطلب عميل. وتقال هذه الجملة لكل مسجل في أول رحلته وفي آخرها، لأن من ظن الدرجة طابور عمل بالغ في وصف نفسه، وقرأ كل قرار درجة رفضا، ورأى في كل إسناد محاباة.</div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:26px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 22px;"><div style="font-weight:600;font-size:15px;color:#052E2B;">السلم للصعود</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">لا يرد أحد لبدايته؛ يوضع حيث دليله ويقال له ما يرفعه — تحديدا لا تعميما.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 22px;"><div style="font-weight:600;font-size:15px;color:#052E2B;">التسجيل أول العلاقة</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">أول ما يلمسه المهني من كيان؛ يجمع ويشرح ويعلم ويستحق الصدق الذي يطلبه.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 22px;"><div style="font-weight:600;font-size:15px;color:#052E2B;">يسأل مرة، ومتأخرا</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">لا حقل إلا وله إجراء مسمى يستهلكه؛ وما يجمع يجمع حيث يحضر من يعرف الجواب.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 22px;"><div style="font-weight:600;font-size:15px;color:#052E2B;">ميثاق الصدق</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">المبالغة تكشف عند التقييم أو أول تسليم وتكلف السجل؛ والبداية المبكرة لا تكلف شيئا.</div></div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">رحلة التسجيل — إحدى عشرة محطة</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;">
+      <span style="background:#052E2B;color:#FAF6EC;border-radius:99px;padding:8px 16px;font-size:13px;">٠ التمهيد والميثاق</span>
+      <span style="background:#fff;border:1px solid #E2D9C4;border-radius:99px;padding:8px 16px;font-size:13px;color:#143C37;">١ الحساب</span>
+      <span style="background:#fff;border:1px solid #E2D9C4;border-radius:99px;padding:8px 16px;font-size:13px;color:#143C37;">٢ الهوية</span>
+      <span style="background:#fff;border:1px solid #E2D9C4;border-radius:99px;padding:8px 16px;font-size:13px;color:#143C37;">٣ الملف المهني</span>
+      <span style="background:#fff;border:1px solid #E2D9C4;border-radius:99px;padding:8px 16px;font-size:13px;color:#143C37;">٤ التخصصات</span>
+      <span style="background:#fff;border:1px solid #E2D9C4;border-radius:99px;padding:8px 16px;font-size:13px;color:#143C37;">٥ الأدلة</span>
+      <span style="background:#fff;border:1px solid #E2D9C4;border-radius:99px;padding:8px 16px;font-size:13px;color:#143C37;">٦ التقييم</span>
+      <span style="background:#fff;border:1px solid #E2D9C4;border-radius:99px;padding:8px 16px;font-size:13px;color:#143C37;">٧ التزكية</span>
+      <span style="background:#fff;border:1px solid #E2D9C4;border-radius:99px;padding:8px 16px;font-size:13px;color:#143C37;">٨ الموافقات</span>
+      <span style="background:#fff;border:1px solid #E2D9C4;border-radius:99px;padding:8px 16px;font-size:13px;color:#143C37;">٩ المراجعة</span>
+      <span style="background:#0E6E66;color:#fff;border-radius:99px;padding:8px 16px;font-size:13px;">١٠ النتيجة وطريق الدرجة التالية</span>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;margin-top:14px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;">
+      <span style="width:26px;height:4px;border-radius:99px;background:#FFB627;flex:none;margin-top:9px;"></span>
+      <span style="font-size:14px;line-height:2;color:#4A6B64;">في الملف المهني أربعة أسئلة نادرة في استمارات التسجيل وهي من أثمن ما تمسكه كيان: الجهاز، والإنترنت، واستمرار الكهرباء، والقناة الاحتياطية. تحول خطر تسليم لا يعلم إلى قيد يجدول، ويسأل عنها بلا حرج لأنها حقيقة تشغيل لا عيب شخصي. ويسأل كل مسجل: أتقبل عمل التدريب في هذا التخصص؟ — ومنه يدخل أصحاب البدايات إلى التسليم.</span>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">الكفايات الست — سلوك يلاحظ لا طبع يدعى</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-top:18px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">C1</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">أمانة التسليم</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">ينجز ما اتفق عليه بمعياره وموعده، ويرفع العارض مبكرا لا متأخرا.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">C2</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">انضباط الدليل</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">ينتج عملا يفحص، ويوثق ما فعل، ولا يدعي ما لا يثبت.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">C3</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">وضوح المخاطبة</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">يفهم غير المختص منه الحال والكلفة والخطر دون أن يسأل مرتين.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">C4</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">عمق الحرفة</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">تمكن حقيقي من التخصص المعلن لا ألفة به.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:16px 20px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">C5</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">حمل مع الفريق</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">تسليم نظيف بين الأيدي، ومراجعة تنفع، وتغطية لمن غاب.</div></div>
+      <div style="background:#052E2B;border-radius:14px;padding:16px 20px;color:#FAF6EC;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#12B5A4;">C6</span><div style="font-weight:600;font-size:15px;margin-top:6px;">استمرار عند الانقطاع</div><div style="font-size:13.5px;line-height:1.95;color:rgba(250,246,236,.82);margin-top:4px;">يواصل خلال انقطاع الكهرباء والشبكة والأمن ولا يصمت. في غير عدن كفاية غريبة؛ هنا هي الفارق بين من يعتمد عليه ومن لا. الانقطاع مؤكد، والذي يتفاوت هو من يخاطب خلاله.</div></div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">السلم بدرجاته الخمس — معيار منشور بكامله</h3>
+    <div style="margin-top:16px;border:1px solid #E2D9C4;border-radius:16px;background:#fff;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:64px minmax(0,.8fr) minmax(0,1.4fr) minmax(0,.75fr);gap:12px;padding:12px 20px;background:#FCFBF7;font-size:12px;color:#8A8271;"><span></span><span>الدرجة</span><span>ما تقرره</span><span>صلاحيتها</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,.8fr) minmax(0,1.4fr) minmax(0,.75fr);gap:12px;padding:14px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#B9B1A2;"></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">T0</span></span><span style="font-weight:600;color:#052E2B;">مسجل</span><span style="color:#4A6B64;">قيد قائم، ولا يقرر شيء بعد؛ لا يرى العملاء صاحبه بأي صورة</span><span style="color:#8A8271;font-size:13px;">حتى يستبدل</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,.8fr) minmax(0,1.4fr) minmax(0,.75fr);gap:12px;padding:14px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#0E6E66;"></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">T1</span></span><span style="font-weight:600;color:#052E2B;">معرف</span><span style="color:#4A6B64;">شخص حقيقي يتصل به، بالغ، قبل الشروط — بقرار موظف تحقق؛ يجوز نظره لأدوار التدريب</span><span style="color:#8A8271;font-size:13px;">٢٤ شهرا ثم إعادة فحص الوثيقة</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,.8fr) minmax(0,1.4fr) minmax(0,.75fr);gap:12px;padding:14px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#12B5A4;"></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">T2</span></span><span style="font-weight:600;color:#052E2B;">موثق</span><span style="color:#4A6B64;">قدرة مثبتة بتقييم في تخصص مسمى واحد فأكثر؛ يعرض ضمن فريق ويحمل أدوار تنفيذ</span><span style="color:#8A8271;font-size:13px;">١٨ شهرا لكل تخصص</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,.8fr) minmax(0,1.4fr) minmax(0,.75fr);gap:12px;padding:14px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#C9A227;"></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">T3</span></span><span style="font-weight:600;color:#052E2B;">مثبت</span><span style="color:#4A6B64;">عمل حقيقي سلم عبر كيان وقبله عميل، بتزكية مثبتة وتأييد قائد فريق — بموافقة اثنين؛ يحمل أدوار المراجعة وقيادة مسارات</span><span style="color:#8A8271;font-size:13px;">١٢ شهرا تتجدد بالتسليم</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,.8fr) minmax(0,1.4fr) minmax(0,.75fr);gap:12px;padding:14px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;background:#FCFBF7;"><span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,#E9BE4B,#12B5A4);"></span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">T4</span></span><span style="font-weight:600;color:#052E2B;">مؤتمن</span><span style="color:#4A6B64;">تضع كيان اسمها خلف صاحبه: ثبات في الثالثة، وتدقيق أعمال، وقيادة تسليم، وعطاء للغير مراجعة أو إرشادا، وسيرة سلوك نظيفة — بموافقة اثنين أحدهما تنفيذي؛ يقود الفرق ويمثل كيان</span><span style="color:#8A8271;font-size:13px;">١٢ شهرا بمراجعة سنوية</span></div>
+    </div>
+    <div style="font-size:13.5px;line-height:2;color:#8A8271;margin-top:12px;max-width:66ch;">وفي كل درجة يعاد عمدا: لا حق في عمل. الانقضاء بلا فعل يخفض الدرجة بلا وصمة وإعادتها يسيرة؛ والتخفيض لسبب يقيد مكتوبا؛ ولكل قرار سالب تظلم واحد خلال ٢١ يوما يسمعه من لم يشارك في القرار الأول. العتبات العددية تضبط في لائحة المعايير <a href="Kayan Standards.dc.html">KYN-S-01</a> لا هنا.</div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">أربع أدوات تقييم تنتج ملامح لا علامة واحدة</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:18px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 22px;"><div style="font-weight:600;font-size:15px;color:#052E2B;">الحكم الموقفي</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">١٥ موقفا من تشغيل عدن الحقيقي: كهرباء تنقطع قبل موعد، وعميل يغير النطاق شفاها، وزميل يصمت. يقيس التصرف لا معرفة الصواب.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 22px;"><div style="font-weight:600;font-size:15px;color:#052E2B;">معرفة الحرفة</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">بنك أسئلة متكيف لكل تخصص دقيق، تصعب أسئلته مع الأداء، وتبلغ نتيجته نطاقا مكتوب المعنى لا علامة خام.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 22px;"><div style="font-weight:600;font-size:15px;color:#052E2B;">المخاطبة الكتابية</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">رد واحد قصير على موقف عميل واقعي بلغة عمل المسجل، يصححه مقيم على معيار مكتوب.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 22px;"><div style="font-weight:600;font-size:15px;color:#052E2B;">المهمة العملية</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">مخرج صغير واقعي في التخصص المعلن، محدد الوقت، يصححه مقيم أو نظير موثق أعلى درجة.</div></div>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;margin-top:14px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;">
+      <span style="width:26px;height:4px;border-radius:99px;background:#0E6E66;flex:none;margin-top:9px;"></span>
+      <span style="font-size:14px;line-height:2;color:#4A6B64;">إشارات النزاهة التقنية — فقدان تركيز النافذة، وتوقيت شاذ — ترفع راية لمراجع بشري ولا تسقط أحدا آليا: من انقطعت كهرباؤه وسط التقييم عوقب على ظرفه لا سلوكه، وهذا نقض للمعتقد الأول. ولا نتيجة اسمها «مرفوض»: موثق، أو مطلوب استكمال، أو ليس بعد، أو معتذر عنه بسبب مقيد وطريق تظلم.</span>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">التزكية — أعلى الأدلة قيمة وأكثرها عرضة للعبث</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-top:18px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">شروط المزكي</div>
+        <div style="font-size:13.5px;line-height:2.05;color:#4A6B64;margin-top:6px;">معرفة مباشرة بالعمل نفسه — أشرف أو كلف أو درس أو عمل جنبا إلى جنب؛ وعلاقة خلال السنوات الثلاث الأخيرة؛ واستقلال — لا قريب، ولا مسجل سمى هذا الشخص مزكيا له؛ واثنان لازمان وثالث جائز، أحدهما على الأقل مشرف أو عميل لا نظير.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">الآلية والضبط</div>
+        <div style="font-size:13.5px;line-height:2.05;color:#4A6B64;margin-top:6px;">طلب ثنائي اللغة برابط ذي رمز واحد، بلا حساب ولا دخول، ينقضي في ١٤ يوما بتذكير ثلاث مرات. والسؤال الفاصل: صف عملا واحدا بعينه أنجزه — وهو الوحيد الذي لا يجاب سريعا بلا معرفة حقيقية. عينة هاتفية شهرية، وكل تزكية تسند قرار الدرجتين العليين يتصل بصاحبها. ولا يطلع المزكى على مضمون تزكيته أبدا، ويقال ذلك للطرفين مقدما.</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;margin-top:14px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;">
+      <span style="width:26px;height:4px;border-radius:99px;background:#C9A227;flex:none;margin-top:9px;"></span>
+      <span style="font-size:14px;line-height:2;color:#4A6B64;">الموافقات ثلاث عشرة، تعطى كل واحدة على حدة بنصها الواضح وتاريخها ونسختها — لا موافقة شاملة. وصورة وثيقة الهوية تمحى فور البت، وتفحص أنماط النتائج كل ربع سنة عبر المحافظات والجنس ومنافذ الدخول: فالأداة التي تفرق بلا تفسير من الدليل تقيس شيئا غير القدرة.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ٠٥ الإطلاق والحوكمة ============ -->
+<section id="d-launch" data-screen-label="٠٥ الإطلاق والحوكمة · Launch & governance" dir="rtl" style="background:#F1EAD9;padding:96px clamp(20px,4vw,48px);font-family:'IBM Plex Sans Arabic',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:14px;letter-spacing:.12em;color:#0E6E66;font-weight:500;">الفصل ٠٥ · الإطلاق والحوكمة</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);line-height:1.28;color:#052E2B;max-width:26ch;">الإطلاق حالة تبلغ، لا إعلان يذاع</h2>
+    <div style="font-size:16px;line-height:2.05;color:#33544D;margin-top:14px;max-width:66ch;">عشرة شروط ثنائية — تحقق أو لم يتحقق — يملك كل واحد منها مسؤول مسمى. وأولها جميعا آلية حفظ المال وصرفه: فقد صمدت الاستراتيجية في اختبار الهجوم على كل جبهة إلا هذه، وهي لذلك أول ما يبنى في الشركة، قبل المنصة والتسويق والمحتوى كله.</div>
+
+    <div style="margin-top:26px;border:1px solid #E2D9C4;border-radius:16px;background:#fff;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:64px minmax(0,1.3fr) minmax(0,1fr);gap:12px;padding:12px 20px;background:#FCFBF7;font-size:12px;color:#8A8271;"><span></span><span>الشرط</span><span>لم لا يساوم عليه</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1.3fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B23A31;">L-01</span><span style="font-weight:600;color:#052E2B;">آلية الضمان والصرف مثبتة بمال حقيقي على ثلاثة تكليفات كاملة</span><span style="color:#8A8271;font-size:13px;">الخطر الوجودي الأول؛ بلا هذا لا منتج أصلا</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1.3fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">L-02</span><span style="font-weight:600;color:#052E2B;">عدة العقود مراجعة من مستشار وقابلة للتنفيذ</span><span style="color:#8A8271;font-size:13px;">أول عقد رديء يرسي سابقة</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1.3fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">L-03</span><span style="font-weight:600;color:#052E2B;">منظومة التسجيل والتحقق تعمل بلا إعادة إدخال يدوي</span><span style="color:#8A8271;font-size:13px;">اليدوي ينهار قبل الألف — القاعدة السادسة</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1.3fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">L-04</span><span style="font-weight:600;color:#052E2B;">قاعدة موثقين بعمق كاف في التخصصات المعروضة</span><span style="color:#8A8271;font-size:13px;">لا تباع طاقة لا يوفى بها</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1.3fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B23A31;">L-05</span><span style="font-weight:600;color:#052E2B;">ثلاثة تكليفات مدارة سلمت وقبلت قبل يوم الإطلاق</span><span style="color:#8A8271;font-size:13px;">يطلق بالدليل لا بالوعود؛ أول شاهد حالة أثمن أصل تسويقي سينتج</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1.3fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">L-06</span><span style="font-weight:600;color:#052E2B;">المركز مفتوح يتاجر: مقه يعمل وعضوية تباع</span><span style="color:#8A8271;font-size:13px;">خط النقد وميدان التحقق وأصل الإثبات</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1.3fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">L-07</span><span style="font-weight:600;color:#052E2B;">فوج المصنع الأول مكتمل التجنيد بتمويل راع ملتزم</span><span style="color:#8A8271;font-size:13px;">محرك العرض يدور قبل وصول الطلب</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1.3fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">L-08</span><span style="font-weight:600;color:#052E2B;">كل دور داخلي مشغول أو مغطى بمناوب مسمى وخطة تسليم مكتوبة</span><span style="color:#8A8271;font-size:13px;">القاعدة العاشرة</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1.3fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">L-09</span><span style="font-weight:600;color:#052E2B;">الضوابط المالية حية: دفتر ضمان، وعتبات موافقة، وإقفال نقدي يومي، ومعيار إثبات</span><span style="color:#8A8271;font-size:13px;">شركة ثقة لا تحصي مالها لا منتج لها</span></div>
+      <div style="display:grid;grid-template-columns:64px minmax(0,1.3fr) minmax(0,1fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">L-10</span><span style="font-weight:600;color:#052E2B;">حضور علني يصمد أمام تدقيق مهني</span><span style="color:#8A8271;font-size:13px;">في تجارة الثقة، باب هاو إشارة إسقاط</span></div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">حوكمة الوثيقة — تغيير بقرار، لا انزياح صامت</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-top:18px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">سلم الوثائق</div>
+        <div style="font-size:13.5px;line-height:2.05;color:#4A6B64;margin-top:6px;">الميثاق أعلى الوثائق، وما خالفه فهو خطأ بحكم التعريف ويصحح — إلا التسعير فتحكمه وثيقة المعمار الاقتصادي حيث تعارضا. وكل ادعاء موسوم: ثابت بدليل، أو اجتهاد معمول به، أو معلق. تقيد التعديلات في سجل القرارات بتاريخ وسبب وصاحب، ويجوز نقض قرار — علنا وعلى القيد لا سواه.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">ضبط الجودة الدائم</div>
+        <div style="font-size:13.5px;line-height:2.05;color:#4A6B64;margin-top:6px;">ثماني قوائم فحص قائمة، لكل منها مالك مسمى ودورية معلنة: اكتمال التسجيل أسبوعيا، واتساق قرارات الهوية بمراجعة عمياء شهرية، وصلاحية بنوك الأسئلة ربعيا، ونزاهة التزكيات شهريا، والموافقات والحفظ شهريا، وصيانة الدرجات شهريا، وجودة البيانات شهريا، والإنصاف ربعيا. قيمة الدرجة كلها في أن تعني الشيء نفسه أيا كان من قررها.</div>
+      </div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">المعلق على المالك — ست عشرة مسألة لا تحل بالاجتهاد</h3>
+    <div style="font-size:14.5px;line-height:2;color:#4A6B64;margin-top:8px;max-width:66ch;">كل واحدة تغير معمارا لاحقا، فتقيد باسمها ورمزها وتقرر عمدا. أثقلها اثنتان بالحمرة: جسر المسارين يحكم الإطلاق نفسه، وفتح التسجيل بلا طاقة تحقق مثبتة حدث سمعة لا مسألة إدارية — والتوصية أن يبدأ بالدعوة.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;margin-top:18px;">
+      <div style="background:#3B2F1E;border-radius:12px;padding:14px 18px;color:#FAF6EC;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#FFB627;">Q-11</span><div style="font-size:13.5px;line-height:1.95;margin-top:4px;">ولاية مسار التحصيل، والجسر إلى مسار الصرف — يحكم الإطلاق ويتطلب مستشارا واستفسارا مصرفيا</div></div>
+      <div style="background:#3B2F1E;border-radius:12px;padding:14px 18px;color:#FAF6EC;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#FFB627;">Q-10</span><div style="font-size:13.5px;line-height:1.95;margin-top:4px;">التسجيل عند الإطلاق: مفتوح للجميع أم بالدعوة للفوج الأول — والتوصية بالدعوة</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A8271;">Q-01</span><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">المرجع العلني يصدر مع الإطلاق أم يحبس حتى يقوم سجل تسليم</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A8271;">Q-02</span><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">تصنيف التخصصات: يحمل القائم بأسره أم يعاد بناؤه على الأسر الأشمل</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A8271;">Q-03</span><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">هل يكون للمهنيين اشتراك مدفوع يوما، أم يبقى المدخل مجانيا دائما</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A8271;">Q-04 · Q-05</span><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">نهاية السنة المالية · عتبة التركز التي توجب خطة معالجة</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A8271;">Q-06 → Q-09</span><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">عتبات الدرجات العددية · نطاق المهمة العملية · موقع المصنع من تقييم التوثيق · فترة التهدئة بين المحاولات</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:12px;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A8271;">Q-12 → Q-16</span><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">هوامش الدرجات وأساس التحميل · جدول أجور المنفذين · وضع المسؤولية والتأمين قبل بيع المكفولة · المعالجة الضريبية · معيار التوريد المؤثر وتوثيق B Corp وتوقيتهما</div></div>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;margin-top:18px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;">
+      <span style="width:26px;height:4px;border-radius:99px;background:#C9A227;flex:none;margin-top:9px;"></span>
+      <span style="font-size:14px;line-height:2;color:#4A6B64;">تاريخ الإطلاق قيمة محكومة تقرر مع هذه المسائل لا هنا. وكل رقم في هذا الملف — نسب، ومهل، وعتبات — يضبط في وثيقته المالية المحكومة، فلا يعاد فتح الميثاق لتغيير رقم.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ٠٦ العقود ودورة الضمان ============ -->
+<section id="d-contracts" data-screen-label="٠٦ العقود ودورة الضمان · Contracts" dir="rtl" style="background:#FAF6EC;padding:96px clamp(20px,4vw,48px);font-family:'IBM Plex Sans Arabic',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:14px;letter-spacing:.12em;color:#0E6E66;font-weight:500;">الفصل ٠٦ · العقود ودورة الضمان</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);line-height:1.28;color:#052E2B;max-width:26ch;">العقد يحول القاعدة إلى التزام ينفذ</h2>
+    <div style="font-size:16px;line-height:2.05;color:#33544D;margin-top:14px;max-width:66ch;">صيغت حزمة العقود الخمس بالعربية أولا، وتنتظر كلها مراجعة مستشار قانوني في عدن قبل أول توقيع. البنية سليمة وتعتمد؛ وثلاثة مواضع فيها كتبت قبل استقرار المعمار الاقتصادي فتصوب قبل عرضها على المستشار — مقيدة في آخر هذا الفصل.</div>
+
+    <div style="margin-top:26px;border:1px solid #E2D9C4;border-radius:16px;background:#fff;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:110px minmax(0,.9fr) minmax(0,1.4fr);gap:12px;padding:12px 20px;background:#FCFBF7;font-size:12px;color:#8A8271;"><span>الرمز</span><span>الوثيقة</span><span>ما تفعله</span></div>
+      <div style="display:grid;grid-template-columns:110px minmax(0,.9fr) minmax(0,1.4fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">KAY-CON-001</span><span style="font-weight:600;color:#052E2B;">اتفاقية الخدمات الرئيسية</span><span style="color:#4A6B64;">الإطار الحاكم: نموذج الوكيل، وآلية الضمان، والسرية، والملكية، والقوة القاهرة، والتحكيم</span></div>
+      <div style="display:grid;grid-template-columns:110px minmax(0,.9fr) minmax(0,1.4fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">KAY-CON-002</span><span style="font-weight:600;color:#052E2B;">نطاق العمل</span><span style="color:#4A6B64;">لكل مشروع: المخرجات بمعاييرها، وتركيبة الفريق بدرجاته، والسعر، وجدول إيداع الضمان</span></div>
+      <div style="display:grid;grid-template-columns:110px minmax(0,.9fr) minmax(0,1.4fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">KAY-CON-003</span><span style="font-weight:600;color:#052E2B;">طلب التغيير</span><span style="color:#4A6B64;">كل خروج على النطاق: وصف وسبب وأثر في الكلفة والموعد، وضمان إضافي إن لزم — ولا تنفيذ قبل التوقيع</span></div>
+      <div style="display:grid;grid-template-columns:110px minmax(0,.9fr) minmax(0,1.4fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">KAY-CON-SDN</span><span style="font-weight:600;color:#052E2B;">إشعار التسليم وشهادة القبول</span><span style="color:#4A6B64;">لكل معلم: ما سلم، وأي بوابة جودة اجتاز، ومهلة الرد، وقرار العميل، وتفعيل الإفراج</span></div>
+      <div style="display:grid;grid-template-columns:110px minmax(0,.9fr) minmax(0,1.4fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">KAY-CON-005R</span><span style="font-weight:600;color:#052E2B;">سياسة الاسترداد والإلغاء</span><span style="color:#4A6B64;">سلم الاسترداد بمراحله، وحماية مستحقات المنفذين، وشروط عدم الاسترداد</span></div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">آلية الضمان — أربعة شروط للإفراج، لا يسقط منها شيء</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:18px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 22px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">1</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">تقديم المخرجات</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">يسلم الفريق معلم النطاق كاملا بإشعار تسليم رسمي.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 22px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">2</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">اجتياز بوابة الجودة</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">مراجعة مستقلة قبل أن يرى العميل شيئا — لا إفراج دون اجتيازها.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 22px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">3</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">قبول العميل</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">صريح، أو مفترض بانقضاء خمسة أيام عمل بلا رد — والرفض لا يصح إلا مكتوبا مسندا إلى معايير القبول.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:18px 22px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8271;">4</span><div style="font-weight:600;font-size:15px;color:#052E2B;margin-top:6px;">تفويض مزدوج</div><div style="font-size:13.5px;line-height:1.95;color:#4A6B64;margin-top:4px;">توقيعان مسميان للإفراج، ولا يجتمعان في يد واحدة.</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:12px;">
+      <div style="display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;"><span style="width:26px;height:4px;border-radius:99px;background:#12B5A4;flex:none;margin-top:9px;"></span><span style="font-size:14px;line-height:2;color:#4A6B64;"><b style="color:#052E2B;">الاحتجاز:</b> ٢٪ من كل إفراج تحفظ ثلاثين يوما بعد آخر تسليم لمعالجة العيوب، ثم يفرج عنها آليا إن لم ترد مطالبة صحيحة.</span></div>
+      <div style="display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;"><span style="width:26px;height:4px;border-radius:99px;background:#12B5A4;flex:none;margin-top:9px;"></span><span style="font-size:14px;line-height:2;color:#4A6B64;"><b style="color:#052E2B;">المطابقة اليومية:</b> تطابق أرصدة الضمان على دفتره الفرعي كل يوم، وأي فرق يتجاوز ما يعادل دولارا واحدا يحقق فيه ويحل خلال أربع وعشرين ساعة.</span></div>
+      <div style="display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;"><span style="width:26px;height:4px;border-radius:99px;background:#12B5A4;flex:none;margin-top:9px;"></span><span style="font-size:14px;line-height:2;color:#4A6B64;"><b style="color:#052E2B;">القنوات المحظورة:</b> لا حوالة غير رسمية، ولا عملة مشفرة، ولا حساب شخصي — والفحص على قوائم العقوبات قبل التعاقد ودوريا.</span></div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">ما يحمي كل طرف</h3>
+    <div style="margin-top:16px;border:1px solid #E2D9C4;border-radius:16px;background:#fff;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;font-size:14px;line-height:1.95;align-items:baseline;"><span style="font-weight:600;color:#052E2B;">المراجعات</span><span style="color:#4A6B64;">جولتان ضمن النطاق؛ وما زاد أمر تغيير موقع بضمان إضافي إن لزم — فلا يبتلع النطاق زحفا</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;font-size:14px;line-height:1.95;align-items:baseline;"><span style="font-weight:600;color:#052E2B;">الملكية الفكرية</span><span style="color:#4A6B64;">تنتقل للعميل باكتمال الدفع؛ وتبقى أدوات كيان ومنهجياتها لها، ولها عرض العمل مجهلا في سابقاتها</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;font-size:14px;line-height:1.95;align-items:baseline;"><span style="font-weight:600;color:#052E2B;">عدم الالتماس</span><span style="color:#4A6B64;">لا يتعاقد العميل مباشرة مع منفذ كلف له اثني عشر شهرا؛ والمخالفة بغرامة ستة أشهر من تعويضه</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:12px;padding:13px 20px;border-bottom:1px solid #EDE5D2;font-size:14px;line-height:1.95;align-items:baseline;"><span style="font-weight:600;color:#052E2B;">القوة القاهرة</span><span style="color:#4A6B64;">مكتوبة لواقع عدن نصا: انقطاع كهرباء يتجاوز ثمانيا وأربعين ساعة، واضطراب مصرفي، وقيود عملة — إخطار في خمسة أيام، وإنهاء بلا مسؤولية إن جاوز العارض تسعين يوما</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:12px;padding:13px 20px;font-size:14px;line-height:1.95;align-items:baseline;"><span style="font-weight:600;color:#052E2B;">حماية المنفذين</span><span style="color:#4A6B64;">لا يخصم من مستحق إلا بدليل موثق، ولصاحبه الرد قبل التنفيذ والتظلم بعده؛ وتكرار طلبات الاسترداد من عميل واحد يفعل مراجعة للعلاقة</span></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-top:26px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">النزاع — ثلاث درجات في أربعة عشر يوما</div>
+        <div style="font-size:13.5px;line-height:2.05;color:#4A6B64;margin-top:6px;">يجمد ضمان المعلم المتنازع عليه فورا. الأيام ١–٣ حل مباشر بين الطرفين؛ ٤–٧ وساطة إدارة العمليات على ملف القضية؛ ٨–١٤ بت ملزم بمشاركة مستشار خارجي، ويقيد سابقة. الأهداف المعلنة: نزاعات دون ٥٪ من المشاريع، وحل في أربعة أيام وسطيا، ورضا فوق ٧٠٪. وما خرج عن هذا فتفاوض ثلاثين يوما، فوساطة، فتحكيم في عدن للعملاء المحليين والنص العربي يحكم — وتحكيم غرفة التجارة الدولية بدبي لما جاوز خمسين ألف دولار دوليا.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">سلم الاسترداد — كلما تقدم العمل ضاق</div>
+        <div style="font-size:13.5px;line-height:2.05;color:#4A6B64;margin-top:6px;">قبل تشكيل الفريق: يرد الضمان كاملا بخصم إداري ٥٪. بعد التشكيل وقبل الانطلاق: ٨٠٪ من غير المستنفد. أثناء التنفيذ: بنسبة المعالم غير المكتملة بتقدير مستقل للعمل المنجز. بعد المراجعة الوسطية: غير المقبول وحده. والمقبول — صراحة أو بانقضاء المهلة — لا يسترد. ويعاد المبلغ في خمسة أيام عمل عبر قناة الدفع الأصلية نفسها.</div>
+      </div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#052E2B;">ملحق الفريق — واجب التوثيق ومكافأته</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-top:18px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:20px 24px;"><div style="font-weight:600;font-size:15.5px;color:#052E2B;">واجب التوثيق — ٥٪ معلقة عليه</div><div style="font-size:13.5px;line-height:2.05;color:#4A6B64;margin-top:4px;">تحجز ٥٪ من صرفة الفريق الأخيرة حتى تكتمل حزمة التوثيق خلال سبعة أيام من التسليم: محاضر الانطلاق ونقاط الفحص، ولقطة عند كل تمرير عمل بين عضوين، ولقطة جلسة عمل أسبوعيا، ومقطع ختامي يمشي فيه القائد على المخرج في دقيقة أو دقيقتين، وعلم موافقة على كل مادة: تعرض للعميل أم لا. هاتف وسكرين شوت يكفيان — الصقل عمل المصمم لا الفريق. الحزم هي محرك البرهان وذاكرة النموذج ومحفظة المنفذ نفسه.</div></div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:20px 24px;"><div style="font-weight:600;font-size:15.5px;color:#052E2B;">مكافأة الإقفال النظيف — ٢٪</div><div style="font-size:13.5px;line-height:2.05;color:#4A6B64;margin-top:4px;">إذا أقفل التكليف بلا مطالبة كفالة، وحزمة توثيق كاملة، وتقييم مركب لا يقل عن ٤ من ٥ — صرفت للفريق مكافأة ٢٪ من مخصص المنفذين على حصص القائد المقيدة، من أجر كيان لا من أجورهم. الجودة تدفع حرفيا. ويقيم كل عضو عند الإقفال على خمسة محاور تظهر له: فوق ٤٫٥ إشادة على سجله، ودون ٢٫٥ في محور مراجعة درجة بأسباب مكتوبة.</div></div>
+    </div>
+
+    <div style="margin-top:26px;background:#3B2F1E;border-radius:16px;padding:24px clamp(20px,3vw,32px);color:#FAF6EC;">
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#FFB627;">BEFORE COUNSEL · ثلاثة تصويبات مقيدة</div>
+      <div style="font-size:14px;line-height:2.1;color:rgba(250,246,236,.85);margin-top:10px;">كتبت المسودات في مارس قبل استقرار المعمار الاقتصادي، وفيها ثلاثة مواضع تصوب قبل عرضها: <b style="color:#FAF6EC;">مادة الأجر</b> تنص على ٢٠٪ ثابتة وقد نسخها نظام الدرجات الثلاث والأرضية المحسوبة؛ و<b style="color:#FAF6EC;">مصرف الضمان</b> سمي التضامن بعدن وهو مسار الصرف الداخلي، أما ضمان التحصيل فعلى المسار الخارجي المعلق على <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;">Q-11</span>؛ و<b style="color:#FAF6EC;">سعر الصرف</b> ثبت على رقم واحد والصواب أن يسمي كل عقد سعره المرجعي وتاريخ تثبيته. وتبقى الأرقام الصغيرة — حد أدنى للرسوم، وخصم التكرار، وعلاوة الاستعجال — في بطاقة الأسعار المحكومة لا في نص العقد.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ٠٧ الخطوط الأربعة تشغيلا ============ -->
+<section id="d-lines" data-screen-label="٠٧ الخطوط الأربعة تشغيلا · Lines in operation" dir="rtl" style="background:#F1EAD9;padding:96px clamp(20px,4vw,48px);font-family:'IBM Plex Sans Arabic',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:14px;letter-spacing:.12em;color:#0E6E66;font-weight:500;">الفصل ٠٧ · الخطوط الأربعة تشغيلا</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);line-height:1.28;color:#052E2B;max-width:26ch;">أربعة خطوط تغلق دائرة واحدة</h2>
+    <div style="font-size:16px;line-height:2.05;color:#33544D;margin-top:14px;max-width:66ch;">مال الرعاة يمول المصنع والبرامج المدنية، فيدخل موثقون جدد السجل بلا كلفة اكتساب؛ والتسليم المدار يبيع طاقتهم ويكسب أجره؛ والتسليم ينتج دليلا — تسليمات مقبولة وسجل كسب ونسبة استيعاب — والدليل يفتح الراعي التالي ويقنع العميل التالي. والمركز مرتكز الدائرة المادي وخط إيراد قائم بذاته. التسليم المدار فصلت دورته في الفصلين الثاني والسادس، ولمحركه ملف فرعي كامل — <a href="Line I - Managed Delivery - Internal Dossier v2.dc.html">KYN-L1-01 خط التسليم المدار</a>؛ وهنا الخطوط الثلاثة الباقية إجراء لا وصفا.</div>
+
+    <div style="margin-top:30px;background:#fff;border:1px solid #E2D9C4;border-radius:18px;padding:24px clamp(20px,3vw,30px);">
+      <div style="display:flex;align-items:center;gap:10px;"><span style="width:14px;height:14px;border-radius:4px;background:#FFB627;flex:none;"></span><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;">المركز والمقهى — «حيث تعمل عدن»</span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#8A8271;margin-inline-start:auto;">L2 · THE HUB</span></div>
+      <div style="font-size:14px;line-height:2;color:#4A6B64;margin-top:10px;max-width:70ch;">الباب الأمامي للمؤسسة على الكورنيش: فيه يتحقق حضوريا، وفيه تعمل الفرق، وفيه يلتقي المجتمع بالمؤسسة، وهو خط النقد الوحيد — بإقفال نقدي يومي وقاعدة الاستثناء المزدوج. المقهى يستضيف، وسطره: «حيث بدأت القهوة، يبدأ العمل من جديد». وبوابة الإطلاق: مركز مفتوح يتاجر فعلا.</div>
+      <div style="margin-top:14px;border:1px solid #EDE5D2;border-radius:12px;overflow:hidden;">
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1.3fr);gap:10px;padding:10px 16px;background:#FCFBF7;font-size:11.5px;color:#8A8271;"><span>العضوية</span><span dir="ltr" style="text-align:left;">شهريا*</span><span>تشمل</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1.3fr);gap:10px;padding:10px 16px;border-top:1px solid #F2ECDD;font-size:13.5px;line-height:1.8;align-items:baseline;"><span style="font-weight:600;color:#052E2B;">تصريح يومي</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;text-align:left;">$5</span><span style="color:#4A6B64;">يوم واحد بكل المرافق المشتركة</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1.3fr);gap:10px;padding:10px 16px;border-top:1px solid #F2ECDD;font-size:13.5px;line-height:1.8;align-items:baseline;"><span style="font-weight:600;color:#052E2B;">مكتب مؤقت</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;text-align:left;">$35</span><span style="color:#4A6B64;">يوم أسبوعيا وعشر ساعات مرنة</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1.3fr);gap:10px;padding:10px 16px;border-top:1px solid #F2ECDD;font-size:13.5px;line-height:1.8;align-items:baseline;"><span style="font-weight:600;color:#052E2B;">مكتب مرن</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;text-align:left;">$65</span><span style="color:#4A6B64;">عشرة أيام شهريا بدخول مرن</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1.3fr);gap:10px;padding:10px 16px;border-top:1px solid #F2ECDD;font-size:13.5px;line-height:1.8;align-items:baseline;"><span style="font-weight:600;color:#052E2B;">مكتب ثابت</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;text-align:left;">$90</span><span style="color:#4A6B64;">مكتب معين على مدار الساعة</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1.3fr);gap:10px;padding:10px 16px;border-top:1px solid #F2ECDD;font-size:13.5px;line-height:1.8;align-items:baseline;"><span style="font-weight:600;color:#052E2B;">مكتب خاص</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;text-align:left;">$150</span><span style="color:#4A6B64;">غرفة مغلقة لشخصين أو ثلاثة، بحسب التوافر</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1.3fr);gap:10px;padding:10px 16px;border-top:1px solid #F2ECDD;font-size:13.5px;line-height:1.8;align-items:baseline;"><span style="font-weight:600;color:#052E2B;">عضوية افتراضية</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;text-align:left;">$10</span><span style="color:#4A6B64;">عنوان مهني وانتماء للمجتمع عن بعد</span></div>
+      </div>
+      <div style="font-size:12.5px;line-height:1.9;color:#8A8271;margin-top:10px;">* أرقام مسودة العضوية v2 — تعتمد نهائيا في بطاقة أسعار محكومة لا هنا. الشروط القائمة: الدفع أول الشهر، وتعليق بعد سبعة أيام تأخر وإنهاء بعد أربعة عشر، وإشعار خمسة عشر يوما للإنهاء، وكهرباء مسنودة بالشمس، ونموذج امتناع عن التصوير لمن شاء، وعضوية المركز قيد تجاري ينقضي ولا يمس قيد الكفاءة — <a href="#d-entities">الفصل الثالث</a>.</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;margin-top:14px;">
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:18px;padding:24px;">
+        <div style="display:flex;align-items:center;gap:10px;"><span style="width:14px;height:14px;border-radius:4px;background:#FF6250;flex:none;"></span><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;">مصنع كيان — «حيث تصنع المهارة»</span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#8A8271;margin-inline-start:auto;">L3 · FORGE</span></div>
+        <div style="font-size:14px;line-height:2.05;color:#4A6B64;margin-top:10px;">دورة الفوج: يشتري راع ناتجا معلنا — عدد مكونين بتخصصات مسماة ونسبة استيعاب تقاس من السجل — فيجند الفوج بالدعوة، ويعمل المتكون أثناء التكوين بدور متدرب في فرق حقيقية يمر ناتجه بمراجع دائما، فيتراكم له سجل قبل تخرجه. وإتمام المصنع دليل يقدم مع التقييم ولا يغني عنه أبدا — الدرجة لا تشترى بمن دفع كلفة التكوين. ولا يمول فوج من رأس مال كيان: هذا خط تحذير أنديلا الأحمر، فإن كسر صار التحذير نبوءة.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;">
+          <span style="background:#F1EAD9;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#143C37;">راع ملتزم قبل الفوج</span>
+          <span style="background:#F1EAD9;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#143C37;">عمل تحت إشراف أثناء التكوين</span>
+          <span style="background:#F1EAD9;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#143C37;">تقرير الراعي يولد من السجل</span>
+          <span style="background:#F1EAD9;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#143C37;">عشرون أسرة تخصص لا البرمجة وحدها</span>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:18px;padding:24px;">
+        <div style="display:flex;align-items:center;gap:10px;"><span style="width:14px;height:14px;border-radius:4px;background:#3FA75B;flex:none;"></span><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;color:#052E2B;">كيان لليمن — «يد للمدينة»</span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#8A8271;margin-inline-start:auto;">L4 · K4Y</span></div>
+        <div style="font-size:14px;line-height:2.05;color:#4A6B64;margin-top:10px;">ليست خطا خامسا بل الغاية تجري في الخطوط كلها، تحمل علامتها الفرعية وتمول من فائض التشغيل وشراكات المانحين — لا من الضمانات ولا من رأس المال. مسار الشاب: تطوع مقيد على البطاقة يعطيه أول خبرة عمل منظم، فمهارة تصنع في المصنع، فتحقق يثبت على البطاقة، فموضع متدرب في فريق يحول الدليل دخلا. والمبدآن الحاكمان: الصمود خبرة لا عيب يعتذر عنه، والكرامة في كل تكليف — أجر عادل يصرف في موعده ونزاع يفصل بالدليل لا بالنفوذ.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;">
+          <span style="background:#F1EAD9;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#143C37;">تطوع ← تكوين ← تحقق ← دخل</span>
+          <span style="background:#F1EAD9;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#143C37;">الأثر يقاس بنسبة الاستيعاب</span>
+          <span style="background:#F1EAD9;border-radius:99px;padding:6px 13px;font-size:12.5px;color:#143C37;">ربح يحمل دعوى — B9</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;align-items:flex-start;margin-top:14px;background:#fff;border:1px solid #E2D9C4;border-radius:14px;padding:14px 20px;">
+      <span style="width:26px;height:4px;border-radius:99px;background:#C9A227;flex:none;margin-top:9px;"></span>
+      <span style="font-size:14px;line-height:2;color:#4A6B64;">لكل خط دفتر تشغيل محكوم يفصل إجراءاته اليومية — عهدة المقهى، ومنهاج الفوج، وسجل التطوع — تصدر تباعا وتقيد في سجل القرارات — <a href="#d-launch">الفصل الخامس</a>؛ وهذا الفصل يحكم منطقها لا تفاصيلها.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ٠٨ الفريق الداخلي ============ -->
+<section id="d-people" data-screen-label="٠٨ الفريق الداخلي · The internal team" dir="rtl" style="background:#FAF6EC;padding:96px clamp(20px,4vw,48px);font-family:'IBM Plex Sans Arabic',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:14px;letter-spacing:.12em;color:#0E6E66;font-weight:500;">الفصل ٠٨ · الفريق الداخلي</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);line-height:1.28;color:#052E2B;max-width:26ch;">مواقع برموزها، لا أسماء بأصحابها</h2>
+    <div style="font-size:16px;line-height:2.05;color:#33544D;margin-top:14px;max-width:66ch;">تعرف الوثائق المواقع لا الأشخاص، فلا يعاد فتح وثيقة حين يتبدل شاغل. سبعة مواقع تشغل يوم الافتتاح — بالتعيين أو بالإنابة المسماة — ولكل موقع مناوب مقيد وخطة تسليم مكتوبة: هذا نص الشرط الثامن من شروط الإطلاق، ودواء القاعدة العاشرة.</div>
+
+    <div style="margin-top:26px;border:1px solid #E2D9C4;border-radius:16px;background:#fff;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:86px minmax(0,.8fr) minmax(0,1.4fr);gap:12px;padding:12px 20px;background:#FCFBF7;font-size:12px;color:#8A8271;"><span>الرمز</span><span>الموقع</span><span>يملك</span></div>
+      <div style="display:grid;grid-template-columns:86px minmax(0,.8fr) minmax(0,1.4fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">CEO-01</span><span style="font-weight:600;color:#052E2B;">المؤسس التنفيذي</span><span style="color:#4A6B64;">سجل القرارات والمسائل المعلقة، والعلاقات المؤسسية والرعاة، وصوت الحملة، والدرجة الرابعة بتوقيعه</span></div>
+      <div style="display:grid;grid-template-columns:86px minmax(0,.8fr) minmax(0,1.4fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">POS-FIN</span><span style="font-weight:600;color:#052E2B;">المؤسس المالي</span><span style="color:#4A6B64;">دفتر الضمان ومطابقته اليومية، والتوقيع الثاني في كل إفراج وصرف، والإقفال النقدي، وبطاقة الأسعار المحكومة</span></div>
+      <div style="display:grid;grid-template-columns:86px minmax(0,.8fr) minmax(0,1.4fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">POS-DEL</span><span style="font-weight:600;color:#052E2B;">قائد التسليم</span><span style="color:#4A6B64;">بوابات الدورة كلها، وتشكيل الفرق واعتماد المركبة ذاتيا، والتقييم عند الإقفال، ودرجة النزاع الثانية</span></div>
+      <div style="display:grid;grid-template-columns:86px minmax(0,.8fr) minmax(0,1.4fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">POS-TAL</span><span style="font-weight:600;color:#052E2B;">موظف التحقق</span><span style="color:#4A6B64;">بوابة الهوية، وإدارة التقييم والمقيمين، ونزاهة التزكيات وعينتها الهاتفية، والدرجتان الأوليان بتوقيعه</span></div>
+      <div style="display:grid;grid-template-columns:86px minmax(0,.8fr) minmax(0,1.4fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">POS-HUB</span><span style="font-weight:600;color:#052E2B;">مدير المركز والمقهى</span><span style="color:#4A6B64;">العضويات وعقودها، وتشغيل المقهى وعهدته، والفعاليات، والإقفال النقدي اليومي مع المالي</span></div>
+      <div style="display:grid;grid-template-columns:86px minmax(0,.8fr) minmax(0,1.4fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">POS-MKT</span><span style="font-weight:600;color:#052E2B;">التسويق والنمو</span><span style="color:#4A6B64;">نظام التواصل العامل بدفتره، ومسار واتساب من الرسالة إلى التأهيل، والحملة تنفيذا — بإنابة المؤسس حتى يشغل</span></div>
+      <div style="display:grid;grid-template-columns:86px minmax(0,.8fr) minmax(0,1.4fr);gap:12px;padding:13px 20px;border-top:1px solid #EDE5D2;align-items:baseline;font-size:14px;line-height:1.9;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0E6E66;">VIS-01</span><span style="font-weight:600;color:#052E2B;">المصمم</span><span style="color:#4A6B64;">أصول الهوية على وثيقتها الرئيسة، وإخراج المنشورات وحزم التوثيق، ولا يبتدع خارج النظام</span></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-top:26px;">
+      <div style="background:#052E2B;border-radius:16px;padding:20px 24px;color:#FAF6EC;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;">خريطة التوقيعين</div>
+        <div style="font-size:13.5px;line-height:2.1;color:rgba(250,246,236,.82);margin-top:6px;">الإفراج من الضمان والصرف: التنفيذي + المالي. الدرجة الثالثة: التحقق + التسليم. الدرجة الرابعة: التحقق + التنفيذي. استثناء النقد: التنفيذي + المالي مسبقا. الخصم من مستحق: المالي + التسليم، وللمنفذ التظلم إلى التنفيذي. ولا يجتمع توقيعان في يد واحدة مهما ضاق الفريق — يستعان بالمناوب لا بالجمع.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">بوابات التعيين</div>
+        <div style="font-size:13.5px;line-height:2.1;color:#4A6B64;margin-top:6px;">لا يفتح موقع جديد إلا حين يعجز شاغلوه الحاليون عن بوابة قائمة — طابور تحقق يطول، أو بوابات تسليم تتأخر، أو إقفال مالي يتجاوز يومه. التعيين يتبع الاختناق المقيس لا الطموح. وكل موقع يشغل بالإنابة يقيد اسم المناوب وخطة التسليم في ملفه من اليوم الأول.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2D9C4;border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;">قبل أول عقد مؤسسي</div>
+        <div style="font-size:13.5px;line-height:2.1;color:#4A6B64;margin-top:6px;">يكتمل إطار الحماية والسلوك: سياسة حماية البيانات القائمة، وإطار الوقاية من الإيذاء، ومدونة سلوك الفريق والمركز — فالعميل المؤسسي يفحصها قبل التوقيع، وغيابها يرد الباب من أوله. مقيدة في قائمة النواقص بالأولوية الخامسة.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ٠٩ الإطلاق العلني ============ -->
+<section id="d-campaign" data-screen-label="٠٩ الإطلاق العلني · The public launch" dir="rtl" style="background:#052E2B;color:#FAF6EC;padding:96px clamp(20px,4vw,48px);font-family:'IBM Plex Sans Arabic',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:14px;letter-spacing:.12em;color:#12B5A4;font-weight:500;">الفصل ٠٩ · الإطلاق العلني</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);line-height:1.28;max-width:24ch;">«نبنيه معا» — تفتتح الشركات بإعلان نفسها، وتفتتح كيان بدعوة عدن</h2>
+    <div style="font-size:16px;line-height:2.05;color:rgba(250,246,236,.78);margin-top:14px;max-width:66ch;">من ينضم في البداية ليس عميلا بل مؤسس. يحول هذا الافتتاح حراكا، وهو صادق مع النموذج: الثقة تبنى مع الناس لا تبث إليهم. وتحته يقف الدليل من اليوم الأول — موثقون حقيقيون، ومكان حقيقي، وعمل مسلم في تجربة هادئة يعرض يوم الفتح، وأول فنجان قهوة حقيقي. سطر الحملة: «كيان مفتوحة — نبنيه معا». ولا تذاع الحملة قبل اخضرار شروط الإطلاق العشرة — <a href="#d-launch" style="color:#12B5A4;">الفصل الخامس</a> — فالحملة تصف حالة قائمة لا وعدا.</div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-top:30px;">
+      <div style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:16px;padding:22px 24px;">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#12B5A4;">PHASE 0 · THE WHISPER</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;margin-top:8px;">الهمس — ثلاثة أسابيع</div>
+        <div style="font-size:13.5px;line-height:2.05;color:rgba(250,246,236,.8);margin-top:6px;">عد تنازلي بالبرهان لا بالأرقام: كل يوم يكشف عنصر واحد — وجه موثق، أو قدرة، أو ركن من المكان، أو كلمة صادقة من المؤسس في سبب البناء. ودعوة واحدة لا ثانية لها: راسلنا على واتساب لتكون أول من يعلم. لا ينفق شيء؛ الفضول وصوت المؤسس يعملان.</div>
+      </div>
+      <div style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:16px;padding:22px 24px;">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#E9BE4B;">PHASE 1 · THE OPENING</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;margin-top:8px;">الافتتاح — أسبوع الفتح</div>
+        <div style="font-size:13.5px;line-height:2.05;color:rgba(250,246,236,.8);margin-top:6px;">لقاء واحد في المركز والمقهى: تفتح الأبواب — وهي صورة الحملة المركزية — ويقدم المؤسس أول فنجان من قهوة المنشأ «حيث بدأت القهوة، يبدأ العمل من جديد»، وتكشف وجوه كيان الأولى بالاسم والمهارة، ويفتح باب المئة المؤسسين عند مكتب وعلى واتساب، ويبث للمهجر مقطع حي قصير ليشهد عدن وهي تبني. والأولوية لنواة مدعوة واثقة لا لحشد.</div>
+      </div>
+      <div style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:16px;padding:22px 24px;">
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#12B5A4;">PHASE 2 · THE PROOF</div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:17px;margin-top:8px;">البرهان — تسعون يوما</div>
+        <div style="font-size:13.5px;line-height:2.05;color:rgba(250,246,236,.8);margin-top:6px;">يحول الانتباه ثقة: جمعة البرهان كل أسبوع — مشروع مسلم يعرض بصيغة خطاب التسليم: النطاق بندا بندا والموعد محفوظا. وتقيد أسماء المئة المؤسسين علنا كلما انضموا، ويحتفى بالدفعة الأولى، وتستمر وجوه كيان أسبوعيا. كل إنجاز محتوى، وكل محتوى توصية، وتبدأ العجلة تدور وحدها.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:26px;background:linear-gradient(135deg,rgba(201,162,39,.18),rgba(18,181,164,.1));border:1px solid rgba(233,190,75,.35);border-radius:18px;padding:26px clamp(20px,3vw,34px);">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#E9BE4B;">المئة المؤسسون</div>
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:rgba(250,246,236,.55);">THE FOUNDING 100</div>
+      </div>
+      <div style="font-size:14.5px;line-height:2.1;color:rgba(250,246,236,.85);margin-top:10px;max-width:70ch;">أقوى حركة في الإطلاق: أول مئة موثق تقيد أسماؤهم على جدار المؤسسين في المركز وعلى الموقع، وتحمل بطاقاتهم سمة التأسيس، ولهم أول نظر في أوائل التكليفات، ويكرمون بوصفهم من بدأ. يتحول التسجيل بها مكانة تستحق، وتبنى ثلاثة أشياء معا: قاعدة الموثقين التي يسلم بها، والبرهان أن النموذج حقيقي، ومئة مؤسس فخور يوصون بالمئة التالية. وتنضبط بقاعدتي السلم: التوثيق بدليله لا بالسبق، والسمة شرف قيد لا حق تكليف.</div>
+    </div>
+
+    <h3 style="margin:40px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;color:#FAF6EC;">نظام التواصل العامل — القواعد التي تسبق أي منشور</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-top:18px;">
+      <div style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;">لغة العميل وحدها</div>
+        <div style="font-size:13.5px;line-height:2.05;color:rgba(250,246,236,.8);margin-top:6px;">يكتب الخارج بما يفهمه المشتري: ضمان مصرفي يحفظ مالك، وفريق موثق، ونطاق مكتوب، وموعد محدد، وسعر ثابت. ولا يخرج المصطلح الداخلي أبدا — لا درجات ولا بوابات ولا احتجاز ولا أسماء أنظمة. المصطلح للداخل، والوعد للخارج.</div>
+      </div>
+      <div style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;">ثلاث مهام للخلاصة</div>
+        <div style="font-size:13.5px;line-height:2.05;color:rgba(250,246,236,.8);margin-top:6px;">الثقة: يعرض الهيكل نفسه — حماية المال والمراجعة المستقلة. والعرض: يجند الموثقون والفرق الجاهزة بكرامة لا باستجداء. والبرهان: قضايا بصيغة خطاب التسليم. منشور لا يخدم واحدة منها لا ينشر.</div>
+      </div>
+      <div style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;">منشور بلا خطوة تالية لا ينشر</div>
+        <div style="font-size:13.5px;line-height:2.05;color:rgba(250,246,236,.8);margin-top:6px;">يقيد كل منشور في الدفتر بهدفه ونتيجته وخطوته التالية الجاهزة — نص رد الرسائل معد قبل النشر. ويحلل أعلى منشور شهريا ويكرر شكله. الإيقاع: منشوران على لينكدإن وواحد على إنستغرام وحالة واتساب أسبوعيا.</div>
+      </div>
+      <div style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;">تصوير حقيقي بموافقة مقيدة</div>
+        <div style="font-size:13.5px;line-height:2.05;color:rgba(250,246,236,.8);margin-top:6px;">لا صور مخزون ولا وجوه مولدة — المركز الحقيقي ولحظات العمل من حزم التوثيق، وما حمل علم موافقة ظاهرة وحده يخرج. والهوية البصرية على الوثيقة الرئيسة حصرا: ألوانها وحروفها وقواعد علامتها.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:26px;border:1px solid rgba(250,246,236,.16);border-radius:16px;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr);gap:12px;padding:12px 20px;background:rgba(250,246,236,.06);font-size:12px;color:rgba(250,246,236,.55);"><span>القناة</span><span>دورها</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr);gap:12px;padding:12px 20px;border-top:1px solid rgba(250,246,236,.1);font-size:13.5px;line-height:1.9;align-items:baseline;"><span style="font-weight:600;">لينكدإن</span><span style="color:rgba(250,246,236,.78);">الراية: المهجر والمنظمات والمؤسسات — صوت المؤسس والقضايا المسلمة</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr);gap:12px;padding:12px 20px;border-top:1px solid rgba(250,246,236,.1);font-size:13.5px;line-height:1.9;align-items:baseline;"><span style="font-weight:600;">واتساب وجوجل بزنس</span><span style="color:rgba(250,246,236,.78);">التحويل: من الرسالة الأولى إلى التأهيل — قناة الدعوة الوحيدة في الهمس</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr);gap:12px;padding:12px 20px;border-top:1px solid rgba(250,246,236,.1);font-size:13.5px;line-height:1.9;align-items:baseline;"><span style="font-weight:600;">إنستغرام وفيسبوك</span><span style="color:rgba(250,246,236,.78);">الوصول والقصة البصرية: منشآت عدن والكفاءات — المكان الحقيقي والوجوه</span></div>
+      <div style="display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr);gap:12px;padding:12px 20px;border-top:1px solid rgba(250,246,236,.1);font-size:13.5px;line-height:1.9;align-items:baseline;"><span style="font-weight:600;">إكس وتيليغرام</span><span style="color:rgba(250,246,236,.78);">بيئة التنمية بسلاسل عن النموذج، واليمنيون في الخارج</span></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin-top:26px;">
+      <div style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;">ستة أرقام يحكم بها</div>
+        <div style="font-size:13.5px;line-height:2.1;color:rgba(250,246,236,.8);margin-top:6px;">الوصول، ومحادثات واتساب المبدوءة، واكتمال المئة، وأول الاستفسارات وأول التعاقدات الموقعة، والأعضاء المؤسسون وإقبال المقهى، ومحادثات الشركاء والصحافة المفتوحة. تراجع أسبوعيا طوال نافذة الإطلاق، ولا يضاف سابع.</div>
+      </div>
+      <div style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;">خطة واقع عدن</div>
+        <div style="font-size:13.5px;line-height:2.1;color:rgba(250,246,236,.8);margin-top:6px;">يجهز المحتوى كله مسبقا صالحا للعمل دون اتصال، ويؤمن للقاء مولد واتصال احتياطي، ويدار الحضور بالدعوة. ومهما جرى يلتقط البرهان وتروى القصة. الميزانية شبه صفر: القنوات المملوكة، ولقاء واحد متواضع دافئ يستضيفه المقهى، وصوت المؤسس — أقوى إعلام وأرخصه.</div>
+      </div>
+      <div style="background:rgba(250,246,236,.05);border:1px solid rgba(250,246,236,.16);border-radius:16px;padding:20px 24px;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;">لحظات تذكر</div>
+        <div style="font-size:13.5px;line-height:2.1;color:rgba(250,246,236,.8);margin-top:6px;">الباب المفتوح يصور وينشر؛ وأول فنجان يقدمه المؤسس؛ ووجوه كيان بالاسم والمهارة؛ وجدار المؤسسين يقيد من بدأ؛ وأوائل كل شيء توثق — أول مشروع وأول عضو وأول دفعة وأول تقييم؛ وجسر المهجر بثا حيا قصيرا.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COLOPHON ============ -->
+<section dir="rtl" style="background:#052E2B;color:#FAF6EC;padding:56px clamp(20px,4vw,48px);font-family:'IBM Plex Sans Arabic',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;">
+    <div>
+      <img src="uploads/kayan_logo_gold.png" alt="كيان" style="height:22px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16px;color:#E9BE4B;margin-top:14px;">«خلف كل نجاح، كيان»</div>
+      <div style="font-size:13px;color:rgba(250,246,236,.6);margin-top:6px;">شركة كيان للابتكار وريادة الأعمال وبيئات العمل · عدن</div>
+    </div>
+    <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:rgba(250,246,236,.55);line-height:2;text-align:left;">
+      KAYAN COMPANY DOSSIER · KYN-D-01 · v2<br>
+      CHAPTERS 01–09 · SOURCES: K-00-01..04 · K-01-01 · K-02-01/02 · K-03-01 · KAY-CON · SOP · CAMPAIGN<br>
+      ADEN · AUGUST 2026 · KAYANWORK.COM
+    </div>
+  </div>
+</section>
+
+</x-dc>
+</body>
+</html>

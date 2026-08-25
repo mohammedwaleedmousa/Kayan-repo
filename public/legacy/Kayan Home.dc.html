@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كيان — خلف كل نجاح، كيان</title>
+<meta name="description" content="كيان — طبقة الثقة للاقتصاد اليمني من عدن: تسليم مدار بضمان، ملتقى عمل على الكورنيش، تكوين مهني، وسجل يبنى بالدليل. Kayan — the trust layer for Yemeni talent, from Aden to the world.">
+<meta property="og:title" content="كيان · Kayan — خلف كل نجاح، كيان">
+<meta property="og:description" content="لا عقد، لا ضمان، لا عمل — تسليم مدار، وسلم ثقة يحول المسيرة إلى سمعة تتراكم.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_YE">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Kayan Innovation, Entrepreneurship & Work Environments LLC","alternateName":"كيان","url":"https://kayanwork.com","address":{"@type":"PostalAddress","streetAddress":"Corniche Street, Khormaksar","addressLocality":"Aden","addressCountry":"YE"},"slogan":"خلف كل نجاح، كيان"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
+<style>
+html,body{margin:0;padding:0;background:#03201D;overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+#lines,#doors,#top{scroll-margin-top:86px;}
+[data-strike]{position:relative;}
+[data-strike] i{position:absolute;left:-2px;right:-2px;top:54%;height:1.5px;border-radius:2px;background:linear-gradient(90deg,#C9A227,#E9C96B);transform:scaleX(0);transform-origin:100% 50%;transition:transform .55s cubic-bezier(.23,1,.32,1);pointer-events:none;}
+[data-strike][dir="ltr"] i{transform-origin:0 50%;}
+[data-reveal][data-on] [data-strike] i{transform:scaleX(1);}
+@keyframes kTick{50%{opacity:0}}
+@keyframes kWord{from{opacity:0;transform:translateY(18px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+@keyframes kKick{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes kRule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+[data-kword]{display:inline-block;animation:kWord .75s cubic-bezier(.23,1,.32,1) both}
+[data-kkick]{animation:kKick .9s cubic-bezier(.23,1,.32,1) .05s both}
+[data-krule]{position:absolute;inset-inline:2px;bottom:-.05em;height:3px;border-radius:2px;background:linear-gradient(90deg,#C9A227,#F3DE9C);transform:scaleX(0);animation:kRule .7s cubic-bezier(.23,1,.32,1) 1s both}
+@media (prefers-reduced-motion:reduce){[data-kword],[data-kkick],[data-krule]{animation:none!important;opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}}
+[data-gcard]{transition:transform .4s cubic-bezier(.23,1,.32,1)}
+[data-gcard] [data-gimg]{overflow:hidden}
+[data-gcard] img{transition:transform 1.1s cubic-bezier(.23,1,.32,1)}
+[data-gcard] [data-gco]{transition:color .35s ease}
+@media (hover:hover) and (pointer:fine){
+[data-gcard]:hover{transform:translateY(-5px)}
+[data-gcard]:hover img{transform:scale(1.06)}
+[data-gcard]:hover [data-gco]{color:#E9C96B}
+}
+@media (prefers-reduced-motion:reduce){[data-gcard],[data-gcard] img{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}[data-strike] i{transform:scaleX(1) !important;}}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+a{color:#C9A227;text-decoration:none;}
+a:hover{color:#E9C96B;}
+::selection{background:#C9A227;color:#03201D;}
+button{font-family:inherit;}
+img{max-width:100%;}
+p{text-wrap:pretty;}
+h1,h2,h3{text-wrap:balance;}
+a:focus-visible,button:focus-visible{outline:2px solid #E9C96B;outline-offset:3px;border-radius:4px;}
+[data-nav]::-webkit-scrollbar{display:none;}
+@keyframes kDrift{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(-1.6%,1.2%,0)}100%{transform:translate3d(0,0,0)}}
+@keyframes kFloat{0%,100%{transform:translate3d(0,0,0) rotate(-3deg)}50%{transform:translate3d(0,-14px,0) rotate(-1.4deg)}}
+@keyframes kBar{0%,100%{transform:scaleY(.28)}50%{transform:scaleY(1)}}
+@keyframes kFlashWipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+@keyframes kIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+[data-view]{animation:kIn .38s cubic-bezier(.23,1,.32,1) both;}
+@keyframes kFlashBird{from{opacity:0;transform:translateX(-44px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes kShimmer{from{background-position:130% 0}to{background-position:-30% 0}}
+@media (max-width:680px){[data-flightpath]{display:none}}
+@media (max-width:1000px){[data-hero-bird]{top:2% !important;width:48% !important;}}
+@media (max-width:560px){[data-hero-bird]{top:-3% !important;left:40% !important;width:54% !important;}}
+@keyframes kThread{0%{inset-inline-start:0%;opacity:0}8%{opacity:1}92%{opacity:1}100%{inset-inline-start:calc(100% - 10px);opacity:0}}
+[data-mnode]{transition:transform .3s cubic-bezier(.23,1,.32,1),border-color .3s ease}
+@media (hover:hover) and (pointer:fine){[data-mnode]:hover{transform:translateY(-4px);border-color:rgba(233,201,107,.85)!important}}
+@media (prefers-reduced-motion:reduce){[data-mpulse]{display:none}}
+@keyframes kOrbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes kOrbitC{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
+@media (prefers-reduced-motion:reduce){[data-orbit]{animation:none!important}}
+[data-cta]{position:relative;display:inline-flex;flex-direction:column;justify-content:center;gap:3px;min-height:56px;border-radius:11px;transition:transform 170ms cubic-bezier(.23,1,.32,1),box-shadow 220ms ease,border-color 220ms ease;}
+[data-cta]:active{transform:scale(.975);}
+[data-cta] u{text-decoration:none;display:flex;align-items:center;gap:9px;}
+[data-cta] small{font-size:11.5px;font-weight:500;line-height:1.4;}
+[data-cta] i{font-style:normal;transition:transform 220ms cubic-bezier(.23,1,.32,1);}
+@media (hover:hover) and (pointer:fine){[data-cta]:hover i{transform:translateX(-4px);}[data-cta][dir="ltr"]:hover i{transform:translateX(4px);}}
+[data-wipeline]{position:relative;display:block;width:fit-content;max-width:100%;overflow:hidden;padding:3px 10px;margin:3px -10px;}
+[data-wipeline] i{position:absolute;inset:0;border-radius:3px;background:linear-gradient(100deg,#C9A227,#E9C96B 55%,#C9A227);transform:translateX(0);transition:transform 1.05s cubic-bezier(.77,0,.175,1);}
+[data-reveal][data-on] [data-wipeline] i{transform:translateX(-102%);}
+[data-reveal][data-on] [dir="ltr"] [data-wipeline] i{transform:translateX(102%);}
+@media (prefers-reduced-motion:reduce){[data-wipeline] i{display:none}}
+@media (max-width:520px){[data-eco-name]{display:none}}
+[data-mo] [data-reveal]{opacity:0;transform:translateY(15px);transition:opacity .6s cubic-bezier(.23,1,.32,1),transform .6s cubic-bezier(.23,1,.32,1);}
+[data-mo] [data-reveal][data-on]{opacity:1;transform:none;}
+[data-goldveil]{opacity:1;transition:opacity 1.6s cubic-bezier(.23,1,.32,1) .3s;pointer-events:none;}
+[data-reveal][data-on] [data-goldveil]{opacity:0;}
+@media (prefers-reduced-motion:reduce){[data-goldveil]{display:none;}}
+[data-tone] i{width:2.5px;height:100%;background:currentColor;transform:scaleY(.28);transform-origin:bottom;border-radius:2px;display:block;}
+[data-tone="on"] i{animation:kBar .48s ease-in-out infinite;}
+[data-tone] i:nth-child(2){animation-delay:.08s}
+[data-tone] i:nth-child(3){animation-delay:.16s}
+[data-tone] i:nth-child(4){animation-delay:.24s}
+[data-tone] i:nth-child(5){animation-delay:.32s}
+[data-card]{transition:transform .22s cubic-bezier(.23,1,.32,1),box-shadow .22s cubic-bezier(.23,1,.32,1),border-color .22s ease;}
+@media (hover:hover) and (pointer:fine){[data-card]:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(5,46,43,.14);}}
+[data-card]:active{transform:scale(.985);}
+@media (max-width:760px){h1,h2{text-wrap:balance}}
+[data-riskcard]{transition:transform .3s cubic-bezier(.23,1,.32,1),border-color .3s ease}
+@media (hover:hover) and (pointer:fine){[data-riskcard]:hover{transform:translateY(-3px);border-color:rgba(233,201,107,.55)!important}}
+[data-ranswer]{opacity:0;transform:translateY(8px);transition:opacity .55s cubic-bezier(.23,1,.32,1),transform .55s cubic-bezier(.23,1,.32,1)}
+[data-reveal][data-on] [data-ranswer]{opacity:1;transform:none}
+[data-rseal] circle{fill:none;stroke:rgba(124,224,184,.3);stroke-width:1.5}
+[data-rseal] path{fill:none;stroke:#7CE0B8;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:16;stroke-dashoffset:16;transition:stroke-dashoffset .55s cubic-bezier(.23,1,.32,1)}
+[data-reveal][data-on] [data-rseal] path{stroke-dashoffset:0}
+[data-vtick] circle{fill:none;stroke:rgba(233,201,107,.32);stroke-width:1.5}
+[data-vtick] path{fill:none;stroke:#E9C96B;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:16;stroke-dashoffset:16;transition:stroke-dashoffset .6s cubic-bezier(.23,1,.32,1)}
+[data-reveal][data-on] [data-vtick] path{stroke-dashoffset:0}
+[data-cnode]{opacity:0;transform:scale(.82);transition:opacity .6s cubic-bezier(.23,1,.32,1),transform .6s cubic-bezier(.23,1,.32,1)}
+[data-reveal][data-on] [data-cnode]{opacity:1;transform:scale(1)}
+[data-cline]{stroke-dasharray:160;stroke-dashoffset:160;transition:stroke-dashoffset 1.1s cubic-bezier(.23,1,.32,1)}
+[data-reveal][data-on] [data-cline]{stroke-dashoffset:0}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}[data-mo] [data-reveal]{opacity:1;transform:none}[data-ranswer]{opacity:1;transform:none}[data-rseal] path,[data-vtick] path{stroke-dashoffset:0 !important}[data-cnode]{opacity:1;transform:none}[data-cline]{stroke-dashoffset:0 !important}}
+</style>
+<script src="./kayan-compass.js"></script>
+<script src="./image-slot.js"></script>
+<script src="./kayan-mark.js"></script>
+</helmet>
+
+<div ref="{{ rootRef }}" dir="rtl" style="font-family:'IBM Plex Sans Arabic','Instrument Sans',sans-serif;color:#FAF6EC;background:#03201D;min-height:100vh;">
+
+<sc-if value="{{ flashOn }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:300;pointer-events:none;display:flex;align-items:center;justify-content:center;background:{{ flashBg }};animation:kFlashWipe .48s cubic-bezier(.77,0,.175,1) both;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;animation:kFlashBird .46s cubic-bezier(.23,1,.32,1) .08s both;">
+      <kayan-mark line="cream" tone="bright" aria-hidden="true" style="width:calc(1.175 * 60px);flex-shrink:0;filter:drop-shadow(0 10px 30px rgba(0,0,0,.25));"></kayan-mark>
+      <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(22px,3.4vw,34px);color:#FFFFFF;text-shadow:0 2px 18px rgba(0,0,0,.25);">{{ flashName }}</div>
+    </div>
+  </div>
+</sc-if>
+
+<header style="position:sticky;top:0;z-index:90;background:rgba(3,32,29,.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(201,162,39,.22);">
+  <div style="height:2px;background:linear-gradient(90deg,transparent,#C9A227 30%,#E9C96B 50%,#C9A227 70%,transparent);"></div>
+  <div style="max-width:1360px;margin:0 auto;padding:0 clamp(14px,3vw,36px);display:flex;align-items:center;gap:clamp(8px,1.6vw,20px);height:72px;">
+    <a href="#top" style="display:flex;align-items:center;gap:11px;flex-shrink:0;">
+      <img src="assets/kayan-logo-gold.png" alt="كيان — Kayan" style="height:clamp(42px,6vw,56px);width:auto;display:block;">
+    </a>
+    <nav data-nav="" style="flex:1;min-width:0;display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;">
+      <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <a href="#lines" style="white-space:nowrap;color:rgba(250,246,236,.68);font-size:13.5px;padding:9px 12px;">الخطوط</a>
+        <a href="Kayan Charter.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.68);font-size:13.5px;padding:9px 12px;">الميثاق</a>
+        <a href="#doors" style="white-space:nowrap;color:rgba(250,246,236,.68);font-size:13.5px;padding:9px 12px;">الأبواب</a>
+        <span aria-hidden="true" style="flex:none;width:1px;height:20px;background:rgba(201,162,39,.28);margin:0 6px;"></span>
+        <a href="Kayan People.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.5);font-size:12.5px;padding:9px 10px;">فريق كيان</a>
+        <a href="Kayan Planet.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.5);font-size:12.5px;padding:9px 10px;">البيئة</a>
+        <a href="Kayan Dimension.html" style="white-space:nowrap;color:#F3DE9C;font-size:13.5px;padding:9px 12px;border:1px solid rgba(201,162,39,.4);border-radius:99px;">الجولة المجسمة ٣D</a>
+      </sc-if>
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <a href="#lines" dir="ltr" style="white-space:nowrap;color:rgba(250,246,236,.68);font-size:13.5px;padding:9px 12px;">The lines</a>
+        <a href="Kayan Charter.dc.html" dir="ltr" style="white-space:nowrap;color:rgba(250,246,236,.68);font-size:13.5px;padding:9px 12px;">The Charter</a>
+        <a href="#doors" dir="ltr" style="white-space:nowrap;color:rgba(250,246,236,.68);font-size:13.5px;padding:9px 12px;">Doors</a>
+        <span aria-hidden="true" style="flex:none;width:1px;height:20px;background:rgba(201,162,39,.28);margin:0 6px;"></span>
+        <a href="Kayan People.dc.html" dir="ltr" style="white-space:nowrap;color:rgba(250,246,236,.5);font-size:12.5px;padding:9px 10px;">People</a>
+        <a href="Kayan Planet.dc.html" dir="ltr" style="white-space:nowrap;color:rgba(250,246,236,.5);font-size:12.5px;padding:9px 10px;">Planet</a>
+        <a href="Kayan Dimension.html" dir="ltr" style="white-space:nowrap;color:#F3DE9C;font-size:13.5px;padding:9px 12px;border:1px solid rgba(201,162,39,.4);border-radius:99px;">3D voyage</a>
+      </sc-if>
+    </nav>
+    <div dir="ltr" style="flex-shrink:0;display:flex;align-items:center;border:1px solid rgba(201,162,39,.4);border-radius:99px;overflow:hidden;">
+      <button type="button" onClick="{{ toggleAr }}" style="border:none;cursor:pointer;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12px;font-weight:600;padding:7px 13px;background:{{ arBtnBg }};color:{{ arBtnFg }};">عربي</button>
+      <button type="button" onClick="{{ toggleEn }}" style="border:none;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;padding:8px 13px;background:{{ enBtnBg }};color:{{ enBtnFg }};">EN</button>
+    </div>
+    <a href="{{ portalHref }}" data-href="{{ portalHref }}" data-color="#052E2B" data-name="{{ portalFlash }}" onClick="{{ goLine }}" style="flex-shrink:0;white-space:nowrap;background:linear-gradient(135deg,#C9A227,#E9C96B);color:#03201D;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1);" style-active="transform:scale(.97)">{{ portalCta }}</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section data-screen-label="Home · Hero" style="position:relative;background:radial-gradient(1200px 700px at 80% -20%,#0A3B36,transparent 60%),radial-gradient(900px 620px at 0% 110%,#0A342E,transparent 58%),#03201D;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(1000px 560px at 76% -10%,rgba(201,162,39,.13),transparent 62%),radial-gradient(820px 540px at 8% 108%,rgba(18,181,164,.1),transparent 62%);animation:kDrift 36s ease-in-out infinite;pointer-events:none;"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:{{ skyGrad }};transition:background 1.4s ease;"></div>
+  <div style="position:relative;max-width:1360px;margin:0 auto;padding:clamp(40px,7vh,84px) clamp(20px,4vw,40px) clamp(36px,6vh,70px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(24px,4vw,56px);align-items:center;">
+
+    <div style="min-width:0;">
+      <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <div data-kkick="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;color:#E9C96B;width:fit-content;">KAYANWORK.COM — ADEN · REPUBLIC OF YEMEN</div>
+        <h1 style="margin:22px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(40px,6.4vw,92px);line-height:1.22;letter-spacing:-.02em;color:#FAF6EC;"><span data-kword="" style="animation-delay:.12s;">خلف</span> <span data-kword="" style="animation-delay:.2s;">كل</span> <span data-kword="" style="animation-delay:.28s;">نجاح،</span><br><span data-kword="" style="animation-delay:.42s;position:relative;"><span style="font-weight:700;background:linear-gradient(100deg,#C9A227 10%,#F3DE9C 45%,#C9A227 85%);background-size:230% 100%;animation:kShimmer 7s ease-in-out infinite alternate;-webkit-background-clip:text;background-clip:text;color:transparent;">كيان</span><i aria-hidden="true" data-krule="" style="transform-origin:100% 50%;"></i></span></h1>
+        <div data-reveal="" dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:clamp(15px,1.7vw,21px);color:rgba(250,246,236,.52);margin-top:16px;">Behind every success, a Kayan.</div>
+        <p data-reveal="" style="margin:26px 0 0;max-width:52ch;font-size:clamp(15px,1.5vw,17.5px);line-height:2;color:rgba(250,246,236,.78);">تدار الأعمال من عدن بنطاق موقع وضمان ممول وفريق موثق، ويغلق كل عمل بمحضر استلام. هنا ترى الكفاءة، وتثبت بالدليل، وتوفى قيمتها.</p>
+        <div data-reveal="" style="display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;margin-top:34px;">
+          <a href="Kayan for Clients.dc.html" data-cta="" data-href="Kayan for Clients.dc.html" data-color="#0E6E66" data-name="للعملاء" onClick="{{ goLine }}" style="background:linear-gradient(135deg,#C9A227,#E9C96B);color:#03201D;padding:11px 26px;box-shadow:0 12px 32px rgba(201,162,39,.2);" style-hover="box-shadow:0 16px 40px rgba(201,162,39,.32)" style-active="transform:scale(.97)">
+            <u style="font-size:15.5px;font-weight:700;">اطلب نطاقا<i aria-hidden="true">←</i></u>
+            <small style="color:rgba(3,32,29,.72);">للعملاء · يفتح بنطاق موقع وضمان ممول</small>
+          </a>
+          <a href="Kayan Apply.dc.html" data-cta="" data-href="Kayan Apply.dc.html" data-color="#C9A227" data-name="التسجيل" onClick="{{ goLine }}" style="border:1px solid rgba(201,162,39,.5);background:rgba(201,162,39,.06);color:#F3DE9C;padding:11px 24px;" style-hover="border-color:rgba(233,201,107,.85);background:rgba(201,162,39,.12)" style-active="transform:scale(.97)">
+            <u style="font-size:15.5px;font-weight:600;">سجل حضورك<i aria-hidden="true">←</i></u>
+            <small style="color:rgba(250,246,236,.6);">للكفاءات · قيد موثق ومسار تحقق</small>
+          </a>
+          <sc-if value="{{ sonicOn }}" hint-placeholder-val="{{ true }}">
+            <button type="button" onClick="{{ playLogo }}" aria-pressed="{{ tonePressed }}" aria-label="{{ toneAria }}" title="{{ toneAria }}" style="display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:56px;min-height:56px;background:transparent;border:1px solid rgba(250,246,236,.22);border-radius:11px;color:rgba(250,246,236,.72);cursor:pointer;transition:transform 170ms cubic-bezier(.23,1,.32,1),border-color .22s ease,color .22s ease;" style-hover="border-color:rgba(233,201,107,.75);color:#F3DE9C" style-active="transform:scale(.975)">
+              <span data-tone="{{ playState }}" style="display:inline-flex;gap:2.5px;align-items:flex-end;height:15px;color:#E9C96B;"><i></i><i></i><i></i><i></i><i></i></span>
+              <span style="font-size:9px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;">نغمة</span>
+            </button>
+          </sc-if>
+        </div>
+      </sc-if>
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <div dir="ltr" style="min-width:0;">
+          <div data-kkick="" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;color:#E9C96B;width:fit-content;">KAYANWORK.COM — ADEN · REPUBLIC OF YEMEN</div>
+          <h1 style="margin:22px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(36px,5.4vw,76px);line-height:1.14;letter-spacing:-.025em;color:#FAF6EC;"><span data-kword="" style="animation-delay:.12s;">Behind</span> <span data-kword="" style="animation-delay:.18s;">every</span> <span data-kword="" style="animation-delay:.24s;">success,</span><br><span data-kword="" style="animation-delay:.38s;position:relative;"><span style="font-weight:700;background:linear-gradient(100deg,#C9A227 10%,#F3DE9C 45%,#C9A227 85%);background-size:230% 100%;animation:kShimmer 7s ease-in-out infinite alternate;-webkit-background-clip:text;background-clip:text;color:transparent;">a Kayan.</span><i aria-hidden="true" data-krule="" style="transform-origin:0 50%;"></i></span></h1>
+          <div data-reveal="" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:clamp(15px,1.7vw,21px);color:rgba(250,246,236,.52);margin-top:16px;">خلف كل نجاح، كيان</div>
+          <p data-reveal="" style="margin:26px 0 0;max-width:56ch;font-family:'Instrument Sans',sans-serif;font-size:clamp(15px,1.5vw,17.5px);line-height:1.8;color:rgba(250,246,236,.78);">Work runs from Aden under a signed scope, a funded escrow and a verified team, and every engagement closes with a signed acceptance. Capability here is seen, proven, and paid on time.</p>
+          <div data-reveal="" style="display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;margin-top:34px;font-family:'Instrument Sans',sans-serif;">
+            <a href="Kayan for Clients.dc.html" data-cta="" dir="ltr" data-href="Kayan for Clients.dc.html" data-color="#0E6E66" data-name="For clients" onClick="{{ goLine }}" style="background:linear-gradient(135deg,#C9A227,#E9C96B);color:#03201D;padding:11px 26px;box-shadow:0 12px 32px rgba(201,162,39,.2);" style-hover="box-shadow:0 16px 40px rgba(201,162,39,.32)" style-active="transform:scale(.97)">
+              <u style="font-size:15.5px;font-weight:700;">Open a scope<i aria-hidden="true">→</i></u>
+              <small style="color:rgba(3,32,29,.72);">For clients · signed scope, funded escrow</small>
+            </a>
+            <a href="Kayan Apply.dc.html" data-cta="" dir="ltr" data-href="Kayan Apply.dc.html" data-color="#C9A227" data-name="Registration" onClick="{{ goLine }}" style="border:1px solid rgba(201,162,39,.5);background:rgba(201,162,39,.06);color:#F3DE9C;padding:11px 24px;" style-hover="border-color:rgba(233,201,107,.85);background:rgba(201,162,39,.12)" style-active="transform:scale(.97)">
+              <u style="font-size:15.5px;font-weight:600;">Register<i aria-hidden="true">→</i></u>
+              <small style="color:rgba(250,246,236,.6);">For talent · verified record, a path to proof</small>
+            </a>
+            <sc-if value="{{ sonicOn }}" hint-placeholder-val="{{ true }}">
+              <button type="button" onClick="{{ playLogo }}" aria-pressed="{{ tonePressed }}" aria-label="{{ toneAria }}" title="{{ toneAria }}" style="display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:56px;min-height:56px;background:transparent;border:1px solid rgba(250,246,236,.22);border-radius:11px;color:rgba(250,246,236,.72);cursor:pointer;transition:transform 170ms cubic-bezier(.23,1,.32,1),border-color .22s ease,color .22s ease;" style-hover="border-color:rgba(233,201,107,.75);color:#F3DE9C" style-active="transform:scale(.975)">
+                <span data-tone="{{ playState }}" style="display:inline-flex;gap:2.5px;align-items:flex-end;height:15px;color:#E9C96B;"><i></i><i></i><i></i><i></i><i></i></span>
+                <span style="font-size:9px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;">TONE</span>
+              </button>
+            </sc-if>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <div data-reveal="" style="position:relative;min-width:0;">
+      <div style="position:absolute;inset:-6% -4% -2% -4%;background:radial-gradient(closest-side at 50% 42%,rgba(201,162,39,.14),transparent 74%);pointer-events:none;"></div>
+      <div style="position:relative;">
+        <div dir="ltr" title="{{ skyTitle }}" style="position:absolute;top:3%;left:3%;z-index:4;display:inline-flex;align-items:center;gap:9px;background:rgba(3,32,29,.72);backdrop-filter:blur(8px);border:1px solid rgba(201,162,39,.4);border-radius:99px;padding:7px 14px;">
+          <span style="width:7px;height:7px;border-radius:50%;background:{{ skyDot }};box-shadow:0 0 10px {{ skyDot }};transition:background 1.4s ease,box-shadow 1.4s ease;"></span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#F3DE9C;">{{ skyChip }}</span>
+        </div>
+        <x-import component-from-global-scope="yemen-map" from="./yemen-map.js" lang="{{ lang }}" hint-size="100%,480px"></x-import>
+        <div aria-hidden="true" style="position:absolute;left:-2%;top:29%;width:66%;height:20%;background:linear-gradient(93deg,transparent 0%,rgba(201,162,39,.05) 16%,rgba(201,162,39,.20) 52%,rgba(243,222,156,.42) 82%,rgba(252,243,214,.16) 96%,transparent 100%);filter:blur(17px);border-radius:99px;transform:rotate(-9deg);pointer-events:none;z-index:1;"></div>
+        <div aria-hidden="true" style="position:absolute;left:8%;top:38%;width:50%;height:10%;background:linear-gradient(93deg,transparent 0%,rgba(233,201,107,.16) 55%,rgba(252,243,214,.44) 88%,transparent 100%);filter:blur(9px);border-radius:99px;transform:rotate(-4deg);pointer-events:none;z-index:1;"></div>
+        <div aria-hidden="true" style="position:absolute;left:14%;top:23%;width:44%;height:7%;background:linear-gradient(93deg,transparent 0%,rgba(111,220,206,.14) 58%,rgba(201,162,39,.26) 92%,transparent 100%);filter:blur(12px);border-radius:99px;transform:rotate(-15deg);pointer-events:none;z-index:1;"></div>
+        <div aria-hidden="true" style="position:absolute;left:40%;top:6%;width:46%;height:42%;background:radial-gradient(closest-side,rgba(201,162,39,.22),rgba(201,162,39,.06) 52%,transparent 76%);filter:blur(6px);pointer-events:none;z-index:1;"></div>
+        <div data-hero-bird="" style="position:absolute;left:33%;top:3%;width:56%;max-width:430px;pointer-events:none;z-index:3;filter:drop-shadow(0 30px 52px rgba(0,0,0,.55)) drop-shadow(0 0 46px rgba(201,162,39,.30));">
+          <kayan-mark line="gold" motion="glide" glow="" entrance="settle" role="img" aria-label="علامة كيان — الطائر في الطيران فوق اليمن"></kayan-mark>
+        </div>
+        <div aria-hidden="true" style="position:absolute;left:52%;top:33%;width:30%;height:8%;background:radial-gradient(closest-side,rgba(2,16,14,.6),transparent 72%);filter:blur(12px);pointer-events:none;z-index:2;"></div>
+      </div>
+      <div data-reveal="" style="position:relative;margin-top:12px;">
+        <div aria-hidden="true" style="position:absolute;inset-inline:24px;top:50%;height:1.5px;background:linear-gradient(90deg,rgba(201,162,39,.05),rgba(201,162,39,.42) 16%,rgba(201,162,39,.42) 84%,rgba(201,162,39,.05));"></div>
+        <div data-mpulse="" aria-hidden="true" style="position:absolute;top:calc(50% - 4px);width:8px;height:8px;border-radius:50%;background:#F3DE9C;box-shadow:0 0 12px #E9C96B;animation:kThread 6.5s cubic-bezier(.45,0,.55,1) 1.4s infinite;"></div>
+        <div style="position:relative;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <span dir="rtl" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,162,39,.38);border-radius:99px;padding:7px 13px;font-size:12px;color:rgba(233,201,107,.9);background:rgba(3,32,29,.78);"><svg data-vtick="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.2s"></path></svg>عشر بوابات G0–G9</span>
+          <span dir="rtl" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,162,39,.38);border-radius:99px;padding:7px 13px;font-size:12px;color:rgba(233,201,107,.9);background:rgba(3,32,29,.78);"><svg data-vtick="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.45s"></path></svg>الضمان قبل التنفيذ</span>
+          <span dir="rtl" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,162,39,.38);border-radius:99px;padding:7px 13px;font-size:12px;color:rgba(233,201,107,.9);background:rgba(3,32,29,.78);"><svg data-vtick="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.7s"></path></svg>مراجعة مستقلة قبل القبول</span>
+          <span dir="rtl" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,162,39,.38);border-radius:99px;padding:7px 13px;font-size:12px;color:rgba(233,201,107,.9);background:rgba(3,32,29,.78);"><svg data-vtick="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.95s"></path></svg>محضر استلام يغلق كل عمل</span>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,162,39,.38);border-radius:99px;padding:7px 13px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:rgba(233,201,107,.9);background:rgba(3,32,29,.78);"><svg data-vtick="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.2s"></path></svg>TEN GATES G0–G9</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,162,39,.38);border-radius:99px;padding:7px 13px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:rgba(233,201,107,.9);background:rgba(3,32,29,.78);"><svg data-vtick="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.45s"></path></svg>ESCROW BEFORE WORK</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,162,39,.38);border-radius:99px;padding:7px 13px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:rgba(233,201,107,.9);background:rgba(3,32,29,.78);"><svg data-vtick="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.7s"></path></svg>INDEPENDENT QA</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,162,39,.38);border-radius:99px;padding:7px 13px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:rgba(233,201,107,.9);background:rgba(3,32,29,.78);"><svg data-vtick="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.95s"></path></svg>SIGNED ACCEPTANCE</span>
+        </sc-if>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Home · Risks strip" style="background:#052E2B;border-top:1px solid rgba(201,162,39,.18);border-bottom:1px solid rgba(201,162,39,.18);padding:clamp(22px,3.5vh,34px) clamp(20px,4vw,40px);">
+  <div data-reveal="" style="max-width:1360px;margin:0 auto;display:flex;align-items:stretch;gap:clamp(12px,2vw,22px);flex-wrap:wrap;">
+    <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:1 1 200px;min-width:190px;display:grid;gap:7px;align-content:center;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.22em;color:rgba(250,246,236,.4);">RISK REGISTER · قيد الشطب</span>
+        <span style="font-family:'Alexandria',sans-serif;font-size:15px;font-weight:600;line-height:1.7;color:#E9C96B;">خمسة مخاطر تشطب قبل أن يبدأ العمل</span>
+        <span style="font-size:11.5px;line-height:1.8;color:rgba(250,246,236,.5);">ويقام مقام كل خطر ضمانة مكتوبة.</span>
+      </div>
+      <div data-riskcard="" style="flex:1 1 150px;min-width:146px;border:1px solid rgba(250,246,236,.12);border-radius:14px;background:rgba(3,32,29,.55);padding:13px 15px;display:grid;gap:8px;align-content:start;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:rgba(250,246,236,.35);">RISK-01</span>
+        <span data-strike="" style="font-size:13.5px;color:rgba(250,246,236,.55);width:fit-content;">مجهول الهوية<i aria-hidden="true"></i></span>
+        <span data-ranswer="" style="display:flex;align-items:center;gap:7px;transition-delay:.45s;"><svg data-rseal="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.55s"></path></svg><span style="font-size:12px;font-weight:600;color:#7CE0B8;">هوية موثقة برقم قيد</span></span>
+      </div>
+      <div data-riskcard="" style="flex:1 1 150px;min-width:146px;border:1px solid rgba(250,246,236,.12);border-radius:14px;background:rgba(3,32,29,.55);padding:13px 15px;display:grid;gap:8px;align-content:start;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:rgba(250,246,236,.35);">RISK-02</span>
+        <span data-strike="" style="font-size:13.5px;color:rgba(250,246,236,.55);width:fit-content;">ادعاء بلا قياس<i aria-hidden="true" style="transition-delay:.09s;"></i></span>
+        <span data-ranswer="" style="display:flex;align-items:center;gap:7px;transition-delay:.57s;"><svg data-rseal="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.67s"></path></svg><span style="font-size:12px;font-weight:600;color:#7CE0B8;">قدرة تقاس بالدليل</span></span>
+      </div>
+      <div data-riskcard="" style="flex:1 1 150px;min-width:146px;border:1px solid rgba(250,246,236,.12);border-radius:14px;background:rgba(3,32,29,.55);padding:13px 15px;display:grid;gap:8px;align-content:start;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:rgba(250,246,236,.35);">RISK-03</span>
+        <span data-strike="" style="font-size:13.5px;color:rgba(250,246,236,.55);width:fit-content;">عقد بلا طرف يسأل<i aria-hidden="true" style="transition-delay:.18s;"></i></span>
+        <span data-ranswer="" style="display:flex;align-items:center;gap:7px;transition-delay:.69s;"><svg data-rseal="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.79s"></path></svg><span style="font-size:12px;font-weight:600;color:#7CE0B8;">تتعاقد كيان باسمها</span></span>
+      </div>
+      <div data-riskcard="" style="flex:1 1 150px;min-width:146px;border:1px solid rgba(250,246,236,.12);border-radius:14px;background:rgba(3,32,29,.55);padding:13px 15px;display:grid;gap:8px;align-content:start;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:rgba(250,246,236,.35);">RISK-04</span>
+        <span data-strike="" style="font-size:13.5px;color:rgba(250,246,236,.55);width:fit-content;">مال بلا ضمان<i aria-hidden="true" style="transition-delay:.27s;"></i></span>
+        <span data-ranswer="" style="display:flex;align-items:center;gap:7px;transition-delay:.81s;"><svg data-rseal="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.91s"></path></svg><span style="font-size:12px;font-weight:600;color:#7CE0B8;">إيداع في حساب الضمان</span></span>
+      </div>
+      <div data-riskcard="" style="flex:1 1 150px;min-width:146px;border:1px solid rgba(250,246,236,.12);border-radius:14px;background:rgba(3,32,29,.55);padding:13px 15px;display:grid;gap:8px;align-content:start;">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:rgba(250,246,236,.35);">RISK-05</span>
+        <span data-strike="" style="font-size:13.5px;color:rgba(250,246,236,.55);width:fit-content;">تسليم بلا مساءلة<i aria-hidden="true" style="transition-delay:.36s;"></i></span>
+        <span data-ranswer="" style="display:flex;align-items:center;gap:7px;transition-delay:.93s;"><svg data-rseal="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:1.03s"></path></svg><span style="font-size:12px;font-weight:600;color:#7CE0B8;">محضر استلام وضمانة</span></span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+      <div dir="ltr" style="flex:1 1 200px;min-width:190px;display:grid;gap:7px;align-content:center;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.22em;color:rgba(250,246,236,.4);">RISK REGISTER</span>
+        <span style="font-family:'Alexandria',sans-serif;font-size:15px;font-weight:600;line-height:1.4;color:#E9C96B;">Five risks struck out before work begins</span>
+        <span style="font-family:'Instrument Sans',sans-serif;font-size:11.5px;line-height:1.6;color:rgba(250,246,236,.5);">Each replaced by a written guarantee.</span>
+      </div>
+      <div data-riskcard="" dir="ltr" style="flex:1 1 150px;min-width:146px;border:1px solid rgba(250,246,236,.12);border-radius:14px;background:rgba(3,32,29,.55);padding:13px 15px;display:grid;gap:8px;align-content:start;font-family:'Instrument Sans',sans-serif;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:rgba(250,246,236,.35);">RISK-01</span>
+        <span data-strike="" dir="ltr" style="font-size:12.5px;color:rgba(250,246,236,.55);width:fit-content;">Unknown identity<i aria-hidden="true"></i></span>
+        <span data-ranswer="" style="display:flex;align-items:center;gap:7px;transition-delay:.45s;"><svg data-rseal="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.55s"></path></svg><span style="font-size:11.5px;font-weight:600;color:#7CE0B8;">Verified identity, registry number</span></span>
+      </div>
+      <div data-riskcard="" dir="ltr" style="flex:1 1 150px;min-width:146px;border:1px solid rgba(250,246,236,.12);border-radius:14px;background:rgba(3,32,29,.55);padding:13px 15px;display:grid;gap:8px;align-content:start;font-family:'Instrument Sans',sans-serif;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:rgba(250,246,236,.35);">RISK-02</span>
+        <span data-strike="" dir="ltr" style="font-size:12.5px;color:rgba(250,246,236,.55);width:fit-content;">Unmeasured claims<i aria-hidden="true" style="transition-delay:.09s;"></i></span>
+        <span data-ranswer="" style="display:flex;align-items:center;gap:7px;transition-delay:.57s;"><svg data-rseal="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.67s"></path></svg><span style="font-size:11.5px;font-weight:600;color:#7CE0B8;">Capability measured by evidence</span></span>
+      </div>
+      <div data-riskcard="" dir="ltr" style="flex:1 1 150px;min-width:146px;border:1px solid rgba(250,246,236,.12);border-radius:14px;background:rgba(3,32,29,.55);padding:13px 15px;display:grid;gap:8px;align-content:start;font-family:'Instrument Sans',sans-serif;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:rgba(250,246,236,.35);">RISK-03</span>
+        <span data-strike="" dir="ltr" style="font-size:12.5px;color:rgba(250,246,236,.55);width:fit-content;">No accountable counterparty<i aria-hidden="true" style="transition-delay:.18s;"></i></span>
+        <span data-ranswer="" style="display:flex;align-items:center;gap:7px;transition-delay:.69s;"><svg data-rseal="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.79s"></path></svg><span style="font-size:11.5px;font-weight:600;color:#7CE0B8;">Kayan contracts in its own name</span></span>
+      </div>
+      <div data-riskcard="" dir="ltr" style="flex:1 1 150px;min-width:146px;border:1px solid rgba(250,246,236,.12);border-radius:14px;background:rgba(3,32,29,.55);padding:13px 15px;display:grid;gap:8px;align-content:start;font-family:'Instrument Sans',sans-serif;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:rgba(250,246,236,.35);">RISK-04</span>
+        <span data-strike="" dir="ltr" style="font-size:12.5px;color:rgba(250,246,236,.55);width:fit-content;">Unprotected money<i aria-hidden="true" style="transition-delay:.27s;"></i></span>
+        <span data-ranswer="" style="display:flex;align-items:center;gap:7px;transition-delay:.81s;"><svg data-rseal="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:.91s"></path></svg><span style="font-size:11.5px;font-weight:600;color:#7CE0B8;">Deposit held in escrow</span></span>
+      </div>
+      <div data-riskcard="" dir="ltr" style="flex:1 1 150px;min-width:146px;border:1px solid rgba(250,246,236,.12);border-radius:14px;background:rgba(3,32,29,.55);padding:13px 15px;display:grid;gap:8px;align-content:start;font-family:'Instrument Sans',sans-serif;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:rgba(250,246,236,.35);">RISK-05</span>
+        <span data-strike="" dir="ltr" style="font-size:12.5px;color:rgba(250,246,236,.55);width:fit-content;">Delivery without recourse<i aria-hidden="true" style="transition-delay:.36s;"></i></span>
+        <span data-ranswer="" style="display:flex;align-items:center;gap:7px;transition-delay:.93s;"><svg data-rseal="" width="15" height="15" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5"></circle><path d="M6.2 10.4 9 13.2 14 7.6" style="transition-delay:1.03s"></path></svg><span style="font-size:11.5px;font-weight:600;color:#7CE0B8;">Signed acceptance + warranty</span></span>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<section id="lines" data-screen-label="Home · The lines" style="background:#FAF6EC;color:#143C37;padding:clamp(52px,9vh,104px) clamp(20px,4vw,40px);">
+  <div style="max-width:1360px;margin:0 auto;">
+    <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+      <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#8F7218;font-weight:500;"><bdi>الخطوط</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#B0A48A;">· ONE FLOCK</span></div>
+      <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.8vw,50px);line-height:1.26;color:#052E2B;max-width:24ch;">خمسة أطيار، سرب واحد</h2>
+      <p data-reveal="" style="margin:16px 0 0;max-width:62ch;font-size:16px;line-height:2;color:#4A6B64;">لكل خط طائر بلونه، وكلمة واحدة تعرفه، والسجل واحد ومعيار الدليل واحد. قف على طائر تقرأ خبره، وادخل خطه يحملك لونه.</p>
+    </sc-if>
+    <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+      <div dir="ltr">
+        <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#8F7218;font-weight:500;">The lines <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#B0A48A;">· ONE FLOCK</span></div>
+        <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.8vw,50px);line-height:1.18;color:#052E2B;max-width:24ch;">Five birds. One flock.</h2>
+        <p data-reveal="" style="margin:16px 0 0;max-width:62ch;font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.75;color:#4A6B64;">Each line is a bird with one color and one word to its name — all feeding a single record, a single standard of proof. Rest on a bird to read it; enter, and its color carries you.</p>
+      </div>
+    </sc-if>
+
+    <div style="position:relative;margin-top:clamp(30px,5vh,54px);">
+      <div data-eco-wrap="" dir="{{ dirVal }}" style="position:relative;max-width:880px;margin:0 auto clamp(46px,6vw,64px);aspect-ratio:1/1;transform:{{ ecoFlip }};">
+        <kayan-mark line="gold" tone="mid" aria-hidden="true" style="position:absolute;left:14%;top:32%;width:72%;opacity:.07;pointer-events:none;"></kayan-mark>
+        <svg aria-hidden="true" viewBox="0 0 1000 1000" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
+          <defs><marker id="ecoArw" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 8 4 L 0 8 z" fill="rgba(143,114,24,.45)"></path></marker></defs>
+          <g fill="none" stroke="rgba(143,114,24,.35)" stroke-width="1.3" stroke-dasharray="1 6" stroke-linecap="round">
+            <path d="M 568.6 110.9 A 395 395 0 0 1 848.8 314.7" marker-start="url(#ecoArw)"></path>
+            <path d="M 891.2 445 A 395 395 0 0 1 784 774.5" marker-start="url(#ecoArw)"></path>
+            <path d="M 673.2 855 A 395 395 0 0 1 326.8 855" marker-start="url(#ecoArw)"></path>
+            <path d="M 215.9 774.4 A 395 395 0 0 1 108.9 555" marker-start="url(#ecoArw)"></path>
+            <path d="M 151.2 314.6 A 395 395 0 0 1 431.4 110.9" marker-start="url(#ecoArw)"></path>
+          </g>
+          <g stroke="#FFB627" fill="none" stroke-linecap="round"><path d="M 552.6 392.1 C 571.1 281.3, 534.5 171.7, 500 105" stroke-width="34" stroke-opacity=".14"></path><path d="M 552.6 392.1 C 571.1 281.3, 534.5 171.7, 500 105" stroke-width="15" stroke-opacity=".4"></path><path d="M 552.6 392.1 C 571.1 281.3, 534.5 171.7, 500 105" stroke-width="5.5" stroke-opacity=".92"></path></g>
+          <g stroke="#FF6250" fill="none" stroke-linecap="round"><path d="M 618.8 516.7 C 730 500, 822.8 431.4, 875.6 377.9" stroke-width="34" stroke-opacity=".14"></path><path d="M 618.8 516.7 C 730 500, 822.8 431.4, 875.6 377.9" stroke-width="15" stroke-opacity=".4"></path><path d="M 618.8 516.7 C 730 500, 822.8 431.4, 875.6 377.9" stroke-width="5.5" stroke-opacity=".92"></path></g>
+          <g stroke="#12B5A4" fill="none" stroke-linecap="round"><path d="M 520.8 618.2 C 571.1 718.7, 665 785.8, 732.2 819.6" stroke-width="34" stroke-opacity=".14"></path><path d="M 520.8 618.2 C 571.1 718.7, 665 785.8, 732.2 819.6" stroke-width="15" stroke-opacity=".4"></path><path d="M 520.8 618.2 C 571.1 718.7, 665 785.8, 732.2 819.6" stroke-width="5.5" stroke-opacity=".92"></path></g>
+          <g stroke="#3FA75B" fill="none" stroke-linecap="round"><path d="M 396.1 560 C 313.9 635.2, 279.2 745.2, 267.8 819.6" stroke-width="34" stroke-opacity=".14"></path><path d="M 396.1 560 C 313.9 635.2, 279.2 745.2, 267.8 819.6" stroke-width="15" stroke-opacity=".4"></path><path d="M 396.1 560 C 313.9 635.2, 279.2 745.2, 267.8 819.6" stroke-width="5.5" stroke-opacity=".92"></path></g>
+          <g stroke="#2E7CBC" fill="none" stroke-linecap="round"><path d="M 413.7 416.6 C 313.9 364.8, 198.4 365.7, 124.4 377.9" stroke-width="34" stroke-opacity=".14"></path><path d="M 413.7 416.6 C 313.9 364.8, 198.4 365.7, 124.4 377.9" stroke-width="15" stroke-opacity=".4"></path><path d="M 413.7 416.6 C 313.9 364.8, 198.4 365.7, 124.4 377.9" stroke-width="5.5" stroke-opacity=".92"></path></g>
+        </svg>
+        <div data-eco-center="" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:5px;pointer-events:none;z-index:2;width:36%;text-align:center;">
+          <kayan-mark line="gold" motion="glide" aria-hidden="true" style="width:min(56%,150px);filter:drop-shadow(0 14px 26px rgba(143,114,24,.45));"></kayan-mark>
+          <span style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(19px,2.6vw,27px);color:#052E2B;transform:{{ ecoUnflip }};">{{ leadWord }}</span>
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.26em;color:#8F7218;transform:{{ ecoUnflip }};">THE KAYAN ECOSYSTEM</span>
+          <span style="font-size:clamp(11px,1.4vw,12.5px);line-height:1.7;color:#6E675A;transform:{{ ecoUnflip }};">{{ ecoSub }}</span>
+        </div>
+        <sc-for list="{{ flock }}" as="f" hint-placeholder-count="0">
+          <button type="button" data-eco-node="" data-key="{{ f.key }}" aria-pressed="{{ f.pressed }}" onClick="{{ pickBird }}" onMouseEnter="{{ birdEnter }}" onMouseLeave="{{ birdLeave }}" onFocus="{{ birdEnter }}" onBlur="{{ birdLeave }}" style-active="opacity:.8" style="position:absolute;left:{{ f.x }};top:{{ f.y }};transform:translate(-50%,-50%);background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:7px;padding:6px;-webkit-tap-highlight-color:transparent;z-index:3;width:max-content;max-width:132px;">
+            <span style="width:clamp(56px,8.6vw,88px);height:clamp(56px,8.6vw,88px);border-radius:50%;background:{{ f.discBg }};box-shadow:{{ f.discShadow }};display:inline-flex;align-items:center;justify-content:center;transition:box-shadow .3s ease,transform .3s ease;transform:{{ f.discScale }};">
+              <span aria-hidden="true" style="display:block;width:62%;aspect-ratio:1/1;background:url('{{ f.icon }}') center/contain no-repeat;filter:brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,.25));opacity:.96;"></span>
+            </span>
+            <span style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(13.5px,1.8vw,17px);color:{{ f.wCol }};transition:color .3s ease;line-height:1.3;transform:{{ ecoUnflip }};">{{ f.word }}</span>
+            <span data-eco-name="" style="font-family:'Alexandria',sans-serif;font-weight:400;font-size:11.5px;color:#6E675A;line-height:1.4;transform:{{ ecoUnflip }};">{{ f.name }}</span>
+          </button>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ birdPicked }}" hint-placeholder-val="{{ false }}">
+      <div data-view="" dir="{{ dirVal }}" style="margin-top:clamp(18px,3vh,30px);background:#FFFFFF;border:1px solid #E3D9C2;border-inline-start:6px solid {{ cur.color }};border-radius:24px;overflow:hidden;box-shadow:0 24px 60px rgba(5,46,43,.08);transition:border-color .35s ease;">
+        <div style="height:5px;background:linear-gradient(90deg,{{ cur.color }},transparent 70%);transition:background .35s ease;opacity:.35;"></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(14px,3vw,34px);padding:clamp(20px,3vw,34px);align-items:center;">
+          <div style="min-width:0;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:{{ cur.deep }};transition:color .35s ease;">{{ cur.code }}</div>
+            <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:10px;">
+              <span style="font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(30px,4.4vw,48px);line-height:1.15;color:{{ cur.deep }};transition:color .35s ease;">{{ cur.word }}</span>
+              <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(16px,2vw,21px);color:#052E2B;">{{ cur.name }}</span>
+              <span style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:14px;color:{{ cur.deep }};transition:color .35s ease;">{{ cur.tagWrapped }}</span>
+            </div>
+            <p style="margin:12px 0 0;font-size:14.5px;line-height:2;color:#4A6B64;max-width:62ch;">{{ cur.desc }}</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
+              <a href="{{ cur.href }}" data-href="{{ cur.href }}" data-color="{{ cur.color }}" data-name="{{ cur.flash }}" onClick="{{ goLine }}" style="font-size:13.5px;font-weight:700;color:#FFFFFF;background:{{ cur.deep }};border-radius:99px;padding:11px 22px;transition:transform 160ms cubic-bezier(.23,1,.32,1),background .35s ease;" style-active="transform:scale(.97)">{{ cur.ctaLine }}</a>
+              <sc-if value="{{ cur.hasAlt }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ cur.altHref }}" data-href="{{ cur.altHref }}" data-color="{{ cur.color }}" data-name="{{ cur.flash }}" onClick="{{ goLine }}" style="font-size:12.5px;color:#6E675A;border:1px solid #E3D9C2;border-radius:99px;padding:10px 16px;">{{ cur.alt }}</a>
+              </sc-if>
+            </div>
+          </div>
+          <div style="min-width:0;display:flex;align-items:center;justify-content:center;">
+            <span style="display:block;width:min(58%,230px);filter:drop-shadow(0 20px 38px {{ cur.shadow }});transition:filter .35s ease;">
+              <kayan-mark line="{{ cur.key }}" motion="glide" role="img" aria-label="{{ cur.name }}" style="width:100%;"></kayan-mark>
+            </span>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+      <sc-if value="{{ birdNone }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top:clamp(18px,3vh,30px);display:flex;justify-content:center;">
+          <span style="display:inline-flex;align-items:center;gap:10px;border:1.5px dashed #D5C9A9;border-radius:99px;padding:12px 22px;font-size:13.5px;color:#8A7F63;background:rgba(255,255,255,.5);">
+            <kayan-mark line="gold" tone="mid" aria-hidden="true" style="width:22px;flex-shrink:0;opacity:.7;"></kayan-mark>
+            {{ pickHint }}
+          </span>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<section id="ground" data-screen-label="Home · The ground" style="background:#052E2B;border-top:1px solid rgba(201,162,39,.16);padding:clamp(48px,8vh,92px) 0 clamp(44px,7vh,80px);overflow:hidden;">
+  <div style="max-width:1360px;margin:0 auto;padding:0 clamp(20px,4vw,40px);">
+    <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+      <div data-reveal=""><bdi style="font-family:'Alexandria',sans-serif;font-size:13.5px;font-weight:500;color:#E9C96B;">الوجهات</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:rgba(250,246,236,.4);">· THE GROUND</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;">
+        <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(26px,3.6vw,46px);line-height:1.3;color:#FAF6EC;max-width:26ch;">من هذه الأرض <b style="font-weight:700;color:#E9C96B;">يسلم العمل إلى العالم</b></h2>
+        <a data-reveal="" href="Kayan Atlas.html" style="border:1.5px solid rgba(201,162,39,.5);border-radius:99px;padding:11px 22px;font-size:13px;font-weight:700;color:#F3DE9C;" style-hover="border-color:#E9C96B;background:rgba(201,162,39,.08)">افتح الأطلس الحي ←</a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+      <div dir="ltr">
+        <div data-reveal="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#E9C96B;">THE GROUND</div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;">
+          <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(26px,3.6vw,46px);line-height:1.2;color:#FAF6EC;max-width:26ch;">From this ground, <b style="font-weight:700;color:#E9C96B;">work ships to the world</b></h2>
+          <a data-reveal="" href="Kayan Atlas.html" style="border:1.5px solid rgba(201,162,39,.5);border-radius:99px;padding:11px 22px;font-size:13px;font-weight:700;color:#F3DE9C;" style-hover="border-color:#E9C96B;background:rgba(201,162,39,.08)">Open the live atlas →</a>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+  <div aria-hidden="true" data-gtrack="" dir="ltr" style="position:relative;margin:clamp(18px,3vh,28px) 0 0;padding:0 8px;height:26px;">
+    <div style="position:absolute;inset-inline:8px;top:50%;height:1px;background:linear-gradient(90deg,rgba(201,162,39,.45),rgba(201,162,39,.45) 88%,transparent);"></div>
+    <span data-gbird="" style="position:absolute;top:0;inset-inline-start:8px;width:30px;filter:drop-shadow(0 3px 8px rgba(201,162,39,.5));">
+      <kayan-mark line="gold" tone="bright" style="width:30px;display:block;"></kayan-mark>
+    </span>
+  </div>
+  <div data-nav="" data-grail="" dir="ltr" style="display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding:clamp(10px,2vh,16px) clamp(20px,4vw,40px) 6px max(calc(clamp(20px,4vw,40px) + 5px),calc((100% - 1360px)/2 + clamp(20px,4vw,40px)));scroll-padding-inline-start:max(calc(clamp(20px,4vw,40px) + 5px),calc((100% - 1360px)/2 + clamp(20px,4vw,40px)));scrollbar-width:none;">
+    <div data-gcard="" style="flex:none;scroll-snap-align:start;width:216px;">
+      <div data-gimg="" style="position:relative;width:216px;height:270px;border-radius:18px;overflow:hidden;box-shadow:0 0 0 1.5px rgba(201,162,39,.65),0 16px 36px rgba(0,0,0,.32);">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aden%20-%20panorama%20of%20crater%20from%20Tawila%20Tunks%20(8739851148).jpg?width=620" alt="منظر عام لمدينة كريتر في عدن من صهاريج الطويلة" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"><div aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(to top,rgba(3,32,29,.72),transparent);"></div>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-top:11px;padding:0 3px;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#F3DE9C;">Aden <span style="font-weight:300;font-size:12px;color:rgba(233,201,107,.8);">· HQ</span></span>
+        <span dir="ltr" data-gco="" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(250,246,236,.42);">12.79N 45.03E</span>
+      </div>
+      <div dir="ltr" style="margin-top:5px;padding:0 3px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:rgba(250,246,236,.34);text-align:start;"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:10.5px;letter-spacing:0;color:rgba(250,246,236,.5);">عدن · المقر</span> — Wikimedia Commons</div>
+    </div>
+    <div data-gcard="" style="flex:none;scroll-snap-align:start;width:216px;">
+      <div data-gimg="" style="position:relative;width:216px;height:270px;border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.28);">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Old%20City%20of%20Sana'a-111108.jpg?width=900" alt="بيوت صنعاء القديمة البرجية" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 68%;display:block;filter:saturate(1.1) contrast(1.05);"><div aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(to top,rgba(3,32,29,.72),transparent);"></div>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-top:11px;padding:0 3px;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#FAF6EC;">Sanaa</span>
+        <span dir="ltr" data-gco="" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(250,246,236,.42);">15.35N 44.21E</span>
+      </div>
+      <div dir="ltr" style="margin-top:5px;padding:0 3px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:rgba(250,246,236,.34);text-align:start;"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:10.5px;letter-spacing:0;color:rgba(250,246,236,.5);">صنعاء</span> — Wikimedia · CC BY-SA 3.0 IGO</div>
+    </div>
+    <div data-gcard="" style="flex:none;scroll-snap-align:start;width:216px;">
+      <div data-gimg="" style="position:relative;width:216px;height:270px;border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.28);">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Yemeni%20castle%20in%20taiz.jpg?width=900" alt="قلعة القاهرة على سفح جبل صبر في تعز" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;filter:saturate(1.1) contrast(1.05);"><div aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(to top,rgba(3,32,29,.72),transparent);"></div>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-top:11px;padding:0 3px;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#FAF6EC;">Taiz <span style="font-weight:300;font-size:12px;color:rgba(250,246,236,.55);">· Al-Qahira Castle</span></span>
+        <span dir="ltr" data-gco="" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(250,246,236,.42);">13.58N 44.02E</span>
+      </div>
+      <div dir="ltr" style="margin-top:5px;padding:0 3px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:rgba(250,246,236,.34);text-align:start;"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:10.5px;letter-spacing:0;color:rgba(250,246,236,.5);">تعز · قلعة القاهرة</span> — Wikimedia Commons</div>
+    </div>
+    <div data-gcard="" style="flex:none;scroll-snap-align:start;width:216px;">
+      <div data-gimg="" style="position:relative;width:216px;height:270px;border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.28);">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Shibam%20the%20mud%20brick%20city.JPG?width=620" alt="أبراج شبام الطينية في وادي حضرموت" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"><div aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(to top,rgba(3,32,29,.72),transparent);"></div>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-top:11px;padding:0 3px;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#FAF6EC;">Wadi Hadhramaut <span style="font-weight:300;font-size:12px;color:rgba(250,246,236,.55);">· Shibam</span></span>
+        <span dir="ltr" data-gco="" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(250,246,236,.42);">15.93N 48.63E</span>
+      </div>
+      <div dir="ltr" style="margin-top:5px;padding:0 3px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:rgba(250,246,236,.34);text-align:start;"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:10.5px;letter-spacing:0;color:rgba(250,246,236,.5);">وادي حضرموت · شبام</span> — Wikimedia Commons</div>
+    </div>
+    <div data-gcard="" style="flex:none;scroll-snap-align:start;width:216px;">
+      <div data-gimg="" style="position:relative;width:216px;height:270px;border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.28);">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dragons%20Blood%20Tree%2C%20Socotra%20Island%20(10941931846).jpg?width=620" alt="شجرة دم الأخوين في جزيرة سقطرى" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"><div aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(to top,rgba(3,32,29,.72),transparent);"></div>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-top:11px;padding:0 3px;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#FAF6EC;">Socotra</span>
+        <span dir="ltr" data-gco="" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(250,246,236,.42);">12.51N 53.91E</span>
+      </div>
+      <div dir="ltr" style="margin-top:5px;padding:0 3px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:rgba(250,246,236,.34);text-align:start;"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:10.5px;letter-spacing:0;color:rgba(250,246,236,.5);">سقطرى</span> — Rod Waddington · CC BY-SA 2.0</div>
+    </div>
+    <div data-gcard="" style="flex:none;scroll-snap-align:start;width:216px;">
+      <div data-gimg="" style="position:relative;width:216px;height:270px;border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.28);">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/%D9%85%D8%AD%D9%85%D9%8A%D8%A9%20%D8%AD%D9%88%D9%81%20%D8%A7%D9%84%D9%85%D9%87%D8%B1%D8%A9.jpg?width=620" alt="غابة محمية حوف في المهرة" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"><div aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(to top,rgba(3,32,29,.72),transparent);"></div>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-top:11px;padding:0 3px;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#FAF6EC;">Hawf</span>
+        <span dir="ltr" data-gco="" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(250,246,236,.42);">16.66N 53.11E</span>
+      </div>
+      <div dir="ltr" style="margin-top:5px;padding:0 3px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:rgba(250,246,236,.34);text-align:start;"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:10.5px;letter-spacing:0;color:rgba(250,246,236,.5);">حوف</span> — CC BY-SA 4.0 · Wikimedia Commons</div>
+    </div>
+    <div data-gcard="" style="flex:none;scroll-snap-align:start;width:216px;">
+      <div data-gimg="" style="position:relative;width:216px;height:270px;border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.28);">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jemen1988-022%20hg.jpg?width=900" alt="أطلال سد مأرب العظيم — منشأ الري في مملكة سبأ" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 42%;display:block;filter:saturate(1.14) contrast(1.08) brightness(1.03);"><div aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(to top,rgba(3,32,29,.72),transparent);"></div>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-top:11px;padding:0 3px;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#FAF6EC;">Marib <span style="font-weight:300;font-size:12px;color:rgba(250,246,236,.55);">· Dam of Sheba</span></span>
+        <span dir="ltr" data-gco="" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(250,246,236,.42);">15.40N 45.24E</span>
+      </div>
+      <div dir="ltr" style="margin-top:5px;padding:0 3px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:rgba(250,246,236,.34);text-align:start;"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:10.5px;letter-spacing:0;color:rgba(250,246,236,.5);">مأرب · سد سبأ</span> — H. Grobe · CC BY-SA 3.0</div>
+    </div>
+    <div data-gcard="" style="flex:none;scroll-snap-align:start;width:216px;">
+      <div style="position:relative;width:216px;height:270px;border-radius:18px;overflow:hidden;border:1.5px dashed rgba(201,162,39,.55);background:radial-gradient(120% 90% at 50% 110%,rgba(201,162,39,.14),transparent 60%);display:grid;align-content:center;justify-items:center;gap:10px;padding:18px;box-sizing:border-box;text-align:center;">
+        <kayan-mark line="gold" tone="bright" aria-hidden="true" style="width:44px;display:block;opacity:.9;"></kayan-mark>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;line-height:1.8;color:#F3DE9C;">ومنها كل مدينة</div>
+          <div style="font-size:11.5px;line-height:1.95;color:rgba(250,246,236,.62);">يقيد في السجل من كل محافظات اليمن، ومن المقيمين في الخارج.</div>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <div dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;line-height:1.5;color:#F3DE9C;">And every city</div>
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;line-height:1.8;color:rgba(250,246,236,.6);">The registry is open to every governorate of Yemen — and to Yemenis abroad.</div>
+        </sc-if>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}"><a href="Kayan Apply.dc.html" style="font-size:11.5px;font-weight:700;color:#E9C96B;border:1px solid rgba(201,162,39,.5);border-radius:99px;padding:7px 16px;" style-hover="background:rgba(201,162,39,.1)">افتح ملفك ←</a></sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><a href="Kayan Apply.dc.html" dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11.5px;font-weight:700;color:#E9C96B;border:1px solid rgba(201,162,39,.5);border-radius:99px;padding:7px 16px;" style-hover="background:rgba(201,162,39,.1)">Open your file →</a></sc-if>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-top:11px;padding:0 3px;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#FAF6EC;">The door is open</span>
+        <span dir="ltr" data-gco="" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:rgba(250,246,236,.42);">23 GOV · + DIASPORA</span>
+      </div>
+      <div dir="ltr" style="margin-top:5px;padding:0 3px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:rgba(250,246,236,.34);text-align:start;"><span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:10.5px;letter-spacing:0;color:rgba(250,246,236,.5);">الباب مفتوح</span> — KYN-CH-01 §1</div>
+    </div>
+    <div style="flex:none;width:clamp(6px,3vw,26px);"></div>
+  </div>
+
+</section>
+
+<section id="model" data-screen-label="Home · The model" style="position:relative;background:#03201D;border-top:1px solid rgba(201,162,39,.16);padding:clamp(56px,9vh,104px) clamp(20px,4vw,40px);overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(900px 500px at 85% 0%,rgba(201,162,39,.07),transparent 60%);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1360px;margin:0 auto;">
+    <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+      <div data-reveal=""><bdi style="font-family:'Alexandria',sans-serif;font-size:13.5px;font-weight:500;color:#E9C96B;">النموذج</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:rgba(250,246,236,.4);">· HOW MONEY MEETS WORK</span></div>
+      <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(26px,3.8vw,48px);line-height:1.35;color:#FAF6EC;max-width:30ch;">قاعدة واحدة تسبق كل شيء: <b style="font-weight:700;color:#E9C96B;">لا عقد، لا ضمان — لا عمل</b></h2>
+      <p data-reveal="" style="margin:14px 0 0;max-width:60ch;font-size:14px;line-height:2.05;color:rgba(250,246,236,.62);">سوق كاملة كانت تقوم على الثقة الشخصية: مال يدفع بلا حماية، وتخصصات دقيقة لا يراها أحد، وأعمال تسلم بلا محضر. بني هذا النظام ليقيد ذلك كله في سجل واحد.</p>
+    </sc-if>
+    <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+      <div dir="ltr">
+        <div data-reveal="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#E9C96B;">THE MODEL · HOW MONEY MEETS WORK</div>
+        <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(26px,3.8vw,48px);line-height:1.25;color:#FAF6EC;max-width:30ch;">One rule before everything: <b style="font-weight:700;color:#E9C96B;">no contract, no escrow — no work</b></h2>
+        <p data-reveal="" style="margin:14px 0 0;max-width:66ch;font-family:'Instrument Sans',sans-serif;font-size:13px;line-height:1.85;color:rgba(250,246,236,.6);">An entire market ran on personal trust: money paid unprotected, narrow specialists nobody could see, work handed over with no record. This system was built to put all of it on one registry.</p>
+      </div>
+    </sc-if>
+    <div data-reveal="" style="position:relative;margin-top:clamp(30px,5vh,48px);">
+      <div aria-hidden="true" style="position:absolute;inset-inline:26px;top:29px;height:2px;background:linear-gradient(90deg,rgba(201,162,39,.12),rgba(201,162,39,.55) 18%,rgba(201,162,39,.55) 82%,rgba(201,162,39,.12));"></div>
+      <div data-mpulse="" aria-hidden="true" style="position:absolute;top:25px;width:10px;height:10px;border-radius:50%;background:#F3DE9C;box-shadow:0 0 14px #E9C96B;animation:kThread 7s cubic-bezier(.45,0,.55,1) infinite;"></div>
+      <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:12px;">
+        <sc-for list="{{ modelSteps }}" as="ms" hint-placeholder-count="6">
+          <div data-mnode="" style="border:1px solid rgba(201,162,39,.3);border-radius:16px;background:rgba(5,46,43,.72);padding:16px 14px 14px;display:grid;gap:8px;justify-items:start;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#E9C96B;background:#03201D;border:1px solid rgba(201,162,39,.45);border-radius:99px;padding:5px 10px;margin-top:-27px;">{{ ms.no }}</span>
+            <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:14.5px;color:#FAF6EC;">{{ ms.ar }}</span><span style="font-size:11.5px;line-height:1.9;color:rgba(250,246,236,.6);">{{ ms.arSub }}</span></sc-if>
+            <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><span dir="ltr" style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:13.5px;color:#FAF6EC;">{{ ms.en }}</span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;line-height:1.7;color:rgba(250,246,236,.55);">{{ ms.enSub }}</span></sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="margin-top:clamp(26px,4vh,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:clamp(18px,3vw,30px);align-items:stretch;">
+      <div data-reveal="" style="border:1px solid rgba(201,162,39,.28);border-radius:20px;background:rgba(5,46,43,.55);padding:clamp(18px,3vw,28px);display:grid;gap:12px;align-content:start;">
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#B9A8E8;">THE POD · التخصص الدقيق</div>
+          <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;line-height:1.7;color:#FAF6EC;">لا يسند التكليف إلى بطل يدعي كل شيء</h3>
+          <span data-strike="" style="justify-self:start;font-size:12.5px;color:rgba(250,246,236,.5);border:1px dashed rgba(250,246,236,.22);border-radius:99px;padding:6px 14px;">«أصمم وأبرمج وأسوق وأراجع وحدي»<i aria-hidden="true"></i></span>
+          <p style="margin:0;font-size:13px;line-height:2.05;color:rgba(250,246,236,.66);">يفكك التكليف إلى مساراته، ويقيد لكل مسار دقيق التخصص من سجله، ويقاد الفريق باسم معلوم بتوزيع يثبت قبل البدء.</p>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#B9A8E8;">THE POD · MICRO-SPECIALIZATION</div>
+          <h3 dir="ltr" style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;line-height:1.5;color:#FAF6EC;">No engagement rests on one hero claiming everything</h3>
+          <span data-strike="" dir="ltr" style="justify-self:start;font-family:'Instrument Sans',sans-serif;font-size:12px;color:rgba(250,246,236,.5);border:1px dashed rgba(250,246,236,.22);border-radius:99px;padding:6px 14px;">"I do everything myself"<i aria-hidden="true"></i></span>
+          <p dir="ltr" style="margin:0;font-family:'Instrument Sans',sans-serif;font-size:12px;line-height:1.85;color:rgba(250,246,236,.6);">The engagement is broken into its lanes; a narrow specialist is drawn from the registry for each, under a named lead and a split fixed before work starts.</p>
+        </sc-if>
+        <div dir="ltr" style="position:relative;width:min(100%,430px);aspect-ratio:1;margin:6px auto 26px;">
+          <svg viewBox="0 0 320 320" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;">
+            <circle data-orbit="" cx="160" cy="160" r="149" fill="none" stroke="rgba(233,201,107,.28)" stroke-width="1" stroke-dasharray="5 9" style="transform-origin:160px 160px;animation:kOrbit 90s linear infinite;"></circle>
+            <line data-cline="" x1="160" y1="160" x2="160" y2="38" stroke="rgba(233,201,107,.6)" stroke-width="1.5"></line>
+            <line data-cline="" x1="160" y1="160" x2="52" y2="104" stroke="rgba(250,246,236,.28)" stroke-width="1.2" style="transition-delay:.14s"></line>
+            <line data-cline="" x1="160" y1="160" x2="268" y2="104" stroke="rgba(250,246,236,.28)" stroke-width="1.2" style="transition-delay:.28s"></line>
+            <line data-cline="" x1="160" y1="160" x2="160" y2="272" stroke="rgba(250,246,236,.28)" stroke-width="1.2" style="transition-delay:.42s"></line>
+          </svg>
+          <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);">
+            <span data-cnode="" style="display:grid;gap:3px;justify-items:center;text-align:center;border:1px solid rgba(233,201,107,.55);border-radius:14px;background:linear-gradient(160deg,rgba(10,59,54,.96),rgba(3,32,29,.96));padding:12px 16px;box-shadow:0 12px 30px rgba(0,0,0,.35);">
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.14em;color:#E9C96B;">KY-J-26-00417</span>
+              <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Alexandria',sans-serif;font-size:13px;font-weight:600;color:#FAF6EC;">متجر إلكتروني</span></sc-if>
+              <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><span style="font-family:'Alexandria',sans-serif;font-size:12px;font-weight:600;color:#FAF6EC;">E-commerce store</span></sc-if>
+            </span>
+          </span>
+          <sc-for list="{{ podNodes }}" as="pn" hint-placeholder-count="4">
+            <span style="{{ pn.pos }}"><span data-cnode="" style="{{ pn.chip }}"><sc-if value="{{ pn.badge }}" hint-placeholder-val="{{ false }}"><span dir="ltr" style="{{ pn.badgeStyle }}">{{ pn.badge }}</span></sc-if><span dir="ltr" style="{{ pn.codeStyle }}">{{ pn.code }}</span><span style="{{ pn.labelStyle }}">{{ pn.label }}</span></span></span>
+          </sc-for>
+        </div>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:0;text-align:center;font-size:11.5px;line-height:1.9;color:rgba(250,246,236,.5);">تقيد المسارات برموزها الدقيقة من سجل التخصصات، ويقاس كل عضو في مساره وحده.</p>
+          <div style="justify-self:center;display:flex;align-items:center;gap:8px;border:1px dashed rgba(233,201,107,.4);border-radius:99px;padding:7px 15px;background:rgba(201,162,39,.06);">
+            <span style="width:6px;height:6px;border-radius:50%;background:#E9C96B;flex:none;"></span>
+            <span style="font-size:11.5px;line-height:1.7;color:rgba(233,201,107,.9);">الطوق: بوابات كيان ومراجعتها المستقلة — لا مقعد في الفريق</span>
+          </div>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <p dir="ltr" style="margin:0;text-align:center;font-family:'Instrument Sans',sans-serif;font-size:11px;line-height:1.7;color:rgba(250,246,236,.5);">Lanes are recorded by their exact micro-spec codes; each member is measured in their own lane.</p>
+          <div dir="ltr" style="justify-self:center;display:flex;align-items:center;gap:8px;border:1px dashed rgba(233,201,107,.4);border-radius:99px;padding:7px 15px;background:rgba(201,162,39,.06);">
+            <span style="width:6px;height:6px;border-radius:50%;background:#E9C96B;flex:none;"></span>
+            <span style="font-family:'Instrument Sans',sans-serif;font-size:11px;line-height:1.6;color:rgba(233,201,107,.9);">The ring is Kayan's gates and independent review — not a seat in the pod</span>
+          </div>
+        </sc-if>
+      </div>
+      <div data-reveal="" style="border:1px solid rgba(201,162,39,.28);border-radius:20px;background:rgba(5,46,43,.55);padding:clamp(18px,3vw,28px);display:grid;gap:14px;align-content:start;">
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#E9C96B;">THE TWO LEDGERS · سجلان</div>
+          <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:19px;line-height:1.7;color:#FAF6EC;">يخرج الطرفان من التكليف بسجل يحفظ الحق</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:18px;">
+            <div style="display:grid;gap:10px;align-content:start;">
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#E9C96B;">CLIENT · للعميل</span>
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:12.5px;line-height:1.95;color:rgba(250,246,236,.72);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#E9C96B;flex:none;">01</span><span>يودع المال في حساب الضمان، ولا يصرف إلا بمحضر موقع.</span></div>
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:12.5px;line-height:1.95;color:rgba(250,246,236,.72);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#E9C96B;flex:none;">02</span><span>تتعاقد كيان باسمها، وتسأل عن التسليم كاملا.</span></div>
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:12.5px;line-height:1.95;color:rgba(250,246,236,.72);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#E9C96B;flex:none;">03</span><span>تسري ضمانة ثلاثين يوما بعد الاستلام.</span></div>
+            </div>
+            <div style="display:grid;gap:10px;align-content:start;">
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#7CE0B8;">PRACTITIONER · للمنفذ</span>
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:12.5px;line-height:1.95;color:rgba(250,246,236,.72);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7CE0B8;flex:none;">01</span><span>يقيد برقم دائم يعرف به، فيرى في سوق كانت لا تراه.</span></div>
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:12.5px;line-height:1.95;color:rgba(250,246,236,.72);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7CE0B8;flex:none;">02</span><span>يقاس تخصصه الدقيق بالدليل، لا بالادعاء العام.</span></div>
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:12.5px;line-height:1.95;color:rgba(250,246,236,.72);"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7CE0B8;flex:none;">03</span><span>يقيد سطر في بطاقته بعد كل محضر، ويصرف مستحقه عليه.</span></div>
+            </div>
+          </div>
+          <a href="Kayan Journey.dc.html" style="justify-self:start;margin-top:2px;border:1.5px solid rgba(201,162,39,.5);border-radius:99px;padding:10px 20px;font-size:12.5px;font-weight:700;color:#F3DE9C;" style-hover="border-color:#E9C96B;background:rgba(201,162,39,.08)" style-active="transform:scale(.97)">تتبع الرحلة كاملة ←</a>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#E9C96B;">THE TWO LEDGERS</div>
+          <h3 dir="ltr" style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:18px;line-height:1.5;color:#FAF6EC;">Both sides leave the engagement with a record</h3>
+          <div dir="ltr" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:18px;font-family:'Instrument Sans',sans-serif;">
+            <div style="display:grid;gap:10px;align-content:start;">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#E9C96B;">CLIENT</span>
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:12px;line-height:1.8;color:rgba(250,246,236,.68);"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#E9C96B;flex:none;">01</span><span>Funds rest in escrow, released only against a signed record.</span></div>
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:12px;line-height:1.8;color:rgba(250,246,236,.68);"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#E9C96B;flex:none;">02</span><span>Kayan contracts in its own name and answers for delivery.</span></div>
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:12px;line-height:1.8;color:rgba(250,246,236,.68);"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#E9C96B;flex:none;">03</span><span>A 30-day warranty runs after acceptance.</span></div>
+            </div>
+            <div style="display:grid;gap:10px;align-content:start;">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#7CE0B8;">PRACTITIONER</span>
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:12px;line-height:1.8;color:rgba(250,246,236,.68);"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7CE0B8;flex:none;">01</span><span>A permanent registry number — visible in a market that never saw them.</span></div>
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:12px;line-height:1.8;color:rgba(250,246,236,.68);"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7CE0B8;flex:none;">02</span><span>Narrow expertise measured by evidence, not broad claims.</span></div>
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:12px;line-height:1.8;color:rgba(250,246,236,.68);"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7CE0B8;flex:none;">03</span><span>A line on their card after every record; dues paid against it.</span></div>
+            </div>
+          </div>
+          <a dir="ltr" href="Kayan Journey.dc.html" style="justify-self:start;margin-top:2px;border:1.5px solid rgba(201,162,39,.5);border-radius:99px;padding:10px 20px;font-size:12.5px;font-weight:700;color:#F3DE9C;" style-hover="border-color:#E9C96B;background:rgba(201,162,39,.08)" style-active="transform:scale(.97)">Follow the full journey →</a>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="charter" data-screen-label="Home · Charter invite" style="position:relative;background:linear-gradient(180deg,#052E2B,#03201D);padding:clamp(56px,9vh,104px) clamp(20px,4vw,40px);overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;top:-14%;inset-inline-end:-3%;font-family:'Alexandria',sans-serif;font-weight:700;font-size:clamp(170px,26vw,380px);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(201,162,39,.07);pointer-events:none;user-select:none;">ميثاق</div>
+  <div style="position:relative;max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(22px,4vw,44px);align-items:center;">
+    <div style="min-width:0;">
+      <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <div data-reveal=""><bdi style="font-family:'Alexandria',sans-serif;font-size:13.5px;font-weight:500;color:#E9C96B;">الميثاق</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:rgba(250,246,236,.4);">· KYN-CH-01 · IN FORCE</span></div>
+        <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(28px,4vw,52px);line-height:1.3;color:#FAF6EC;max-width:22ch;">من نحن، وبأي المواد نحكم — <b style="font-weight:700;color:#E9C96B;">في وثيقة واحدة</b></h2>
+        <p data-reveal="" style="margin:14px 0 0;max-width:56ch;font-size:15px;line-height:2.05;color:rgba(250,246,236,.68);">هوية الشركة، والمهمة والرؤية، والمواد الأربع النافذة — لا تختصر في شريط دعائي، بل تقرأ نصا كاملا يحتكم إليه. دقائق تكفي.</p>
+        <div data-reveal="" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;">
+          <a href="Kayan Charter.dc.html" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#C9A227,#E9C96B);color:#03201D;font-size:14.5px;font-weight:700;padding:14px 28px;border-radius:12px;">اقرأ الميثاق كاملا ←</a>
+          <a href="Kayan Charter.dc.html#values" style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(201,162,39,.5);color:#E9C96B;font-size:13.5px;padding:13px 22px;border-radius:12px;">المواد الأربع</a>
+        </div>
+      </sc-if>
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <div dir="ltr">
+          <div data-reveal="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;color:#E9C96B;">THE CHARTER · KYN-CH-01 · IN FORCE</div>
+          <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:300;font-size:clamp(26px,3.8vw,48px);line-height:1.2;color:#FAF6EC;max-width:24ch;">Who we are, and what governs us — <b style="font-weight:700;color:#E9C96B;">in one document</b></h2>
+          <p data-reveal="" style="margin:14px 0 0;max-width:58ch;font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.8;color:rgba(250,246,236,.68);">Identity, mission, vision, and the four articles in force — not a slogan strip, but a full text that rules in every dispute. Minutes to read.</p>
+          <div data-reveal="" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;">
+            <a href="Kayan Charter.dc.html" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#C9A227,#E9C96B);color:#03201D;font-size:14.5px;font-weight:700;padding:14px 28px;border-radius:12px;">Read the Charter →</a>
+            <a href="Kayan Charter.dc.html#values" style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(201,162,39,.5);color:#E9C96B;font-size:13.5px;padding:13px 22px;border-radius:12px;">The four articles</a>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+    <div data-reveal="" style="min-width:0;display:flex;justify-content:center;">
+      <a href="Kayan Charter.dc.html" title="{{ charterCardTitle }}" style="display:block;background:#FAF6EC;border-radius:22px;padding:22px 24px;max-width:420px;width:100%;box-shadow:0 40px 90px rgba(0,0,0,.4);transform:rotate(-1.2deg);transition:transform .25s cubic-bezier(.23,1,.32,1);" style-hover="transform:rotate(0deg) translateY(-4px);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #E3D9C2;padding-bottom:12px;">
+          <div style="display:flex;align-items:center;gap:10px;"><kayan-mark line="gold" tone="mid" aria-hidden="true" style="width:calc(1.175 * 26px);flex-shrink:0;"></kayan-mark><b style="font-family:'Alexandria',sans-serif;font-size:15px;color:#052E2B;">{{ charterCardName }}</b></div>
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:#8F7218;">KYN-CH-01</span>
+        </div>
+        <sc-for list="{{ charterToc }}" as="r" hint-placeholder-count="4">
+          <div style="display:flex;align-items:baseline;gap:12px;padding:11px 2px;border-bottom:1px dashed #E9DFC4;">
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#B0A48A;flex-shrink:0;">{{ r.n }}</span>
+            <span style="font-size:13.5px;color:#33544E;">{{ r.t }}</span>
+            <span style="margin-inline-start:auto;color:#C9A227;">←</span>
+          </div>
+        </sc-for>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:12px;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:300;font-size:13px;color:#052E2B;">{{ charterCardFoot }}</span>
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:#B0A48A;">IN FORCE</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="doors" data-screen-label="Home · Doors" style="background:#FAF6EC;color:#143C37;padding:clamp(52px,9vh,104px) clamp(20px,4vw,40px);">
+  <div style="max-width:1360px;margin:0 auto;">
+    <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+      <div data-reveal="" style="font-family:'Alexandria',sans-serif;font-size:13.5px;color:#8F7218;font-weight:500;"><bdi>الأبواب</bdi> <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#B0A48A;">· START HERE</span></div>
+      <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.8vw,50px);line-height:1.26;color:#052E2B;">من أين تدخل</h2>
+    </sc-if>
+    <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+      <div dir="ltr">
+        <div data-reveal="" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:#8F7218;">START HERE</div>
+        <h2 data-reveal="" style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(28px,3.8vw,50px);line-height:1.18;color:#052E2B;">Choose your door</h2>
+      </div>
+    </sc-if>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:16px;margin-top:clamp(28px,5vh,44px);">
+      <div data-card="" data-reveal="" role="link" tabindex="0" data-href="Kayan for Clients.dc.html" data-color="#0E6E66" data-name="{{ doorClientFlash }}" onClick="{{ goLine }}" style="cursor:pointer;position:relative;background:linear-gradient(165deg,#0E6E66,#052E2B 78%);border-radius:22px;padding:clamp(26px,3vw,36px);color:#FAF6EC;overflow:hidden;min-height:250px;display:flex;flex-direction:column;">
+        <div style="position:absolute;inset:0;background:radial-gradient(80% 70% at 85% 0%,rgba(18,181,164,.3),transparent 60%);pointer-events:none;"></div>
+        <div style="position:relative;display:flex;flex-direction:column;gap:12px;flex:1;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#6FDCCE;">DOOR 01 · CLIENTS</div>
+          <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+            <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(22px,2.4vw,30px);">أنا عميل</h3>
+            <p style="margin:0;font-size:14.5px;line-height:1.95;color:rgba(250,246,236,.82);max-width:40ch;">اطلب نتيجة بنطاق مكتوب وسعر ثابت، ومال لا يتحرك إلا بتوقيعك.</p>
+            <div style="margin-top:auto;padding-top:16px;font-size:14px;font-weight:600;color:#6FDCCE;">افتح باب العملاء ←</div>
+          </sc-if>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+            <div dir="ltr" style="display:flex;flex-direction:column;gap:12px;flex:1;">
+              <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(22px,2.4vw,30px);">I am a client</h3>
+              <p style="margin:0;font-family:'Instrument Sans',sans-serif;font-size:14.5px;line-height:1.75;color:rgba(250,246,236,.82);max-width:40ch;">Name an outcome under a written scope and a fixed price — money that moves only on your signature.</p>
+              <div style="margin-top:auto;padding-top:16px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;color:#6FDCCE;">Open the client door →</div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+
+      <div data-card="" data-reveal="" role="link" tabindex="0" data-href="Kayan for Talent.dc.html" data-color="#C9A227" data-name="{{ doorTalentFlash }}" onClick="{{ goLine }}" style="cursor:pointer;position:relative;background:linear-gradient(165deg,#C9A227,#8F7218 82%);border-radius:22px;padding:clamp(26px,3vw,36px);color:#241B04;overflow:hidden;min-height:250px;display:flex;flex-direction:column;">
+        <div style="position:absolute;inset:0;background:radial-gradient(80% 70% at 12% 0%,rgba(255,244,214,.4),transparent 55%);pointer-events:none;"></div>
+        <kayan-mark line="gold" tone="deep" aria-hidden="true" style="position:absolute;left:-6%;bottom:-14%;width:46%;opacity:.24;pointer-events:none;"></kayan-mark>
+        <div style="position:relative;display:flex;flex-direction:column;gap:12px;flex:1;">
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#5C4508;">DOOR 02 · TALENT</div>
+          <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+            <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(22px,2.4vw,30px);">أنا كفاءة</h3>
+            <p style="margin:0;font-size:14.5px;line-height:1.95;color:rgba(36,27,4,.85);max-width:40ch;">سجل حضورك، وارتق سلم الثقة درجة درجة، وليقم على قدرتك دليل يحملك إلى عقود حقيقية.</p>
+            <div style="margin-top:auto;padding-top:16px;font-size:14px;font-weight:700;color:#3B2D05;">افتح باب الكفاءات ←</div>
+          </sc-if>
+          <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+            <div dir="ltr" style="display:flex;flex-direction:column;gap:12px;flex:1;">
+              <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(22px,2.4vw,30px);">I am talent</h3>
+              <p style="margin:0;font-family:'Instrument Sans',sans-serif;font-size:14.5px;line-height:1.75;color:rgba(36,27,4,.85);max-width:40ch;">Register, climb the trust ladder step by step, and let recorded proof carry you into real contracts.</p>
+              <div style="margin-top:auto;padding-top:16px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:700;color:#3B2D05;">Open the talent door →</div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+
+      
+    
+    </div>
+
+    <div data-reveal="" style="margin-top:18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:#FFFFFF;border:1px solid #E3D9C2;border-radius:18px;padding:16px 22px;">
+      <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <span style="font-size:14px;color:#4A6B64;">مسجل من قبل؟ تدخل من بوابتك، وتجد ملفك حيث تركته.</span>
+        <span style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="Kayan Portal.dc.html" style="background:#052E2B;color:#FAF6EC;font-size:13px;font-weight:600;padding:10px 20px;border-radius:99px;">دخول البوابة ←</a>
+          <a href="Kayan Apply.dc.html" style="border:1px solid #C9A227;color:#8F7218;font-size:13px;font-weight:600;padding:10px 20px;border-radius:99px;">جديد؟ سجل ككفاءة</a>
+        </span>
+      </sc-if>
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#4A6B64;">Already registered? Sign in to the portal — your file is where you left it.</span>
+        <span dir="ltr" style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="Kayan Portal.dc.html" style="font-family:'Instrument Sans',sans-serif;background:#052E2B;color:#FAF6EC;font-size:13px;font-weight:600;padding:10px 20px;border-radius:99px;">Portal sign-in →</a>
+          <a href="Kayan Apply.dc.html" style="font-family:'Instrument Sans',sans-serif;border:1px solid #C9A227;color:#8F7218;font-size:13px;font-weight:600;padding:10px 20px;border-radius:99px;">New? Register as talent</a>
+        </span>
+      </sc-if>
+    </div>
+
+    <div data-reveal="" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;">
+      <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <a href="Kayan Journey.dc.html" style="font-size:13px;color:#4A6B64;border:1px solid #E3D9C2;border-radius:99px;padding:9px 16px;background:#FFFFFF;">كيف يدار العمل</a>
+        <a href="Kayan Record.dc.html" style="font-size:13px;color:#4A6B64;border:1px solid #E3D9C2;border-radius:99px;padding:9px 16px;background:#FFFFFF;">السجل العام</a>
+        <a href="Kayan Charter.dc.html" style="font-size:13px;color:#4A6B64;border:1px solid #E3D9C2;border-radius:99px;padding:9px 16px;background:#FFFFFF;">عن كيان</a>
+        <a href="Line II - The Hub and Cafe.dc.html" style="font-size:13px;color:#4A6B64;border:1px solid #E3D9C2;border-radius:99px;padding:9px 16px;background:#FFFFFF;">اتصل بنا · الملتقى</a>
+      </sc-if>
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <div dir="ltr" style="display:flex;gap:10px;flex-wrap:wrap;font-family:'Instrument Sans',sans-serif;">
+          <a href="Kayan Journey.dc.html" style="font-size:13px;color:#4A6B64;border:1px solid #E3D9C2;border-radius:99px;padding:9px 16px;background:#FFFFFF;">How work is run</a>
+          <a href="Kayan Record.dc.html" style="font-size:13px;color:#4A6B64;border:1px solid #E3D9C2;border-radius:99px;padding:9px 16px;background:#FFFFFF;">Public record</a>
+          <a href="Kayan Charter.dc.html" style="font-size:13px;color:#4A6B64;border:1px solid #E3D9C2;border-radius:99px;padding:9px 16px;background:#FFFFFF;">About Kayan</a>
+          <a href="Line II - The Hub and Cafe EN.dc.html" style="font-size:13px;color:#4A6B64;border:1px solid #E3D9C2;border-radius:99px;padding:9px 16px;background:#FFFFFF;">Contact · The Hub</a>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer data-screen-label="Home · Footer" style="position:relative;overflow:hidden;background:linear-gradient(180deg,#021512,#01100D);padding:clamp(48px,7vh,76px) clamp(20px,4vw,40px) 28px;">
+  <div aria-hidden="true" style="position:absolute;inset:0;top:auto;height:2px;bottom:auto;top:0;background:linear-gradient(90deg,transparent,#C9A227 30%,#E9C96B 50%,#C9A227 70%,transparent);"></div>
+  <kayan-mark line="ivory" tone="lift" aria-hidden="true" style="position:absolute;left:-5%;bottom:-18%;width:min(38%,420px);opacity:.07;pointer-events:none;"></kayan-mark>
+  <div style="position:relative;max-width:1360px;margin:0 auto;">
+    <div data-reveal="" style="margin-bottom:clamp(34px,6vh,58px);">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.26em;color:rgba(233,201,107,.55);">CLOSING · {{ closeKicker }}</div>
+      <div style="margin-top:14px;font-family:'Alexandria',sans-serif;font-weight:200;font-size:clamp(32px,5.6vw,64px);line-height:1.34;color:#FAF6EC;letter-spacing:-.01em;">{{ taglinePre }}<b style="font-weight:800;background:linear-gradient(135deg,#C9A227,#E9C96B 55%,#C9A227);-webkit-background-clip:text;background-clip:text;color:transparent;">{{ taglineWord }}</b>{{ taglinePost }}</div>
+      <div data-strike="" style="margin-top:18px;height:0;"><i aria-hidden="true" style="top:0;height:2px;"></i></div>
+      <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}"><div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;letter-spacing:.05em;color:rgba(250,246,236,.42);margin-top:14px;">Behind every success, a Kayan.</div></sc-if>
+      <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12.5px;color:rgba(250,246,236,.42);margin-top:14px;">خلف كل نجاح، كيان.</div></sc-if>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(24px,3vw,40px);align-items:start;">
+      <div>
+        <img src="assets/kayan-logo-gold.png" alt="كيان — Kayan" style="height:92px;width:auto;display:block;">
+        <div style="margin-top:16px;font-size:12.5px;line-height:2.1;color:rgba(250,246,236,.6);max-width:34ch;">{{ footCreed }}</div>
+      </div>
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(233,201,107,.7);">THE LINES</div>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-size:13.5px;">
+          <a href="Line I - Managed Delivery.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">الخط الأول · التسليم المدار</a>
+          <a href="Line I - Ready Products.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">الرف الجاهز · المنتجات</a>
+          <a href="Line II - The Hub and Cafe.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">الخط الثاني · الهب والمقهى</a>
+          <a href="Line III - The Forge.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">الخط الثالث · كيان فورج</a>
+          <a href="Civic Wing - Kayan for Yemen.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">الذراع المدنية · كيان لليمن</a>
+        </div>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <div dir="ltr" style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-family:'Instrument Sans',sans-serif;font-size:13px;">
+          <a href="Line I - Managed Delivery EN.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">Line I · Managed Delivery</a>
+          <a href="Line I - Ready Products.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">The Shelf · Ready Products</a>
+          <a href="Line II - The Hub and Cafe EN.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">Line II · The Hub &amp; Café</a>
+          <a href="Line III - The Forge EN.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">Line III · Kayan Forge</a>
+          <a href="Civic Wing - Kayan for Yemen.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">Civic Wing · Kayan for Yemen</a>
+        </div>
+        </sc-if>
+      </div>
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(233,201,107,.7);">THE DOORS</div>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-size:13.5px;">
+          <a href="Kayan for Clients.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">للعملاء</a>
+          <a href="Kayan for Talent.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">للكفاءات</a>
+          <a href="Kayan Portal.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">بوابة كيان · التقديم والمتابعة</a>
+          <a href="Kayan Record.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">السجل العام</a>
+          <a href="Kayan Access.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">الدخول والتسجيل</a>
+          <a href="Kayan People.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">فريق كيان والشواغر</a>
+          <a href="Kayan Planet.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">البيئة والالتزامات</a>
+        </div>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <div dir="ltr" style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-family:'Instrument Sans',sans-serif;font-size:13px;">
+          <a href="Kayan for Clients.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">For clients</a>
+          <a href="Kayan for Talent.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">For talent</a>
+          <a href="Kayan Portal.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">The Kayan Portal · apply &amp; track</a>
+          <a href="Kayan Record.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">Public record</a>
+          <a href="Kayan Access.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">Sign in &amp; register</a>
+          <a href="Kayan People.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">Team &amp; vacancies</a>
+          <a href="Kayan Planet.dc.html" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">Planet &amp; commitments</a>
+        </div>
+        </sc-if>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(233,201,107,.7);margin-top:22px;">LEGAL · KYN-LG</div>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-size:13.5px;">
+          <a href="Kayan Legal.dc.html#terms" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">الشروط والأحكام</a>
+          <a href="Kayan Legal.dc.html#privacy" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">سياسة الخصوصية</a>
+          <a href="Kayan Legal.dc.html#data" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">حماية البيانات</a>
+        </div>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <div dir="ltr" style="display:flex;flex-direction:column;gap:9px;margin-top:14px;font-family:'Instrument Sans',sans-serif;font-size:13px;">
+          <a href="Kayan Legal.dc.html#terms" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">Terms &amp; conditions</a>
+          <a href="Kayan Legal.dc.html#privacy" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">Privacy policy</a>
+          <a href="Kayan Legal.dc.html#data" style="color:rgba(250,246,236,.72);" style-hover="color:#E9C96B">Data protection</a>
+        </div>
+        </sc-if>
+      </div>
+      <div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(233,201,107,.7);">ADEN · YEMEN</div>
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}"><div style="font-size:13.5px;line-height:2;margin-top:14px;color:rgba(250,246,236,.72);">خورمكسر، شارع الكورنيش،<br>بجوار فندق ريلاكس، عدن</div></sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}"><div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:13px;line-height:1.9;margin-top:14px;color:rgba(250,246,236,.72);">Khormaksar, Corniche Road,<br>by the Relax Hotel, Aden</div></sc-if>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.9;margin-top:10px;display:grid;justify-items:start;"><a href="tel:+9672236655" style="color:rgba(250,246,236,.55);" style-hover="color:#E9C96B">+967 2 236655</a><a href="tel:+9672232096" style="color:rgba(250,246,236,.55);" style-hover="color:#E9C96B">+967 2 232096</a><span style="color:rgba(250,246,236,.55);">kayanwork.com</span></div>
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;margin-top:12px;color:rgba(233,201,107,.55);">12°47′N · 45°01′E</div>
+      </div>
+    </div>
+    <div style="margin-top:40px;border-top:1px solid rgba(250,246,236,.1);padding-top:20px;display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;">
+      <a href="Kayan Seal.dc.html" title="{{ sealAria }}" style="display:flex;gap:10px;align-items:center;font-size:12px;color:rgba(250,246,236,.55);" style-hover="color:#E9C96B">
+        <svg viewBox="{{ sealBox }}" width="30" height="30" role="img" aria-label="{{ sealAria }}" style="flex:none;background:#FAF6EC;border-radius:5px;padding:3px;box-sizing:content-box;">
+          <sc-for list="{{ sealRuns }}" as="r" hint-placeholder-count="11">
+            <rect x="{{ r.x }}" y="{{ r.y }}" width="{{ r.w }}" height="{{ r.h }}" rx="{{ r.rx }}" fill="#8F7218"></rect>
+          </sc-for>
+        </svg>
+        <span style="display:grid;line-height:1.7;"><span>{{ sealLine }} <b dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.16em;color:#E9C96B;font-weight:500;">{{ sealShort }}</b></span><span style="color:#8F7218;font-size:11px;">{{ sealLink }}</span></span>
+      </a>
+      <span aria-hidden="true" style="width:1px;height:26px;background:rgba(250,246,236,.12);"></span>
+      <span style="display:grid;line-height:1.7;font-size:12px;color:rgba(250,246,236,.55);">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.16em;color:#E9C96B;">{{ adenClock }}<span style="animation:kTick 1s steps(1) infinite;">:</span>{{ adenMin }} ADEN</span>
+        <span style="font-size:11px;">{{ solarLine }}</span>
+      </span>
+      <span style="margin-inline-start:auto;display:grid;line-height:1.8;text-align:end;font-size:12px;color:rgba(250,246,236,.5);">
+        <sc-if value="{{ ar }}" hint-placeholder-val="{{ true }}">
+        <span>شركة كيان للابتكار وريادة الأعمال وبيئات العمل — ذ.م.م · عدن · <a href="Kayan Legal.dc.html" style="color:rgba(233,201,107,.72);">الشروط والخصوصية</a></span>
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:rgba(250,246,236,.32);">KAYAN INNOVATION, ENTREPRENEURSHIP &amp; WORK ENVIRONMENTS LLC · 12°47′N 45°01′E</span>
+        </sc-if>
+        <sc-if value="{{ en }}" hint-placeholder-val="{{ false }}">
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;">Kayan Innovation, Entrepreneurship &amp; Work Environments LLC · Aden · <a href="Kayan Legal.dc.html" style="color:rgba(233,201,107,.72);">Terms &amp; privacy</a></span>
+        <span dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:10px;color:rgba(250,246,236,.32);">شركة كيان للابتكار وريادة الأعمال وبيئات العمل — ذ.م.م · <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;">12°47′N 45°01′E</span></span>
+        </sc-if>
+      </span>
+    </div>
+  </div>
+</footer>
+
+</div>
+<kayan-compass current="home"></kayan-compass>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;ar&quot;, &quot;en&quot;], &quot;default&quot;: &quot;en&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Language&quot;}, &quot;sonicEnabled&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sound&quot;}}">
+const SEAL_CANON = 'KYN|WEB|001|2026-08-13|kayanwork.com';
+let SEAL_HASH = '';
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.root = React.createRef();
+    let lang = null;
+    try { lang = localStorage.getItem('kyn-lang'); } catch (e) {}
+    if (lang !== 'ar' && lang !== 'en') lang = (this.props.defaultLang === 'ar') ? 'ar' : 'en';
+    this.state = { lang: lang, hover: null, sel: null, flash: null, playing: false, armed: false, autoIdx: 0 };
+  }
+
+  adenHM(){ const d=new Date(Date.now()+ (3*60+new Date().getTimezoneOffset())*60000);
+    return { h:String(d.getHours()).padStart(2,'0'), m:String(d.getMinutes()).padStart(2,'0'), hn:d.getHours()+d.getMinutes()/60 }; }
+
+  sky(){ const t=this.adenHM().hn;
+    if(t>=4.5&&t<6)   return {k:'fajr',  ar:'فجرًا',  en:'FAJR',    dot:'#7CC0F4', g:'radial-gradient(1100px 600px at 70% -12%,rgba(46,110,160,.20),transparent 62%),radial-gradient(800px 520px at 6% 106%,rgba(91,74,142,.14),transparent 60%)'};
+    if(t>=6&&t<10)    return {k:'duha',  ar:'ضحى',    en:'MORNING', dot:'#E9C96B', g:'radial-gradient(1100px 600px at 74% -12%,rgba(233,201,107,.17),transparent 62%),radial-gradient(800px 520px at 6% 106%,rgba(18,181,164,.13),transparent 60%)'};
+    if(t>=10&&t<15)   return {k:'zuhr',  ar:'ظهرًا',  en:'MIDDAY',  dot:'#F3DE9C', g:'radial-gradient(1200px 640px at 60% -16%,rgba(243,222,156,.20),transparent 64%),radial-gradient(800px 520px at 8% 108%,rgba(18,181,164,.10),transparent 60%)'};
+    if(t>=15&&t<17.5) return {k:'asr',   ar:'عصرًا',  en:'ASR',     dot:'#DDA94B', g:'radial-gradient(1100px 600px at 78% -10%,rgba(201,142,39,.19),transparent 62%),radial-gradient(800px 520px at 4% 108%,rgba(201,162,39,.10),transparent 60%)'};
+    if(t>=17.5&&t<19) return {k:'maghrib',ar:'مغربًا',en:'MAGHRIB', dot:'#E08D5E', g:'radial-gradient(1100px 600px at 82% -8%,rgba(201,107,74,.22),transparent 62%),radial-gradient(800px 520px at 4% 108%,rgba(91,74,142,.13),transparent 60%)'};
+    return             {k:'layl',  ar:'ليلًا',  en:'NIGHT',   dot:'#6FA8DC', g:'radial-gradient(1100px 620px at 72% -14%,rgba(10,52,78,.30),transparent 64%),radial-gradient(820px 540px at 6% 108%,rgba(18,90,120,.14),transparent 62%),linear-gradient(rgba(1,10,9,.18),rgba(1,10,9,.18))'};
+  }
+
+  componentDidMount() {
+    this._clk = setInterval(() => this.forceUpdate(), 30000);
+    this._grail = () => {
+      const rail = document.querySelector('[data-grail]'), bird = document.querySelector('[data-gbird]');
+      if (!rail || !bird) return;
+      if (!rail.__grailBound) { rail.__grailBound = true; rail.addEventListener('scroll', this._grail, { passive: true }); }
+      const max = rail.scrollWidth - rail.clientWidth;
+      const pct = max > 0 ? Math.min(1, Math.abs(rail.scrollLeft) / max) : 0;
+      const box = bird.parentElement, cs = getComputedStyle(box);
+      const span = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight) - bird.clientWidth;
+      const dirSign = cs.direction === 'rtl' ? -1 : 1;
+      const tf = 'translateX(' + (dirSign * pct * Math.max(0, span)).toFixed(1) + 'px)';
+      let st = document.getElementById('__gbird-pos');
+      if (!st) { st = document.createElement('style'); st.id = '__gbird-pos'; document.head.appendChild(st); }
+      const rule = '[data-gbird]{transform:' + tf + ' !important;transition:none !important;}';
+      if (st.textContent !== rule) st.textContent = rule;
+    };
+    document.addEventListener('scroll', (e) => { const t = e.target; if (t && t.nodeType === 1 && t.hasAttribute && t.hasAttribute('data-grail')) this._grail(); }, { capture: true, passive: true });
+    this._grailClk = setInterval(this._grail, 800);
+    const railEl = document.querySelector('[data-grail]');
+    if (railEl) { setTimeout(this._grail, 600); }
+    if (railEl) {
+      railEl.style.cursor = 'grab';
+      railEl.addEventListener('dragstart', (e) => e.preventDefault());
+      let drag = null, mom = null;
+      const stopMom = () => { if (mom) { cancelAnimationFrame(mom); mom = null; } };
+      const snapOff = () => { railEl.style.scrollSnapType = 'none'; };
+      const snapOn = () => { railEl.style.scrollSnapType = ''; };
+      railEl.addEventListener('pointerdown', (e) => {
+        if (e.pointerType !== 'mouse' || e.button !== 0) return;
+        stopMom(); snapOff();
+        drag = { x: e.clientX, sl: railEl.scrollLeft, moved: false, id: e.pointerId, v: 0, lx: e.clientX, lt: performance.now() };
+        railEl.style.cursor = 'grabbing';
+      });
+      railEl.addEventListener('pointermove', (e) => {
+        if (!drag) return;
+        const dx = e.clientX - drag.x;
+        if (!drag.moved && Math.abs(dx) > 4) { drag.moved = true; try { railEl.setPointerCapture(drag.id); } catch (err) {} }
+        if (drag.moved) {
+          railEl.scrollLeft = drag.sl - dx;
+          const now = performance.now(), dt = now - drag.lt;
+          if (dt > 0) { drag.v = drag.v * 0.8 + ((e.clientX - drag.lx) / dt) * 0.2; }
+          drag.lx = e.clientX; drag.lt = now;
+        }
+      });
+      const endDrag = () => {
+        if (!drag) return;
+        if (drag.moved) {
+          this._dragT = Date.now();
+          let v = -drag.v * 16;
+          const glide = () => {
+            v *= 0.94;
+            if (Math.abs(v) < 0.4) { snapOn(); mom = null; return; }
+            railEl.scrollLeft += v;
+            mom = requestAnimationFrame(glide);
+          };
+          if (Math.abs(v) > 1.5) { mom = requestAnimationFrame(glide); } else { snapOn(); }
+        } else { snapOn(); }
+        drag = null; railEl.style.cursor = 'grab';
+      };
+      railEl.addEventListener('pointerup', endDrag);
+      railEl.addEventListener('pointercancel', endDrag);
+      railEl.addEventListener('wheel', stopMom, { passive: true });
+      railEl.addEventListener('click', (e) => {
+        if (this._dragT && Date.now() - this._dragT < 200) { e.preventDefault(); e.stopPropagation(); }
+      }, true);
+    }
+    const track = document.querySelector('[data-gtrack]');
+    if (track && railEl) {
+      track.style.cursor = 'pointer';
+      track.style.touchAction = 'none';
+      const scrub = (e) => {
+        const r = track.getBoundingClientRect(), cs2 = getComputedStyle(track);
+        const pl = parseFloat(cs2.paddingLeft), spanW = r.width - pl - parseFloat(cs2.paddingRight);
+        const pct = Math.min(1, Math.max(0, (e.clientX - r.left - pl) / Math.max(1, spanW)));
+        railEl.scrollLeft = pct * (railEl.scrollWidth - railEl.clientWidth);
+      };
+      track.addEventListener('pointerdown', (e) => {
+        try { track.setPointerCapture(e.pointerId); } catch (err) {}
+        scrub(e);
+        const mv = (ev) => scrub(ev);
+        const up = () => { track.removeEventListener('pointermove', mv); track.removeEventListener('pointerup', up); track.removeEventListener('pointercancel', up); };
+        track.addEventListener('pointermove', mv);
+        track.addEventListener('pointerup', up);
+        track.addEventListener('pointercancel', up);
+      });
+    }
+    const el = this.root.current;
+    if (!el) return;
+    el.setAttribute('dir', this.state.lang === 'en' ? 'ltr' : 'rtl');
+    this._initReveals();
+    el.setAttribute('data-mo', '');
+    this._failsafe = setTimeout(() => this._revealAll(), 2600);
+    this._onShow = () => this.setState({ flash: null }); // bfcache return: clear any stuck wipe
+    window.addEventListener('pageshow', this._onShow);
+    this._cycle = setInterval(() => {
+      if (this.state.hover) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (document.hidden) return;
+      this.setState((st) => ({ autoIdx: (st.autoIdx + 1) % 6 }));
+    }, 3200);
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState || prevState.lang !== this.state.lang) {
+      const rEl = this.root.current;
+      if (rEl) rEl.setAttribute('dir', this.state.lang === 'en' ? 'ltr' : 'rtl');
+      requestAnimationFrame(() => requestAnimationFrame(() => this._revealAll()));
+      clearTimeout(this._langFix);
+      this._langFix = setTimeout(() => this._revealAll(), 180);
+    }
+  }
+  componentWillUnmount() {
+    if (this._clk) clearInterval(this._clk);
+    const railEl2 = document.querySelector('[data-grail]');
+    if (railEl2 && this._grail) railEl2.removeEventListener('scroll', this._grail);
+    if (this._io) this._io.disconnect();
+    if (this._failsafe) clearTimeout(this._failsafe);
+    if (this._cycle) clearInterval(this._cycle);
+    if (this._langFix) clearTimeout(this._langFix);
+    if (this._ac) this._ac.close();
+  }
+  _initReveals() {
+    const el = this.root.current;
+    if (!('IntersectionObserver' in window)) { this._revealAll(); return; }
+    this._io = new IntersectionObserver((ents) => {
+      ents.forEach((en) => { if (en.isIntersecting) { en.target.setAttribute('data-on', ''); this._io.unobserve(en.target); } });
+    }, { threshold: 0.1 });
+    el.querySelectorAll('[data-reveal]').forEach((n, i) => {
+      n.style.transitionDelay = ((i % 5) * 55) + 'ms';
+      this._io.observe(n);
+    });
+  }
+  _revealAll() {
+    const el = this.root.current;
+    if (!el) return;
+    el.querySelectorAll('[data-reveal]:not([data-on])').forEach((n) => n.setAttribute('data-on', ''));
+  }
+
+  // ---- sonic engine (canonical registry — maqam Rast on D, from Chapter 05) ----
+  ac() {
+    if (!this._ac) { const C = window.AudioContext || window.webkitAudioContext; if (!C) return null; this._ac = new C(); }
+    if (this._ac.state === 'suspended') this._ac.resume();
+    return this._ac;
+  }
+  bus() {
+    if (this._out) return;
+    const ac = this._ac;
+    const master = ac.createGain(); master.gain.value = 0.42;
+    const hp = ac.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 150;
+    const dly = ac.createDelay(); dly.delayTime.value = 0.112;
+    const fb = ac.createGain(); fb.gain.value = 0.2;
+    const wet = ac.createGain(); wet.gain.value = 0.26;
+    master.connect(hp); hp.connect(ac.destination);
+    hp.connect(dly); dly.connect(fb); fb.connect(dly); dly.connect(wet); wet.connect(ac.destination);
+    this._out = master;
+  }
+  deg() {
+    const d = 587.33, c = (n) => d * Math.pow(2, n / 1200);
+    return { drone: d / 4, low: d / 2, d: d, n3: c(347), g: c(500), a: c(700), n6: c(1047), oct: c(1200), high: c(1200) * 1.5 };
+  }
+  pluck(f, t0, dur, gain, type) {
+    const ac = this._ac, o = ac.createOscillator(), o2 = ac.createOscillator(), g = ac.createGain(), g2 = ac.createGain(), lp = ac.createBiquadFilter();
+    o.type = type || 'triangle'; o.frequency.value = f;
+    o2.type = 'sawtooth'; o2.frequency.value = f * 2.002; g2.gain.value = 0.12;
+    lp.type = 'lowpass'; lp.frequency.setValueAtTime(3600, t0); lp.frequency.exponentialRampToValueAtTime(1200, t0 + dur);
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(gain, t0 + 0.008);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    o.connect(lp); o2.connect(g2); g2.connect(lp); lp.connect(g); g.connect(this._out);
+    o.start(t0); o2.start(t0); o.stop(t0 + dur + 0.05); o2.stop(t0 + dur + 0.05);
+  }
+  drone(f, t0, dur, gain) {
+    const ac = this._ac, o = ac.createOscillator(), g = ac.createGain();
+    o.type = 'sine'; o.frequency.value = f;
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(gain, t0 + 0.25);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    o.connect(g); g.connect(this._out);
+    o.start(t0); o.stop(t0 + dur + 0.05);
+  }
+  fire(name) {
+    const ac = this.ac(); if (!ac) return;
+    this.bus();
+    const t = ac.currentTime + 0.03, k = this.deg();
+    if (name === 'logo') {
+      [[k.d, 0], [k.n3, 0.19], [k.a, 0.38], [k.oct, 0.6]].forEach((s) => this.pluck(s[0], t + s[1], 1.0, 0.17));
+      this.drone(k.drone, t, 1.9, 0.075); this.drone(k.low, t + 0.55, 1.3, 0.05);
+    }
+    if (name === 'stamp') { this.pluck(k.a, t, 0.34, 0.16); this.pluck(k.oct, t + 0.14, 0.55, 0.15); this.drone(k.drone, t, 0.7, 0.05); }
+  }
+
+  lines() {
+    return [
+      { key: 'md', color: '#2E7CBC', deep: '#1A5F97', img: 'assets/bird-master.png', icon: 'assets/bird-master.png', code: 'LINE I · MANAGED DELIVERY',
+        ar: { word: 'العهدة', name: 'التسليم المدار', tag: 'حيث يبدأ العملاء', desc: 'نطاق موقع، وضمان ممول، وفريق موثق يقوده منسق واحد، ومراجعة مستقلة قبل القبول. تطالب كيان، لا فردا.', cta: 'ادخل الخط', href: 'Line I - Managed Delivery.dc.html', alt: 'EN', altHref: 'Line I - Managed Delivery EN.dc.html', flash: 'الخط الأول · التسليم المدار' },
+        en: { word: 'CUSTODY', name: 'Managed Delivery', tag: 'where clients begin', desc: 'Signed scope, funded escrow, a verified team under one coordinator, independent QA before acceptance. You hold Kayan accountable, not an individual.', cta: 'Enter the line', href: 'Line I - Managed Delivery EN.dc.html', alt: 'عربي', altHref: 'Line I - Managed Delivery.dc.html', flash: 'Line I · Managed Delivery' } },
+      { key: 'rp', color: '#12B5A4', deep: '#0E6E66', img: 'assets/bird-master.png', icon: 'assets/bird-master.png', code: 'LINE I · THE SHELF',
+        ar: { word: 'الرف', name: 'الرف الجاهز', tag: 'سعر ثابت ومدة معلومة', desc: 'منتجات بمخرج مكتوب وسعر ثابت ومدة معلومة. يختار المنتج، فيفتح نطاقه جاهزا للتوقيع.', cta: 'تصفح الرف', href: 'Line I - Ready Products.dc.html', alt: null, altHref: null, flash: 'الرف الجاهز' },
+        en: { word: 'SHELF', name: 'Ready Products', tag: 'fixed price, known duration', desc: 'Products with a written deliverable, a fixed price and a known duration. Pick one, and its scope opens ready to sign. Catalogue in Arabic.', cta: 'Browse the shelf', href: 'Line I - Ready Products.dc.html', alt: null, altHref: null, flash: 'Ready Products' } },
+      { key: 'hub', color: '#FFB627', deep: '#A8720B', img: 'assets/bird-master.png', icon: 'assets/bird-master.png', code: 'LINE II · THE HUB & CAFÉ',
+        ar: { word: 'الملتقى', name: 'الهب والمقهى', tag: 'حيث تعمل عدن', desc: 'طابق عمل على كورنيش خورمكسر: كهرباء لا تنقطع، واتصال مضمون، ومقهى من أرض البن. هنا يجرى التحقق وجها لوجه.', cta: 'ادخل الخط', href: 'Line II - The Hub and Cafe.dc.html', alt: 'EN', altHref: 'Line II - The Hub and Cafe EN.dc.html', flash: 'الخط الثاني · الهب والمقهى' },
+        en: { word: 'GROUND', name: 'The Hub & Café', tag: 'where Aden works', desc: 'A working floor on the Khormaksar corniche: uninterrupted power, guaranteed connectivity, and coffee from the land that first brewed it. Verification happens here, face to face.', cta: 'Enter the line', href: 'Line II - The Hub and Cafe EN.dc.html', alt: 'عربي', altHref: 'Line II - The Hub and Cafe.dc.html', flash: 'Line II · The Hub & Café' } },
+      { key: 'forge', color: '#FF6250', deep: '#D0402F', img: 'assets/bird-master.png', icon: 'assets/bird-master.png', code: 'LINE III · KAYAN FORGE',
+        ar: { word: 'الصقل', name: 'كيان فورج', tag: 'حيث تصنع المهارة', desc: 'أفواج يمولها رعاة وتتدرب على عمل حقيقي. المخرج تحقق يقيد في السجل، لا شهادة حضور.', cta: 'ادخل الخط', href: 'Line III - The Forge.dc.html', alt: 'EN', altHref: 'Line III - The Forge EN.dc.html', flash: 'الخط الثالث · كيان فورج' },
+        en: { word: 'FORGE', name: 'Kayan Forge', tag: 'where skill is made', desc: 'Sponsor-funded cohorts trained on real work. The output is a recorded verification, not a certificate of attendance.', cta: 'Enter the line', href: 'Line III - The Forge EN.dc.html', alt: 'عربي', altHref: 'Line III - The Forge.dc.html', flash: 'Line III · Kayan Forge' } },
+      { key: 'k4y', color: '#3FA75B', deep: '#2E7D44', img: 'assets/bird-master.png', icon: 'assets/bird-master.png', code: 'CIVIC WING · KAYAN FOR YEMEN',
+        ar: { word: 'الأثر', name: 'كيان لليمن', tag: 'يد للمدينة', desc: 'ليست خطا رابعا، بل غاية تسري في الخطوط كلها: تطوع يقيد، ومهارة تثبت، ودخل يبدأ.', cta: 'ادخل الذراع', href: 'Civic Wing - Kayan for Yemen.dc.html', alt: null, altHref: null, flash: 'الذراع المدنية · كيان لليمن' },
+        en: { word: 'TRACE', name: 'Kayan for Yemen', tag: 'a hand for the city', desc: 'Not a fourth line, but the purpose running through all of them: volunteering that is recorded, skill that is proven, income that begins.', cta: 'Enter the wing', href: 'Civic Wing - Kayan for Yemen.dc.html', alt: null, altHref: null, flash: 'Civic Wing · Kayan for Yemen' } }
+    ];
+  }
+  sha256(str) {
+    const K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
+      0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
+      0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,
+      0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,
+      0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,
+      0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,
+      0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,
+      0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+    let H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+    const b = Array.from(new TextEncoder().encode(str));
+    const bitLen = b.length * 8;
+    b.push(0x80);
+    while (b.length % 64 !== 56) b.push(0);
+    for (let i = 7; i >= 0; i--) b.push(Math.floor(bitLen / Math.pow(2, i * 8)) & 0xff);
+    const rr = (x, n) => (x >>> n) | (x << (32 - n));
+    for (let i = 0; i < b.length; i += 64) {
+      const w = new Array(64);
+      for (let j = 0; j < 16; j++) w[j] = (b[i+j*4] << 24) | (b[i+j*4+1] << 16) | (b[i+j*4+2] << 8) | b[i+j*4+3];
+      for (let j = 16; j < 64; j++) {
+        const s0 = rr(w[j-15],7) ^ rr(w[j-15],18) ^ (w[j-15] >>> 3);
+        const s1 = rr(w[j-2],17) ^ rr(w[j-2],19) ^ (w[j-2] >>> 10);
+        w[j] = (w[j-16] + s0 + w[j-7] + s1) | 0;
+      }
+      let a = H[0], bb = H[1], c = H[2], d = H[3], e = H[4], f = H[5], g = H[6], h = H[7];
+      for (let j = 0; j < 64; j++) {
+        const S1 = rr(e,6) ^ rr(e,11) ^ rr(e,25);
+        const ch = (e & f) ^ (~e & g);
+        const t1 = (h + S1 + ch + K[j] + w[j]) | 0;
+        const S0 = rr(a,2) ^ rr(a,13) ^ rr(a,22);
+        const mj = (a & bb) ^ (a & c) ^ (bb & c);
+        const t2 = (S0 + mj) | 0;
+        h = g; g = f; f = e; e = (d + t1) | 0; d = c; c = bb; bb = a; a = (t1 + t2) | 0;
+      }
+      const add = [a,bb,c,d,e,f,g,h];
+      H = H.map((v, k) => (v + add[k]) | 0);
+    }
+    return H.map(v => (v >>> 0).toString(16).padStart(8, '0')).join('').toUpperCase();
+  }
+
+  sealRuns(hex, cell) {
+    const bit = i => (parseInt(hex[i >> 2], 16) >> (3 - (i & 3))) & 1;
+    const N = 11, WT = [0.30, 0.46, 0.64, 0.84], out = [];
+    for (let r = 0; r < N; r++) {
+      const wv = (bit(66 + r * 2) << 1) | bit(66 + r * 2 + 1);
+      const hgt = WT[wv] * cell;
+      const on = [];
+      for (let c = 0; c < N; c++) on.push(bit(r * 6 + (c <= 5 ? c : 10 - c)));
+      let c = 0, any = false;
+      while (c < N) {
+        if (on[c]) {
+          const s = c;
+          while (c < N && on[c]) c++;
+          out.push({ x:+(s*cell).toFixed(2), y:+(r*cell+(cell-hgt)/2).toFixed(2), w:+((c-s)*cell-cell*0.2).toFixed(2), h:+hgt.toFixed(2), rx:+Math.min(hgt/2,cell*0.16).toFixed(2) });
+          any = true;
+        } else c++;
+      }
+      if (!any) out.push({ x:+(cell*0.9).toFixed(2), y:+(r*cell+cell/2-cell*0.045).toFixed(2), w:+(cell*9.2).toFixed(2), h:+(cell*0.09).toFixed(2), rx:0.5 });
+    }
+    return out;
+  }
+
+  renderVals() {
+    const gbirdTf = this.state.gbirdTf || 'translateX(0px)';
+    if (!SEAL_HASH) SEAL_HASH = this.sha256(SEAL_CANON);
+    const s = this.state, ar = s.lang !== 'en', en = !ar;
+    const LNS = this.lines();
+    const langKey = ar ? 'ar' : 'en';
+    const showKey = s.hover || s.sel;
+    const POS = { md: ['12.4%', '37.8%'], rp: ['73.2%', '82%'], hub: ['50%', '10.5%'], forge: ['87.6%', '37.8%'], k4y: ['26.8%', '82%'] };
+    const flock = LNS.map((ln) => {
+      const t = ln[langKey], active = showKey === ln.key;
+      return {
+        key: ln.key, img: ln.img, icon: ln.icon || ln.img, word: ar ? t.word : t.name, name: ar ? t.name : t.word,
+        x: POS[ln.key][0], y: POS[ln.key][1],
+        discBg: 'radial-gradient(circle at 32% 28%,' + ln.color + ',' + ln.deep + ' 82%)',
+        discShadow: active ? ('0 16px 34px ' + ln.color + '73, inset 0 0 0 2px rgba(255,255,255,.4)') : '0 8px 20px rgba(5,46,43,.2), inset 0 0 0 2px rgba(255,255,255,.22)',
+        discScale: active ? 'scale(1.09)' : 'none',
+        wCol: active ? ln.deep : '#6E675A',
+        pressed: s.sel === ln.key ? 'true' : 'false'
+      };
+    });
+    const curLn = LNS.find((l) => l.key === showKey) || LNS[0];
+    const ct = curLn[langKey];
+    const cur = {
+      color: curLn.color, deep: curLn.deep, img: curLn.img, code: curLn.code,
+      word: ar ? ct.word : ct.name, name: ar ? ct.name : ct.word, tagWrapped: ar ? ('«' + ct.tag + '»') : ct.tag,
+      desc: ct.desc, ctaLine: ct.cta + ' ' + (ar ? '←' : '→'), href: ct.href, flash: ct.flash,
+      hasAlt: !!ct.alt, alt: ct.alt || '', altHref: ct.altHref || '',
+      shadow: curLn.color + '59'
+    };
+    const setLang = (l) => {
+      if (l === s.lang) return;
+      try { localStorage.setItem('kyn-lang', l); } catch (e) {}
+      this.setState({ lang: l });
+    };
+    return {
+      rootRef: this.root,
+      ar: ar, en: en, lang: s.lang,
+      modelSteps: [
+        { no: '01', ar: 'نطاق موقع', arSub: 'وثيقة فتح النطاق: ناتج محدد وموعد وميزانية.', en: 'Signed scope', enSub: 'A scope-opening file: outcome, deadline, budget.' },
+        { no: '02', ar: 'إيداع الضمان', arSub: 'يودع المال التزامًا في ذمة كيان قبل البدء.', en: 'Escrow deposit', enSub: "Funds held as Kayan's obligation before work starts." },
+        { no: '03', ar: 'تأليف الفريق', arSub: 'قائد مثبت وتوزيع يثبت قبل أول مهمة.', en: 'Pod composed', enSub: 'A named lead, a split fixed before the first task.' },
+        { no: '04', ar: 'عشر بوابات', arSub: 'يمر التكليف بها بالترتيب، ويدون كل عبور.', en: 'Ten gates', enSub: 'Passed in order; every crossing recorded.' },
+        { no: '05', ar: 'محضر استلام', arSub: 'يوقع العميل على ما استلم، بندًا بندًا.', en: 'Acceptance record', enSub: 'The client signs what was received, item by item.' },
+        { no: '06', ar: 'صرف وضمانة', arSub: 'يصرف بالمحضر وحده، وتسري ضمانة ثلاثين يومًا.', en: 'Payout & warranty', enSub: 'Released only against the record; 30-day warranty runs.' }
+      ],
+      /* Four real micro-specs for an e-commerce build. Leadership is NOT a specialization:
+         the lead is one of these four specialists, marked by a badge. */
+      podNodes: [
+        { x: '50%', y: '9%',   d: .15, code: 'DEV-WEB-031', ar: 'بناء واجهة المتجر', en: 'Storefront build', lead: true, badgeAr: 'قيادة · T3', badgeEn: 'Lead · T3' },
+        { x: '14%', y: '31%',  d: .27, code: 'DES-UIX-014', ar: 'تصميم رحلة الشراء', en: 'Checkout journey UI', edge: 'start' },
+        { x: '86%', y: '31%',  d: .39, code: 'DEV-API-018', ar: 'ربط بوابة الدفع', en: 'Payment integration', edge: 'end' },
+        { x: '50%', y: '86%',  d: .51, code: 'MKT-CPY-009', ar: 'نصوص صفحات المنتج', en: 'Product page copy' }
+      ].map(n => ({
+        code: n.code, label: ar ? n.ar : n.en, badge: n.lead ? (ar ? n.badgeAr : n.badgeEn) : '',
+        pos: 'position:absolute;' + (n.edge === 'start' ? 'left:0;transform:translateY(-50%);' : n.edge === 'end' ? 'right:0;transform:translateY(-50%);' : 'left:' + n.x + ';transform:translateX(-50%);') + 'top:' + n.y + ';max-width:42%;',
+        chip: 'position:relative;display:grid;gap:2px;justify-items:center;text-align:center;border-radius:12px;background:rgba(3,32,29,.94);padding:8px 12px;min-width:86px;max-width:100%;transition-delay:' + n.d + 's;border:1px solid ' + (n.lead ? 'rgba(233,201,107,.75);box-shadow:0 0 18px rgba(233,201,107,.22)' : 'rgba(250,246,236,.28)') + ';',
+        codeStyle: 'font-family:IBM Plex Mono,monospace;font-size:7.5px;letter-spacing:.1em;white-space:nowrap;color:' + (n.lead ? '#E9C96B' : 'rgba(233,201,107,.75)') + ';',
+        labelStyle: 'font-size:10.5px;line-height:1.5;text-wrap:pretty;font-weight:' + (n.lead ? '600' : '400') + ';color:' + (n.lead ? '#F3DE9C' : 'rgba(250,246,236,.78)') + ';',
+        badgeStyle: 'position:absolute;top:-9px;inset-inline-start:50%;transform:translateX(50%);white-space:nowrap;font-family:IBM Plex Mono,monospace;font-size:7px;letter-spacing:.12em;color:#3A2604;background:linear-gradient(135deg,#C9A227,#E9C96B);border-radius:99px;padding:2px 8px;'
+      })),
+      arBtnBg: ar ? '#C9A227' : 'transparent', arBtnFg: ar ? '#03201D' : 'rgba(250,246,236,.7)',
+      enBtnBg: en ? '#C9A227' : 'transparent', enBtnFg: en ? '#03201D' : 'rgba(250,246,236,.7)',
+      toggleAr: () => setLang('ar'),
+      toggleEn: () => setLang('en'),
+      portalHref: (()=>{ let a=null; try{a=JSON.parse(localStorage.getItem('kyn-auth-v1')||'null');}catch(e){}
+        if(a&&a.v===1) return a.role==='client' ? 'Kayan Space - Client.dc.html' : 'Kayan Space - Talent.dc.html';
+        return 'Kayan Portal.dc.html'; })(),
+      portalCta: (()=>{ let a=null; try{a=JSON.parse(localStorage.getItem('kyn-auth-v1')||'null');}catch(e){}
+        if(a&&a.v===1) return ar ? 'إلى لوحتي' : 'My space';
+        return ar ? 'البوابة' : 'Portal'; })(),
+      portalFlash: (()=>{ let a=null; try{a=JSON.parse(localStorage.getItem('kyn-auth-v1')||'null');}catch(e){}
+        if(a&&a.v===1) return a.role==='client' ? (ar?'لوحة العميل':'Client Space') : (ar?'مساحة الكفاءة':'Talent Space');
+        return ar ? 'بوابة كيان' : 'The Kayan Portal'; })(),
+      doorClientFlash: ar ? 'للعملاء' : 'For clients',
+      doorTalentFlash: ar ? 'للكفاءات' : 'For talent',
+      sonicOn: this.props.sonicEnabled !== false,
+      playState: s.playing ? 'on' : 'off',
+      tonePressed: !!s.playing,
+      toneAria: ar
+        ? (s.playing ? 'إيقاف نغمة كيان — مقام رست على الدال' : 'تشغيل نغمة كيان — مقام رست على الدال')
+        : (s.playing ? 'Stop the Kayan signature — maqam Rast on D' : 'Play the Kayan signature — maqam Rast on D'),
+      playLogo: () => {
+        if (!this.state.armed) this.setState({ armed: true });
+        this.fire('logo');
+        this.setState({ playing: true });
+        clearTimeout(this._pt);
+        this._pt = setTimeout(() => this.setState({ playing: false }), 1900);
+      },
+      closeKicker: 'KYN-HOME · '+String(new Date().getFullYear()),
+      taglinePre: ar ? 'خلف كل نجاح، ' : 'Behind every success, a ',
+      taglineWord: ar ? 'كيان.' : 'Kayan.',
+      taglinePost: '',
+      footCreed: ar ? 'لا عقد، لا ضمان، لا عمل. تبنى الثقة بالبوابات والمحاضر، ويقيد كل نجاح في سجله.' : 'No contract, no escrow, no work. Trust is built at the gates and recorded by name.',
+      adenClock: this.adenHM().h, adenMin: this.adenHM().m,
+      skyGrad: this.sky().g,
+      skyDot: this.sky().dot,
+      skyChip: 'ADEN ' + this.adenHM().h + ':' + this.adenHM().m + ' · ' + this.sky().en,
+      skyTitle: ar ? ('عدن الآن · ' + this.adenHM().h + ':' + this.adenHM().m + ' ' + this.sky().ar + ' — سماء الصفحة على توقيتها') : ('Aden now · the page sky follows its clock'),
+      solarLine: (this.sky().k==='layl'||this.sky().k==='fajr')
+        ? (ar ? 'المقر يعمل الليلة من مخزون شمس النهار' : 'HQ running tonight on the day\u2019s stored sun')
+        : (ar ? 'المقر يعمل الآن بكهرباء الشمس' : 'HQ running on solar right now'),
+      sealLine: ar ? 'هذه النسخة مقيدة بختم' : 'This release is sealed:',
+      sealShort: SEAL_HASH.slice(0, 8),
+      sealRuns: this.sealRuns(SEAL_HASH, 8),
+      sealBox: '0 0 88 88',
+      sealAria: ar ? 'ختم قيد هذه النسخة من الموقع' : 'Computed seal of this release',
+      sealLink: ar ? 'كيف يحسب الختم ←' : 'How the seal is computed →',
+      charterCardTitle: ar ? 'افتح الميثاق' : 'Open the Charter',
+      charterCardName: ar ? 'ميثاق كيان' : 'The Kayan Charter',
+      charterCardFoot: ar ? 'خلف كل نجاح، كيان' : 'Behind every success, a Kayan.',
+      charterToc: ar ? [
+        { n:'00', t:'من نحن — الاسم يجيب' },
+        { n:'01', t:'المهمة — بنية لاقتصاد يعمل تحت الضغط' },
+        { n:'02', t:'الرؤية — الجغرافيا ليست قدرا' },
+        { n:'I–IV', t:'المواد الأربع النافذة' }
+      ] : [
+        { n:'00', t:'Who we are — the name answers' },
+        { n:'01', t:'Mission — infrastructure under pressure' },
+        { n:'02', t:'Vision — geography is not destiny' },
+        { n:'I–IV', t:'Four articles in force' }
+      ],
+      flock: flock, cur: cur, dirVal: ar ? 'rtl' : 'ltr',
+      ecoFlip: ar ? 'none' : 'scaleX(-1)', ecoUnflip: ar ? 'none' : 'scaleX(-1)', gbirdTf: gbirdTf,
+      leadWord: ar ? 'كيان' : 'KAYAN',
+      ecoSub: ar ? 'خطوط تتكامل، وسجل واحد يجمعها.' : 'Interconnected lines. One record.',
+      birdPicked: !!showKey, birdNone: !showKey,
+      pickHint: ar ? 'المس طائرا — أو قف عليه — يفتح لك خبر خطه هنا.' : 'Rest on a bird — its line opens here.',
+      pickBird: (e) => {
+        this.setState({ sel: e.currentTarget.getAttribute('data-key') }, () => {
+          setTimeout(() => {
+            const v = document.querySelector('[data-view]');
+            if (!v) return;
+            let sc = v.parentElement;
+            while (sc && !(sc.scrollHeight > sc.clientHeight + 10 && /(auto|scroll)/.test(getComputedStyle(sc).overflowY))) sc = sc.parentElement;
+            const r = v.getBoundingClientRect(), vh = window.innerHeight;
+            const off = r.height < vh - 180 ? Math.max(90, (vh - r.height) / 2) : 90;
+            if (sc) { sc.scrollTo({ top: sc.scrollTop + r.top - off, behavior: 'smooth' }); }
+            else { window.scrollTo({ top: r.top + window.pageYOffset - off, behavior: 'smooth' }); }
+          }, 60);
+        });
+      },
+      birdEnter: (e) => this.setState({ hover: e.currentTarget.getAttribute('data-key') }),
+      birdLeave: () => this.setState({ hover: null }),
+      flashOn: !!s.flash,
+      flashBg: s.flash ? ('linear-gradient(150deg,' + s.flash.bg + ',' + s.flash.bg + 'E6 60%,#03201D 175%)') : '#03201D',
+      flashName: s.flash ? s.flash.name : '',
+      goLine: (e) => {
+        e.preventDefault(); e.stopPropagation();
+        const el = e.currentTarget;
+        const href = el.getAttribute('data-href') || el.getAttribute('href');
+        if (!href) return;
+        const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce) { location.href = href; return; }
+        if (this.state.armed) this.fire('stamp');
+        this.setState({ flash: { bg: el.getAttribute('data-color') || '#C9A227', name: el.getAttribute('data-name') || '' } });
+        setTimeout(() => { location.href = href; }, 560);
+        clearTimeout(this._flashKill);
+        this._flashKill = setTimeout(() => this.setState({ flash: null }), 1600); // failsafe: never leave the wipe covering the page
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>مسار المنفذ · The worker path</title>
+<meta name="description" content="رحلة التكليف في كيان — من أول رسالة إلى محضر الاستلام: نطاق موقع، ضمان ممول، تنفيذ مدار، قبول بتوقيع العميل وحده. The Kayan journey: SOW, escrow, managed delivery, acceptance.">
+<meta property="og:title" content="الرحلة · The Kayan Journey">
+<meta property="og:description" content="ست محطات يقطعها كل تكليف — والقاعدة فوقها: لا عقد، لا ضمان، لا عمل.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_YE">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"The Kayan Journey","inLanguage":"ar"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#EDE5D2;overflow-x:hidden;}
+body{-webkit-font-smoothing:antialiased;}
+a{color:#0E6E66;text-decoration:none;}a:hover{color:#12B5A4;}
+::selection{background:#12B5A4;color:#052E2B;}
+input,button,select,textarea{font-family:inherit;}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #12B5A4;outline-offset:2px;}
+button{-webkit-tap-highlight-color:transparent;}
+@keyframes jIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+@keyframes jRow{from{opacity:0;transform:translateX(-8px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;}}
+</style>
+<script src="./kayan-compass.js"></script>
+</helmet>
+<div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;color:#052E2B;background:#EDE5D2;min-height:100vh;">
+
+<header style="background:rgba(3,32,29,.94);border-bottom:1px solid rgba(201,162,39,.22);">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;align-items:center;gap:clamp(10px,2vw,24px);height:clamp(60px,7vh,74px);">
+    <a href="Kayan Home.dc.html" style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+      <img src="assets/kayan-logo-gold.png" alt="كيان — Kayan" style="height:clamp(38px,4.6vw,46px);width:auto;display:block;">
+    </a>
+    <span style="width:1px;height:22px;background:rgba(250,246,236,.2);flex-shrink:0;"></span>
+    <span style="font-size:12.5px;color:rgba(250,246,236,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">الرحلة — من أول رسالة إلى محضر الاستلام</span>
+    <nav style="margin-inline-start:auto;min-width:0;display:flex;align-items:center;gap:clamp(9px,1.5vw,20px);font-size:13.5px;overflow-x:auto;scrollbar-width:none;">
+      <a href="Kayan Home.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.76);" style-hover="color:#E9C96B">الدار</a>
+      <a href="Kayan for Clients.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.76);" style-hover="color:#E9C96B">للعملاء</a>
+      <a href="Kayan for Talent.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.76);" style-hover="color:#E9C96B">للكفاءات</a>
+      <a href="Kayan Portal.dc.html" style="white-space:nowrap;color:rgba(250,246,236,.76);" style-hover="color:#E9C96B">البوابة</a>
+    </nav>
+    <a href="Kayan Apply.dc.html" style="flex-shrink:0;white-space:nowrap;background:linear-gradient(135deg,#C9A227,#E9C96B);color:#03201D;font-size:13px;font-weight:700;padding:10px 20px;border-radius:99px;transition:transform 160ms cubic-bezier(.23,1,.32,1);" style-active="transform:scale(.97)">افتح ملفك</a>
+  </div>
+</header>
+
+<section data-screen-label="المسار · الغلاف" style="background:#052E2B;padding:64px clamp(20px,4vw,48px) 56px;">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.22em;color:#12B5A4;">KYN-FLOW-01 · WORKING PROTOTYPE</div>
+    <h1 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(30px,4.6vw,54px);line-height:1.16;color:#FAF6EC;max-width:20ch;">مسار المنفذ، من التسجيل إلى الصرف</h1>
+    <div style="font-size:16.5px;line-height:2.05;color:rgba(250,246,236,.78);margin-top:16px;max-width:62ch;">سبع محطات بحالات حقيقية تنتقل بينها. على اليمين ما يراه المنفذ على هاتفه، وعلى اليسار ما يقيده السجل في اللحظة نفسها. الشاشة تنسى، والسجل لا ينسى — وهذا هو المنتج.</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;align-items:center;">
+      <button onClick="{{ toggleArm }}" style="min-height:44px;font-size:13.5px;color:{{ armFg }};background:{{ armBg }};border:1px solid #12B5A4;border-radius:11px;padding:12px 18px;cursor:pointer;transition:background .14s cubic-bezier(.2,0,.2,1);">{{ armLabel }}</button>
+      <button onClick="{{ reset }}" style="min-height:44px;font-size:13.5px;color:rgba(250,246,236,.8);background:transparent;border:1px solid rgba(250,246,236,.24);border-radius:11px;padding:12px 18px;cursor:pointer;">إعادة المسار</button>
+      <span style="font-size:13px;line-height:1.8;color:rgba(250,246,236,.52);flex:1 1 220px;min-width:0;">النغمات لا تعمل قبل التفعيل، ولا تعمل عند التحميل. نغمة واحدة لكل حدث.</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="المسار · المحطات" style="background:#FAF6EC;padding:0 clamp(20px,4vw,48px);position:sticky;top:0;z-index:20;border-bottom:1px solid #E2DAC8;">
+  <div style="max-width:1240px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:14px 0;-webkit-overflow-scrolling:touch;">
+    <sc-for list="{{ rail }}" as="s" hint-placeholder-count="7">
+      <button onClick="{{ s.go }}" style="flex:0 0 auto;min-height:44px;display:flex;align-items:center;gap:9px;font-size:13px;color:{{ s.fg }};background:{{ s.bg }};border:1px solid {{ s.bd }};border-radius:99px;padding:9px 15px;cursor:pointer;white-space:nowrap;transition:background .14s cubic-bezier(.2,0,.2,1);">
+        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;opacity:.7;">{{ s.no }}</span>
+        <span>{{ s.label }}</span>
+      </button>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="المسار · الشاشة والسجل" style="background:#EDE5D2;padding:46px clamp(20px,4vw,48px) 72px;">
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;align-items:start;">
+
+    <div style="min-width:0;order:2;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <span style="width:18px;height:3px;border-radius:2px;background:#0E6E66;flex-shrink:0;"></span>
+        <span style="font-size:14px;color:#33544D;">ما يقيده السجل — إضافة فقط، بلا تعديل</span>
+      </div>
+      <div style="border:1px solid #DCD3BE;border-radius:20px;background:#052E2B;overflow:hidden;">
+        <div style="padding:14px 20px;border-bottom:1px solid rgba(250,246,236,.12);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+          <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:rgba(250,246,236,.5);">REGISTER · APPEND-ONLY</span>
+          <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7FE7DA;">{{ regId }}</span>
+        </div>
+        <div style="padding:8px 0;max-height:520px;overflow:auto;-webkit-overflow-scrolling:touch;">
+          <sc-for list="{{ log }}" as="r" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:minmax(0,80px) minmax(0,1fr);gap:12px;padding:12px 20px;border-bottom:1px solid rgba(250,246,236,.07);animation:jRow .3s cubic-bezier(.16,1,.3,1) both;">
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.7;color:rgba(250,246,236,.42);">{{ r.t }}</div>
+              <div style="min-width:0;">
+                <div style="font-size:13.5px;line-height:1.7;color:{{ r.fg }};">{{ r.what }}</div>
+                <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:rgba(250,246,236,.4);margin-top:4px;">{{ r.by }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="padding:16px 20px;border-top:1px solid rgba(250,246,236,.12);background:rgba(0,0,0,.18);">
+          <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+            <span style="font-size:12.5px;color:rgba(250,246,236,.6);">حالة الضمان</span>
+            <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:{{ escFg }};">{{ escState }}</span>
+          </div>
+          <div style="height:6px;border-radius:99px;background:rgba(250,246,236,.12);margin-top:10px;overflow:hidden;">
+            <div style="height:100%;width:{{ escPct }};background:{{ escBar }};border-radius:99px;transition:width .4s cubic-bezier(.16,1,.3,1);"></div>
+          </div>
+          <div style="font-size:12px;line-height:1.8;color:rgba(250,246,236,.5);margin-top:10px;">{{ escNote }}</div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;padding:18px 20px;border:1px solid #DCD3BE;border-radius:18px;background:#FAF6EC;">
+        <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15.5px;color:#052E2B;">{{ ruleTitle }}</div>
+        <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">{{ ruleBody }}</div>
+      </div>
+    </div>
+
+    <div style="min-width:0;order:1;display:flex;justify-content:center;">
+      <div style="width:100%;max-width:392px;">
+        <div style="border-radius:34px;background:#0B1614;padding:11px;box-shadow:0 30px 70px rgba(5,46,43,.32);">
+          <div style="border-radius:25px;background:#FAF6EC;overflow:hidden;position:relative;min-height:620px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px 8px;">
+              <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;color:#6E675A;">9:41</span>
+              <span style="width:52px;height:5px;border-radius:99px;background:#DCD3BE;"></span>
+              <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;color:#6E675A;">▮▮ 62%</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 20px 14px;border-bottom:1px solid #EDE5D2;">
+              <span style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#052E2B;">كيان</span>
+              <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#6E675A;">{{ screenTag }}</span>
+            </div>
+
+            <div style="flex:1;padding:22px 20px 24px;display:flex;flex-direction:column;">
+
+              <sc-if value="{{ isS0 }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;flex-direction:column;height:100%;animation:jIn .4s cubic-bezier(.16,1,.3,1) both;">
+                  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#0E6E66;">{{ qCount }}</div>
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:23px;line-height:1.45;color:#052E2B;margin-top:12px;">{{ qLabel }}</div>
+                  <input value="{{ qValue }}" onInput="{{ setQ }}" placeholder="{{ qHint }}" style="margin-top:18px;font-size:16px;color:#052E2B;background:#fff;border:1px solid #E2DAC8;border-radius:12px;padding:14px;min-height:52px;">
+                  <div style="margin-top:14px;padding:14px 16px;border-radius:12px;background:#F1EAD9;">
+                    <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:9.5px;letter-spacing:.18em;color:#6E675A;">WHY WE ASK</div>
+                    <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:5px;">{{ qWhy }}</div>
+                  </div>
+                  <div style="flex:1;"></div>
+                  <button onClick="{{ nextQ }}" style="min-height:52px;font-size:15.5px;color:#FAF6EC;background:#052E2B;border:none;border-radius:14px;padding:15px;cursor:pointer;transition:background .14s cubic-bezier(.2,0,.2,1);" style-hover="background:#0A4540">{{ qBtn }}</button>
+                  <div style="font-size:12.5px;line-height:1.8;color:#6E675A;margin-top:12px;text-align:center;">يجوز الوقوف والعودة. ما أدخل يحفظ.</div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isS1 }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;height:100%;animation:jIn .4s cubic-bezier(.16,1,.3,1) both;">
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;line-height:1.45;color:#052E2B;">التوثيق على خمسة محاور</div>
+                  <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:8px;">الهوية تحكم الباقي. من لم تثبت هويته لا يفحص في غيرها.</div>
+                  <div style="display:flex;flex-direction:column;gap:1px;margin-top:16px;background:#EDE5D2;border-radius:14px;overflow:hidden;">
+                    <sc-for list="{{ axes }}" as="a" hint-placeholder-count="5">
+                      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 15px;background:#fff;">
+                        <span style="font-size:14.5px;color:#052E2B;min-width:0;">{{ a.name }}</span>
+                        <span style="font-size:11.5px;white-space:nowrap;padding:4px 10px;border-radius:99px;color:{{ a.fg }};background:{{ a.bg }};">{{ a.state }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div style="flex:1;"></div>
+                  <div style="padding:14px 16px;border-radius:12px;background:#F1EAD9;margin-bottom:14px;">
+                    <div style="font-size:13.5px;line-height:1.9;color:#33544D;">{{ vNote }}</div>
+                  </div>
+                  <button onClick="{{ vAct }}" style="min-height:52px;font-size:15.5px;color:#FAF6EC;background:#052E2B;border:none;border-radius:14px;padding:15px;cursor:pointer;">{{ vBtn }}</button>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isS2 }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;height:100%;align-items:center;text-align:center;animation:jIn .5s cubic-bezier(.16,1,.3,1) both;">
+                  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">TIER ISSUED</div>
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:26px;line-height:1.4;color:#052E2B;margin-top:10px;">صدرت بطاقتك</div>
+                  <div style="width:172px;height:272px;border-radius:14px;background:#052E2B;margin-top:22px;position:relative;overflow:hidden;box-shadow:0 16px 40px rgba(5,46,43,.28);">
+                    <div style="position:absolute;inset:22px 16px auto;display:flex;flex-direction:column;gap:{{ strataGap }};">
+                      <sc-for list="{{ strata }}" as="n" hint-placeholder-count="7">
+                        <div style="height:2px;border-radius:2px;background:rgba(127,231,218,.5);"></div>
+                      </sc-for>
+                    </div>
+                    <div style="position:absolute;inset:auto 16px 18px;text-align:right;">
+                      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:15px;color:#FAF6EC;">{{ regName }}</div>
+                      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#7FE7DA;margin-top:4px;">{{ tierCode }} · {{ regId }}</div>
+                    </div>
+                  </div>
+                  <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:20px;max-width:30ch;">{{ tierBody }}</div>
+                  <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#0E6E66;margin-top:10px;">kayanwork.com/v/{{ regId }}</div>
+                  <div style="flex:1;"></div>
+                  <button onClick="{{ toS3 }}" style="width:100%;min-height:52px;font-size:15.5px;color:#FAF6EC;background:#052E2B;border:none;border-radius:14px;padding:15px;cursor:pointer;">عرض دعوات التكليف</button>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isS3 }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;height:100%;animation:jIn .4s cubic-bezier(.16,1,.3,1) both;">
+                  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#0E6E66;">POD CALL · MD-2026-204</div>
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;line-height:1.45;color:#052E2B;margin-top:10px;">دعوة إلى فريق تنفيذ</div>
+                  <div style="display:flex;flex-direction:column;gap:1px;margin-top:16px;background:#EDE5D2;border-radius:14px;overflow:hidden;">
+                    <div style="background:#fff;padding:13px 15px;"><div style="font-size:11.5px;color:#6E675A;">الدور</div><div style="font-size:14.5px;color:#052E2B;margin-top:3px;">مساهم صاعد — تحت إشراف قائد الفريق</div></div>
+                    <div style="background:#fff;padding:13px 15px;"><div style="font-size:11.5px;color:#6E675A;">نطاق العمل</div><div style="font-size:14.5px;line-height:1.8;color:#052E2B;margin-top:3px;">أربع صفحات هبوط، وملف أصول مسلم، ودليل استعمال من صفحتين</div></div>
+                    <div style="background:#fff;padding:13px 15px;"><div style="font-size:11.5px;color:#6E675A;">معايير القبول</div><div style="font-size:14.5px;line-height:1.8;color:#052E2B;margin-top:3px;">تفتح الصفحات دون ثانية على شبكة بطيئة، وتقرأ بالعربية والإنجليزية، وتسلم مصادرها</div></div>
+                    <div style="background:#fff;padding:13px 15px;display:flex;justify-content:space-between;gap:10px;"><div><div style="font-size:11.5px;color:#6E675A;">المدة</div><div style="font-size:14.5px;color:#052E2B;margin-top:3px;">أربعة عشر يوما</div></div><div style="text-align:left;"><div style="font-size:11.5px;color:#6E675A;">حصتك</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#052E2B;margin-top:3px;border-bottom:1px dotted #B0A48A;">PH-AMT</div></div></div>
+                  </div>
+                  <div style="font-size:12.5px;line-height:1.85;color:#6E675A;margin-top:12px;">المبلغ يقره المالك قبل النشر. ولا تعرض دعوة بمبلغ غير مقر.</div>
+                  <div style="flex:1;"></div>
+                  <div style="display:flex;flex-direction:column;gap:9px;">
+                    <button onClick="{{ toS4 }}" style="min-height:52px;font-size:15.5px;color:#FAF6EC;background:#052E2B;border:none;border-radius:14px;padding:15px;cursor:pointer;">قبول التكليف</button>
+                    <button style="min-height:44px;font-size:14px;color:#33544D;background:transparent;border:1px solid #E2DAC8;border-radius:14px;padding:12px;cursor:pointer;">اعتذار — لا يحتسب عليك</button>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isS4 }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;height:100%;animation:jIn .4s cubic-bezier(.16,1,.3,1) both;">
+                  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#0E6E66;">ESCROW</div>
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;line-height:1.45;color:#052E2B;margin-top:10px;">مول الضمان، فابدأ</div>
+                  <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:10px;">أودع العميل المستحق كاملا في حساب الضمان قبل أول يوم عمل. المبلغ محجوز لا لكيان ولا للعميل، ويفرج عنه بمحضر الاستلام.</div>
+                  <div style="margin-top:18px;border:1px solid #EDE5D2;border-radius:14px;background:#fff;overflow:hidden;">
+                    <sc-for list="{{ escSteps }}" as="e" hint-placeholder-count="4">
+                      <div style="display:flex;align-items:center;gap:11px;padding:13px 15px;border-bottom:1px solid #F3EFE2;">
+                        <span style="width:9px;height:9px;border-radius:99px;background:{{ e.dot }};flex-shrink:0;"></span>
+                        <span style="flex:1;min-width:0;font-size:14px;color:{{ e.fg }};">{{ e.label }}</span>
+                        <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6E675A;white-space:nowrap;">{{ e.at }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div style="flex:1;"></div>
+                  <button onClick="{{ toS5 }}" style="min-height:52px;font-size:15.5px;color:#FAF6EC;background:#052E2B;border:none;border-radius:14px;padding:15px;cursor:pointer;">تسليم المخرجات للمراجعة</button>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isS5 }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;height:100%;animation:jIn .4s cubic-bezier(.16,1,.3,1) both;">
+                  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#0E6E66;">KYN-F-01 · HANDOVER</div>
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:21px;line-height:1.45;color:#052E2B;margin-top:10px;">سلمت. القرار عند العميل خلال خمسة أيام.</div>
+                  <div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:10px;">تنقضي المهلة فيعد التسليم مقبولا حكما، ويصرف المستحق. الصمت ليس ردا.</div>
+                  <div style="margin-top:18px;padding:16px;border:1px dashed #C2B69C;border-radius:14px;background:#F7F4EA;">
+                    <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:9.5px;letter-spacing:.18em;color:#6E675A;">FOR DEMONSTRATION · قرار العميل</div>
+                    <div style="display:flex;flex-direction:column;gap:9px;margin-top:12px;">
+                      <button onClick="{{ doAccept }}" style="min-height:48px;font-size:14.5px;color:#FAF6EC;background:#0E6E66;border:none;border-radius:12px;padding:13px;cursor:pointer;">قبول التسليم كاملا</button>
+                      <button onClick="{{ doRefuse }}" style="min-height:48px;font-size:14.5px;color:#8E2F27;background:transparent;border:1px solid #B23A31;border-radius:12px;padding:13px;cursor:pointer;">رد بتحفظ</button>
+                    </div>
+                  </div>
+                  <div style="flex:1;"></div>
+                  <sc-if value="{{ refused }}" hint-placeholder-val="{{ false }}">
+                    <div style="padding:16px;border:1px solid #B23A31;border-radius:14px;background:#fff;">
+                      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:9.5px;letter-spacing:.18em;color:#8E2F27;">قرار مسبب · REASONED REFUSAL</div>
+                      <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16px;color:#052E2B;margin-top:9px;">رد التسليم لسبب واحد محدد</div>
+                      <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:8px;">لم يسلم ملف الأصول المفتوحة، وهو بند وارد في معايير القبول. وما عداه مستوف.</div>
+                      <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:8px;"><span style="color:#0E6E66;">الطريق:</span> يرفع الملف خلال ثلاثة أيام فيقبل التسليم. ولا يمس الرد فئتك ولا سجلك ما لم يتكرر.</div>
+                      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6E675A;margin-top:11px;">POS-DEL-QA · 2026-07-19 · APPEAL WITHIN 7D</div>
+                      <button onClick="{{ doAccept }}" style="width:100%;min-height:48px;font-size:14.5px;color:#FAF6EC;background:#052E2B;border:none;border-radius:12px;padding:13px;cursor:pointer;margin-top:14px;">رفع الملف الناقص وإعادة التسليم</button>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isS6 }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-direction:column;height:100%;align-items:center;text-align:center;animation:jIn .5s cubic-bezier(.16,1,.3,1) both;">
+                  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#0E6E66;">ACCEPTED · PAID</div>
+                  <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:25px;line-height:1.4;color:#052E2B;margin-top:10px;">قبل التسليم وصرف المستحق</div>
+                  <div style="margin-top:20px;background:#fff;border:1px solid #EDE5D2;padding:16px;">
+                    <svg viewBox="{{ sealBox }}" width="128" height="128" role="img" aria-label="ختم القبول">
+                      <sc-for list="{{ sealRuns }}" as="r" hint-placeholder-count="11">
+                        <rect x="{{ r.x }}" y="{{ r.y }}" width="{{ r.w }}" height="{{ r.h }}" rx="{{ r.rx }}" fill="#052E2B"></rect>
+                      </sc-for>
+                    </svg>
+                    <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;color:#052E2B;margin-top:10px;">{{ sealShort }}</div>
+                  </div>
+                  <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:16px;max-width:32ch;">ختم هذا القبول محسوب من نص المحضر نفسه. من غيّر حرفا في المحضر بعد اليوم، ظهر التغيير.</div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;margin-top:18px;">
+                    <div style="padding:13px;border:1px solid #EDE5D2;border-radius:12px;background:#fff;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:19px;color:#052E2B;">3</div><div style="font-size:11.5px;color:#6E675A;margin-top:3px;">أيام حتى الصرف</div></div>
+                    <div style="padding:13px;border:1px solid #EDE5D2;border-radius:12px;background:#fff;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:19px;color:#052E2B;">1</div><div style="font-size:11.5px;color:#6E675A;margin-top:3px;">تسليم مقبول في سجلك</div></div>
+                  </div>
+                  <div style="flex:1;"></div>
+                  <div style="width:100%;padding:14px 16px;border-radius:12px;background:#F1EAD9;text-align:right;">
+                    <div style="font-size:13.5px;line-height:1.9;color:#33544D;">بقي تسليمان مقبولان وجهة تزكية لبلوغ الفئة الثانية. والفئة لا تشترى ولا تمنح.</div>
+                  </div>
+                </div>
+              </sc-if>
+
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;font-size:12.5px;color:#5F6E66;margin-top:14px;">بيانات عينة تصميمية. الاسم والأرقام غير حقيقية.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section data-screen-label="المسار · القواعد" style="background:#FAF6EC;padding:80px clamp(20px,4vw,48px) 92px;">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div style="font-family:'Alexandria',sans-serif;font-size:13.5px;letter-spacing:.12em;color:#0E6E66;font-weight:500;"><bdi style="letter-spacing:normal">ما يثبته المسار</bdi> · WHAT THE FLOW PROVES</div>
+    <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.28;color:#052E2B;max-width:24ch;">ست قواعد لا يجوز خرقها في أي شاشة</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;margin-top:34px;background:#EDE5D2;border:1px solid #EDE5D2;border-radius:20px;overflow:hidden;">
+      <div style="background:#fff;padding:24px 22px;min-width:0;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">01</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">سؤال واحد في الشاشة</div><div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">ومعه سبب سؤاله. من لا يعرف لماذا يسأل، لا يجيب بصدق.</div></div>
+      <div style="background:#fff;padding:24px 22px;min-width:0;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">02</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">الآلة تمرر ولا ترد</div><div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">كل رد يصدر عن موقع مسمى، بسبب مكتوب، ومعه مهلة تظلم.</div></div>
+      <div style="background:#fff;padding:24px 22px;min-width:0;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">03</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">لا عمل قبل تمويل الضمان</div><div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">القاعدة المؤسسة. ولا يستثنى منها عميل مهما كان.</div></div>
+      <div style="background:#fff;padding:24px 22px;min-width:0;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">04</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">الصمت ليس ردا</div><div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">تنقضي مهلة المراجعة فيقبل التسليم حكما ويصرف المستحق.</div></div>
+      <div style="background:#fff;padding:24px 22px;min-width:0;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">05</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">السجل يضاف إليه</div><div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">لا يعدل سطر ولا يحذف. والإلغاء قيد جديد يعلو ما قبله ويبقى الاثنان.</div></div>
+      <div style="background:#fff;padding:24px 22px;min-width:0;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#0E6E66;">06</div><div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:16.5px;color:#052E2B;margin-top:8px;">نغمة واحدة للحدث</div><div style="font-size:14px;line-height:1.95;color:#33544D;margin-top:7px;">أربع لحظات فقط تصوت: استيفاء حقل، وصدور فئة، وقبول، ورد. وما عداها صامت.</div></div>
+    </div>
+
+    <div style="margin-top:34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;">
+      <div style="border:1px solid #E2DAC8;border-radius:18px;padding:22px;background:#fff;min-width:0;">
+        <div style="display:flex;align-items:center;gap:8px;"><span style="width:18px;height:3px;border-radius:2px;background:#12B5A4;flex-shrink:0;"></span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#33544D;">SOUND MAP</span></div>
+        <div style="font-size:14px;line-height:2;color:#33544D;margin-top:10px;"><bdi dir="ltr" style="font-family:'IBM Plex Mono',monospace;">verify</bdi> عند استيفاء حقل · <bdi dir="ltr" style="font-family:'IBM Plex Mono',monospace;">tier</bdi> عند صدور الفئة · <bdi dir="ltr" style="font-family:'IBM Plex Mono',monospace;">accept</bdi> عند القبول · <bdi dir="ltr" style="font-family:'IBM Plex Mono',monospace;">halt</bdi> عند الرد.</div>
+      </div>
+      <div style="border:1px solid #E2DAC8;border-radius:18px;padding:22px;background:#fff;min-width:0;">
+        <div style="display:flex;align-items:center;gap:8px;"><span style="width:18px;height:3px;border-radius:2px;background:#0E6E66;flex-shrink:0;"></span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#33544D;">MOTION</span></div>
+        <div style="font-size:14px;line-height:2;color:#33544D;margin-top:10px;">الدخول على منحنى الاستقرار ٤٠٠ ملي، واللمس ١٤٠، والخروج ٢٢٠. شيء واحد يتحرك في المرة، ولا حركة أثناء القراءة.</div>
+      </div>
+      <div style="border:1px solid #E2DAC8;border-radius:18px;padding:22px;background:#fff;min-width:0;">
+        <div style="display:flex;align-items:center;gap:8px;"><span style="width:18px;height:3px;border-radius:2px;background:#B8891A;flex-shrink:0;"></span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#33544D;">TARGETS</span></div>
+        <div style="font-size:14px;line-height:2;color:#33544D;margin-top:10px;">كل زر لا يقل عن ٤٤ بكسلا ارتفاعا، والأفعال الرئيسة في الثلث الأسفل من الشاشة حيث يبلغها الإبهام.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<kayan-compass current="journey"></kayan-compass>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+class Component extends DCLogic {
+  state = { stage: 0, q: 0, name: '', phone: '', spec: '', vPhase: 0, escrow: 0, refused: false, armed: false };
+
+  reduce = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion:reduce)').matches;
+  componentWillUnmount() { if (this._ac) this._ac.close(); }
+
+  // ---------- sonic: same engine and the same maqam as the master document ----------
+  ac() { if (!this.state.armed) return null; if (!this._ac) { const C = window.AudioContext || window.webkitAudioContext; if (!C) return null; this._ac = new C(); } if (this._ac.state === 'suspended') this._ac.resume(); return this._ac; }
+  bus() {
+    if (this._out) return;
+    const ac = this._ac, m = ac.createGain(); m.gain.value = 0.15;
+    const hp = ac.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 150;
+    const dly = ac.createDelay(); dly.delayTime.value = 0.112;
+    const fb = ac.createGain(); fb.gain.value = 0.2;
+    const wet = ac.createGain(); wet.gain.value = 0.26;
+    m.connect(hp); hp.connect(ac.destination); hp.connect(dly); dly.connect(fb); fb.connect(dly); dly.connect(wet); wet.connect(ac.destination);
+    this._out = m;
+  }
+  deg() { const d = 587.33, c = n => d * Math.pow(2, n / 1200); return { drone: d / 4, low: d / 2, d: d, n3: c(347), g: c(500), a: c(700), oct: c(1200), high: c(1200) * 1.5 }; }
+  pluck(f, t0, dur, gain, type) {
+    const ac = this._ac, o = ac.createOscillator(), o2 = ac.createOscillator(), g = ac.createGain(), g2 = ac.createGain(), lp = ac.createBiquadFilter();
+    o.type = type || 'triangle'; o.frequency.value = f;
+    o2.type = 'sawtooth'; o2.frequency.value = f * 2.002; g2.gain.value = 0.12;
+    lp.type = 'lowpass'; lp.frequency.setValueAtTime(3600, t0); lp.frequency.exponentialRampToValueAtTime(1200, t0 + dur);
+    g.gain.setValueAtTime(0, t0); g.gain.linearRampToValueAtTime(gain, t0 + 0.008); g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    o.connect(lp); o2.connect(g2); g2.connect(lp); lp.connect(g); g.connect(this._out);
+    o.start(t0); o2.start(t0); o.stop(t0 + dur + 0.05); o2.stop(t0 + dur + 0.05);
+  }
+  drone(f, t0, dur, gain) {
+    const ac = this._ac, o = ac.createOscillator(), g = ac.createGain();
+    o.type = 'sine'; o.frequency.value = f;
+    g.gain.setValueAtTime(0, t0); g.gain.linearRampToValueAtTime(gain, t0 + 0.25); g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    o.connect(g); g.connect(this._out); o.start(t0); o.stop(t0 + dur + 0.05);
+  }
+  fire(name) {
+    const ac = this.ac(); if (!ac) return;
+    this.bus();
+    const t = ac.currentTime + 0.03, k = this.deg();
+    if (name === 'verify') { this.pluck(k.a, t, 0.2, 0.15); this.pluck(k.oct, t + 0.08, 0.3, 0.12); }
+    if (name === 'tier') { [k.d, k.n3, k.a, k.oct].forEach((f, i) => this.pluck(f, t + i * 0.09, 0.6, 0.15)); this.pluck(k.high, t + 0.4, 0.7, 0.06, 'sine'); }
+    if (name === 'accept') { [[k.d, 0], [k.g, 0.09], [k.a, 0.18], [k.oct, 0.3]].forEach(x => this.pluck(x[0], t + x[1], 1.3, 0.13)); this.drone(k.drone, t, 2.0, 0.085); }
+    if (name === 'halt') { this.pluck(k.n3, t, 0.42, 0.13); this.pluck(k.d, t + 0.13, 0.5, 0.11); }
+  }
+
+  // ---------- seal: the same derivation as KYN-SEAL-01 ----------
+  sha256(str) {
+    const K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
+      0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
+      0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,
+      0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,
+      0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,
+      0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,
+      0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,
+      0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+    let H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+    const b = Array.from(new TextEncoder().encode(str)), bitLen = b.length * 8;
+    b.push(0x80); while (b.length % 64 !== 56) b.push(0);
+    for (let i = 7; i >= 0; i--) b.push(Math.floor(bitLen / Math.pow(2, i * 8)) & 0xff);
+    const rr = (x, n) => (x >>> n) | (x << (32 - n));
+    for (let i = 0; i < b.length; i += 64) {
+      const w = new Array(64);
+      for (let j = 0; j < 16; j++) w[j] = (b[i+j*4] << 24) | (b[i+j*4+1] << 16) | (b[i+j*4+2] << 8) | b[i+j*4+3];
+      for (let j = 16; j < 64; j++) {
+        const s0 = rr(w[j-15],7) ^ rr(w[j-15],18) ^ (w[j-15] >>> 3);
+        const s1 = rr(w[j-2],17) ^ rr(w[j-2],19) ^ (w[j-2] >>> 10);
+        w[j] = (w[j-16] + s0 + w[j-7] + s1) | 0;
+      }
+      let a = H[0], bb = H[1], c = H[2], d = H[3], e = H[4], f = H[5], g = H[6], h = H[7];
+      for (let j = 0; j < 64; j++) {
+        const S1 = rr(e,6) ^ rr(e,11) ^ rr(e,25), ch = (e & f) ^ (~e & g);
+        const t1 = (h + S1 + ch + K[j] + w[j]) | 0;
+        const S0 = rr(a,2) ^ rr(a,13) ^ rr(a,22), mj = (a & bb) ^ (a & c) ^ (bb & c);
+        const t2 = (S0 + mj) | 0;
+        h = g; g = f; f = e; e = (d + t1) | 0; d = c; c = bb; bb = a; a = (t1 + t2) | 0;
+      }
+      const add = [a,bb,c,d,e,f,g,h];
+      H = H.map((v, k2) => (v + add[k2]) | 0);
+    }
+    return H.map(v => (v >>> 0).toString(16).padStart(8, '0')).join('').toUpperCase();
+  }
+  runs(hex, cell) {
+    const bit = i => (parseInt(hex[i >> 2], 16) >> (3 - (i & 3))) & 1;
+    const N = 11, W = [0.30, 0.46, 0.64, 0.84], out = [];
+    for (let r = 0; r < N; r++) {
+      const hgt = W[(bit(66 + r * 2) << 1) | bit(66 + r * 2 + 1)] * cell, on = [];
+      for (let c = 0; c < N; c++) on.push(bit(r * 6 + (c <= 5 ? c : 10 - c)));
+      let c = 0, any = false;
+      while (c < N) {
+        if (on[c]) { const s = c; while (c < N && on[c]) c++;
+          out.push({ x: +(s*cell).toFixed(2), y: +(r*cell + (cell-hgt)/2).toFixed(2), w: +((c-s)*cell - cell*0.2).toFixed(2), h: +hgt.toFixed(2), rx: +Math.min(hgt/2, cell*0.16).toFixed(2) });
+          any = true;
+        } else c++;
+      }
+      if (!any) out.push({ x: +(cell*0.9).toFixed(2), y: +(r*cell + cell/2 - cell*0.045).toFixed(2), w: +(cell*9.2).toFixed(2), h: +(cell*0.09).toFixed(2), rx: 0.5 });
+    }
+    return out;
+  }
+
+  qs() {
+    return [
+      { key: 'name', label: 'ما اسمك كما هو في وثيقتك الرسمية؟', hint: 'الاسم الرباعي', why: 'يقيد الاسم كما في الوثيقة ليطابق ما يظهر على البطاقة وفي المحاضر. ولا يعدل بعد صدور الفئة إلا بقرار مسبب.' },
+      { key: 'phone', label: 'رقم يصلك عليه واتساب', hint: '+967 …', why: 'التكليفات وقرارات القبول ترسل على هذا الرقم. ولا يستعمل في تسويق، ولا يشارك مع عميل قبل اعتماد التكليف.' },
+      { key: 'spec', label: 'ما تخصصك الدقيق؟', hint: 'مثال: تصميم واجهات', why: 'يبنى عليه الترشيح للفرق. الوصف الدقيق يرفع فرصك أكثر من الوصف الواسع.' }
+    ];
+  }
+
+  renderVals() {
+    const s = this.state, Q = this.qs(), cur = Q[Math.min(s.q, 2)];
+    const stage = s.stage;
+    const name = s.name || 'نورا سعيد باسلامة';
+    const regId = 'A7F3-0142';
+
+    const stages = ['التسجيل', 'التوثيق', 'الفئة', 'التكليف', 'الضمان', 'محضر الاستلام', 'الصرف'];
+    const rail = stages.map((label, i) => {
+      const on = i === stage, done = i < stage;
+      return {
+        no: String(i + 1).padStart(2, '0'), label,
+        fg: on ? '#FAF6EC' : (done ? '#0E6E66' : '#6E675A'),
+        bg: on ? '#052E2B' : (done ? '#E4F2EE' : 'transparent'),
+        bd: on ? '#052E2B' : (done ? '#B8DED5' : '#E2DAC8'),
+        go: () => this.setState({ stage: i, refused: false })
+      };
+    });
+
+    // append-only register log, built from how far the flow has come
+    const L = [];
+    const push = (t, what, by, fg) => L.push({ t, what, by, fg: fg || 'rgba(250,246,236,.9)' });
+    if (stage >= 0 && s.q > 0) push('09:41:02', 'فتح ملف تسجيل', 'SELF · WHATSAPP ENTRY');
+    if (s.q >= 1 || stage >= 1) push('09:41:38', 'قيد الاسم: ' + name, 'SELF');
+    if (s.q >= 2 || stage >= 1) push('09:42:10', 'قيد قناة الاتصال', 'SELF');
+    if (stage >= 1) push('09:42:44', 'اكتمل ملف التسجيل — ثلاثة حقول', 'SELF');
+    if (stage >= 1 && s.vPhase >= 1) push('09:43:01', 'فحص آلي: أربعة محاور مستوفاة، ومحور يحتاج مراجعة', 'SYSTEM · NIGHTLY COMPUTE');
+    if (stage >= 2) push('11:20:16', 'اعتماد التوثيق ومنح الفئة الأولى', 'POS-TAL-VER · اعتماد إنسان');
+    if (stage >= 2) push('11:20:17', 'إصدار بطاقة وفتح صفحة سجل عامة', 'SYSTEM');
+    if (stage >= 3) push('14:02:55', 'ترشيح لفريق تنفيذ على العقد MD-2026-204', 'SYSTEM · MATCHING');
+    if (stage >= 4) push('14:19:03', 'قبول التكليف وتثبيت حصة الدور', 'SELF');
+    if (stage >= 4) push('14:51:40', 'إيداع المستحق كاملا في حساب الضمان', 'CLIENT · TADAMON ESCROW');
+    if (stage >= 5) push('2026-07-18', 'تسليم المخرجات للمراجعة', 'SELF');
+    if (s.refused) push('2026-07-19', 'رد بتحفظ — نقص ملف الأصول المفتوحة', 'POS-DEL-QA · قرار مسبب', '#FF9A8F');
+    if (stage >= 6) push('2026-07-21', 'قبول التسليم كاملا وتحرير محضر الاستلام', 'CLIENT + POS-DEL-QA', '#7FE7DA');
+    if (stage >= 6) push('2026-07-21', 'ختم المحضر وقيده في السلسلة', 'SYSTEM · KYN-SEAL-01', '#7FE7DA');
+    if (stage >= 6) push('2026-07-21', 'الإفراج عن المستحق وصرفه', 'FINANCE · ESCROW RELEASE', '#7FE7DA');
+    if (!L.length) push('—', 'لم يقيد شيء بعد. السجل يبدأ عند أول إدخال.', 'AWAITING', 'rgba(250,246,236,.55)');
+
+    const escStages = [
+      { label: 'غير ممول', at: '—' },
+      { label: 'ممول ومحجوز', at: '14:51' },
+      { label: 'قيد المراجعة', at: '07-18' },
+      { label: 'مفرج عنه', at: '07-21' }
+    ];
+    const escIdx = stage >= 6 ? 3 : (stage >= 5 ? 2 : (stage >= 4 ? 1 : 0));
+    const escSteps = escStages.map((e, i) => ({
+      label: e.label, at: i <= escIdx ? e.at : '—',
+      dot: i < escIdx ? '#0E6E66' : (i === escIdx ? '#12B5A4' : '#DCD3BE'),
+      fg: i <= escIdx ? '#052E2B' : '#8E9A94'
+    }));
+
+    const axesBase = ['الهوية', 'المهارة', 'السجل', 'السلوك', 'الطاقة'];
+    const axes = axesBase.map((n, i) => {
+      let st = 'لم يفحص', fg = '#6E675A', bg = '#F0EDE3';
+      if (s.vPhase >= 1) {
+        if (i === 2) { st = 'مراجعة إنسان'; fg = '#8A6A12'; bg = '#FFF3D6'; }
+        else { st = 'مستوف'; fg = '#0E6E66'; bg = '#E4F2EE'; }
+      }
+      if (s.vPhase >= 2) { st = 'مستوف'; fg = '#0E6E66'; bg = '#E4F2EE'; }
+      return { name: n, state: st, fg, bg };
+    });
+
+    const sealHash = this.sha256('KYN|MHD|' + regId + '|T1|2026-07-21|MD-2026-204|أربع صفحات هبوط وملف أصول ودليل استعمال');
+
+    const rules = [
+      ['التسجيل يسأل ولا يستجوب', 'ثمانية عشر شاشة، سؤال واحد في كل شاشة، وسبب ظاهر لكل سؤال. ويجوز الوقوف والعودة دون فقد ما أدخل.'],
+      ['الآلة تمرر، والإنسان يرد', 'الفحص الليلي يرشح، ولا يرد أحدا. والرد يصدر عن موقع مسمى بسبب مكتوب ومهلة تظلم.'],
+      ['الفئة تصدر ولا تشترى', 'وتسقط بالخمول درجة واحدة قابلة للاسترداد. وهذا مكتوب قبل التسجيل لا بعده.'],
+      ['نطاق قبل عمل', 'لا تعرض دعوة بلا نطاق مكتوب ومعايير قبول قابلة للقياس ومدة محددة.'],
+      ['المال يودع قبل اليوم الأول', 'حساب الضمان التزام لا إيراد. ولا يبدأ عمل على وعد بالدفع.'],
+      ['المحضر يسبق الصرف', 'لا يصرف مستحق قبل قيده. والقيد يختم، والختم يشتق من نص المحضر.'],
+      ['الصرف يقيد مدته', 'عدد الأيام بين القبول والصرف يقيد وينشر شهريا، سواء أحسن أم ساء.']
+    ];
+    const rule = rules[Math.min(stage, 6)];
+
+    const advance = (to, cue) => { if (cue) this.fire(cue); this.setState({ stage: to, refused: false }); };
+
+    return {
+      armLabel: s.armed ? 'الصوت مفعل — اضغط للإطفاء' : 'تفعيل الصوت لهذه الجلسة',
+      armBg: s.armed ? '#12B5A4' : 'transparent',
+      armFg: s.armed ? '#04211F' : '#12B5A4',
+      toggleArm: () => { const n = !s.armed; this.setState({ armed: n }); if (n) { setTimeout(() => { this.ac(); }, 0); } },
+      reset: () => this.setState({ stage: 0, q: 0, name: '', phone: '', spec: '', vPhase: 0, refused: false }),
+
+      rail, log: L, regId, regName: name,
+      escState: escStages[escIdx].label,
+      escPct: [4, 46, 66, 100][escIdx] + '%',
+      escBar: escIdx === 3 ? '#12B5A4' : (escIdx === 0 ? '#6E675A' : '#0E6E66'),
+      escFg: escIdx === 3 ? '#7FE7DA' : 'rgba(250,246,236,.8)',
+      escNote: escIdx === 0 ? 'لا يبدأ عمل قبل ورود المستحق كاملا.' : (escIdx === 3 ? 'صرف بعد ثلاثة أيام من قيد المحضر.' : 'المبلغ محجوز — لا لكيان ولا للعميل.'),
+      ruleTitle: rule[0], ruleBody: rule[1],
+
+      screenTag: ['REGISTRATION','VERIFICATION','TIER','POD CALL','ESCROW','HANDOVER','SETTLED'][stage],
+      isS0: stage === 0, isS1: stage === 1, isS2: stage === 2, isS3: stage === 3, isS4: stage === 4, isS5: stage === 5, isS6: stage === 6,
+
+      qCount: 'QUESTION ' + (s.q + 1) + ' OF 3',
+      qLabel: cur.label, qHint: cur.hint, qWhy: cur.why,
+      qValue: s[cur.key] || '',
+      qBtn: s.q === 2 ? 'إنهاء التسجيل' : 'التالي',
+      setQ: e => this.setState({ [cur.key]: e.target.value }),
+      nextQ: () => { this.fire('verify'); if (s.q < 2) this.setState({ q: s.q + 1 }); else this.setState({ stage: 1 }); },
+
+      axes,
+      vNote: s.vPhase === 0 ? 'يجري الفحص الآلي ليلا على كل ملف مكتمل. وهو يرشح فقط.'
+        : (s.vPhase === 1 ? 'مر الفحص الآلي. محور السجل يحتاج قرار إنسان — لأن الآلة يجوز لها أن تمرر، ولا يجوز لها أن ترد.'
+        : 'اعتمد التوثيق. صدر القرار عن الموقع POS-TAL-VER وقيد باسمه.'),
+      vBtn: s.vPhase === 0 ? 'إجراء الفحص الآلي' : (s.vPhase === 1 ? 'عرض على POS-TAL-VER' : 'استلام الفئة'),
+      vAct: () => {
+        if (s.vPhase === 0) { this.fire('verify'); this.setState({ vPhase: 1 }); }
+        else if (s.vPhase === 1) { this.setState({ vPhase: 2 }); }
+        else { this.fire('tier'); this.setState({ stage: 2 }); }
+      },
+
+      strata: [0,1,2,3,4,5,6], strataGap: '19px',
+      tierCode: 'T1 · معرف',
+      tierBody: 'الفئة الأولى تتيح الانضمام إلى فريق تحت إشراف. وصفحة سجلك مفتوحة للعامة من الآن، بلا دخول ولا رسوم.',
+      toS3: () => advance(3),
+      toS4: () => advance(4),
+      toS5: () => advance(5),
+
+      escSteps,
+      refused: s.refused,
+      doAccept: () => { this.fire('accept'); this.setState({ stage: 6, refused: false }); },
+      doRefuse: () => { this.fire('halt'); this.setState({ refused: true }); },
+
+      sealRuns: this.runs(sealHash, 11), sealBox: '0 0 121 121', sealShort: sealHash.slice(0, 8)
+    };
+  }
+}
+
+</script>
+</body>
+</html>

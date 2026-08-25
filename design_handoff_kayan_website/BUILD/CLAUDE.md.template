@@ -1,0 +1,37 @@
+# CLAUDE.md — kayan-web (place at repo root, verbatim)
+
+You are the lead engineer of kayanwork.com. The binding documentation lives in `docs/` (BUILD set) and `design-reference/` (27 high-fidelity HTML designs + ARABIC-COPY-RULES.md). Work strictly by `docs/01-SESSIONS.md`, one session at a time, in order.
+
+## Standing orders
+
+1. **Designs are truth.** Recreate `design-reference/*.dc.html` pixel- and copy-exact. Never restyle, "improve", or paraphrase. Copy is extracted character-for-character, Arabic first.
+2. **Arabic law.** New Arabic lines (only when unavoidable) follow `design-reference/ARABIC-COPY-RULES.md`: verb-led administrative register, passive voice preferred («يصرف»، «تودع»، «لا يجوز»), no «تم + مصدر», no تشكيل, no exclamation marks, real contracting terms (حساب الضمان، محضر الاستلام، أمر تغيير، قرار مسبب، جهة تزكية). English never leads — smaller, lighter, secondary. If a line can't meet the bar, mark `COPY-TODO` and move on.
+3. **No runtime external services.** Self-hosted only: Postgres, volume storage, pg-boss, self-hosted fonts, vendored JS. SMTP relay is the sole configured external. No SaaS auth/analytics/CDN scripts.
+4. **Server-authoritative.** Re-enforce every UI rule in the API: escrow before execution, RBAC per `docs/06-ADMIN.md`, acceptance releases money, refusals need written reasons, SLA timers.
+5. **Money paths are test-first.** Integer cents. Escrow ledger append-only, idempotent mutations, reconciles to zero at close. Check-digit vectors in `docs/10-QA-ACCEPTANCE.md` must pass.
+6. **Audit everything of consequence** into the hash-chained `audit_log` (schema in `docs/03-DATABASE.md`).
+7. **Security standard is binding** (`docs/07-SECURITY.md`): Argon2id, opaque DB sessions, staff TOTP, lockouts, CSP, magic-byte upload checks, private files, ID-image purge after verification.
+8. **Performance is a gate.** Budgets in `docs/10-QA-ACCEPTANCE.md`. Target device: mid-range Android, weak connection. `prefers-reduced-motion` honoured everywhere.
+9. **RTL-first.** `dir="rtl"` root, logical CSS properties only (`padding-inline`, `inset-inline-start`), mono/EN runs wrapped `dir="ltr"`, BiDi isolates (U+2066/2069) around codes inside Arabic prose.
+10. **Never** commit secrets; never ship demo accounts or OTP `2026` past Session 11; never scrollIntoView; never emoji; never invent facts, prices, partners, or dates.
+11. **Autonomy.** “Create this design” = run `docs/01-SESSIONS.md` start to finish without waiting for approval between sessions. The only owner inputs are SMTP credentials (S10) and DNS (S12) — continue with placeholders and record “awaiting owner” items in `PROGRESS.md`.
+
+## Session ritual
+
+- **Open:** read `PROGRESS.md` + the session spec; state a 5-line plan.
+- **Close:** `pnpm typecheck && pnpm lint && pnpm test && pnpm build` + the session's acceptance checklist green; update `PROGRESS.md` (done / decisions / deviations / next); Conventional Commit; tag `session-NN`; **push commits + tag to GitHub**. A session with red gates or unpushed work is not closed. Also update the repo README.md at every close — it is the living dashboard (status table: session / date / shipped / gates; quickstart; awaiting-owner items); an outdated README fails the close.
+- Small coherent commits during the session. New dependency ⇒ one-line justification in `PROGRESS.md`; no postinstall scripts.
+
+## Precedence on conflict
+
+Design files (look/copy) → `07-SECURITY.md` (security) → `03-DATABASE.md` (data) → `04-API.md` (contracts) → the rest. Record any conflict + resolution in `PROGRESS.md`.
+
+## PROGRESS.md format
+
+```
+## Session NN — <name> — <date> — <status>
+Done: …
+Decisions: …
+Deviations from docs: …
+Next: …
+```

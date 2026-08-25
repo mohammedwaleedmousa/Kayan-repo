@@ -1,0 +1,1701 @@
+{
+ "00 · START": [
+  {
+   "A": "KAY-PRD-001 · Ready Products Catalogue — operating model"
+  },
+  {
+   "A": "85 products across 12 families. The master register, a self-pricing model, the buyer map, and the social playbook. Companion to KAY-PRD-001."
+  },
+  {
+   "B": "HOW THIS WORKBOOK WORKS"
+  },
+  {
+   "B": "•  The catalogue is the master register of every product — what it is, who buys it, why, how long, and its price."
+  },
+  {
+   "B": "•  The pricing model is self-pricing: fill each product's build cost and fee and it sets the price and totals the catalogue."
+  },
+  {
+   "B": "•  The social playbook maps each buyer and product to the narrative, format, and channel that sells it."
+  },
+  {
+   "B": "•  The ideas pipeline is where new products graduate as demand and the verified bench allow."
+  },
+  {
+   "B": "•  Lavender cells are price tokens awaiting the decision session (F-19)."
+  },
+  {
+   "B": "TAB GUIDE"
+  },
+  {
+   "B": "01 · THE CATALOGUE",
+   "C": "Every product as a managed line — family, what you get, buyer, why, time, price."
+  },
+  {
+   "B": "02 · FAMILIES",
+   "C": "The twelve families — positioning, buyer, hook, and how many products each holds."
+  },
+  {
+   "B": "03 · BUYERS",
+   "C": "The buyer map — who each segment is, what they need, and where they start."
+  },
+  {
+   "B": "04 · PRICING MODEL",
+   "C": "Self-pricing: fill build and fee per product; the catalogue prices itself."
+  },
+  {
+   "B": "05 · SOCIAL PLAYBOOK",
+   "C": "The narrative, formats, channels, and seasonal moments that sell the range."
+  },
+  {
+   "B": "06 · WHERE TO LEAD",
+   "C": "The four hero groups that do the heavy lifting."
+  },
+  {
+   "B": "07 · IDEAS PIPELINE",
+   "C": "How products graduate, and a template for new candidates."
+  }
+ ],
+ "01 · THE CATALOGUE": [
+  {
+   "A": "The catalogue"
+  },
+  {
+   "A": "Every product Kayan sells, as a managed line. Prices tokenised (F-19)."
+  },
+  {
+   "A": "Family",
+   "B": "Product",
+   "C": "What you get",
+   "D": "Buyer",
+   "E": "Why it is worth it",
+   "F": "Time",
+   "G": "Price"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Landing Page in 48 Hours",
+   "C": "A single, sharp page built to convert — live in two days.",
+   "D": "BUY-FND, BUY-SME",
+   "E": "One page, one goal, live by the day after tomorrow.",
+   "F": "48 hours",
+   "G": "[[PH-PR-001]]"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Business Site in Five Days",
+   "C": "A clean, fast, mobile-first site of up to five pages, live in five days.",
+   "D": "BUY-FND, BUY-SME",
+   "E": "A serious presence, live this week — not this quarter.",
+   "F": "5 days",
+   "G": "[[PH-PR-002]]"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Online Store",
+   "C": "A working store with products, Arabic-first checkout, and payment guidance.",
+   "D": "BUY-SME, BUY-FND",
+   "E": "Sell online, in Arabic, the way your customers actually pay.",
+   "F": "Medium",
+   "G": "[[PH-PR-003]]"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Booking & Reservations Site",
+   "C": "A site that takes bookings — for a clinic, a salon, a hotel, a service.",
+   "D": "BUY-SME",
+   "E": "Stop taking bookings by phone all day; let the site do it.",
+   "F": "Medium",
+   "G": "[[PH-PR-004]]"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Restaurant Digital Pack",
+   "C": "A site, a digital menu, Google presence, and WhatsApp ordering — the full set.",
+   "D": "BUY-SME",
+   "E": "Found on Google, ordered on WhatsApp, tables filled.",
+   "F": "Medium",
+   "G": "[[PH-PR-005]]"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Custom Platform",
+   "C": "A bespoke web platform built to your workflow, by a full pod.",
+   "D": "BUY-COR, BUY-NGO",
+   "E": "When off-the-shelf will not do, a platform that fits exactly.",
+   "F": "Medium-Long",
+   "G": "[[PH-PR-006]]"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "App MVP",
+   "C": "A first working version of a mobile or web app, ready to test with real users.",
+   "D": "BUY-FND, BUY-COR",
+   "E": "Your idea, in people's hands, without waiting a year to find out.",
+   "F": "Medium-Long",
+   "G": "[[PH-PR-007]]"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Website Care Plan",
+   "C": "Hosting, updates, backups, and security — your site kept alive and safe.",
+   "D": "BUY-SME, BUY-COR",
+   "E": "A site that never quietly breaks — someone is watching it.",
+   "F": "Ongoing",
+   "G": "[[PH-PR-008]]"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Arabic SEO Tune-Up",
+   "C": "Your site made findable in Arabic — structure, terms, and the fixes that matter.",
+   "D": "BUY-SME, BUY-COR",
+   "E": "Be found by the people already searching for you.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-009]]"
+  },
+  {
+   "A": "Content & Copy",
+   "B": "Website Copy that Sells",
+   "C": "Persuasive Arabic-first copy for a site or a campaign.",
+   "D": "BUY-FND, BUY-SME",
+   "E": "Words that turn a visitor into a customer, not just fill a page.",
+   "F": "Short",
+   "G": "[[PH-PR-010]]"
+  },
+  {
+   "A": "Content & Copy",
+   "B": "Company Profile",
+   "C": "A polished company profile that makes a small firm look established.",
+   "D": "BUY-FND, BUY-SME",
+   "E": "The document that wins the meeting before you walk in.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-011]]"
+  },
+  {
+   "A": "Content & Copy",
+   "B": "Article & Blog Pack",
+   "C": "A set of well-written, search-friendly articles in Arabic or English.",
+   "D": "BUY-SME, BUY-COR",
+   "E": "Content that brings people in, month after month.",
+   "F": "Short",
+   "G": "[[PH-PR-012]]"
+  },
+  {
+   "A": "Content & Copy",
+   "B": "Product Descriptions at Scale",
+   "C": "Clear, selling descriptions for a whole catalogue of products.",
+   "D": "BUY-SME",
+   "E": "Every product described to sell — not left blank or copied.",
+   "F": "Short",
+   "G": "[[PH-PR-013]]"
+  },
+  {
+   "A": "Content & Copy",
+   "B": "Ghostwriting",
+   "C": "Articles, speeches, or thought-leadership written in your voice.",
+   "D": "BUY-COR, BUY-IND",
+   "E": "Your ideas, written the way you would if you had the time.",
+   "F": "Medium",
+   "G": "[[PH-PR-014]]"
+  },
+  {
+   "A": "Content & Copy",
+   "B": "Newsletter Setup & Writing",
+   "C": "A newsletter set up and written to keep your audience close.",
+   "D": "BUY-SME, BUY-NGO",
+   "E": "Stay in your customers' inbox, not just their memory.",
+   "F": "Medium",
+   "G": "[[PH-PR-015]]"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Certified Translation",
+   "C": "Accurate, certified Arabic⇄English translation of a document.",
+   "D": "BUY-IND, BUY-DIA",
+   "E": "Accepted where it counts — embassies, universities, courts.",
+   "F": "Short",
+   "G": "[[PH-PR-016]]"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Academic Document Package",
+   "C": "Transcripts, certificates, and letters translated and prepared for study abroad.",
+   "D": "BUY-IND, BUY-DIA",
+   "E": "Your whole academic file, ready for the application.",
+   "F": "Short",
+   "G": "[[PH-PR-017]]"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Contract & Legal Translation",
+   "C": "Precise translation of contracts and legal documents.",
+   "D": "BUY-COR, BUY-DIA",
+   "E": "Every clause right, because a wrong word can cost you.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-018]]"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Document Handling & Attestation Support",
+   "C": "Someone on the ground to process, attest, and prepare your papers.",
+   "D": "BUY-DIA, BUY-IND",
+   "E": "The queues and counters, handled by someone who knows them.",
+   "F": "Medium",
+   "G": "[[PH-PR-019]]"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Subtitling & Captioning",
+   "C": "Arabic video subtitled or captioned, accurately and on time.",
+   "D": "BUY-COR, BUY-NGO",
+   "E": "Your video understood by everyone who watches it.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-020]]"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Transcription",
+   "C": "Arabic audio or video turned into accurate text.",
+   "D": "BUY-NGO, BUY-COR",
+   "E": "Hours of recording, turned into a document you can use.",
+   "F": "Short",
+   "G": "[[PH-PR-021]]"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Interpretation",
+   "C": "A professional interpreter for a meeting, remote or in person.",
+   "D": "BUY-COR, BUY-NGO",
+   "E": "Understood in the room, in real time.",
+   "F": "Short",
+   "G": "[[PH-PR-022]]"
+  },
+  {
+   "A": "Data & AI Services",
+   "B": "Arabic Data Annotation at Scale",
+   "C": "Text or image annotation to your standard, measured against a gold set.",
+   "D": "BUY-COR, BUY-DIA",
+   "E": "The data the AI economy runs on — careful, and cost-competitive.",
+   "F": "Medium",
+   "G": "[[PH-PR-023]]"
+  },
+  {
+   "A": "Data & AI Services",
+   "B": "Paper to Digital",
+   "C": "Decades of paper records scanned, organised, and made searchable.",
+   "D": "BUY-COR, BUY-GOV, BUY-NGO",
+   "E": "An archive safe from fire, flood, and time — and findable in seconds.",
+   "F": "Medium",
+   "G": "[[PH-PR-024]]"
+  },
+  {
+   "A": "Data & AI Services",
+   "B": "Data Entry at Scale",
+   "C": "Large volumes of data entered accurately and checked.",
+   "D": "BUY-COR, BUY-NGO",
+   "E": "The tedious work done right, so you do not have to.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-025]]"
+  },
+  {
+   "A": "Data & AI Services",
+   "B": "Dataset Creation",
+   "C": "A clean, structured Arabic dataset built to your specification.",
+   "D": "BUY-COR",
+   "E": "A dataset that is actually usable, not just large.",
+   "F": "Medium",
+   "G": "[[PH-PR-026]]"
+  },
+  {
+   "A": "Data & AI Services",
+   "B": "Survey Data Processing",
+   "C": "Raw survey data cleaned, coded, and made ready to analyse.",
+   "D": "BUY-NGO, BUY-GOV",
+   "E": "From messy field returns to numbers you can trust.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-027]]"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Brand in 48 Hours",
+   "C": "A logo, colours, and the basics of an identity — in two days.",
+   "D": "BUY-FND",
+   "E": "Look like an institution by tomorrow morning.",
+   "F": "48 hours",
+   "G": "[[PH-PR-028]]"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Full Brand Identity",
+   "C": "A complete identity system with guidelines, built to last.",
+   "D": "BUY-FND, BUY-COR",
+   "E": "One coherent look, everywhere, that grows with you.",
+   "F": "Medium",
+   "G": "[[PH-PR-029]]"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Logo Design",
+   "C": "A distinctive, professional logo, delivered ready to use.",
+   "D": "BUY-FND, BUY-IND",
+   "E": "A mark people remember, not a clip-art guess.",
+   "F": "Short",
+   "G": "[[PH-PR-030]]"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Packaging Design",
+   "C": "Product packaging designed to stand out on a shelf.",
+   "D": "BUY-SME, BUY-COR",
+   "E": "The reason a hand reaches for yours and not the next one.",
+   "F": "Medium",
+   "G": "[[PH-PR-031]]"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Menu Design",
+   "C": "A menu designed to look good and sell the right dishes.",
+   "D": "BUY-SME",
+   "E": "A menu that makes people order more, and better.",
+   "F": "Short",
+   "G": "[[PH-PR-032]]"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Signage & Storefront",
+   "C": "Signage and storefront design that pulls people in.",
+   "D": "BUY-SME",
+   "E": "The first thing customers see, done right.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-033]]"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Print Pack",
+   "C": "Business cards, flyers, and brochures — a coordinated set.",
+   "D": "BUY-FND, BUY-SME",
+   "E": "Everything you hand someone, looking like it belongs together.",
+   "F": "Short",
+   "G": "[[PH-PR-034]]"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Professional Voice-Over",
+   "C": "A clear, professional Arabic voice-over for your message.",
+   "D": "BUY-SME, BUY-COR",
+   "E": "A voice that makes your message sound like it matters.",
+   "F": "Short",
+   "G": "[[PH-PR-035]]"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Explainer Video",
+   "C": "A short animated video that makes your offer clear in a minute.",
+   "D": "BUY-FND, BUY-COR",
+   "E": "What you do, understood in sixty seconds.",
+   "F": "Medium",
+   "G": "[[PH-PR-036]]"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Product Photography",
+   "C": "Professional photographs of your products, ready to sell.",
+   "D": "BUY-SME",
+   "E": "Photos that make people want it — not phone snaps.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-037]]"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Event Photography & Video",
+   "C": "A photographer and videographer for your event or occasion.",
+   "D": "BUY-SME, BUY-COR, BUY-DIA",
+   "E": "The day, captured properly, to keep and to share.",
+   "F": "Short",
+   "G": "[[PH-PR-038]]"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Social Video Pack",
+   "C": "A set of short, sharp videos made for social feeds.",
+   "D": "BUY-SME, BUY-FND",
+   "E": "The short videos that actually get watched and shared.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-039]]"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Podcast Production",
+   "C": "A podcast set up and produced — recording, editing, and polish.",
+   "D": "BUY-COR, BUY-NGO",
+   "E": "Your voice, produced to a standard people will listen to.",
+   "F": "Medium",
+   "G": "[[PH-PR-040]]"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Brand Video",
+   "C": "A polished film that tells your organisation's story.",
+   "D": "BUY-COR, BUY-NGO",
+   "E": "The film that makes people feel what you do, not just hear it.",
+   "F": "Medium-Long",
+   "G": "[[PH-PR-041]]"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "Social Media Management",
+   "C": "Your social accounts run for you — content, posting, and replies, every month.",
+   "D": "BUY-SME, BUY-FND",
+   "E": "Show up every day without spending your day on it.",
+   "F": "Ongoing",
+   "G": "[[PH-PR-042]]"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "Social Media Starter",
+   "C": "Accounts set up properly and the first month of content, done.",
+   "D": "BUY-FND, BUY-SME",
+   "E": "Start right, so the first impression is a strong one.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-043]]"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "Ad Campaign Management",
+   "C": "Paid ads planned, run, and optimised to bring customers in.",
+   "D": "BUY-SME, BUY-COR",
+   "E": "Money spent on ads that actually return customers.",
+   "F": "Ongoing",
+   "G": "[[PH-PR-044]]"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "Launch Campaign",
+   "C": "A coordinated campaign to launch a product, business, or place.",
+   "D": "BUY-FND, BUY-SME",
+   "E": "Open to a crowd, not to silence.",
+   "F": "Medium",
+   "G": "[[PH-PR-045]]"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "WhatsApp Business Setup",
+   "C": "A WhatsApp Business account set up with a catalogue and quick replies.",
+   "D": "BUY-SME",
+   "E": "Sell where your customers already are, set up properly.",
+   "F": "Short",
+   "G": "[[PH-PR-046]]"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "Google Business Setup",
+   "C": "Your business on Google Maps and Search, set up and optimised.",
+   "D": "BUY-SME",
+   "E": "Found the moment someone nearby searches for what you sell.",
+   "F": "Short",
+   "G": "[[PH-PR-047]]"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "Content Calendar & Strategy",
+   "C": "A month of planned content and a clear strategy behind it.",
+   "D": "BUY-SME, BUY-COR",
+   "E": "A plan, so posting is deliberate, not last-minute.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-048]]"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Business Plan",
+   "C": "A funder-ready or investor-ready business plan.",
+   "D": "BUY-FND, BUY-COR",
+   "E": "The plan that gets the loan, the investor, or the licence.",
+   "F": "Medium",
+   "G": "[[PH-PR-049]]"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Feasibility Study",
+   "C": "An honest study of whether an idea will work, and how.",
+   "D": "BUY-FND, BUY-COR, BUY-GOV",
+   "E": "Know before you spend, not after.",
+   "F": "Medium",
+   "G": "[[PH-PR-050]]"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Pitch Deck",
+   "C": "A sharp, persuasive deck that wins the room.",
+   "D": "BUY-FND, BUY-COR",
+   "E": "The ten slides that get you the next meeting.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-051]]"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Financial Model",
+   "C": "A clear financial model you can plan and pitch with.",
+   "D": "BUY-FND, BUY-COR",
+   "E": "The numbers, built so you and your investor both trust them.",
+   "F": "Medium",
+   "G": "[[PH-PR-052]]"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Market Research Report",
+   "C": "Real research on your market, customers, or sector.",
+   "D": "BUY-COR, BUY-GOV, BUY-NGO",
+   "E": "Decisions grounded in what is actually happening out there.",
+   "F": "Medium",
+   "G": "[[PH-PR-053]]"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Mystery Shopping & Field Research",
+   "C": "Trained researchers gathering real evidence on the ground.",
+   "D": "BUY-COR, BUY-GOV",
+   "E": "See your business, or your market, as it really is.",
+   "F": "Medium",
+   "G": "[[PH-PR-054]]"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Competitor Analysis",
+   "C": "A clear picture of who you are up against and where the gap is.",
+   "D": "BUY-FND, BUY-COR",
+   "E": "Know exactly where you can win.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-055]]"
+  },
+  {
+   "A": "Development Sector",
+   "B": "The Proposal that Wins",
+   "C": "A funder-ready proposal, structured and written to win the grant.",
+   "D": "BUY-NGO",
+   "E": "Structured the way funders score, written to win.",
+   "F": "Medium",
+   "G": "[[PH-PR-056]]"
+  },
+  {
+   "A": "Development Sector",
+   "B": "Report Writing",
+   "C": "Donor and technical reports written to standard and on time.",
+   "D": "BUY-NGO, BUY-GOV",
+   "E": "Reports that satisfy the donor and get filed without a rewrite.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-057]]"
+  },
+  {
+   "A": "Development Sector",
+   "B": "M&E Framework",
+   "C": "A monitoring and evaluation framework that stands up to scrutiny.",
+   "D": "BUY-NGO",
+   "E": "Show your impact in a way an evaluator will accept.",
+   "F": "Medium",
+   "G": "[[PH-PR-058]]"
+  },
+  {
+   "A": "Development Sector",
+   "B": "Needs Assessment",
+   "C": "A rigorous assessment of needs, with evidence and recommendations.",
+   "D": "BUY-NGO, BUY-GOV",
+   "E": "The evidence base a serious intervention starts from.",
+   "F": "Medium",
+   "G": "[[PH-PR-059]]"
+  },
+  {
+   "A": "Development Sector",
+   "B": "Field Data Collection",
+   "C": "Trained enumerators collecting quality data across locations.",
+   "D": "BUY-NGO, BUY-GOV",
+   "E": "Reliable data from the field, gathered by people who know it.",
+   "F": "Medium",
+   "G": "[[PH-PR-060]]"
+  },
+  {
+   "A": "Development Sector",
+   "B": "Third-Party Monitoring",
+   "C": "Independent monitoring of a project or programme.",
+   "D": "BUY-NGO, BUY-GOV",
+   "E": "Independent eyes, so the donor trusts the result.",
+   "F": "Medium-Ongoing",
+   "G": "[[PH-PR-061]]"
+  },
+  {
+   "A": "Development Sector",
+   "B": "Training Delivery",
+   "C": "A workshop or training designed and delivered, with materials.",
+   "D": "BUY-NGO, BUY-GOV, BUY-COR",
+   "E": "Training people actually learn from, run for you.",
+   "F": "Medium",
+   "G": "[[PH-PR-062]]"
+  },
+  {
+   "A": "Development Sector",
+   "B": "Case Studies & Stories",
+   "C": "Human stories and case studies that show a programme's impact.",
+   "D": "BUY-NGO",
+   "E": "The stories that make a report land with a donor.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-063]]"
+  },
+  {
+   "A": "Events & Experiences",
+   "B": "Event Managed End to End",
+   "C": "An event planned and run, from logistics to the day itself.",
+   "D": "BUY-COR, BUY-NGO",
+   "E": "Be a guest at your own event, not its stressed organiser.",
+   "F": "Medium",
+   "G": "[[PH-PR-064]]"
+  },
+  {
+   "A": "Events & Experiences",
+   "B": "Workshop, Run for You",
+   "C": "A workshop designed and facilitated — content, room, and materials.",
+   "D": "BUY-COR, BUY-NGO",
+   "E": "A workshop that runs itself, because someone else ran it.",
+   "F": "Medium",
+   "G": "[[PH-PR-065]]"
+  },
+  {
+   "A": "Events & Experiences",
+   "B": "Conference & Exhibition",
+   "C": "A larger conference or exhibition managed end to end.",
+   "D": "BUY-COR, BUY-GOV",
+   "E": "A big day that runs like it was easy.",
+   "F": "Medium-Long",
+   "G": "[[PH-PR-066]]"
+  },
+  {
+   "A": "Events & Experiences",
+   "B": "Wedding & Occasion",
+   "C": "A wedding or family occasion coordinated, start to finish.",
+   "D": "BUY-IND, BUY-DIA",
+   "E": "The day right, so the family can simply be in it.",
+   "F": "Medium",
+   "G": "[[PH-PR-067]]"
+  },
+  {
+   "A": "Events & Experiences",
+   "B": "Hub Event Hosting",
+   "C": "Your event hosted at the Hub, with the space and support included.",
+   "D": "BUY-SME, BUY-FND",
+   "E": "A ready, respected venue and a team who runs it.",
+   "F": "Short",
+   "G": "[[PH-PR-068]]"
+  },
+  {
+   "A": "Career & Education",
+   "B": "Career Launch Pack",
+   "C": "A CV, a LinkedIn profile, and a cover letter — the full set.",
+   "D": "BUY-IND",
+   "E": "Everything an employer looks at, done to win.",
+   "F": "Short",
+   "G": "[[PH-PR-069]]"
+  },
+  {
+   "A": "Career & Education",
+   "B": "The Winning CV",
+   "C": "A CV built to pass the scan and the filter, and get the interview.",
+   "D": "BUY-IND",
+   "E": "Built to pass the six-second scan and the software filter.",
+   "F": "Short",
+   "G": "[[PH-PR-070]]"
+  },
+  {
+   "A": "Career & Education",
+   "B": "LinkedIn Makeover",
+   "C": "A LinkedIn profile rebuilt to be found and to impress.",
+   "D": "BUY-IND",
+   "E": "Found by recruiters, and trusted when they land.",
+   "F": "Short",
+   "G": "[[PH-PR-071]]"
+  },
+  {
+   "A": "Career & Education",
+   "B": "Scholarship Application Package",
+   "C": "A full application — essays, documents, and polish — for a scholarship.",
+   "D": "BUY-IND, BUY-DIA",
+   "E": "The application that turns a long shot into an offer.",
+   "F": "Medium",
+   "G": "[[PH-PR-072]]"
+  },
+  {
+   "A": "Career & Education",
+   "B": "University Application Support",
+   "C": "Guidance and preparation for applying to study, at home or abroad.",
+   "D": "BUY-IND, BUY-DIA",
+   "E": "The whole application, done right the first time.",
+   "F": "Medium",
+   "G": "[[PH-PR-073]]"
+  },
+  {
+   "A": "Career & Education",
+   "B": "Interview Coaching",
+   "C": "Practice and preparation that makes an interview winnable.",
+   "D": "BUY-IND",
+   "E": "Walk in ready, not hoping.",
+   "F": "Short",
+   "G": "[[PH-PR-074]]"
+  },
+  {
+   "A": "Career & Education",
+   "B": "Portfolio Building",
+   "C": "A professional portfolio for a creative, developer, or specialist.",
+   "D": "BUY-IND",
+   "E": "Proof of what you can do, arranged to get you hired.",
+   "F": "Short-Medium",
+   "G": "[[PH-PR-075]]"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "The Trusted Hand",
+   "C": "Someone credible on the ground to run errands, handle papers, and report back.",
+   "D": "BUY-DIA",
+   "E": "Someone you can trust at home, who sends proof it was done.",
+   "F": "Ongoing / per task",
+   "G": "[[PH-PR-076]]"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Build-Home Bundle",
+   "C": "A site, a brand, and a presence for a venture you are building at home from abroad.",
+   "D": "BUY-DIA",
+   "E": "Start your business at home without booking a flight.",
+   "F": "Medium",
+   "G": "[[PH-PR-077]]"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Remote Team as a Service",
+   "C": "A verified team at home delivering ongoing work for you abroad, managed by Kayan.",
+   "D": "BUY-DIA",
+   "E": "Your own team in Yemen, run for you, results sent to you.",
+   "F": "Ongoing",
+   "G": "[[PH-PR-078]]"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Family Occasion, Handled",
+   "C": "A wedding or occasion for your family back home, coordinated from abroad.",
+   "D": "BUY-DIA",
+   "E": "Give your family the day, even when you cannot be at it.",
+   "F": "Medium",
+   "G": "[[PH-PR-079]]"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Property Check & Documentation",
+   "C": "Your property visited, verified, photographed, and documented, with a full report.",
+   "D": "BUY-DIA",
+   "E": "Know the truth about your property at home, with proof.",
+   "F": "Medium",
+   "G": "[[PH-PR-080]]"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Procurement & Delivery",
+   "C": "We buy what your family needs and deliver it, with confirmation.",
+   "D": "BUY-DIA",
+   "E": "Send what is needed, not just money — and see it arrive.",
+   "F": "Short",
+   "G": "[[PH-PR-081]]"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Gift Package to Family",
+   "C": "A gift chosen, prepared, and delivered to your family for an occasion.",
+   "D": "BUY-DIA",
+   "E": "Be present at home on the day, through something in their hands.",
+   "F": "Short",
+   "G": "[[PH-PR-082]]"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "The Family Archive",
+   "C": "Your family's photographs, documents, and elders' stories preserved before they are lost.",
+   "D": "BUY-DIA",
+   "E": "Save the stories and faces while they are still here to save.",
+   "F": "Medium",
+   "G": "[[PH-PR-083]]"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Business Setup at Home",
+   "C": "A business established at home — brand, presence, and a team to run it.",
+   "D": "BUY-DIA",
+   "E": "A real operation at home, built and staffed, reporting to you.",
+   "F": "Medium-Long",
+   "G": "[[PH-PR-084]]"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Due Diligence & Market Entry",
+   "C": "Honest research and checks for a diaspora investor looking at home.",
+   "D": "BUY-DIA",
+   "E": "Invest at home with your eyes open, not on hope.",
+   "F": "Medium",
+   "G": "[[PH-PR-085]]"
+  }
+ ],
+ "02 · FAMILIES": [
+  {
+   "A": "The twelve families"
+  },
+  {
+   "A": "Each family's positioning, buyer, hook, and product count."
+  },
+  {
+   "A": "Family",
+   "B": "Positioning",
+   "C": "Buyer",
+   "D": "Hook",
+   "E": "Products"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "The digital presence a business needs to be found, trusted, and chosen.",
+   "C": "BUY-FND, BUY-SME, BUY-COR, BUY-DIA",
+   "D": "Be found. Be trusted. Be chosen.",
+   "E": "9"
+  },
+  {
+   "A": "Content & Copy",
+   "B": "Words that work — Arabic-first, written to persuade and to sell.",
+   "C": "BUY-FND, BUY-SME, BUY-COR",
+   "D": "The right words, working for you.",
+   "E": "6"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Documents made ready to cross any border, and paperwork handled by people you can trust.",
+   "C": "BUY-IND, BUY-DIA, BUY-NGO",
+   "D": "Ready where it counts.",
+   "E": "7"
+  },
+  {
+   "A": "Data & AI Services",
+   "B": "The careful data work the modern economy runs on — at a cost and quality that competes anywhere.",
+   "C": "BUY-COR, BUY-NGO, BUY-DIA",
+   "D": "Yemen's quiet advantage, put to work.",
+   "E": "5"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Identity and design that make a small organisation look as serious as it is.",
+   "C": "BUY-FND, BUY-SME, BUY-COR",
+   "D": "Look as serious as you are.",
+   "E": "7"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Voice, video, and image — the pieces that carry a message and make it land.",
+   "C": "BUY-SME, BUY-COR, BUY-NGO",
+   "D": "Made to be seen and heard.",
+   "E": "7"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "A presence that shows up every day and brings customers in.",
+   "C": "BUY-SME, BUY-FND, BUY-COR",
+   "D": "Show up. Stand out. Bring them in.",
+   "E": "7"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "The documents and research that win support, funding, and good decisions.",
+   "C": "BUY-FND, BUY-COR, BUY-GOV",
+   "D": "Built to win the decision.",
+   "E": "7"
+  },
+  {
+   "A": "Development Sector",
+   "B": "Everything the humanitarian and development sector needs, delivered to donor standard.",
+   "C": "BUY-NGO, BUY-GOV",
+   "D": "To the standard donors expect.",
+   "E": "8"
+  },
+  {
+   "A": "Events & Experiences",
+   "B": "Events and workshops run end to end, so the day is right and you can be present in it.",
+   "C": "BUY-SME, BUY-COR, BUY-NGO, BUY-DIA",
+   "D": "The day, handled.",
+   "E": "5"
+  },
+  {
+   "A": "Career & Education",
+   "B": "The bridge from a degree, or a skill, to a job or a place to study.",
+   "C": "BUY-IND",
+   "D": "The gap to a job, closed.",
+   "E": "7"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "For Yemenis abroad — a trusted hand at home to build, help, and remember.",
+   "C": "BUY-DIA",
+   "D": "You can't be there. We can.",
+   "E": "10"
+  }
+ ],
+ "03 · BUYERS": [
+  {
+   "A": "The buyer map"
+  },
+  {
+   "A": "Seven buyers, what they need, and the product that starts the relationship."
+  },
+  {
+   "B": "Buyer",
+   "C": "Who they are",
+   "D": "What they need",
+   "E": "Where they start"
+  },
+  {
+   "A": "BUY-IND",
+   "B": "Individuals",
+   "C": "A job seeker, a student, a professional, someone who needs a document or a personal project done.",
+   "D": "CVs and careers, certified translation, personal documents, portfolios.",
+   "E": "Career Launch Pack · Certified Translation · The Winning CV"
+  },
+  {
+   "A": "BUY-FND",
+   "B": "New founders",
+   "C": "Someone starting a business who needs to look serious and get online fast.",
+   "D": "Brand, a site, social presence, a business plan.",
+   "E": "Brand in 48 Hours · Business Site in Five Days · Business Plan"
+  },
+  {
+   "A": "BUY-SME",
+   "B": "Small & medium businesses",
+   "C": "Restaurants, hotels, clinics, shops, schools — established but needing digital presence, marketing, and systems.",
+   "D": "Digital presence, social media, menus and print, booking systems.",
+   "E": "Restaurant Digital Pack · Social Media Management · Online Store"
+  },
+  {
+   "A": "BUY-COR",
+   "B": "Larger businesses",
+   "C": "Companies needing bigger builds, brand systems, data work, and strategy.",
+   "D": "Platforms, brand systems, market research, data services.",
+   "E": "Custom Platform · Full Brand Identity · Market Research"
+  },
+  {
+   "A": "BUY-NGO",
+   "B": "NGOs, INGOs & UN",
+   "C": "The humanitarian and development sector — a large, active buyer in Yemen.",
+   "D": "Proposals, reports, monitoring, field data, translation, training.",
+   "E": "The Proposal that Wins · Field Data Collection · M&E Framework"
+  },
+  {
+   "A": "BUY-GOV",
+   "B": "Government & local authorities",
+   "C": "Public bodies needing digital services, reports, assessments, and capacity.",
+   "D": "Digital services, reports, needs assessments, training.",
+   "E": "Needs Assessment · Report Writing · Training Delivery"
+  },
+  {
+   "A": "BUY-DIA",
+   "B": "The diaspora — Yemenis abroad",
+   "C": "People who want to build, help, invest, or get things done at home, and cannot be there to do it.",
+   "D": "On-the-ground trusted help, build-home bundles, family occasions, property, remembrance.",
+   "E": "The Trusted Hand · Build-Home Bundle · The Family Archive"
+  }
+ ],
+ "04 · PRICING MODEL": [
+  {
+   "A": "Self-pricing model"
+  },
+  {
+   "A": "Fill each product's build cost and fee (yellow). The price sets itself, and the catalogue totals. Nothing is set until you fill it."
+  },
+  {
+   "A": "Family",
+   "B": "Product",
+   "C": "Build cost",
+   "D": "Kayan fee",
+   "E": "Price",
+   "F": "Time"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Landing Page in 48 Hours",
+   "F": "48 hours"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Business Site in Five Days",
+   "F": "5 days"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Online Store",
+   "F": "Medium"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Booking & Reservations Site",
+   "F": "Medium"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Restaurant Digital Pack",
+   "F": "Medium"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Custom Platform",
+   "F": "Medium-Long"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "App MVP",
+   "F": "Medium-Long"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Website Care Plan",
+   "F": "Ongoing"
+  },
+  {
+   "A": "Digital & Web",
+   "B": "Arabic SEO Tune-Up",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Content & Copy",
+   "B": "Website Copy that Sells",
+   "F": "Short"
+  },
+  {
+   "A": "Content & Copy",
+   "B": "Company Profile",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Content & Copy",
+   "B": "Article & Blog Pack",
+   "F": "Short"
+  },
+  {
+   "A": "Content & Copy",
+   "B": "Product Descriptions at Scale",
+   "F": "Short"
+  },
+  {
+   "A": "Content & Copy",
+   "B": "Ghostwriting",
+   "F": "Medium"
+  },
+  {
+   "A": "Content & Copy",
+   "B": "Newsletter Setup & Writing",
+   "F": "Medium"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Certified Translation",
+   "F": "Short"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Academic Document Package",
+   "F": "Short"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Contract & Legal Translation",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Document Handling & Attestation Support",
+   "F": "Medium"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Subtitling & Captioning",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Transcription",
+   "F": "Short"
+  },
+  {
+   "A": "Translation & Documents",
+   "B": "Interpretation",
+   "F": "Short"
+  },
+  {
+   "A": "Data & AI Services",
+   "B": "Arabic Data Annotation at Scale",
+   "F": "Medium"
+  },
+  {
+   "A": "Data & AI Services",
+   "B": "Paper to Digital",
+   "F": "Medium"
+  },
+  {
+   "A": "Data & AI Services",
+   "B": "Data Entry at Scale",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Data & AI Services",
+   "B": "Dataset Creation",
+   "F": "Medium"
+  },
+  {
+   "A": "Data & AI Services",
+   "B": "Survey Data Processing",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Brand in 48 Hours",
+   "F": "48 hours"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Full Brand Identity",
+   "F": "Medium"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Logo Design",
+   "F": "Short"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Packaging Design",
+   "F": "Medium"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Menu Design",
+   "F": "Short"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Signage & Storefront",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Design & Brand",
+   "B": "Print Pack",
+   "F": "Short"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Professional Voice-Over",
+   "F": "Short"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Explainer Video",
+   "F": "Medium"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Product Photography",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Event Photography & Video",
+   "F": "Short"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Social Video Pack",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Podcast Production",
+   "F": "Medium"
+  },
+  {
+   "A": "Media & Production",
+   "B": "Brand Video",
+   "F": "Medium-Long"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "Social Media Management",
+   "F": "Ongoing"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "Social Media Starter",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "Ad Campaign Management",
+   "F": "Ongoing"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "Launch Campaign",
+   "F": "Medium"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "WhatsApp Business Setup",
+   "F": "Short"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "Google Business Setup",
+   "F": "Short"
+  },
+  {
+   "A": "Marketing & Social",
+   "B": "Content Calendar & Strategy",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Business Plan",
+   "F": "Medium"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Feasibility Study",
+   "F": "Medium"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Pitch Deck",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Financial Model",
+   "F": "Medium"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Market Research Report",
+   "F": "Medium"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Mystery Shopping & Field Research",
+   "F": "Medium"
+  },
+  {
+   "A": "Business & Strategy",
+   "B": "Competitor Analysis",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Development Sector",
+   "B": "The Proposal that Wins",
+   "F": "Medium"
+  },
+  {
+   "A": "Development Sector",
+   "B": "Report Writing",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Development Sector",
+   "B": "M&E Framework",
+   "F": "Medium"
+  },
+  {
+   "A": "Development Sector",
+   "B": "Needs Assessment",
+   "F": "Medium"
+  },
+  {
+   "A": "Development Sector",
+   "B": "Field Data Collection",
+   "F": "Medium"
+  },
+  {
+   "A": "Development Sector",
+   "B": "Third-Party Monitoring",
+   "F": "Medium-Ongoing"
+  },
+  {
+   "A": "Development Sector",
+   "B": "Training Delivery",
+   "F": "Medium"
+  },
+  {
+   "A": "Development Sector",
+   "B": "Case Studies & Stories",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "Events & Experiences",
+   "B": "Event Managed End to End",
+   "F": "Medium"
+  },
+  {
+   "A": "Events & Experiences",
+   "B": "Workshop, Run for You",
+   "F": "Medium"
+  },
+  {
+   "A": "Events & Experiences",
+   "B": "Conference & Exhibition",
+   "F": "Medium-Long"
+  },
+  {
+   "A": "Events & Experiences",
+   "B": "Wedding & Occasion",
+   "F": "Medium"
+  },
+  {
+   "A": "Events & Experiences",
+   "B": "Hub Event Hosting",
+   "F": "Short"
+  },
+  {
+   "A": "Career & Education",
+   "B": "Career Launch Pack",
+   "F": "Short"
+  },
+  {
+   "A": "Career & Education",
+   "B": "The Winning CV",
+   "F": "Short"
+  },
+  {
+   "A": "Career & Education",
+   "B": "LinkedIn Makeover",
+   "F": "Short"
+  },
+  {
+   "A": "Career & Education",
+   "B": "Scholarship Application Package",
+   "F": "Medium"
+  },
+  {
+   "A": "Career & Education",
+   "B": "University Application Support",
+   "F": "Medium"
+  },
+  {
+   "A": "Career & Education",
+   "B": "Interview Coaching",
+   "F": "Short"
+  },
+  {
+   "A": "Career & Education",
+   "B": "Portfolio Building",
+   "F": "Short-Medium"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "The Trusted Hand",
+   "F": "Ongoing / per task"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Build-Home Bundle",
+   "F": "Medium"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Remote Team as a Service",
+   "F": "Ongoing"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Family Occasion, Handled",
+   "F": "Medium"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Property Check & Documentation",
+   "F": "Medium"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Procurement & Delivery",
+   "F": "Short"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Gift Package to Family",
+   "F": "Short"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "The Family Archive",
+   "F": "Medium"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Business Setup at Home",
+   "F": "Medium-Long"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "Due Diligence & Market Entry",
+   "F": "Medium"
+  },
+  {
+   "A": "Σ",
+   "B": "CATALOGUE — TOTAL LIST VALUE"
+  },
+  {
+   "A": "Every price reads 0 until its build and fee are filled — by design. The fee is Kayan's only revenue on a product; the build is what it costs to deliver to standard. When F-19 resolves these, the whole catalogue prices itself."
+  },
+  {},
+  {}
+ ],
+ "05 · SOCIAL PLAYBOOK": [
+  {
+   "A": "The social & narrative playbook"
+  },
+  {
+   "A": "How each buyer and product is sold — the narrative, the format, the channel, the moment."
+  },
+  {
+   "A": "THE NARRATIVE FOR EACH BUYER"
+  },
+  {
+   "A": "Buyer",
+   "B": "The insight",
+   "C": "The hook",
+   "D": "The proof that sells it"
+  },
+  {
+   "A": "Individuals",
+   "B": "A degree or a skill with no clear route to a job or a place to study.",
+   "C": "The gap to a job, closed. The application that becomes an offer.",
+   "D": "A real CV that won an interview; a scholarship application that landed a place."
+  },
+  {
+   "A": "New founders",
+   "B": "Starting out, needing to look serious and be online before the money runs low.",
+   "C": "Look serious by tomorrow. Open to a crowd, not to silence.",
+   "D": "A brand delivered in 48 hours; a site live in five days; a launch that filled a room."
+  },
+  {
+   "A": "SMEs",
+   "B": "A good business that is invisible online while competitors are found first.",
+   "C": "Be found, be chosen, fill your tables.",
+   "D": "A restaurant found on Google and ordered on WhatsApp; a shop selling online."
+  },
+  {
+   "A": "NGOs & INGOs",
+   "B": "Under pressure to deliver donor-standard work on short timelines.",
+   "C": "To the standard donors expect, on the day it is due.",
+   "D": "A proposal that won the grant; field data a donor trusted."
+  },
+  {
+   "A": "Government",
+   "B": "Needing credible, non-partisan capability for real public work.",
+   "C": "Evidence you can build on. Work to standard.",
+   "D": "A needs assessment that grounded a real programme."
+  },
+  {
+   "A": "The diaspora",
+   "B": "Wanting to build, help, or invest at home, and unable to be there.",
+   "C": "You can't be there. We can — and we send you the proof.",
+   "D": "A property checked and documented with photographs; a family occasion handled from abroad; an archive saved."
+  },
+  {
+   "A": "THE CONTENT THAT SELLS A PRODUCT"
+  },
+  {
+   "A": "Format",
+   "B": "What it is",
+   "C": "Where it works"
+  },
+  {
+   "A": "The delivered proof",
+   "B": "A finished product shown as a proof card — the work itself, not a description of it.",
+   "C": "Every family"
+  },
+  {
+   "A": "Before and after",
+   "B": "The transformation — a weak CV to a winning one, a bare shop to an online store.",
+   "C": "Career, Design, Digital, Marketing"
+  },
+  {
+   "A": "The build, filmed",
+   "B": "A quick-return product delivered on camera in its promised window — 48 hours, condensed.",
+   "C": "Fast Track products"
+  },
+  {
+   "A": "The buyer, in their words",
+   "B": "A client saying, plainly, what they got and that their payment was safe.",
+   "C": "Every family; strongest for trust"
+  },
+  {
+   "A": "The diaspora story",
+   "B": "A Yemeni abroad and the thing that was done for them at home, with the proof they received.",
+   "C": "The Homeland Collection"
+  },
+  {
+   "A": "The number that matters",
+   "B": "A concrete result — tables filled, an interview won, a grant secured — stated simply.",
+   "C": "SME, Career, Development"
+  },
+  {
+   "A": "WHERE IT IS SOLD"
+  },
+  {
+   "A": "Channel",
+   "B": "How it carries a product",
+   "C": "For"
+  },
+  {
+   "A": "WhatsApp",
+   "B": "The catalogue behaves like a conversation — a pre-filled message for every product, so interest becomes an order in one tap.",
+   "C": "Every product; the primary route to buy"
+  },
+  {
+   "A": "Instagram & TikTok",
+   "B": "Transformations, filmed builds, and proof — the visual, shareable case for a product.",
+   "C": "Fast Track, Design, Media, Career, diaspora"
+  },
+  {
+   "A": "Facebook",
+   "B": "Local Aden reach and the everyday buyer.",
+   "C": "SME, individual, founder"
+  },
+  {
+   "A": "LinkedIn",
+   "B": "The institutional buyer — companies, NGOs, government, donors.",
+   "C": "Development, Business & Strategy, Data, Corporate"
+  },
+  {
+   "A": "Diaspora communities",
+   "B": "The channels and groups where Yemenis abroad already gather.",
+   "C": "The Homeland Collection"
+  },
+  {
+   "A": "THE MOMENTS TO SELL THEM"
+  },
+  {
+   "A": "Moment",
+   "B": "Why it matters",
+   "C": "The products to lead"
+  },
+  {
+   "A": "Ramadan & Eid",
+   "B": "Gift packages and procurement for family; the diaspora's peak moment to reach home.",
+   "C": "Gift Package to Family · Procurement & Delivery · Family Occasion"
+  },
+  {
+   "A": "Graduation season",
+   "B": "The wave of graduates entering the market needing to stand out.",
+   "C": "Career Launch Pack · The Winning CV · Portfolio Building"
+  },
+  {
+   "A": "New year",
+   "B": "The moment businesses plan and founders commit.",
+   "C": "Business Plan · Feasibility Study · Launch Campaign"
+  },
+  {
+   "A": "Scholarship windows",
+   "B": "The fixed deadlines when study-abroad applications are due.",
+   "C": "Scholarship Application Package · Academic Document Package · Certified Translation"
+  },
+  {
+   "A": "Donor cycles",
+   "B": "The proposal and reporting deadlines that govern the development sector's year.",
+   "C": "The Proposal that Wins · Report Writing · M&E Framework"
+  }
+ ],
+ "06 · WHERE TO LEAD": [
+  {
+   "A": "Where to lead"
+  },
+  {
+   "A": "The four groups that do the heavy lifting — the quick wins, the recurring engine, the diaspora range, and the sector anchors."
+  },
+  {
+   "A": "Group",
+   "B": "Why it matters",
+   "C": "The products"
+  },
+  {
+   "A": "Fast Track — quick-return stars",
+   "B": "Products that prove Kayan in days, and win a first-time buyer with low risk.",
+   "C": "Brand in 48 Hours · Landing Page in 48 Hours · Business Site in Five Days · The Winning CV · Certified Translation · Professional Voice-Over"
+  },
+  {
+   "A": "The Recurring Engine",
+   "B": "Products that turn a one-time buyer into a monthly relationship.",
+   "C": "Social Media Management · Website Care Plan · Remote Team as a Service · Ad Campaign Management · Third-Party Monitoring"
+  },
+  {
+   "A": "The Homeland Collection",
+   "B": "The under-served diaspora range — trust and presence at home, which no freelancer can offer.",
+   "C": "The Trusted Hand · Build-Home Bundle · Family Occasion, Handled · Property Check & Documentation · The Family Archive"
+  },
+  {
+   "A": "Sector Anchors",
+   "B": "The high-value products that anchor Kayan in a whole sector.",
+   "C": "The Proposal that Wins · Field Data Collection · Custom Platform · Arabic Data Annotation at Scale · Business Plan"
+  }
+ ],
+ "07 · IDEAS PIPELINE": [
+  {
+   "A": "How products graduate"
+  },
+  {
+   "A": "New products graduate from a bank of ideas as demand and the bench allow; those that do not earn their place are retired."
+  },
+  {
+   "A": "THE PIPELINE"
+  },
+  {
+   "A": "Step",
+   "B": "What happens",
+   "C": "Owner"
+  },
+  {
+   "A": "An idea is captured",
+   "B": "A repeated client request, a market gap, or a strength on the bench becomes a candidate product.",
+   "C": "POS-MD-LEAD"
+  },
+  {
+   "A": "It is scoped and priced",
+   "B": "The candidate is defined as a fixed scope with a build cost and a fee — a real product, not an aspiration.",
+   "C": "POS-MD-LEAD, POS-FIN"
+  },
+  {
+   "A": "The bench is checked",
+   "B": "A product only launches if verified talent can deliver it to standard, dependably.",
+   "C": "POS-TAL-LEAD"
+  },
+  {
+   "A": "It graduates to the catalogue",
+   "B": "The product is added, presented to the one card shape, and made buyable on the site and on WhatsApp.",
+   "C": "POS-BRD-LEAD"
+  },
+  {
+   "A": "It earns its place, or it goes",
+   "B": "A product that does not sell or cannot be delivered well is retired; the catalogue stays honest.",
+   "C": "POS-MD-LEAD"
+  },
+  {
+   "A": "CANDIDATE PRODUCTS (template — add ideas as they arise)"
+  },
+  {
+   "A": "Candidate",
+   "B": "Family",
+   "C": "Demand signal",
+   "D": "Bench ready?",
+   "E": "Stage",
+   "F": "Decision"
+  },
+  {},
+  {},
+  {},
+  {},
+  {},
+  {}
+ ]
+}

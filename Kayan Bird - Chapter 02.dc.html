@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>طائر كيان · The Kayan Bird — Chapter 02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#F4FCF6;}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+a{color:#0A7C43;text-decoration:none;border-bottom:1px solid rgba(10,124,67,.4);}
+a[href^="#"]{border-bottom:none;}
+a:hover{color:#1FBF6B;border-bottom-color:#1FBF6B;}
+::selection{background:#1FBF6B;color:#04231A;}
+@keyframes kSky{0%{transform:translate3d(0,0,0);}50%{transform:translate3d(-2.5%,1.6%,0);}100%{transform:translate3d(0,0,0);}}
+@keyframes kSettle{0%{transform:translateY(-30px) scale(1.05);opacity:0;}100%{transform:translateY(0) scale(1);opacity:1;}}
+@keyframes kRing{0%{transform:scale(.65);opacity:.85;}100%{transform:scale(2.5);opacity:0;}}
+@keyframes kBar{0%,100%{transform:scaleY(.28);}50%{transform:scaleY(1);}}
+</style>
+</helmet>
+<div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;color:#0C3D2C;background:#F4FCF6;min-height:100vh;">
+
+<section data-screen-label="الغلاف · Cover" style="position:relative;min-height:100vh;overflow:hidden;background:#F4FCF6;">
+  <div style="position:absolute;inset:0;background:radial-gradient(1150px 680px at 84% -10%,rgba(31,191,107,.42),transparent 62%),radial-gradient(880px 600px at 4% 98%,rgba(43,196,245,.26),transparent 62%),radial-gradient(700px 440px at 50% 44%,rgba(255,182,39,.16),transparent 66%);animation:kSky 30s ease-in-out infinite;"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:32px 44px 56px;min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;">
+    <header style="display:flex;justify-content:space-between;align-items:center;gap:20px;padding-bottom:20px;border-bottom:1px solid rgba(4,35,26,.14);">
+      <img src="uploads/kayan_logo_forest.png" alt="كيان Kayan" style="height:44px;">
+      <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#3F6B58;">شِعاب عدن · CHAPTER 02 — THE BIRD · v2 VALIDATED</div>
+    </header>
+    <div style="flex:1;display:grid;grid-template-columns:repeat(12,1fr);gap:26px;align-items:center;padding:52px 0;">
+      <div style="grid-column:span 7;min-width:0;">
+        <div data-reveal="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.2em;color:#0A7C43;">02 — THE BIRD · الطائر</div>
+        <h1 data-reveal="" style="margin:18px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(44px,7vw,104px);line-height:1.22;letter-spacing:-.022em;color:#04231A;">الطائر الذي<br>يعود دائمًا<br><span style="color:#0A7C43;">إلى مِجثمه</span></h1>
+        <div data-reveal="" dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:clamp(18px,2.1vw,27px);line-height:1.24;color:#0A7C43;margin-top:20px;max-width:22ch;">The bird that always returns to the same perch.</div>
+        <p data-reveal="" style="margin:28px 0 0;max-width:54ch;font-size:clamp(15px,1.5vw,18px);line-height:1.85;color:#3F6B58;">راجعنا المعلومة من مصادر علمية، وغيّرنا الاختيار. الطائر الآن أخضر — وأخضره ليس أخضر أي شركة أخرى. وثلاث مرشّحات على الطاولة، لكلٍّ قصّة ونغمة.</p>
+        <div data-reveal="" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:34px;">
+          <a href="#opt-a" style="border:none;background:#0A7C43;color:#F4FCF6;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:14px;font-weight:500;padding:12px 20px;border-radius:2px;">الوروار — المرشَّح الأول</a>
+          <a href="#opt-b" style="border:1px solid rgba(4,35,26,.2);color:#04231A;font-size:14px;font-weight:500;padding:12px 20px;border-radius:2px;background:rgba(255,255,255,.7);">الهدهد — الخيار الثاني</a>
+          <a href="#opt-c" style="border:1px solid rgba(4,35,26,.2);color:#04231A;font-size:14px;font-weight:500;padding:12px 20px;border-radius:2px;background:rgba(255,255,255,.7);">الشِرقب — الوطني</a>
+        </div>
+      </div>
+      <div data-reveal="" style="grid-column:span 5;min-width:0;">
+        <div style="background:#fff;border:1px solid rgba(4,35,26,.12);box-shadow:0 30px 80px rgba(4,35,26,.14);">
+          <div style="height:clamp(300px,44vh,470px);"><image-slot id="kayan-bird-hero-green" shape="rect" placeholder="الصورة البطلة — وروار أخضر عربي على مِجثم، خلفية نظيفة · HERO: Arabian Green Bee-eater perched, clean background, 4:5"></image-slot></div>
+          <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#3F6B58;padding:11px 13px;display:flex;justify-content:space-between;gap:10px;border-top:1px solid rgba(4,35,26,.1);"><span>PLATE 02.00 — HERO SLOT</span><span style="color:#0A7C43;">DROP PHOTO</span></div>
+        </div>
+      </div>
+    </div>
+    <footer style="display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;padding-top:20px;border-top:1px solid rgba(4,35,26,.14);">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(15px,1.7vw,20px);color:#0A7C43;">«خلف كل نجاح، كيان»</div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-style:italic;font-size:14.5px;color:#3F6B58;">Behind every success, a Kayan.</div>
+    </footer>
+  </div>
+</section>
+<section data-screen-label="٠٢.٠١ التحقّق · Validation" style="background:#04231A;">
+  <div style="max-width:1320px;margin:0 auto;padding:92px 44px;">
+    <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:26px;">
+      <div style="grid-column:span 3;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#1FBF6B;">02.01<br>VALIDATION<br><span style="color:rgba(244,252,246,.62);">التحقّق من المعلومة</span></div>
+      </div>
+      <div style="grid-column:span 9;min-width:0;">
+        <h2 data-reveal="" style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(25px,3.2vw,42px);line-height:1.34;letter-spacing:-.01em;color:#F4FCF6;max-width:26ch;">صحّحنا الاختيار السابق. هذه هي المعلومة الموثّقة.</h2>
+        <p data-reveal="" dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:16.5px;line-height:1.7;color:rgba(244,252,246,.6);margin:16px 0 0;max-width:60ch;">The Blue Rock Thrush was defensible but wrong: it is a widespread Palearctic bird, not distinctly Yemeni, and it is blue — not the green you asked for. Three validated candidates replace it.</p>
+
+        <div style="margin-top:48px;border:1px solid rgba(244,252,246,.16);">
+          <div data-reveal="" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:1px;background:rgba(244,252,246,.16);">
+            <div style="background:#0C3D2C;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(244,252,246,.55);">CANDIDATE</span></div>
+            <div style="background:#0C3D2C;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(244,252,246,.55);">VALIDATED FACT</span></div>
+            <div style="background:#0C3D2C;padding:14px 18px;"><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(244,252,246,.55);">FIT FOR KAYAN</span></div>
+          </div>
+          <div data-reveal="" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:1px;background:rgba(244,252,246,.16);">
+            <div style="background:rgba(31,191,107,.1);padding:20px 18px;border-inline-start:3px solid #1FBF6B;">
+              <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:19px;color:#F4FCF6;">الوروار الأخضر العربي</div>
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#1FBF6B;margin-top:5px;">Merops cyanophrys · وروار أخضر صغير</div>
+              <div style="font-size:13.5px;color:rgba(244,252,246,.65);line-height:1.7;margin-top:8px;">أخضر زمرّدي، حاجب أزرق كهربي، تاج نُحاسي، قناع أسود.</div>
+            </div>
+            <div style="background:#04231A;padding:20px 18px;font-size:13.5px;line-height:1.75;color:rgba(244,252,246,.72);">
+              وُصف علميًا من عيّنات جُمعت في <strong style="color:#F4FCF6;">اليمن</strong>، وسُمّي على حاجبه الأزرق. مقيم غير مهاجر. رُقّي لنوع مستقل عام ٢٠٢١.
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(31,191,107,.9);margin-top:10px;">TYPE LOCALITY: YEMEN · RESIDENT</div>
+            </div>
+            <div style="background:#04231A;padding:20px 18px;font-size:13.5px;line-height:1.75;color:rgba(244,252,246,.72);">
+              يطلق من مِجثمه، يصطاد في الهواء، <strong style="color:#1FBF6B;">ويعود إلى المِجثم نفسه</strong>. هذا هو نموذج كيان الاقتصادي حرفيًا.
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#1FBF6B;margin-top:10px;">★ RECOMMENDED</div>
+            </div>
+          </div>
+          <div data-reveal="" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:1px;background:rgba(244,252,246,.16);">
+            <div style="background:rgba(217,117,52,.1);padding:20px 18px;border-inline-start:3px solid #D97534;">
+              <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:19px;color:#F4FCF6;">الهُدهُد</div>
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#D97534;margin-top:5px;">Upupa epops · Hoopoe</div>
+              <div style="font-size:13.5px;color:rgba(244,252,246,.65);line-height:1.7;margin-top:8px;">قِرفي نُحاسي، جناح مُخطّط أسود وأبيض، تاج يُفتح كالمروحة.</div>
+            </div>
+            <div style="background:#04231A;padding:20px 18px;font-size:13.5px;line-height:1.75;color:rgba(244,252,246,.72);">
+              رسول سليمان إلى <strong style="color:#F4FCF6;">سبأ</strong> — أي إلى اليمن. أعمق جذر ثقافي ممكن، واسمه نفسه نغمة: هُدْ·هُدْ.
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(217,117,52,.95);margin-top:10px;">QURANIC · SABA/YEMEN · ONOMATOPOEIC</div>
+            </div>
+            <div style="background:#04231A;padding:20px 18px;font-size:13.5px;line-height:1.75;color:rgba(244,252,246,.72);">
+              الطائر الذي جاء بخبرٍ يقين. كيان منصّة تحقّق — والهدهد هو المُتحقِّق الأول في الذاكرة العربية.
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#D97534;margin-top:10px;">◆ STRONGEST STORY · NOT GREEN</div>
+            </div>
+          </div>
+          <div data-reveal="" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:1px;background:rgba(244,252,246,.16);">
+            <div style="background:rgba(233,190,75,.1);padding:20px 18px;border-inline-start:3px solid #E9BE4B;">
+              <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:19px;color:#F4FCF6;">الشِرقب ذهبي الجناح</div>
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#E9BE4B;margin-top:5px;">Rhynchostruthus · Golden-winged Grosbeak</div>
+              <div style="font-size:13.5px;color:rgba(244,252,246,.65);line-height:1.7;margin-top:8px;">رمادي بنّي، قناع أسود، وجنة بيضاء، ورقعة صفراء لامعة على الجناح.</div>
+            </div>
+            <div style="background:#04231A;padding:20px 18px;font-size:13.5px;line-height:1.75;color:rgba(244,252,246,.72);">
+              <strong style="color:#F4FCF6;">الطائر الوطني الرسمي لليمن</strong> — أقرّه مجلس الوزراء عام ٢٠٠٨. مقيم في مرتفعات اليمن وسقطرى.
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(233,190,75,.95);margin-top:10px;">OFFICIAL NATIONAL BIRD · 2008</div>
+            </div>
+            <div style="background:#04231A;padding:20px 18px;font-size:13.5px;line-height:1.75;color:rgba(244,252,246,.72);">
+              ذهبه في الجناح فقط — يظهر عند الطيران. «الذهب يُكسَب» مرسومًا في الطائر نفسه. لكنه رسمي أكثر من اللازم.
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#E9BE4B;margin-top:10px;">◇ MOST OFFICIAL · LEAST DISTINCT</div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="" dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:rgba(244,252,246,.35);margin-top:16px;line-height:1.8;">SOURCES: IOC World Bird List 2021 split · BirdLife International / Yemen Council of Ministers 2008 · Birds of the World (Cornell) · Qur'an 27:20–28 (An-Naml).</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="opt-a" data-screen-label="٠٢.٠٢ الوروار · Option A" style="background:#FFFFFF;border-top:1px solid rgba(4,35,26,.12);">
+  <div style="max-width:1320px;margin:0 auto;padding:92px 44px;">
+    <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:26px;">
+      <div style="grid-column:span 3;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#0A7C43;position:sticky;top:32px;">02.02<br>OPTION A<br><span style="color:#5C8570;">الوروار الأخضر</span><br><br><span style="color:#1FBF6B;">★ RECOMMENDED</span></div>
+      </div>
+      <div style="grid-column:span 9;min-width:0;">
+        <h2 data-reveal="" style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(25px,3.3vw,44px);line-height:1.32;letter-spacing:-.012em;color:#04231A;max-width:24ch;">يطلق، يصطاد، ويعود إلى المِجثم نفسه</h2>
+        <p data-reveal="" dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.65;color:#3F6B58;margin:14px 0 0;max-width:58ch;">The bee-eater's whole behaviour is a single sentence: it launches from a perch, takes what it came for in mid-air, and returns to the exact same perch. That is the Kayan economic model, drawn by an animal.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:rgba(4,35,26,.12);border:1px solid rgba(4,35,26,.12);margin-top:44px;">
+          <div data-reveal="" style="background:#fff;padding:22px 20px 26px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.15em;color:#0A7C43;">BEAT 01</div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:19px;color:#04231A;margin-top:12px;">يجثم</div>
+            <p style="font-size:14px;line-height:1.8;color:#3F6B58;margin:8px 0 0;">الصفحة تفتح ساكنة. الطائر واقف. لا شيء يتحرّك إلا التنفّس.</p>
+            <p dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;line-height:1.6;color:#7FA090;margin:8px 0 0;">Stillness first. The homepage opens perched.</p>
+          </div>
+          <div data-reveal="" style="background:#fff;padding:22px 20px 26px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.15em;color:#2BC4F5;">BEAT 02</div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:19px;color:#04231A;margin-top:12px;">يطلق</div>
+            <p style="font-size:14px;line-height:1.8;color:#3F6B58;margin:8px 0 0;">حركة واحدة حاسمة عند التكليف. الانطلاق محجوز للعمل الحقيقي فقط.</p>
+            <p dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;line-height:1.6;color:#7FA090;margin:8px 0 0;">Launch is reserved for a real commission.</p>
+          </div>
+          <div data-reveal="" style="background:#fff;padding:22px 20px 26px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.15em;color:#D97534;">BEAT 03</div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:19px;color:#04231A;margin-top:12px;">يأخذ في الهواء</div>
+            <p style="font-size:14px;line-height:1.8;color:#3F6B58;margin:8px 0 0;">دقّة لا عنف. المهمّة تُنجَز في الطيران، بلا استعراض ولا ضجيج.</p>
+            <p dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;line-height:1.6;color:#7FA090;margin:8px 0 0;">Precision mid-air. Done, not announced.</p>
+          </div>
+          <div data-reveal="" style="background:#04231A;padding:22px 20px 26px;color:#F4FCF6;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.15em;color:#1FBF6B;">BEAT 04 — THE POINT</div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:19px;margin-top:12px;">ويعود</div>
+            <p style="font-size:14px;line-height:1.8;color:rgba(244,252,246,.72);margin:8px 0 0;">إلى المِجثم نفسه. القيمة لا تُهاجر — تبقى في عدن. هذه الجملة كلها.</p>
+            <p dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;line-height:1.6;color:rgba(244,252,246,.5);margin:8px 0 0;">Same perch. The value stays in Aden.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:24px;">
+          <div data-reveal="" style="border:1px solid rgba(4,35,26,.12);background:#fff;">
+            <div style="height:270px;"><image-slot id="kayan-bird-beeeater-perch" shape="rect" placeholder="وروار على مِجثم — لقطة جانبية نظيفة · Bee-eater perched, clean side profile"></image-slot></div>
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#3F6B58;padding:11px 13px;border-top:1px solid rgba(4,35,26,.1);">PLATE 02.02a — PERCHED · الوقفة الأساسية</div>
+          </div>
+          <div data-reveal="" style="border:1px solid rgba(4,35,26,.12);background:#fff;">
+            <div style="height:270px;"><image-slot id="kayan-bird-beeeater-flight" shape="rect" placeholder="وروار في الطيران، جناح مفتوح · Bee-eater in flight, wings open"></image-slot></div>
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#3F6B58;padding:11px 13px;border-top:1px solid rgba(4,35,26,.1);">PLATE 02.02b — LAUNCH · لحظة التكليف</div>
+          </div>
+          <div data-reveal="" style="border:1px solid rgba(4,35,26,.12);background:#04231A;padding:22px;color:#F4FCF6;display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#1FBF6B;">COLOUR MAP · خريطة الريش</div>
+              <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px;">
+                <div style="display:flex;align-items:center;gap:11px;"><span style="width:30px;height:30px;background:linear-gradient(135deg,#1FBF6B,#0A7C43);flex-shrink:0;"></span><div><div style="font-size:13.5px;font-weight:600;">الظهر والجناح</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(244,252,246,.5);">#1FBF6B → #0A7C43</div></div></div>
+                <div style="display:flex;align-items:center;gap:11px;"><span style="width:30px;height:30px;background:#2BC4F5;flex-shrink:0;"></span><div><div style="font-size:13.5px;font-weight:600;">الحاجب والحلق</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(244,252,246,.5);">#2BC4F5 — electric brow</div></div></div>
+                <div style="display:flex;align-items:center;gap:11px;"><span style="width:30px;height:30px;background:#D97534;flex-shrink:0;"></span><div><div style="font-size:13.5px;font-weight:600;">التاج والقفا</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(244,252,246,.5);">#D97534 — copper crown</div></div></div>
+                <div style="display:flex;align-items:center;gap:11px;"><span style="width:30px;height:30px;background:#04231A;border:1px solid rgba(244,252,246,.25);flex-shrink:0;"></span><div><div style="font-size:13.5px;font-weight:600;">القناع والمنقار</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(244,252,246,.5);">#04231A — mask &amp; bill</div></div></div>
+              </div>
+            </div>
+            <p dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;line-height:1.65;color:rgba(244,252,246,.5);margin:18px 0 0;">Gold appears nowhere on this bird. Gold stays reserved for what a person earns.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section data-screen-label="٠٢.٠٣ الأخضر · The Green" style="background:#F4FCF6;border-top:1px solid rgba(4,35,26,.12);">
+  <div style="max-width:1320px;margin:0 auto;padding:92px 44px;">
+    <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:26px;">
+      <div style="grid-column:span 3;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#0A7C43;position:sticky;top:32px;">02.03<br>THE GREEN<br><span style="color:#5C8570;">الأخضر الذي لا يملكه أحد</span></div>
+      </div>
+      <div style="grid-column:span 9;min-width:0;">
+        <h2 data-reveal="" style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(25px,3.3vw,44px);line-height:1.32;letter-spacing:-.012em;color:#04231A;max-width:24ch;">ليس أخضر البنوك، ولا أخضر التطبيقات</h2>
+        <p data-reveal="" dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.65;color:#3F6B58;margin:14px 0 0;max-width:58ch;">Corporate green sits at hue 145–150 with low chroma — safe, sedated, everywhere. Kayan's green is pushed to high chroma and warmed toward 152, so it reads as a living wing in sunlight, not a bank. Teal stays as the deep-water ink from Chapter 01; emerald becomes the signature.</p>
+
+        <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:1px;background:rgba(4,35,26,.12);border:1px solid rgba(4,35,26,.12);margin-top:44px;">
+          <div style="background:#F4FCF6;padding:18px 16px;height:132px;display:flex;flex-direction:column;justify-content:space-between;"><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#04231A;">نور الورق</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7FA090;line-height:1.6;">#F4FCF6<br>CANVAS · 70%</div></div>
+          <div style="background:#E4F7EA;padding:18px 16px;height:132px;display:flex;flex-direction:column;justify-content:space-between;"><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#04231A;">زَبَد</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5C8570;line-height:1.6;">#E4F7EA<br>TINT</div></div>
+          <div style="background:#0A7C43;padding:18px 16px;height:132px;display:flex;flex-direction:column;justify-content:space-between;color:#F4FCF6;"><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;">زُمُرّد عدن</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;opacity:.75;line-height:1.6;">#0A7C43<br>SIGNATURE</div></div>
+          <div style="background:#1FBF6B;padding:18px 16px;height:132px;display:flex;flex-direction:column;justify-content:space-between;color:#04231A;"><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;">وروار</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;opacity:.8;line-height:1.6;">#1FBF6B<br>LIVING ACCENT</div></div>
+          <div style="background:#2BC4F5;padding:18px 16px;height:132px;display:flex;flex-direction:column;justify-content:space-between;color:#04231A;"><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;">حاجب</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;opacity:.8;line-height:1.6;">#2BC4F5<br>BROW</div></div>
+          <div style="background:#D97534;padding:18px 16px;height:132px;display:flex;flex-direction:column;justify-content:space-between;color:#F4FCF6;"><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;">نُحاس</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;opacity:.8;line-height:1.6;">#D97534<br>COPPER</div></div>
+          <div style="background:linear-gradient(135deg,#E9BE4B,#C9A227);padding:18px 16px;height:132px;display:flex;flex-direction:column;justify-content:space-between;color:#3B2F06;"><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;">ذهب</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;opacity:.8;line-height:1.6;">#C9A227<br>EARNED ONLY</div></div>
+          <div style="background:#04231A;padding:18px 16px;height:132px;display:flex;flex-direction:column;justify-content:space-between;color:#F4FCF6;"><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;">ليل النخيل</div><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;opacity:.6;line-height:1.6;">#04231A<br>INK · 20%</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:24px;">
+          <div data-reveal="" style="background:#fff;border:1px solid rgba(4,35,26,.12);padding:22px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#0A7C43;">WHY IT READS DIFFERENT</div>
+            <div style="display:flex;gap:0;margin-top:16px;height:52px;">
+              <div style="flex:1;background:#16A34A;"></div><div style="flex:1;background:#22C55E;"></div><div style="flex:1;background:#10B981;"></div><div style="flex:1.6;background:#1FBF6B;box-shadow:inset 0 0 0 2px #04231A;"></div>
+            </div>
+            <p style="font-size:13.5px;line-height:1.8;color:#3F6B58;margin:12px 0 0;">الثلاثة الأولى هي الأخضر الشائع في كل مكان. الرابع — المحدّد بإطار — هو أخضرنا: كروما أعلى، وميل دافئ يجعله يبدو مضيئًا من الداخل لا مطبوعًا.</p>
+          </div>
+          <div data-reveal="" style="background:#fff;border:1px solid rgba(4,35,26,.12);padding:22px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#0A7C43;">CONTRAST — مضمون</div>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px;">
+              <div style="background:#04231A;color:#F4FCF6;padding:9px 12px;font-size:13px;display:flex;justify-content:space-between;"><span>ليل النخيل / نور الورق</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#1FBF6B;">15.8:1 AAA</span></div>
+              <div style="background:#0A7C43;color:#fff;padding:9px 12px;font-size:13px;display:flex;justify-content:space-between;"><span>زمرّد / أبيض</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;">5.2:1 AA</span></div>
+              <div style="background:#1FBF6B;color:#04231A;padding:9px 12px;font-size:13px;display:flex;justify-content:space-between;"><span>وروار / ليل</span><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;">6.9:1 AA</span></div>
+            </div>
+            <p style="font-size:13px;line-height:1.75;color:#3F6B58;margin:12px 0 0;">الأخضر الفاتح لا يحمل نصًّا أبيض أبدًا — يحمل الحبر الداكن فقط. والزمرّد على الأبيض هو <span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:12px;">#0A7C43</span> — الدرجة التي تعبر حدّ ٤٫٥ للنصّ العادي.</p>
+          </div>
+          <div data-reveal="" style="background:#0A7C43;border:1px solid rgba(4,35,26,.12);padding:22px;color:#F4FCF6;display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(244,252,246,.7);">CONTINUITY — من شِعاب عدن</div>
+              <p style="font-size:14px;line-height:1.85;margin:16px 0 0;">الفصل الأول أعطانا الماء العميق والذهب. الفصل الثاني يضيف الكائن الحيّ الذي يسكنه. لا نلغي شيئًا — نُكمل: الأزرق المرجاني يصبح حبر الأعماق، والزمرّد يصبح التوقيع.</p>
+            </div>
+            <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;color:rgba(244,252,246,.7);margin-top:18px;line-height:1.6;">Chapter 01 gave the water. Chapter 02 gives what lives in it.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section data-screen-label="٠٢.٠٤ النغمة · The Sonic Rune" style="background:#04231A;border-top:1px solid rgba(4,35,26,.12);">
+  <div style="max-width:1320px;margin:0 auto;padding:92px 44px;">
+    <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:26px;">
+      <div style="grid-column:span 3;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#1FBF6B;position:sticky;top:32px;">02.04<br>THE SONIC RUNE<br><span style="color:rgba(244,252,246,.62);">النغمة الموقّعة</span><br><br><span style="color:rgba(244,252,246,.62);">اضغط للسماع →</span></div>
+      </div>
+      <div style="grid-column:span 9;min-width:0;">
+        <h2 data-reveal="" style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(25px,3.3vw,44px);line-height:1.32;letter-spacing:-.012em;color:#F4FCF6;max-width:24ch;">نغمة مبنيّة على مقام رست — لا على السلّم الغربي</h2>
+        <p data-reveal="" dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.65;color:rgba(244,252,246,.6);margin:14px 0 0;max-width:60ch;">Every rune is built on Maqam Rast on D. The neutral third — 347 cents, a quarter-tone flatter than the Western major third — is the single interval that makes an ear hear "Arabic" before it hears anything else. Three runes, one for each candidate bird.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:24px;margin-top:44px;">
+          <div data-reveal="" onClick="{{ play }}" data-rune="runeA" style="position:relative;background:rgba(31,191,107,.1);border:1px solid rgba(31,191,107,.4);padding:24px;cursor:pointer;overflow:hidden;" style-hover="background:rgba(31,191,107,.18);border-color:#1FBF6B;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
+              <div>
+                <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:20px;color:#F4FCF6;">رُنَة الوروار</div>
+                <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#1FBF6B;margin-top:5px;">RUNE A · TRILL → SETTLE</div>
+              </div>
+              <span style="width:34px;height:34px;border:1px solid rgba(31,191,107,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1FBF6B;font-size:12px;flex-shrink:0;">▶</span>
+            </div>
+            <div style="display:flex;align-items:flex-end;gap:4px;height:46px;margin-top:20px;">
+              <div style="width:5px;height:34%;background:#1FBF6B;animation:kBar 1.4s ease-in-out infinite;"></div><div style="width:5px;height:52%;background:#1FBF6B;animation:kBar 1.4s .08s ease-in-out infinite;"></div><div style="width:5px;height:34%;background:#1FBF6B;animation:kBar 1.4s .16s ease-in-out infinite;"></div><div style="width:5px;height:52%;background:#1FBF6B;animation:kBar 1.4s .24s ease-in-out infinite;"></div><div style="width:5px;height:34%;background:#1FBF6B;animation:kBar 1.4s .32s ease-in-out infinite;"></div><div style="width:11px;"></div><div style="width:5px;height:100%;background:#E9BE4B;animation:kBar 1.4s .5s ease-in-out infinite;"></div>
+            </div>
+            <p style="font-size:13.5px;line-height:1.8;color:rgba(244,252,246,.72);margin:16px 0 0;">ستّ نغمات سريعة متدحرجة — الانطلاق — ثم نغمة واحدة نظيفة تستقرّ على القرار. الصوت يحكي: طار، وأخذ، وعاد.</p>
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(244,252,246,.4);margin-top:12px;line-height:1.7;">USE: verification passed · card activated<br>LENGTH 1.3s · A–B♭ trill → D</div>
+          </div>
+
+          <div data-reveal="" onClick="{{ play }}" data-rune="runeB" style="position:relative;background:rgba(217,117,52,.1);border:1px solid rgba(217,117,52,.45);padding:24px;cursor:pointer;overflow:hidden;" style-hover="background:rgba(217,117,52,.18);border-color:#D97534;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
+              <div>
+                <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:20px;color:#F4FCF6;">رُنَة الهُدهُد</div>
+                <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#D97534;margin-top:5px;">RUNE B · هُدْ · هُدْ · هُدْ</div>
+              </div>
+              <span style="width:34px;height:34px;border:1px solid rgba(217,117,52,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#D97534;font-size:12px;flex-shrink:0;">▶</span>
+            </div>
+            <div style="display:flex;align-items:flex-end;gap:4px;height:46px;margin-top:20px;">
+              <div style="width:9px;height:62%;background:#D97534;animation:kBar 1.8s ease-in-out infinite;"></div><div style="width:7px;"></div><div style="width:9px;height:62%;background:#D97534;animation:kBar 1.8s .2s ease-in-out infinite;"></div><div style="width:7px;"></div><div style="width:9px;height:62%;background:#D97534;animation:kBar 1.8s .4s ease-in-out infinite;"></div><div style="width:13px;"></div><div style="width:9px;height:100%;background:#E9BE4B;animation:kBar 1.8s .64s ease-in-out infinite;"></div>
+            </div>
+            <p style="font-size:13.5px;line-height:1.8;color:rgba(244,252,246,.72);margin:16px 0 0;">اسم الطائر <em>هو</em> اللحن. ثلاث نغمات متساوية ناعمة، ثم نغمة رابعة تهبط وتُجيب. أقصر شعار صوتي ممكن، ومحفوظ في اللغة أصلًا.</p>
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(244,252,246,.4);margin-top:12px;line-height:1.7;">USE: notification · a report arrives<br>LENGTH 1.8s · G·G·G → neutral 3rd + D</div>
+          </div>
+
+          <div data-reveal="" onClick="{{ play }}" data-rune="runeC" id="opt-c" style="position:relative;background:rgba(233,190,75,.1);border:1px solid rgba(233,190,75,.45);padding:24px;cursor:pointer;overflow:hidden;" style-hover="background:rgba(233,190,75,.18);border-color:#E9BE4B;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
+              <div>
+                <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:20px;color:#F4FCF6;">رُنَة الشِرقب</div>
+                <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#E9BE4B;margin-top:5px;">RUNE C · RISING FIFTH + GOLD</div>
+              </div>
+              <span style="width:34px;height:34px;border:1px solid rgba(233,190,75,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#E9BE4B;font-size:12px;flex-shrink:0;">▶</span>
+            </div>
+            <div style="display:flex;align-items:flex-end;gap:4px;height:46px;margin-top:20px;">
+              <div style="width:13px;height:48%;background:#E9BE4B;animation:kBar 2s ease-in-out infinite;"></div><div style="width:9px;"></div><div style="width:13px;height:82%;background:#E9BE4B;animation:kBar 2s .22s ease-in-out infinite;"></div><div style="width:9px;"></div><div style="width:13px;height:100%;background:#F4FCF6;opacity:.55;animation:kBar 2s .46s ease-in-out infinite;"></div>
+            </div>
+            <p style="font-size:13.5px;line-height:1.8;color:rgba(244,252,246,.72);margin:16px 0 0;">فاصلة صاعدة واسعة — القرار ثم الخامس — ومعها توافقيّة عالية خفيفة تلمع كرقعة الجناح الذهبية لحظة انفتاحه.</p>
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(244,252,246,.4);margin-top:12px;line-height:1.7;">USE: tier earned · Founders' Wall<br>LENGTH 1.7s · D → A + high shimmer</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:rgba(244,252,246,.16);border:1px solid rgba(244,252,246,.16);margin-top:24px;">
+          <div data-reveal="" onClick="{{ play }}" data-rune="tick" style="position:relative;background:#0C3D2C;padding:20px 18px;cursor:pointer;" style-hover="background:#12513A;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#1FBF6B;">TICK · 0.4s</div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16px;color:#F4FCF6;margin-top:8px;">تأكيد صغير</div>
+            <p style="font-size:12.5px;line-height:1.7;color:rgba(244,252,246,.55);margin:6px 0 0;">حقل مكتمل، مستند مقبول.</p>
+          </div>
+          <div data-reveal="" onClick="{{ play }}" data-rune="tier" style="position:relative;background:#0C3D2C;padding:20px 18px;cursor:pointer;" style-hover="background:#12513A;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#E9BE4B;">TIER · 0.9s</div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16px;color:#F4FCF6;margin-top:8px;">ارتقاء درجة</div>
+            <p style="font-size:12.5px;line-height:1.7;color:rgba(244,252,246,.55);margin:6px 0 0;">أربع نغمات صاعدة على رست.</p>
+          </div>
+          <div data-reveal="" onClick="{{ play }}" data-rune="accept" style="position:relative;background:#0C3D2C;padding:20px 18px;cursor:pointer;" style-hover="background:#12513A;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#2BC4F5;">ACCEPT · 2.2s</div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16px;color:#F4FCF6;margin-top:8px;">تسليم مقبول</div>
+            <p style="font-size:12.5px;line-height:1.7;color:rgba(244,252,246,.55);margin:6px 0 0;">ثلاثية كاملة — اللحظة الأهمّ.</p>
+          </div>
+          <div data-reveal="" style="background:#04231A;padding:20px 18px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(244,252,246,.5);">RULES · قواعد الصوت</div>
+            <p style="font-size:12.5px;line-height:1.75;color:rgba(244,252,246,.6);margin:8px 0 0;">لا يُشغَّل صوت قبل إذن. لا صوت على التحميل. الصوت يؤكّد ولا يبيع. صامت افتراضيًا على الجوال.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="opt-b" data-screen-label="٠٢.٠٥ الهدهد · The Hoopoe" style="background:#FFFFFF;border-top:1px solid rgba(4,35,26,.12);">
+  <div style="max-width:1320px;margin:0 auto;padding:92px 44px;">
+    <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:26px;">
+      <div style="grid-column:span 3;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#D97534;position:sticky;top:32px;">02.05<br>OPTION B<br><span style="color:#5C8570;">الهُدهُد — الرسول</span></div>
+      </div>
+      <div style="grid-column:span 9;min-width:0;">
+        <h2 data-reveal="" style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(25px,3.3vw,44px);line-height:1.32;letter-spacing:-.012em;color:#04231A;max-width:26ch;">الطائر الذي جاء من سبأ بخبرٍ يقين</h2>
+        <p data-reveal="" dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.65;color:#3F6B58;margin:14px 0 0;max-width:60ch;">The hoopoe is the one bird in Arab memory whose entire role was verification: it went to Sheba — Yemen — saw for itself, and came back with a report that could be trusted. If Kayan is a verification system, this bird is already its patron. Its cost: it is copper and cream, not green.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;margin-top:44px;">
+          <div data-reveal="" style="border:1px solid rgba(4,35,26,.12);background:#fff;">
+            <div style="height:280px;"><image-slot id="kayan-bird-hoopoe" shape="rect" placeholder="هدهد بتاج مفتوح — لقطة جانبية · Hoopoe with crest fully raised, side profile"></image-slot></div>
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#3F6B58;padding:11px 13px;border-top:1px solid rgba(4,35,26,.1);">PLATE 02.05a — CREST RAISED · التاج مفتوح</div>
+          </div>
+          <div data-reveal="" style="background:#FBF3EC;border:1px solid rgba(4,35,26,.12);padding:24px;">
+            <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#B85F22;">THE CREST = THE TIERS</div>
+            <p style="font-size:14.5px;line-height:1.85;color:#3F2A18;margin:14px 0 0;">تاج الهدهد يُفتح على درجات — وهذا هو نظام الدرجات مرسومًا في الطائر. البطاقة T0 تاجها مغلق. T4 تاجها مفتوح كاملًا. الارتقاء ليس شارة تُضاف، بل شيء يُفتح.</p>
+            <div style="display:flex;align-items:flex-end;gap:8px;margin-top:20px;height:60px;">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:100%;height:14%;background:#D9C4B0;"></div><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#8A6A50;">T0</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:100%;height:34%;background:#D19A6B;"></div><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#8A6A50;">T1</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:100%;height:56%;background:#D97534;"></div><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#8A6A50;">T2</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:100%;height:78%;background:#C9A227;"></div><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#8A6A50;">T3</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:100%;height:100%;background:linear-gradient(180deg,#E9BE4B,#04231A);"></div><span dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#04231A;font-weight:600;">T4</span></div>
+            </div>
+          </div>
+          <div data-reveal="" style="background:#04231A;border:1px solid rgba(4,35,26,.12);padding:24px;color:#F4FCF6;display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#D97534;">TRADE-OFF · المقايضة</div>
+              <div style="display:flex;flex-direction:column;gap:14px;margin-top:16px;">
+                <div><div style="font-size:14px;font-weight:600;color:#1FBF6B;">مع الهدهد نكسب</div><p style="font-size:13px;line-height:1.75;color:rgba(244,252,246,.65);margin:5px 0 0;">قصّة لا تُنسى، جذرًا قرآنيًا في سبأ، ونغمة اسمها لحنها، وتاجًا يساوي نظام الدرجات.</p></div>
+                <div><div style="font-size:14px;font-weight:600;color:#D97534;">ونخسر</div><p style="font-size:13px;line-height:1.75;color:rgba(244,252,246,.65);margin:5px 0 0;">الأخضر. الهدهد قِرفي ونُحاسي — ولو اخترناه فاللوحة تتحوّل إلى نُحاس وكريمي، والأخضر يعود عنصرًا ثانويًا.</p></div>
+              </div>
+            </div>
+            <p dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;line-height:1.65;color:rgba(244,252,246,.5);margin:18px 0 0;">Pick the hoopoe only if story outranks colour. It cannot be both.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="٠٢.٠٦ القرار · Recommendation" style="background:#0A7C43;">
+  <div style="max-width:1320px;margin:0 auto;padding:92px 44px;">
+    <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:26px;">
+      <div style="grid-column:span 3;min-width:0;">
+        <div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:rgba(244,252,246,.65);">02.06<br>MY CALL<br><span style="color:rgba(244,252,246,.62);">قراري</span></div>
+      </div>
+      <div style="grid-column:span 9;min-width:0;">
+        <h2 data-reveal="" style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(26px,3.5vw,46px);line-height:1.3;letter-spacing:-.014em;color:#F4FCF6;max-width:26ch;">الوروار هو الطائر. والهدهد هو الصوت.</h2>
+        <p data-reveal="" style="margin:18px 0 0;max-width:56ch;font-size:clamp(15px,1.5vw,18px);line-height:1.85;color:rgba(244,252,246,.82);">لا نختار بينهما — نوزّع الأدوار. الوروار يحمل الهوية البصرية لأنه يعطينا الأخضر الفريد وسلوك «العودة إلى المِجثم». والهدهد يحمل الهوية الصوتية لأن اسمه لحنه، وقصّته في سبأ هي قصّة التحقّق نفسها. الشِرقب يبقى للحظات الرسمية والوطنية فقط.</p>
+        <p data-reveal="" dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.7;color:rgba(244,252,246,.62);margin:14px 0 0;max-width:60ch;">Bee-eater for the eye. Hoopoe for the ear. Grosbeak for the state. One system, three roles, no compromise on either the green or the story.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(244,252,246,.25);border:1px solid rgba(244,252,246,.25);margin-top:44px;">
+          <div data-reveal="" style="background:#04231A;padding:22px 20px;color:#F4FCF6;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#1FBF6B;">NEXT · 02b</div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;margin-top:10px;">الصورة الحقيقية</div><p style="font-size:13px;line-height:1.75;color:rgba(244,252,246,.6);margin:6px 0 0;">تعبئة الخانات بصور مرخّصة أو تصوير مُكلَّف — ثلاث وقفات.</p></div>
+          <div data-reveal="" style="background:#04231A;padding:22px 20px;color:#F4FCF6;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#2BC4F5;">03</div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;margin-top:10px;">الحروف والطباعة</div><p style="font-size:13px;line-height:1.75;color:rgba(244,252,246,.6);margin:6px 0 0;">الإسكندرية للعناوين، بلكس العربي للنصّ — مقياس كامل عربي/إنجليزي.</p></div>
+          <div data-reveal="" style="background:#04231A;padding:22px 20px;color:#F4FCF6;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#D97534;">04</div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;margin-top:10px;">البطاقة بالأخضر</div><p style="font-size:13px;line-height:1.75;color:rgba(244,252,246,.6);margin:6px 0 0;">إعادة بناء الدرجات الخمس على الزمرّد، مع التاج المتصاعد.</p></div>
+          <div data-reveal="" style="background:#04231A;padding:22px 20px;color:#F4FCF6;"><div dir="ltr" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#E9BE4B;">05</div><div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:17px;margin-top:10px;">الصفحة الأولى</div><p style="font-size:13px;line-height:1.75;color:rgba(244,252,246,.6);margin:6px 0 0;">الموقع كاملًا على النظام الأخضر — عربي أولًا.</p></div>
+        </div>
+        <div data-reveal="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid rgba(244,252,246,.25);">
+          <img src="uploads/kayan_logo_gold.png" alt="Kayan" style="height:40px;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16px;color:#F4FCF6;">«خلف كل نجاح، كيان» — <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-style:italic;">Behind every success, a Kayan.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--END--></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1320},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Experience&quot;},&quot;sound&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Experience&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (this.reduce || this.props.motion === false) return;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(16px)'; el.style.transition = 'opacity .8s ease, transform .9s cubic-bezier(.16,1,.3,1)'; });
+    let n = 0;
+    this._io = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.style.transitionDelay = (n++ % 4) * 80 + 'ms';
+        e.target.style.opacity = '1'; e.target.style.transform = 'none';
+        this._io.unobserve(e.target);
+        setTimeout(() => { n = Math.max(0, n - 1); }, 700);
+      });
+    }, { threshold: .12 });
+    els.forEach(el => this._io.observe(el));
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); if (this._ac) this._ac.close(); }
+
+  ac() {
+    if (this.props.sound === false) return null;
+    const C = window.AudioContext || window.webkitAudioContext;
+    if (!C) return null;
+    if (!this._ac) this._ac = new C();
+    if (this._ac.state === 'suspended') this._ac.resume();
+    if (!this._out) {
+      const ac = this._ac, m = ac.createGain(); m.gain.value = .42;
+      const d = ac.createDelay(); d.delayTime.value = .135;
+      const fb = ac.createGain(); fb.gain.value = .2;
+      const w = ac.createGain(); w.gain.value = .26;
+      m.connect(ac.destination); m.connect(d); d.connect(fb); fb.connect(d); d.connect(w); w.connect(ac.destination);
+      this._out = m;
+    }
+    return this._ac;
+  }
+  // مقام رست على الدال — the neutral third (+347¢) is what makes it read as Arabic, not Western major.
+  scale() { const d = 587.33; return { d1: d / 2, d: d, e: d * Math.pow(2, 2 / 12), n3: d * Math.pow(2, 347 / 1200), g: d * Math.pow(2, 5 / 12), a: d * Math.pow(2, 7 / 12), n6: d * Math.pow(2, 1047 / 1200), c: d * Math.pow(2, 11 / 12), d2: d * 2 }; }
+  t(f, at, dur, g, type, glide) {
+    const ac = this._ac, o = ac.createOscillator(), gn = ac.createGain(), lp = ac.createBiquadFilter();
+    o.type = type || 'triangle';
+    o.frequency.setValueAtTime(f, at);
+    if (glide) o.frequency.exponentialRampToValueAtTime(glide, at + dur * .65);
+    lp.type = 'lowpass'; lp.frequency.value = 3900;
+    gn.gain.setValueAtTime(0, at);
+    gn.gain.linearRampToValueAtTime(g, at + .015);
+    gn.gain.exponentialRampToValueAtTime(.0001, at + dur);
+    o.connect(lp); lp.connect(gn); gn.connect(this._out);
+    o.start(at); o.stop(at + dur + .05);
+  }
+  ring(e) {
+    if (this.reduce || !e || !e.currentTarget) return;
+    const h = e.currentTarget, r = document.createElement('span');
+    if (getComputedStyle(h).position === 'static') h.style.position = 'relative';
+    r.style.cssText = 'position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;border:1.5px solid rgba(31,191,107,.9);pointer-events:none;animation:kRing .9s ease-out forwards;';
+    h.appendChild(r); setTimeout(() => r.remove(), 900);
+  }
+  play(name, e) {
+    this.ring(e);
+    if (!this.ac()) return;
+    const t = this._ac.currentTime + .04, s = this.scale();
+    // A — الوروار: a rolled trill that launches, then settles clean on the tonic.
+    if (name === 'runeA') {
+      for (let i = 0; i < 6; i++) this.t(i % 2 ? s.n6 : s.a, t + i * .046, .09, .1, 'triangle');
+      this.t(s.d2, t + .3, .5, .13, 'triangle');
+      this.t(s.d, t + .34, .95, .14, 'sine');
+      this.t(s.d1, t, 1.5, .07, 'sine');
+    }
+    // B — الهدهد: its own name is the melody. هُدْ · هُدْ · هُدْ then the answer lands.
+    if (name === 'runeB') {
+      [0, .2, .4].forEach(o => this.t(s.g, t + o, .26, .16, 'sine'));
+      this.t(s.n3, t + .64, .5, .13, 'sine');
+      this.t(s.d, t + .64, 1.15, .14, 'sine');
+      this.t(s.d1, t + .6, 1.4, .07, 'sine');
+    }
+    // C — الشِرقب: a wide rising interval with a gold overtone on the wing-flash.
+    if (name === 'runeC') {
+      this.t(s.d, t, .8, .15, 'triangle');
+      this.t(s.a, t + .22, .95, .14, 'triangle');
+      this.t(s.d2 * 1.5, t + .46, 1.1, .05, 'sine');
+      this.t(s.d1, t, 1.7, .08, 'sine');
+    }
+    if (name === 'tick') { this.t(s.a, t, .16, .13); this.t(s.d2, t + .07, .3, .1); }
+    if (name === 'tier') { [s.d, s.n3, s.a, s.d2].forEach((x, i) => this.t(x, t + i * .1, .55, .14)); }
+    if (name === 'accept') { [[s.d, 0], [s.g, .1], [s.a, .2]].forEach(p => this.t(p[0], t + p[1], 1.1, .12)); this.t(s.d1, t, 2.2, .09, 'sine'); }
+  }
+  renderVals() {
+    return { play: (e) => this.play(e.currentTarget.getAttribute('data-rune'), e) };
+  }
+}
+</script>
+</body>
+</html>

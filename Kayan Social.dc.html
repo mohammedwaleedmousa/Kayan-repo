@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>كيان — الحضور الاجتماعي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#FAF6EC;overflow-x:hidden;-webkit-tap-highlight-color:transparent;}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+a{color:#0E6E66;text-decoration:none;}
+a:hover{color:#052E2B;}
+::selection{background:rgba(18,181,164,.24);color:#052E2B;}
+button{font-family:inherit;transition:transform 140ms cubic-bezier(.2,0,.2,1),background 140ms cubic-bezier(.2,0,.2,1),border-color 140ms cubic-bezier(.2,0,.2,1);}
+button:active{transform:scale(.97);}
+:focus-visible{outline:2px solid #0E8C80;outline-offset:3px;border-radius:6px;}
+p,div{text-wrap:pretty;}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;}}
+</style>
+</helmet>
+
+<div dir="rtl" style="min-height:100vh;background:#FAF6EC;color:#052E2B;font-family:'IBM Plex Sans Arabic',sans-serif;">
+<div style="max-width:1080px;margin:0 auto;padding:26px clamp(18px,5vw,32px) 80px;">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;">
+    <img src="uploads/kayan_logo_forest.png" alt="كيان" style="height:22px;">
+    <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.2em;color:#33544D;white-space:nowrap;">SOCIAL SYSTEM · v1</span>
+  </div>
+  <div style="height:1px;background:#EDE5D2;margin:18px 0 34px;"></div>
+
+  <h1 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(30px,7vw,52px);line-height:1.24;letter-spacing:-.01em;">الحساب سجل، لا نافذة عرض</h1>
+  <div style="font-size:16px;line-height:2;color:#33544D;margin-top:12px;max-width:58ch;">ينشر كيان ما ثبت لا ما يرجى. ثلاثة أنواع منشورات لا رابع لها: قيد مقبول، ومعيار منشور، ورقم شهري بما فيه المتعثر. وكل منشور يحمل رابطا يفتح المصدر.</div>
+  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;line-height:1.65;color:#33544D;margin-top:8px;max-width:66ch;">Three post types, no fourth: an accepted entry, a published standard, a monthly number — the bad ones included. Every post links to its source.</div>
+
+  <div data-noprint="" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:26px;">
+    <button onClick="{{ dlAll }}" style="white-space:nowrap;min-height:48px;padding:0 20px;border:0;border-radius:12px;background:#052E2B;color:#FAF6EC;font-size:15px;font-weight:500;cursor:pointer;" style-hover="background:#0B3F3A;">{{ allLabel }}</button>
+    <span style="align-self:center;font-size:13px;color:#33544D;">خمس قطع بمقاساتها الحقيقية، بصيغة <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;">PNG</span></span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:34px;">
+    <sc-for list="{{ assets }}" as="a" hint-placeholder-count="5">
+      <div style="border:1px solid #EDE5D2;border-radius:18px;background:#fff;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="background:#EDE5D2;padding:14px;">
+          <canvas ref="{{ a.ref }}" style="width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 6px 18px rgba(5,46,43,.14);"></canvas>
+        </div>
+        <div style="padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1;">
+          <div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:16px;">{{ a.ar }}</div>
+            <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:#33544D;margin-top:4px;">{{ a.spec }}</div>
+          </div>
+          <div style="font-size:13.5px;line-height:1.85;color:#33544D;">{{ a.use }}</div>
+          <button onClick="{{ a.dl }}" style="margin-top:auto;white-space:nowrap;min-height:48px;padding:0 18px;border:1px solid #EDE5D2;border-radius:12px;background:transparent;color:#052E2B;font-size:14.5px;cursor:pointer;" style-hover="border-color:#052E2B;">تنزيل</button>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="height:1px;background:#EDE5D2;margin:48px 0 0;"></div>
+
+  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:34px;">
+    <h2 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:500;font-size:clamp(21px,4vw,28px);line-height:1.4;">قانون النشر</h2>
+    <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#33544D;white-space:nowrap;">POSTING LAW</span>
+  </div>
+  <div style="margin-top:16px;border:1px solid #EDE5D2;border-radius:18px;background:#fff;padding:6px 20px;">
+    <sc-for list="{{ laws }}" as="l" hint-placeholder-count="7">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid #EDE5D2;flex-wrap:wrap;">
+        <span style="flex:1 1 260px;min-width:0;font-size:14.5px;line-height:1.85;">{{ l.ar }}</span>
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11.5px;color:#33544D;white-space:nowrap;">{{ l.en }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px;">
+    <div style="border:1px solid #EDE5D2;border-radius:14px;background:#fff;padding:18px 20px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;">صوت التعليق</div>
+      <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:8px;">جملة تقرر، وجملة تسند، ورابط. لا مقدمات، ولا دعوة للتفاعل، ولا سؤال في آخر المنشور.</div>
+    </div>
+    <div style="border:1px solid #EDE5D2;border-radius:14px;background:#fff;padding:18px 20px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;">الوسوم</div>
+      <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:8px;">وسم واحد على الأكثر، وللأرشفة لا للانتشار. ولا وسم داخل متن الجملة.</div>
+    </div>
+    <div style="border:1px solid #EDE5D2;border-radius:14px;background:#fff;padding:18px 20px;">
+      <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;">الإذن</div>
+      <div style="font-size:13.5px;line-height:1.9;color:#33544D;margin-top:8px;">لا ينشر اسم منفذ ولا صورته إلا بإذن مكتوب يقيد في سجله، ويسحب متى طلب.</div>
+    </div>
+  </div>
+
+  <div style="height:1px;background:#EDE5D2;margin:44px 0 22px;"></div>
+  <div style="font-size:13px;line-height:1.95;color:#33544D;">تصدر هذه القوالب عن وثيقة الهوية. الأرقام والأسماء المعروضة عينة تصميمية، تستبدل ببيانات السجل قبل النشر.</div>
+  <div data-noprint="" style="font-size:13px;line-height:1.95;color:#33544D;margin-top:6px;">{{ status }}</div>
+
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  ASSETS = [
+    { key: 'avatar', ar: 'الصورة الرمزية', spec: '1000 × 1000 · AVATAR', w: 1000, h: 1000, use: 'واحدة على كل المنصات. لا تتغير، ولا يوضع عليها نص موسمي.' },
+    { key: 'cover', ar: 'غلاف لينكدإن', spec: '1584 × 396 · COVER', w: 1584, h: 396, use: 'الجملة الوحيدة المسموح بها في الغلاف: ما تفعله كيان، ورابط التحقق.' },
+    { key: 'entry', ar: 'منشور قيد', spec: '1080 × 1080 · ENTRY', w: 1080, h: 1080, use: 'قيد مقبول في السجل. هذا هو المنشور الأكثر تكرارا، وهو حلقة النمو.' },
+    { key: 'number', ar: 'منشور رقم', spec: '1080 × 1080 · NUMBER', w: 1080, h: 1080, use: 'رقم شهري، ويشمل المتعثر. الرقم يعرض ولا يعد تصاعديا.' },
+    { key: 'story', ar: 'قصة', spec: '1080 × 1920 · STORY', w: 1080, h: 1920, use: 'للإعلانات القصيرة. سطر واحد ورابط، ولا شيء غيره.' }
+  ];
+  LAWS = [
+    { ar: 'لا ينشر إلا ما ثبت في السجل أو نشر في المعايير', en: 'proof or standard only' },
+    { ar: 'لون دال واحد في المنشور الواحد، والذهب للفئة العليا وحدها', en: 'one accent · gold rationed' },
+    { ar: 'كل منشور يحمل رابطا يفتح مصدره', en: 'every post links its source' },
+    { ar: 'لا صور مخزنة، ولا رسوم للطائر، ولا وجوه بلا إذن', en: 'no stock, no illustrated bird' },
+    { ar: 'الرقم يكتب بالأرقام الغربية، ولا يتحرك', en: 'western numerals · no counters' },
+    { ar: 'العربية أولا، والإنجليزية تحتها أصغر وأخف', en: 'Arabic leads, English restates' },
+    { ar: 'لا نشر في المناسبات إلا بما يخص العمل', en: 'no occasion posts' }
+  ];
+
+  state = { status: '', busy: false };
+  say(t) { this.setState({ status: t }); clearTimeout(this._t); this._t = setTimeout(() => this.setState({ status: '' }), 2600); }
+  componentWillUnmount() { clearTimeout(this._t); }
+
+  componentDidMount() {
+    this._c = this._c || {};
+    const paint = () => this.ASSETS.forEach(a => this.paint(a));
+    paint();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(paint);
+    this._retry = setTimeout(paint, 900);
+  }
+
+  fit(x, text, max, start, step) {
+    let s = start;
+    for (; s > 12; s -= step) { x.font = x.font.replace(/\d+(\.\d+)?px/, s + 'px'); if (x.measureText(text).width <= max) break; }
+    return s;
+  }
+
+  paint(a) {
+    const c = this._c && this._c[a.key]; if (!c) return;
+    c.width = a.w; c.height = a.h;
+    const x = c.getContext('2d');
+    const INK = '#052E2B', PAPER = '#FAF6EC', GOLD = '#E9BE4B', TEAL = '#12B5A4', MUTED = 'rgba(250,246,236,.68)';
+    const P = Math.round(a.w * 0.075);
+    const R = a.w - P;
+
+    if (a.key === 'avatar') {
+      x.fillStyle = INK; x.fillRect(0, 0, a.w, a.h);
+      x.strokeStyle = 'rgba(233,190,75,.30)'; x.lineWidth = 4;
+      x.strokeRect(70, 70, a.w - 140, a.h - 140);
+      x.direction = 'rtl'; x.textAlign = 'center'; x.textBaseline = 'middle';
+      x.fillStyle = GOLD; x.font = "500 300px Alexandria, sans-serif";
+      x.fillText('كيان', a.w / 2, a.h / 2 - 20);
+      x.fillStyle = MUTED; x.direction = 'ltr'; x.font = "500 34px 'Instrument Sans', sans-serif";
+      x.fillText('KAYAN', a.w / 2, a.h / 2 + 170);
+      return;
+    }
+
+    if (a.key === 'cover') {
+      x.fillStyle = INK; x.fillRect(0, 0, a.w, a.h);
+      x.textBaseline = 'alphabetic';
+      x.direction = 'rtl'; x.textAlign = 'right';
+      x.fillStyle = PAPER; x.font = "500 46px Alexandria, sans-serif";
+      x.fillText('كيان', R, 132);
+      x.fillStyle = GOLD; x.font = "500 40px Alexandria, sans-serif";
+      x.fillText('نثبت، لا ندعي', R, 210);
+      x.fillStyle = MUTED; x.font = "400 26px 'IBM Plex Sans Arabic', sans-serif";
+      x.fillText('سجل عام لعمل مقبول ومستحق مصروف', R, 262);
+      x.strokeStyle = 'rgba(250,246,236,.18)'; x.lineWidth = 2;
+      x.beginPath(); x.moveTo(P, 300); x.lineTo(R, 300); x.stroke();
+      x.direction = 'ltr'; x.textAlign = 'left';
+      x.fillStyle = PAPER; x.font = "500 26px 'Instrument Sans', sans-serif";
+      x.fillText('kayanwork.com', P, 262);
+      x.fillStyle = 'rgba(250,246,236,.55)'; x.font = "500 20px 'Instrument Sans', sans-serif";
+      x.fillText('BEHIND EVERY SUCCESS, A KAYAN', P, 132);
+      return;
+    }
+
+    if (a.key === 'entry') {
+      x.fillStyle = PAPER; x.fillRect(0, 0, a.w, a.h);
+      x.textBaseline = 'alphabetic';
+      x.direction = 'rtl'; x.textAlign = 'right';
+      x.fillStyle = INK; x.font = "500 34px Alexandria, sans-serif";
+      x.fillText('كيان', R, 128);
+      x.direction = 'ltr'; x.textAlign = 'left';
+      x.fillStyle = '#33544D'; x.font = "500 20px 'Instrument Sans', sans-serif";
+      x.fillText('ENTRY · قيد', P, 122);
+      x.strokeStyle = '#E4DBC6'; x.lineWidth = 2;
+      x.beginPath(); x.moveTo(P, 166); x.lineTo(R, 166); x.stroke();
+
+      x.direction = 'rtl'; x.textAlign = 'right';
+      x.fillStyle = '#33544D'; x.font = "400 28px 'IBM Plex Sans Arabic', sans-serif";
+      x.fillText('قيد جديد في السجل', R, 264);
+      x.fillStyle = INK; x.font = "500 62px Alexandria, sans-serif";
+      this.fit(x, 'تمديد شبكة داخلية — 42 نقطة', R - P, 62, 2);
+      x.fillText('تمديد شبكة داخلية — 42 نقطة', R, 356);
+      x.fillStyle = '#33544D'; x.font = "400 27px 'IBM Plex Sans Arabic', sans-serif";
+      x.fillText('قبل بمحضر استلام موقع من الطرفين، وصرف المستحق.', R, 410);
+
+      x.fillStyle = GOLD; x.fillRect(R - 110, 486, 110, 6);
+      x.fillStyle = INK; x.font = "500 40px Alexandria, sans-serif";
+      x.fillText('مؤتمن', R, 566);
+      x.direction = 'ltr'; x.textAlign = 'left';
+      x.fillStyle = '#33544D'; x.font = "600 22px 'Instrument Sans', sans-serif";
+      x.fillText('T4 · TRUSTED', P, 562);
+
+      x.save(); x.beginPath(); x.rect(P, 640, R - P, 190); x.clip();
+      x.fillStyle = '#C9A227'; x.globalAlpha = .9;
+      for (let i = 0; i * 14 < 190; i++) x.fillRect(P, 640 + i * 14, R - P, 2);
+      x.globalAlpha = 1; x.restore();
+
+      x.strokeStyle = '#E4DBC6'; x.lineWidth = 2;
+      x.beginPath(); x.moveTo(P, 900); x.lineTo(R, 900); x.stroke();
+      x.direction = 'ltr'; x.textAlign = 'left';
+      x.fillStyle = INK; x.font = "500 27px 'Instrument Sans', sans-serif";
+      x.fillText('kayanwork.com/v/A7F3-0142', P, 962);
+      x.direction = 'rtl'; x.textAlign = 'right';
+      x.fillStyle = '#33544D'; x.font = "400 25px 'IBM Plex Sans Arabic', sans-serif";
+      x.fillText('تحقق بنفسك', R, 960);
+      return;
+    }
+
+    if (a.key === 'number') {
+      x.fillStyle = INK; x.fillRect(0, 0, a.w, a.h);
+      x.textBaseline = 'alphabetic';
+      x.direction = 'rtl'; x.textAlign = 'right';
+      x.fillStyle = PAPER; x.font = "500 34px Alexandria, sans-serif";
+      x.fillText('كيان', R, 128);
+      x.direction = 'ltr'; x.textAlign = 'left';
+      x.fillStyle = 'rgba(250,246,236,.6)'; x.font = "500 20px 'Instrument Sans', sans-serif";
+      x.fillText('MONTHLY NUMBER · رقم الشهر', P, 122);
+      x.strokeStyle = 'rgba(250,246,236,.18)'; x.lineWidth = 2;
+      x.beginPath(); x.moveTo(P, 166); x.lineTo(R, 166); x.stroke();
+
+      x.direction = 'ltr'; x.textAlign = 'left';
+      x.fillStyle = PAPER; x.font = "500 300px 'Instrument Sans', sans-serif";
+      x.fillText('6', P, 560);
+      x.direction = 'rtl'; x.textAlign = 'right';
+      x.fillStyle = TEAL; x.font = "500 46px Alexandria, sans-serif";
+      x.fillText('متوسط أيام الصرف', R, 470);
+      x.fillStyle = MUTED; x.font = "400 28px 'IBM Plex Sans Arabic', sans-serif";
+      x.fillText('من تاريخ محضر الاستلام إلى إيداع المستحق', R, 524);
+
+      x.fillStyle = 'rgba(250,246,236,.9)'; x.font = "400 30px 'IBM Plex Sans Arabic', sans-serif";
+      x.fillText('نزاعات مفتوحة: 2 · نزاعات محقة: 1', R, 700);
+      x.fillStyle = MUTED; x.font = "400 26px 'IBM Plex Sans Arabic', sans-serif";
+      x.fillText('ينشر الرقم شهريا، وينشر المتعثر قبل الناجح.', R, 754);
+
+      x.strokeStyle = 'rgba(250,246,236,.18)'; x.lineWidth = 2;
+      x.beginPath(); x.moveTo(P, 900); x.lineTo(R, 900); x.stroke();
+      x.direction = 'ltr'; x.textAlign = 'left';
+      x.fillStyle = PAPER; x.font = "500 27px 'Instrument Sans', sans-serif";
+      x.fillText('kayanwork.com', P, 962);
+      x.direction = 'rtl'; x.textAlign = 'right';
+      x.fillStyle = MUTED; x.font = "400 25px 'IBM Plex Sans Arabic', sans-serif";
+      x.fillText('صفحة الأرقام', R, 960);
+      return;
+    }
+
+    if (a.key === 'story') {
+      x.fillStyle = INK; x.fillRect(0, 0, a.w, a.h);
+      x.textBaseline = 'alphabetic';
+      x.direction = 'rtl'; x.textAlign = 'right';
+      x.fillStyle = PAPER; x.font = "500 44px Alexandria, sans-serif";
+      x.fillText('كيان', R, 260);
+      x.strokeStyle = 'rgba(250,246,236,.18)'; x.lineWidth = 2;
+      x.beginPath(); x.moveTo(P, 306); x.lineTo(R, 306); x.stroke();
+
+      x.fillStyle = GOLD; x.font = "500 96px Alexandria, sans-serif";
+      x.fillText('خلف كل نجاح،', R, 900);
+      x.fillText('كيان', R, 1024);
+      x.fillStyle = MUTED; x.font = "400 34px 'IBM Plex Sans Arabic', sans-serif";
+      x.fillText('سجل عام لعمل مقبول ومستحق مصروف', R, 1116);
+
+      x.save(); x.beginPath(); x.rect(P, 1250, R - P, 200); x.clip();
+      x.fillStyle = TEAL; x.globalAlpha = .55;
+      for (let i = 0; i * 16 < 200; i++) x.fillRect(P, 1250 + i * 16, R - P, 2);
+      x.globalAlpha = 1; x.restore();
+
+      x.strokeStyle = 'rgba(250,246,236,.18)'; x.lineWidth = 2;
+      x.beginPath(); x.moveTo(P, 1680); x.lineTo(R, 1680); x.stroke();
+      x.direction = 'ltr'; x.textAlign = 'left';
+      x.fillStyle = PAPER; x.font = "500 32px 'Instrument Sans', sans-serif";
+      x.fillText('kayanwork.com', P, 1746);
+      x.direction = 'rtl'; x.textAlign = 'right';
+      x.fillStyle = MUTED; x.font = "400 28px 'IBM Plex Sans Arabic', sans-serif";
+      x.fillText('تحقق من سجل', R, 1744);
+      return;
+    }
+  }
+
+  save(blob, name) {
+    const u = URL.createObjectURL(blob), el = document.createElement('a');
+    el.href = u; el.download = name; document.body.appendChild(el); el.click();
+    document.body.removeChild(el); setTimeout(() => URL.revokeObjectURL(u), 4000);
+  }
+  async dlOne(a) {
+    const c = this._c && this._c[a.key]; if (!c) return;
+    const blob = await new Promise(r => c.toBlob(r, 'image/png'));
+    if (blob) { this.save(blob, 'kayan-social-' + a.key + '.png'); this.say('نزل ' + a.key + '.png'); }
+  }
+  async dlAll() {
+    if (this.state.busy) return;
+    this.setState({ busy: true });
+    for (const a of this.ASSETS) { await this.dlOne(a); await new Promise(r => setTimeout(r, 420)); }
+    this.setState({ busy: false });
+    this.say('اكتمل التنزيل — خمس قطع');
+  }
+
+  renderVals() {
+    this._c = this._c || {};
+    return {
+      assets: this.ASSETS.map(a => ({
+        ar: a.ar, spec: a.spec, use: a.use,
+        ref: el => { if (el) { this._c[a.key] = el; this.paint(a); } },
+        dl: () => this.dlOne(a)
+      })),
+      laws: this.LAWS,
+      allLabel: this.state.busy ? 'يجري التنزيل' : 'تنزيل الخمس قطع',
+      dlAll: () => this.dlAll(),
+      status: this.state.status
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#EDE5D2;}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+a{color:#0E6E66;text-decoration:none;}a:hover{color:#12B5A4;}
+::selection{background:#12B5A4;color:#052E2B;}
+input[type=range]{-webkit-appearance:none;appearance:none;background:transparent;}
+input[type=range]::-webkit-slider-runnable-track{height:3px;background:#C7BEA8;border-radius:2px;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;margin-top:-10px;border-radius:50%;background:#052E2B;border:3px solid #FAF6EC;box-shadow:0 2px 8px rgba(5,46,43,.35);cursor:ew-resize;}
+input[type=range]::-moz-range-track{height:3px;background:#C7BEA8;border-radius:2px;}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#052E2B;border:3px solid #FAF6EC;cursor:ew-resize;}
+</style>
+</helmet>
+
+<div ref="{{ wrapRef }}" dir="rtl" style="--mm:3.7795px;font-family:'IBM Plex Sans Arabic','Instrument Sans',sans-serif;color:#143C37;background:#EDE5D2;min-height:100vh;">
+
+<div style="position:relative;overflow:hidden;background:#052E2B;background-image:radial-gradient(900px 520px at 82% -18%,rgba(18,181,164,.30),transparent 62%),radial-gradient(720px 460px at 6% 116%,rgba(255,98,80,.16),transparent 60%);color:#FAF6EC;padding:clamp(28px,5vw,56px) clamp(18px,4vw,48px) clamp(24px,4vw,44px);">
+  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:18px;flex-wrap:wrap;">
+    <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.2em;color:#12B5A4;">§16 · IN REALITY · 1:1</div>
+    <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.16em;color:rgba(250,246,236,.5);">CALIBRATED TO YOUR SCREEN</div>
+  </div>
+  <h2 style="margin:14px 0 0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(30px,5vw,58px);line-height:1.15;">على أرض الواقع</h2>
+  <p style="margin:14px 0 0;max-width:60ch;font-size:clamp(14.5px,1.5vw,17px);line-height:1.95;color:rgba(250,246,236,.76);text-wrap:pretty;">لا تعرض القطع هنا مكبرة ولا مصغرة. تعاير الشاشة أولا، ثم يظهر كل مطبوع بمقاسه الذي يخرج به من المطبعة، وكل أصل رقمي بعدد بكسلاته الحقيقي في مكان استعماله.</p>
+  <div style="display:flex;height:10px;border-radius:99px;overflow:hidden;max-width:420px;margin-top:26px;">
+    <div style="flex:2.2;background:#0E6E66;"></div><div style="flex:2.2;background:#12B5A4;"></div><div style="flex:1.4;background:#3E9EEA;"></div><div style="flex:1.4;background:#3FA75B;"></div><div style="flex:1.4;background:#FFB627;"></div><div style="flex:1.4;background:#FF6250;"></div><div style="flex:1.2;background:#F0549A;"></div><div style="flex:1;background:#C9A227;"></div>
+  </div>
+</div>
+
+<div style="position:sticky;top:0;z-index:30;background:rgba(250,246,236,.94);backdrop-filter:blur(10px);border-block-end:1px solid #DCD3BE;padding:14px clamp(18px,4vw,48px);display:flex;align-items:center;gap:clamp(14px,3vw,34px);flex-wrap:wrap;">
+  <div style="display:flex;flex-direction:column;gap:3px;min-width:190px;">
+    <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:14px;color:#052E2B;">معايرة الشاشة</span>
+    <span style="font-size:12px;line-height:1.6;color:#5A6B66;">ضع بطاقة مصرفية على الإطار واسحب حتى ينطبق العرض</span>
+  </div>
+  <div style="flex:1;min-width:220px;display:flex;align-items:center;gap:12px;">
+    <input type="range" min="2.4" max="6.2" step="0.005" ref="{{ calRef }}" onInput="{{ onCal }}" aria-label="معايرة الشاشة" style="flex:1;height:22px;">
+    <button type="button" onClick="{{ onReset }}" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12px;color:#33544D;background:transparent;border:1px solid #C7BEA8;border-radius:99px;padding:6px 13px;cursor:pointer;white-space:nowrap;" style-hover="border-color:#0E6E66;color:#0E6E66;">إعادة ضبط</button>
+  </div>
+  <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:12px;letter-spacing:.05em;color:#33544D;white-space:nowrap;"><span ref="{{ dpiRef }}">96</span> DPI · 1mm = <span ref="{{ mmRef }}">3.78</span>px</div>
+</div>
+
+<div style="padding:clamp(26px,4vw,52px) clamp(18px,4vw,48px) clamp(40px,6vw,80px);max-width:1180px;">
+
+  <div style="display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,40px);align-items:flex-end;">
+    <div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#8A8271;">REFERENCE · ISO/IEC 7810 ID-1</div>
+      <div style="position:relative;width:calc(85.6 * var(--mm));height:calc(53.98 * var(--mm));margin-top:10px;border:1.5px dashed #0E6E66;border-radius:calc(3.18 * var(--mm));background:repeating-linear-gradient(135deg,rgba(14,110,102,.05) 0 6px,transparent 6px 12px);display:flex;align-items:center;justify-content:center;">
+        <span style="font-size:12.5px;color:#0E6E66;text-align:center;line-height:1.7;">٨٥٫٦٠ × ٥٣٫٩٨ مم<br><span style="font-size:11.5px;color:#5A6B66;">مقاس أي بطاقة مصرفية في العالم</span></span>
+        <span style="position:absolute;top:-7px;inset-inline-start:calc(50% - .5px);width:1px;height:6px;background:#0E6E66;"></span>
+        <span style="position:absolute;bottom:-7px;inset-inline-start:calc(50% - .5px);width:1px;height:6px;background:#0E6E66;"></span>
+      </div>
+      <div style="margin-top:14px;display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;">
+        <div>
+          <div style="width:calc(10 * var(--mm));height:calc(10 * var(--mm));border:1px solid #0E6E66;background:repeating-linear-gradient(90deg,rgba(14,110,102,.18) 0 1px,transparent 1px calc(1 * var(--mm))),repeating-linear-gradient(rgba(14,110,102,.18) 0 1px,transparent 1px calc(1 * var(--mm)));"></div>
+          <div style="font-size:11.5px;color:#5A6B66;margin-top:6px;">مربع ١٠ مم · شبكة ١ مم</div>
+        </div>
+        <div>
+          <div style="display:flex;align-items:flex-end;gap:calc(2 * var(--mm));height:calc(10 * var(--mm));">
+            <span style="width:calc(.18 * var(--mm));height:100%;background:#052E2B;"></span>
+            <span style="width:calc(.35 * var(--mm));height:100%;background:#052E2B;"></span>
+            <span style="width:calc(.7 * var(--mm));height:100%;background:#052E2B;"></span>
+          </div>
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;color:#5A6B66;margin-top:6px;">0.5 · 1 · 2 pt</div>
+        </div>
+        <p style="flex:1;min-width:200px;margin:0;font-size:12.5px;line-height:1.85;color:#5A6B66;">نصف النقطة أدق شعرة تعتمد للطباعة، وهي كذلك أدق ما تحكم عليه شاشة. وما دونها لا يقاس هنا، ويترك للمطبعة.</p>
+      </div>
+    </div>
+    <div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#8A8271;">RULER · 90mm</div>
+      <div style="margin-top:10px;width:calc(90 * var(--mm));">
+        <div style="position:relative;height:calc(4 * var(--mm));background:linear-gradient(#FAF6EC,#FAF6EC),repeating-linear-gradient(90deg,#8A8271 0 1px,transparent 1px calc(5 * var(--mm)));background-size:100% 100%,100% calc(2 * var(--mm));background-position:0 0,0 100%;background-repeat:no-repeat,repeat-x;border-block-end:1px solid #8A8271;">
+          <div style="position:absolute;inset-inline:0;bottom:0;height:calc(4 * var(--mm));background:repeating-linear-gradient(90deg,#052E2B 0 1px,transparent 1px calc(10 * var(--mm)));"></div>
+        </div>
+        <div dir="ltr" style="display:flex;justify-content:space-between;font-family:'Instrument Sans',sans-serif;font-size:9.5px;color:#8A8271;margin-top:4px;">
+          <span>0</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:1px;background:#DCD3BE;margin:clamp(30px,4vw,52px) 0;"></div>
+
+  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+    <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(20px,2.4vw,28px);color:#052E2B;">المطبوع في اليد</h3>
+    <button type="button" onClick="{{ onMarks }}" ref="{{ marksBtnRef }}" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:12.5px;color:#33544D;background:#FAF6EC;border:1px solid #C7BEA8;border-radius:99px;padding:7px 15px;cursor:pointer;" style-hover="border-color:#0E6E66;color:#0E6E66;">إظهار النزف والقص</button>
+  </div>
+  <p style="margin:10px 0 0;max-width:62ch;font-size:14.5px;line-height:1.95;color:#33544D;">حافة القص تكشف لب الورق الكريمي، وهذا مقصود ولا يعالج. الذهب رقاقة حرارية على السطر وحده: حرك المؤشر فوق الظهر ليدور الضوء عليه.</p>
+
+  <div ref="{{ printRef }}" style="margin-top:28px;display:flex;flex-wrap:wrap;gap:calc(14 * var(--mm)) calc(16 * var(--mm));padding:calc(12 * var(--mm)) calc(10 * var(--mm));background:linear-gradient(#E7DFC9,#E1D8BF);border:1px solid #D8CFB8;border-radius:6px;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 0 90px rgba(90,70,30,.06);">
+
+    <div>
+      <div style="position:relative;width:calc(85.6 * var(--mm));height:calc(53.98 * var(--mm));border-radius:calc(.6 * var(--mm));background:#FAF6EC;background-image:radial-gradient(rgba(5,46,43,.035) .5px,transparent .6px);background-size:3px 3px;box-sizing:border-box;padding:calc(6 * var(--mm)) calc(6 * var(--mm)) calc(5 * var(--mm));display:flex;flex-direction:column;box-shadow:0 calc(.3 * var(--mm)) 0 #E7DEC8,0 calc(.46 * var(--mm)) 0 #0E6E66,0 calc(.78 * var(--mm)) 0 #E7DEC8,0 calc(.84 * var(--mm)) 0 rgba(90,70,30,.32),0 calc(1.8 * var(--mm)) calc(3.4 * var(--mm)) rgba(40,55,45,.24);">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:calc(5 * var(--mm));">
+          <img src="uploads/kayan_logo_forest.png" alt="كيان" style="height:calc(6.5 * var(--mm));filter:drop-shadow(0 .5px 0 rgba(255,255,255,.85)) drop-shadow(0 -.4px .3px rgba(5,46,43,.3));">
+          <span style="width:calc(9 * var(--mm));height:calc(.8 * var(--mm));background:#0E6E66;margin-top:calc(2.6 * var(--mm));box-shadow:0 1px 0 rgba(255,255,255,.9),inset 0 1px 1px rgba(5,46,43,.35);"></span>
+        </div>
+        <div style="margin-top:auto;">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:calc(3.88 * var(--mm));line-height:1.25;color:#052E2B;">{{ holderName }}</div>
+          <div style="font-size:calc(2.82 * var(--mm));line-height:1.6;color:#33544D;margin-top:calc(1 * var(--mm));">{{ holderRole }}</div>
+          <div style="height:1px;background:#E4DBC6;margin:calc(3.5 * var(--mm)) 0;"></div>
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:calc(2.47 * var(--mm));line-height:1.75;color:#33544D;text-shadow:0 0 .35px rgba(51,84,77,.5);">PH-PHONE<br>name@kayanwork.com<br>kayanwork.com · Aden</div>
+        </div>
+        <span data-mark="" style="position:absolute;inset:calc(-3 * var(--mm));border:1px dashed rgba(255,98,80,.75);opacity:0;pointer-events:none;"></span>
+        <span data-mark="" style="position:absolute;inset:calc(4 * var(--mm));border:1px dashed rgba(14,110,102,.6);opacity:0;pointer-events:none;"></span>
+      </div>
+      <div style="margin-top:calc(3 * var(--mm));display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:13.5px;color:#052E2B;">الوجه</span>
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:#8A8271;">85.6 × 54 mm · 600gsm</span>
+      </div>
+    </div>
+
+    <div>
+      <div ref="{{ backRef }}" onPointerMove="{{ onTilt }}" onPointerLeave="{{ onRest }}" style="position:relative;width:calc(85.6 * var(--mm));height:calc(53.98 * var(--mm));border-radius:calc(.6 * var(--mm));background:#052E2B;background-image:radial-gradient(rgba(250,246,236,.045) .5px,transparent .6px);background-size:3px 3px;box-sizing:border-box;padding:calc(6 * var(--mm));display:flex;flex-direction:column;justify-content:space-between;color:#FAF6EC;transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s cubic-bezier(.22,1,.36,1);will-change:transform;box-shadow:0 calc(.3 * var(--mm)) 0 #E7DEC8,0 calc(.46 * var(--mm)) 0 #0E6E66,0 calc(.78 * var(--mm)) 0 #E7DEC8,0 calc(.84 * var(--mm)) 0 rgba(90,70,30,.32),0 calc(1.8 * var(--mm)) calc(3.4 * var(--mm)) rgba(40,55,45,.24);">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:calc(5 * var(--mm));">
+          <img src="uploads/kayan_logo_gold.png" alt="كيان" style="height:calc(6.5 * var(--mm));">
+          <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:calc(2.12 * var(--mm));letter-spacing:.18em;color:rgba(250,246,236,.62);">PUBLIC REGISTER</span>
+        </div>
+        <div>
+          <div ref="{{ foilRef }}" style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:calc(3.88 * var(--mm));background-image:linear-gradient(100deg,#8E6A16 0%,#C9A227 22%,#E9BE4B 40%,#FFF6D2 50%,#E9BE4B 60%,#C9A227 78%,#8E6A16 100%);background-size:280% 100%;background-position:50% 0;-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content;transition:background-position .45s ease-out;">خلف كل نجاح، كيان</div>
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:calc(2.65 * var(--mm));color:rgba(250,246,236,.88);margin-top:calc(2.5 * var(--mm));">kayanwork.com/v/{{ recordId }}</div>
+          <div style="font-size:calc(2.47 * var(--mm));line-height:1.7;color:rgba(250,246,236,.7);margin-top:calc(1.5 * var(--mm));">افتح الرابط ترى سجل حامل البطاقة كاملا</div>
+        </div>
+        <span ref="{{ glossRef }}" style="position:absolute;inset:0;border-radius:calc(.6 * var(--mm));pointer-events:none;background:linear-gradient(105deg,transparent 34%,rgba(250,246,236,.11) 47%,rgba(250,246,236,.02) 54%,transparent 62%);background-size:260% 100%;background-position:50% 0;transition:background-position .45s ease-out;"></span>
+        <span data-mark="" style="position:absolute;inset:calc(-3 * var(--mm));border:1px dashed rgba(255,98,80,.75);opacity:0;pointer-events:none;"></span>
+        <span data-mark="" style="position:absolute;inset:calc(4 * var(--mm));border:1px dashed rgba(18,181,164,.6);opacity:0;pointer-events:none;"></span>
+      </div>
+      <div style="margin-top:calc(3 * var(--mm));display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:13.5px;color:#052E2B;">الظهر</span>
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:#8A8271;">HOT FOIL · GOLD 871</span>
+      </div>
+    </div>
+
+    <div>
+      <div style="position:relative;width:calc(53.98 * var(--mm));height:calc(85.6 * var(--mm));border-radius:calc(3.18 * var(--mm));background:#FAF6EC;box-sizing:border-box;padding:calc(5 * var(--mm));display:flex;flex-direction:column;overflow:hidden;box-shadow:0 calc(.76 * var(--mm)) 0 #E3E0D6,0 calc(.82 * var(--mm)) 0 rgba(60,70,65,.34),0 calc(1.8 * var(--mm)) calc(3.4 * var(--mm)) rgba(40,55,45,.24),inset 0 0 0 1px rgba(255,255,255,.75);"><span style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(118deg,rgba(255,255,255,.55) 0 16%,rgba(255,255,255,0) 34%,rgba(255,255,255,0) 66%,rgba(255,255,255,.28) 92%);"></span>
+        <span style="position:absolute;top:calc(3 * var(--mm));inset-inline:0;margin-inline:auto;width:calc(12 * var(--mm));height:calc(3 * var(--mm));border-radius:calc(1.5 * var(--mm));background:#E7DFC9;box-shadow:inset 0 1px 2px rgba(5,46,43,.28);"></span>
+        <div style="margin-top:calc(7 * var(--mm));display:flex;align-items:center;justify-content:space-between;gap:calc(3 * var(--mm));">
+          <img src="uploads/kayan_logo_forest.png" alt="كيان" style="height:calc(5.5 * var(--mm));">
+          <span style="width:calc(5 * var(--mm));height:calc(2.4 * var(--mm));border:1px solid #C7BEA8;border-radius:calc(1.2 * var(--mm));"></span>
+        </div>
+        <div style="margin-top:calc(4 * var(--mm));height:calc(26 * var(--mm));background:#EDE5D2;border:1px dashed #C7BEA8;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:calc(2.47 * var(--mm));color:#7A7263;">صورة الموظف ٢٥ × ٣٢ مم</span>
+        </div>
+        <div style="margin-top:calc(4 * var(--mm));">
+          <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:calc(3.53 * var(--mm));line-height:1.25;color:#052E2B;">{{ holderName }}</div>
+          <div style="font-size:calc(2.65 * var(--mm));color:#33544D;margin-top:calc(.8 * var(--mm));">{{ holderRole }}</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:calc(2 * var(--mm));margin-top:calc(3 * var(--mm));">
+          <span style="width:calc(6 * var(--mm));height:calc(.8 * var(--mm));background:#C9A227;"></span>
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:calc(3 * var(--mm));color:#052E2B;">مؤتمن</span>
+          <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:calc(2.29 * var(--mm));letter-spacing:.14em;color:#33544D;">T4</span>
+        </div>
+        <div style="height:calc(11 * var(--mm));margin-top:calc(3 * var(--mm));background:repeating-linear-gradient(#C9A227 0 1px,transparent 1px calc(1.6 * var(--mm)));"></div>
+        <div style="margin-top:auto;" dir="ltr"><span style="font-family:'Instrument Sans',sans-serif;font-size:calc(2.47 * var(--mm));letter-spacing:.12em;color:#33544D;">KYN · {{ recordId }}</span></div>
+      </div>
+      <div style="margin-top:calc(3 * var(--mm));display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+        <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:13.5px;color:#052E2B;">بطاقة الموظف</span>
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:#8A8271;">CR80 · PVC 0.76mm</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:22px;display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+    <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#052E2B;">الظرف وقصاصة الإرفاق</span>
+    <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:#8A8271;">SCROLL SIDEWAYS · STILL 1:1</span>
+  </div>
+  <div style="margin-top:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:8px;">
+    <div style="display:flex;gap:calc(12 * var(--mm));padding:calc(10 * var(--mm));width:max-content;background:linear-gradient(#E7DFC9,#E1D8BF);border:1px solid #D8CFB8;border-radius:6px;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 0 90px rgba(90,70,30,.06);">
+
+      <div>
+        <div style="position:relative;width:calc(220 * var(--mm));height:calc(110 * var(--mm));background:#FAF6EC;background-image:radial-gradient(rgba(5,46,43,.03) .5px,transparent .6px);background-size:3px 3px;box-sizing:border-box;padding:calc(12 * var(--mm)) calc(14 * var(--mm));display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 calc(.4 * var(--mm)) 0 #E7DEC8,0 calc(.5 * var(--mm)) 0 rgba(90,70,30,.26),0 calc(1.8 * var(--mm)) calc(3.4 * var(--mm)) rgba(40,55,45,.2);">
+          <div style="position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:calc(10 * var(--mm));">
+            <div>
+              <img src="uploads/kayan_logo_forest.png" alt="كيان" style="height:calc(6 * var(--mm));">
+              <div style="font-size:calc(2.47 * var(--mm));line-height:1.8;color:#33544D;margin-top:calc(2.5 * var(--mm));">‏PH-ADDRESS<br>عدن · الجمهورية اليمنية</div>
+            </div>
+            <span style="width:calc(24 * var(--mm));height:calc(28 * var(--mm));border:1px dashed #C7BEA8;display:flex;align-items:center;justify-content:center;font-size:calc(2.12 * var(--mm));color:#B9AF97;">الطابع</span>
+          </div>
+          <div style="position:relative;align-self:flex-end;width:calc(96 * var(--mm));">
+            <div style="height:1px;background:#E4DBC6;"></div>
+            <div style="font-size:calc(2.82 * var(--mm));line-height:1.9;color:#7A7263;margin-top:calc(2 * var(--mm));">إلى</div>
+            <div style="height:1px;background:#EFE7D5;margin-top:calc(6 * var(--mm));"></div>
+            <div style="height:1px;background:#EFE7D5;margin-top:calc(6 * var(--mm));"></div>
+          </div>
+          <span style="position:absolute;inset-inline-start:calc(14 * var(--mm));bottom:calc(9 * var(--mm));display:flex;height:calc(1.4 * var(--mm));width:calc(34 * var(--mm));border-radius:99px;overflow:hidden;">
+            <span style="flex:2.2;background:#0E6E66;"></span><span style="flex:2.2;background:#12B5A4;"></span><span style="flex:1.4;background:#3E9EEA;"></span><span style="flex:1.4;background:#FFB627;"></span><span style="flex:1.2;background:#FF6250;"></span>
+          </span>
+        </div>
+        <div style="margin-top:calc(3 * var(--mm));display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:13.5px;color:#052E2B;">الظرف</span>
+          <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:#8A8271;">DL 220 × 110 mm · 120gsm · NO WINDOW</span>
+        </div>
+      </div>
+
+      <div>
+        <div style="position:relative;width:calc(220 * var(--mm));height:calc(110 * var(--mm));background:#FAF6EC;background-image:radial-gradient(rgba(5,46,43,.03) .5px,transparent .6px);background-size:3px 3px;box-sizing:border-box;overflow:hidden;box-shadow:0 calc(.4 * var(--mm)) 0 #E7DEC8,0 calc(.5 * var(--mm)) 0 rgba(90,70,30,.26),0 calc(1.8 * var(--mm)) calc(3.4 * var(--mm)) rgba(40,55,45,.2);">
+          <span style="position:absolute;inset-inline:0;bottom:0;height:calc(56 * var(--mm));background:linear-gradient(#F6F0E1,#FAF6EC);box-shadow:0 -1px 0 rgba(90,70,30,.1);"></span>
+          <span style="position:absolute;inset-inline:0;top:0;height:calc(58 * var(--mm));background:linear-gradient(180deg,#F3ECDC,#FAF6EC);clip-path:polygon(0 0,100% 0,50% 100%);box-shadow:0 1px 0 rgba(90,70,30,.12);"></span>
+          <span style="position:absolute;inset-inline:0;top:0;height:calc(58 * var(--mm));background:linear-gradient(180deg,rgba(5,46,43,.05),transparent 55%);clip-path:polygon(0 0,100% 0,50% 100%);"></span>
+          <span style="position:absolute;inset-inline:calc(30 * var(--mm));top:calc(40 * var(--mm));height:calc(6 * var(--mm));background:repeating-linear-gradient(90deg,rgba(201,162,39,.16) 0 calc(1.4 * var(--mm)),transparent calc(1.4 * var(--mm)) calc(2.8 * var(--mm)));clip-path:polygon(0 0,100% 0,50% 100%);"></span>
+          <span style="position:absolute;inset-inline-start:calc(50% - calc(9 * var(--mm)));top:calc(56 * var(--mm));width:calc(18 * var(--mm));height:calc(18 * var(--mm));border-radius:50%;background:#052E2B;display:flex;align-items:center;justify-content:center;box-shadow:0 calc(.4 * var(--mm)) calc(1 * var(--mm)) rgba(40,55,45,.28);"><img src="uploads/kayan_logo_gold.png" alt="كيان" style="width:64%;"></span>
+          <span style="position:absolute;inset-inline-start:calc(14 * var(--mm));bottom:calc(9 * var(--mm));font-size:calc(2.47 * var(--mm));color:#8A8271;" dir="ltr">kayanwork.com</span>
+        </div>
+        <div style="margin-top:calc(3 * var(--mm));display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:13.5px;color:#052E2B;">الظرف · الظهر</span>
+          <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:#8A8271;">GUMMED FLAP · WAX-STYLE SEAL PRINTED</span>
+        </div>
+      </div>
+
+      <div>
+        <div style="position:relative;width:calc(210 * var(--mm));height:calc(99 * var(--mm));background:#052E2B;background-image:radial-gradient(rgba(250,246,236,.04) .5px,transparent .6px);background-size:3px 3px;color:#FAF6EC;box-sizing:border-box;padding:calc(12 * var(--mm)) calc(16 * var(--mm));display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 calc(.35 * var(--mm)) 0 #E7DEC8,0 calc(.45 * var(--mm)) 0 rgba(90,70,30,.3),0 calc(1.8 * var(--mm)) calc(3.4 * var(--mm)) rgba(40,55,45,.26);">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:calc(10 * var(--mm));">
+            <img src="uploads/kayan_logo_gold.png" alt="كيان" style="height:calc(6 * var(--mm));">
+            <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:calc(2.12 * var(--mm));letter-spacing:.2em;color:rgba(250,246,236,.55);">WITH COMPLIMENTS</span>
+          </div>
+          <div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:calc(4.6 * var(--mm));color:#E9BE4B;">مع تحيات كيان</div>
+            <div style="font-size:calc(2.82 * var(--mm));line-height:1.8;color:rgba(250,246,236,.7);margin-top:calc(2.5 * var(--mm));max-width:calc(120 * var(--mm));">يرفق مع المستندات الصادرة. ولا يحمل توقيعا ولا يقوم مقام خطاب.</div>
+          </div>
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:calc(2.47 * var(--mm));letter-spacing:.06em;color:rgba(250,246,236,.6);">kayanwork.com · Aden</div>
+        </div>
+        <div style="margin-top:calc(3 * var(--mm));display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:13.5px;color:#052E2B;">قصاصة الإرفاق</span>
+          <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;color:#8A8271;">210 × 99 mm · 170gsm · FULL BLEED</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="height:1px;background:#DCD3BE;margin:clamp(30px,4vw,52px) 0;"></div>
+
+  <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(20px,2.4vw,28px);color:#052E2B;">الترويسة: قصاصة بالحجم الحقيقي</h3>
+  <p style="margin:10px 0 0;max-width:62ch;font-size:14.5px;line-height:1.95;color:#33544D;">تعرض الصفحة كاملة مصغرة، ويعرض إلى جانبها أعلى الورقة بمقاس الحبر الحقيقي. القياس الوحيد الذي يحكم على المتن هو هذا.</p>
+
+  <div style="margin-top:26px;display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,36px);align-items:flex-start;">
+    <div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#8A8271;margin-bottom:10px;">A4 · 210 × 297 mm · SHOWN AT 34%</div>
+      <div style="position:relative;width:214px;height:303px;background:#FAF6EC;box-shadow:0 10px 30px rgba(40,55,45,.2),0 1px 0 rgba(255,255,255,.8) inset;padding:20px 22px 18px;box-sizing:border-box;display:flex;flex-direction:column;">
+        <img src="uploads/kayan_logo_forest.png" alt="كيان" style="height:10px;align-self:flex-start;">
+        <div style="height:1px;background:#E4DBC6;margin:9px 0 10px;"></div>
+        <div style="height:3px;width:44%;background:#DCD3BE;"></div>
+        <div style="height:3px;width:66%;background:#C7BEA8;margin-top:9px;"></div>
+        <div style="margin-top:11px;display:flex;flex-direction:column;gap:4px;">
+          <div style="height:2px;background:#E2DAC6;"></div><div style="height:2px;background:#E2DAC6;"></div><div style="height:2px;width:92%;background:#E2DAC6;"></div><div style="height:2px;background:#E2DAC6;"></div><div style="height:2px;width:74%;background:#E2DAC6;"></div>
+        </div>
+        <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;">
+          <div style="height:2px;width:40%;background:#E2DAC6;"></div>
+          <div style="display:flex;gap:1px;">
+            <span style="width:9px;height:4px;background:#0E6E66;"></span><span style="width:9px;height:4px;background:#12B5A4;"></span><span style="width:6px;height:4px;background:#3E9EEA;"></span><span style="width:6px;height:4px;background:#FFB627;"></span><span style="width:5px;height:4px;background:#FF6250;"></span>
+          </div>
+        </div>
+        <span style="position:absolute;inset-inline-start:-10px;top:99px;width:7px;height:1px;background:#B9AF97;"></span>
+        <span style="position:absolute;inset-inline-start:-10px;top:200px;width:7px;height:1px;background:#B9AF97;"></span>
+        <span style="position:absolute;inset-inline-start:-34px;top:92px;font-family:'Instrument Sans',sans-serif;font-size:8px;color:#8A8271;">fold</span>
+      </div>
+    </div>
+
+    <div style="flex:1;min-width:min(100%,320px);">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px;">
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#8A8271;">1:1 CROP · TOP 82mm OF THE SHEET</span>
+        <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.14em;color:#B9AF97;">BODY 10.5pt · IBM PLEX SANS ARABIC</span>
+      </div>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px;"><div style="position:relative;flex:none;width:calc(150 * var(--mm));height:calc(82 * var(--mm));overflow:hidden;background:#FAF6EC;background-image:radial-gradient(rgba(5,46,43,.03) .5px,transparent .6px);background-size:3px 3px;box-shadow:0 8px 26px rgba(40,55,45,.18);box-sizing:border-box;padding:calc(16 * var(--mm)) calc(20 * var(--mm)) 0;">
+        <img src="uploads/kayan_logo_forest.png" alt="كيان" style="height:calc(8 * var(--mm));">
+        <div style="height:1px;background:#E4DBC6;margin:calc(5 * var(--mm)) 0 calc(4 * var(--mm));"></div>
+        <div dir="ltr" style="display:flex;justify-content:space-between;font-family:'Instrument Sans',sans-serif;font-size:calc(2.82 * var(--mm));letter-spacing:.1em;color:#8A8271;">
+          <span>KYN/2026/0184</span><span>2026-08-06</span>
+        </div>
+        <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:calc(4.2 * var(--mm));color:#052E2B;margin-top:calc(6 * var(--mm));">خطاب تكليف</div>
+        <div style="font-size:calc(3.7 * var(--mm));line-height:1.95;color:#143C37;margin-top:calc(4 * var(--mm));max-width:calc(112 * var(--mm));text-wrap:pretty;">يكلف حامل هذا الخطاب بمعاينة الموقع ورفع محضر الاستلام الابتدائي خلال خمسة أيام عمل. لا يصرف أي مستحق قبل قيد المحضر في السجل.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div style="height:1px;background:#DCD3BE;margin:clamp(30px,4vw,52px) 0;"></div>
+
+  <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(20px,2.4vw,28px);color:#052E2B;">على الشاشة بالمقاس الحقيقي</h3>
+  <p style="margin:10px 0 0;max-width:62ch;font-size:14.5px;line-height:1.95;color:#33544D;">الهياكل أدناه محايدة تمثل عرض المنصات، لا واجهة منصة بعينها. المقاسات وحدها حقيقية.</p>
+
+  <div style="margin-top:24px;display:flex;align-items:flex-end;gap:26px;flex-wrap:wrap;padding:22px 24px;background:#FAF6EC;border:1px solid #E4DBC6;border-radius:8px;">
+    <div style="display:flex;align-items:flex-end;gap:18px;">
+      <div style="text-align:center;"><div style="width:96px;height:96px;border-radius:50%;background:#052E2B;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="uploads/kayan_logo_gold.png" alt="كيان" style="width:62%;"></div><div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10px;color:#8A8271;margin-top:8px;">96</div></div>
+      <div style="text-align:center;"><div style="width:48px;height:48px;border-radius:50%;background:#052E2B;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="uploads/kayan_logo_gold.png" alt="كيان" style="width:62%;"></div><div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10px;color:#8A8271;margin-top:8px;">48</div></div>
+      <div style="text-align:center;"><div style="width:32px;height:32px;border-radius:50%;background:#052E2B;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="uploads/kayan_logo_gold.png" alt="كيان" style="width:64%;"></div><div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10px;color:#8A8271;margin-top:8px;">32</div></div>
+      <div style="text-align:center;"><div style="width:24px;height:24px;border-radius:50%;background:#052E2B;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="uploads/kayan_logo_gold.png" alt="كيان" style="width:66%;"></div><div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10px;color:#8A8271;margin-top:8px;">24</div></div>
+    </div>
+    <p style="flex:1;min-width:240px;margin:0;font-size:13.5px;line-height:1.9;color:#33544D;">أربعة وعشرون بكسلا هو المقاس الحقيقي في قوائم التعليقات والإشعارات. الشعار الذي لا ينجو عندها لا ينجو أصلا.</p>
+  </div>
+
+  <div style="margin-top:26px;display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,32px);align-items:flex-start;">
+
+    <div>
+      <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#8A8271;margin-bottom:10px;">FEED POST · 552px COLUMN · 1:1</div>
+      <div style="width:552px;max-width:100%;background:#FCFBF7;border:1px solid #E4E0D6;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(40,55,45,.1);">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 16px 10px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:#052E2B;display:flex;align-items:center;justify-content:center;overflow:hidden;flex:none;"><img src="uploads/kayan_logo_gold.png" alt="كيان" style="width:62%;"></div>
+          <div style="min-width:0;">
+            <div style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:14px;color:#111;">كيان</div>
+            <div style="font-size:12px;color:#5F6B66;margin-top:2px;">مقاولات وتنفيذ · عدن</div>
+          </div>
+        </div>
+        <div style="padding:0 16px 12px;font-size:14.5px;line-height:1.95;color:#1A1A1A;text-wrap:pretty;">قيد في السجل: تأهيل مقاول رقم ٠١٨٤. أرفق عملين سابقين وجهة تزكية، وروجعت الوثائق في ست وثلاثين ساعة.<br><span style="color:#0E6E66;">kayanwork.com/v/0184</span></div>
+        <div style="width:100%;aspect-ratio:1200/628;background:#052E2B;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:26px 28px;box-sizing:border-box;">
+          <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.2em;color:#12B5A4;">ACCEPTED · 2026-08-04</div>
+          <div>
+            <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:30px;line-height:1.3;color:#FAF6EC;">قبل الطلب رقم ٠١٨٤</div>
+            <div style="font-size:15px;color:rgba(250,246,236,.72);margin-top:8px;">المراجعة ٣٦ ساعة · القرار منشور بحيثياته</div>
+          </div>
+          <div style="display:flex;height:8px;border-radius:99px;overflow:hidden;width:200px;">
+            <div style="flex:2.2;background:#0E6E66;"></div><div style="flex:2.2;background:#12B5A4;"></div><div style="flex:1.4;background:#3E9EEA;"></div><div style="flex:1.4;background:#FFB627;"></div><div style="flex:1.2;background:#FF6250;"></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:22px;padding:11px 16px;border-block-start:1px solid #EDE9E0;font-size:12.5px;color:#6B7570;">
+          <span>إعجاب</span><span>تعليق</span><span>مشاركة</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <div>
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#8A8271;margin-bottom:10px;">MESSAGE THREAD · 320px</div>
+        <div style="width:320px;max-width:100%;background:#E9E3D8;border:1px solid #DCD3BE;border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px;">
+          <div style="align-self:flex-start;max-width:80%;background:#FCFBF7;border-radius:12px 12px 12px 3px;padding:9px 12px;font-size:13.5px;line-height:1.8;color:#1A1A1A;box-shadow:0 1px 2px rgba(0,0,0,.08);">من هو المقاول المكلف بالموقع؟</div>
+          <div style="align-self:flex-end;max-width:86%;background:#D3EDE3;border-radius:12px 12px 3px 12px;padding:9px 12px;font-size:13.5px;line-height:1.8;color:#0F2A22;box-shadow:0 1px 2px rgba(0,0,0,.08);">
+            سجله منشور:
+            <div style="margin-top:8px;background:#FAF6EC;border:1px solid #DCD3BE;border-radius:8px;overflow:hidden;">
+              <div style="background:#052E2B;padding:10px 12px;display:flex;align-items:center;gap:8px;">
+                <div style="width:24px;height:24px;border-radius:50%;background:#0A3F3A;display:flex;align-items:center;justify-content:center;overflow:hidden;flex:none;"><img src="uploads/kayan_logo_gold.png" alt="" style="width:66%;"></div>
+                <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:12px;color:#E9BE4B;">سجل عام · كيان</span>
+              </div>
+              <div style="padding:9px 12px;">
+                <div style="font-size:12.5px;color:#052E2B;font-family:'Alexandria',sans-serif;font-weight:500;">مقاول ٠١٨٤ · مؤتمن</div>
+                <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;color:#5A6B66;margin-top:3px;">kayanwork.com/v/0184</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;color:#8A8271;margin-bottom:10px;">STORY · 1080 × 1920 · SHOWN AT 26%</div>
+        <div style="width:281px;height:499px;border-radius:34px;background:#1A1A1A;padding:8px;box-sizing:border-box;box-shadow:0 14px 34px rgba(40,55,45,.28);">
+          <div style="position:relative;width:100%;height:100%;border-radius:27px;overflow:hidden;background:#052E2B;display:flex;flex-direction:column;justify-content:space-between;padding:22px 20px;box-sizing:border-box;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:11px;color:rgba(250,246,236,.8);">9:41</span>
+              <div style="display:flex;gap:4px;align-items:center;"><span style="width:14px;height:7px;border:1px solid rgba(250,246,236,.6);border-radius:2px;"></span></div>
+            </div>
+            <div style="position:absolute;inset-inline:20px;top:44px;display:flex;gap:3px;">
+              <span style="flex:1;height:2px;background:#FAF6EC;border-radius:2px;"></span><span style="flex:1;height:2px;background:rgba(250,246,236,.3);border-radius:2px;"></span><span style="flex:1;height:2px;background:rgba(250,246,236,.3);border-radius:2px;"></span>
+            </div>
+            <div style="margin-top:auto;">
+              <div dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:9.5px;letter-spacing:.2em;color:#12B5A4;">AUGUST · NUMBERS</div>
+              <div style="font-family:'Alexandria',sans-serif;font-weight:600;font-size:34px;line-height:1.2;color:#FAF6EC;margin-top:10px;">٧٩<span style="font-size:18px;color:rgba(250,246,236,.6);"> طلبا</span></div>
+              <div style="font-size:12.5px;line-height:1.85;color:rgba(250,246,236,.74);margin-top:8px;">قبل ٥١، رد ٢٨ بقرار مسبب.<br>معدل المراجعة ٤١ ساعة.</div>
+              <div style="display:flex;height:6px;border-radius:99px;overflow:hidden;margin-top:16px;">
+                <div style="flex:51;background:#12B5A4;"></div><div style="flex:28;background:#FF6250;"></div>
+              </div>
+              <div style="font-size:11px;color:rgba(250,246,236,.5);margin-top:14px;">المصدر: السجل العام · kayanwork.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:1px;background:#DCD3BE;margin:clamp(30px,4vw,52px) 0;"></div>
+
+  <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(20px,2.4vw,28px);color:#052E2B;">اختبارات الواقع</h3>
+  <p style="margin:10px 0 0;max-width:62ch;font-size:14.5px;line-height:1.95;color:#33544D;">تسقط الهويات في الظروف السيئة لا في العرض المرتب. تفصل الاختبارات هنا بحسب المادة: ما يقع على الورق يفحص حبرا على كريمي، وما يقع في الميدان يفحص ذهبا على أخضر.</p>
+
+  <div style="margin-top:26px;">
+    <div style="display:flex;align-items:baseline;gap:10px;">
+      <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#052E2B;">على الورق</span>
+      <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#8A8271;">INK ON CREAM · WHERE PRINT REALLY LANDS</span>
+    </div>
+    <div style="margin-top:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;">
+    <div style="background:#FAF6EC;border:1px solid #E4DBC6;border-radius:10px;overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,.7) inset;">
+      <div style="height:106px;background:#FDFCF8;border-block-end:1px solid #EFE7D5;display:flex;align-items:center;justify-content:center;filter:grayscale(1);"><img src="uploads/kayan_logo_forest.png" alt="" style="height:24px;"></div>
+      <div style="padding:12px 14px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:13.5px;color:#052E2B;">تصوير بالأبيض والأسود</span>
+          <span style="flex:none;font-size:11px;line-height:1;padding:5px 9px;border-radius:99px;color:#0E6E66;background:rgba(18,181,164,.12);">ينجو</span>
+        </div>
+        <div style="font-size:12px;color:#5A6B66;margin-top:6px;line-height:1.75;">الأخضر يهبط إلى رمادي متوسط، والوزن البصري يبقى.</div>
+      </div>
+    </div>
+    <div style="background:#FAF6EC;border:1px solid #E4DBC6;border-radius:10px;overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,.7) inset;">
+      <div style="height:106px;background:#FDFCF8;border-block-end:1px solid #EFE7D5;display:flex;align-items:center;justify-content:center;filter:grayscale(1) contrast(1.85) brightness(1.04);"><img src="uploads/kayan_logo_forest.png" alt="" style="height:24px;"></div>
+      <div style="padding:12px 14px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:13.5px;color:#052E2B;">النسخة الثالثة</span>
+          <span style="flex:none;font-size:11px;line-height:1;padding:5px 9px;border-radius:99px;color:#0E6E66;background:rgba(18,181,164,.12);">ينجو</span>
+        </div>
+        <div style="font-size:12px;color:#5A6B66;margin-top:6px;line-height:1.75;">تسد النسخ المتكررة التفاصيل الدقيقة، ولا تفصيل دقيق في الشعار.</div>
+      </div>
+    </div>
+    <div style="background:#FAF6EC;border:1px solid #E4DBC6;border-radius:10px;overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,.7) inset;">
+      <div style="height:106px;background:#FDFCF8;border-block-end:1px solid #EFE7D5;display:flex;align-items:center;justify-content:center;filter:grayscale(1) contrast(11);"><img src="uploads/kayan_logo_forest.png" alt="" style="height:24px;"></div>
+      <div style="padding:12px 14px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:13.5px;color:#052E2B;">عتبة بت واحد</span>
+          <span style="flex:none;font-size:11px;line-height:1;padding:5px 9px;border-radius:99px;color:#0E6E66;background:rgba(18,181,164,.12);">ينجو</span>
+        </div>
+        <div style="font-size:12px;color:#5A6B66;margin-top:6px;line-height:1.75;">حد الفاكس والختم المطاطي: الشكل وحده يحمل الهوية.</div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div style="margin-top:26px;">
+    <div style="display:flex;align-items:baseline;gap:10px;">
+      <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:15px;color:#052E2B;">في الميدان</span>
+      <span dir="ltr" style="font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.16em;color:#8A8271;">GOLD ON FOREST · SIGNAGE &amp; CARD BACK</span>
+    </div>
+    <div style="margin-top:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;">
+    <div style="background:#FAF6EC;border:1px solid #E4DBC6;border-radius:10px;overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,.7) inset;">
+      <div style="position:relative;height:106px;background:#052E2B;display:flex;align-items:center;justify-content:center;"><img src="uploads/kayan_logo_gold.png" alt="" style="height:7px;filter:blur(.4px);"></div>
+      <div style="padding:12px 14px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:13.5px;color:#052E2B;">على بعد ثلاثة أمتار</span>
+          <span style="flex:none;font-size:11px;line-height:1;padding:5px 9px;border-radius:99px;color:#0E6E66;background:rgba(18,181,164,.12);">ينجو</span>
+        </div>
+        <div style="font-size:12px;color:#5A6B66;margin-top:6px;line-height:1.75;">لوحة موقع من الرصيف المقابل.</div>
+      </div>
+    </div>
+    <div style="background:#FAF6EC;border:1px solid #E4DBC6;border-radius:10px;overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,.7) inset;">
+      <div style="position:relative;height:106px;background:#052E2B;display:flex;align-items:center;justify-content:center;"><img src="uploads/kayan_logo_gold.png" alt="" style="height:24px;transform:rotate(180deg);"></div>
+      <div style="padding:12px 14px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:13.5px;color:#052E2B;">مقلوبة على الطاولة</span>
+          <span style="flex:none;font-size:11px;line-height:1;padding:5px 9px;border-radius:99px;color:#0E6E66;background:rgba(18,181,164,.12);">ينجو</span>
+        </div>
+        <div style="font-size:12px;color:#5A6B66;margin-top:6px;line-height:1.75;">وضع البطاقة أمام الطرف المقابل في الاجتماع.</div>
+      </div>
+    </div>
+    <div style="background:#FAF6EC;border:1px solid #E4DBC6;border-radius:10px;overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,.7) inset;">
+      <div style="position:relative;height:106px;background:#052E2B;display:flex;align-items:center;justify-content:center;"><img src="uploads/kayan_logo_gold.png" alt="" style="height:24px;opacity:.7;"><span style="position:absolute;inset:0;background:linear-gradient(128deg,rgba(250,246,236,.3),transparent 42%,rgba(250,246,236,.16));"></span></div>
+      <div style="padding:12px 14px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span style="font-family:'Alexandria',sans-serif;font-weight:500;font-size:13.5px;color:#052E2B;">خلف زجاج بنهار عدن</span>
+          <span style="flex:none;font-size:11px;line-height:1;padding:5px 9px;border-radius:99px;color:#B8891A;background:rgba(255,182,39,.16);">ينجو بشرط</span>
+        </div>
+        <div style="font-size:12px;color:#5A6B66;margin-top:6px;line-height:1.75;">الانعكاس يبتلع الثلث العلوي، فلا يوضع الشعار فيه على الواجهات.</div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div style="height:1px;background:#DCD3BE;margin:clamp(30px,4vw,52px) 0;"></div>
+
+  <h3 style="margin:0;font-family:'Alexandria',sans-serif;font-weight:600;font-size:clamp(20px,2.4vw,28px);color:#052E2B;">جدول المقاسات الحقيقية</h3>
+  <div style="margin-top:18px;border:1px solid #DCD3BE;border-radius:8px;overflow:hidden;background:#FAF6EC;">
+    <div data-row="" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1.5fr);gap:12px;padding:11px 16px;background:#F3EDE0;border-block-end:1px solid #DCD3BE;font-family:'Instrument Sans',sans-serif;font-size:10.5px;letter-spacing:.14em;color:#8A8271;" dir="rtl">
+      <span>القطعة</span><span>المقاس الحقيقي</span><span>المادة والملف</span>
+    </div>
+    <div data-row="" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1.5fr);gap:12px;padding:12px 16px;border-block-end:1px solid #E7DFC9;font-size:13.5px;line-height:1.7;">
+      <span style="color:#052E2B;">بطاقة التعريف</span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;">85.6 × 54 mm</span><span style="color:#33544D;">٦٠٠ جم غير مطلي، رقاقة ذهبية على السطر</span>
+    </div>
+    <div data-row="" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1.5fr);gap:12px;padding:12px 16px;border-block-end:1px solid #E7DFC9;font-size:13.5px;line-height:1.7;">
+      <span style="color:#052E2B;">بطاقة الموظف</span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;">54 × 85.6 mm</span><span style="color:#33544D;">‏PVC ٠٫٧٦ مم، ثقب علوي</span>
+    </div>
+    <div data-row="" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1.5fr);gap:12px;padding:12px 16px;border-block-end:1px solid #E7DFC9;font-size:13.5px;line-height:1.7;">
+      <span style="color:#052E2B;">الترويسة</span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;">210 × 297 mm</span><span style="color:#33544D;">١٢٠ جم، طي ثلثي عند ٩٩ و١٩٨ مم</span>
+    </div>
+    <div data-row="" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1.5fr);gap:12px;padding:12px 16px;border-block-end:1px solid #E7DFC9;font-size:13.5px;line-height:1.7;">
+      <span style="color:#052E2B;">الظرف</span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;">220 × 110 mm</span><span style="color:#33544D;">‏DL، ١٢٠ جم، بلا نافذة</span>
+    </div>
+    <div data-row="" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1.5fr);gap:12px;padding:12px 16px;border-block-end:1px solid #E7DFC9;font-size:13.5px;line-height:1.7;">
+      <span style="color:#052E2B;">الصورة الرمزية</span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;">1000 × 1000 px</span><span style="color:#33544D;">‏PNG، تعرض حتى ٢٤ بكسل</span>
+    </div>
+    <div data-row="" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1.5fr);gap:12px;padding:12px 16px;font-size:13.5px;line-height:1.7;">
+      <span style="color:#052E2B;">المنشور والقصة</span><span dir="ltr" style="font-family:'Instrument Sans',sans-serif;">1200 × 628 · 1080 × 1920</span><span style="color:#33544D;">‏PNG من ملف الحضور الاجتماعي</span>
+    </div>
+  </div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;holderName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;PH-NAME&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;حامل البطاقة&quot;},&quot;holderRole&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;الصفة الوظيفية&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;حامل البطاقة&quot;},&quot;recordId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;PH-ID&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;حامل البطاقة&quot;},&quot;pxPerMm&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:3.7795,&quot;min&quot;:2.4,&quot;max&quot;:6.2,&quot;step&quot;:0.005,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;المعايرة&quot;}}">
+class Component extends DCLogic {
+  constructor(p){
+    super(p);
+    this.wrapRef = React.createRef();
+    this.calRef = React.createRef();
+    this.mmRef = React.createRef();
+    this.dpiRef = React.createRef();
+    this.printRef = React.createRef();
+    this.backRef = React.createRef();
+    this.foilRef = React.createRef();
+    this.glossRef = React.createRef();
+    this.marksBtnRef = React.createRef();
+    this.marks = false;
+    this.DEFAULT = 3.7795;
+  }
+  componentDidMount(){
+    let v = this.props.pxPerMm ?? this.DEFAULT;
+    try { const s = localStorage.getItem('kayan.pxPerMm'); if (s && +s > 0) v = +s; } catch(e){}
+    this.apply(v, false);
+    if (this.calRef.current) this.calRef.current.value = v;
+  }
+  apply(v, save){
+    const w = this.wrapRef.current; if (!w) return;
+    w.style.setProperty('--mm', v + 'px');
+    if (this.mmRef.current) this.mmRef.current.textContent = v.toFixed(2);
+    if (this.dpiRef.current) this.dpiRef.current.textContent = Math.round(v * 25.4);
+    if (save) { try { localStorage.setItem('kayan.pxPerMm', String(v)); } catch(e){} }
+  }
+  onCal = (e) => this.apply(+e.target.value, true);
+  onReset = () => {
+    const v = this.props.pxPerMm ?? this.DEFAULT;
+    if (this.calRef.current) this.calRef.current.value = v;
+    this.apply(v, true);
+  };
+  onMarks = () => {
+    this.marks = !this.marks;
+    const root = this.printRef.current; if (!root) return;
+    root.querySelectorAll('[data-mark]').forEach(el => { el.style.opacity = this.marks ? '1' : '0'; });
+    if (this.marksBtnRef.current) {
+      this.marksBtnRef.current.textContent = this.marks ? 'إخفاء النزف والقص' : 'إظهار النزف والقص';
+      this.marksBtnRef.current.style.borderColor = this.marks ? '#0E6E66' : '#C7BEA8';
+      this.marksBtnRef.current.style.color = this.marks ? '#0E6E66' : '#33544D';
+    }
+  };
+  get calm(){ return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  onTilt = (e) => {
+    const c = this.backRef.current; if (!c || this.calm) return;
+    const r = c.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    c.style.transition = 'transform .12s linear, box-shadow .12s linear';
+    c.style.transform = 'perspective(900px) rotateY(' + ((x - .5) * 5).toFixed(2) + 'deg) rotateX(' + ((.5 - y) * 4).toFixed(2) + 'deg)';
+    if (this.foilRef.current) {
+      this.foilRef.current.style.transition = 'none';
+      this.foilRef.current.style.backgroundPosition = (100 - x * 100).toFixed(1) + '% 0';
+    }
+    if (this.glossRef.current) {
+      this.glossRef.current.style.transition = 'none';
+      this.glossRef.current.style.backgroundPosition = (x * 100).toFixed(1) + '% 0';
+    }
+  };
+  onRest = () => {
+    const c = this.backRef.current; if (!c) return;
+    c.style.transition = 'transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s cubic-bezier(.22,1,.36,1)';
+    c.style.transform = 'none';
+    if (this.foilRef.current) {
+      this.foilRef.current.style.transition = 'background-position .45s ease-out';
+      this.foilRef.current.style.backgroundPosition = '50% 0';
+    }
+    if (this.glossRef.current) {
+      this.glossRef.current.style.transition = 'background-position .45s ease-out';
+      this.glossRef.current.style.backgroundPosition = '50% 0';
+    }
+  };
+  renderVals(){
+    return {
+      wrapRef: this.wrapRef, calRef: this.calRef, mmRef: this.mmRef, dpiRef: this.dpiRef,
+      printRef: this.printRef, backRef: this.backRef, foilRef: this.foilRef, glossRef: this.glossRef, marksBtnRef: this.marksBtnRef,
+      onCal: this.onCal, onReset: this.onReset, onMarks: this.onMarks, onTilt: this.onTilt, onRest: this.onRest,
+      holderName: this.props.holderName ?? 'PH-NAME',
+      holderRole: this.props.holderRole ?? 'الصفة الوظيفية',
+      recordId: this.props.recordId ?? 'PH-ID'
+    };
+  }
+}
+</script>
+</body>
+</html>

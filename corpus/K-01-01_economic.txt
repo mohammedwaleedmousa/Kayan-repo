@@ -1,0 +1,578 @@
+KAYAN INNOVATION, ENTREPRENEURSHIP & WORK ENVIRONMENTS LLC
+Aden, Republic of Yemen
+
+The Economic Architecture
+How Kayan prices, what each engagement actually costs, what it sells as a product, how money physically moves, and how revenue is retained
+Session 1 defined what Kayan is. This document defines whether it makes money. It corrects the take-rate assumption on the basis of comparable-market evidence, replaces a flat percentage with a risk-priced fee architecture, gives the cost equation that governs every quotation, productises what Kayan sells, and specifies how money physically moves given Yemen&apos;s banking reality.
+Document code
+K-01-01
+Version
+v1.0
+Status
+Founding draft — corrects K-00-01 §8 on take rate
+Date
+5 August 2026
+Owner
+Founder / Chief Executive
+Classification
+INTERNAL — CONFIDENTIAL
+Supersedes
+All prior pricing, take-rate and financial model drafts
+Derives from
+K-00-01 Constitution · comparable-market research, 5 August 2026
+Unlocks
+Financial model · pricing sheets · Ready Products catalogue · escrow build · sales enablement
+This document corrects the Constitution. Where the two conflict on pricing, this governs.
+
+Contents
+TOC \h \o "1-3"
+
+1. The correction
+Session 1 carried forward a 20 per cent take rate from the historical estate without testing it. That number is wrong, and it is wrong in the direction that would have quietly killed the company. [JUDGEMENT — this is a self-correction]
+Comparable managed-delivery businesses do not charge 20 per cent. They charge roughly double that, and they carry less risk than Kayan proposes to carry.
+Comparator
+Model
+Reported economics
+What Kayan should read from it
+Andela
+Vetted global talent, managed placement and delivery
+FY2025 revenue around $312M at approximately 56 per cent gross margin, with net revenue retention reported near 112 to 115 per cent [RESEARCH CLAIM — third-party analyses, verify before external use]
+A managed-talent business at scale runs on roughly half the invoice as margin. 20 per cent is not a market rate; it is a marketplace rate.
+Turing
+Vetted engineers, managed engagement
+Service margin reported at roughly 50 to 55 per cent inside the invoice [RESEARCH CLAIM]
+The client pays for infrastructure and assurance, not for the worker&apos;s hour. That is precisely Kayan&apos;s argument.
+Toptal
+Curated freelance marketplace
+Client pays a high hourly rate for access to a screened pool [RESEARCH CLAIM]
+Screening alone commands a premium. Kayan screens and guarantees.
+Braintrust
+Transparent-fee talent network
+Talent keeps their full quoted rate; client pays a flat platform fee historically publicised around 10 to 15 per cent [RESEARCH CLAIM]
+This is the honest price of pure facilitation with no risk carried. It is the correct benchmark for Kayan&apos;s Phase 2 marketplace, not for managed delivery.
+Impact sourcing providers (Sama, CloudFactory, Digital Divide Data)
+Employed workforce delivering outsourced process work
+Established category with a recognised standard and a coalition; heavily concentrated in data annotation and process work [RESEARCH CLAIM]
+The category exists and has funder legitimacy. Its weakness is that it is task work. Kayan&apos;s differentiation is professional work, not microwork.
+1.1 What the comparison actually establishes
+The fee is not a percentage of a transaction. It is the price of the risk transferred. Braintrust carries almost no risk and charges 10 to 15 per cent. Andela and Turing carry matching, management and continuity risk and take around half the invoice. Kayan proposes to carry more than either — identity risk, competence risk, contract risk, payment risk and delivery accountability, in an operating environment where power and connectivity are unreliable.
+A single flat rate cannot express that. So Kayan does not have a take rate. It has a fee architecture in which the fee is a function of the risk the client hands over. [DECISION D-37]
+
+2. The three service tiers
+The same pod, the same professionals and the same taxonomy can be sold three different ways. What changes is not the work — it is what Kayan promises about the work, and therefore what Kayan must reserve against.
+Tier
+Name
+What Kayan promises
+What Kayan reserves against
+Indicative Kayan share of price
+S1
+Essential
+Verified people, a written scope, escrow protection, and a delivery coordinator. Client manages the outcome.
+Coordination time and payment risk only
+25 to 30 per cent
+S2
+Assured
+All of S1, plus an accountable pod lead, independent quality review before submission, and a defined acceptance test.
+Coordination, review time, and a rework reserve
+35 to 42 per cent
+S3
+Guaranteed
+All of S2, plus a fixed price, a delivery date Kayan is liable for, replacement of any contributor at Kayan&apos;s cost, and post-acceptance warranty.
+Coordination, review, rework, replacement, schedule risk and warranty
+45 to 55 per cent
+Percentages are indicative bands to be calibrated against the first twenty engagements, not fixed prices. [ASSUMPTION — validate by Q1 of trading]
+The commercial consequence is that Kayan should sell S2 and S3, and offer S1 only where a client insists on managing delivery themselves. S1 is the tier where Kayan is closest to being a body shop, and it is the tier that should shrink as a share of revenue over time. [JUDGEMENT]
+2.1 Why the tiers also protect the talent
+A higher tier does not mean the contributor earns less. It means Kayan earns more for carrying more. Contributor rates are set by role, tier of the professional and the specialisation — they do not vary with what Kayan charges the client. This must be true, and must be seen to be true, or the disclosure principle collapses and with it the trust asset. [RULE]
+3. The Kayan Price Equation
+No quotation is issued without running this. It is deliberately built as a floor plus a target, because the commonest way a services company dies is by discounting below a floor it never calculated.
+3.1 The floor
+F = D + S + Q + T + W + O
+Term
+What it is
+How it is estimated
+D — Direct delivery
+Contributor fees for every pod role, at agreed rates for the hours scoped
+Role × rate × scoped hours, summed
+S — Supervision
+Pod lead time plus Kayan delivery management time
+A percentage of D, set by tier: lower at S1, higher at S3
+Q — Quality assurance
+Independent review before submission
+Reviewer hours; zero at S1, mandatory at S2 and S3
+T — Transaction
+Payment rails in and out, foreign exchange spread, escrow administration
+A percentage of gross flow, set from observed banking cost, not assumed
+W — Warranty and rework reserve
+Held against revisions and post-acceptance fixes
+A percentage of D, set by tier and by scope novelty
+O — Overhead allocation
+Hub, platform, verification, administration, insurance
+Allocated per engagement on a stated basis, reviewed quarterly
+Rule: no engagement is ever priced below F. A price below F is not a discount, it is a loss, and it requires named executive approval and is recorded as a business-development investment rather than as a sale. [RULE — this single rule prevents the commonest failure in project services]
+3.2 The target
+Target price  =  F ÷ (1 − π)      where π is the target contribution margin for the tier
+Then four adjustments, each a multiplier applied to the target, each recorded on the quotation so that the reason for the price is auditable:
+Multiplier
+Range
+Applied when
+σ — Segment
+0.60 to 1.15
+Reflects the client&apos;s structural paying power. See section 4. A σ below 1.0 is a recorded cross-subsidy, not a negotiation outcome.
+κ — Quality tier
+1.00 / 1.25 / 1.50
+S1 / S2 / S3. Expresses the promise, not the effort.
+υ — Urgency
+1.00 to 1.40
+Standard, compressed, or emergency turnaround. Compression consumes reviewer capacity and raises rework probability; it is priced, never absorbed.
+ν — Novelty
+1.00 to 1.30
+Repeatable known scope, adapted scope, or first-of-kind. First-of-kind carries estimation risk that must be priced or it is borne as loss.
+Final price = maximum of ( F × 1.05 ,  Target × σ × κ × υ × ν )
+The 1.05 factor on the floor exists so that even a fully subsidised engagement contributes something rather than consuming capacity for nothing.
+3.3 The disclosed-fee discipline
+Kayan discloses its fee to both sides. This is unusual, it is a genuine competitive risk, and it is correct — a company whose product is trust cannot conceal its own economics.
+It is survivable only because the fee is justified by what is promised rather than by what is hidden. A client who sees 45 per cent and also sees a fixed price, a guaranteed date, free contributor replacement and a warranty is buying an insurance product and can evaluate it as one. A client who sees 45 per cent with no stated promise attached will refuse, correctly. Therefore: the fee is never quoted without the tier, and the tier is never quoted without its promises in writing. [RULE]
+
+4. Client segmentation by paying power
+The same deliverable is genuinely worth different amounts to different buyers, and a single price list would either exclude local clients or under-charge institutional ones. The segment factor makes that explicit and auditable rather than improvised in negotiation.
+Segment
+Who
+Paying power
+σ range
+What they actually buy
+Sales approach
+A
+International institutions, UN agencies, INGOs
+Budgeted in USD, procurement-driven, price-insensitive within band
+1.00–1.15
+Compliance, auditability, absorption evidence and a counterparty that can invoice
+Framework agreements and pre-qualification; long cycle, high value, sticky
+B
+GCC corporates and diaspora-owned businesses
+Commercial USD budgets, value-sensitive not price-sensitive
+1.00–1.10
+Cost advantage with assurance; talent they cannot access directly
+Referral and diaspora networks; proof by case study
+C
+Diaspora individuals and small ventures
+Personal or small-business funds, price-aware
+0.85–1.00
+Trust. They want Yemen work done and have no safe way to commission it
+Digital, self-explaining, low-friction; the Ready Products are built for this segment
+D
+Yemeni SMEs and local institutions
+YER budgets, severely constrained
+0.60–0.80
+Capability they cannot hire; often first formal service purchase
+Ready Products at fixed local prices; volume over margin; explicitly cross-subsidised
+E
+Local NGOs and community organisations
+Grant-funded, thin overheads
+0.80–0.90
+Delivery capacity plus reportable compliance
+Programme-linked; often introduced by segment A funders
+Two disciplines make this work rather than degenerate into arbitrary pricing. First, the segment is assigned on the client record at qualification and is visible on every quotation — it is not chosen deal by deal. Second, the aggregate cross-subsidy is measured monthly: the total value of σ below 1.0 is reported as a line, so that serving local clients is a visible, budgeted decision rather than an invisible drain. [DECISION D-38]
+4.1 The concentration rule
+Segment A will dominate early revenue because it is the only segment with budget certainty. That is correct commercially and dangerous structurally. The rule: when any single client exceeds a stated share of trailing twelve-month revenue, a written mitigation plan is required, and when the top three clients exceed a stated share, new segment A pursuit is paused until segments B and C are grown. Thresholds are set in the financial model. [RULE — Constitution R9]
+5. Ready Products
+A bespoke quotation costs Kayan two to five hours of senior time before a single dinar is earned, and is the reason project services companies cannot scale. A Ready Product is a pre-scoped, pre-priced, pre-podded deliverable with a fixed inclusion list and a fixed exclusion list. It collapses the sales cycle, makes cost predictable, and makes quality repeatable because the same pod shape delivers it every time.
+These twelve are the launch catalogue. Each is deliverable with the talent base Kayan will realistically have in July 2026, and each maps to taxonomy families already populated. [JUDGEMENT]
+#
+Ready Product
+What is included
+Pod shape
+Window
+Primary segment
+RP-01
+Brand Starter
+Logo, palette, typography, three applications, usage sheet
+Designer + reviewer
+10 days
+C, D
+RP-02
+Website Essential
+Five-page bilingual mobile-first site, contact form, basic analytics
+Front-end + designer + reviewer
+15 days
+C, D
+RP-03
+Report Production
+Design, layout and infographics for a document up to 40 pages, print and digital
+Designer + data visualiser + editor
+10 days
+A, E
+RP-04
+Translation Block
+AR to EN or EN to AR, per 10,000 words, with terminology sheet and second-pass review
+Translator + reviewer
+7 days
+A, B, E
+RP-05
+Field Data Round
+Tool build, enumerator deployment, cleaned dataset, quality log
+Coordinator + enumerators + data officer
+20 days
+A, E
+RP-06
+Social Retainer
+30 posts, calendar, community management, monthly report
+Content + designer + community lead
+Monthly
+B, C, D
+RP-07
+Story Film
+Three-minute film: shoot, edit, subtitles in both languages, stills set
+Videographer + editor + writer
+20 days
+A, B, E
+RP-08
+M&E Framework
+Theory of change, logframe, indicator set, data collection tools
+M&E specialist + reviewer
+15 days
+A, E
+RP-09
+Financial Model
+Three-statement model with assumptions sheet and scenario switches
+Financial analyst + reviewer
+15 days
+B, C
+RP-10
+Digitisation Sprint
+Paper records to structured, validated data, per 1,000 pages
+Data officers + QA
+15 days
+A, D, E
+RP-11
+Documentation Day
+Full-day photography, edited set, captions, usage licence
+Photographer + editor
+5 days
+A, B, E
+RP-12
+Proposal Sprint
+Bid writing, budget formatting, design and submission pack
+Writer + designer + finance reviewer
+10 days
+E, B
+5.1 The rules that make a Ready Product work
+Every product has an explicit exclusion list. What is not included is stated more prominently than what is, because scope creep is where fixed-price products lose money.
+Every product is offered at S2 by default, with S3 available at the stated multiplier. S1 is not offered on Ready Products — the whole point is that Kayan manages them.
+Every product carries a defined revision allowance. Revisions beyond it are a change request with a price, not a favour.
+Every product has a target contribution margin and is reviewed monthly against actual. A product that misses its margin twice in a quarter is repriced or retired.
+Every product is delivered by the same pod shape, so that the cost estimate improves with every delivery rather than being re-guessed.
+The catalogue is the mechanism by which Kayan stops selling hours and starts selling outcomes. It is also the only realistic route to serving segments C and D at all, because a bespoke process cannot be justified at those price points. [JUDGEMENT]
+
+6. Unit economics
+The following is worked structurally rather than with invented figures, because contributor rates and overhead are not yet observed. What matters here is the shape of the calculation and the discipline it imposes. Replace the placeholders with real numbers in the financial model, not in this document. [ASSUMPTION — all values illustrative]
+Line
+S1 Essential
+S2 Assured
+S3 Guaranteed
+Note
+Client price
+100
+100
+100
+Indexed to 100 for comparison
+Direct delivery (D)
+70
+58
+46
+Contributor fees are the same per hour; the tier changes how much of the price they represent
+Supervision (S)
+4
+8
+11
+Pod lead and delivery management
+Quality assurance (Q)
+0
+5
+7
+Independent review
+Transaction (T)
+3
+3
+3
+Rails, foreign exchange, escrow administration
+Warranty reserve (W)
+0
+3
+6
+Held, released to margin if unused
+Overhead allocation (O)
+8
+8
+8
+Hub, platform, verification, administration
+Floor (F)
+85
+85
+81
+Sum of the above
+Contribution
+15
+15
+19
+Price minus floor
+Contribution margin
+15%
+15%
+19%
+Before growth investment
+Read the table carefully, because it contains the central commercial insight of this document. The higher tiers are not more profitable because Kayan charges more for the same thing. They are more profitable because the reserve for warranty and rework is released to margin when the work is delivered properly. S3 is a bet on Kayan&apos;s own quality system, and it pays out only if the quality system is real. [JUDGEMENT]
+The corollary is uncomfortable and important: if the verification and review system does not actually reduce failure, S3 destroys margin faster than S1 earns it. The economics of the whole company therefore rest on whether verification works. This is the financial expression of the Session 1 thesis, and it is the number to watch above all others.
+6.1 The metrics that govern
+Metric
+Definition
+Why it is the one that matters
+Contribution margin per engagement
+Price minus floor, per engagement
+The only honest measure of whether a sale was worth making
+Reserve release rate
+Share of warranty reserve unused at close
+The direct financial readout of whether quality control works
+Rework hours per engagement
+Unbilled hours spent after first submission
+Leading indicator of margin erosion, visible before the money is lost
+Utilisation of verified capacity
+Share of available verified professional hours actually engaged
+Verified people who never work are a cost with no return and a retention risk
+Cost to verify one professional
+Total verification cost divided by professionals verified
+Determines whether Forge sponsorship covers supply-side acquisition
+Revenue per verified professional
+Trailing twelve-month net fee divided by active verified professionals
+The single number that tells whether the registry is an asset or a list
+Client net revenue retention
+Value from existing clients this period against the same clients last period
+Andela reports around 112 to 115 per cent. Below 100 per cent means Kayan is refilling a leaking bucket.
+Absorption Ratio
+Share of trained and verified people entering recorded, paid, contracted work
+The sponsor-facing metric and the moral claim, computed from delivery records
+7. Retention
+Acquisition is expensive and visible. Retention is cheap and invisible, and it is where the entire enterprise value of this company sits. Two retention systems are required and they are not the same problem.
+7.1 Client retention
+The second engagement is the one that matters. A client who commissions twice has converted from a buyer of a project to a user of infrastructure, and their acquisition cost is already paid.
+Stage
+Trigger
+Action
+Owner
+Close
+Acceptance of final milestone
+Delivery note, acceptance certificate, and a written summary of what was produced and what it cost against estimate
+Pod lead
+Follow-up
+14 days after acceptance
+Structured call: what worked, what did not, what is next in their plan
+Account owner
+Capability review
+Quarterly
+Present what Kayan can now do that it could not last quarter, mapped to their stated plans
+Account owner
+Capacity agreement
+When a client commissions a third time
+Move from project pricing to a standing agreement with reserved capacity and preferential terms
+Commercial lead
+Embedded pod
+Sustained demand
+A named pod assigned to that client with continuity of people
+Delivery lead
+The progression from project to capacity agreement to embedded pod is the revenue architecture that converts lumpy project income into predictable recurring income. It is also the strongest defence against disintermediation, because a client with an embedded pod has already got continuity of people and has nothing to gain by going direct. [JUDGEMENT]
+7.2 Talent retention — the asset that is actually at risk
+Every verified professional who stops working through Kayan takes with them the verification investment, the delivery record, and the evidence that supports the Absorption Ratio. Talent attrition is not an HR issue; it is direct destruction of the balance sheet.
+Driver
+What retains
+What loses them
+Measured by
+Earnings continuity
+Predictable flow of engagements, even small ones
+Long gaps between engagements after verification
+Days between engagements; share of verified with zero engagements in 90 days
+Progression
+A visible route: apprentice to contributor to reviewer to pod lead to assessor
+A ladder that stops at T4 with nothing beyond
+Tier movement per quarter; internal role appointments from the registry
+Fairness
+Disclosed fees, rates that do not vary with what Kayan charges, transparent allocation
+Any perception that work goes to favourites
+Allocation distribution; complaint volume; exit reasons
+The credential
+A record that is worth carrying and eventually showing
+A badge nobody outside Kayan recognises
+External recognition events; whether talent cite Kayan unprompted
+Belonging
+The Hub, pod continuity, mentoring, being known by name
+Being a row in a database
+Hub attendance by verified talent; repeat pod pairings
+The strongest retention instrument available is also the cheapest: a professional who is progressing through visible tiers, earning regularly, and being invited to review others&apos; work will not leave for a marginally better rate. One who is verified and then ignored will, and will tell others. [JUDGEMENT]
+
+8. Treasury architecture — the constraint Session 1 understated
+Research conducted for this document establishes that the payment risk is worse and more structural than the Constitution stated. It is not a matter of choosing a bank.
+Finding
+Evidence
+Consequence for Kayan
+Correspondent banking has been severed
+Sanctions and anti-money-laundering pressure led many international banks to cut correspondent relationships with Yemeni institutions from the early 2010s onward [RESEARCH CLAIM]
+An international client cannot reliably wire funds into a Yemeni account. The collection rail cannot sit inside Yemen.
+The central bank is split
+Two rival central banks since 2016, with parallel monetary and regulatory systems, dual exchange rates and inconsistent regulation [RESEARCH CLAIM]
+Exchange rate and regulatory treatment are not single-valued. Every contract must state which rate applies and when it is fixed.
+European banks remain reluctant
+Reported continued refusal of European banks to interact with Yemeni banks [RESEARCH CLAIM]
+European clients are the hardest corridor. Do not build the launch pipeline on them.
+Informal channels dominate
+Reliance on hawala and informal networks persists because formal channels are slow, costly or inaccessible [RESEARCH CLAIM]
+Payouts inside Yemen will partly rely on non-bank rails. These must be documented and controlled, not pretended away.
+8.1 The two-rail design
+The architecture that follows from the evidence is a separation of collection from distribution. [DECISION D-39 — the single most consequential structural decision in this document]
+Rail
+Function
+Location
+What it must do
+Rail A — Collection and escrow
+Receive client funds; hold them against milestones; release on acceptance
+A jurisdiction with functioning correspondent banking. Candidates to be assessed: UAE, Oman, Jordan, Egypt, Türkiye.
+Accept international transfers and card or platform payments; hold client funds identifiably; produce statements a client&apos;s auditor accepts
+Rail B — Distribution
+Pay contributors inside Yemen
+Tadamon Islamic International Bank, Aden, plus controlled non-bank rails for those without accounts
+Pay in local currency reliably; produce proof of payment for every disbursement; reach people outside the banking system
+The bridge
+Move value from Rail A to Rail B
+The structural question this document cannot answer alone
+Must be lawful, documented, sanctions-compliant, and repeatable at volume
+The bridge is the open item. Three routes exist in principle — an affiliated entity in the collection jurisdiction, a licensed payment service provider, or a contracted exchange and settlement arrangement — and each has legal, tax and compliance consequences that require counsel. What is settled is that pretending a single Aden account can serve both functions is not viable, and that this must be resolved before the launch date, not after. [OPEN — Q-11]
+8.2 The sequencing insight this produces
+There is a route that makes launch possible before the bridge is fully solved, and it changes the go-to-market order.
+Clients who already operate inside Yemen — international agencies with Yemen offices, INGOs, local institutions — can pay a Yemeni vendor through mechanisms they already run. For these clients, Rail A is not required.
+Diaspora clients can pay through established remittance corridors into Yemen, which are functioning even where formal banking is not.
+GCC and international corporate clients with no Yemen presence are the segment that genuinely requires Rail A.
+Therefore the launch pipeline is built from segments A, E and C, in that order, and segment B is pursued in earnest only once Rail A exists. This is not a retreat from ambition. It is the recognition that a payment failure on a first engagement with a GCC client would cost more in reputation than the engagement is worth. [DECISION D-40]
+9. The Andela warning
+Andela was founded on a model materially identical to Kayan Forge: recruit talent in an underserved market, train them intensively, place them with international clients. In 2020 it abandoned that model, moving from campus-based training to global remote sourcing, explicitly to cut capital expenditure and widen the talent pool. Training programmes were cut and staff were laid off in the transition. [RESEARCH CLAIM — verify before external use]
+This is the most important comparable in the entire research set, and it must be confronted rather than ignored.
+Why Andela&apos;s training model failed
+Why Kayan&apos;s structure differs
+What must remain true
+Training was funded from company capital, making each cohort a large upfront cost against uncertain placement
+Forge is sponsor-funded. The cohort is paid for by a third party who values the outcome independently of whether Kayan places the graduate.
+If Forge ever becomes company-funded at scale, this comparison becomes a prediction. Sponsor funding is not a nice-to-have; it is the structural difference.
+Placement demand was narrow — senior software engineers for technology companies
+Kayan&apos;s taxonomy spans twenty families, and demand includes institutions, local business and civic programmes, not only technology firms
+Breadth must be real. If Kayan drifts into being a software shop, it inherits Andela&apos;s demand concentration without Andela&apos;s capital.
+Training-to-placement lead time was long and capital sat idle
+Absorption is measured and reported, and the apprentice role puts people into paid delivery during formation rather than after it
+The apprentice mechanism must actually be used. If cohorts finish and then wait for work, the model is Andela&apos;s.
+Impact framing did not survive commercial pressure
+Impact is the metric the sponsor pays for, so it has an independent revenue basis rather than being a cost
+Absorption must remain a contracted deliverable, not a report.
+10. Positioning correction: the category already exists
+Session 1 proposed frontier economy as an owned category. Research shows that a closely adjacent category is already established — impact sourcing — with a recognised standard, an industry coalition, dedicated funder attention and existing procurement pathways. [RESEARCH CLAIM]
+Inventing a parallel category next to an established one is a strategic error. It forfeits the procurement doors, the funder familiarity and the standards infrastructure that already exist, in exchange for a phrase nobody is searching for. [JUDGEMENT — this reverses part of the Session 1 position]
+The correct move is to enter the established category and then differentiate sharply within it:
+Established impact sourcing
+Kayan&apos;s position within it
+Predominantly task and process work: data annotation, digitisation, transcription, content moderation
+Professional work: design, engineering, analysis, translation, research, finance, evaluation
+Workers are employed to perform tasks under supervision
+Professionals are verified, hold a portable record, and progress through a published ladder
+Impact is measured as jobs created
+Impact is measured as absorption into recorded, paid, contracted work, with a defined ratio
+Criticised for low pay and limited progression
+Disclosed fees, rates independent of client price, and a visible progression route from apprentice to assessor
+Concentrated in relatively stable low-income markets
+Operates in an active conflict economy, which is precisely the harder claim and the more defensible one
+The sentence becomes: Kayan is impact sourcing for professional work, built in the hardest operating environment in the world. That sits inside a category funders already fund and procurement teams already recognise, while claiming the part of it nobody has taken. [DECISION D-41]
+Practical consequence: assess the recognised impact sourcing standard and the industry coalition as a certification and membership route, and treat B Corporation certification as a medium-term objective. These are procurement keys, not badges. [RECOMMENDATION]
+
+11. What Session 1 missed
+Stated plainly, because a build log that only records what was produced is not an honest instrument.
+Gap
+Severity
+Status
+Take rate carried forward untested from historical documents, at roughly half the market rate
+Critical — would have made the business structurally unprofitable
+Corrected in this document, sections 1 to 3
+No pricing method at all — a percentage is not a pricing model
+Critical
+The Price Equation, section 3
+No cost model, so no floor, so no way to know whether a sale was worth making
+Critical
+Section 3.1
+Payment risk identified but understated; treated as a banking choice rather than a structural constraint
+Critical
+Section 8, two-rail architecture
+No productisation — everything implicitly bespoke, which does not scale and cannot serve local segments
+High
+Ready Products, section 5
+No client segmentation, so pricing would have been improvised deal by deal
+High
+Section 4
+No retention architecture for either clients or talent
+High
+Section 7
+No comparable-market research; positioning asserted rather than tested
+High
+Sections 1, 9 and 10
+Category invented rather than entered
+Medium but strategically expensive
+Section 10
+No working capital analysis — escrow timing, payout timing and the gap between them
+High
+Not yet built. Next session.
+No cost of the verification system itself, so no test of whether Forge sponsorship covers supply acquisition
+High
+Metric defined in 6.1; model not yet built
+No insurance, liability or professional indemnity position, while promising guarantees
+High
+Not yet built. Required before S3 is sold.
+No tax position — Yemen corporate tax, withholding on cross-border payments, contributor tax status
+High
+Not yet built. Counsel required.
+No competitor map for the actual local market in Aden and the Yemeni diaspora corridor
+Medium
+Not yet built
+12. Decisions and open questions
+ID
+Decision
+D-37
+Kayan has no single take rate. The fee is a function of risk transferred, expressed through three service tiers.
+D-38
+Client segment is assigned at qualification, carried on the record, applied as a multiplier, and the aggregate cross-subsidy is reported monthly.
+D-39
+Collection and distribution are separated into two rails. Collection cannot sit inside Yemen.
+D-40
+Launch pipeline is built from clients who can already pay into Yemen. GCC and international corporate demand is pursued after Rail A exists.
+D-41
+Kayan enters the established impact sourcing category and differentiates within it as professional-grade, rather than inventing a parallel category.
+D-42
+Twelve Ready Products form the launch catalogue, offered at S2 by default.
+D-43
+No engagement is priced below the calculated floor. A below-floor price requires executive approval and is recorded as investment, not revenue.
+D-44
+Contributor rates are independent of what the client is charged, and this is disclosed.
+ID
+Open question
+Why it blocks
+Q-11
+What is the bridge between Rail A and Rail B, and in which jurisdiction does Rail A sit?
+Gates launch. Requires counsel and banking enquiry.
+Q-12
+Target contribution margin per tier, and the overhead allocation basis.
+Every quotation depends on it.
+Q-13
+Contributor rate card by role, tier and specialisation.
+The D term in every price calculation.
+Q-14
+Professional indemnity and liability position before S3 is sold.
+Selling a guarantee without a liability position is an uninsured bet.
+Q-15
+Tax treatment: Yemen corporate tax, cross-border withholding, contributor status.
+Affects pricing, contracts and the two-rail design.
+Q-16
+Does Kayan pursue the recognised impact sourcing standard and B Corporation certification, and on what timeline?
+Procurement access and funder legitimacy.
+
+End of document. Where this conflicts with K-00-01 §8 on pricing, this document governs.

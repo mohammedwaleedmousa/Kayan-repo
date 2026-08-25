@@ -1,0 +1,927 @@
+KAYAN INNOVATION, ENTREPRENEURSHIP & WORK ENVIRONMENTS LLC
+Aden, Republic of Yemen
+
+Registration, Assessment and Verification Architecture
+Every step from the first click to a standing relationship — for professionals, clients and sponsors
+This document specifies the complete registration and verification system: the journey, every field and its type, the competency framework, the trust ladder, the assessment instruments, the automated reference system, the consents, and the internal workflow behind them. It is written so that it can be built by a developer and operated by a verification officer without further interpretation.
+Document code
+K-03-01
+Version
+v1.0
+Status
+Founding draft — for founder ratification
+Date
+5 August 2026
+Owner
+Founder / Chief Executive
+Classification
+INTERNAL — CONFIDENTIAL
+Supersedes
+All prior registration form, verification SOP and trust ladder drafts
+Derives from
+K-00-01 Constitution · K-02-01 Entity, Identity and Relationship Architecture
+Unlocks
+Platform build · form specifications · assessment bank · reference system · all verification SOPs
+Read K-00-01 and K-02-01 first. This document assumes both.
+
+Contents
+TOC \h \o "1-3"
+
+1. Doctrine
+Before any field is specified, four positions must be settled, because every design choice below follows from them.
+1.1 Verification does not allocate work
+This is the most important sentence in the document. A professional&apos;s tier records what has been evidenced about their capability. It does not entitle them to work, and it does not exclude them from it. Work allocation is a separate decision driven by fit to the specific scope, availability, client requirement and price. [RULE — Constitution R2]
+This must be stated plainly to every registrant, at the start and at the end of the process, because the alternative is corrosive. If people believe the tier is the queue for work, three things follow: they misrepresent themselves on the form, they experience every tier decision as a rejection, and any allocation that does not follow tier order looks like favouritism. Stating the separation honestly is what makes honest registration rational.
+1.2 The ladder is built for ascent
+Nobody is rejected for being early in their career. A person who cannot yet evidence capability is placed at the tier their evidence supports and told exactly — specifically, not generically — what would move them up. The system&apos;s purpose is to move people up it, not to sort them at the door. [Constitution B4]
+1.3 Registration is the first act of the relationship
+A registration form is normally an administrative cost imposed on the applicant. Ours is the first thing a professional experiences of Kayan, and it will shape whether they trust us with their identity documents and their reputation. It must therefore do four jobs at once: collect what we need, explain what we are, teach how the system works, and earn the honesty we are asking for.
+Every section therefore opens with a plain statement of what it is for and why we are asking. A person who understands why a question is asked answers it accurately. [JUDGEMENT]
+1.4 Ask once, ask late, ask only what is used
+No field exists unless a named process consumes it. Fields that are only needed later are asked later — bank details are not collected at registration from someone who may never be engaged. This shortens the form, reduces abandonment, and reduces the personal data we are obliged to protect.
+
+2. The professional registration journey
+Eleven stages. Stages 1 to 4 are one sitting of roughly twelve minutes. Stages 5 to 8 may be completed over several sessions; progress is saved continuously and the person may leave and return.
+Stage
+Name
+What happens
+Typical time
+Gate to proceed
+0
+Orientation
+Before any field: what Kayan is, what verification means and does not mean, what is needed, and the honesty compact
+3 min read
+Acknowledgement recorded
+1
+Account
+Mobile, email, password, language; codes sent to both
+2 min
+Both codes confirmed
+2
+Identity
+Legal identity, address, identity document, photograph
+5 min
+Files pass automated checks
+3
+Professional profile
+Education, experience, languages, availability, working conditions
+4 min
+Required fields complete
+4
+Specialisations
+Primary and secondary micro-specialisations with self-rating and evidence
+4 min
+At least one primary selected
+5
+Evidence
+Work samples and portfolio per specialisation, with authorship declaration
+10 min
+At least one item or a stated reason
+6
+Assessment
+Situational judgement, craft knowledge, written communication, and where applicable a practical task
+45–90 min
+Instruments completed or timed out
+7
+References
+Two or three referees provided; requests sent automatically
+3 min
+Referee eligibility rules satisfied
+8
+Consents
+Granular, separately given consents and declarations
+3 min
+Required consents given
+9
+Review and submit
+Full summary with edit-back on every section
+3 min
+Submission
+10
+Outcome
+Status page, decision, tier, and the specific route to the next tier
+—
+—
+2.1 Stage 0 — Orientation, and the honesty compact
+A single screen, read before any field is presented. Its content is fixed and is the same in Arabic and English.
+Section
+What it says
+What Kayan is
+Kayan verifies professionals and delivers work for clients under a written scope with the client&apos;s money held in escrow. We contract with the client and stand behind delivery.
+What verification means
+We confirm you are who you say you are, and we assess what you can do, in specific areas, to a stated level. We record it, and we stand behind it to clients.
+What verification does not mean
+It is not a job offer, not a queue, and not a guarantee of work. Work is assigned on fit to a specific project, availability and client requirement. A higher tier does not put you ahead in a line.
+Why we ask for so much
+Because we tell clients you are real and capable, and we take responsibility when you deliver. We can only do that if what we hold is true.
+What you will need
+A government identity document, a recent photograph, examples of your work, and the names of two or three people who have supervised or commissioned your work.
+How long it takes
+About twenty minutes for the first four stages. The assessment takes longer and can be done separately. You can stop and return at any time.
+What happens to your data
+Stated purpose, stated retention, and your identity document image is deleted once verification is complete.
+The honesty compact
+Answer accurately, including where the honest answer is that you are early in your career. There is no advantage in overstating and there is no penalty for being at the beginning. Overstatement is discovered at assessment or at first delivery, and it costs your record. Being early costs nothing.
+Acknowledgement is a single explicit checkbox: I have read the above, I understand that verification does not allocate work, and I will answer accurately.
+This screen is the highest-leverage piece of writing in the entire system. It sets expectations that prevent disappointment, it makes honesty the rational strategy, and it is the only orientation many professionals will ever receive. It should be written once, carefully, and changed rarely. [JUDGEMENT]
+2.2 Stage 1 — Account
+Field
+Type
+Options / validation
+Required
+Why we ask
+Mobile number
+Phone with country selector
+International format; Yemen default; must be unique
+Yes
+Primary contact and identity anchor; used for the confirmation code
+Email
+Email
+Format validated; must be unique
+Yes
+Formal correspondence, references, contracts
+Password
+Password
+Minimum length with strength meter
+Yes
+Account security
+Preferred language
+Single choice
+Arabic · English
+Yes
+All communication follows this choice
+How you heard about Kayan
+Single choice
+Friend · Social media · University · Training centre · Employer · Event · Other
+No
+Tells us which channels work, so we spend nothing on those that do not
+Both mobile and email are confirmed by a code before the person proceeds. An unconfirmed contact is the single most common cause of a stalled verification. [RULE]
+2.3 Stage 2 — Identity
+Section opener shown to the registrant: We confirm identity because we tell clients you are real. Your document is used for this check only, is never shown to a client, and the image is deleted once the check is complete.
+Field
+Type
+Options / validation
+Required
+Why we ask
+Full legal name (Arabic)
+Text
+Arabic script; must match the identity document
+Yes
+Contracts and legal identity
+Full legal name (English)
+Text
+Latin script; must match the document where present
+Yes
+International contracts and payments
+Preferred name
+Text
+Free
+No
+How we address you
+Date of birth
+Date
+Must be 18 or over
+Yes
+Legal capacity to contract
+Nationality
+Single choice
+Country list
+Yes
+Contracting and compliance
+Identity document type
+Single choice
+National identity card · Passport · Residence permit
+Yes
+Determines which checks apply
+Document number
+Text
+Format checked by type; must be unique across records
+Yes
+Duplicate prevention and verification
+Document expiry
+Date
+Must be in the future
+Yes
+An expired document cannot verify identity
+Document image
+File upload
+Front and back, or passport biographical page
+Yes
+The verification itself
+Photograph
+File upload
+See standard below
+Yes
+Identity confirmation and, with separate consent, presentation to clients
+Governorate
+Single choice
+Governorate list
+Yes
+Operational planning and programme eligibility
+District
+Dependent choice
+Filtered by governorate
+Yes
+As above
+Address
+Text
+Free
+No
+Only where a physical delivery or in-person step is required
+Emergency contact
+Name and phone
+—
+No
+Duty of care during in-person activity
+2.3.1 Photograph standard
+Stated to the registrant in plain language with a correct and an incorrect example shown side by side.
+Requirement
+Specification
+Checked by
+Framing
+Head and upper shoulders, face occupying roughly 60 to 70 per cent of the frame, eyes looking at the camera
+Automated face detection and position check
+Background
+Plain, light, uniform; no pattern, no other people, no objects
+Automated background uniformity check
+Lighting
+Even, face fully visible, no heavy shadow across the face
+Automated brightness and shadow check
+Obstruction
+Face unobstructed; sunglasses not permitted; head covering permitted provided the face is fully visible
+Automated, then reviewer
+Quality
+Minimum 600 by 600 pixels, in focus, no filter, no digital alteration
+Automated resolution and blur detection
+Format
+JPG or PNG, maximum 5 megabytes
+Automated
+Recency
+Taken within the last twelve months
+Declared by registrant
+Where an automated check fails, the person is told which specific check failed and how to correct it, and may retry immediately. A generic upload failed message causes abandonment; a specific one causes a correct second attempt. [JUDGEMENT]
+2.4 Stage 3 — Professional profile
+Field
+Type
+Options / validation
+Required
+Why we ask
+Highest qualification
+Single choice
+Secondary · Diploma · Bachelor · Master · Doctorate · Vocational certificate · Self-taught
+Yes
+Context only. It is not a tier criterion and is stated as such.
+Field of study
+Dependent choice
+Filtered list plus Other
+No
+Matching context
+Institution
+Text with lookup
+Known institutions, free text permitted
+No
+Reference and verification context
+Year completed
+Year
+Not in the future
+No
+Experience calculation
+Years of professional experience
+Single choice
+Under 1 · 1–2 · 3–5 · 6–10 · Over 10
+Yes
+Scoping and assessment routing
+Current situation
+Single choice
+Employed full time · Employed part time · Freelancing · Studying · Between roles · Running own business
+Yes
+Availability realism
+Availability
+Single choice
+Under 10 hours · 10–20 · 21–30 · 31–40 · Over 40 hours per week
+Yes
+Capacity planning — this is a hard operational input
+Earliest start
+Single choice
+Immediately · Within 2 weeks · Within a month · Later
+Yes
+Scheduling
+Working modality
+Multiple choice
+Remote · At the Kayan Hub · At client premises · Hybrid
+Yes
+Determines which engagements are possible
+Languages
+Repeating group
+Language, then level: Basic · Working · Professional · Native
+Yes
+Directly affects which clients you can serve
+Primary device
+Single choice
+Laptop · Desktop · Tablet · Smartphone only
+Yes
+Determines what work can realistically be assigned
+Internet access
+Single choice
+Home fixed · Mobile data · Shared or public · Intermittent
+Yes
+Delivery risk assessment
+Backup connectivity
+Single choice
+Yes reliable · Yes limited · None
+Yes
+Continuity planning [Constitution B7]
+Power continuity
+Single choice
+Stable · Generator or solar backup · Frequently interrupted
+Yes
+Realistic deadline setting, and it is asked without embarrassment because it is an operating fact, not a personal failing
+Can receive bank transfer
+Single choice
+Yes · No · Not sure
+Yes
+Determines payout route. Account details are not collected here.
+The four questions on device, connectivity, power and backup are unusual on a registration form and are among the most operationally valuable fields we hold. They convert an unknowable delivery risk into a schedulable constraint, and they let us match work to conditions rather than discovering the mismatch at the deadline. [JUDGEMENT]
+2.5 Stage 4 — Micro-specialisations
+Specified in full in K-02-02. In summary: the person selects one primary and up to four secondary micro-specialisations from the coded taxonomy, using three entry routes — a search box, a guided browse from family to group to node, and a plain-language route that begins from what the person would say they do. No selection is more than three steps from the first screen.
+Field
+Type
+Rule
+Primary specialisation
+Taxonomy picker
+Exactly one. This determines the craft assessment set.
+Secondary specialisations
+Taxonomy picker
+Up to four. Each may be assessed separately, later.
+Self-rated level per selection
+Single choice
+Learning · Practising · Experienced · Expert — with a written description of each, so the words mean the same to everyone
+Years in this specialisation
+Single choice
+Under 1 · 1–2 · 3–5 · 6–10 · Over 10
+Tools used
+Multiple choice
+Filtered to the specialisation, with Other
+Would you accept apprentice work in this area
+Yes or no
+Determines eligibility for supervised roles, and is how early-career people enter delivery
+Self-rating is not evidence and is never treated as such. It is used to route the assessment to the right difficulty and to measure calibration — the gap between self-rating and assessed result is itself informative, and a person who rates themselves accurately is telling us something useful about their judgement. [JUDGEMENT]
+
+3. The Kayan competency framework
+Two axes. Craft competence is specific to a micro-specialisation and is assessed per specialisation. Core competence is common to everyone who works through Kayan and describes how the work is done rather than what the work is.
+Six core competencies. They are deliberately few, observable, and phrased as behaviour rather than personality — because personality cannot be assessed fairly and behaviour can.
+Code
+Competency
+What it means
+How it is observed
+C1
+Delivery Integrity
+Does what was agreed, to the standard agreed, by the date agreed — and raises a problem early rather than late
+Situational judgement; reference responses; on-time and revision rates in the delivery record
+C2
+Evidence Discipline
+Produces work that can be checked; documents what was done; does not claim what cannot be shown
+Practical task submission; portfolio quality; delivery notes
+C3
+Client Legibility
+Communicates so that a non-expert understands status, cost and risk without having to ask twice
+Written communication sample; client feedback; reference responses
+C4
+Craft Depth
+Genuine command of the declared specialisations rather than familiarity
+Craft knowledge assessment; practical task; portfolio review
+C5
+Collaborative Load-Bearing
+Carries real weight in a team — clean handovers, useful review, covers others when needed
+Pod lead assessment; peer feedback; reference responses
+C6
+Adaptive Continuity
+Keeps working through interruption — power, connectivity, security — and never goes silent
+Situational judgement; delivery record under disruption; reference responses
+C6 exists because of where we operate. Everywhere else it would be an unusual competency; here it is the difference between a professional a client can rely on and one they cannot. Interruption is certain. What varies is whether the person communicates through it. [JUDGEMENT]
+3.1 The rating scale
+Every competency is rated on the same five-point scale, with anchors that describe observable behaviour. The same scale is used by assessors, by referees and by pod leads, so that ratings from different sources are comparable.
+Level
+Label
+Behavioural anchor (worded generically; each competency has its own specific version)
+1
+Emerging
+Needs direction and checking. Produces usable work under close supervision.
+2
+Developing
+Works to instruction reliably. Raises problems, though sometimes late.
+3
+Proficient
+Works independently to standard. Reliable without supervision on defined work.
+4
+Strong
+Handles ambiguity and complexity. Improves the work of others. Trusted with client contact.
+5
+Exemplary
+Sets the standard others follow. Can define the approach, not only execute it.
+4. The Trust Ladder
+Five positions. Each states its entry evidence, who decides, how long it lasts, what maintains it, and what removes it. Criteria are published to registrants in full: a standard that is not published cannot be aspired to.
+Tier
+Name
+What it asserts
+Entry evidence required
+Decision
+Validity
+T0
+Registered
+A record exists. Nothing is asserted.
+Account created and contacts confirmed
+Automatic
+Until superseded
+T1
+Identity Verified
+This is a real, contactable person, of legal age, who has accepted our terms
+Identity document validated; photograph matched; contacts confirmed; required consents given
+Verification officer
+24 months, then document re-check
+T2
+Capability Assessed
+This person has demonstrated competence in at least one named specialisation
+T1, plus craft assessment passed in at least one specialisation, plus core competency screen, plus portfolio or practical task
+Verification officer with assessor input
+18 months per specialisation
+T3
+Delivery Proven
+This person has delivered real work through Kayan, accepted by a client
+T2, plus a stated number of accepted engagements with no unresolved dispute, plus at least one verified reference, plus pod lead endorsement
+Two approvers
+12 months rolling on delivery
+T4
+Kayan Certified
+Kayan places its own name behind this person
+T3 sustained, plus portfolio audit, plus leadership of delivered work, plus contribution to others through review or mentoring, plus clean conduct record
+Two approvers, one at executive level
+12 months, annual review
+Numeric thresholds — how many accepted engagements make T3, how many hours of mentoring count at T4 — are held in the controlled operating standard, not here, so they can be calibrated against real data without amending the ladder. [Constitution D-05]
+4.1 What each tier unlocks
+Tier
+What becomes possible
+What is still not implied
+T0
+A record and a route
+Not visible to clients in any form
+T1
+Visible internally; may be considered for apprentice roles under supervision
+No capability is asserted to anyone
+T2
+May be presented to clients within a pod; may hold contributor roles
+No entitlement to be selected
+T3
+May hold reviewer roles and lead workstreams; may be named to clients as experienced
+No entitlement to lead a pod
+T4
+May lead pods, represent Kayan to clients, and — subject to Q-01 — display the public verification reference
+Still no entitlement to work
+The final column is repeated deliberately at every tier. It is the single most likely point of misunderstanding in the entire system.
+4.2 Maintenance, lapse, downgrade and appeal
+Mechanism
+Rule
+Notification
+At 90, 30 and 7 days before expiry, with the specific action required. Automated — event E18.
+Lapse
+On expiry without action, the tier is reduced and the specialisation marked dormant. Removal from available capacity is automatic — event E19. Lapse is not a judgement and carries no stigma; reinstatement is a light process.
+Downgrade
+Applied for cause: misrepresentation, sustained non-delivery, conduct breach, or a failed re-assessment. Always with a written reason recorded on the record.
+Immediate withdrawal
+For fraud, identity misrepresentation, or a safeguarding breach. Decided by two approvers, one at executive level.
+Appeal
+Any adverse decision may be appealed once, in writing, within 21 days. Heard by someone who was not part of the original decision. Outcome and reasoning recorded on the record.
+Reinstatement
+A withdrawn record may apply again only after a stated period and only with new evidence. The original decision remains on the record permanently.
+An appeal route is not a courtesy. A credential that cannot be challenged is not a standard, it is an opinion — and it will not withstand the scrutiny of the institutional clients we intend to sell to. [JUDGEMENT]
+
+5. Assessment architecture
+Four instruments. Together they produce a profile rather than a single score, because a single score conceals exactly the information that matters when staffing a pod.
+Instrument
+Measures
+Format
+Length
+Scoring
+Used for
+A. Situational Judgement
+C1, C3, C5, C6
+Scenario-based, forced ranking of responses, set in real Kayan operating conditions
+15 scenarios, 20 minutes
+Automatic against a scoring key agreed by experienced practitioners
+Core competency profile at T2
+B. Craft Knowledge
+C4
+Adaptive item bank per micro-specialisation; difficulty adjusts to performance
+20–30 items, 25–35 minutes
+Automatic; reported as a band, never a raw mark
+Craft verification per specialisation
+C. Written Communication
+C3
+One short written response to a realistic client situation, in the person&apos;s working language
+250 words, 15 minutes
+Rubric-scored by an assessor
+Client-facing suitability
+D. Practical Task
+C2, C4
+A small, realistic deliverable in the declared specialisation, time-boxed and submitted through the platform
+1–3 hours depending on specialisation
+Rubric-scored by an assessor or a verified peer at a higher tier
+T2 confirmation and T4 audit
+5.1 Why scenarios rather than a personality questionnaire
+A questionnaire asking whether someone is reliable measures whether they know that reliability is desirable. A scenario asking what they would do when a deliverable will be two days late and the client has not been told measures judgement. All situational items are set in conditions our professionals actually face — a power cut before a deadline, a client changing scope verbally, a pod member going silent, a deliverable that is finished but not reviewed. [JUDGEMENT]
+5.2 Integrity controls
+Control
+Implementation
+Consequence of failure
+Item randomisation
+Items and response order drawn from a larger bank per attempt
+Reduces the value of sharing questions
+Time limits
+Per instrument and per item where appropriate
+Limits look-up during the attempt
+Attempt limits
+One attempt, one retake after a cooling period; a third only by exception with a recorded reason
+Prevents grinding to a pass
+Session integrity
+Loss of window focus and abnormal timing recorded, not blocked
+Recorded as a flag for the reviewer, never an automatic failure — connectivity here is genuinely unstable
+Originality check
+Practical tasks and written responses checked for similarity against submitted work and public sources
+Flag for reviewer judgement; never an automatic accusation
+Declaration
+An explicit integrity declaration before each instrument
+Misrepresentation is a downgrade cause under 4.2
+Bank rotation
+Item bank reviewed and partially replaced on a fixed cycle
+Maintains validity over time
+Note the deliberate asymmetry: technical signals produce flags for human judgement, never automatic failures. In an environment where a person may genuinely lose power mid-assessment, an automatic integrity failure would punish circumstance rather than conduct — which would violate belief B1. [JUDGEMENT]
+5.3 Reporting results
+Results are reported to the person as bands with written meaning, never as raw marks or percentiles. A raw mark invites comparison and appeal on a point; a band with a description invites development. Every result is accompanied by the specific next step that would improve it.
+Band
+Meaning
+Effect
+Not yet demonstrated
+The evidence does not yet support verification in this specialisation
+Specific development route offered; retake permitted after the cooling period
+Demonstrated
+Competence evidenced at working level
+Supports T2 in this specialisation
+Demonstrated — strong
+Competence evidenced well above working level
+Supports T2, noted for reviewer and lead consideration
+Demonstrated — exceptional
+Sets a standard
+Supports T2, flagged for assessor and mentor roles
+6. The reference verification system
+References are the highest-value and most-abused element of any verification system. Ours is fully automated in mechanism and deliberately strict in eligibility.
+6.1 Referee eligibility
+Rule
+Requirement
+Reason
+Direct knowledge
+Must have supervised, commissioned, taught or worked directly alongside the person on actual work
+A character reference is worthless for capability
+Recency
+The working relationship must have been within the last three years
+Older evidence does not describe current capability
+Independence
+May not be a family member, and may not be another registrant who has named this person as their own referee
+Removes the two commonest forms of reciprocal inflation
+Contactability
+Institutional email preferred; where only a personal email exists, a verifiable phone number is also required
+Enables verification of the referee&apos;s existence
+Capacity
+Must state their role and the nature of the working relationship
+Weights the value of the response
+Number
+Two required; three permitted. At least one must be a supervisor or client rather than a peer
+A peer-only reference set is not sufficient evidence
+6.2 The automated flow
+The person provides referee name, role, organisation, relationship, email and phone. The system checks the eligibility rules immediately and refuses an ineligible referee with the specific reason.
+The system sends a bilingual request to the referee containing a single-use token link. The referee does not create an account and does not log in — friction here means no response.
+The link opens a structured form, expiring after 14 days. Reminders are sent automatically at day 3, day 7 and day 12.
+The referee completes the form and confirms a short declaration. The response is written to the record and scored.
+If no response is received by expiry, the person is notified and invited to substitute a referee. Non-response is never held against the person — it is a fact about the referee.
+A random sample of referees is telephoned by a verification officer each month, and every reference supporting a T3 or T4 decision is contacted directly.
+6.3 The reference form
+Question
+Type
+In what capacity did you work with this person, and for how long?
+Structured choice plus dates
+What work did they actually do? Please describe one specific piece.
+Short text — required, because it is the single hardest field to fabricate
+Rating on each of the six core competencies
+Five-point scale with the anchors from 3.1, plus a Cannot judge option
+Would you commission or work with this person again?
+Yes · Yes with reservations · No · Cannot say
+Are you aware of any matter of honesty, conduct or safety we should know about?
+Yes or no; if yes, a confidential free-text field
+Anything else you would want a future client to know?
+Optional free text
+Declaration
+Confirms identity, the accuracy of the response, and that they are not related to the person
+The specific-piece-of-work question is deliberately the only one that cannot be answered quickly without genuine knowledge. It is the primary fraud control, and it is more effective than any technical check. [JUDGEMENT]
+6.4 Fraud controls
+Referee email domain checked against the stated organisation; free-mail addresses flagged for a telephone check.
+Device and network signals compared between the registrant&apos;s session and the referee&apos;s; a match is flagged for human review, never auto-rejected.
+Referees appearing across an unusual number of unrelated applications are flagged and investigated.
+Reciprocal referencing between two registrants is blocked at the point of entry.
+Response timing far outside normal ranges is flagged.
+Content of a reference is never disclosed to the person it concerns. The person sees only whether a response was received. This is stated in advance to both parties, because a referee who believes the subject will read their response does not give a candid one. [RULE]
+
+7. Consents and declarations
+Consents are given separately, each with its own checkbox, its own plain-language explanation, and its own record of date and version. A single blanket consent is not lawful practice in any serious jurisdiction, is not defensible to an institutional client, and is inconsistent with a company whose product is trust. [Constitution B8, R8]
+#
+Consent or declaration
+Plain wording of what is being agreed
+Required
+Withdrawable
+1
+Terms of engagement
+How Kayan works with you, what we do, what we do not do, and how disagreements are handled
+Yes
+On leaving
+2
+Privacy notice
+What we collect, why, how long we keep it, and who can see it
+Yes
+No — it is a notice
+3
+Identity document use
+Your document is used to confirm identity only, is never shown to a client, and the image is deleted once verification is complete; we keep the result and a technical fingerprint
+Yes
+No — but deletion is automatic
+4
+Photograph — internal
+Your photograph is held on your record so we can confirm identity
+Yes
+On leaving
+5
+Photograph — client presentation
+Your photograph may be shown to a client when you are proposed for a specific engagement
+No
+Yes, at any time
+6
+Reference contact
+We may contact the people you name, and their responses stay confidential to Kayan
+Yes
+Before requests are sent
+7
+Assessment integrity
+You will complete assessments yourself, without assistance
+Yes
+No
+8
+Accuracy declaration
+Everything you have entered is true to the best of your knowledge
+Yes
+No
+9
+Conduct and safeguarding
+You accept the standards of conduct required when working with Kayan, clients and any person met through our work
+Yes
+On leaving
+10
+Data retention
+How long we keep your record after you stop working with us, and what happens then
+Yes
+No — it is a notice
+11
+Public verification listing
+Your name and verification status may appear in a public Kayan directory
+No
+Yes, at any time
+12
+Story and case study use
+We may describe your work publicly, with your name only if you agree separately at the time
+No
+Yes, at any time
+13
+Programme communications
+We may tell you about training, cohorts and opportunities
+No
+Yes, at any time
+7.1 Retention
+Data
+Retention
+Then
+Identity document image
+Until verification is decided, and no longer
+Deleted; verification result and a document hash retained
+Photograph
+While the record is active
+Deleted on request or on record closure
+Verification results and tier history
+Life of the record plus a defined period
+Retained — it is the evidence behind claims we made to clients
+Assessment responses
+A defined period after the attempt
+Aggregate statistics retained; individual responses deleted
+Reference responses
+Life of the record plus a defined period
+Retained; never disclosed to the subject
+Delivery and payment records
+As required by law and by the contracts they evidence
+Retained
+Marketing consent records
+Until withdrawn plus a defined period
+Deleted
+Exact periods are set in the data protection standard and stated to the registrant in the retention consent. They are held there rather than here so a legal change does not require amending this architecture.
+8. Internal verification workflow
+Step
+Who
+What happens
+Target
+1. Automated pre-check
+System
+File validity, resolution, blur, face detection, duplicate detection against existing records, eligibility rules, completeness
+Immediate
+2. Queue
+System
+Prioritised by completeness and by programme or cohort deadline
+Immediate
+3. Identity review
+Verification officer
+Document authenticity, photograph match, data consistency, duplicate judgement
+Within 3 working days
+4. Assessment review
+Assessor
+Rubric scoring of practical task and written response; integrity flags considered
+Within 5 working days
+5. Reference review
+Verification officer
+Responses read, anomalies checked, telephone verification where required
+On receipt
+6. Tier decision
+Verification officer; two approvers at T3 and T4
+Eligibility computed automatically; the evidence pack is presented; the decision is made and reasoned
+Within 2 working days of complete evidence
+7. Outcome
+System
+Tier set, expiry set, record and page updated, person notified with the specific route to the next tier
+Immediate
+8. Quality control
+Verification lead
+A sample of decisions re-reviewed monthly for consistency between officers
+Monthly
+Step 8 exists because the value of a tier depends entirely on it meaning the same thing regardless of who decided it. Without inter-assessor consistency checking, the ladder degrades into individual opinion within a year. [JUDGEMENT]
+8.1 Decision outcomes
+Outcome
+Meaning
+What the person is told
+Verified
+Evidence supports the tier
+The tier, its expiry, and precisely what would achieve the next tier
+More information needed
+Something specific is missing or unclear
+Exactly what is needed and how to provide it; the application stays open
+Not yet
+Evidence does not support the tier applied for
+The tier they do hold, the specific gap, and a development route with a date they may return
+Declined
+Identity could not be established, or a disqualifying matter was found
+The reason, stated factually, and the appeal route
+There is no outcome called rejected. A person is either verified at some tier, asked for more, told what is missing, or declined for a stated and appealable reason. This follows directly from belief B4 and is not a matter of tone. [RULE]
+
+9. The client registration journey
+A different design problem entirely. A professional will spend an hour registering because the payoff is theirs. A client will abandon a form in ninety seconds. Therefore: qualify fast, contract carefully, and place compliance at the contract rather than at the door. [JUDGEMENT]
+Stage
+What is asked
+Why here
+1. Need
+What do you need done, roughly when, and roughly what scale
+This is the only thing that matters at first contact. It is answerable in under a minute and is enough to route the enquiry.
+2. Contact
+Name, role, organisation, email, phone, preferred language
+Enough to have a conversation
+3. Conversation
+A human scoping discussion — not a form
+Scope is discovered by dialogue. A form cannot do this and pretending otherwise loses the client.
+4. Organisation
+Legal name, registration or licence, country, sector, size, website, billing entity
+Required to contract, so asked when contracting becomes real
+5. Authority
+Authorised signatory, evidence of authority, signatory register
+We must know the signature binds the organisation
+6. Compliance
+Screening against sanctions and adverse media, risk rating, source of funds where the engagement exceeds a threshold
+Placed here deliberately — before contract, not before conversation
+7. Agreement
+Master agreement accepted; escrow terms accepted
+The legal basis for everything after
+8. Scope
+Scope of work issued with deliverables, acceptance criteria, milestones, dates and price
+The engagement is created — event E11
+9. Escrow
+Funds received and matched
+Delivery unlocks — event E12
+10. Relationship
+Account owner assigned; client page live; commercial intelligence recorded from stage 1 onward
+The relationship begins to accumulate
+Note that the client page is created at stage 2, not stage 4. Everything learned during the conversation at stage 3 — budget cycle, procurement route, decision makers, unstated constraints — is recorded even if the client never contracts. A lost enquiry that is fully recorded is a future client; an unrecorded one is nothing. [JUDGEMENT]
+10. The sponsor registration journey
+Sponsors of Forge cohorts and of Kayan for Yemen programmes are a third counterparty with a third logic. They are not buying delivery; they are buying evidenced outcomes and the ability to report them onward to their own boards and funders.
+Stage
+What is asked
+Note
+1. Interest
+Organisation, contact, thematic priority, geography, indicative scale, timing
+Short. A sponsor is qualifying us as much as we are qualifying them.
+2. Fit
+Which programmes match their priorities, and what outcomes they are accountable for reporting
+Their reporting obligation is the design input for our programme design
+3. Due diligence — both ways
+Our registration, governance, policies, financial controls and safeguarding provided; their requirements received
+Institutional sponsors will assess us. Being ready for that assessment is itself a competitive advantage.
+4. Agreement
+Programme scope, funded outcomes, reporting calendar, payment schedule, branding and visibility terms
+Obligations become calendar entries on the sponsor page
+5. Delivery
+Programme runs; participation is recorded against individual records
+This is what makes absorption computable per sponsor
+6. Reporting
+Outcomes reported against the agreed calendar, including the Absorption Ratio attributable to that funding
+The report is generated from records, never assembled by hand — rule DQ8
+The competitive insight is that most implementing organisations report activity — people trained, sessions held. Kayan reports absorption — people who entered recorded, paid, contracted work — because the delivery system that produces the outcome is the same system that records it. Almost nobody else can do this, and it should be the centre of every sponsor conversation. [JUDGEMENT]
+11. Quality control checklists
+Each is a standing checklist owned by a named role, performed at a stated frequency, with the result recorded.
+Code
+Checklist
+Frequency
+Owner
+QC-01
+Registration completeness: unconfirmed contacts, stalled applications over 14 days, abandoned at each stage
+Weekly
+Verification officer
+QC-02
+Identity review consistency: sample of decisions re-reviewed blind by a second officer
+Monthly
+Verification lead
+QC-03
+Assessment validity: item difficulty and discrimination reviewed; items that everyone passes or everyone fails are retired
+Quarterly
+Assessment owner
+QC-04
+Reference integrity: telephone verification sample; anomaly flags reviewed; referee reuse checked
+Monthly
+Verification officer
+QC-05
+Consent and retention: consents recorded with version and date; retention deletions actually executed
+Monthly
+Data owner
+QC-06
+Tier maintenance: expiries approaching, lapses processed, downgrades reasoned and recorded
+Monthly
+Verification lead
+QC-07
+Data quality: duplicates, missing mandatory fields, records without identifiers, orphaned records
+Monthly
+Systems owner
+QC-08
+Fairness review: outcome patterns examined across governorate, gender and entry route for unexplained divergence
+Quarterly
+Verification lead
+QC-08 deserves explanation. If verification outcomes diverge systematically by group in a way the evidence does not explain, the instrument is measuring something other than capability — and a trust institution that does not check this will eventually be told so by someone else, publicly. Checking it ourselves, on a schedule, is both correct and protective. [JUDGEMENT]
+12. What this document decides
+ID
+Decision
+D-19
+Verification never allocates work, and this is stated to every registrant at the start and at the end of the process.
+D-20
+Eleven-stage professional journey, with orientation and an honesty compact before any field is presented.
+D-21
+Six core competencies, one five-point scale, used identically by assessors, referees and pod leads.
+D-22
+Five-tier ladder with published criteria, stated validity periods, defined lapse and downgrade, and a single right of appeal.
+D-23
+Four assessment instruments producing a profile, reported as bands with written meaning, never as raw marks.
+D-24
+Technical integrity signals produce flags for human judgement, never automatic failures.
+D-25
+References are automated, tokenised, strictly gated on eligibility, and never disclosed to the subject.
+D-26
+Thirteen separate consents, each individually given, versioned and dated. No blanket consent.
+D-27
+Identity document images are deleted once verification is decided.
+D-28
+No outcome is called rejection. Verified, more information needed, not yet, or declined with reason and appeal.
+D-29
+Client compliance sits before contract, never before conversation. The client page opens at first contact.
+D-30
+Eight standing quality control checklists, including a scheduled fairness review.
+13. What is still open
+ID
+Open question
+Q-06
+Numeric thresholds: accepted engagements required for T3; mentoring contribution required for T4; assessment pass bands.
+Q-07
+Whether the practical task is required for all specialisations at T2 or only for those where a portfolio is not conclusive.
+Q-08
+Whether Forge completion substitutes for any part of the T2 assessment, or is evidence alongside it. This materially affects Forge&apos;s value proposition to participants and sponsors.
+Q-09
+Cooling period between assessment attempts.
+Q-10
+Whether registration is open to all from launch, or invitation-led for the first cohort to control verification queue volume.
+Q-10 carries the most operational risk. Opening registration publicly at launch without a proven verification throughput would create a backlog, and a backlog in a verification business is a reputational event, not an administrative one. My recommendation is invitation-led for the first cohort. [RECOMMENDATION]
+
+End of document. Amendments only by recorded decision in K-00-02.
