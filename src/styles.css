@@ -8,6 +8,14 @@ body,
   background: #03201d;
 }
 
+html:has(body.home-native),
+body.home-native,
+body.home-native #root {
+  height: auto;
+  min-height: 100%;
+  overflow: visible;
+}
+
 * {
   box-sizing: border-box;
 }

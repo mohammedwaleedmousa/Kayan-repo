@@ -1,11 +1,13 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import LegacyPage from './LegacyPage.jsx';
+import HomePage from './home/HomePage.jsx';
 import { routes } from './routes.js';
 
 export default function App() {
   return (
     <Routes>
-      {routes.map(([path, file]) => (
+      <Route path="/" element={<HomePage />} />
+      {routes.filter(([path]) => path !== '/').map(([path, file]) => (
         <Route key={path} path={path} element={<LegacyPage file={file} />} />
       ))}
       <Route
