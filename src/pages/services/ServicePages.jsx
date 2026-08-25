@@ -34,7 +34,7 @@ const COMPASS_MARK = ['/legacy/kayan-compass.js', '/legacy/kayan-mark.js'];
 const LINE = ['/legacy/image-slot.js', '/legacy/kayan-compass.js', '/legacy/kayan-line-audio.js', '/legacy/kayan-mark.js'];
 const RP = ['/legacy/rp-core.js', '/legacy/rp-fixed.js'];
 const FORGE = ['/legacy/kayan-compass.js', '/legacy/kayan-line-audio.js', '/legacy/kayan-mark.js'];
-const D3 = ['https://unpkg.com/d3@7.9.0/dist/d3.min.js', 'https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js', '/legacy/yemen-map.js'];
+const D3 = ['/legacy/yemen-map.js'];
 
 const page = (Logic, template, styles, title, scripts = [], props) => function ServicePage() {
   return <NativeDcPage Logic={Logic} template={template} styles={styles} title={title} scripts={scripts} props={props} />;

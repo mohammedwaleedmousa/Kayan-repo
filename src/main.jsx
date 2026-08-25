@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
+import { installVisualizationGlobals } from './native/visualizationGlobals.js';
 import './styles.css';
+
+installVisualizationGlobals();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

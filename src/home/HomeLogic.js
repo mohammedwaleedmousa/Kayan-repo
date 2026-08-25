@@ -43,7 +43,8 @@ export default class HomeLogic extends DCLogic {
       const rule = '[data-gbird]{transform:' + tf + ' !important;transition:none !important;}';
       if (st.textContent !== rule) st.textContent = rule;
     };
-    document.addEventListener('scroll', (e) => { const t = e.target; if (t && t.nodeType === 1 && t.hasAttribute && t.hasAttribute('data-grail')) this._grail(); }, { capture: true, passive: true });
+    this._grailDoc = (e) => { const t = e.target; if (t && t.nodeType === 1 && t.hasAttribute && t.hasAttribute('data-grail')) this._grail(); };
+    document.addEventListener('scroll', this._grailDoc, { capture: true, passive: true });
     this._grailClk = setInterval(this._grail, 800);
     const railEl = document.querySelector('[data-grail]');
     if (railEl) { setTimeout(this._grail, 600); }
@@ -146,6 +147,9 @@ export default class HomeLogic extends DCLogic {
     if (this._cycle) clearInterval(this._cycle);
     if (this._langFix) clearTimeout(this._langFix);
     if (this._ac) this._ac.close();
+    if (this._grailDoc) document.removeEventListener('scroll', this._grailDoc, true);
+    if (this._onShow) window.removeEventListener('pageshow', this._onShow);
+    if (this._flashKill) clearTimeout(this._flashKill);
   }
   _initReveals() {
     const el = this.root.current;

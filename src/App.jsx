@@ -1,4 +1,5 @@
-import { Link, Route, Routes } from 'react-router-dom';
+import { useLayoutEffect } from 'react';
+import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './home/HomePage.jsx';
 import { CharterPage, JourneyPage, LegalPage, PeoplePage, PlanetPage, RecordPage, SealPage } from './pages/core/CorePages.jsx';
 import { ClientsPage, DeliveryArPage, DeliveryEnPage, ForgeArPage, ForgeEnPage, HubArPage, HubEnPage, K4yPage, ProductsPage, TalentPage } from './pages/services/ServicePages.jsx';
@@ -6,8 +7,17 @@ import { AccessPage, AdminPage, ApplyPage, ClientProfilePage, PodPage, PortalPag
 import { AtlasPage, HubLocationPage, ToolkitPage, VoyagePage } from './pages/experiences/ExperiencePages.jsx';
 
 export default function App() {
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    document.documentElement.removeAttribute('data-mo');
+  }, [location.key, location.pathname]);
+
   return (
-    <Routes>
+    <Routes location={location} key={`${location.key}:${location.pathname}`}>
       <Route path="/" element={<HomePage />} />
       <Route path="/charter" element={<CharterPage />} />
       <Route path="/journey" element={<JourneyPage />} />

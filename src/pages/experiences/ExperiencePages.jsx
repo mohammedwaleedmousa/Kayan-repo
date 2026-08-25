@@ -2,8 +2,7 @@ import NativeDcPage from '../../native/NativeDcPage.jsx';
 import NativePlainPage from '../../native/NativePlainPage.jsx';
 import ToolkitLogic from './ToolkitLogic.js';
 import mountDimension from './mountDimension.js';
-import * as d3 from 'd3';
-import * as topojson from 'topojson-client';
+import { installVisualizationGlobals } from '../../native/visualizationGlobals.js';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import atlasTemplate from './atlas.template.html?raw';
@@ -17,7 +16,7 @@ import toolkitStyles from './toolkit.css?raw';
 import atlasScript from './atlas.script.js.txt?raw';
 import hubScript from './hub-location.script.js.txt?raw';
 
-const mountAtlas = () => { window.d3 = d3; window.topojson = topojson; return new Function(atlasScript)(); };
+const mountAtlas = () => { installVisualizationGlobals(); return new Function(atlasScript)(); };
 const mountHub = () => { window.L = L; return new Function(hubScript)(); };
 
 export function AtlasPage() {

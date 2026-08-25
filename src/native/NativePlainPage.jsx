@@ -7,6 +7,7 @@ import { isInternalHomeHref, routeForHomeHref } from '../home/homeRoutes.js';
 export default function NativePlainPage({ template, styles, title, scripts = [], stylesheets = [], scriptText, mount, language = false }) {
   const navigate = useNavigate();
   useEffect(() => {
+    let active = true;
     document.body.classList.add('home-native');
     document.title = title;
     if (language) {
@@ -25,7 +26,10 @@ export default function NativePlainPage({ template, styles, title, scripts = [],
     let dispose;
     const start = setTimeout(() => {
       scripts.reduce((chain, src) => chain.then(() => ensureScript(src)), Promise.resolve())
-        .then(() => { dispose = mount?.() || (scriptText ? new Function(scriptText)() : undefined); })
+        .then(() => {
+          if (!active) return;
+          dispose = mount?.() || (scriptText ? new Function(scriptText)() : undefined);
+        })
         .catch(() => {});
     }, 0);
     const onClick = (event) => {
@@ -39,6 +43,7 @@ export default function NativePlainPage({ template, styles, title, scripts = [],
     };
     document.addEventListener('click', onClick);
     return () => {
+      active = false;
       document.removeEventListener('click', onClick);
       clearTimeout(start);
       document.body.classList.remove('home-native');

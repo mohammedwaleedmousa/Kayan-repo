@@ -8,12 +8,18 @@ const loadedScripts = new Map();
 export function ensureScript(src) {
   if (loadedScripts.has(src)) return loadedScripts.get(src);
   const promise = new Promise((resolve, reject) => {
-    const existing = document.querySelector(`script[data-native-src="${src}"]`);
-    if (existing) return resolve();
+    const absoluteSrc = new URL(src, window.location.href).href;
+    const existing = Array.from(document.scripts).find((script) => script.src === absoluteSrc);
+    if (existing) {
+      if (existing.dataset.nativeLoaded === 'true' || existing.readyState === 'complete') return resolve();
+      existing.addEventListener('load', resolve, { once: true });
+      existing.addEventListener('error', reject, { once: true });
+      return;
+    }
     const script = document.createElement('script');
     script.src = src;
     script.dataset.nativeSrc = src;
-    script.onload = resolve;
+    script.onload = () => { script.dataset.nativeLoaded = 'true'; resolve(); };
     script.onerror = reject;
     document.head.appendChild(script);
   });
@@ -60,10 +66,15 @@ export default function NativeDcPage({ Logic, template, styles, scripts = [], pr
   });
 
   useEffect(() => {
+    let active = true;
     document.body.classList.add('home-native');
     if (title) document.title = title;
     scripts.reduce((chain, src) => chain.then(() => ensureScript(src)), Promise.resolve())
-      .then(() => { bridgeShadowLinks(navigate); logic.forceUpdate?.(); }).catch(() => {});
+      .then(() => {
+        if (!active) return;
+        bridgeShadowLinks(navigate);
+        logic.forceUpdate?.();
+      }).catch(() => {});
     logic.componentDidMount?.();
     const onLink = (event) => {
       const anchor = event.target.closest?.('a[href]');
@@ -76,6 +87,7 @@ export default function NativeDcPage({ Logic, template, styles, scripts = [], pr
     };
     document.addEventListener('click', onLink);
     return () => {
+      active = false;
       document.removeEventListener('click', onLink);
       document.body.classList.remove('home-native');
       logic.componentWillUnmount?.();

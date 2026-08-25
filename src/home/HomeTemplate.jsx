@@ -164,6 +164,11 @@ function renderNode(node, scope, key) {
   enhanceInteractiveStyles(props, hoverCss, activeCss);
 
   if (tag === 'x-import' && node.getAttribute('component-from-global-scope') === 'yemen-map') {
+    const language = props.lang;
+    delete props.lang;
+    props.ref = (element) => {
+      if (element && language != null) element.setAttribute('lang', language);
+    };
     return React.createElement('yemen-map', { ...props, style: { width: '100%', display: 'block' } });
   }
 

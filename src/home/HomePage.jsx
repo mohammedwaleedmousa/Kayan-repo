@@ -3,28 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import HomeLogic from './HomeLogic.js';
 import HomeTemplate from './HomeTemplate.jsx';
 import { isInternalHomeHref, routeForHomeHref } from './homeRoutes.js';
+import { ensureScript } from '../native/NativeDcPage.jsx';
 import './home.css';
 
 const HOME_SCRIPTS = [
-  'https://unpkg.com/d3@7.9.0/dist/d3.min.js',
-  'https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js',
   '/legacy/yemen-map.js',
   '/legacy/kayan-mark.js',
   '/legacy/kayan-compass.js',
 ];
-
-function ensureScript(src) {
-  const current = document.querySelector(`script[data-home-src="${src}"]`);
-  if (current) return Promise.resolve();
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = src;
-    script.dataset.homeSrc = src;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
-}
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -57,12 +43,14 @@ export default function HomePage() {
   });
 
   useEffect(() => {
+    let active = true;
     document.body.classList.add('home-native');
     document.documentElement.lang = logic.state.lang;
     document.documentElement.dir = logic.state.lang === 'en' ? 'ltr' : 'rtl';
     document.title = 'كيان — خلف كل نجاح، كيان';
     HOME_SCRIPTS.reduce((chain, src) => chain.then(() => ensureScript(src)), Promise.resolve())
       .then(() => {
+        if (!active) return;
         document.querySelectorAll('kayan-compass').forEach((compass) => {
           if (!compass.shadowRoot || compass.dataset.reactRoutes) return;
           compass.dataset.reactRoutes = 'true';
@@ -90,6 +78,7 @@ export default function HomePage() {
     };
     document.addEventListener('click', navigateLegacyLink);
     return () => {
+      active = false;
       document.removeEventListener('click', navigateLegacyLink);
       document.body.classList.remove('home-native');
       logic.componentWillUnmount?.();
