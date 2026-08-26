@@ -44,7 +44,18 @@ export default function LegacyPage({ file }) {
 
     if (doc.title) document.title = doc.title;
 
-    const loadedRoute = routeForHref(frame.contentWindow.location.href, window.location.href);
+    const frameWindow = frame.contentWindow;
+    frameWindow.KAYAN_SUPABASE_READY = window.KAYAN_SUPABASE_READY;
+    frameWindow.KAYAN_SUPABASE_CONFIG = window.KAYAN_SUPABASE_CONFIG;
+    if (window.KAYAN_SUPABASE) frameWindow.KAYAN_SUPABASE = window.KAYAN_SUPABASE;
+
+    window.KAYAN_SUPABASE_READY?.then((client) => {
+      if (!client || frameRef.current !== frame) return;
+      frameWindow.KAYAN_SUPABASE = client;
+      frameWindow.dispatchEvent(new frameWindow.CustomEvent('kayan:supabase-ready'));
+    });
+
+    const loadedRoute = routeForHref(frameWindow.location.href, window.location.href);
     if (loadedRoute && loadedRoute.split(/[?#]/)[0] !== location.pathname) {
       navigate(loadedRoute);
       return undefined;
@@ -54,7 +65,7 @@ export default function LegacyPage({ file }) {
       const anchor = event.target.closest?.('a[href]');
       if (!anchor || event.defaultPrevented || event.button > 0) return;
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      const route = routeForHref(anchor.getAttribute('href'), frame.contentWindow.location.href);
+      const route = routeForHref(anchor.getAttribute('href'), frameWindow.location.href);
       if (!route) return;
       event.preventDefault();
       navigate(route);
