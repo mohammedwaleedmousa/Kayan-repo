@@ -52,7 +52,7 @@ export default function LegacyPage({ file }) {
     window.KAYAN_SUPABASE_READY?.then((client) => {
       if (!client || frameRef.current !== frame) return;
       frameWindow.KAYAN_SUPABASE = client;
-      frameWindow.dispatchEvent(new CustomEvent('kayan:supabase-ready'));
+      frameWindow.dispatchEvent(new frameWindow.CustomEvent('kayan:supabase-ready'));
     });
 
     const loadedRoute = routeForHref(frameWindow.location.href, window.location.href);
