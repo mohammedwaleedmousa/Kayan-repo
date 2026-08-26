@@ -42,4 +42,4 @@ export const TalentProfilePage = page(TalentProfileLogic, talentProfileTemplate,
 export const SpaceClientPage = page(SpaceClientLogic, spaceClientTemplate, spaceClientStyles, 'كيان — لوحة العميل');
 export const SpaceTalentPage = page(SpaceTalentLogic, spaceTalentTemplate, spaceTalentStyles, 'كيان — مساحة الكفاءة');
 export const PodPage = page(PodLogic, podTemplate, podStyles, 'كيان — غرفة الفريق');
-export const AdminPage = page(AdminLogic, adminTemplate, adminStyles, 'كيان — بوابة الإدارة', [], { defaultRole: 'sys', startSignedIn: true });
+export const AdminPage = page(AdminLogic, adminTemplate, adminStyles, 'كيان — بوابة الإدارة');

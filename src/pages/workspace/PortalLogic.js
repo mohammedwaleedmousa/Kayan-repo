@@ -1,5 +1,6 @@
 import React from 'react';
 import DCLogic from '../../home/DCLogic.js';
+import { submitClientFile } from '../../services/clientEngagements.ts';
 
 export default class PortalLogic extends DCLogic {
   constructor(props){
@@ -186,11 +187,13 @@ export default class PortalLogic extends DCLogic {
       cNextLabel: c.stage===4 ? this.L('قدم الطلب — ويقيد في السجل ←','Submit the request — it is entered in the register ←') : this.L('التالي ←','Next ←'),
       cNextBg: okNow?'linear-gradient(135deg,#C9A227,#E9C96B)':'#E4DCC6', cNextFg: okNow?'#03201D':'#9A8F73', cNextCursor: okNow?'pointer':'not-allowed',
       cBack:()=>{ if(c.stage===0) this.go('enter'); else this.save({c:{...c,stage:c.stage-1}}); },
-      cNext:()=>{ if(!okNow) return;
+      cNext:async()=>{ if(!okNow) return;
         if(c.stage<4){ this.save({c:{...c,stage:c.stage+1,maxSeen:Math.max(c.maxSeen,c.stage+1)}}); }
-        else { const seq=String(10000+Math.floor(Math.random()*89999)); const id='KY-C-26-'+seq+'-'+this.checkDigit('26'+seq.slice(0,5));
+        else { try { const budgetMap={b1:50000,b2:300000,b3:1000000,b4:3000000,b5:5000000,b6:null};
+          const file=await submitClientFile({title:c.scope.outcome,line:c.scope.line,budgetCents:budgetMap[c.scope.budget]??null,deadline:c.scope.deadline,summary:c.scope.desc});
           const log=logPush(c.log,this.L('قيد طلب النطاق باسم «','Scope request entered for “')+c.org.name+this.L('» — الحالة: قيد المراجعة.','” — status: under review.'));
-          this.save({c:{...c,submitted:true,id,at:this.today(),prog:0,log}}, ()=>this.go('client')); } },
+          this.save({c:{...c,submitted:true,id:file.file_code,at:this.today(),prog:0,log}}, ()=>this.go('client'));
+        } catch(error) { this.setState({nudge:4}); } } },
       cOrgName:c.org.name, setCOrgName:e=>this.save({c:{...c,org:{...c.org,name:e.target.value}}}),
       cOrgType:c.org.type, setCOrgType:e=>this.save({c:{...c,org:{...c.org,type:e.target.value}}}),
       cSector:c.org.sector, setCSector:e=>this.save({c:{...c,org:{...c.org,sector:e.target.value}}}),

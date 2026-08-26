@@ -1,3 +1,4 @@
+// @ts-nocheck -- This app currently imports JavaScript/JSX modules without type declarations.
 import { useLayoutEffect } from 'react';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './home/HomePage.jsx';

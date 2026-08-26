@@ -1,9 +1,43 @@
 import React from 'react';
 import DCLogic from '../../home/DCLogic.js';
+import { getStaffSession, hasCapability, signInStaff, signOut } from '../../auth/session.ts';
+import { convertClientFile, listClientFiles } from '../../services/clientEngagements.ts';
 
 export default class AdminLogic extends DCLogic {
-  state = { signedIn: undefined, role: undefined, view: 'overview', selT: 0, selC: 0, selE: 0, selP: 0, toast: '' };
+  state = { signedIn: false, role: 'auditor', view: 'overview', selT: 0, selC: 0, selE: 0, selP: 0, toast: '', clientFiles: [], email: '', password: '', busy: false };
   toastTimer = null;
+  alive = false;
+  componentDidMount() { this.alive = true; void this.restoreSession(); }
+  componentWillUnmount() { this.alive = false; clearTimeout(this.toastTimer); }
+  async restoreSession() {
+    try {
+      const session = await getStaffSession();
+      if (!this.alive || !session) return;
+      this.setState({ signedIn: true, role: session.staff.role, adminName: session.user.display_name }, () => void this.loadClientFiles());
+    } catch (error) { this.say(error.message || 'تعذر تحميل جلسة الإدارة.'); }
+  }
+  async loadClientFiles() {
+    try { const clientFiles = await listClientFiles(); if (this.alive) this.setState({ clientFiles, selC: 0 }); }
+    catch (error) { this.say(error.message || 'تعذر تحميل ملفات العملاء.'); }
+  }
+  async enter() {
+    if (this.state.busy) return;
+    this.setState({ busy: true });
+    try {
+      const session = await signInStaff(this.state.email.trim(), this.state.password);
+      if (this.alive) this.setState({ signedIn: true, role: session.staff.role, adminName: session.user.display_name, password: '', busy: false }, () => void this.loadClientFiles());
+    } catch (error) { if (this.alive) this.setState({ busy: false }, () => this.say(error.message || 'تعذر تسجيل الدخول.')); }
+  }
+  async logout() { await signOut(); if (this.alive) this.setState({ signedIn: false, role: 'auditor', clientFiles: [] }); }
+  async actConvert(clientFile) {
+    if (!clientFile || !hasCapability(this.state.role, 5) || this.state.busy) return;
+    this.setState({ busy: true });
+    try {
+      const result = await convertClientFile(clientFile.id);
+      await this.loadClientFiles();
+      if (this.alive) this.setState({ busy: false }, () => this.say(`حُول الملف إلى الارتباط ${result.engagement_code}.`));
+    } catch (error) { if (this.alive) this.setState({ busy: false }, () => this.say(error.message || 'تعذر تحويل الملف.')); }
+  }
   say(msg) {
     clearTimeout(this.toastTimer);
     this.setState({ toast: msg });
@@ -11,8 +45,8 @@ export default class AdminLogic extends DCLogic {
   }
   renderVals() {
     const S = this.state;
-    const signedIn = S.signedIn ?? (this.props.startSignedIn ?? true);
-    const role = S.role ?? (this.props.defaultRole ?? 'sys');
+    const signedIn = S.signedIn;
+    const role = S.role;
     const view = S.view;
     const roles = [
       { k: 'sys', label: 'مدير النظام' },
@@ -74,15 +108,14 @@ export default class AdminLogic extends DCLogic {
     ];
     const tRows = tData.map((t, i) => ({ ...t, ...(i === (S.selT) ? rowSel : rowDef), open: () => this.setState({ selT: i }) }));
     const selT = tData[S.selT] || tData[0];
-    const cData = [
-      { id: 'KY-F-26-00431', org: 'مؤسسة الميناء للتجارة', line: 'الخط الأول — تسليم مدار', budget: '$2.5k–4k', chip: 'بانتظار التحويل', ...chipGold, mail: 'ops@almina.ye', scope: 'متجر إلكتروني بواجهة عربية وبوابة دفع محلية، مع تدريب فريق التشغيل وتسليم الوثائق كاملة.' },
-      { id: 'KY-F-26-00436', org: 'مستشفى الأمل — عدن', line: 'منتج جاهز — RP-F-009', budget: '$1.2k', chip: 'بانتظار الإيداع', ...chipMint, mail: 'it@alamal-aden.ye', scope: 'نظام حجز مواعيد جاهز مع تخصيص الهوية وربط الإشعارات.' },
-      { id: 'KY-F-26-00440', org: 'شركة بحر العرب للملاحة', line: 'الخط الأول — تسليم مدار', budget: '$6k–9k', chip: 'قيد الاكتمال 3/5', ...chipMint, mail: 'pmo@arabsea.ye', scope: 'بوابة تتبع شحنات بواجهتين عربية وإنجليزية وتقارير شهرية.' },
-      { id: 'KY-F-26-00442', org: 'جمعية حضرموت الخيرية', line: 'الجناح المدني — K4Y', budget: 'منحة', chip: 'إحالة إلى K4Y', ...chipWarn, mail: 'info@hadhramout.org', scope: 'موقع تعريفي وتقارير شفافية سنوية — يحال إلى مسار الجناح المدني.' },
-      { id: 'KY-F-26-00445', org: 'مطاعم لذة عدن', line: 'منتج جاهز — RP-F-002', budget: '$650', chip: 'بانتظار التحويل', ...chipGold, mail: 'owner@lathat.ye', scope: 'قائمة رقمية وطلب داخلي بثلاث لغات مع لوحة مبيعات.' }
-    ];
+    const cData = S.clientFiles.map((file) => ({
+      ...file, id: file.file_code, dbId: file.id, org: file.organisation_name, line: file.line,
+      budget: file.budget_cents == null ? '—' : new Intl.NumberFormat('en', { style: 'currency', currency: file.currency }).format(file.budget_cents / 100),
+      chip: file.status === 'converted' ? 'تم التحويل' : 'بانتظار التحويل', ...(file.status === 'converted' ? chipMint : chipGold),
+      mail: file.contact_email || '—', scope: typeof file.scope?.summary === 'string' ? file.scope.summary : file.title,
+    }));
     const cRows = cData.map((c, i) => ({ ...c, ...(i === S.selC ? rowSel : rowDef), open: () => this.setState({ selC: i }) }));
-    const selC = cData[S.selC] || cData[0];
+    const selC = cData[S.selC] || { id: '—', org: '—', line: '—', scope: '—', mail: '—' };
     const eData = [
       { job: 'KY-J-26-00417', org: 'مؤسسة الميناء للتجارة', pod: 'POD-26-041', held: '$2,400', rel: '$600', stage: 'التنفيذ 3/5', bal: '$2,400', ledger: [ {t:'إيداع ضمان النطاق', at:'02 AUG', amt:'+$3,000', c:'#7CE0B8'}, {t:'صرف البند D-01 بمحضر موقع', at:'11 AUG', amt:'−$600', c:'#F0B9A0'} ] },
       { job: 'KY-J-26-00421', org: 'شركة بحر العرب للملاحة', pod: 'POD-26-044', held: '$7,200', rel: '$0', stage: 'التجهيز 2/5', bal: '$7,200', ledger: [ {t:'إيداع ضمان النطاق', at:'09 AUG', amt:'+$7,200', c:'#7CE0B8'} ] },
@@ -220,10 +253,11 @@ export default class AdminLogic extends DCLogic {
       actK4y: () => this.say('قيدت ساعات K4Y بعد التحقق وانعكست في ملف الموهبة.'),
       actCloseCall: () => this.say('أغلق النداء وأبلغ المهتمون المطابقون.'),
       actMembers: () => this.say('عدلت العضوية — يبقى القائد بدرجة T3 أو أعلى.'),
-      role, roles, setRole: (e) => this.setState({ role: e.target.value }),
-      enter: () => this.setState({ signedIn: true }),
-      logout: () => this.setState({ signedIn: false }),
-      adminName: 'م. عبدالرحمن باصرة',
+      role, roles, setRole: () => {},
+      email: S.email, password: S.password, setEmail: (e) => this.setState({ email: e.target.value }), setPassword: (e) => this.setState({ password: e.target.value }),
+      enter: () => void this.enter(),
+      logout: () => void this.logout(),
+      adminName: S.adminName || '—',
       roleLabel: (roles.find((r) => r.k === role) || roles[0]).label,
       crumb: titles[view].c, pageTitle: titles[view].t,
       navOps: [ nav('overview','نظرة عامة'), nav('talent','سجل المواهب','14'), nav('clients','ملفات العملاء','6'), nav('escrow','الضمان والارتباطات'), nav('pods','الفرق والبوابات','2') ],
@@ -246,7 +280,7 @@ export default class AdminLogic extends DCLogic {
       settingCards, canSettings, noSettings: !canSettings,
       actApprove: () => this.say('قُبل الطلب وقيد القرار في سجل التدقيق باسم أمين السجل.'),
       actReject: () => this.say('رُفض الطلب بقرار مسبب وبلغ كتابة. يفتح باب التظلم 21 يومًا.'),
-      actConvert: () => this.say('حُول الملف إلى ارتباط وفتح حساب ضمان بانتظار الإيداع.'),
+      actConvert: () => void this.actConvert(S.clientFiles[S.selC]),
       actRelease: () => this.say('صُرف $600 مقابل البند D-02 وقيد باسم أمين الضمان.'),
       actGate: () => this.say('اعتمد العبور إلى G5 وقيد باسم مشرف التسليم.'),
       actReply: () => this.say('أرسل الرد مختومًا برقم القيد REG-26-0455.'),

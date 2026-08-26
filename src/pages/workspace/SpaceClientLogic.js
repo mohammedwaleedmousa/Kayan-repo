@@ -1,15 +1,32 @@
 import React from 'react';
 import DCLogic from '../../home/DCLogic.js';
+import { signOut } from '../../auth/session.ts';
+import { getClientWorkspace, subscribeToClientWorkspace } from '../../services/clientEngagements.ts';
 
 export default class SpaceClientLogic extends DCLogic {
   constructor(props){
     super(props);
-    let auth=null;try{auth=JSON.parse(localStorage.getItem('kyn-auth-v1')||'null');}catch(e){}
-    this.auth=(auth&&auth.v===1&&auth.role==='client')?auth:null;
-    this.key=this.auth?('kyn-cws-'+this.auth.id):null;
-    let ws=null;if(this.key){try{ws=JSON.parse(localStorage.getItem(this.key)||'null');}catch(e){}}
-    this.state={view:'overview',ws:ws&&ws.v===1?ws:this.seedWs(),signName:'',draft:'',coText:''};
-    if(this.key&&!(ws&&ws.v===1))this.persist(this.state.ws);
+    this.auth=null;
+    this.state={view:'overview',ws:null,signName:'',draft:'',coText:''};
+  }
+  alive=false; unsubscribe=()=>{};
+  componentDidMount(){this.alive=true;void this.loadWorkspace();}
+  componentWillUnmount(){this.alive=false;this.unsubscribe();}
+  async loadWorkspace(){
+    try{
+      const data=await getClientWorkspace();
+      if(!this.alive||!data){if(this.alive)this.setState({ws:null});return;}
+      this.auth={id:data.session.user.id,name:data.session.user.display_name,email:data.session.user.email||'—',org:data.session.client.organisation_name};
+      this.setState({ws:this.fromDatabase(data)});
+      this.unsubscribe();this.unsubscribe=subscribeToClientWorkspace(data.session.user.id,()=>void this.loadWorkspace());
+    }catch(e){if(this.alive)this.setState({ws:null});}
+  }
+  fromDatabase(data){
+    const {engagement:e,client_file:file,deliverables,pod,escrow}=data,scope=file?.scope||{};
+    const deposits=escrow.filter(x=>x.entry_type==='deposit').reduce((n,x)=>n+x.amount_cents,0),releases=escrow.filter(x=>x.entry_type==='release').reduce((n,x)=>n+x.amount_cents,0);
+    return {v:2,jobId:e.engagement_code,scopeTitle:e.title,pod:pod?.name||'—',lead:scope.pod_lead||'—',price:e.price_cents/100,fee:scope.fee_label||'ضمن السعر',deadlineTs:e.deadline?new Date(e.deadline+'T12:00:00').getTime():Date.now(),stage:e.stage,
+      dod:Array.isArray(scope.definition_of_done)?scope.definition_of_done:deliverables.map(x=>x.title),ledger:escrow.map(x=>({t:new Date(x.created_at).toISOString().slice(0,10),x:x.reference||x.entry_type,amt:(x.entry_type==='release'?'−':'+')+'$'+(x.amount_cents/100).toLocaleString('en'),c:x.entry_type==='release'?'#F0B9A0':'#7CE0B8'})),held:(deposits-releases)/100,
+      deliv:deliverables.map(x=>({id:x.id,name:x.title,note:x.description||'',st:x.status==='accepted'?'accepted':x.status==='review'?'review':'wip'})),cos:[],msgs:[],log:[{t:new Date().toISOString().slice(0,10),x:'فتح الارتباط '+e.engagement_code}],accepted:e.status==='completed',warrantyEnd:null};
   }
   seedWs(){const now=Date.now(),d=n=>new Date(now-n*864e5).toISOString().slice(0,10);
     return {v:1,jobId:'KY-J-26-00417',scopeTitle:'هوية بصرية متكاملة لمصنع أغذية',pod:'فريق سنّار',lead:'سلمى أحمد العمودي — T3',price:2400,fee:'ضمن السعر — شريحة مطمأن إليها S2',deadlineTs:now+12*864e5,stage:3,
@@ -21,12 +38,12 @@ export default class SpaceClientLogic extends DCLogic {
       msgs:[{who:'مدير التسليم — كيان',x:'رفع الفريق دليل الهوية النهائي إلى بند المراجعة. ينتظر قراركم: قبول بالمحضر أو طلب تصويب.',t:d(1),side:'them'},{who:'أنت',x:'وصل الدليل، تجري مراجعته لدى الإدارة.',t:d(1),side:'me'}],
       log:[{t:d(1),x:'رفع دليل الهوية النهائي للمراجعة'},{t:d(2),x:'وقع محضر استلام البند الأول وصرف مستحقه من الضمان'},{t:d(6),x:'اجتياز بوابة الجودة الداخلية للاتجاه المختار'},{t:d(9),x:'مول حساب الضمان وبدأ العمل'}],
       accepted:false,warrantyEnd:null};}
-  persist(ws){if(this.key){try{localStorage.setItem(this.key,JSON.stringify(ws));}catch(e){}}}
-  up(fn){const ws=JSON.parse(JSON.stringify(this.state.ws));fn(ws);this.persist(ws);this.setState({ws});}
-  logout(){try{localStorage.removeItem('kyn-auth-v1');}catch(e){}this.props.navigate(this.props.routeForHref('Kayan Access.dc.html'));}
+  persist(){}
+  up(fn){const ws=JSON.parse(JSON.stringify(this.state.ws));fn(ws);this.setState({ws});}
+  async logout(){await signOut();this.props.navigate(this.props.routeForHref('Kayan Access.dc.html'));}
   fmtD(ts){return new Date(ts).toLocaleDateString('ar-YE',{month:'long',day:'numeric'});}
   renderVals(){
-    const locked=!this.auth;
+    const locked=!this.auth||!this.state.ws;
     if(locked)return {locked:true,open:false};
     const {view,ws}=this.state,me=this.auth;
     const daysLeft=Math.max(0,Math.ceil((ws.deadlineTs-Date.now())/864e5));

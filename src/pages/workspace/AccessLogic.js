@@ -1,5 +1,6 @@
 import React from 'react';
 import DCLogic from '../../home/DCLogic.js';
+import { registerClient, signInClient, verifyClientSignup } from '../../auth/session.ts';
 
 export default class AccessLogic extends DCLogic {
   constructor(props){
@@ -16,7 +17,6 @@ export default class AccessLogic extends DCLogic {
   loadAcc(){try{const a=JSON.parse(localStorage.getItem('kyn-accounts-v1')||'null');if(a&&a.v===1)return a;}catch(e){}return {v:1,clients:[],talents:[]};}
   saveAcc(a){try{localStorage.setItem('kyn-accounts-v1',JSON.stringify(a));}catch(e){}}
   seed(){const a=this.loadAcc();
-    if(!a.clients.some(c=>c.email==='client@demo.kayan'))a.clients.push({id:'KY-C-26-00417-'+this.cd('2600417'),name:'أحمد سالم باوزير',org:'مؤسسة الميناء للتجارة',email:'client@demo.kayan',pw:'kayan2026',at:new Date().toISOString()});
     const ex=a.talents.find(t=>t.email==='talent@demo.kayan');
     if(ex){ if((ex.tier||0)<3)ex.tier=3; }
     else a.talents.push({id:'KY-T-26-00088-'+this.cd('2600088'),name:'سلمى أحمد العمودي',email:'talent@demo.kayan',pw:'kayan2026',tier:3,spec:'تصميم الهوية البصرية',at:new Date().toISOString()});
@@ -36,26 +36,27 @@ export default class AccessLogic extends DCLogic {
   componentWillUnmount(){
     window.removeEventListener('pageshow',this._onShow);
     clearTimeout(this._wipeKill);}
-  signIn(){const {role,email,pw}=this.state;const e=email.trim().toLowerCase();
+  async signIn(){const {role,email,pw}=this.state;const e=email.trim().toLowerCase();
     if(!e||!pw){this.setState({errKey:'both'});return;}
+    if(role==='client'){
+      this.setState({busy:true,errKey:''});
+      try{await signInClient(e,pw);this.setState({busy:false});this.depart('client');}
+      catch(error){this.setState({busy:false,errKey:'noClient'});}
+      return;
+    }
     const a=this.loadAcc();
-    if(role==='client'){const c=a.clients.find(x=>x.email.toLowerCase()===e&&x.pw===pw);
-      if(!c){this.setState({errKey:'noClient'});return;}
-      this.session('client',c);this.depart('client');return;}
     let t=a.talents.find(x=>x.email.toLowerCase()===e&&x.pw===pw);
     if(!t){try{const ap=JSON.parse(localStorage.getItem('kayan-apply-v1')||'null');
       if(ap&&ap.submitted&&ap.acc&&(ap.acc.email||'').toLowerCase()===e&&ap.acc.pw===pw){t={id:ap.appId,name:ap.acc.name||ap.idn&&ap.idn.legal||'كفاءة مسجلة',email:e,pw,tier:1};a.talents.push({...t,at:new Date().toISOString()});this.saveAcc(a);}}catch(err){}}
     if(!t){this.setState({errKey:'noTalent'});return;}
     this.session('talent',t);this.depart('talent');}
-  signUpClient(){const {org,name,email,pw,otpAsked,otp}=this.state;
+  async signUpClient(){const {org,name,email,pw,otpAsked,otp}=this.state;
     if(!org.trim()||!name.trim()||!email.trim()||pw.length<8){this.setState({errKey:'fields'});return;}
-    if(!otpAsked){this.setState({otpAsked:true,errKey:''});return;}
-    if(otp.trim()!=='2026'){this.setState({errKey:'otp'});return;}
-    const a=this.loadAcc();const e=email.trim().toLowerCase();
-    if(a.clients.some(c=>c.email.toLowerCase()===e)){this.setState({errKey:'exists'});return;}
-    const serial=String(Math.floor(10000+Math.random()*89999));const id='KY-C-26-'+serial+'-'+this.cd('26'+serial);
-    const c={id,name:name.trim(),org:org.trim(),email:e,pw,at:new Date().toISOString()};
-    a.clients.push(c);this.saveAcc(a);this.session('client',c);this.depart('client');}
+    const e=email.trim().toLowerCase();this.setState({busy:true,errKey:''});
+    try{
+      if(!otpAsked){await registerClient(e,pw,name.trim(),org.trim());this.setState({otpAsked:true,busy:false});return;}
+      await verifyClientSignup(e,otp.replace(/\s/g,''));this.setState({busy:false});this.depart('client');
+    }catch(error){this.setState({busy:false,errKey:otpAsked?'otp':'exists'});}}
   pwScore(){const p=this.state.pw;let s=0;if(p.length>=8)s++;if(/[A-Za-z]/.test(p)&&/\d/.test(p))s++;if(p.length>=12||/[^A-Za-z0-9]/.test(p))s++;return s;}
   renderVals(){
     const st=this.state,{tab,role}=st,ar=st.lang==='ar',t=(a,e)=>ar?a:e;
